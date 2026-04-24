@@ -1,0 +1,27 @@
+/* Accent reference: #A8C66C */
+:root {
+  --background: 90 33% 98%;
+  --foreground: 110 20% 16%;
+  --card: 0 0% 100%;
+  --card-foreground: 110 20% 16%;
+  --primary: 89 43% 60%;
+  --primary-foreground: 110 30% 12%;
+  --muted: 90 30% 94%;
+  --muted-foreground: 110 12% 38%;
+  --border: 90 24% 85%;
+  --ring: 89 43% 55%;
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: 110 18% 10%;
+  --foreground: 90 25% 93%;
+  --card: 110 16% 13%;
+  --card-foreground: 90 25% 93%;
+  --primary: 89 43% 60%;
+  --primary-foreground: 110 26% 10%;
+  --muted: 110 14% 18%;
+  --muted-foreground: 90 16% 73%;
+  --border: 110 12% 24%;
+  --ring: 89 43% 60%;
+}
