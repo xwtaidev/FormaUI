@@ -1,5 +1,3 @@
 export * from "./lib/cn";
 
-export * from "./primitives/button";
-export * from "./primitives/card";
-export * from "./primitives/badge";
+export * from "./primitives";
