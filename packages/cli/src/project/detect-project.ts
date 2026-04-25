@@ -14,6 +14,20 @@ export interface ProjectInfo {
   cssEntryPath: string;
 }
 
+export interface DoctorCheck {
+  key: "package-json" | "react" | "tailwind" | "typescript" | "css-entry" | "formaui-config";
+  label: string;
+  hint: string;
+  ok: boolean;
+}
+
+export interface DoctorReport {
+  root: string;
+  packageManager: PackageManager;
+  checks: DoctorCheck[];
+  healthy: boolean;
+}
+
 interface PackageJson {
   dependencies?: Record<string, string>;
   devDependencies?: Record<string, string>;
@@ -66,7 +80,7 @@ async function detectTailwindConfig(root: string) {
   return null;
 }
 
-async function detectCssEntryPath(root: string) {
+async function findCssEntryPath(root: string) {
   const candidates = [
     "src/app/globals.css",
     "app/globals.css",
@@ -81,13 +95,28 @@ async function detectCssEntryPath(root: string) {
     }
   }
 
-  return "src/styles/globals.css";
+  return null;
+}
+
+async function detectCssEntryPath(root: string) {
+  return (await findCssEntryPath(root)) ?? "src/styles/globals.css";
+}
+
+async function readPackageJson(root: string) {
+  try {
+    const packageJsonPath = resolve(root, "package.json");
+    const packageJsonContent = await readFile(packageJsonPath, "utf8");
+    return JSON.parse(packageJsonContent) as PackageJson;
+  } catch {
+    return null;
+  }
 }
 
 export async function detectProject(root: string): Promise<ProjectInfo> {
-  const packageJsonPath = resolve(root, "package.json");
-  const packageJsonContent = await readFile(packageJsonPath, "utf8");
-  const packageJson = JSON.parse(packageJsonContent) as PackageJson;
+  const packageJson = await readPackageJson(root);
+  if (!packageJson) {
+    throw new Error("Could not read package.json from the target project.");
+  }
 
   return {
     root,
@@ -97,5 +126,58 @@ export async function detectProject(root: string): Promise<ProjectInfo> {
     hasTypeScript: await pathExists(resolve(root, "tsconfig.json")),
     tailwindConfigPath: await detectTailwindConfig(root),
     cssEntryPath: await detectCssEntryPath(root)
+  };
+}
+
+export async function inspectProject(root: string): Promise<DoctorReport> {
+  const packageJson = await readPackageJson(root);
+  const hasPackageJson = packageJson !== null;
+  const tailwindConfigPath = await detectTailwindConfig(root);
+  const cssEntryPath = await findCssEntryPath(root);
+
+  const checks: DoctorCheck[] = [
+    {
+      key: "package-json",
+      label: "package.json present",
+      hint: "Create package.json at the project root before running FormaUI commands.",
+      ok: hasPackageJson
+    },
+    {
+      key: "react",
+      label: "React dependency",
+      hint: "Install react and react-dom dependencies before running `formaui init`.",
+      ok: packageJson ? hasDependency(packageJson, "react") : false
+    },
+    {
+      key: "tailwind",
+      label: "Tailwind config",
+      hint: "Add a tailwind.config.ts (or .js/.mjs/.cjs) file.",
+      ok: Boolean(tailwindConfigPath)
+    },
+    {
+      key: "typescript",
+      label: "TypeScript config",
+      hint: "Add a tsconfig.json file for TypeScript support.",
+      ok: await pathExists(resolve(root, "tsconfig.json"))
+    },
+    {
+      key: "css-entry",
+      label: "CSS entry file",
+      hint: "Create src/styles/globals.css (or another supported CSS entry) and include FormaUI styles.",
+      ok: Boolean(cssEntryPath)
+    },
+    {
+      key: "formaui-config",
+      label: "FormaUI config",
+      hint: "Run `formaui init` to generate formaui.json.",
+      ok: await pathExists(resolve(root, "formaui.json"))
+    }
+  ];
+
+  return {
+    root,
+    packageManager: await detectPackageManager(root),
+    checks,
+    healthy: checks.every((check) => check.ok)
   };
 }

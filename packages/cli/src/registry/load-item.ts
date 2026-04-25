@@ -24,14 +24,14 @@ export interface LoadRegistryItemOptions {
   registryRoot?: string;
 }
 
-const DIRECTORY_BY_KIND: Record<RegistryKind, string> = {
+export const DIRECTORY_BY_KIND: Record<RegistryKind, string> = {
   component: "components",
   block: "blocks",
   template: "templates",
   theme: "themes"
 };
 
-function getDefaultRegistryRoot() {
+export function getDefaultRegistryRoot() {
   const currentFileDir = dirname(fileURLToPath(import.meta.url));
   return resolve(currentFileDir, "../../../../registry");
 }
