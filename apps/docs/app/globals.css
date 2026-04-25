@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 240 10% 4%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 4%;
+  --primary: 240 5.9% 10%;
+  --primary-foreground: 0 0% 98%;
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%;
+  --border: 240 5.9% 90%;
+}
+
+body {
+  @apply bg-white text-slate-950 antialiased;
+}
+
+.docs-prose h1 {
+  @apply mb-3 mt-8 text-3xl font-semibold;
+}
+
+.docs-prose h2 {
+  @apply mb-2 mt-8 text-2xl font-semibold;
+}
+
+.docs-prose h3 {
+  @apply mb-2 mt-6 text-xl font-semibold;
+}
+
+.docs-prose p,
+.docs-prose li {
+  @apply text-base leading-7 text-slate-700;
+}
+
+.docs-prose code {
+  @apply rounded bg-slate-100 px-1.5 py-0.5 text-sm;
+}
+
+.docs-prose pre {
+  @apply overflow-x-auto rounded-lg border border-slate-200 bg-slate-950 p-4 text-slate-100;
+}
+
+.docs-prose pre code {
+  @apply bg-transparent p-0 text-slate-100;
+}
+
+.docs-prose a {
+  @apply text-sky-700 underline underline-offset-2;
+}

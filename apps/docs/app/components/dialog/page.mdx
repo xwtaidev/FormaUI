@@ -1,0 +1,58 @@
+# Dialog
+
+## Overview
+
+`Dialog` is an accessible modal primitive backed by Radix UI.
+
+## Preview
+
+Use for destructive confirmations, high-focus edits, or short guided flows.
+
+## Installation
+
+```bash
+npx formaui add dialog
+```
+
+## Usage
+
+```tsx
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription
+} from "@/components/primitives/dialog";
+import { Button } from "@/components/primitives/button";
+
+export function ConfirmDialog() {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button>Open</Button>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Confirm</DialogTitle>
+          <DialogDescription>Proceed with this action.</DialogDescription>
+        </DialogHeader>
+      </DialogContent>
+    </Dialog>
+  );
+}
+```
+
+## Variants
+
+Dialog exposes composition primitives (`DialogContent`, `DialogHeader`, `DialogFooter`, etc.) rather than style variants.
+
+## Accessibility
+
+Focus trapping, keyboard close (`Esc`), and ARIA labeling are handled by Radix primitives.
+
+## Source Code
+
+- `packages/components/src/primitives/dialog.tsx`
+- `registry/components/dialog.json`

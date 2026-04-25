@@ -1,0 +1,39 @@
+# Button
+
+## Overview
+
+`Button` is the primary action primitive with variant and size support through `class-variance-authority`.
+
+## Preview
+
+Primary, secondary, outline, ghost, and destructive variants are provided in v0.1.
+
+## Installation
+
+```bash
+npx formaui add button
+```
+
+## Usage
+
+```tsx
+import { Button } from "@/components/primitives/button";
+
+export function Actions() {
+  return <Button variant="default">Save</Button>;
+}
+```
+
+## Variants
+
+- `variant`: `default`, `secondary`, `outline`, `ghost`, `destructive`
+- `size`: `sm`, `md`, `lg`, `icon`
+
+## Accessibility
+
+Uses native `<button>` behavior, focus-visible ring styles, and disabled states.
+
+## Source Code
+
+- `packages/components/src/primitives/button.tsx`
+- `registry/components/button.json`

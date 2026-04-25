@@ -1,0 +1,32 @@
+# Registry
+
+The registry is a JSON index that describes installable assets and file copy targets.
+
+## Item Fields
+
+Every registry item uses this shape:
+
+```ts
+interface RegistryItem {
+  name: string;
+  type: "component" | "block" | "template" | "theme" | "hook" | "lib" | "style" | "config";
+  dependencies: string[];
+  devDependencies: string[];
+  registryDependencies: string[];
+  files: Array<{ source: string; target: string }>;
+}
+```
+
+## Type Folders
+
+- `registry/components/*.json`
+- `registry/blocks/*.json`
+- `registry/templates/*.json`
+- `registry/themes/*.json`
+
+## Resolution Rules
+
+1. Load root item by kind and name.
+2. Resolve `registryDependencies` recursively.
+3. Copy files into target project paths.
+4. Respect path aliases in `formaui.json` (`components`, `lib`, `styles`).

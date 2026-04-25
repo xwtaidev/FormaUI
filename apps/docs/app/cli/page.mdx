@@ -1,0 +1,52 @@
+# CLI
+
+FormaUI v0.1 ships the following implemented commands.
+
+## Commands
+
+```bash
+formaui init
+formaui add <name>
+formaui block add <name>
+formaui template add <name>
+formaui theme add <name>
+```
+
+## `formaui init`
+
+Initializes configuration and base utility files.
+
+Writes:
+
+- `formaui.json`
+- `lib/utils.ts`
+- `styles/formaui.css`
+
+Requires: target project must have a `react` dependency.
+
+## `formaui add <name>`
+
+Installs a component registry item and all `registryDependencies` recursively.
+
+## `formaui block add <name>`
+
+Installs a block registry item and required dependencies.
+
+## `formaui template add <name>`
+
+Installs template entry files and dependencies.
+
+## `formaui theme add <name>`
+
+Installs a theme CSS registry item.
+
+## Conflict Behavior
+
+When any target file already exists and `-y/--yes` is not provided, CLI throws a conflict error and exits without writing. Use `-y` to overwrite conflicts.
+
+## Known v0.1 Limitations
+
+- React-only workflow
+- No remote/private registry
+- Next.js is the main validation path
+- No Figma kit or visual studio in v0.1
