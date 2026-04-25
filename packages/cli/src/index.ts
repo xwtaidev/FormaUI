@@ -6,6 +6,7 @@ import { runInfoCommand } from "./commands/info.js";
 import { runInitCommand } from "./commands/init.js";
 import { runListCommand } from "./commands/list.js";
 import { runSearchCommand } from "./commands/search.js";
+import type { InstallCommandRunner } from "./project/install-dependencies.js";
 import type { RegistryKind } from "./registry/load-item.js";
 import type { Logger } from "./utils/logger.js";
 
@@ -91,6 +92,7 @@ export interface RunCliOptions {
   logger?: Logger;
   registryRoot?: string;
   confirmOverwrite?: (conflicts: string[]) => Promise<boolean>;
+  installCommandRunner?: InstallCommandRunner;
 }
 
 export async function runCli(argv = process.argv.slice(2), options: RunCliOptions = {}) {
@@ -134,7 +136,8 @@ export async function runCli(argv = process.argv.slice(2), options: RunCliOption
       dryRun: context.dryRun,
       logger,
       registryRoot,
-      confirmOverwrite: options.confirmOverwrite
+      confirmOverwrite: options.confirmOverwrite,
+      installCommandRunner: options.installCommandRunner
     });
     return;
   }
@@ -163,7 +166,8 @@ export async function runCli(argv = process.argv.slice(2), options: RunCliOption
       dryRun: context.dryRun,
       logger,
       registryRoot,
-      confirmOverwrite: options.confirmOverwrite
+      confirmOverwrite: options.confirmOverwrite,
+      installCommandRunner: options.installCommandRunner
     });
     return;
   }

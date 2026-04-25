@@ -403,7 +403,10 @@ describe("formaui discoverability commands", () => {
         return new Response("not found", { status: 404, statusText: "Not Found" });
       }) as typeof fetch;
 
-      await runCli(["add", "button", "--cwd", projectRoot, "--registry", remoteRoot], { logger });
+      await runCli(["add", "button", "--cwd", projectRoot, "--registry", remoteRoot], {
+        logger,
+        installCommandRunner: async () => {}
+      });
       expect(await exists(resolve(projectRoot, "components/primitives/button.tsx"))).toBe(true);
 
       await rm(resolve(projectRoot, "components"), { recursive: true, force: true });
@@ -411,7 +414,10 @@ describe("formaui discoverability commands", () => {
         throw new Error("Network unavailable");
       }) as typeof fetch;
 
-      await runCli(["add", "button", "--cwd", projectRoot, "--registry", remoteRoot], { logger });
+      await runCli(["add", "button", "--cwd", projectRoot, "--registry", remoteRoot], {
+        logger,
+        installCommandRunner: async () => {}
+      });
       expect(await exists(resolve(projectRoot, "components/primitives/button.tsx"))).toBe(true);
     } finally {
       globalThis.fetch = originalFetch;

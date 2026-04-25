@@ -3,6 +3,12 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import {
+  DependencyInstallError,
+  type InstallCommandRunner,
+  installDependencies
+} from "../project/install-dependencies.js";
+import { detectProject } from "../project/detect-project.js";
+import {
   getDefaultRegistryRoot,
   loadRegistryDependency,
   loadRegistryItem,
@@ -29,6 +35,7 @@ export interface AddCommandOptions {
   logger?: Logger;
   registryRoot?: string;
   confirmOverwrite?: (conflicts: string[]) => Promise<boolean>;
+  installCommandRunner?: InstallCommandRunner;
 }
 
 function getRepoRoot() {
@@ -145,12 +152,13 @@ export async function runAddCommand(options: AddCommandOptions) {
     }
   }
 
+  const packageRequirements = collectPackageRequirements(items);
+
   if (options.dryRun) {
     const conflicts = await findFileConflicts({
       cwd,
       files: filesToWrite
     });
-    const packageRequirements = collectPackageRequirements(items);
 
     logger.info(`[dry-run] Planned install for ${options.kind} \`${options.name}\`.`);
     logger.info(`Items: ${items.map((item) => item.name).join(", ")}`);
@@ -184,6 +192,25 @@ export async function runAddCommand(options: AddCommandOptions) {
       devDependencies: packageRequirements.devDependencies,
       conflicts
     };
+  }
+
+  const project = await detectProject(cwd);
+  try {
+    await installDependencies({
+      cwd,
+      packageManager: project.packageManager,
+      requirements: packageRequirements,
+      runner: options.installCommandRunner
+    });
+  } catch (error) {
+    if (error instanceof DependencyInstallError) {
+      throw new Error(
+        `Failed to install dependencies for ${options.kind} \`${options.name}\` with ` +
+          `\`${error.command.command} ${error.command.args.join(" ")}\`. ` +
+          "No files were written. Fix the dependency install issue and re-run the command."
+      );
+    }
+    throw error;
   }
 
   const writtenPaths = await writeFiles({
