@@ -166,9 +166,19 @@ export const componentRegistryItems: RegistryItem[] = [
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
+    name: "data-table-toolbar",
+    source: "packages/components/src/composites/data-table-toolbar.tsx",
+    registryDependencies: ["lib-cn", "button", "input"]
+  }),
+  componentItem({
     name: "date-range-picker",
     source: "packages/components/src/composites/date-range-picker.tsx",
     registryDependencies: ["lib-cn", "input", "separator"]
+  }),
+  componentItem({
+    name: "empty-search-state",
+    source: "packages/components/src/composites/empty-search-state.tsx",
+    registryDependencies: ["lib-cn", "button"]
   }),
   componentItem({
     name: "empty-state",
@@ -189,6 +199,11 @@ export const componentRegistryItems: RegistryItem[] = [
     name: "metric-card",
     source: "packages/components/src/composites/metric-card.tsx",
     registryDependencies: ["card"]
+  }),
+  componentItem({
+    name: "pagination-bar",
+    source: "packages/components/src/composites/pagination-bar.tsx",
+    registryDependencies: ["lib-cn", "button"]
   }),
   componentItem({
     name: "page-header",

@@ -1,0 +1,39 @@
+{
+  "name": "data-table-toolbar",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn",
+    "button",
+    "input"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/composites/data-table-toolbar.tsx",
+      "target": "components/composites/data-table-toolbar.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/data-table-toolbar",
+  "tags": [
+    "component",
+    "data-table-toolbar"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/data-table-toolbar.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "602c8f430ab1c8ac5c9c2aa3027dfe1916245951d245708a81f5f996f7516433"
+}

@@ -6,12 +6,15 @@ import { describe, expect, it, vi } from "vitest";
 import {
   AppSidebar,
   DataTable,
+  DataTableToolbar,
   DateRangePicker,
+  EmptySearchState,
   EmptyState,
   FilterBar,
   FormField,
   Input,
   MetricCard,
+  PaginationBar,
   PageHeader,
   SearchCommand,
   StatusBadge,
@@ -174,5 +177,81 @@ describe("composites", () => {
       range: { from: "", to: "" }
     });
     expect(onReset).toHaveBeenCalledTimes(1);
+  });
+
+  it("updates query and fires toolbar action callbacks", () => {
+    const onQueryChange = vi.fn();
+    const onRefresh = vi.fn();
+    const onAdd = vi.fn();
+
+    render(
+      <DataTableToolbar
+        defaultValue=""
+        resultCount={8}
+        onQueryChange={onQueryChange}
+        onRefresh={onRefresh}
+        onAdd={onAdd}
+        addLabel="Add customer"
+      />
+    );
+
+    fireEvent.change(screen.getByRole("textbox", { name: "Table search query" }), {
+      target: { value: "alpha" }
+    });
+    fireEvent.click(screen.getByRole("button", { name: "Refresh table" }));
+    fireEvent.click(screen.getByRole("button", { name: "Add customer" }));
+
+    expect(screen.getByText("8 result(s)")).toBeDefined();
+    expect(onQueryChange).toHaveBeenLastCalledWith("alpha");
+    expect(onRefresh).toHaveBeenCalledTimes(1);
+    expect(onAdd).toHaveBeenCalledTimes(1);
+  });
+
+  it("changes page, page size and boundary state in pagination-bar", () => {
+    const onPageChange = vi.fn();
+    const onPageSizeChange = vi.fn();
+
+    render(
+      <PaginationBar
+        totalItems={45}
+        defaultPage={2}
+        defaultPageSize={10}
+        onPageChange={onPageChange}
+        onPageSizeChange={onPageSizeChange}
+      />
+    );
+
+    fireEvent.click(screen.getByRole("button", { name: "Next page" }));
+    fireEvent.click(screen.getByRole("button", { name: "Previous page" }));
+    fireEvent.change(screen.getByRole("combobox", { name: "Rows per page" }), {
+      target: { value: "20" }
+    });
+
+    expect(screen.getByText("45 items", { exact: false })).toBeDefined();
+    expect(onPageChange).toHaveBeenCalledWith(3);
+    expect(onPageChange).toHaveBeenLastCalledWith(1);
+    expect(onPageSizeChange).toHaveBeenCalledWith(20);
+  });
+
+  it("renders empty-search-state and invokes action callbacks", () => {
+    const onClear = vi.fn();
+    const onCreate = vi.fn();
+
+    render(
+      <EmptySearchState
+        query="missing customer"
+        onClear={onClear}
+        onCreate={onCreate}
+        clearLabel="Clear query"
+        createLabel="Create customer"
+      />
+    );
+
+    fireEvent.click(screen.getByRole("button", { name: "Clear query" }));
+    fireEvent.click(screen.getByRole("button", { name: "Create customer" }));
+
+    expect(screen.getByText('No items matched "missing customer". Try another keyword.')).toBeDefined();
+    expect(onClear).toHaveBeenCalledTimes(1);
+    expect(onCreate).toHaveBeenCalledTimes(1);
   });
 });
