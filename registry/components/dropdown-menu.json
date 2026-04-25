@@ -29,5 +29,11 @@
   "sources": [
     "registry/components/dropdown-menu.json"
   ],
-  "checksum": "2393cbcbc799dc5734dca90d81b88ee2f32c96d4b3ec957a3c6d16715300e051"
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "d677f7d170cd6cea45cebefcdb23e9910bab49f9c69a487a02c902968b78f868"
 }

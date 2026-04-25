@@ -1,0 +1,35 @@
+{
+  "name": "data-entry",
+  "type": "pack",
+  "description": "Form-oriented starter pack for account/settings data entry flows.",
+  "category": "forms",
+  "scenarios": [
+    "settings",
+    "onboarding"
+  ],
+  "complexity": "medium",
+  "stability": "beta",
+  "dependencies": [],
+  "devDependencies": [],
+  "registryDependencies": [
+    "form-field",
+    "input",
+    "select",
+    "checkbox",
+    "button",
+    "card"
+  ],
+  "files": [],
+  "version": "0.2.2",
+  "tags": [
+    "pack",
+    "data-entry"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/packs/data-entry.json"
+  ],
+  "checksum": "1bdf12a94d27bb19a7849890d36b3b3c0986f1e2739dabb593fabe97d349c12c"
+}

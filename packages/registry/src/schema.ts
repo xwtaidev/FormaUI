@@ -3,6 +3,7 @@ export const REGISTRY_ITEM_TYPES = [
   "block",
   "template",
   "theme",
+  "pack",
   "hook",
   "lib",
   "style",
@@ -10,6 +11,14 @@ export const REGISTRY_ITEM_TYPES = [
 ] as const;
 
 export type RegistryItemType = (typeof REGISTRY_ITEM_TYPES)[number];
+
+export const REGISTRY_ITEM_COMPLEXITIES = ["low", "medium", "high"] as const;
+
+export type RegistryItemComplexity = (typeof REGISTRY_ITEM_COMPLEXITIES)[number];
+
+export const REGISTRY_ITEM_STABILITIES = ["stable", "beta", "experimental", "deprecated"] as const;
+
+export type RegistryItemStability = (typeof REGISTRY_ITEM_STABILITIES)[number];
 
 export interface RegistryFile {
   source: string;
@@ -25,6 +34,10 @@ export interface RegistryItem {
   frameworks?: string[];
   sources?: string[];
   checksum?: string;
+  category?: string;
+  scenarios?: string[];
+  complexity?: RegistryItemComplexity;
+  stability?: RegistryItemStability;
   dependencies: string[];
   devDependencies: string[];
   registryDependencies: string[];

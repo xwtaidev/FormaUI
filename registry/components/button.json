@@ -28,5 +28,11 @@
   "sources": [
     "registry/components/button.json"
   ],
-  "checksum": "0c646789d91a2bcd4973868e9290ac1f0c98efeed3543e7e71850adbf0555fe0"
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "b002303ee8bc20f6bfa48fa815dd8dddf2916b45b144a849f9e48ed141b2bef8"
 }

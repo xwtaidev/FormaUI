@@ -29,5 +29,11 @@
   "sources": [
     "registry/blocks/dashboard-shell.json"
   ],
-  "checksum": "ca7329c46b6ec6b61ed70ca994c89a9bddc0a0f5ecedf38c2f5e825117296f14"
+  "category": "block",
+  "scenarios": [
+    "block"
+  ],
+  "complexity": "medium",
+  "stability": "stable",
+  "checksum": "dcdd489f2e559999b16a45e47aced390ded4fcd297a664c0ff25567fb78825f6"
 }

@@ -30,5 +30,11 @@
   "sources": [
     "registry/blocks/notification-panel.json"
   ],
-  "checksum": "03f8653d79d46bf7b380c516b034f92883390da321223a5e88c139145106e43c"
+  "category": "block",
+  "scenarios": [
+    "block"
+  ],
+  "complexity": "medium",
+  "stability": "stable",
+  "checksum": "1687d59925a427a4cab465455a6df6427b504a46eea86aed335b5b5fd9be807b"
 }

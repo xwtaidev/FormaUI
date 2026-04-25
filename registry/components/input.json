@@ -27,5 +27,11 @@
   "sources": [
     "registry/components/input.json"
   ],
-  "checksum": "a57211bd9e6fca6a86166ec3aa42edf338efa73ccaa8fe2d088f31f94d8df4e3"
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "6488b70ec7ae7fa3cdb8ee18e0b32a9380ff5f1afafcf06f3226b928decf5f2c"
 }

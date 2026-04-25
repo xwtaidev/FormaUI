@@ -31,6 +31,19 @@ describe("registry index builder", () => {
         devDependencies: [],
         registryDependencies: ["button"],
         files: [{ source: "packages/blocks/src/dashboard-shell.tsx", target: "components/dashboard-shell.tsx" }]
+      },
+      {
+        name: "dashboard-foundation",
+        type: "pack",
+        version: "0.3.1",
+        category: "dashboard",
+        scenarios: ["analytics"],
+        complexity: "high",
+        stability: "beta",
+        dependencies: [],
+        devDependencies: [],
+        registryDependencies: ["dashboard-shell", "button"],
+        files: []
       }
     ];
 
@@ -40,12 +53,15 @@ describe("registry index builder", () => {
     });
 
     expect(result.generatedAt).toBe("2026-04-25T00:00:00.000Z");
-    expect(result.total).toBe(3);
+    expect(result.total).toBe(4);
     expect(result.byKind.component.button).toBeDefined();
     expect(result.byKind.component.button?.latest).toBe("0.2.0");
     expect(result.byKind.component.button?.versions).toEqual(["0.2.0", "0.1.0"]);
     expect(result.byKind.component.button?.entries["0.2.0"]?.path).toBe("components/button.json");
     expect(result.byKind.block["dashboard-shell"]?.entries["0.2.2"]?.path).toBe("blocks/dashboard-shell.json");
+    expect(result.byKind.pack["dashboard-foundation"]?.entries["0.3.1"]?.path).toBe("packs/dashboard-foundation.json");
+    expect(result.byKind.pack["dashboard-foundation"]?.entries["0.3.1"]?.category).toBe("dashboard");
+    expect(result.byKind.pack["dashboard-foundation"]?.entries["0.3.1"]?.scenarios).toEqual(["analytics"]);
   });
 
   it("applies fallback version when item version is missing", () => {

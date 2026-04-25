@@ -27,5 +27,11 @@
   "sources": [
     "registry/components/data-table.json"
   ],
-  "checksum": "85d5420699477539622d1fd021621d73a565b78fa7f7a9c3871b5e7a276f6c74"
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "1d92b6f3291a60fa87929dce9ab20e2c4b74a9c7017303ef89d695ab5f293ad7"
 }

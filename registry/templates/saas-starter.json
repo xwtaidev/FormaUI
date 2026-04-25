@@ -38,5 +38,11 @@
   "sources": [
     "registry/templates/saas-starter.json"
   ],
-  "checksum": "57bd79239802a9a78a6721bc7dd73b676f139d7dadbc4e202fca3c98e3986b28"
+  "category": "template",
+  "scenarios": [
+    "template"
+  ],
+  "complexity": "high",
+  "stability": "stable",
+  "checksum": "fb7dcea39affa82eff9b40a9104956adde1d4938fe432ee887856322c24eab51"
 }

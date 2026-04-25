@@ -28,5 +28,11 @@
   "sources": [
     "registry/components/switch.json"
   ],
-  "checksum": "7b8bd847a6f1ddae8f52516140c358ea93956bf57205c5d71f82514c1cb1509e"
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "b90ab547b80c1e63addfaea10fdfe93925475a41e83450caf1a1ac66b5e90d4e"
 }

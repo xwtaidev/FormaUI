@@ -27,5 +27,11 @@
   "sources": [
     "registry/components/metric-card.json"
   ],
-  "checksum": "cab61a21bb6571c1c1dc94a863fcdcd5b2b9d9cdb65dc5108b1d97e7f842eab7"
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "4ec25e473c2c455066c97457fc0ffd466552710f01aa6775cfed24ba8a96e345"
 }

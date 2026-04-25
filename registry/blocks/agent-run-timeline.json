@@ -29,5 +29,11 @@
   "sources": [
     "registry/blocks/agent-run-timeline.json"
   ],
-  "checksum": "d6ab2d3b7064a562b1e0966d074042157e35eb1a249947c60a1653785853ae63"
+  "category": "block",
+  "scenarios": [
+    "block"
+  ],
+  "complexity": "medium",
+  "stability": "stable",
+  "checksum": "b993b4e988335b5d80ee81945a90a63a405b20ddbb9cb1493f21d1c07a2e9373"
 }

@@ -30,5 +30,11 @@
   "sources": [
     "registry/blocks/login-panel.json"
   ],
-  "checksum": "2988b781e9417842b35f126367bdd05ae47c22d7b379382d43390551bb6e19ff"
+  "category": "block",
+  "scenarios": [
+    "block"
+  ],
+  "complexity": "medium",
+  "stability": "stable",
+  "checksum": "6c202a1dea8c09069823c1065d892adc2bf8f5db67e64cb4289509d92e299fc2"
 }

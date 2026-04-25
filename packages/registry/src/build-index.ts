@@ -1,6 +1,6 @@
 import type { RegistryItem } from "./schema.js";
 
-export const REGISTRY_INDEX_KINDS = ["component", "block", "template", "theme"] as const;
+export const REGISTRY_INDEX_KINDS = ["component", "block", "template", "theme", "pack"] as const;
 
 export type RegistryIndexKind = (typeof REGISTRY_INDEX_KINDS)[number];
 
@@ -8,7 +8,8 @@ const DIRECTORY_BY_KIND: Record<RegistryIndexKind, string> = {
   component: "components",
   block: "blocks",
   template: "templates",
-  theme: "themes"
+  theme: "themes",
+  pack: "packs"
 };
 
 function compareVersionsDescending(a: string, b: string) {
@@ -52,7 +53,7 @@ function compareVersionsDescending(a: string, b: string) {
 }
 
 function mapItemTypeToKind(type: RegistryItem["type"]): RegistryIndexKind {
-  if (type === "block" || type === "template" || type === "theme") {
+  if (type === "block" || type === "template" || type === "theme" || type === "pack") {
     return type;
   }
   return "component";
@@ -69,6 +70,10 @@ export interface RegistryIndexEntry {
   frameworks?: string[];
   sources?: string[];
   checksum?: string;
+  category?: string;
+  scenarios?: string[];
+  complexity?: RegistryItem["complexity"];
+  stability?: RegistryItem["stability"];
 }
 
 export interface RegistryIndexNameGroup {
@@ -89,7 +94,8 @@ function createEmptyByKind(): RegistryIndexManifest["byKind"] {
     component: {},
     block: {},
     template: {},
-    theme: {}
+    theme: {},
+    pack: {}
   };
 }
 
@@ -111,7 +117,11 @@ export function buildRegistryIndex(options: {
       tags: item.tags,
       frameworks: item.frameworks,
       sources: item.sources,
-      checksum: item.checksum
+      checksum: item.checksum,
+      category: item.category,
+      scenarios: item.scenarios,
+      complexity: item.complexity,
+      stability: item.stability
     } satisfies RegistryIndexEntry;
   });
 

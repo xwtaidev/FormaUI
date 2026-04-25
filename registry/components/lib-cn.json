@@ -25,5 +25,11 @@
   "sources": [
     "registry/components/lib-cn.json"
   ],
-  "checksum": "296aa16446d83537b325d2d3fbcfa326c5d9fdcf037e58c72368c8090f5601e9"
+  "category": "component",
+  "scenarios": [
+    "lib"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "6147f8c02c57eb4c809a030b8730ee163ffd7aba1fc1ec3cb8016df4a5e9a2a1"
 }

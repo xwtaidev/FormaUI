@@ -28,5 +28,11 @@
   "sources": [
     "registry/components/user-menu.json"
   ],
-  "checksum": "443c321b0b0e31fd60689c4dc9f858b870619b9b804ee6e179bec22224f99ea9"
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "b4deecebf0000a162d720f8c308a1be5a9baef2edc8c48be6ab2ba175ef8de3c"
 }

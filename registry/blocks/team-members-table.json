@@ -29,5 +29,11 @@
   "sources": [
     "registry/blocks/team-members-table.json"
   ],
-  "checksum": "525c5dde7c35b2a3165c64be0904736f6922ece5d322f8681463aa8fb4cde437"
+  "category": "block",
+  "scenarios": [
+    "block"
+  ],
+  "complexity": "medium",
+  "stability": "stable",
+  "checksum": "51f5151407032506c08cb2d4f36f5f2c1b646746ba4a32a4b4fb1373a8289006"
 }

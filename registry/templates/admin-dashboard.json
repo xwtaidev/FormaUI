@@ -39,5 +39,11 @@
   "sources": [
     "registry/templates/admin-dashboard.json"
   ],
-  "checksum": "b9165df43ab587995209526cee29ff370da6b45d5f63153dd427860dfc9dd45a"
+  "category": "template",
+  "scenarios": [
+    "template"
+  ],
+  "complexity": "high",
+  "stability": "stable",
+  "checksum": "63d23873b0264d644eb5158b25cb8f6f3c3f42317d4e232c6dddfaec45aa18a6"
 }

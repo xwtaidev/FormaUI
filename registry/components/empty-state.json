@@ -27,5 +27,11 @@
   "sources": [
     "registry/components/empty-state.json"
   ],
-  "checksum": "0e087783e52d19806f0cd044be425dc2e1a31db305698f48d124035e0717ea53"
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "2b5b701ff8d0a45897df3e1d868ad341178cff6635db7ce45ddde2a602ddfbb6"
 }
