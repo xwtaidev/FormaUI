@@ -19,6 +19,12 @@ export interface RegistryFile {
 export interface RegistryItem {
   name: string;
   type: RegistryItemType;
+  version?: string;
+  description?: string;
+  tags?: string[];
+  frameworks?: string[];
+  sources?: string[];
+  checksum?: string;
   dependencies: string[];
   devDependencies: string[];
   registryDependencies: string[];
