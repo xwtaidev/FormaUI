@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-04-25T09:01:38.103Z",
-  "total": 37,
+  "generatedAt": "2026-04-25T09:28:17.378Z",
+  "total": 40,
   "items": [
     {
       "kind": "component",
@@ -555,6 +555,25 @@
     },
     {
       "kind": "block",
+      "name": "model-selector",
+      "type": "block",
+      "version": "0.2.2",
+      "path": "blocks/model-selector.json",
+      "description": "block/model-selector",
+      "tags": [
+        "block",
+        "model-selector"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/blocks/model-selector.json"
+      ],
+      "checksum": "d4c0df086448343ce203d32d4267ca80c38fbb27d947656126351628d0280a86"
+    },
+    {
+      "kind": "block",
       "name": "notification-panel",
       "type": "block",
       "version": "0.2.2",
@@ -650,6 +669,25 @@
     },
     {
       "kind": "template",
+      "name": "admin-dashboard",
+      "type": "template",
+      "version": "0.2.2",
+      "path": "templates/admin-dashboard.json",
+      "description": "template/admin-dashboard",
+      "tags": [
+        "template",
+        "admin-dashboard"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/templates/admin-dashboard.json"
+      ],
+      "checksum": "b9165df43ab587995209526cee29ff370da6b45d5f63153dd427860dfc9dd45a"
+    },
+    {
+      "kind": "template",
       "name": "ai-console-lite",
       "type": "template",
       "version": "0.2.2",
@@ -666,6 +704,25 @@
         "registry/templates/ai-console-lite.json"
       ],
       "checksum": "306413c3cb7701909882aaef6a6f1b486054816eed710c3caad6b3d35f166667"
+    },
+    {
+      "kind": "template",
+      "name": "saas-starter",
+      "type": "template",
+      "version": "0.2.2",
+      "path": "templates/saas-starter.json",
+      "description": "template/saas-starter",
+      "tags": [
+        "template",
+        "saas-starter"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/templates/saas-starter.json"
+      ],
+      "checksum": "57bd79239802a9a78a6721bc7dd73b676f139d7dadbc4e202fca3c98e3986b28"
     },
     {
       "kind": "theme",
@@ -1493,6 +1550,33 @@
           }
         }
       },
+      "model-selector": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "block",
+            "name": "model-selector",
+            "type": "block",
+            "version": "0.2.2",
+            "path": "blocks/model-selector.json",
+            "description": "block/model-selector",
+            "tags": [
+              "block",
+              "model-selector"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/blocks/model-selector.json"
+            ],
+            "checksum": "d4c0df086448343ce203d32d4267ca80c38fbb27d947656126351628d0280a86"
+          }
+        }
+      },
       "notification-panel": {
         "latest": "0.2.2",
         "versions": [
@@ -1630,6 +1714,33 @@
       }
     },
     "template": {
+      "admin-dashboard": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "template",
+            "name": "admin-dashboard",
+            "type": "template",
+            "version": "0.2.2",
+            "path": "templates/admin-dashboard.json",
+            "description": "template/admin-dashboard",
+            "tags": [
+              "template",
+              "admin-dashboard"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/templates/admin-dashboard.json"
+            ],
+            "checksum": "b9165df43ab587995209526cee29ff370da6b45d5f63153dd427860dfc9dd45a"
+          }
+        }
+      },
       "ai-console-lite": {
         "latest": "0.2.2",
         "versions": [
@@ -1654,6 +1765,33 @@
               "registry/templates/ai-console-lite.json"
             ],
             "checksum": "306413c3cb7701909882aaef6a6f1b486054816eed710c3caad6b3d35f166667"
+          }
+        }
+      },
+      "saas-starter": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "template",
+            "name": "saas-starter",
+            "type": "template",
+            "version": "0.2.2",
+            "path": "templates/saas-starter.json",
+            "description": "template/saas-starter",
+            "tags": [
+              "template",
+              "saas-starter"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/templates/saas-starter.json"
+            ],
+            "checksum": "57bd79239802a9a78a6721bc7dd73b676f139d7dadbc4e202fca3c98e3986b28"
           }
         }
       }

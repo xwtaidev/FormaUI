@@ -20,12 +20,19 @@ const REQUIRED_BLOCKS = [
   "token-usage-chart",
   "agent-run-timeline",
   "team-members-table",
-  "notification-panel"
+  "notification-panel",
+  "model-selector"
 ] as const;
 
 const REQUIRED_COMPONENTS = [
   "data-table",
   "search-command"
+] as const;
+
+const REQUIRED_TEMPLATES = [
+  "ai-console-lite",
+  "saas-starter",
+  "admin-dashboard"
 ] as const;
 
 const testFileDir = dirname(fileURLToPath(import.meta.url));
@@ -54,16 +61,19 @@ describe("registry coverage: blocks and templates", () => {
   it("declares block dependencies for new wave-1 blocks", () => {
     const teamMembersTable = blockRegistryItems.find((item) => item.name === "team-members-table");
     const notificationPanel = blockRegistryItems.find((item) => item.name === "notification-panel");
+    const modelSelector = blockRegistryItems.find((item) => item.name === "model-selector");
 
     expect(teamMembersTable).toBeDefined();
     expect(notificationPanel).toBeDefined();
+    expect(modelSelector).toBeDefined();
 
-    if (!teamMembersTable || !notificationPanel) {
+    if (!teamMembersTable || !notificationPanel || !modelSelector) {
       return;
     }
 
     expect(new Set(teamMembersTable.registryDependencies).has("data-table")).toBe(true);
     expect(new Set(notificationPanel.registryDependencies).has("search-command")).toBe(true);
+    expect(new Set(modelSelector.registryDependencies).has("select")).toBe(true);
   });
 
   it("declares ai-console-lite with required dashboard and ai dependencies", () => {
@@ -81,6 +91,35 @@ describe("registry coverage: blocks and templates", () => {
     expect(dependencySet.has("token-usage-chart")).toBe(true);
     expect(dependencySet.has("agent-run-timeline")).toBe(true);
     expect(dependencySet.has("api-key-manager")).toBe(true);
+  });
+
+  it("contains all required v0.2.5 templates", () => {
+    const names = new Set(templateRegistryItems.map((item) => item.name));
+
+    for (const required of REQUIRED_TEMPLATES) {
+      expect(names.has(required)).toBe(true);
+    }
+  });
+
+  it("declares explicit dependencies for saas-starter and admin-dashboard", () => {
+    const saasStarter = templateRegistryItems.find((item) => item.name === "saas-starter");
+    const adminDashboard = templateRegistryItems.find((item) => item.name === "admin-dashboard");
+
+    expect(saasStarter).toBeDefined();
+    expect(adminDashboard).toBeDefined();
+
+    if (!saasStarter || !adminDashboard) {
+      return;
+    }
+
+    const saasDeps = new Set(saasStarter.registryDependencies);
+    expect(saasDeps.has("pricing-section")).toBe(true);
+    expect(saasDeps.has("model-selector")).toBe(true);
+
+    const adminDeps = new Set(adminDashboard.registryDependencies);
+    expect(adminDeps.has("dashboard-shell")).toBe(true);
+    expect(adminDeps.has("model-selector")).toBe(true);
+    expect(adminDeps.has("notification-panel")).toBe(true);
   });
 
   it("keeps full registry dependency graph valid", () => {

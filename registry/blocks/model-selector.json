@@ -1,0 +1,34 @@
+{
+  "name": "model-selector",
+  "type": "block",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "card",
+    "badge",
+    "button",
+    "select"
+  ],
+  "files": [
+    {
+      "source": "packages/blocks/src/model-selector.tsx",
+      "target": "components/model-selector.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "block/model-selector",
+  "tags": [
+    "block",
+    "model-selector"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/blocks/model-selector.json"
+  ],
+  "checksum": "d4c0df086448343ce203d32d4267ca80c38fbb27d947656126351628d0280a86"
+}

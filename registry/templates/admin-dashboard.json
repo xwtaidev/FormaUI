@@ -1,0 +1,43 @@
+{
+  "name": "admin-dashboard",
+  "type": "template",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "dashboard-shell",
+    "token-usage-chart",
+    "agent-run-timeline",
+    "team-members-table",
+    "notification-panel",
+    "model-selector",
+    "page-header",
+    "metric-card",
+    "button"
+  ],
+  "files": [
+    {
+      "source": "templates/admin-dashboard/page.tsx",
+      "target": "app/admin-dashboard/page.tsx"
+    },
+    {
+      "source": "templates/admin-dashboard/registry.json",
+      "target": "templates/admin-dashboard/registry.json"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "template/admin-dashboard",
+  "tags": [
+    "template",
+    "admin-dashboard"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/templates/admin-dashboard.json"
+  ],
+  "checksum": "b9165df43ab587995209526cee29ff370da6b45d5f63153dd427860dfc9dd45a"
+}

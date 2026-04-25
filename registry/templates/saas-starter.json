@@ -1,0 +1,42 @@
+{
+  "name": "saas-starter",
+  "type": "template",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "pricing-section",
+    "team-members-table",
+    "notification-panel",
+    "model-selector",
+    "page-header",
+    "metric-card",
+    "button",
+    "badge"
+  ],
+  "files": [
+    {
+      "source": "templates/saas-starter/page.tsx",
+      "target": "app/saas-starter/page.tsx"
+    },
+    {
+      "source": "templates/saas-starter/registry.json",
+      "target": "templates/saas-starter/registry.json"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "template/saas-starter",
+  "tags": [
+    "template",
+    "saas-starter"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/templates/saas-starter.json"
+  ],
+  "checksum": "57bd79239802a9a78a6721bc7dd73b676f139d7dadbc4e202fca3c98e3986b28"
+}

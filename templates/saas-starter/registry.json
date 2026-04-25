@@ -1,0 +1,17 @@
+{
+  "name": "saas-starter",
+  "description": "Production-ready SaaS starter template with pricing, team operations, and model controls.",
+  "entry": "app/saas-starter/page.tsx",
+  "blocks": [
+    "pricing-section",
+    "team-members-table",
+    "notification-panel",
+    "model-selector"
+  ],
+  "components": [
+    "page-header",
+    "metric-card",
+    "button",
+    "badge"
+  ]
+}

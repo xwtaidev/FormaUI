@@ -74,5 +74,10 @@ export const blockRegistryItems: RegistryItem[] = [
     name: "notification-panel",
     source: "packages/blocks/src/notification-panel.tsx",
     registryDependencies: ["card", "badge", "button", "search-command"]
+  }),
+  blockItem({
+    name: "model-selector",
+    source: "packages/blocks/src/model-selector.tsx",
+    registryDependencies: ["card", "badge", "button", "select"]
   })
 ];
