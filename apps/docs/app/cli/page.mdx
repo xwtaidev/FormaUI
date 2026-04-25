@@ -1,8 +1,8 @@
 # CLI
 
-FormaUI v0.1 ships the following implemented commands.
+FormaUI v0.2 CLI focuses on reliable install flows, discoverability, and diagnostics.
 
-## Commands
+## Core Commands
 
 ```bash
 formaui init
@@ -10,17 +10,28 @@ formaui add <name>
 formaui block add <name>
 formaui template add <name>
 formaui theme add <name>
+formaui list [components|blocks|templates|themes]
+formaui search <keyword>
+formaui info <name>
+formaui doctor
 ```
+
+## Shared Flags
+
+- `--cwd <path>`: run command against another project path.
+- `--yes`: non-interactive overwrite confirmation.
+- `--registry <url|path>`: use remote or local registry source.
+- `--dry-run`: print install plan only, no file writes.
 
 ## `formaui init`
 
-Initializes configuration and base utility files.
+Initializes baseline configuration and utility files.
 
-Writes:
+Typical outputs:
 
 - `formaui.json`
 - `lib/utils.ts`
-- `styles/formaui.css`
+- `styles/formaui/default.css`
 
 Requires: target project must have a `react` dependency.
 
@@ -42,11 +53,17 @@ Installs a theme CSS registry item.
 
 ## Conflict Behavior
 
-When any target file already exists and `-y/--yes` is not provided, CLI throws a conflict error and exits without writing. Use `-y` to overwrite conflicts.
+When target files already exist and `-y/--yes` is not provided, CLI exits with conflict details and does not write partial output.
 
-## Known v0.1 Limitations
+## Diagnostics
 
-- React-only workflow
-- No remote/private registry
-- Next.js is the main validation path
-- No Figma kit or visual studio in v0.1
+Use `formaui doctor` to report project readiness:
+
+- React dependency status
+- Tailwind presence
+- TypeScript and config checks
+- CSS entry and FormaUI variable file status
+
+## More
+
+For parameter-level examples and output behavior, see [CLI Commands](/cli/commands).

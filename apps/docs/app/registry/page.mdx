@@ -1,13 +1,25 @@
 # Registry
 
-The registry is a JSON index that describes installable assets and file copy targets.
+The v0.2 registry is a versioned manifest + item set that describes installable assets and file copy targets.
 
-## Item Fields
+## v0.2 Index
+
+- `registry/index.json` contains normalized entries for all installable items.
+- Query shape is grouped by `kind / name / version`.
+- CLI commands (`list`, `search`, `info`) consume this data for discoverability.
+
+## Item Schema (v2)
 
 Every registry item uses this shape:
 
 ```ts
 interface RegistryItem {
+  version: string;
+  description?: string;
+  tags?: string[];
+  frameworks?: string[];
+  sources?: string[];
+  checksum?: string;
   name: string;
   type: "component" | "block" | "template" | "theme" | "hook" | "lib" | "style" | "config";
   dependencies: string[];
@@ -30,3 +42,12 @@ interface RegistryItem {
 2. Resolve `registryDependencies` recursively.
 3. Copy files into target project paths.
 4. Respect path aliases in `formaui.json` (`components`, `lib`, `styles`).
+
+## Coverage Snapshot
+
+Current v0.2 index totals:
+
+- Components: 24
+- Blocks: 11
+- Templates: 3
+- Themes: 2

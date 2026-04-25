@@ -1,0 +1,67 @@
+# CLI Commands
+
+This page documents command syntax and common v0.2 options.
+
+## Global Flags
+
+- `--cwd <path>`: run the command in a target project directory.
+- `--yes`: skip interactive overwrite prompts.
+- `--registry <url|path>`: resolve items from remote registry URL or local path.
+- `--dry-run`: print plan only, no writes or dependency install.
+
+## `formaui list [kind]`
+
+List installable assets by kind.
+
+```bash
+npx formaui list
+npx formaui list components
+npx formaui list blocks
+```
+
+## `formaui search <keyword>`
+
+Searches registry metadata by name and tags.
+
+```bash
+npx formaui search chart
+npx formaui search dashboard
+```
+
+## `formaui info <name>`
+
+Prints registry item detail (`kind`, dependencies, files, source path, metadata).
+
+```bash
+npx formaui info data-table
+npx formaui info admin-dashboard
+```
+
+## `formaui doctor`
+
+Prints environment and project configuration checks:
+
+- React dependency
+- Tailwind setup
+- TypeScript config
+- CSS entry and FormaUI variables file
+
+```bash
+npx formaui doctor
+```
+
+## Install Commands
+
+```bash
+npx formaui init
+npx formaui add button
+npx formaui block add dashboard-shell
+npx formaui template add ai-console-lite
+npx formaui theme add default
+```
+
+Use `--dry-run` first to preview file writes and package changes:
+
+```bash
+npx formaui template add saas-starter --dry-run
+```
