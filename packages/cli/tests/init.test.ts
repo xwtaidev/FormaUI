@@ -37,11 +37,19 @@ describe("formaui init", () => {
       const config = JSON.parse(await readFile(resolve(projectRoot, "formaui.json"), "utf8"));
       const utilsFile = await readFile(resolve(projectRoot, "lib/utils.ts"), "utf8");
       const cssVariables = await readFile(resolve(projectRoot, "styles/formaui.css"), "utf8");
+      const cssEntry = await readFile(resolve(projectRoot, "src/styles/globals.css"), "utf8");
 
       expect(config.aliases.components).toBe("components");
+      expect(config.css.entry).toBe("src/styles/globals.css");
+      expect(config.css.variables).toBe("styles/formaui.css");
       expect(utilsFile).toContain("export function cn");
       expect(cssVariables).toContain(":root");
       expect(cssVariables).toContain("--background");
+      expect(cssEntry).toContain('@import "../../styles/formaui.css";');
+
+      await runInitCommand({ cwd: projectRoot, yes: true });
+      const cssEntryAfterSecondRun = await readFile(resolve(projectRoot, "src/styles/globals.css"), "utf8");
+      expect(cssEntryAfterSecondRun.match(/formaui\.css/g)?.length ?? 0).toBe(1);
     } finally {
       await rm(projectRoot, { recursive: true, force: true });
     }

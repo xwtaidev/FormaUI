@@ -2,6 +2,7 @@ import { mkdir } from "node:fs/promises";
 import { resolve } from "node:path";
 
 import { detectProject } from "../project/detect-project.js";
+import { patchCssEntry } from "../project/patch-css-entry.js";
 import { writeFiles } from "../project/write-files.js";
 import { createLogger, type Logger } from "../utils/logger.js";
 
@@ -90,6 +91,12 @@ export async function runInitCommand(options: InitCommandOptions = {}) {
         content: DEFAULT_THEME_CSS
       }
     ]
+  });
+
+  await patchCssEntry({
+    cwd,
+    cssEntryPath: project.cssEntryPath,
+    formauiStylesPath: "styles/formaui.css"
   });
 
   logger.success("Initialized FormaUI configuration.");
