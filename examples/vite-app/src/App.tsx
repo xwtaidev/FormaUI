@@ -12,6 +12,8 @@ import {
   AccordionItem,
   AccordionTrigger,
   Button,
+  DateRangePicker,
+  FilterBar,
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
@@ -20,7 +22,11 @@ import {
   PopoverContent,
   PopoverTrigger,
   Progress,
-  SearchCommand
+  RadioGroup,
+  RadioGroupItem,
+  SearchCommand,
+  Separator,
+  Skeleton
 } from "@formaui/components";
 
 function queryModels(query: string) {
@@ -36,12 +42,15 @@ function queryModels(query: string) {
 
 export default function App() {
   const [query, setQuery] = useState("");
+  const [healthStatus, setHealthStatus] = useState("healthy");
+  const [dateRange, setDateRange] = useState({ from: "2026-04-01", to: "2026-04-30" });
+  const [filters, setFilters] = useState({ query: "", status: "all", range: { from: "", to: "" } });
   const models = useMemo(() => queryModels(query), [query]);
 
   return (
     <main className="mx-auto flex min-h-screen w-full max-w-6xl flex-col gap-6 p-6 lg:p-10">
       <header className="space-y-4 rounded-xl border border-border bg-card p-6">
-        <p className="text-sm font-medium uppercase tracking-wide text-muted-foreground">FormaUI v0.3.2</p>
+        <p className="text-sm font-medium uppercase tracking-wide text-muted-foreground">FormaUI v0.3.3</p>
         <h1 className="text-3xl font-semibold tracking-tight">Vite Integration Example</h1>
         <p className="max-w-3xl text-sm text-muted-foreground">
           This workspace demonstrates using FormaUI components and blocks in a Vite + React + TypeScript
@@ -117,6 +126,57 @@ export default function App() {
             </HoverCard>
           </div>
         </div>
+      </section>
+
+      <section className="space-y-3 rounded-xl border border-border bg-card p-6">
+        <h2 className="text-lg font-semibold">Wave B Components</h2>
+        <p className="text-sm text-muted-foreground">
+          `separator`, `skeleton`, `radio-group`, `date-range-picker`, and `filter-bar` target dashboard query
+          workflows.
+        </p>
+        <div className="grid gap-4 lg:grid-cols-2">
+          <div className="space-y-3">
+            <div className="space-y-2 rounded-md border border-border p-3">
+              <Skeleton className="h-4 w-40" />
+              <Skeleton className="h-4 w-full" />
+              <Skeleton className="h-4 w-2/3" />
+            </div>
+            <Separator />
+            <RadioGroup value={healthStatus} onValueChange={setHealthStatus} className="flex gap-4">
+              <label htmlFor="health-healthy" className="inline-flex items-center gap-2 text-sm">
+                <RadioGroupItem id="health-healthy" value="healthy" />
+                Healthy
+              </label>
+              <label htmlFor="health-warning" className="inline-flex items-center gap-2 text-sm">
+                <RadioGroupItem id="health-warning" value="warning" />
+                Warning
+              </label>
+              <label htmlFor="health-risk" className="inline-flex items-center gap-2 text-sm">
+                <RadioGroupItem id="health-risk" value="risk" />
+                Risk
+              </label>
+            </RadioGroup>
+            <p className="text-xs text-muted-foreground">Selected health status: {healthStatus}</p>
+          </div>
+          <div className="space-y-3">
+            <DateRangePicker value={dateRange} onChange={setDateRange} />
+            <p className="text-xs text-muted-foreground">
+              Window: {dateRange.from || "unset"} → {dateRange.to || "unset"}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="space-y-3 rounded-xl border border-border bg-card p-6">
+        <h2 className="text-lg font-semibold">FilterBar</h2>
+        <FilterBar
+          onChange={setFilters}
+          onReset={() => setFilters({ query: "", status: "all", range: { from: "", to: "" } })}
+        />
+        <p className="text-xs text-muted-foreground">
+          Filters: query={filters.query || "none"}, status={filters.status}, from={filters.range.from || "unset"},
+          to={filters.range.to || "unset"}
+        </p>
       </section>
 
       <section className="grid gap-6 lg:grid-cols-2">

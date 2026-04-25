@@ -26,11 +26,13 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DateRangePicker,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
   DataTable,
+  FilterBar,
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
@@ -39,11 +41,15 @@ import {
   PopoverContent,
   PopoverTrigger,
   Progress,
+  RadioGroup,
+  RadioGroupItem,
   SearchCommand,
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
+  Separator,
+  Skeleton,
   SelectValue,
   Switch,
   Tabs,
@@ -61,6 +67,9 @@ export default function ComponentsPage() {
   const [emailEnabled, setEmailEnabled] = useState(true);
   const [checked, setChecked] = useState(true);
   const [selectedCommand, setSelectedCommand] = useState("none");
+  const [reviewStatus, setReviewStatus] = useState("all");
+  const [selectedRange, setSelectedRange] = useState({ from: "2026-04-01", to: "2026-04-30" });
+  const [filters, setFilters] = useState({ query: "", status: "all", range: { from: "", to: "" } });
   const memberRows = [
     { name: "Avery Lin", role: "Product Lead", score: 98 },
     { name: "Riley Chen", role: "ML Engineer", score: 92 },
@@ -73,8 +82,8 @@ export default function ComponentsPage() {
         <section>
           <h2 className="text-2xl font-semibold">Primitive Components</h2>
           <p className="text-sm text-muted-foreground">
-            v0.3.2 component set: Button, Input, Textarea, Checkbox, Switch, Select, Dialog, DropdownMenu, Tabs,
-            Card, Badge, Avatar, Tooltip, Accordion, Popover, HoverCard, Progress, DataTable, SearchCommand.
+            v0.3.3 component set adds Wave B controls for filtering workflows: Separator, Skeleton, RadioGroup,
+            DateRangePicker, and FilterBar.
           </p>
         </section>
 
@@ -231,6 +240,48 @@ export default function ComponentsPage() {
 
           <Card>
             <CardHeader>
+              <CardTitle>Wave B Primitives</CardTitle>
+              <CardDescription>Separator, skeleton loading, and radio-group status selection.</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="space-y-2">
+                <p className="text-sm text-muted-foreground">Preview placeholders</p>
+                <div className="space-y-2 rounded-md border border-border p-3">
+                  <Skeleton className="h-4 w-32" />
+                  <Skeleton className="h-4 w-full" />
+                  <Skeleton className="h-4 w-2/3" />
+                </div>
+              </div>
+
+              <Separator />
+
+              <div className="space-y-2">
+                <p className="text-sm text-muted-foreground">Review status</p>
+                <RadioGroup
+                  value={reviewStatus}
+                  onValueChange={setReviewStatus}
+                  className="flex flex-wrap gap-4"
+                >
+                  <label htmlFor="review-all" className="inline-flex items-center gap-2 text-sm">
+                    <RadioGroupItem id="review-all" value="all" />
+                    All
+                  </label>
+                  <label htmlFor="review-open" className="inline-flex items-center gap-2 text-sm">
+                    <RadioGroupItem id="review-open" value="open" />
+                    Open
+                  </label>
+                  <label htmlFor="review-closed" className="inline-flex items-center gap-2 text-sm">
+                    <RadioGroupItem id="review-closed" value="closed" />
+                    Closed
+                  </label>
+                </RadioGroup>
+                <p className="text-xs text-muted-foreground">Selected: {reviewStatus}</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
               <CardTitle>DataTable</CardTitle>
               <CardDescription>Sortable rows with custom columns.</CardDescription>
             </CardHeader>
@@ -261,6 +312,24 @@ export default function ComponentsPage() {
                 onSelect={(item) => setSelectedCommand(item.id)}
               />
               <p className="text-sm text-muted-foreground">Selected command: {selectedCommand}</p>
+            </CardContent>
+          </Card>
+
+          <Card className="md:col-span-2">
+            <CardHeader>
+              <CardTitle>DateRangePicker / FilterBar</CardTitle>
+              <CardDescription>Wave B composites for dashboard filtering flows.</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <DateRangePicker value={selectedRange} onChange={setSelectedRange} />
+              <p className="text-xs text-muted-foreground">
+                Range: {selectedRange.from || "unset"} → {selectedRange.to || "unset"}
+              </p>
+              <FilterBar onChange={setFilters} onReset={() => setFilters({ query: "", status: "all", range: { from: "", to: "" } })} />
+              <p className="text-xs text-muted-foreground">
+                Filters: query={filters.query || "none"}, status={filters.status}, from=
+                {filters.range.from || "unset"}, to={filters.range.to || "unset"}
+              </p>
             </CardContent>
           </Card>
         </section>

@@ -51,15 +51,20 @@ const navSections: Array<{ title: string; links: Array<{ href: string; label: st
       { href: "/components/page-header", label: "page-header" },
       { href: "/components/popover", label: "popover" },
       { href: "/components/progress", label: "progress" },
+      { href: "/components/radio-group", label: "radio-group" },
       { href: "/components/search-command", label: "search-command" },
       { href: "/components/select", label: "select" },
+      { href: "/components/separator", label: "separator" },
+      { href: "/components/skeleton", label: "skeleton" },
       { href: "/components/status-badge", label: "status-badge" },
       { href: "/components/switch", label: "switch" },
       { href: "/components/tabs", label: "tabs" },
       { href: "/components/textarea", label: "textarea" },
       { href: "/components/theme-switcher", label: "theme-switcher" },
       { href: "/components/tooltip", label: "tooltip" },
-      { href: "/components/user-menu", label: "user-menu" }
+      { href: "/components/user-menu", label: "user-menu" },
+      { href: "/components/date-range-picker", label: "date-range-picker" },
+      { href: "/components/filter-bar", label: "filter-bar" }
     ]
   },
   {
@@ -103,7 +108,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <aside className="border-b border-slate-200 p-6 lg:border-b-0 lg:border-r">
             <Link href="/" className="block">
               <p className="text-sm uppercase tracking-wide text-slate-500">FormaUI</p>
-              <h1 className="text-2xl font-semibold">v0.3.2 Docs</h1>
+              <h1 className="text-2xl font-semibold">v0.3.3 Docs</h1>
             </Link>
             <nav className="mt-6 space-y-6">
               {navSections.map((section) => (
