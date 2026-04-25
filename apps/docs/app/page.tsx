@@ -1,10 +1,11 @@
 import Link from "next/link";
 
 const coverageRows = [
-  { kind: "Components", count: 28, href: "/components/accordion" },
+  { kind: "Components", count: 36, href: "/components/accordion" },
   { kind: "Blocks", count: 11, href: "/blocks/dashboard-shell" },
   { kind: "Templates", count: 3, href: "/templates/ai-console-lite" },
-  { kind: "Themes", count: 2, href: "/theme/default" }
+  { kind: "Themes", count: 2, href: "/theme/default" },
+  { kind: "Packs", count: 3, href: "/packs" }
 ];
 
 export default function DocsHomePage() {
@@ -12,9 +13,9 @@ export default function DocsHomePage() {
     <div className="space-y-8">
       <h1>FormaUI Documentation</h1>
       <p>
-        FormaUI v0.3.2 expands the source-owned design system with Wave A primitives and richer registry metadata.
-        This documentation covers installation, migration, CLI workflows, registry v3 metadata, and every installable
-        asset.
+        FormaUI v0.3.5 completes the source-owned component expansion with pack workflows, migration guidance, and
+        validated Next/Vite showcase coverage. This documentation covers installation, migration, CLI workflows,
+        registry v3 metadata, and every installable asset.
       </p>
 
       <div className="space-y-3 rounded-xl border border-slate-200 bg-white p-5">
@@ -42,13 +43,16 @@ export default function DocsHomePage() {
             <Link href="/cli/commands">CLI commands reference</Link>
           </li>
           <li>
-            <Link href="/migration-v0.1-to-v0.2">Migration guide (v0.1 to v0.2)</Link>
+            <Link href="/migration-v0.2-to-v0.3">Migration guide (v0.2 to v0.3)</Link>
           </li>
           <li>
             <Link href="/registry">Registry v3 reference</Link>
           </li>
           <li>
-            <Link href="/components/accordion">New in v0.3.2: Wave A primitives</Link>
+            <Link href="/packs">Pack workflows and scenario bundles</Link>
+          </li>
+          <li>
+            <Link href="/components/data-table-toolbar">New in v0.3.5: Wave C composites</Link>
           </li>
         </ul>
       </div>

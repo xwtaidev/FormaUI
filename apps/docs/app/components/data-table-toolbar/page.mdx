@@ -1,0 +1,49 @@
+# DataTableToolbar
+
+## Overview
+
+`DataTableToolbar` provides a reusable table header row with query input, result count, refresh action, and create
+action.
+
+## Install Command
+
+```bash
+npx formaui add data-table-toolbar
+```
+
+## Usage
+
+```tsx
+import { DataTableToolbar } from "@/components/composites/data-table-toolbar";
+
+export function CustomersToolbar() {
+  return (
+    <DataTableToolbar
+      resultCount={24}
+      onQueryChange={(value) => console.log(value)}
+      onRefresh={() => console.log("refresh")}
+      onAdd={() => console.log("add")}
+      addLabel="Add customer"
+    />
+  );
+}
+```
+
+## Scenario Guidance
+
+- Use above `DataTable` or list views with frequent search and add actions.
+- Keep query state controlled by parent pages for URL/server synchronization.
+- Pair with `pagination-bar` for complete table workflow coverage.
+
+## Dependencies
+
+Registry dependencies:
+
+- `lib-cn`
+- `button`
+- `input`
+
+## Source Code
+
+- `packages/components/src/composites/data-table-toolbar.tsx`
+- `registry/components/data-table-toolbar.json`
