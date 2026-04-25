@@ -1,7 +1,7 @@
 {
   "name": "dashboard-foundation",
   "type": "pack",
-  "description": "Dashboard layout starter with shell, metrics and table components.",
+  "description": "Dashboard starter with table controls, filters and empty-result handling.",
   "category": "dashboard",
   "scenarios": [
     "analytics",
@@ -16,7 +16,10 @@
     "page-header",
     "metric-card",
     "data-table",
-    "search-command"
+    "data-table-toolbar",
+    "filter-bar",
+    "pagination-bar",
+    "empty-search-state"
   ],
   "files": [],
   "version": "0.2.2",
@@ -30,5 +33,5 @@
   "sources": [
     "registry/packs/dashboard-foundation.json"
   ],
-  "checksum": "264d5cb2e0271e2059d7bc4b5279f9bc55baa52cdb817b6c0868a4648a126961"
+  "checksum": "082e894b8012deb7ec5227ac883f22dbd027db5f6c800ae8686fbd97c33cf76a"
 }

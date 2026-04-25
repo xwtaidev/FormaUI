@@ -27,6 +27,7 @@ async function createRegistryFixture() {
   const sourcesRoot = resolve(root, "sources");
 
   await mkdir(resolve(registryRoot, "components"), { recursive: true });
+  await mkdir(resolve(registryRoot, "packs"), { recursive: true });
   await mkdir(sourcesRoot, { recursive: true });
 
   await writeFile(
@@ -67,6 +68,27 @@ async function createRegistryFixture() {
         devDependencies: ["typescript"],
         registryDependencies: ["lib-cn"],
         files: [{ source: resolve(sourcesRoot, "button.tsx"), target: "components/primitives/button.tsx" }]
+      },
+      null,
+      2
+    ),
+    "utf8"
+  );
+
+  await writeFile(
+    resolve(registryRoot, "packs/dashboard-foundation.json"),
+    JSON.stringify(
+      {
+        name: "dashboard-foundation",
+        type: "pack",
+        category: "dashboard",
+        scenarios: ["analytics"],
+        complexity: "medium",
+        stability: "beta",
+        dependencies: [],
+        devDependencies: [],
+        registryDependencies: ["button"],
+        files: []
       },
       null,
       2
@@ -201,6 +223,28 @@ describe("formaui add install reliability", () => {
 
       expect(await exists(resolve(projectRoot, "components/primitives/button.tsx"))).toBe(false);
       expect(await exists(resolve(projectRoot, "components/lib/cn.ts"))).toBe(false);
+    } finally {
+      await rm(projectRoot, { recursive: true, force: true });
+      await rm(fixtureRoot, { recursive: true, force: true });
+    }
+  });
+
+  it("installs component graph when adding a pack", async () => {
+    const { root: fixtureRoot, registryRoot } = await createRegistryFixture();
+    const projectRoot = await createProjectFixture({ packageManager: "unknown" });
+
+    try {
+      await runAddCommand({
+        name: "dashboard-foundation",
+        kind: "pack",
+        cwd: projectRoot,
+        yes: true,
+        registryRoot,
+        installCommandRunner: async () => {}
+      });
+
+      expect(await exists(resolve(projectRoot, "components/primitives/button.tsx"))).toBe(true);
+      expect(await exists(resolve(projectRoot, "components/lib/cn.ts"))).toBe(true);
     } finally {
       await rm(projectRoot, { recursive: true, force: true });
       await rm(fixtureRoot, { recursive: true, force: true });

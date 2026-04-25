@@ -25,23 +25,52 @@ function packItem(options: {
 export const packRegistryItems: RegistryItem[] = [
   packItem({
     name: "dashboard-foundation",
-    description: "Dashboard layout starter with shell, metrics and table components.",
+    description: "Dashboard starter with table controls, filters and empty-result handling.",
     category: "dashboard",
     scenarios: ["analytics", "operations"],
-    registryDependencies: ["dashboard-shell", "page-header", "metric-card", "data-table", "search-command"]
+    registryDependencies: [
+      "dashboard-shell",
+      "page-header",
+      "metric-card",
+      "data-table",
+      "data-table-toolbar",
+      "filter-bar",
+      "pagination-bar",
+      "empty-search-state"
+    ]
   }),
   packItem({
     name: "data-entry",
-    description: "Form-oriented starter pack for account/settings data entry flows.",
+    description: "Form starter pack for onboarding/settings with date and status filtering flows.",
     category: "forms",
     scenarios: ["settings", "onboarding"],
-    registryDependencies: ["form-field", "input", "select", "checkbox", "button", "card"]
+    registryDependencies: [
+      "form-field",
+      "input",
+      "select",
+      "radio-group",
+      "checkbox",
+      "date-range-picker",
+      "filter-bar",
+      "button",
+      "card"
+    ]
   }),
   packItem({
     name: "feedback-loading",
-    description: "Status, dialog and empty-state building blocks for user feedback loops.",
+    description: "Loading and feedback pack for skeletons, progress, status and empty-result recovery.",
     category: "feedback",
     scenarios: ["loading", "empty-state", "notifications"],
-    registryDependencies: ["status-badge", "empty-state", "dialog", "tooltip", "badge", "button"]
+    registryDependencies: [
+      "skeleton",
+      "progress",
+      "status-badge",
+      "empty-state",
+      "empty-search-state",
+      "dialog",
+      "tooltip",
+      "badge",
+      "button"
+    ]
   })
 ];

@@ -1,7 +1,7 @@
 {
   "name": "feedback-loading",
   "type": "pack",
-  "description": "Status, dialog and empty-state building blocks for user feedback loops.",
+  "description": "Loading and feedback pack for skeletons, progress, status and empty-result recovery.",
   "category": "feedback",
   "scenarios": [
     "loading",
@@ -13,8 +13,11 @@
   "dependencies": [],
   "devDependencies": [],
   "registryDependencies": [
+    "skeleton",
+    "progress",
     "status-badge",
     "empty-state",
+    "empty-search-state",
     "dialog",
     "tooltip",
     "badge",
@@ -32,5 +35,5 @@
   "sources": [
     "registry/packs/feedback-loading.json"
   ],
-  "checksum": "7ee2c8d95a4479bd3bf4882b9eda8bc36b0c1a8fe89c8e5a6478b8c979e2b4e4"
+  "checksum": "0d9ae6f0a0a3aa2e31067d50851cecfb3fd7bfb76e97ec29a0f54eaeaa90b879"
 }
