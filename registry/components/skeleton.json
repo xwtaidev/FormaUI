@@ -1,0 +1,37 @@
+{
+  "name": "skeleton",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/skeleton.tsx",
+      "target": "components/primitives/skeleton.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/skeleton",
+  "tags": [
+    "component",
+    "skeleton"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/skeleton.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "ae1971283b54bd596362be0eece2496cc5456346bf397169c1ad0007621d947c"
+}

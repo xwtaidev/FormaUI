@@ -14,7 +14,12 @@ export interface RegistryCatalogEntry {
   item: RegistryItem;
 }
 
-const REGISTRY_KINDS: RegistryKind[] = ["component", "block", "template", "theme"];
+const REGISTRY_KINDS: RegistryKind[] = ["component", "block", "template", "theme", "pack"];
+
+interface RegistryMetadataFilters {
+  category?: string;
+  scenario?: string;
+}
 
 function normalizeRegistryRoot(registryRoot?: string) {
   return registryRoot ?? getDefaultRegistryRoot();
@@ -25,7 +30,8 @@ function sortCatalog(entries: RegistryCatalogEntry[]) {
     component: 0,
     block: 1,
     template: 2,
-    theme: 3
+    theme: 3,
+    pack: 4
   };
 
   return entries.sort((a, b) => {
@@ -49,9 +55,32 @@ async function listKindItemNames(kind: RegistryKind, registryRoot: string) {
   }
 }
 
+function normalizeFilterValue(value?: string) {
+  return value?.trim().toLowerCase();
+}
+
+function matchesMetadataFilters(entry: RegistryCatalogEntry, filters: RegistryMetadataFilters) {
+  const category = normalizeFilterValue(filters.category);
+  if (category && entry.item.category?.trim().toLowerCase() !== category) {
+    return false;
+  }
+
+  const scenario = normalizeFilterValue(filters.scenario);
+  if (scenario) {
+    const scenarios = (entry.item.scenarios ?? []).map((itemScenario) => itemScenario.trim().toLowerCase());
+    if (!scenarios.includes(scenario)) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
 export async function listRegistryItems(options: {
   registryRoot?: string;
   kind?: RegistryKind;
+  category?: string;
+  scenario?: string;
 } = {}) {
   const registryRoot = normalizeRegistryRoot(options.registryRoot);
   const kinds = options.kind ? [options.kind] : REGISTRY_KINDS;
@@ -69,7 +98,12 @@ export async function listRegistryItems(options: {
     }
   }
 
-  return sortCatalog(entries);
+  return sortCatalog(entries).filter((entry) =>
+    matchesMetadataFilters(entry, {
+      category: options.category,
+      scenario: options.scenario
+    })
+  );
 }
 
 function buildSearchText(entry: RegistryCatalogEntry) {
@@ -80,7 +114,11 @@ function buildSearchText(entry: RegistryCatalogEntry) {
     ...entry.item.dependencies,
     ...entry.item.devDependencies,
     ...entry.item.registryDependencies,
-    ...entry.item.files.map((file) => `${file.source} ${file.target}`)
+    ...entry.item.files.map((file) => `${file.source} ${file.target}`),
+    entry.item.category ?? "",
+    ...(entry.item.scenarios ?? []),
+    entry.item.complexity ?? "",
+    entry.item.stability ?? ""
   ];
   return segments.join(" ").toLowerCase();
 }
@@ -89,11 +127,15 @@ export async function searchRegistryItems(options: {
   query: string;
   registryRoot?: string;
   kind?: RegistryKind;
+  category?: string;
+  scenario?: string;
 }) {
   const normalizedQuery = options.query.trim().toLowerCase();
   const entries = await listRegistryItems({
     registryRoot: options.registryRoot,
-    kind: options.kind
+    kind: options.kind,
+    category: options.category,
+    scenario: options.scenario
   });
 
   if (normalizedQuery.length === 0) {
@@ -107,6 +149,8 @@ export async function getRegistryItemInfo(options: {
   name: string;
   registryRoot?: string;
   kind?: RegistryKind;
+  category?: string;
+  scenario?: string;
 }) {
   if (options.kind) {
     const item = await loadRegistryItem({
@@ -117,9 +161,13 @@ export async function getRegistryItemInfo(options: {
     return { kind: options.kind, item };
   }
 
-  const matches = (await listRegistryItems({ registryRoot: options.registryRoot })).filter(
-    (entry) => entry.item.name === options.name
-  );
+  const matches = (
+    await listRegistryItems({
+      registryRoot: options.registryRoot,
+      category: options.category,
+      scenario: options.scenario
+    })
+  ).filter((entry) => entry.item.name === options.name);
 
   if (matches.length === 0) {
     throw new Error(`Registry item not found: ${options.name}`);
@@ -150,6 +198,10 @@ export function formatRegistryInfoLines(entry: RegistryCatalogEntry) {
     `Name: ${entry.item.name}`,
     `Kind: ${entry.kind}`,
     `Type: ${entry.item.type}`,
+    `Category: ${entry.item.category ?? "none"}`,
+    `Scenarios: ${formatPackageList(entry.item.scenarios ?? [])}`,
+    `Complexity: ${entry.item.complexity ?? "none"}`,
+    `Stability: ${entry.item.stability ?? "none"}`,
     `Dependencies: ${formatPackageList(entry.item.dependencies)}`,
     `Dev dependencies: ${formatPackageList(entry.item.devDependencies)}`,
     `Registry dependencies: ${formatPackageList(entry.item.registryDependencies)}`,

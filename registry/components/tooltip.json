@@ -28,5 +28,11 @@
   "sources": [
     "registry/components/tooltip.json"
   ],
-  "checksum": "1e97c9a6773a1dadc67ebe3875d8b9366b69aabfeb7fc7093b17d282b4ce7841"
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "bea792e1c01b79bb845b71627dd4d7855f3a020971903da0632f3b724aa2cc16"
 }

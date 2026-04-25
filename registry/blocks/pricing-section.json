@@ -29,5 +29,11 @@
   "sources": [
     "registry/blocks/pricing-section.json"
   ],
-  "checksum": "466430e7b2e490909313d17fe3faa15018ed94b9213c23cdf4e845cb6c6f35d6"
+  "category": "block",
+  "scenarios": [
+    "block"
+  ],
+  "complexity": "medium",
+  "stability": "stable",
+  "checksum": "0ffc282e885173a8d513207f8f897249fe5a054b440156559a275004d55a96b4"
 }

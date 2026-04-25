@@ -2,9 +2,13 @@ import { existsSync } from "node:fs";
 import { resolve } from "node:path";
 
 import {
+  REGISTRY_ITEM_COMPLEXITIES,
+  REGISTRY_ITEM_STABILITIES,
   REGISTRY_ITEM_TYPES,
   type RegistryFile,
+  type RegistryItemComplexity,
   type RegistryItem,
+  type RegistryItemStability,
   type RegistryItemType
 } from "./schema.js";
 
@@ -45,6 +49,20 @@ function isSemverVersion(value: string) {
 
 function isSha256Checksum(value: string) {
   return /^[a-fA-F0-9]{64}$/u.test(value);
+}
+
+function isComplexity(value: unknown): value is RegistryItemComplexity {
+  return (
+    typeof value === "string" &&
+    REGISTRY_ITEM_COMPLEXITIES.includes(value as RegistryItemComplexity)
+  );
+}
+
+function isStability(value: unknown): value is RegistryItemStability {
+  return (
+    typeof value === "string" &&
+    REGISTRY_ITEM_STABILITIES.includes(value as RegistryItemStability)
+  );
 }
 
 function isRegistryFile(value: unknown): value is RegistryFile {
@@ -128,6 +146,34 @@ export function validateRegistryItem(item: unknown, options: ValidateOptions = {
     });
   }
 
+  if (!isOptionalNonEmptyString(candidate.category)) {
+    issues.push({
+      field: "category",
+      message: "category must be a non-empty string when provided."
+    });
+  }
+
+  if (!isOptionalStringArray(candidate.scenarios)) {
+    issues.push({
+      field: "scenarios",
+      message: "scenarios must be an array of non-empty strings when provided."
+    });
+  }
+
+  if (!(candidate.complexity === undefined || isComplexity(candidate.complexity))) {
+    issues.push({
+      field: "complexity",
+      message: `complexity must be one of: ${REGISTRY_ITEM_COMPLEXITIES.join(", ")}.`
+    });
+  }
+
+  if (!(candidate.stability === undefined || isStability(candidate.stability))) {
+    issues.push({
+      field: "stability",
+      message: `stability must be one of: ${REGISTRY_ITEM_STABILITIES.join(", ")}.`
+    });
+  }
+
   if (!isStringArray(candidate.dependencies)) {
     issues.push({
       field: "dependencies",
@@ -149,8 +195,12 @@ export function validateRegistryItem(item: unknown, options: ValidateOptions = {
     });
   }
 
-  if (!Array.isArray(candidate.files) || candidate.files.length === 0) {
-    issues.push({ field: "files", message: "files must be a non-empty array." });
+  const requiresFiles = candidate.type !== "pack";
+  if (!Array.isArray(candidate.files) || (requiresFiles && candidate.files.length === 0)) {
+    issues.push({
+      field: "files",
+      message: requiresFiles ? "files must be a non-empty array." : "files must be an array."
+    });
   } else {
     candidate.files.forEach((entry, index) => {
       if (!isRegistryFile(entry)) {

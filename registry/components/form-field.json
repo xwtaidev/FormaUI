@@ -27,5 +27,11 @@
   "sources": [
     "registry/components/form-field.json"
   ],
-  "checksum": "ab576dbb291699bbd9a4454f6f553b3c97a059cb580ab9b1875f49c218914b22"
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "b298f7e71aa00e4c232e4a76e1d9f21b0aa43c226f5370da060d03b57ded0d91"
 }

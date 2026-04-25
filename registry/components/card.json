@@ -27,5 +27,11 @@
   "sources": [
     "registry/components/card.json"
   ],
-  "checksum": "44d0c6538e3f6796a972ae283c8a6258db6e2732cedf0fd57b1e163492e75336"
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "2cea69127906c86e91d40f91869d9d22faffd30847bd7c6033df3e891fc70063"
 }

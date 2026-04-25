@@ -1,0 +1,38 @@
+{
+  "name": "empty-search-state",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn",
+    "button"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/composites/empty-search-state.tsx",
+      "target": "components/composites/empty-search-state.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/empty-search-state",
+  "tags": [
+    "component",
+    "empty-search-state"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/empty-search-state.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "17fcc29333a6d8cfab6c05225734e5f2e7f25c84ae12417d111522ead4c77d61"
+}

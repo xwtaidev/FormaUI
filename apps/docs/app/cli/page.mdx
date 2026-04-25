@@ -1,6 +1,6 @@
 # CLI
 
-FormaUI v0.2 CLI focuses on reliable install flows, discoverability, and diagnostics.
+FormaUI v0.3 CLI focuses on reliable install flows, metadata-driven discoverability, pack workflows, and diagnostics.
 
 ## Core Commands
 
@@ -10,9 +10,12 @@ formaui add <name>
 formaui block add <name>
 formaui template add <name>
 formaui theme add <name>
-formaui list [components|blocks|templates|themes]
-formaui search <keyword>
-formaui info <name>
+formaui pack list
+formaui pack info <name>
+formaui pack add <name>
+formaui list [--kind <component|block|template|theme|pack>]
+formaui search <keyword> [--kind <...>] [--category <name>] [--scenario <name>]
+formaui info <name> [--kind <...>] [--category <name>] [--scenario <name>]
 formaui doctor
 ```
 
@@ -22,6 +25,8 @@ formaui doctor
 - `--yes`: non-interactive overwrite confirmation.
 - `--registry <url|path>`: use remote or local registry source.
 - `--dry-run`: print install plan only, no file writes.
+- `--kind <...>`: constrain list/search/info to a specific registry bucket.
+- `--category <name>` / `--scenario <name>`: query v3 metadata fields.
 
 ## `formaui init`
 
@@ -50,6 +55,10 @@ Installs template entry files and dependencies.
 ## `formaui theme add <name>`
 
 Installs a theme CSS registry item.
+
+## `formaui pack <list|info|add>`
+
+Discovers and installs scenario packs (`dashboard-foundation`, `data-entry`, `feedback-loading`).
 
 ## Conflict Behavior
 

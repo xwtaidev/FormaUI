@@ -25,5 +25,11 @@
   "sources": [
     "registry/components/app-sidebar.json"
   ],
-  "checksum": "54ad98ec1cf2945add982b546582e0327a79a49693bc914a974aca94385c0033"
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "40db1d63fa5ec24778a9d18642127c4463fe59fb014ec8900e2d50c3c7e1083a"
 }

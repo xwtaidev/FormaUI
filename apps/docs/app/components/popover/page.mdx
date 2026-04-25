@@ -1,0 +1,40 @@
+# Popover
+
+## Overview
+
+`Popover` is a focused overlay for contextual actions, short forms, or configuration controls.
+
+## Installation
+
+```bash
+npx formaui add popover
+```
+
+## Usage
+
+```tsx
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/primitives/popover";
+import { Button } from "@/components/primitives/button";
+
+export function FiltersPopover() {
+  return (
+    <Popover>
+      <PopoverTrigger asChild>
+        <Button variant="outline">Open Filters</Button>
+      </PopoverTrigger>
+      <PopoverContent>Filter controls go here.</PopoverContent>
+    </Popover>
+  );
+}
+```
+
+## Accessibility
+
+- Uses Radix focus management for layered content.
+- Supports Escape to dismiss and returns focus to trigger.
+- Works with keyboard navigation inside popover content.
+
+## Source Code
+
+- `packages/components/src/primitives/popover.tsx`
+- `registry/components/popover.json`

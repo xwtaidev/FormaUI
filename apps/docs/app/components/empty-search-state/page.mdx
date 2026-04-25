@@ -1,0 +1,47 @@
+# EmptySearchState
+
+## Overview
+
+`EmptySearchState` is a focused empty-result UI for query-based lists with clear and create actions.
+
+## Install Command
+
+```bash
+npx formaui add empty-search-state
+```
+
+## Usage
+
+```tsx
+import { EmptySearchState } from "@/components/composites/empty-search-state";
+
+export function NoResultPanel() {
+  return (
+    <EmptySearchState
+      query="billing owner"
+      onClear={() => console.log("clear")}
+      onCreate={() => console.log("create")}
+      clearLabel="Reset search"
+      createLabel="Add teammate"
+    />
+  );
+}
+```
+
+## Scenario Guidance
+
+- Use when list/table filters return no matches.
+- Keep actions explicit: one to recover query scope, one to add new entities.
+- Pair with `data-table-toolbar` and `filter-bar` for dashboard flows.
+
+## Dependencies
+
+Registry dependencies:
+
+- `lib-cn`
+- `button`
+
+## Source Code
+
+- `packages/components/src/composites/empty-search-state.tsx`
+- `registry/components/empty-search-state.json`

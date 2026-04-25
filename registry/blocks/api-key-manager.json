@@ -29,5 +29,11 @@
   "sources": [
     "registry/blocks/api-key-manager.json"
   ],
-  "checksum": "b0c201b9a2d0c8670ac5a7fe11fd89dde31379ce2ca7d7f88a6164af16cc83dc"
+  "category": "block",
+  "scenarios": [
+    "block"
+  ],
+  "complexity": "medium",
+  "stability": "stable",
+  "checksum": "60905443bce651e9ac7aca2561eb392c3a88b343dea434e2726925b85cb38f2e"
 }

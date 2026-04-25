@@ -1,0 +1,37 @@
+{
+  "name": "dashboard-foundation",
+  "type": "pack",
+  "description": "Dashboard starter with table controls, filters and empty-result handling.",
+  "category": "dashboard",
+  "scenarios": [
+    "analytics",
+    "operations"
+  ],
+  "complexity": "medium",
+  "stability": "beta",
+  "dependencies": [],
+  "devDependencies": [],
+  "registryDependencies": [
+    "dashboard-shell",
+    "page-header",
+    "metric-card",
+    "data-table",
+    "data-table-toolbar",
+    "filter-bar",
+    "pagination-bar",
+    "empty-search-state"
+  ],
+  "files": [],
+  "version": "0.2.2",
+  "tags": [
+    "pack",
+    "dashboard-foundation"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/packs/dashboard-foundation.json"
+  ],
+  "checksum": "082e894b8012deb7ec5227ac883f22dbd027db5f6c800ae8686fbd97c33cf76a"
+}

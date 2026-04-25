@@ -30,5 +30,11 @@
   "sources": [
     "registry/blocks/model-selector.json"
   ],
-  "checksum": "d4c0df086448343ce203d32d4267ca80c38fbb27d947656126351628d0280a86"
+  "category": "block",
+  "scenarios": [
+    "block"
+  ],
+  "complexity": "medium",
+  "stability": "stable",
+  "checksum": "030ad988b064825a535af8d769c4de2672f34d3e3bb0ba62b22728181151584c"
 }

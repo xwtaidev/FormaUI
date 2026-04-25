@@ -1,0 +1,38 @@
+{
+  "name": "hover-card",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "@radix-ui/react-hover-card"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/hover-card.tsx",
+      "target": "components/primitives/hover-card.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/hover-card",
+  "tags": [
+    "component",
+    "hover-card"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/hover-card.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "95ff1b16c880d9f55e0665147c2223d2faeb2fde4afb6d43436cd9be3086992f"
+}

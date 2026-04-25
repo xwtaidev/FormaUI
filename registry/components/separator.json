@@ -1,0 +1,38 @@
+{
+  "name": "separator",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "@radix-ui/react-separator"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/separator.tsx",
+      "target": "components/primitives/separator.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/separator",
+  "tags": [
+    "component",
+    "separator"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/separator.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "9531476ac9804a92f496151d09059dd8fe8ff40669a2a8375502ab9762b82113"
+}

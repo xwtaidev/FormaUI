@@ -27,5 +27,11 @@
   "sources": [
     "registry/components/status-badge.json"
   ],
-  "checksum": "e52708745bddced4e1995059e23607ab43012f78fd1d6de4207267ee04abf965"
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "49550a19991297eede69c40ab67fba71bf0f8fcdbc5441cea0e56e05530e46b0"
 }

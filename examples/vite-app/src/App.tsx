@@ -6,7 +6,32 @@ import {
   demoModelOptions,
   demoTeamMembers
 } from "@formaui/blocks";
-import { Button, Input, SearchCommand } from "@formaui/components";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+  Button,
+  DataTable,
+  DataTableToolbar,
+  DateRangePicker,
+  EmptySearchState,
+  FilterBar,
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+  Input,
+  PaginationBar,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+  Progress,
+  RadioGroup,
+  RadioGroupItem,
+  SearchCommand,
+  Separator,
+  Skeleton
+} from "@formaui/components";
 
 function queryModels(query: string) {
   const normalized = query.trim().toLowerCase();
@@ -21,15 +46,38 @@ function queryModels(query: string) {
 
 export default function App() {
   const [query, setQuery] = useState("");
+  const [healthStatus, setHealthStatus] = useState("healthy");
+  const [tableQuery, setTableQuery] = useState("");
+  const [tablePage, setTablePage] = useState(1);
+  const [tablePageSize, setTablePageSize] = useState(2);
+  const [dateRange, setDateRange] = useState({ from: "2026-04-01", to: "2026-04-30" });
+  const [filters, setFilters] = useState({ query: "", status: "all", range: { from: "", to: "" } });
   const models = useMemo(() => queryModels(query), [query]);
+  const filteredMembers = useMemo(() => {
+    const normalized = tableQuery.trim().toLowerCase();
+    if (!normalized) {
+      return demoTeamMembers;
+    }
+    return demoTeamMembers.filter((member) => {
+      return (
+        member.name.toLowerCase().includes(normalized) ||
+        member.role.toLowerCase().includes(normalized) ||
+        member.team.toLowerCase().includes(normalized)
+      );
+    });
+  }, [tableQuery]);
+  const pagedMembers = useMemo(() => {
+    const start = (tablePage - 1) * tablePageSize;
+    return filteredMembers.slice(start, start + tablePageSize);
+  }, [filteredMembers, tablePage, tablePageSize]);
 
   return (
     <main className="mx-auto flex min-h-screen w-full max-w-6xl flex-col gap-6 p-6 lg:p-10">
       <header className="space-y-4 rounded-xl border border-border bg-card p-6">
-        <p className="text-sm font-medium uppercase tracking-wide text-muted-foreground">FormaUI v0.2</p>
+        <p className="text-sm font-medium uppercase tracking-wide text-muted-foreground">FormaUI v0.3.5</p>
         <h1 className="text-3xl font-semibold tracking-tight">Vite Integration Example</h1>
         <p className="max-w-3xl text-sm text-muted-foreground">
-          This workspace demonstrates using FormaUI components and blocks in a Vite + React + TypeScript
+          This workspace demonstrates using FormaUI components, packs, and blocks in a Vite + React + TypeScript
           application.
         </p>
         <div className="flex flex-wrap items-center gap-3">
@@ -60,6 +108,148 @@ export default function App() {
             onSelect={(item) => setQuery(item.label)}
           />
         </div>
+      </section>
+
+      <section className="space-y-3 rounded-xl border border-border bg-card p-6">
+        <h2 className="text-lg font-semibold">Wave A Primitives</h2>
+        <p className="text-sm text-muted-foreground">
+          `accordion`, `popover`, `hover-card`, and `progress` cover progressive disclosure, contextual overlays, and
+          loading feedback.
+        </p>
+        <div className="grid gap-4 lg:grid-cols-2">
+          <div className="space-y-3">
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="wave-a">
+                <AccordionTrigger>What ships in Wave A?</AccordionTrigger>
+                <AccordionContent>
+                  Four primitives focused on overlays, status communication, and compact information density.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <div className="space-y-2">
+              <p className="text-sm text-muted-foreground">Integration progress</p>
+              <Progress value={64} />
+            </div>
+          </div>
+          <div className="flex flex-wrap items-center gap-3">
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button variant="outline">Open quick settings</Button>
+              </PopoverTrigger>
+              <PopoverContent className="w-64">
+                Tune rollout settings and deployment windows for this workspace.
+              </PopoverContent>
+            </Popover>
+            <HoverCard>
+              <HoverCardTrigger asChild>
+                <Button variant="ghost">@release-bot</Button>
+              </HoverCardTrigger>
+              <HoverCardContent className="w-64">
+                Last run passed lint, typecheck, tests, and registry build.
+              </HoverCardContent>
+            </HoverCard>
+          </div>
+        </div>
+      </section>
+
+      <section className="space-y-3 rounded-xl border border-border bg-card p-6">
+        <h2 className="text-lg font-semibold">Wave B Components</h2>
+        <p className="text-sm text-muted-foreground">
+          `separator`, `skeleton`, `radio-group`, `date-range-picker`, and `filter-bar` target dashboard query
+          workflows.
+        </p>
+        <div className="grid gap-4 lg:grid-cols-2">
+          <div className="space-y-3">
+            <div className="space-y-2 rounded-md border border-border p-3">
+              <Skeleton className="h-4 w-40" />
+              <Skeleton className="h-4 w-full" />
+              <Skeleton className="h-4 w-2/3" />
+            </div>
+            <Separator />
+            <RadioGroup value={healthStatus} onValueChange={setHealthStatus} className="flex gap-4">
+              <label htmlFor="health-healthy" className="inline-flex items-center gap-2 text-sm">
+                <RadioGroupItem id="health-healthy" value="healthy" />
+                Healthy
+              </label>
+              <label htmlFor="health-warning" className="inline-flex items-center gap-2 text-sm">
+                <RadioGroupItem id="health-warning" value="warning" />
+                Warning
+              </label>
+              <label htmlFor="health-risk" className="inline-flex items-center gap-2 text-sm">
+                <RadioGroupItem id="health-risk" value="risk" />
+                Risk
+              </label>
+            </RadioGroup>
+            <p className="text-xs text-muted-foreground">Selected health status: {healthStatus}</p>
+          </div>
+          <div className="space-y-3">
+            <DateRangePicker value={dateRange} onChange={setDateRange} />
+            <p className="text-xs text-muted-foreground">
+              Window: {dateRange.from || "unset"} → {dateRange.to || "unset"}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="space-y-3 rounded-xl border border-border bg-card p-6">
+        <h2 className="text-lg font-semibold">FilterBar</h2>
+        <FilterBar
+          onChange={setFilters}
+          onReset={() => setFilters({ query: "", status: "all", range: { from: "", to: "" } })}
+        />
+        <p className="text-xs text-muted-foreground">
+          Filters: query={filters.query || "none"}, status={filters.status}, from={filters.range.from || "unset"},
+          to={filters.range.to || "unset"}
+        </p>
+      </section>
+
+      <section className="space-y-3 rounded-xl border border-border bg-card p-6">
+        <h2 className="text-lg font-semibold">Pack Scenario: dashboard-foundation</h2>
+        <p className="text-sm text-muted-foreground">
+          Demonstrates `npx formaui pack add dashboard-foundation` with table query, pagination, and empty-result
+          fallback.
+        </p>
+        <DataTableToolbar
+          value={tableQuery}
+          resultCount={filteredMembers.length}
+          onQueryChange={(value) => {
+            setTableQuery(value);
+            setTablePage(1);
+          }}
+          onRefresh={() => setTablePage(1)}
+          onAdd={() => setQuery("add-user")}
+          addLabel="Add member"
+        />
+        {filteredMembers.length === 0 ? (
+          <EmptySearchState
+            query={tableQuery}
+            clearLabel="Clear query"
+            createLabel="Create member"
+            onClear={() => {
+              setTableQuery("");
+              setTablePage(1);
+            }}
+            onCreate={() => setQuery("create-member")}
+          />
+        ) : (
+          <DataTable
+            columns={[
+              { key: "name", header: "Name", sortable: true },
+              { key: "role", header: "Role", sortable: true },
+              { key: "team", header: "Team" },
+              { key: "status", header: "Status" }
+            ]}
+            rows={pagedMembers}
+          />
+        )}
+        <PaginationBar
+          totalItems={filteredMembers.length}
+          page={tablePage}
+          pageSize={tablePageSize}
+          pageSizeOptions={[1, 2, 4]}
+          onPageChange={setTablePage}
+          onPageSizeChange={setTablePageSize}
+        />
       </section>
 
       <section className="grid gap-6 lg:grid-cols-2">

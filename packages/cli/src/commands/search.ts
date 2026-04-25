@@ -7,6 +7,8 @@ export interface SearchCommandOptions {
   logger?: Logger;
   registryRoot?: string;
   kind?: RegistryKind;
+  category?: string;
+  scenario?: string;
 }
 
 export async function runSearchCommand(options: SearchCommandOptions) {
@@ -14,7 +16,9 @@ export async function runSearchCommand(options: SearchCommandOptions) {
   const entries = await searchRegistryItems({
     query: options.query,
     registryRoot: options.registryRoot,
-    kind: options.kind
+    kind: options.kind,
+    category: options.category,
+    scenario: options.scenario
   });
 
   if (entries.length === 0) {

@@ -38,5 +38,11 @@
   "sources": [
     "registry/templates/ai-console-lite.json"
   ],
-  "checksum": "306413c3cb7701909882aaef6a6f1b486054816eed710c3caad6b3d35f166667"
+  "category": "template",
+  "scenarios": [
+    "template"
+  ],
+  "complexity": "high",
+  "stability": "stable",
+  "checksum": "1abfc266cb48450fc1d0fadb07eef35b52cd4277705ba3f67456b2eb7192bf67"
 }

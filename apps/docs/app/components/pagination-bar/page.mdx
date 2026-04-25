@@ -1,0 +1,47 @@
+# PaginationBar
+
+## Overview
+
+`PaginationBar` adds page navigation and page-size controls for dataset views.
+
+## Install Command
+
+```bash
+npx formaui add pagination-bar
+```
+
+## Usage
+
+```tsx
+import { PaginationBar } from "@/components/composites/pagination-bar";
+
+export function TeamPagination() {
+  return (
+    <PaginationBar
+      totalItems={128}
+      defaultPage={1}
+      defaultPageSize={20}
+      onPageChange={(page) => console.log(page)}
+      onPageSizeChange={(size) => console.log(size)}
+    />
+  );
+}
+```
+
+## Scenario Guidance
+
+- Use under tables/lists where users need clear page boundaries.
+- Keep `page` and `pageSize` in route/query state for shareable URLs.
+- Use with `data-table-toolbar` to keep search + pagination cohesive.
+
+## Dependencies
+
+Registry dependencies:
+
+- `lib-cn`
+- `button`
+
+## Source Code
+
+- `packages/components/src/composites/pagination-bar.tsx`
+- `registry/components/pagination-bar.json`

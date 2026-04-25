@@ -1,7 +1,32 @@
 {
-  "generatedAt": "2026-04-25T09:28:17.378Z",
-  "total": 40,
+  "generatedAt": "2026-04-25T13:45:14.103Z",
+  "total": 55,
   "items": [
+    {
+      "kind": "component",
+      "name": "accordion",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/accordion.json",
+      "description": "component/accordion",
+      "tags": [
+        "component",
+        "accordion"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/accordion.json"
+      ],
+      "checksum": "7427a91d327558559aae68b5aa37e1f83eed474bae862df778147734a724e5df",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
     {
       "kind": "component",
       "name": "app-sidebar",
@@ -19,7 +44,13 @@
       "sources": [
         "registry/components/app-sidebar.json"
       ],
-      "checksum": "54ad98ec1cf2945add982b546582e0327a79a49693bc914a974aca94385c0033"
+      "checksum": "40db1d63fa5ec24778a9d18642127c4463fe59fb014ec8900e2d50c3c7e1083a",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
     },
     {
       "kind": "component",
@@ -38,7 +69,13 @@
       "sources": [
         "registry/components/avatar.json"
       ],
-      "checksum": "1cee526d688865185f5bd4426767995b314cda62294b3478190f1d28167093cc"
+      "checksum": "fce77803a0fd2eb2a7a06d3c96bd2ba34f73dcdd197c1f3f8bfec23446b16d25",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
     },
     {
       "kind": "component",
@@ -57,7 +94,13 @@
       "sources": [
         "registry/components/badge.json"
       ],
-      "checksum": "9aafdec0d5ffb4a46b78c2309e1fa820bc6dad74967af4ab7cb4b096106f4ef2"
+      "checksum": "3bd5c4e9ce253a3815a09677eba9d4332eca29c5502c2b7be0e1998c6f854ab1",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
     },
     {
       "kind": "component",
@@ -76,7 +119,13 @@
       "sources": [
         "registry/components/button.json"
       ],
-      "checksum": "0c646789d91a2bcd4973868e9290ac1f0c98efeed3543e7e71850adbf0555fe0"
+      "checksum": "b002303ee8bc20f6bfa48fa815dd8dddf2916b45b144a849f9e48ed141b2bef8",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
     },
     {
       "kind": "component",
@@ -95,7 +144,13 @@
       "sources": [
         "registry/components/card.json"
       ],
-      "checksum": "44d0c6538e3f6796a972ae283c8a6258db6e2732cedf0fd57b1e163492e75336"
+      "checksum": "2cea69127906c86e91d40f91869d9d22faffd30847bd7c6033df3e891fc70063",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
     },
     {
       "kind": "component",
@@ -114,7 +169,13 @@
       "sources": [
         "registry/components/checkbox.json"
       ],
-      "checksum": "5e7d1ea16004be8c30cd8d8ec123fe9afc7b0f460d9ebb161c32abd758dfcf86"
+      "checksum": "6bd72eb6cefc7dd5e85e914a2cdea06ab16dd31cef2b370cd04bb913236586d6",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
     },
     {
       "kind": "component",
@@ -133,7 +194,63 @@
       "sources": [
         "registry/components/data-table.json"
       ],
-      "checksum": "85d5420699477539622d1fd021621d73a565b78fa7f7a9c3871b5e7a276f6c74"
+      "checksum": "1d92b6f3291a60fa87929dce9ab20e2c4b74a9c7017303ef89d695ab5f293ad7",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "data-table-toolbar",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/data-table-toolbar.json",
+      "description": "component/data-table-toolbar",
+      "tags": [
+        "component",
+        "data-table-toolbar"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/data-table-toolbar.json"
+      ],
+      "checksum": "602c8f430ab1c8ac5c9c2aa3027dfe1916245951d245708a81f5f996f7516433",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "date-range-picker",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/date-range-picker.json",
+      "description": "component/date-range-picker",
+      "tags": [
+        "component",
+        "date-range-picker"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/date-range-picker.json"
+      ],
+      "checksum": "446d2b64c2fa0e1ac8ccbb60515515db3a784c6e857ec06197137db52cdd9f0b",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
     },
     {
       "kind": "component",
@@ -152,7 +269,13 @@
       "sources": [
         "registry/components/dialog.json"
       ],
-      "checksum": "1ac2915a37309c54994a7cfcc3529458d7f4e701ddbde4335d460212eae60f75"
+      "checksum": "48804303bcb2609de1e3e00e5aafa2a2599bc6f782650f219313d65b4ac55804",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
     },
     {
       "kind": "component",
@@ -171,7 +294,38 @@
       "sources": [
         "registry/components/dropdown-menu.json"
       ],
-      "checksum": "2393cbcbc799dc5734dca90d81b88ee2f32c96d4b3ec957a3c6d16715300e051"
+      "checksum": "d677f7d170cd6cea45cebefcdb23e9910bab49f9c69a487a02c902968b78f868",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "empty-search-state",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/empty-search-state.json",
+      "description": "component/empty-search-state",
+      "tags": [
+        "component",
+        "empty-search-state"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/empty-search-state.json"
+      ],
+      "checksum": "17fcc29333a6d8cfab6c05225734e5f2e7f25c84ae12417d111522ead4c77d61",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
     },
     {
       "kind": "component",
@@ -190,7 +344,38 @@
       "sources": [
         "registry/components/empty-state.json"
       ],
-      "checksum": "0e087783e52d19806f0cd044be425dc2e1a31db305698f48d124035e0717ea53"
+      "checksum": "2b5b701ff8d0a45897df3e1d868ad341178cff6635db7ce45ddde2a602ddfbb6",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "filter-bar",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/filter-bar.json",
+      "description": "component/filter-bar",
+      "tags": [
+        "component",
+        "filter-bar"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/filter-bar.json"
+      ],
+      "checksum": "96b6a11219acbe56f216335aba323e9d360de39cc5a0722fb05ab6e529586036",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
     },
     {
       "kind": "component",
@@ -209,7 +394,38 @@
       "sources": [
         "registry/components/form-field.json"
       ],
-      "checksum": "ab576dbb291699bbd9a4454f6f553b3c97a059cb580ab9b1875f49c218914b22"
+      "checksum": "b298f7e71aa00e4c232e4a76e1d9f21b0aa43c226f5370da060d03b57ded0d91",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "hover-card",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/hover-card.json",
+      "description": "component/hover-card",
+      "tags": [
+        "component",
+        "hover-card"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/hover-card.json"
+      ],
+      "checksum": "95ff1b16c880d9f55e0665147c2223d2faeb2fde4afb6d43436cd9be3086992f",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
     },
     {
       "kind": "component",
@@ -228,7 +444,13 @@
       "sources": [
         "registry/components/input.json"
       ],
-      "checksum": "a57211bd9e6fca6a86166ec3aa42edf338efa73ccaa8fe2d088f31f94d8df4e3"
+      "checksum": "6488b70ec7ae7fa3cdb8ee18e0b32a9380ff5f1afafcf06f3226b928decf5f2c",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
     },
     {
       "kind": "component",
@@ -247,7 +469,13 @@
       "sources": [
         "registry/components/lib-cn.json"
       ],
-      "checksum": "296aa16446d83537b325d2d3fbcfa326c5d9fdcf037e58c72368c8090f5601e9"
+      "checksum": "6147f8c02c57eb4c809a030b8730ee163ffd7aba1fc1ec3cb8016df4a5e9a2a1",
+      "category": "component",
+      "scenarios": [
+        "lib"
+      ],
+      "complexity": "low",
+      "stability": "stable"
     },
     {
       "kind": "component",
@@ -266,7 +494,13 @@
       "sources": [
         "registry/components/metric-card.json"
       ],
-      "checksum": "cab61a21bb6571c1c1dc94a863fcdcd5b2b9d9cdb65dc5108b1d97e7f842eab7"
+      "checksum": "4ec25e473c2c455066c97457fc0ffd466552710f01aa6775cfed24ba8a96e345",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
     },
     {
       "kind": "component",
@@ -285,7 +519,113 @@
       "sources": [
         "registry/components/page-header.json"
       ],
-      "checksum": "abcbc760d8ef6bb3b25d0db4d382f14dd2a2de31ef876416556c52b390a5c531"
+      "checksum": "44066c728bbac87dc33d7b37a75da7a3df144d990539effdb9b0707e5234a9e1",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "pagination-bar",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/pagination-bar.json",
+      "description": "component/pagination-bar",
+      "tags": [
+        "component",
+        "pagination-bar"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/pagination-bar.json"
+      ],
+      "checksum": "39bdad3212dcfe3ef5e9f864a645b8c4373a16b3973acd20ca111ebf6d01a0c7",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "popover",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/popover.json",
+      "description": "component/popover",
+      "tags": [
+        "component",
+        "popover"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/popover.json"
+      ],
+      "checksum": "618dec76e69470c5ccc96c6ca8a6d33e48d1bb88b7614c6b0d786f1946c4d0c7",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "progress",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/progress.json",
+      "description": "component/progress",
+      "tags": [
+        "component",
+        "progress"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/progress.json"
+      ],
+      "checksum": "6bfc21e21bbd1b78f62ace271bef949d6a3419aec4e01808c623bf5d4fd3c8d8",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "radio-group",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/radio-group.json",
+      "description": "component/radio-group",
+      "tags": [
+        "component",
+        "radio-group"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/radio-group.json"
+      ],
+      "checksum": "5b1a2c854df41a4aa1dc60e9fdf7d7473dab498075a7555849ad5fb0a460e558",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
     },
     {
       "kind": "component",
@@ -304,7 +644,13 @@
       "sources": [
         "registry/components/search-command.json"
       ],
-      "checksum": "0e47f756a29d007911b875b2b77056ced311a6bb114844ae81c8d2daef90b9c0"
+      "checksum": "885d9c30bd73767ce095206f1122814ddf4c2546fbadb06823fa38a25939a73c",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
     },
     {
       "kind": "component",
@@ -323,7 +669,63 @@
       "sources": [
         "registry/components/select.json"
       ],
-      "checksum": "bebf00092323832e8746ea4b40e0d457b1b1c7a3f56412439031d485c6b3727b"
+      "checksum": "dd2edecbf366aa5b546edf8eaecbfab355848c3498b73ccef6acc76ee7849e08",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "separator",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/separator.json",
+      "description": "component/separator",
+      "tags": [
+        "component",
+        "separator"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/separator.json"
+      ],
+      "checksum": "9531476ac9804a92f496151d09059dd8fe8ff40669a2a8375502ab9762b82113",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "skeleton",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/skeleton.json",
+      "description": "component/skeleton",
+      "tags": [
+        "component",
+        "skeleton"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/skeleton.json"
+      ],
+      "checksum": "ae1971283b54bd596362be0eece2496cc5456346bf397169c1ad0007621d947c",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
     },
     {
       "kind": "component",
@@ -342,7 +744,13 @@
       "sources": [
         "registry/components/status-badge.json"
       ],
-      "checksum": "e52708745bddced4e1995059e23607ab43012f78fd1d6de4207267ee04abf965"
+      "checksum": "49550a19991297eede69c40ab67fba71bf0f8fcdbc5441cea0e56e05530e46b0",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
     },
     {
       "kind": "component",
@@ -361,7 +769,13 @@
       "sources": [
         "registry/components/switch.json"
       ],
-      "checksum": "7b8bd847a6f1ddae8f52516140c358ea93956bf57205c5d71f82514c1cb1509e"
+      "checksum": "b90ab547b80c1e63addfaea10fdfe93925475a41e83450caf1a1ac66b5e90d4e",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
     },
     {
       "kind": "component",
@@ -380,7 +794,13 @@
       "sources": [
         "registry/components/tabs.json"
       ],
-      "checksum": "59d07617b605d19b9a2d46477a88be2f76c2702fb7abf7fd8131b3ee262d7e60"
+      "checksum": "2caf288b2b5d03035294041ed2ff81e732cb7c986e3a2248e0d5f5207437ff12",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
     },
     {
       "kind": "component",
@@ -399,7 +819,13 @@
       "sources": [
         "registry/components/textarea.json"
       ],
-      "checksum": "e9b613a3fdf6f97b838b9f22ce2913e6fa062b971f0ad87d7132ff671f201a79"
+      "checksum": "9dc7e36c5c1d7a2899d887967d5b216c7fa7484108ec615d4a20c5b144e955d8",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
     },
     {
       "kind": "component",
@@ -418,7 +844,13 @@
       "sources": [
         "registry/components/theme-switcher.json"
       ],
-      "checksum": "5ec257651bddb60e506983700e4b171dc7b1ac62f2b52e4f3d8c449b7a199d7d"
+      "checksum": "dd5f25fa0ce36437f19e833ed771ed3429e24c99a95e582eaa6fa977cf972194",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
     },
     {
       "kind": "component",
@@ -437,7 +869,13 @@
       "sources": [
         "registry/components/tooltip.json"
       ],
-      "checksum": "1e97c9a6773a1dadc67ebe3875d8b9366b69aabfeb7fc7093b17d282b4ce7841"
+      "checksum": "bea792e1c01b79bb845b71627dd4d7855f3a020971903da0632f3b724aa2cc16",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
     },
     {
       "kind": "component",
@@ -456,7 +894,13 @@
       "sources": [
         "registry/components/user-menu.json"
       ],
-      "checksum": "443c321b0b0e31fd60689c4dc9f858b870619b9b804ee6e179bec22224f99ea9"
+      "checksum": "b4deecebf0000a162d720f8c308a1be5a9baef2edc8c48be6ab2ba175ef8de3c",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
     },
     {
       "kind": "block",
@@ -475,7 +919,13 @@
       "sources": [
         "registry/blocks/agent-run-timeline.json"
       ],
-      "checksum": "d6ab2d3b7064a562b1e0966d074042157e35eb1a249947c60a1653785853ae63"
+      "checksum": "b993b4e988335b5d80ee81945a90a63a405b20ddbb9cb1493f21d1c07a2e9373",
+      "category": "block",
+      "scenarios": [
+        "block"
+      ],
+      "complexity": "medium",
+      "stability": "stable"
     },
     {
       "kind": "block",
@@ -494,7 +944,13 @@
       "sources": [
         "registry/blocks/api-key-manager.json"
       ],
-      "checksum": "b0c201b9a2d0c8670ac5a7fe11fd89dde31379ce2ca7d7f88a6164af16cc83dc"
+      "checksum": "60905443bce651e9ac7aca2561eb392c3a88b343dea434e2726925b85cb38f2e",
+      "category": "block",
+      "scenarios": [
+        "block"
+      ],
+      "complexity": "medium",
+      "stability": "stable"
     },
     {
       "kind": "block",
@@ -513,7 +969,13 @@
       "sources": [
         "registry/blocks/billing-panel.json"
       ],
-      "checksum": "58e08b6e9fa04998a9445fab6f9fc77eaf9fceed7d1f1f135768919dc844c602"
+      "checksum": "8460641f2371d5e7cb1c6f2a1231445a31004aa6eb8bb266b5fa029003c27026",
+      "category": "block",
+      "scenarios": [
+        "block"
+      ],
+      "complexity": "medium",
+      "stability": "stable"
     },
     {
       "kind": "block",
@@ -532,7 +994,13 @@
       "sources": [
         "registry/blocks/dashboard-shell.json"
       ],
-      "checksum": "ca7329c46b6ec6b61ed70ca994c89a9bddc0a0f5ecedf38c2f5e825117296f14"
+      "checksum": "dcdd489f2e559999b16a45e47aced390ded4fcd297a664c0ff25567fb78825f6",
+      "category": "block",
+      "scenarios": [
+        "block"
+      ],
+      "complexity": "medium",
+      "stability": "stable"
     },
     {
       "kind": "block",
@@ -551,7 +1019,13 @@
       "sources": [
         "registry/blocks/login-panel.json"
       ],
-      "checksum": "2988b781e9417842b35f126367bdd05ae47c22d7b379382d43390551bb6e19ff"
+      "checksum": "6c202a1dea8c09069823c1065d892adc2bf8f5db67e64cb4289509d92e299fc2",
+      "category": "block",
+      "scenarios": [
+        "block"
+      ],
+      "complexity": "medium",
+      "stability": "stable"
     },
     {
       "kind": "block",
@@ -570,7 +1044,13 @@
       "sources": [
         "registry/blocks/model-selector.json"
       ],
-      "checksum": "d4c0df086448343ce203d32d4267ca80c38fbb27d947656126351628d0280a86"
+      "checksum": "030ad988b064825a535af8d769c4de2672f34d3e3bb0ba62b22728181151584c",
+      "category": "block",
+      "scenarios": [
+        "block"
+      ],
+      "complexity": "medium",
+      "stability": "stable"
     },
     {
       "kind": "block",
@@ -589,7 +1069,13 @@
       "sources": [
         "registry/blocks/notification-panel.json"
       ],
-      "checksum": "03f8653d79d46bf7b380c516b034f92883390da321223a5e88c139145106e43c"
+      "checksum": "1687d59925a427a4cab465455a6df6427b504a46eea86aed335b5b5fd9be807b",
+      "category": "block",
+      "scenarios": [
+        "block"
+      ],
+      "complexity": "medium",
+      "stability": "stable"
     },
     {
       "kind": "block",
@@ -608,7 +1094,13 @@
       "sources": [
         "registry/blocks/pricing-section.json"
       ],
-      "checksum": "466430e7b2e490909313d17fe3faa15018ed94b9213c23cdf4e845cb6c6f35d6"
+      "checksum": "0ffc282e885173a8d513207f8f897249fe5a054b440156559a275004d55a96b4",
+      "category": "block",
+      "scenarios": [
+        "block"
+      ],
+      "complexity": "medium",
+      "stability": "stable"
     },
     {
       "kind": "block",
@@ -627,7 +1119,13 @@
       "sources": [
         "registry/blocks/settings-layout.json"
       ],
-      "checksum": "7a601b08eec128ac6bbe0057a4f1116073752bdc7b231da5ff67aa7cd6387b30"
+      "checksum": "f988cf5948bd1b5113ba5619ca504e285e29febd925b2d4c0ee4649c19099c16",
+      "category": "block",
+      "scenarios": [
+        "block"
+      ],
+      "complexity": "medium",
+      "stability": "stable"
     },
     {
       "kind": "block",
@@ -646,7 +1144,13 @@
       "sources": [
         "registry/blocks/team-members-table.json"
       ],
-      "checksum": "525c5dde7c35b2a3165c64be0904736f6922ece5d322f8681463aa8fb4cde437"
+      "checksum": "51f5151407032506c08cb2d4f36f5f2c1b646746ba4a32a4b4fb1373a8289006",
+      "category": "block",
+      "scenarios": [
+        "block"
+      ],
+      "complexity": "medium",
+      "stability": "stable"
     },
     {
       "kind": "block",
@@ -665,7 +1169,13 @@
       "sources": [
         "registry/blocks/token-usage-chart.json"
       ],
-      "checksum": "1afbf5661f323e075485a38fc0126d5386988ca004789865af12165c4f64cd0e"
+      "checksum": "e919d987f18fa8c1a42a9cfc4ed156ac61c0eef31476ae92d1e4b09e69416f96",
+      "category": "block",
+      "scenarios": [
+        "block"
+      ],
+      "complexity": "medium",
+      "stability": "stable"
     },
     {
       "kind": "template",
@@ -684,7 +1194,13 @@
       "sources": [
         "registry/templates/admin-dashboard.json"
       ],
-      "checksum": "b9165df43ab587995209526cee29ff370da6b45d5f63153dd427860dfc9dd45a"
+      "checksum": "63d23873b0264d644eb5158b25cb8f6f3c3f42317d4e232c6dddfaec45aa18a6",
+      "category": "template",
+      "scenarios": [
+        "template"
+      ],
+      "complexity": "high",
+      "stability": "stable"
     },
     {
       "kind": "template",
@@ -703,7 +1219,13 @@
       "sources": [
         "registry/templates/ai-console-lite.json"
       ],
-      "checksum": "306413c3cb7701909882aaef6a6f1b486054816eed710c3caad6b3d35f166667"
+      "checksum": "1abfc266cb48450fc1d0fadb07eef35b52cd4277705ba3f67456b2eb7192bf67",
+      "category": "template",
+      "scenarios": [
+        "template"
+      ],
+      "complexity": "high",
+      "stability": "stable"
     },
     {
       "kind": "template",
@@ -722,7 +1244,13 @@
       "sources": [
         "registry/templates/saas-starter.json"
       ],
-      "checksum": "57bd79239802a9a78a6721bc7dd73b676f139d7dadbc4e202fca3c98e3986b28"
+      "checksum": "fb7dcea39affa82eff9b40a9104956adde1d4938fe432ee887856322c24eab51",
+      "category": "template",
+      "scenarios": [
+        "template"
+      ],
+      "complexity": "high",
+      "stability": "stable"
     },
     {
       "kind": "theme",
@@ -741,7 +1269,13 @@
       "sources": [
         "registry/themes/avocado.json"
       ],
-      "checksum": "80f94ce05b5a6ebe307b4a3a3b9798e959c6d35c5e9c0bbac39c03a5c5a3fc57"
+      "checksum": "59b386308e474ddd5618e8a127ab4ccf67f99b46060108de3ecfa2623db1ad36",
+      "category": "theme",
+      "scenarios": [
+        "theme"
+      ],
+      "complexity": "low",
+      "stability": "stable"
     },
     {
       "kind": "theme",
@@ -760,11 +1294,129 @@
       "sources": [
         "registry/themes/default.json"
       ],
-      "checksum": "04f8e07acdf29ed06be69a6f7936758d984932d302fb27843258d30ffab489a3"
+      "checksum": "da2043857a8fa74ef1b93eb31a82852c1d50e1231b49942b18eb9bbf045e7aed",
+      "category": "theme",
+      "scenarios": [
+        "theme"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "pack",
+      "name": "dashboard-foundation",
+      "type": "pack",
+      "version": "0.2.2",
+      "path": "packs/dashboard-foundation.json",
+      "description": "Dashboard starter with table controls, filters and empty-result handling.",
+      "tags": [
+        "pack",
+        "dashboard-foundation"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/packs/dashboard-foundation.json"
+      ],
+      "checksum": "082e894b8012deb7ec5227ac883f22dbd027db5f6c800ae8686fbd97c33cf76a",
+      "category": "dashboard",
+      "scenarios": [
+        "analytics",
+        "operations"
+      ],
+      "complexity": "medium",
+      "stability": "beta"
+    },
+    {
+      "kind": "pack",
+      "name": "data-entry",
+      "type": "pack",
+      "version": "0.2.2",
+      "path": "packs/data-entry.json",
+      "description": "Form starter pack for onboarding/settings with date and status filtering flows.",
+      "tags": [
+        "pack",
+        "data-entry"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/packs/data-entry.json"
+      ],
+      "checksum": "18b25ef3a0e7b84fb9bb7394bfb13e59558dbb5ad9e5c8232b1264893bd8dc60",
+      "category": "forms",
+      "scenarios": [
+        "settings",
+        "onboarding"
+      ],
+      "complexity": "medium",
+      "stability": "beta"
+    },
+    {
+      "kind": "pack",
+      "name": "feedback-loading",
+      "type": "pack",
+      "version": "0.2.2",
+      "path": "packs/feedback-loading.json",
+      "description": "Loading and feedback pack for skeletons, progress, status and empty-result recovery.",
+      "tags": [
+        "pack",
+        "feedback-loading"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/packs/feedback-loading.json"
+      ],
+      "checksum": "0d9ae6f0a0a3aa2e31067d50851cecfb3fd7bfb76e97ec29a0f54eaeaa90b879",
+      "category": "feedback",
+      "scenarios": [
+        "loading",
+        "empty-state",
+        "notifications"
+      ],
+      "complexity": "medium",
+      "stability": "beta"
     }
   ],
   "byKind": {
     "component": {
+      "accordion": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "accordion",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/accordion.json",
+            "description": "component/accordion",
+            "tags": [
+              "component",
+              "accordion"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/accordion.json"
+            ],
+            "checksum": "7427a91d327558559aae68b5aa37e1f83eed474bae862df778147734a724e5df",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
       "app-sidebar": {
         "latest": "0.2.2",
         "versions": [
@@ -788,7 +1440,13 @@
             "sources": [
               "registry/components/app-sidebar.json"
             ],
-            "checksum": "54ad98ec1cf2945add982b546582e0327a79a49693bc914a974aca94385c0033"
+            "checksum": "40db1d63fa5ec24778a9d18642127c4463fe59fb014ec8900e2d50c3c7e1083a",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
           }
         }
       },
@@ -815,7 +1473,13 @@
             "sources": [
               "registry/components/avatar.json"
             ],
-            "checksum": "1cee526d688865185f5bd4426767995b314cda62294b3478190f1d28167093cc"
+            "checksum": "fce77803a0fd2eb2a7a06d3c96bd2ba34f73dcdd197c1f3f8bfec23446b16d25",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
           }
         }
       },
@@ -842,7 +1506,13 @@
             "sources": [
               "registry/components/badge.json"
             ],
-            "checksum": "9aafdec0d5ffb4a46b78c2309e1fa820bc6dad74967af4ab7cb4b096106f4ef2"
+            "checksum": "3bd5c4e9ce253a3815a09677eba9d4332eca29c5502c2b7be0e1998c6f854ab1",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
           }
         }
       },
@@ -869,7 +1539,13 @@
             "sources": [
               "registry/components/button.json"
             ],
-            "checksum": "0c646789d91a2bcd4973868e9290ac1f0c98efeed3543e7e71850adbf0555fe0"
+            "checksum": "b002303ee8bc20f6bfa48fa815dd8dddf2916b45b144a849f9e48ed141b2bef8",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
           }
         }
       },
@@ -896,7 +1572,13 @@
             "sources": [
               "registry/components/card.json"
             ],
-            "checksum": "44d0c6538e3f6796a972ae283c8a6258db6e2732cedf0fd57b1e163492e75336"
+            "checksum": "2cea69127906c86e91d40f91869d9d22faffd30847bd7c6033df3e891fc70063",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
           }
         }
       },
@@ -923,7 +1605,13 @@
             "sources": [
               "registry/components/checkbox.json"
             ],
-            "checksum": "5e7d1ea16004be8c30cd8d8ec123fe9afc7b0f460d9ebb161c32abd758dfcf86"
+            "checksum": "6bd72eb6cefc7dd5e85e914a2cdea06ab16dd31cef2b370cd04bb913236586d6",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
           }
         }
       },
@@ -950,7 +1638,79 @@
             "sources": [
               "registry/components/data-table.json"
             ],
-            "checksum": "85d5420699477539622d1fd021621d73a565b78fa7f7a9c3871b5e7a276f6c74"
+            "checksum": "1d92b6f3291a60fa87929dce9ab20e2c4b74a9c7017303ef89d695ab5f293ad7",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "data-table-toolbar": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "data-table-toolbar",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/data-table-toolbar.json",
+            "description": "component/data-table-toolbar",
+            "tags": [
+              "component",
+              "data-table-toolbar"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/data-table-toolbar.json"
+            ],
+            "checksum": "602c8f430ab1c8ac5c9c2aa3027dfe1916245951d245708a81f5f996f7516433",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "date-range-picker": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "date-range-picker",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/date-range-picker.json",
+            "description": "component/date-range-picker",
+            "tags": [
+              "component",
+              "date-range-picker"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/date-range-picker.json"
+            ],
+            "checksum": "446d2b64c2fa0e1ac8ccbb60515515db3a784c6e857ec06197137db52cdd9f0b",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
           }
         }
       },
@@ -977,7 +1737,13 @@
             "sources": [
               "registry/components/dialog.json"
             ],
-            "checksum": "1ac2915a37309c54994a7cfcc3529458d7f4e701ddbde4335d460212eae60f75"
+            "checksum": "48804303bcb2609de1e3e00e5aafa2a2599bc6f782650f219313d65b4ac55804",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
           }
         }
       },
@@ -1004,7 +1770,46 @@
             "sources": [
               "registry/components/dropdown-menu.json"
             ],
-            "checksum": "2393cbcbc799dc5734dca90d81b88ee2f32c96d4b3ec957a3c6d16715300e051"
+            "checksum": "d677f7d170cd6cea45cebefcdb23e9910bab49f9c69a487a02c902968b78f868",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "empty-search-state": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "empty-search-state",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/empty-search-state.json",
+            "description": "component/empty-search-state",
+            "tags": [
+              "component",
+              "empty-search-state"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/empty-search-state.json"
+            ],
+            "checksum": "17fcc29333a6d8cfab6c05225734e5f2e7f25c84ae12417d111522ead4c77d61",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
           }
         }
       },
@@ -1031,7 +1836,46 @@
             "sources": [
               "registry/components/empty-state.json"
             ],
-            "checksum": "0e087783e52d19806f0cd044be425dc2e1a31db305698f48d124035e0717ea53"
+            "checksum": "2b5b701ff8d0a45897df3e1d868ad341178cff6635db7ce45ddde2a602ddfbb6",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "filter-bar": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "filter-bar",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/filter-bar.json",
+            "description": "component/filter-bar",
+            "tags": [
+              "component",
+              "filter-bar"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/filter-bar.json"
+            ],
+            "checksum": "96b6a11219acbe56f216335aba323e9d360de39cc5a0722fb05ab6e529586036",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
           }
         }
       },
@@ -1058,7 +1902,46 @@
             "sources": [
               "registry/components/form-field.json"
             ],
-            "checksum": "ab576dbb291699bbd9a4454f6f553b3c97a059cb580ab9b1875f49c218914b22"
+            "checksum": "b298f7e71aa00e4c232e4a76e1d9f21b0aa43c226f5370da060d03b57ded0d91",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "hover-card": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "hover-card",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/hover-card.json",
+            "description": "component/hover-card",
+            "tags": [
+              "component",
+              "hover-card"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/hover-card.json"
+            ],
+            "checksum": "95ff1b16c880d9f55e0665147c2223d2faeb2fde4afb6d43436cd9be3086992f",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
           }
         }
       },
@@ -1085,7 +1968,13 @@
             "sources": [
               "registry/components/input.json"
             ],
-            "checksum": "a57211bd9e6fca6a86166ec3aa42edf338efa73ccaa8fe2d088f31f94d8df4e3"
+            "checksum": "6488b70ec7ae7fa3cdb8ee18e0b32a9380ff5f1afafcf06f3226b928decf5f2c",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
           }
         }
       },
@@ -1112,7 +2001,13 @@
             "sources": [
               "registry/components/lib-cn.json"
             ],
-            "checksum": "296aa16446d83537b325d2d3fbcfa326c5d9fdcf037e58c72368c8090f5601e9"
+            "checksum": "6147f8c02c57eb4c809a030b8730ee163ffd7aba1fc1ec3cb8016df4a5e9a2a1",
+            "category": "component",
+            "scenarios": [
+              "lib"
+            ],
+            "complexity": "low",
+            "stability": "stable"
           }
         }
       },
@@ -1139,7 +2034,13 @@
             "sources": [
               "registry/components/metric-card.json"
             ],
-            "checksum": "cab61a21bb6571c1c1dc94a863fcdcd5b2b9d9cdb65dc5108b1d97e7f842eab7"
+            "checksum": "4ec25e473c2c455066c97457fc0ffd466552710f01aa6775cfed24ba8a96e345",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
           }
         }
       },
@@ -1166,7 +2067,145 @@
             "sources": [
               "registry/components/page-header.json"
             ],
-            "checksum": "abcbc760d8ef6bb3b25d0db4d382f14dd2a2de31ef876416556c52b390a5c531"
+            "checksum": "44066c728bbac87dc33d7b37a75da7a3df144d990539effdb9b0707e5234a9e1",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "pagination-bar": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "pagination-bar",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/pagination-bar.json",
+            "description": "component/pagination-bar",
+            "tags": [
+              "component",
+              "pagination-bar"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/pagination-bar.json"
+            ],
+            "checksum": "39bdad3212dcfe3ef5e9f864a645b8c4373a16b3973acd20ca111ebf6d01a0c7",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "popover": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "popover",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/popover.json",
+            "description": "component/popover",
+            "tags": [
+              "component",
+              "popover"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/popover.json"
+            ],
+            "checksum": "618dec76e69470c5ccc96c6ca8a6d33e48d1bb88b7614c6b0d786f1946c4d0c7",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "progress": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "progress",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/progress.json",
+            "description": "component/progress",
+            "tags": [
+              "component",
+              "progress"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/progress.json"
+            ],
+            "checksum": "6bfc21e21bbd1b78f62ace271bef949d6a3419aec4e01808c623bf5d4fd3c8d8",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "radio-group": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "radio-group",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/radio-group.json",
+            "description": "component/radio-group",
+            "tags": [
+              "component",
+              "radio-group"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/radio-group.json"
+            ],
+            "checksum": "5b1a2c854df41a4aa1dc60e9fdf7d7473dab498075a7555849ad5fb0a460e558",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
           }
         }
       },
@@ -1193,7 +2232,13 @@
             "sources": [
               "registry/components/search-command.json"
             ],
-            "checksum": "0e47f756a29d007911b875b2b77056ced311a6bb114844ae81c8d2daef90b9c0"
+            "checksum": "885d9c30bd73767ce095206f1122814ddf4c2546fbadb06823fa38a25939a73c",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
           }
         }
       },
@@ -1220,7 +2265,79 @@
             "sources": [
               "registry/components/select.json"
             ],
-            "checksum": "bebf00092323832e8746ea4b40e0d457b1b1c7a3f56412439031d485c6b3727b"
+            "checksum": "dd2edecbf366aa5b546edf8eaecbfab355848c3498b73ccef6acc76ee7849e08",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "separator": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "separator",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/separator.json",
+            "description": "component/separator",
+            "tags": [
+              "component",
+              "separator"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/separator.json"
+            ],
+            "checksum": "9531476ac9804a92f496151d09059dd8fe8ff40669a2a8375502ab9762b82113",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "skeleton": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "skeleton",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/skeleton.json",
+            "description": "component/skeleton",
+            "tags": [
+              "component",
+              "skeleton"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/skeleton.json"
+            ],
+            "checksum": "ae1971283b54bd596362be0eece2496cc5456346bf397169c1ad0007621d947c",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
           }
         }
       },
@@ -1247,7 +2364,13 @@
             "sources": [
               "registry/components/status-badge.json"
             ],
-            "checksum": "e52708745bddced4e1995059e23607ab43012f78fd1d6de4207267ee04abf965"
+            "checksum": "49550a19991297eede69c40ab67fba71bf0f8fcdbc5441cea0e56e05530e46b0",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
           }
         }
       },
@@ -1274,7 +2397,13 @@
             "sources": [
               "registry/components/switch.json"
             ],
-            "checksum": "7b8bd847a6f1ddae8f52516140c358ea93956bf57205c5d71f82514c1cb1509e"
+            "checksum": "b90ab547b80c1e63addfaea10fdfe93925475a41e83450caf1a1ac66b5e90d4e",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
           }
         }
       },
@@ -1301,7 +2430,13 @@
             "sources": [
               "registry/components/tabs.json"
             ],
-            "checksum": "59d07617b605d19b9a2d46477a88be2f76c2702fb7abf7fd8131b3ee262d7e60"
+            "checksum": "2caf288b2b5d03035294041ed2ff81e732cb7c986e3a2248e0d5f5207437ff12",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
           }
         }
       },
@@ -1328,7 +2463,13 @@
             "sources": [
               "registry/components/textarea.json"
             ],
-            "checksum": "e9b613a3fdf6f97b838b9f22ce2913e6fa062b971f0ad87d7132ff671f201a79"
+            "checksum": "9dc7e36c5c1d7a2899d887967d5b216c7fa7484108ec615d4a20c5b144e955d8",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
           }
         }
       },
@@ -1355,7 +2496,13 @@
             "sources": [
               "registry/components/theme-switcher.json"
             ],
-            "checksum": "5ec257651bddb60e506983700e4b171dc7b1ac62f2b52e4f3d8c449b7a199d7d"
+            "checksum": "dd5f25fa0ce36437f19e833ed771ed3429e24c99a95e582eaa6fa977cf972194",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
           }
         }
       },
@@ -1382,7 +2529,13 @@
             "sources": [
               "registry/components/tooltip.json"
             ],
-            "checksum": "1e97c9a6773a1dadc67ebe3875d8b9366b69aabfeb7fc7093b17d282b4ce7841"
+            "checksum": "bea792e1c01b79bb845b71627dd4d7855f3a020971903da0632f3b724aa2cc16",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
           }
         }
       },
@@ -1409,7 +2562,13 @@
             "sources": [
               "registry/components/user-menu.json"
             ],
-            "checksum": "443c321b0b0e31fd60689c4dc9f858b870619b9b804ee6e179bec22224f99ea9"
+            "checksum": "b4deecebf0000a162d720f8c308a1be5a9baef2edc8c48be6ab2ba175ef8de3c",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
           }
         }
       }
@@ -1438,7 +2597,13 @@
             "sources": [
               "registry/blocks/agent-run-timeline.json"
             ],
-            "checksum": "d6ab2d3b7064a562b1e0966d074042157e35eb1a249947c60a1653785853ae63"
+            "checksum": "b993b4e988335b5d80ee81945a90a63a405b20ddbb9cb1493f21d1c07a2e9373",
+            "category": "block",
+            "scenarios": [
+              "block"
+            ],
+            "complexity": "medium",
+            "stability": "stable"
           }
         }
       },
@@ -1465,7 +2630,13 @@
             "sources": [
               "registry/blocks/api-key-manager.json"
             ],
-            "checksum": "b0c201b9a2d0c8670ac5a7fe11fd89dde31379ce2ca7d7f88a6164af16cc83dc"
+            "checksum": "60905443bce651e9ac7aca2561eb392c3a88b343dea434e2726925b85cb38f2e",
+            "category": "block",
+            "scenarios": [
+              "block"
+            ],
+            "complexity": "medium",
+            "stability": "stable"
           }
         }
       },
@@ -1492,7 +2663,13 @@
             "sources": [
               "registry/blocks/billing-panel.json"
             ],
-            "checksum": "58e08b6e9fa04998a9445fab6f9fc77eaf9fceed7d1f1f135768919dc844c602"
+            "checksum": "8460641f2371d5e7cb1c6f2a1231445a31004aa6eb8bb266b5fa029003c27026",
+            "category": "block",
+            "scenarios": [
+              "block"
+            ],
+            "complexity": "medium",
+            "stability": "stable"
           }
         }
       },
@@ -1519,7 +2696,13 @@
             "sources": [
               "registry/blocks/dashboard-shell.json"
             ],
-            "checksum": "ca7329c46b6ec6b61ed70ca994c89a9bddc0a0f5ecedf38c2f5e825117296f14"
+            "checksum": "dcdd489f2e559999b16a45e47aced390ded4fcd297a664c0ff25567fb78825f6",
+            "category": "block",
+            "scenarios": [
+              "block"
+            ],
+            "complexity": "medium",
+            "stability": "stable"
           }
         }
       },
@@ -1546,7 +2729,13 @@
             "sources": [
               "registry/blocks/login-panel.json"
             ],
-            "checksum": "2988b781e9417842b35f126367bdd05ae47c22d7b379382d43390551bb6e19ff"
+            "checksum": "6c202a1dea8c09069823c1065d892adc2bf8f5db67e64cb4289509d92e299fc2",
+            "category": "block",
+            "scenarios": [
+              "block"
+            ],
+            "complexity": "medium",
+            "stability": "stable"
           }
         }
       },
@@ -1573,7 +2762,13 @@
             "sources": [
               "registry/blocks/model-selector.json"
             ],
-            "checksum": "d4c0df086448343ce203d32d4267ca80c38fbb27d947656126351628d0280a86"
+            "checksum": "030ad988b064825a535af8d769c4de2672f34d3e3bb0ba62b22728181151584c",
+            "category": "block",
+            "scenarios": [
+              "block"
+            ],
+            "complexity": "medium",
+            "stability": "stable"
           }
         }
       },
@@ -1600,7 +2795,13 @@
             "sources": [
               "registry/blocks/notification-panel.json"
             ],
-            "checksum": "03f8653d79d46bf7b380c516b034f92883390da321223a5e88c139145106e43c"
+            "checksum": "1687d59925a427a4cab465455a6df6427b504a46eea86aed335b5b5fd9be807b",
+            "category": "block",
+            "scenarios": [
+              "block"
+            ],
+            "complexity": "medium",
+            "stability": "stable"
           }
         }
       },
@@ -1627,7 +2828,13 @@
             "sources": [
               "registry/blocks/pricing-section.json"
             ],
-            "checksum": "466430e7b2e490909313d17fe3faa15018ed94b9213c23cdf4e845cb6c6f35d6"
+            "checksum": "0ffc282e885173a8d513207f8f897249fe5a054b440156559a275004d55a96b4",
+            "category": "block",
+            "scenarios": [
+              "block"
+            ],
+            "complexity": "medium",
+            "stability": "stable"
           }
         }
       },
@@ -1654,7 +2861,13 @@
             "sources": [
               "registry/blocks/settings-layout.json"
             ],
-            "checksum": "7a601b08eec128ac6bbe0057a4f1116073752bdc7b231da5ff67aa7cd6387b30"
+            "checksum": "f988cf5948bd1b5113ba5619ca504e285e29febd925b2d4c0ee4649c19099c16",
+            "category": "block",
+            "scenarios": [
+              "block"
+            ],
+            "complexity": "medium",
+            "stability": "stable"
           }
         }
       },
@@ -1681,7 +2894,13 @@
             "sources": [
               "registry/blocks/team-members-table.json"
             ],
-            "checksum": "525c5dde7c35b2a3165c64be0904736f6922ece5d322f8681463aa8fb4cde437"
+            "checksum": "51f5151407032506c08cb2d4f36f5f2c1b646746ba4a32a4b4fb1373a8289006",
+            "category": "block",
+            "scenarios": [
+              "block"
+            ],
+            "complexity": "medium",
+            "stability": "stable"
           }
         }
       },
@@ -1708,7 +2927,13 @@
             "sources": [
               "registry/blocks/token-usage-chart.json"
             ],
-            "checksum": "1afbf5661f323e075485a38fc0126d5386988ca004789865af12165c4f64cd0e"
+            "checksum": "e919d987f18fa8c1a42a9cfc4ed156ac61c0eef31476ae92d1e4b09e69416f96",
+            "category": "block",
+            "scenarios": [
+              "block"
+            ],
+            "complexity": "medium",
+            "stability": "stable"
           }
         }
       }
@@ -1737,7 +2962,13 @@
             "sources": [
               "registry/templates/admin-dashboard.json"
             ],
-            "checksum": "b9165df43ab587995209526cee29ff370da6b45d5f63153dd427860dfc9dd45a"
+            "checksum": "63d23873b0264d644eb5158b25cb8f6f3c3f42317d4e232c6dddfaec45aa18a6",
+            "category": "template",
+            "scenarios": [
+              "template"
+            ],
+            "complexity": "high",
+            "stability": "stable"
           }
         }
       },
@@ -1764,7 +2995,13 @@
             "sources": [
               "registry/templates/ai-console-lite.json"
             ],
-            "checksum": "306413c3cb7701909882aaef6a6f1b486054816eed710c3caad6b3d35f166667"
+            "checksum": "1abfc266cb48450fc1d0fadb07eef35b52cd4277705ba3f67456b2eb7192bf67",
+            "category": "template",
+            "scenarios": [
+              "template"
+            ],
+            "complexity": "high",
+            "stability": "stable"
           }
         }
       },
@@ -1791,7 +3028,13 @@
             "sources": [
               "registry/templates/saas-starter.json"
             ],
-            "checksum": "57bd79239802a9a78a6721bc7dd73b676f139d7dadbc4e202fca3c98e3986b28"
+            "checksum": "fb7dcea39affa82eff9b40a9104956adde1d4938fe432ee887856322c24eab51",
+            "category": "template",
+            "scenarios": [
+              "template"
+            ],
+            "complexity": "high",
+            "stability": "stable"
           }
         }
       }
@@ -1820,7 +3063,13 @@
             "sources": [
               "registry/themes/avocado.json"
             ],
-            "checksum": "80f94ce05b5a6ebe307b4a3a3b9798e959c6d35c5e9c0bbac39c03a5c5a3fc57"
+            "checksum": "59b386308e474ddd5618e8a127ab4ccf67f99b46060108de3ecfa2623db1ad36",
+            "category": "theme",
+            "scenarios": [
+              "theme"
+            ],
+            "complexity": "low",
+            "stability": "stable"
           }
         }
       },
@@ -1847,7 +3096,118 @@
             "sources": [
               "registry/themes/default.json"
             ],
-            "checksum": "04f8e07acdf29ed06be69a6f7936758d984932d302fb27843258d30ffab489a3"
+            "checksum": "da2043857a8fa74ef1b93eb31a82852c1d50e1231b49942b18eb9bbf045e7aed",
+            "category": "theme",
+            "scenarios": [
+              "theme"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      }
+    },
+    "pack": {
+      "dashboard-foundation": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "pack",
+            "name": "dashboard-foundation",
+            "type": "pack",
+            "version": "0.2.2",
+            "path": "packs/dashboard-foundation.json",
+            "description": "Dashboard starter with table controls, filters and empty-result handling.",
+            "tags": [
+              "pack",
+              "dashboard-foundation"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/packs/dashboard-foundation.json"
+            ],
+            "checksum": "082e894b8012deb7ec5227ac883f22dbd027db5f6c800ae8686fbd97c33cf76a",
+            "category": "dashboard",
+            "scenarios": [
+              "analytics",
+              "operations"
+            ],
+            "complexity": "medium",
+            "stability": "beta"
+          }
+        }
+      },
+      "data-entry": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "pack",
+            "name": "data-entry",
+            "type": "pack",
+            "version": "0.2.2",
+            "path": "packs/data-entry.json",
+            "description": "Form starter pack for onboarding/settings with date and status filtering flows.",
+            "tags": [
+              "pack",
+              "data-entry"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/packs/data-entry.json"
+            ],
+            "checksum": "18b25ef3a0e7b84fb9bb7394bfb13e59558dbb5ad9e5c8232b1264893bd8dc60",
+            "category": "forms",
+            "scenarios": [
+              "settings",
+              "onboarding"
+            ],
+            "complexity": "medium",
+            "stability": "beta"
+          }
+        }
+      },
+      "feedback-loading": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "pack",
+            "name": "feedback-loading",
+            "type": "pack",
+            "version": "0.2.2",
+            "path": "packs/feedback-loading.json",
+            "description": "Loading and feedback pack for skeletons, progress, status and empty-result recovery.",
+            "tags": [
+              "pack",
+              "feedback-loading"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/packs/feedback-loading.json"
+            ],
+            "checksum": "0d9ae6f0a0a3aa2e31067d50851cecfb3fd7bfb76e97ec29a0f54eaeaa90b879",
+            "category": "feedback",
+            "scenarios": [
+              "loading",
+              "empty-state",
+              "notifications"
+            ],
+            "complexity": "medium",
+            "stability": "beta"
           }
         }
       }

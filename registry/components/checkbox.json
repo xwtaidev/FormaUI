@@ -29,5 +29,11 @@
   "sources": [
     "registry/components/checkbox.json"
   ],
-  "checksum": "5e7d1ea16004be8c30cd8d8ec123fe9afc7b0f460d9ebb161c32abd758dfcf86"
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "6bd72eb6cefc7dd5e85e914a2cdea06ab16dd31cef2b370cd04bb913236586d6"
 }

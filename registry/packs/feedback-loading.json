@@ -1,0 +1,39 @@
+{
+  "name": "feedback-loading",
+  "type": "pack",
+  "description": "Loading and feedback pack for skeletons, progress, status and empty-result recovery.",
+  "category": "feedback",
+  "scenarios": [
+    "loading",
+    "empty-state",
+    "notifications"
+  ],
+  "complexity": "medium",
+  "stability": "beta",
+  "dependencies": [],
+  "devDependencies": [],
+  "registryDependencies": [
+    "skeleton",
+    "progress",
+    "status-badge",
+    "empty-state",
+    "empty-search-state",
+    "dialog",
+    "tooltip",
+    "badge",
+    "button"
+  ],
+  "files": [],
+  "version": "0.2.2",
+  "tags": [
+    "pack",
+    "feedback-loading"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/packs/feedback-loading.json"
+  ],
+  "checksum": "0d9ae6f0a0a3aa2e31067d50851cecfb3fd7bfb76e97ec29a0f54eaeaa90b879"
+}

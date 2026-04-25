@@ -29,5 +29,11 @@
   "sources": [
     "registry/components/dialog.json"
   ],
-  "checksum": "1ac2915a37309c54994a7cfcc3529458d7f4e701ddbde4335d460212eae60f75"
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "48804303bcb2609de1e3e00e5aafa2a2599bc6f782650f219313d65b4ac55804"
 }

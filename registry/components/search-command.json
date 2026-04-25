@@ -30,5 +30,11 @@
   "sources": [
     "registry/components/search-command.json"
   ],
-  "checksum": "0e47f756a29d007911b875b2b77056ced311a6bb114844ae81c8d2daef90b9c0"
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "885d9c30bd73767ce095206f1122814ddf4c2546fbadb06823fa38a25939a73c"
 }

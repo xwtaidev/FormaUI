@@ -5,7 +5,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "FormaUI Docs",
-  description: "FormaUI v0.2 documentation"
+  description: "FormaUI v0.3 documentation"
 };
 
 const navSections: Array<{ title: string; links: Array<{ href: string; label: string }> }> = [
@@ -18,7 +18,8 @@ const navSections: Array<{ title: string; links: Array<{ href: string; label: st
       { href: "/design-system", label: "Design System" },
       { href: "/design-tokens", label: "Design Tokens" },
       { href: "/theme", label: "Theme Overview" },
-      { href: "/migration-v0.1-to-v0.2", label: "Migration v0.1 to v0.2" }
+      { href: "/migration-v0.1-to-v0.2", label: "Migration v0.1 to v0.2" },
+      { href: "/migration-v0.2-to-v0.3", label: "Migration v0.2 to v0.3" }
     ]
   },
   {
@@ -26,12 +27,14 @@ const navSections: Array<{ title: string; links: Array<{ href: string; label: st
     links: [
       { href: "/cli", label: "CLI Overview" },
       { href: "/cli/commands", label: "CLI Commands" },
-      { href: "/registry", label: "Registry v2" }
+      { href: "/registry", label: "Registry v3" },
+      { href: "/packs", label: "Pack Workflows" }
     ]
   },
   {
     title: "Components",
     links: [
+      { href: "/components/accordion", label: "accordion" },
       { href: "/components/app-sidebar", label: "app-sidebar" },
       { href: "/components/avatar", label: "avatar" },
       { href: "/components/badge", label: "badge" },
@@ -39,23 +42,43 @@ const navSections: Array<{ title: string; links: Array<{ href: string; label: st
       { href: "/components/card", label: "card" },
       { href: "/components/checkbox", label: "checkbox" },
       { href: "/components/data-table", label: "data-table" },
+      { href: "/components/data-table-toolbar", label: "data-table-toolbar" },
       { href: "/components/dialog", label: "dialog" },
       { href: "/components/dropdown-menu", label: "dropdown-menu" },
+      { href: "/components/empty-search-state", label: "empty-search-state" },
       { href: "/components/empty-state", label: "empty-state" },
       { href: "/components/form-field", label: "form-field" },
+      { href: "/components/hover-card", label: "hover-card" },
       { href: "/components/input", label: "input" },
       { href: "/components/lib-cn", label: "lib-cn" },
       { href: "/components/metric-card", label: "metric-card" },
+      { href: "/components/pagination-bar", label: "pagination-bar" },
       { href: "/components/page-header", label: "page-header" },
+      { href: "/components/popover", label: "popover" },
+      { href: "/components/progress", label: "progress" },
+      { href: "/components/radio-group", label: "radio-group" },
       { href: "/components/search-command", label: "search-command" },
       { href: "/components/select", label: "select" },
+      { href: "/components/separator", label: "separator" },
+      { href: "/components/skeleton", label: "skeleton" },
       { href: "/components/status-badge", label: "status-badge" },
       { href: "/components/switch", label: "switch" },
       { href: "/components/tabs", label: "tabs" },
       { href: "/components/textarea", label: "textarea" },
       { href: "/components/theme-switcher", label: "theme-switcher" },
       { href: "/components/tooltip", label: "tooltip" },
-      { href: "/components/user-menu", label: "user-menu" }
+      { href: "/components/user-menu", label: "user-menu" },
+      { href: "/components/date-range-picker", label: "date-range-picker" },
+      { href: "/components/filter-bar", label: "filter-bar" }
+    ]
+  },
+  {
+    title: "Packs",
+    links: [
+      { href: "/packs", label: "Overview" },
+      { href: "/packs/dashboard-foundation", label: "dashboard-foundation" },
+      { href: "/packs/data-entry", label: "data-entry" },
+      { href: "/packs/feedback-loading", label: "feedback-loading" }
     ]
   },
   {
@@ -99,7 +122,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <aside className="border-b border-slate-200 p-6 lg:border-b-0 lg:border-r">
             <Link href="/" className="block">
               <p className="text-sm uppercase tracking-wide text-slate-500">FormaUI</p>
-              <h1 className="text-2xl font-semibold">v0.2 Docs</h1>
+              <h1 className="text-2xl font-semibold">v0.3.5 Docs</h1>
             </Link>
             <nav className="mt-6 space-y-6">
               {navSections.map((section) => (

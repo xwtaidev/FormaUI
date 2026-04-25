@@ -1,0 +1,39 @@
+{
+  "name": "date-range-picker",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn",
+    "input",
+    "separator"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/composites/date-range-picker.tsx",
+      "target": "components/composites/date-range-picker.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/date-range-picker",
+  "tags": [
+    "component",
+    "date-range-picker"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/date-range-picker.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "446d2b64c2fa0e1ac8ccbb60515515db3a784c6e857ec06197137db52cdd9f0b"
+}

@@ -28,5 +28,11 @@
   "sources": [
     "registry/components/tabs.json"
   ],
-  "checksum": "59d07617b605d19b9a2d46477a88be2f76c2702fb7abf7fd8131b3ee262d7e60"
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "2caf288b2b5d03035294041ed2ff81e732cb7c986e3a2248e0d5f5207437ff12"
 }

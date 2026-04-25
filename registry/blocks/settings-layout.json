@@ -30,5 +30,11 @@
   "sources": [
     "registry/blocks/settings-layout.json"
   ],
-  "checksum": "7a601b08eec128ac6bbe0057a4f1116073752bdc7b231da5ff67aa7cd6387b30"
+  "category": "block",
+  "scenarios": [
+    "block"
+  ],
+  "complexity": "medium",
+  "stability": "stable",
+  "checksum": "f988cf5948bd1b5113ba5619ca504e285e29febd925b2d4c0ee4649c19099c16"
 }

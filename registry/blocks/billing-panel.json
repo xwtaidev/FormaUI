@@ -29,5 +29,11 @@
   "sources": [
     "registry/blocks/billing-panel.json"
   ],
-  "checksum": "58e08b6e9fa04998a9445fab6f9fc77eaf9fceed7d1f1f135768919dc844c602"
+  "category": "block",
+  "scenarios": [
+    "block"
+  ],
+  "complexity": "medium",
+  "stability": "stable",
+  "checksum": "8460641f2371d5e7cb1c6f2a1231445a31004aa6eb8bb266b5fa029003c27026"
 }

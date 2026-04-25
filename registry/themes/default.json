@@ -22,5 +22,11 @@
   "sources": [
     "registry/themes/default.json"
   ],
-  "checksum": "04f8e07acdf29ed06be69a6f7936758d984932d302fb27843258d30ffab489a3"
+  "category": "theme",
+  "scenarios": [
+    "theme"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "da2043857a8fa74ef1b93eb31a82852c1d50e1231b49942b18eb9bbf045e7aed"
 }

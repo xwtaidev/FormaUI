@@ -8,7 +8,7 @@ import {
   type RegistryKind as RemoteRegistryKind
 } from "./remote.js";
 
-export type RegistryKind = "component" | "block" | "template" | "theme";
+export type RegistryKind = "component" | "block" | "template" | "theme" | "pack";
 
 export interface RegistryFile {
   source: string;
@@ -17,13 +17,17 @@ export interface RegistryFile {
 
 export interface RegistryItem {
   name: string;
-  type: "component" | "block" | "template" | "theme" | "hook" | "lib" | "style" | "config";
+  type: "component" | "block" | "template" | "theme" | "pack" | "hook" | "lib" | "style" | "config";
   version?: string;
   description?: string;
   tags?: string[];
   frameworks?: string[];
   sources?: string[];
   checksum?: string;
+  category?: string;
+  scenarios?: string[];
+  complexity?: "low" | "medium" | "high";
+  stability?: "stable" | "beta" | "experimental" | "deprecated";
   dependencies: string[];
   devDependencies: string[];
   registryDependencies: string[];
@@ -42,7 +46,8 @@ export const DIRECTORY_BY_KIND: Record<RegistryKind, string> = {
   component: "components",
   block: "blocks",
   template: "templates",
-  theme: "themes"
+  theme: "themes",
+  pack: "packs"
 };
 
 export function getDefaultRegistryRoot() {
@@ -117,7 +122,7 @@ export async function loadRegistryDependency(options: {
   version?: string;
   fallbackRegistryRoot?: string;
 }) {
-  const priorities: RegistryKind[] = ["component", "theme", "block", "template"];
+  const priorities: RegistryKind[] = ["component", "theme", "block", "template", "pack"];
 
   for (const kind of priorities) {
     try {

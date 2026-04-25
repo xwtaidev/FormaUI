@@ -3,6 +3,10 @@
 import { useState } from "react";
 
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
   Avatar,
   AvatarFallback,
   AvatarImage,
@@ -22,18 +26,34 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DateRangePicker,
+  DataTableToolbar,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
   DataTable,
+  EmptySearchState,
+  FilterBar,
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
   Input,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+  Progress,
+  RadioGroup,
+  RadioGroupItem,
   SearchCommand,
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
+  Separator,
+  Skeleton,
   SelectValue,
+  PaginationBar,
   Switch,
   Tabs,
   TabsContent,
@@ -50,11 +70,29 @@ export default function ComponentsPage() {
   const [emailEnabled, setEmailEnabled] = useState(true);
   const [checked, setChecked] = useState(true);
   const [selectedCommand, setSelectedCommand] = useState("none");
+  const [reviewStatus, setReviewStatus] = useState("all");
+  const [toolbarQuery, setToolbarQuery] = useState("");
+  const [toolbarPage, setToolbarPage] = useState(1);
+  const [toolbarPageSize, setToolbarPageSize] = useState(2);
+  const [selectedRange, setSelectedRange] = useState({ from: "2026-04-01", to: "2026-04-30" });
+  const [filters, setFilters] = useState({ query: "", status: "all", range: { from: "", to: "" } });
   const memberRows = [
     { name: "Avery Lin", role: "Product Lead", score: 98 },
     { name: "Riley Chen", role: "ML Engineer", score: 92 },
     { name: "Jordan Patel", role: "UX Designer", score: 95 }
   ];
+  const normalizedToolbarQuery = toolbarQuery.trim().toLowerCase();
+  const filteredMemberRows = memberRows.filter((row) => {
+    if (!normalizedToolbarQuery) {
+      return true;
+    }
+    return (
+      row.name.toLowerCase().includes(normalizedToolbarQuery) ||
+      row.role.toLowerCase().includes(normalizedToolbarQuery)
+    );
+  });
+  const toolbarStart = (toolbarPage - 1) * toolbarPageSize;
+  const visibleMemberRows = filteredMemberRows.slice(toolbarStart, toolbarStart + toolbarPageSize);
 
   return (
     <TooltipProvider>
@@ -62,8 +100,8 @@ export default function ComponentsPage() {
         <section>
           <h2 className="text-2xl font-semibold">Primitive Components</h2>
           <p className="text-sm text-muted-foreground">
-            v0.2.4 component set: Button, Input, Textarea, Checkbox, Switch, Select, Dialog, DropdownMenu,
-            Tabs, Card, Badge, Avatar, Tooltip, DataTable, SearchCommand.
+            v0.3.5 component set includes Wave A/B/C coverage and pack-ready compositions for dashboard and form
+            workflows.
           </p>
         </section>
 
@@ -178,17 +216,137 @@ export default function ComponentsPage() {
 
           <Card>
             <CardHeader>
-              <CardTitle>DataTable</CardTitle>
-              <CardDescription>Sortable rows with custom columns.</CardDescription>
+              <CardTitle>Accordion / Popover / HoverCard / Progress</CardTitle>
+              <CardDescription>Wave A primitives for progressive disclosure and status feedback.</CardDescription>
             </CardHeader>
-            <CardContent>
-              <DataTable
-                columns={[
-                  { key: "name", header: "Name", sortable: true },
-                  { key: "role", header: "Role" },
-                  { key: "score", header: "Score", sortable: true, align: "right" }
-                ]}
-                rows={memberRows}
+            <CardContent className="space-y-4">
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="release-notes">
+                  <AccordionTrigger>Release Notes</AccordionTrigger>
+                  <AccordionContent>
+                    Wave A introduces lightweight primitives for overlays, previews, and completion states.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+
+              <div className="flex flex-wrap items-center gap-3">
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <Button variant="outline">Open Popover</Button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-64">
+                    Configure deployment guardrails and rollout rules.
+                  </PopoverContent>
+                </Popover>
+
+                <HoverCard>
+                  <HoverCardTrigger asChild>
+                    <Button variant="ghost">@formaui-release</Button>
+                  </HoverCardTrigger>
+                  <HoverCardContent className="w-64">
+                    Maintainers review accessibility and token consistency before every release.
+                  </HoverCardContent>
+                </HoverCard>
+              </div>
+
+              <div className="space-y-2">
+                <p className="text-sm text-muted-foreground">Migration progress: 72%</p>
+                <Progress value={72} />
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Wave B Primitives</CardTitle>
+              <CardDescription>Separator, skeleton loading, and radio-group status selection.</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="space-y-2">
+                <p className="text-sm text-muted-foreground">Preview placeholders</p>
+                <div className="space-y-2 rounded-md border border-border p-3">
+                  <Skeleton className="h-4 w-32" />
+                  <Skeleton className="h-4 w-full" />
+                  <Skeleton className="h-4 w-2/3" />
+                </div>
+              </div>
+
+              <Separator />
+
+              <div className="space-y-2">
+                <p className="text-sm text-muted-foreground">Review status</p>
+                <RadioGroup
+                  value={reviewStatus}
+                  onValueChange={setReviewStatus}
+                  className="flex flex-wrap gap-4"
+                >
+                  <label htmlFor="review-all" className="inline-flex items-center gap-2 text-sm">
+                    <RadioGroupItem id="review-all" value="all" />
+                    All
+                  </label>
+                  <label htmlFor="review-open" className="inline-flex items-center gap-2 text-sm">
+                    <RadioGroupItem id="review-open" value="open" />
+                    Open
+                  </label>
+                  <label htmlFor="review-closed" className="inline-flex items-center gap-2 text-sm">
+                    <RadioGroupItem id="review-closed" value="closed" />
+                    Closed
+                  </label>
+                </RadioGroup>
+                <p className="text-xs text-muted-foreground">Selected: {reviewStatus}</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="md:col-span-2">
+            <CardHeader>
+              <CardTitle>Pack Scenario: dashboard-foundation</CardTitle>
+              <CardDescription>
+                Search + table + pagination + empty-query fallback built from Wave C composites.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <DataTableToolbar
+                value={toolbarQuery}
+                resultCount={filteredMemberRows.length}
+                onQueryChange={(value) => {
+                  setToolbarQuery(value);
+                  setToolbarPage(1);
+                }}
+                onRefresh={() => setToolbarPage(1)}
+                onAdd={() => setSelectedCommand("create-row")}
+                addLabel="Add teammate"
+              />
+
+              {filteredMemberRows.length === 0 ? (
+                <EmptySearchState
+                  query={toolbarQuery}
+                  clearLabel="Clear query"
+                  createLabel="Create teammate"
+                  onClear={() => {
+                    setToolbarQuery("");
+                    setToolbarPage(1);
+                  }}
+                  onCreate={() => setSelectedCommand("create-row")}
+                />
+              ) : (
+                <DataTable
+                  columns={[
+                    { key: "name", header: "Name", sortable: true },
+                    { key: "role", header: "Role" },
+                    { key: "score", header: "Score", sortable: true, align: "right" }
+                  ]}
+                  rows={visibleMemberRows}
+                />
+              )}
+
+              <PaginationBar
+                totalItems={filteredMemberRows.length}
+                page={toolbarPage}
+                pageSize={toolbarPageSize}
+                pageSizeOptions={[1, 2, 3]}
+                onPageChange={setToolbarPage}
+                onPageSizeChange={setToolbarPageSize}
               />
             </CardContent>
           </Card>
@@ -208,6 +366,24 @@ export default function ComponentsPage() {
                 onSelect={(item) => setSelectedCommand(item.id)}
               />
               <p className="text-sm text-muted-foreground">Selected command: {selectedCommand}</p>
+            </CardContent>
+          </Card>
+
+          <Card className="md:col-span-2">
+            <CardHeader>
+              <CardTitle>Pack Scenario: data-entry</CardTitle>
+              <CardDescription>Form-first filtering workflow with date window and status selection.</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <DateRangePicker value={selectedRange} onChange={setSelectedRange} />
+              <p className="text-xs text-muted-foreground">
+                Range: {selectedRange.from || "unset"} → {selectedRange.to || "unset"}
+              </p>
+              <FilterBar onChange={setFilters} onReset={() => setFilters({ query: "", status: "all", range: { from: "", to: "" } })} />
+              <p className="text-xs text-muted-foreground">
+                Filters: query={filters.query || "none"}, status={filters.status}, from=
+                {filters.range.from || "unset"}, to={filters.range.to || "unset"}
+              </p>
             </CardContent>
           </Card>
         </section>

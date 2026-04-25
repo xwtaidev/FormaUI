@@ -28,5 +28,11 @@
   "sources": [
     "registry/blocks/token-usage-chart.json"
   ],
-  "checksum": "1afbf5661f323e075485a38fc0126d5386988ca004789865af12165c4f64cd0e"
+  "category": "block",
+  "scenarios": [
+    "block"
+  ],
+  "complexity": "medium",
+  "stability": "stable",
+  "checksum": "e919d987f18fa8c1a42a9cfc4ed156ac61c0eef31476ae92d1e4b09e69416f96"
 }

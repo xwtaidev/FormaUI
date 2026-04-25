@@ -1,0 +1,83 @@
+# Migration: v0.2 to v0.3
+
+This guide upgrades existing FormaUI v0.2 projects to v0.3 workflows and metadata.
+
+## 1. Upgrade CLI Command Usage
+
+v0.3 adds pack commands and metadata filters:
+
+```bash
+npx formaui list --kind pack
+npx formaui list --category dashboard
+npx formaui search table --scenario analytics
+npx formaui info filter-bar --kind component
+npx formaui pack list
+npx formaui pack info dashboard-foundation
+npx formaui pack add dashboard-foundation --dry-run
+```
+
+## 2. Regenerate Registry Artifacts
+
+If you maintain registry assets in-repo, rebuild after syncing v0.3 packages:
+
+```bash
+pnpm registry:build
+```
+
+## 3. Adopt Registry v3 Metadata Fields
+
+Ensure internal/custom items include the v3 fields:
+
+- `category`
+- `scenarios`
+- `complexity`
+- `stability`
+
+Example:
+
+```json
+{
+  "name": "filter-bar",
+  "type": "component",
+  "category": "forms",
+  "scenarios": ["dashboard", "operations"],
+  "complexity": "medium",
+  "stability": "stable"
+}
+```
+
+## 4. Move Repeated Install Flows to Packs
+
+Replace repeated single-component installs with packs:
+
+```bash
+# v0.2 style
+npx formaui add data-table
+npx formaui add filter-bar
+npx formaui add pagination-bar
+npx formaui add empty-search-state
+
+# v0.3 style
+npx formaui pack add dashboard-foundation
+```
+
+## 5. Command-level Migration Checklist
+
+- [ ] `npx formaui list --kind pack` returns official packs
+- [ ] `npx formaui pack info dashboard-foundation` prints metadata and dependency graph
+- [ ] `npx formaui pack add <name> --dry-run` shows install plan
+- [ ] `npx formaui list --category <value>` filters correctly
+- [ ] `npx formaui search <query> --scenario <value>` filters correctly
+- [ ] `npx formaui info <name> --kind <kind>` resolves unambiguous item type
+
+## 6. Final Validation
+
+```bash
+pnpm lint
+pnpm typecheck
+pnpm test
+pnpm build
+pnpm registry:build
+```
+
+If all commands pass, your project is on the v0.3 baseline.

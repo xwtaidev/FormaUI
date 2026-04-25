@@ -1,0 +1,38 @@
+# Skeleton
+
+## Overview
+
+`Skeleton` provides loading placeholders while remote data or long-running tasks are pending.
+
+## Installation
+
+```bash
+npx formaui add skeleton
+```
+
+## Usage
+
+```tsx
+import { Skeleton } from "@/components/primitives/skeleton";
+
+export function LoadingCards() {
+  return (
+    <div className="space-y-3 rounded-lg border border-border p-4">
+      <Skeleton className="h-5 w-40" />
+      <Skeleton className="h-4 w-full" />
+      <Skeleton className="h-4 w-2/3" />
+    </div>
+  );
+}
+```
+
+## Scenario Guidance
+
+- Match skeleton geometry to final content so layout shift stays minimal.
+- Use short bursts for tiny labels and wider rows for text-heavy areas.
+- Avoid keeping skeletons visible after data has resolved.
+
+## Source Code
+
+- `packages/components/src/primitives/skeleton.tsx`
+- `registry/components/skeleton.json`

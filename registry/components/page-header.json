@@ -27,5 +27,11 @@
   "sources": [
     "registry/components/page-header.json"
   ],
-  "checksum": "abcbc760d8ef6bb3b25d0db4d382f14dd2a2de31ef876416556c52b390a5c531"
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "44066c728bbac87dc33d7b37a75da7a3df144d990539effdb9b0707e5234a9e1"
 }

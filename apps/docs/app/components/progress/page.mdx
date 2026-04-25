@@ -1,0 +1,37 @@
+# Progress
+
+## Overview
+
+`Progress` provides a compact indicator for completion, upload status, or long-running tasks.
+
+## Installation
+
+```bash
+npx formaui add progress
+```
+
+## Usage
+
+```tsx
+import { Progress } from "@/components/primitives/progress";
+
+export function UploadProgress() {
+  return (
+    <div className="space-y-2">
+      <p className="text-sm text-muted-foreground">Uploading files...</p>
+      <Progress value={72} />
+    </div>
+  );
+}
+```
+
+## Accessibility
+
+- Exposes `role="progressbar"` and `aria-valuenow` through Radix.
+- Accepts controlled `value` in the 0-100 range.
+- Works well with screen-reader friendly status text nearby.
+
+## Source Code
+
+- `packages/components/src/primitives/progress.tsx`
+- `registry/components/progress.json`

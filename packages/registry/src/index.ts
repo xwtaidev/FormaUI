@@ -4,5 +4,6 @@ export * from "./build-index.js";
 export * from "./build-registry.js";
 export * from "./items/blocks.js";
 export * from "./items/components.js";
+export * from "./items/packs.js";
 export * from "./items/templates.js";
 export * from "./items/themes.js";

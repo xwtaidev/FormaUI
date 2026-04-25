@@ -7,6 +7,8 @@ export interface InfoCommandOptions {
   kind?: RegistryKind;
   logger?: Logger;
   registryRoot?: string;
+  category?: string;
+  scenario?: string;
 }
 
 export async function runInfoCommand(options: InfoCommandOptions) {
@@ -14,7 +16,9 @@ export async function runInfoCommand(options: InfoCommandOptions) {
   const entry = await getRegistryItemInfo({
     name: options.name,
     kind: options.kind,
-    registryRoot: options.registryRoot
+    registryRoot: options.registryRoot,
+    category: options.category,
+    scenario: options.scenario
   });
 
   for (const line of formatRegistryInfoLines(entry)) {

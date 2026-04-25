@@ -5,6 +5,7 @@ import { runDoctorCommand } from "./commands/doctor.js";
 import { runInfoCommand } from "./commands/info.js";
 import { runInitCommand } from "./commands/init.js";
 import { runListCommand } from "./commands/list.js";
+import { runPackCommand } from "./commands/pack.js";
 import { runSearchCommand } from "./commands/search.js";
 import type { InstallCommandRunner } from "./project/install-dependencies.js";
 import type { RegistryKind } from "./registry/load-item.js";
@@ -12,7 +13,7 @@ import type { Logger } from "./utils/logger.js";
 
 function printHelp() {
   console.log(
-    `FormaUI CLI\n\nUsage:\n  formaui init\n  formaui add <name>\n  formaui block add <name>\n  formaui template add <name>\n  formaui theme add <name>\n  formaui list [--kind <component|block|template|theme>]\n  formaui search <query>\n  formaui info <name> [--kind <component|block|template|theme>]\n  formaui doctor\n\nOptions:\n  --cwd <path>      Target project directory\n  --registry <path> Registry root directory\n  --dry-run         Print install plan without writing files\n  -y, --yes         Overwrite conflicting files without prompt`
+    `FormaUI CLI\n\nUsage:\n  formaui init\n  formaui add <name>\n  formaui block add <name>\n  formaui template add <name>\n  formaui theme add <name>\n  formaui pack list [--category <name>] [--scenario <name>]\n  formaui pack info <name> [--category <name>] [--scenario <name>]\n  formaui pack add <name>\n  formaui list [--kind <component|block|template|theme|pack>] [--category <name>] [--scenario <name>]\n  formaui search <query> [--kind <component|block|template|theme|pack>] [--category <name>] [--scenario <name>]\n  formaui info <name> [--kind <component|block|template|theme|pack>] [--category <name>] [--scenario <name>]\n  formaui doctor\n\nOptions:\n  --cwd <path>      Target project directory\n  --registry <path> Registry root directory\n  --dry-run         Print install plan without writing files\n  -y, --yes         Overwrite conflicting files without prompt`
   );
 }
 
@@ -60,7 +61,7 @@ function stripGlobalArgs(args: string[]) {
   );
 }
 
-const REGISTRY_KINDS: RegistryKind[] = ["component", "block", "template", "theme"];
+const REGISTRY_KINDS: RegistryKind[] = ["component", "block", "template", "theme", "pack"];
 
 function parseRegistryKind(value?: string) {
   if (!value) {
@@ -142,6 +143,20 @@ export async function runCli(argv = process.argv.slice(2), options: RunCliOption
     return;
   }
 
+  if (command === "pack") {
+    await runPackCommand({
+      args: commandArgs,
+      cwd: context.cwd,
+      yes: context.yes,
+      dryRun: context.dryRun,
+      logger,
+      registryRoot,
+      confirmOverwrite: options.confirmOverwrite,
+      installCommandRunner: options.installCommandRunner
+    });
+    return;
+  }
+
   const groupedCommandMap: Record<string, RegistryKind> = {
     block: "block",
     template: "template",
@@ -174,8 +189,12 @@ export async function runCli(argv = process.argv.slice(2), options: RunCliOption
 
   if (command === "list") {
     const kind = parseRegistryKind(parseFlagValue(commandArgs, "--kind"));
+    const category = parseFlagValue(commandArgs, "--category");
+    const scenario = parseFlagValue(commandArgs, "--scenario");
     await runListCommand({
       kind,
+      category,
+      scenario,
       logger,
       registryRoot
     });
@@ -183,12 +202,19 @@ export async function runCli(argv = process.argv.slice(2), options: RunCliOption
   }
 
   if (command === "search") {
-    const [query] = commandArgs;
+    const kind = parseRegistryKind(parseFlagValue(commandArgs, "--kind"));
+    const category = parseFlagValue(commandArgs, "--category");
+    const scenario = parseFlagValue(commandArgs, "--scenario");
+    const searchArgs = stripFlagsWithValue(commandArgs, ["--kind", "--category", "--scenario"]);
+    const [query] = searchArgs;
     if (!query) {
       throw new Error("Usage: formaui search <query>");
     }
     await runSearchCommand({
       query,
+      kind,
+      category,
+      scenario,
       logger,
       registryRoot
     });
@@ -197,7 +223,9 @@ export async function runCli(argv = process.argv.slice(2), options: RunCliOption
 
   if (command === "info") {
     const kind = parseRegistryKind(parseFlagValue(commandArgs, "--kind"));
-    const infoArgs = stripFlagsWithValue(commandArgs, ["--kind"]);
+    const category = parseFlagValue(commandArgs, "--category");
+    const scenario = parseFlagValue(commandArgs, "--scenario");
+    const infoArgs = stripFlagsWithValue(commandArgs, ["--kind", "--category", "--scenario"]);
     const [name] = infoArgs;
     if (!name) {
       throw new Error("Usage: formaui info <name>");
@@ -205,6 +233,8 @@ export async function runCli(argv = process.argv.slice(2), options: RunCliOption
     await runInfoCommand({
       name,
       kind,
+      category,
+      scenario,
       logger,
       registryRoot
     });

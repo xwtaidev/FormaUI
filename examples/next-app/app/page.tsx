@@ -47,14 +47,32 @@ const themeSamples = [
   description: string;
 }>;
 
+const packSamples = [
+  {
+    name: "dashboard-foundation",
+    command: "npx formaui pack add dashboard-foundation",
+    summary: "Search + table + pagination + empty-result handling."
+  },
+  {
+    name: "data-entry",
+    command: "npx formaui pack add data-entry",
+    summary: "Input, selection, date range and filter-first form flow."
+  },
+  {
+    name: "feedback-loading",
+    command: "npx formaui pack add feedback-loading",
+    summary: "Skeleton, progress, status, and retry-oriented empty states."
+  }
+];
+
 export default function HomePage() {
   return (
     <div className="space-y-10">
       <section className="space-y-3">
         <Badge variant="secondary">Source-owned workflow</Badge>
-        <h2 className="text-3xl font-semibold">FormaUI v0.2.5 Validation Surface</h2>
+        <h2 className="text-3xl font-semibold">FormaUI v0.3.5 Validation Surface</h2>
         <p className="max-w-3xl text-muted-foreground">
-          This example verifies components, blocks, template composition, and semantic theme tokens in a real
+          This example verifies components, packs, blocks, template composition, and semantic theme tokens in a real
           Next.js app.
         </p>
         <div className="flex flex-wrap gap-3">
@@ -73,6 +91,26 @@ export default function HomePage() {
           <Link href="/admin-dashboard" className={cn(buttonVariants({ variant: "outline" }))}>
             Open Admin Dashboard
           </Link>
+        </div>
+      </section>
+
+      <section className="space-y-4">
+        <h3 className="text-xl font-semibold">Pack Scenarios</h3>
+        <p className="text-sm text-muted-foreground">
+          v0.3.5 introduces scenario-first installation with official packs.
+        </p>
+        <div className="grid gap-4 md:grid-cols-3">
+          {packSamples.map((pack) => (
+            <Card key={pack.name}>
+              <CardHeader>
+                <CardTitle>{pack.name}</CardTitle>
+                <CardDescription>{pack.summary}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <code className="block rounded-md bg-muted px-3 py-2 text-xs">{pack.command}</code>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </section>
 

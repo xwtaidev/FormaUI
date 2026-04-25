@@ -1,0 +1,38 @@
+# Separator
+
+## Overview
+
+`Separator` creates visual boundaries between content blocks in toolbars, command panels, and dense dashboards.
+
+## Installation
+
+```bash
+npx formaui add separator
+```
+
+## Usage
+
+```tsx
+import { Separator } from "@/components/primitives/separator";
+
+export function FilterPanel() {
+  return (
+    <div className="space-y-3 rounded-lg border border-border p-4">
+      <p className="text-sm font-medium">Filters</p>
+      <Separator />
+      <p className="text-sm text-muted-foreground">Status, date range, and owner filters.</p>
+    </div>
+  );
+}
+```
+
+## Scenario Guidance
+
+- Use horizontal separators to split grouped controls.
+- Use vertical separators inside compact action bars.
+- Keep decorative separators for visual grouping; set `decorative={false}` when semantic separation matters.
+
+## Source Code
+
+- `packages/components/src/primitives/separator.tsx`
+- `registry/components/separator.json`

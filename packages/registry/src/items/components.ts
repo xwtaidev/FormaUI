@@ -41,6 +41,12 @@ export const componentRegistryItems: RegistryItem[] = [
     ]
   },
   componentItem({
+    name: "accordion",
+    source: "packages/components/src/primitives/accordion.tsx",
+    dependencies: ["@radix-ui/react-accordion", "lucide-react"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
     name: "avatar",
     source: "packages/components/src/primitives/avatar.tsx",
     dependencies: ["@radix-ui/react-avatar"],
@@ -82,14 +88,49 @@ export const componentRegistryItems: RegistryItem[] = [
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
+    name: "hover-card",
+    source: "packages/components/src/primitives/hover-card.tsx",
+    dependencies: ["@radix-ui/react-hover-card"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
     name: "input",
     source: "packages/components/src/primitives/input.tsx",
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "popover",
+    source: "packages/components/src/primitives/popover.tsx",
+    dependencies: ["@radix-ui/react-popover"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "progress",
+    source: "packages/components/src/primitives/progress.tsx",
+    dependencies: ["@radix-ui/react-progress"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "radio-group",
+    source: "packages/components/src/primitives/radio-group.tsx",
+    dependencies: ["@radix-ui/react-radio-group"],
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
     name: "select",
     source: "packages/components/src/primitives/select.tsx",
     dependencies: ["@radix-ui/react-select", "lucide-react"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "separator",
+    source: "packages/components/src/primitives/separator.tsx",
+    dependencies: ["@radix-ui/react-separator"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "skeleton",
+    source: "packages/components/src/primitives/skeleton.tsx",
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
@@ -125,9 +166,29 @@ export const componentRegistryItems: RegistryItem[] = [
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
+    name: "data-table-toolbar",
+    source: "packages/components/src/composites/data-table-toolbar.tsx",
+    registryDependencies: ["lib-cn", "button", "input"]
+  }),
+  componentItem({
+    name: "date-range-picker",
+    source: "packages/components/src/composites/date-range-picker.tsx",
+    registryDependencies: ["lib-cn", "input", "separator"]
+  }),
+  componentItem({
+    name: "empty-search-state",
+    source: "packages/components/src/composites/empty-search-state.tsx",
+    registryDependencies: ["lib-cn", "button"]
+  }),
+  componentItem({
     name: "empty-state",
     source: "packages/components/src/composites/empty-state.tsx",
     registryDependencies: ["button"]
+  }),
+  componentItem({
+    name: "filter-bar",
+    source: "packages/components/src/composites/filter-bar.tsx",
+    registryDependencies: ["lib-cn", "button", "input", "radio-group", "separator", "date-range-picker"]
   }),
   componentItem({
     name: "form-field",
@@ -138,6 +199,11 @@ export const componentRegistryItems: RegistryItem[] = [
     name: "metric-card",
     source: "packages/components/src/composites/metric-card.tsx",
     registryDependencies: ["card"]
+  }),
+  componentItem({
+    name: "pagination-bar",
+    source: "packages/components/src/composites/pagination-bar.tsx",
+    registryDependencies: ["lib-cn", "button"]
   }),
   componentItem({
     name: "page-header",

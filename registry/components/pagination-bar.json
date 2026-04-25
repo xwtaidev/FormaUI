@@ -1,0 +1,38 @@
+{
+  "name": "pagination-bar",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn",
+    "button"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/composites/pagination-bar.tsx",
+      "target": "components/composites/pagination-bar.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/pagination-bar",
+  "tags": [
+    "component",
+    "pagination-bar"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/pagination-bar.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "39bdad3212dcfe3ef5e9f864a645b8c4373a16b3973acd20ca111ebf6d01a0c7"
+}

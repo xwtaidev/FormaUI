@@ -59,6 +59,7 @@ async function createRegistryFixture() {
   await mkdir(resolve(registryRoot, "blocks"), { recursive: true });
   await mkdir(resolve(registryRoot, "templates"), { recursive: true });
   await mkdir(resolve(registryRoot, "themes"), { recursive: true });
+  await mkdir(resolve(registryRoot, "packs"), { recursive: true });
   await mkdir(sourcesRoot, { recursive: true });
 
   await writeFile(resolve(sourcesRoot, "button.tsx"), "export const Button = () => null;\n", "utf8");
@@ -80,6 +81,10 @@ async function createRegistryFixture() {
       {
         name: "button",
         type: "component",
+        category: "form-controls",
+        scenarios: ["forms", "settings"],
+        complexity: "low",
+        stability: "stable",
         dependencies: ["react"],
         devDependencies: [],
         registryDependencies: [],
@@ -102,6 +107,10 @@ async function createRegistryFixture() {
       {
         name: "dashboard-shell",
         type: "block",
+        category: "dashboard",
+        scenarios: ["analytics", "operations"],
+        complexity: "medium",
+        stability: "stable",
         dependencies: ["react"],
         devDependencies: [],
         registryDependencies: ["button"],
@@ -124,6 +133,10 @@ async function createRegistryFixture() {
       {
         name: "ai-console-lite",
         type: "template",
+        category: "starter-kit",
+        scenarios: ["ai", "dashboard"],
+        complexity: "high",
+        stability: "beta",
         dependencies: ["react"],
         devDependencies: [],
         registryDependencies: ["dashboard-shell"],
@@ -146,6 +159,10 @@ async function createRegistryFixture() {
       {
         name: "default",
         type: "theme",
+        category: "branding",
+        scenarios: ["theming"],
+        complexity: "low",
+        stability: "stable",
         dependencies: [],
         devDependencies: [],
         registryDependencies: [],
@@ -163,11 +180,32 @@ async function createRegistryFixture() {
   );
 
   await writeFile(
+    resolve(registryRoot, "packs/dashboard-foundation.json"),
+    JSON.stringify(
+      {
+        name: "dashboard-foundation",
+        type: "pack",
+        category: "dashboard",
+        scenarios: ["analytics"],
+        complexity: "medium",
+        stability: "beta",
+        dependencies: [],
+        devDependencies: [],
+        registryDependencies: ["dashboard-shell", "button"],
+        files: []
+      },
+      null,
+      2
+    ),
+    "utf8"
+  );
+
+  await writeFile(
     resolve(registryRoot, "index.json"),
     JSON.stringify(
       {
         generatedAt: "2026-04-25T00:00:00.000Z",
-        total: 4,
+        total: 5,
         items: [
           {
             kind: "component",
@@ -196,6 +234,13 @@ async function createRegistryFixture() {
             type: "theme",
             version: "0.2.2",
             path: "themes/default.json"
+          },
+          {
+            kind: "pack",
+            name: "dashboard-foundation",
+            type: "pack",
+            version: "0.3.1",
+            path: "packs/dashboard-foundation.json"
           }
         ],
         byKind: {
@@ -239,6 +284,17 @@ async function createRegistryFixture() {
               entries: {
                 "0.2.2": {
                   path: "themes/default.json"
+                }
+              }
+            }
+          },
+          pack: {
+            "dashboard-foundation": {
+              latest: "0.3.1",
+              versions: ["0.3.1"],
+              entries: {
+                "0.3.1": {
+                  path: "packs/dashboard-foundation.json"
                 }
               }
             }
@@ -295,6 +351,39 @@ describe("formaui discoverability commands", () => {
       await runCli(["info", "button", "--registry", registryRoot], { logger });
       expect(logs.info.some((line) => line.includes("Name: button"))).toBe(true);
       expect(logs.info.some((line) => line.includes("Kind: component"))).toBe(true);
+    } finally {
+      await rm(fixtureRoot, { recursive: true, force: true });
+    }
+  });
+
+  it("supports list/search metadata filters for category and scenario", async () => {
+    const { root: fixtureRoot, registryRoot } = await createRegistryFixture();
+    const logs = createLogBucket();
+    const logger = createCapturedLogger(logs);
+
+    try {
+      await runCli(["list", "--registry", registryRoot, "--category", "dashboard"], { logger });
+      expect(logs.info.some((line) => line.includes("block/dashboard-shell"))).toBe(true);
+      expect(logs.info.some((line) => line.includes("component/button"))).toBe(false);
+
+      logs.info.length = 0;
+      await runCli(["search", "dashboard", "--registry", registryRoot, "--scenario", "ai"], { logger });
+      expect(logs.info.some((line) => line.includes("template/ai-console-lite"))).toBe(true);
+      expect(logs.info.some((line) => line.includes("block/dashboard-shell"))).toBe(false);
+    } finally {
+      await rm(fixtureRoot, { recursive: true, force: true });
+    }
+  });
+
+  it("supports list --kind pack for pack discoverability", async () => {
+    const { root: fixtureRoot, registryRoot } = await createRegistryFixture();
+    const logs = createLogBucket();
+    const logger = createCapturedLogger(logs);
+
+    try {
+      await runCli(["list", "--registry", registryRoot, "--kind", "pack"], { logger });
+      expect(logs.info.some((line) => line.includes("pack/dashboard-foundation"))).toBe(true);
+      expect(logs.info.some((line) => line.includes("component/button"))).toBe(false);
     } finally {
       await rm(fixtureRoot, { recursive: true, force: true });
     }

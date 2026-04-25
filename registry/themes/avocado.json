@@ -22,5 +22,11 @@
   "sources": [
     "registry/themes/avocado.json"
   ],
-  "checksum": "80f94ce05b5a6ebe307b4a3a3b9798e959c6d35c5e9c0bbac39c03a5c5a3fc57"
+  "category": "theme",
+  "scenarios": [
+    "theme"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "59b386308e474ddd5618e8a127ab4ccf67f99b46060108de3ecfa2623db1ad36"
 }

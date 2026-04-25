@@ -1,0 +1,38 @@
+{
+  "name": "popover",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "@radix-ui/react-popover"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/popover.tsx",
+      "target": "components/primitives/popover.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/popover",
+  "tags": [
+    "component",
+    "popover"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/popover.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "618dec76e69470c5ccc96c6ca8a6d33e48d1bb88b7614c6b0d786f1946c4d0c7"
+}

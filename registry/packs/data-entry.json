@@ -1,0 +1,38 @@
+{
+  "name": "data-entry",
+  "type": "pack",
+  "description": "Form starter pack for onboarding/settings with date and status filtering flows.",
+  "category": "forms",
+  "scenarios": [
+    "settings",
+    "onboarding"
+  ],
+  "complexity": "medium",
+  "stability": "beta",
+  "dependencies": [],
+  "devDependencies": [],
+  "registryDependencies": [
+    "form-field",
+    "input",
+    "select",
+    "radio-group",
+    "checkbox",
+    "date-range-picker",
+    "filter-bar",
+    "button",
+    "card"
+  ],
+  "files": [],
+  "version": "0.2.2",
+  "tags": [
+    "pack",
+    "data-entry"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/packs/data-entry.json"
+  ],
+  "checksum": "18b25ef3a0e7b84fb9bb7394bfb13e59558dbb5ad9e5c8232b1264893bd8dc60"
+}
