@@ -1,7 +1,7 @@
 # FormaUI v0.2 PRD
 
 > 版本：v0.2  
-> 状态：Draft  
+> 状态：Released (v0.2.6)  
 > 日期：2026-04-25  
 > 阶段定位：从“可用验证版”升级为“可规模使用版”
 
@@ -439,16 +439,16 @@ pnpm dev
 
 ## 10. 验收清单（Release Checklist）
 
-- [ ] CLI v2 命令全部可用并具备测试覆盖
-- [ ] `init/add/block/template/theme` 支持依赖自动安装
-- [ ] Registry v2 schema 生效且可构建远程/本地双源
-- [ ] 新增组件 2 个全部交付
-- [ ] 新增 Blocks 3 个全部交付
-- [ ] 新增模板 2 个全部交付
-- [ ] Docs 对可安装资产覆盖 100%
-- [ ] Next 与 Vite 示例均通过 build/typecheck
-- [ ] 根命令 `lint/typecheck/test/build` 全绿
-- [ ] 发布说明与升级指南完成
+- [x] CLI v2 命令全部可用并具备测试覆盖
+- [x] `init/add/block/template/theme` 支持依赖自动安装
+- [x] Registry v2 schema 生效且可构建远程/本地双源
+- [x] 新增组件 2 个全部交付
+- [x] 新增 Blocks 3 个全部交付
+- [x] 新增模板 2 个全部交付
+- [x] Docs 对可安装资产覆盖 100%
+- [x] Next 与 Vite 示例均通过 build/typecheck
+- [x] 根命令 `lint/typecheck/test/build` 全绿
+- [x] 发布说明与升级指南完成
 
 ---
 
