@@ -26,7 +26,10 @@ const links = [
   { href: "/blocks/agent-run-timeline", label: "AgentRunTimeline" },
   { href: "/blocks/team-members-table", label: "TeamMembersTable" },
   { href: "/blocks/notification-panel", label: "NotificationPanel" },
+  { href: "/blocks/model-selector", label: "ModelSelector" },
   { href: "/templates/ai-console-lite", label: "ai-console-lite" },
+  { href: "/templates/saas-starter", label: "saas-starter" },
+  { href: "/templates/admin-dashboard", label: "admin-dashboard" },
   { href: "/cli", label: "CLI" },
   { href: "/registry", label: "Registry" }
 ];

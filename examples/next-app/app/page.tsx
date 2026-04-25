@@ -52,10 +52,10 @@ export default function HomePage() {
     <div className="space-y-10">
       <section className="space-y-3">
         <Badge variant="secondary">Source-owned workflow</Badge>
-        <h2 className="text-3xl font-semibold">FormaUI v0.1 Validation Surface</h2>
+        <h2 className="text-3xl font-semibold">FormaUI v0.2.5 Validation Surface</h2>
         <p className="max-w-3xl text-muted-foreground">
-          This example verifies components, blocks, template composition, and theme tokens in a real Next.js
-          app.
+          This example verifies components, blocks, template composition, and semantic theme tokens in a real
+          Next.js app.
         </p>
         <div className="flex flex-wrap gap-3">
           <Link href="/components" className={cn(buttonVariants({ variant: "default" }))}>
@@ -66,6 +66,12 @@ export default function HomePage() {
           </Link>
           <Link href="/ai-console-lite" className={cn(buttonVariants({ variant: "ghost" }))}>
             Open AI Console Lite
+          </Link>
+          <Link href="/saas-starter" className={cn(buttonVariants({ variant: "outline" }))}>
+            Open SaaS Starter
+          </Link>
+          <Link href="/admin-dashboard" className={cn(buttonVariants({ variant: "outline" }))}>
+            Open Admin Dashboard
           </Link>
         </div>
       </section>
