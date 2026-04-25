@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Badge, Button } from "@formaui/components";
+
 import type { SectionAnchor } from "../content";
 
 type LandingHeroProps = {
@@ -10,9 +12,7 @@ export function LandingHero({ anchors }: LandingHeroProps) {
   return (
     <section id="hero" className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:p-10">
       <div className="space-y-6">
-        <p className="m-0 w-fit rounded-full border border-slate-200 px-3 py-1 text-xs font-semibold tracking-wide text-slate-600">
-          FormaUI v0.4.1 Foundation
-        </p>
+        <Badge className="w-fit">FormaUI v0.4.1 Foundation</Badge>
         <div className="space-y-4">
           <h1 className="m-0 text-4xl font-semibold tracking-tight text-slate-950 md:text-5xl">
             Source-Owned Design System for Product Teams That Ship Fast
@@ -24,18 +24,16 @@ export function LandingHero({ anchors }: LandingHeroProps) {
         </div>
 
         <div className="flex flex-col gap-3 sm:flex-row">
-          <a
-            href="/quick-start"
-            className="inline-flex w-fit items-center rounded-md bg-slate-900 px-5 py-3 text-sm font-medium text-white"
-          >
-            Start Quick
-          </a>
-          <a
-            href="/introduction"
-            className="inline-flex w-fit items-center rounded-md border border-slate-300 px-5 py-3 text-sm font-medium text-slate-900"
-          >
-            Read Docs
-          </a>
+          <form action="/quick-start">
+            <Button type="submit" size="lg">
+              Start Quick
+            </Button>
+          </form>
+          <form action="/introduction">
+            <Button type="submit" variant="outline" size="lg">
+              Read Docs
+            </Button>
+          </form>
         </div>
 
         <nav aria-label="Landing sections">

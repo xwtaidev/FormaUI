@@ -8,6 +8,12 @@ export type Differentiator = {
   description: string;
 };
 
+export type AssetProof = {
+  label: string;
+  count: number;
+  href: string;
+};
+
 export type Scenario = {
   title: string;
   description: string;
@@ -59,6 +65,14 @@ export const differentiators: Differentiator[] = [
     title: "CLI Workflow",
     description: "Use `init`, `add`, and `pack add` to discover, validate, and ship assets with predictable registry metadata."
   }
+];
+
+export const assetProofItems: AssetProof[] = [
+  { label: "Components", count: 36, href: "/components/accordion" },
+  { label: "Blocks", count: 11, href: "/blocks/dashboard-shell" },
+  { label: "Templates", count: 3, href: "/templates/ai-console-lite" },
+  { label: "Packs", count: 3, href: "/packs" },
+  { label: "Themes", count: 2, href: "/theme/default" }
 ];
 
 export const scenarios: Scenario[] = [

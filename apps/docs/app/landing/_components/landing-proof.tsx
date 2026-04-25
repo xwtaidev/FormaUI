@@ -1,23 +1,18 @@
 import React from "react";
 import Link from "next/link";
 
-import type { Differentiator, Scenario, TrustItem } from "../content";
+import { Badge, Card, CardContent, CardDescription, CardHeader, CardTitle } from "@formaui/components";
+
+import type { AssetProof, Differentiator, Scenario, TrustItem } from "../content";
 
 type LandingProofProps = {
   differentiators: Differentiator[];
+  assetProofItems: AssetProof[];
   scenarios: Scenario[];
   trustItems: TrustItem[];
 };
 
-const foundationAssetRows: Array<{ label: string; href: string }> = [
-  { label: "Components", href: "/components/accordion" },
-  { label: "Blocks", href: "/blocks/dashboard-shell" },
-  { label: "Templates", href: "/templates/ai-console-lite" },
-  { label: "Packs", href: "/packs" },
-  { label: "Themes", href: "/theme/default" }
-];
-
-export function LandingProof({ differentiators, scenarios, trustItems }: LandingProofProps) {
+export function LandingProof({ differentiators, assetProofItems, scenarios, trustItems }: LandingProofProps) {
   return (
     <div className="space-y-10">
       <section id="core-differentiators" className="space-y-4">
@@ -29,10 +24,14 @@ export function LandingProof({ differentiators, scenarios, trustItems }: Landing
         </div>
         <div className="grid gap-4 md:grid-cols-3">
           {differentiators.map((item) => (
-            <article key={item.title} className="rounded-lg border border-slate-200 bg-white p-5">
-              <h3 className="m-0 text-xl font-semibold text-slate-900">{item.title}</h3>
-              <p className="mb-0 mt-3 text-sm leading-6 text-slate-600">{item.description}</p>
-            </article>
+            <Card key={item.title}>
+              <CardHeader>
+                <CardTitle>{item.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="m-0 text-sm leading-6 text-slate-600">{item.description}</p>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </section>
@@ -45,14 +44,18 @@ export function LandingProof({ differentiators, scenarios, trustItems }: Landing
           </p>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-          {foundationAssetRows.map((asset) => (
-            <article key={asset.label} className="rounded-lg border border-slate-200 bg-white p-5">
-              <p className="m-0 text-sm text-slate-600">{asset.label}</p>
-              <p className="mb-0 mt-2 text-base font-medium text-slate-900">Included in v0.4 landing IA</p>
-              <Link href={asset.href} className="mt-2 inline-block text-sm text-sky-700 underline underline-offset-2">
-                View {asset.label.toLowerCase()}
-              </Link>
-            </article>
+          {assetProofItems.map((asset) => (
+            <Card key={asset.label}>
+              <CardHeader className="pb-2">
+                <CardDescription>{asset.label}</CardDescription>
+                <CardTitle className="text-3xl">{asset.count}</CardTitle>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <Link href={asset.href} className="text-sm text-sky-700 underline underline-offset-2">
+                  View {asset.label.toLowerCase()}
+                </Link>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </section>
@@ -66,25 +69,25 @@ export function LandingProof({ differentiators, scenarios, trustItems }: Landing
         </div>
         <div className="grid gap-4 md:grid-cols-3">
           {scenarios.map((scenario) => (
-            <article key={scenario.title} className="rounded-lg border border-slate-200 bg-white p-5">
-              <h3 className="m-0 text-xl font-semibold text-slate-900">{scenario.title}</h3>
-              <div className="mt-3 space-y-3">
+            <Card key={scenario.title}>
+              <CardHeader>
+                <CardTitle>{scenario.title}</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
                 <p className="m-0 text-sm leading-6 text-slate-600">{scenario.description}</p>
                 <Link href={scenario.href} className="text-sm text-sky-700 underline underline-offset-2">
                   Open related block
                 </Link>
-              </div>
-            </article>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </section>
 
       <section id="trust-proof" className="space-y-4 rounded-2xl border border-slate-200 bg-slate-50 p-6">
-        <div className="flex flex-wrap items-center gap-2 text-slate-900">
+        <div className="flex flex-wrap items-center gap-2">
           <h2 className="m-0 text-3xl font-semibold text-slate-950">Social Proof & Release Rhythm</h2>
-          <span className="rounded-full border border-slate-300 px-2 py-1 text-xs font-medium text-slate-700">
-            Open Source
-          </span>
+          <Badge variant="secondary">Open Source</Badge>
         </div>
         <ul className="m-0 space-y-2 p-0">
           {trustItems.map((item) => (
