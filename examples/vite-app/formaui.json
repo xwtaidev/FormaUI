@@ -1,0 +1,12 @@
+{
+  "$schema": "https://formaui.dev/schema.json",
+  "aliases": {
+    "components": "src/components",
+    "lib": "src/lib",
+    "styles": "src/styles"
+  },
+  "css": {
+    "entry": "src/index.css",
+    "variables": "src/styles/formaui/default.css"
+  }
+}
