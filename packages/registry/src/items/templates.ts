@@ -1,0 +1,30 @@
+import type { RegistryItem } from "../schema.js";
+
+export const templateRegistryItems: RegistryItem[] = [
+  {
+    name: "ai-console-lite",
+    type: "template",
+    dependencies: ["react", "react-dom"],
+    devDependencies: [],
+    registryDependencies: [
+      "dashboard-shell",
+      "token-usage-chart",
+      "agent-run-timeline",
+      "api-key-manager",
+      "settings-layout",
+      "page-header",
+      "metric-card",
+      "button"
+    ],
+    files: [
+      {
+        source: "templates/ai-console-lite/page.tsx",
+        target: "app/ai-console-lite/page.tsx"
+      },
+      {
+        source: "templates/ai-console-lite/registry.json",
+        target: "templates/ai-console-lite/registry.json"
+      }
+    ]
+  }
+];

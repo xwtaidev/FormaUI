@@ -1,0 +1,19 @@
+{
+  "name": "token-usage-chart",
+  "type": "block",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "card",
+    "badge"
+  ],
+  "files": [
+    {
+      "source": "packages/blocks/src/token-usage-chart.tsx",
+      "target": "components/token-usage-chart.tsx"
+    }
+  ]
+}

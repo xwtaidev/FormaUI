@@ -1,0 +1,20 @@
+{
+  "name": "billing-panel",
+  "type": "block",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "card",
+    "badge",
+    "button"
+  ],
+  "files": [
+    {
+      "source": "packages/blocks/src/billing-panel.tsx",
+      "target": "components/billing-panel.tsx"
+    }
+  ]
+}

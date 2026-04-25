@@ -2,7 +2,9 @@ import { mkdir, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { blockRegistryItems } from "./items/blocks.js";
 import { componentRegistryItems } from "./items/components.js";
+import { templateRegistryItems } from "./items/templates.js";
 import { themeRegistryItems } from "./items/themes.js";
 import type { RegistryItem } from "./schema.js";
 import { validateRegistryItems } from "./validate.js";
@@ -27,7 +29,12 @@ async function writeRegistryGroup(options: {
 export async function buildRegistry(options: BuildRegistryOptions = {}) {
   const currentFileDir = dirname(fileURLToPath(import.meta.url));
   const repoRoot = options.repoRoot ?? resolve(currentFileDir, "../../..");
-  const allItems = [...componentRegistryItems, ...themeRegistryItems];
+  const allItems = [
+    ...componentRegistryItems,
+    ...themeRegistryItems,
+    ...blockRegistryItems,
+    ...templateRegistryItems
+  ];
 
   const validation = validateRegistryItems(allItems, {
     checkFiles: true,
@@ -49,10 +56,20 @@ export async function buildRegistry(options: BuildRegistryOptions = {}) {
     outputDir: resolve(repoRoot, "registry/themes"),
     items: themeRegistryItems
   });
+  await writeRegistryGroup({
+    outputDir: resolve(repoRoot, "registry/blocks"),
+    items: blockRegistryItems
+  });
+  await writeRegistryGroup({
+    outputDir: resolve(repoRoot, "registry/templates"),
+    items: templateRegistryItems
+  });
 
   return {
     components: componentRegistryItems.length,
-    themes: themeRegistryItems.length
+    themes: themeRegistryItems.length,
+    blocks: blockRegistryItems.length,
+    templates: templateRegistryItems.length
   };
 }
 
@@ -60,7 +77,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   buildRegistry()
     .then((summary) => {
       console.log(
-        `Generated ${summary.components} component items and ${summary.themes} theme items.`
+        `Generated ${summary.components} component items, ${summary.themes} theme items, ${summary.blocks} block items, and ${summary.templates} template items.`
       );
     })
     .catch((error) => {

@@ -1,0 +1,21 @@
+{
+  "name": "login-panel",
+  "type": "block",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "card",
+    "input",
+    "checkbox",
+    "button"
+  ],
+  "files": [
+    {
+      "source": "packages/blocks/src/login-panel.tsx",
+      "target": "components/login-panel.tsx"
+    }
+  ]
+}

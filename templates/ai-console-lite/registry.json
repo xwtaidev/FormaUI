@@ -1,0 +1,17 @@
+{
+  "name": "ai-console-lite",
+  "description": "Minimal AI console template composed from FormaUI blocks and components.",
+  "entry": "app/ai-console-lite/page.tsx",
+  "blocks": [
+    "dashboard-shell",
+    "token-usage-chart",
+    "agent-run-timeline",
+    "api-key-manager",
+    "settings-layout"
+  ],
+  "components": [
+    "page-header",
+    "metric-card",
+    "button"
+  ]
+}

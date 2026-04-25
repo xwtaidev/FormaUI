@@ -1,0 +1,20 @@
+{
+  "name": "api-key-manager",
+  "type": "block",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "card",
+    "badge",
+    "button"
+  ],
+  "files": [
+    {
+      "source": "packages/blocks/src/api-key-manager.tsx",
+      "target": "components/api-key-manager.tsx"
+    }
+  ]
+}

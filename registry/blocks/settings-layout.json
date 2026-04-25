@@ -1,0 +1,21 @@
+{
+  "name": "settings-layout",
+  "type": "block",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "tabs",
+    "card",
+    "input",
+    "switch"
+  ],
+  "files": [
+    {
+      "source": "packages/blocks/src/settings-layout.tsx",
+      "target": "components/settings-layout.tsx"
+    }
+  ]
+}

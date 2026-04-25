@@ -1,0 +1,20 @@
+{
+  "name": "dashboard-shell",
+  "type": "block",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "app-sidebar",
+    "page-header",
+    "metric-card"
+  ],
+  "files": [
+    {
+      "source": "packages/blocks/src/dashboard-shell.tsx",
+      "target": "components/dashboard-shell.tsx"
+    }
+  ]
+}
