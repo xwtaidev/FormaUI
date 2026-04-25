@@ -27,11 +27,13 @@ import {
   DialogTitle,
   DialogTrigger,
   DateRangePicker,
+  DataTableToolbar,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
   DataTable,
+  EmptySearchState,
   FilterBar,
   HoverCard,
   HoverCardContent,
@@ -51,6 +53,7 @@ import {
   Separator,
   Skeleton,
   SelectValue,
+  PaginationBar,
   Switch,
   Tabs,
   TabsContent,
@@ -68,6 +71,9 @@ export default function ComponentsPage() {
   const [checked, setChecked] = useState(true);
   const [selectedCommand, setSelectedCommand] = useState("none");
   const [reviewStatus, setReviewStatus] = useState("all");
+  const [toolbarQuery, setToolbarQuery] = useState("");
+  const [toolbarPage, setToolbarPage] = useState(1);
+  const [toolbarPageSize, setToolbarPageSize] = useState(2);
   const [selectedRange, setSelectedRange] = useState({ from: "2026-04-01", to: "2026-04-30" });
   const [filters, setFilters] = useState({ query: "", status: "all", range: { from: "", to: "" } });
   const memberRows = [
@@ -75,6 +81,18 @@ export default function ComponentsPage() {
     { name: "Riley Chen", role: "ML Engineer", score: 92 },
     { name: "Jordan Patel", role: "UX Designer", score: 95 }
   ];
+  const normalizedToolbarQuery = toolbarQuery.trim().toLowerCase();
+  const filteredMemberRows = memberRows.filter((row) => {
+    if (!normalizedToolbarQuery) {
+      return true;
+    }
+    return (
+      row.name.toLowerCase().includes(normalizedToolbarQuery) ||
+      row.role.toLowerCase().includes(normalizedToolbarQuery)
+    );
+  });
+  const toolbarStart = (toolbarPage - 1) * toolbarPageSize;
+  const visibleMemberRows = filteredMemberRows.slice(toolbarStart, toolbarStart + toolbarPageSize);
 
   return (
     <TooltipProvider>
@@ -82,8 +100,8 @@ export default function ComponentsPage() {
         <section>
           <h2 className="text-2xl font-semibold">Primitive Components</h2>
           <p className="text-sm text-muted-foreground">
-            v0.3.3 component set adds Wave B controls for filtering workflows: Separator, Skeleton, RadioGroup,
-            DateRangePicker, and FilterBar.
+            v0.3.5 component set includes Wave A/B/C coverage and pack-ready compositions for dashboard and form
+            workflows.
           </p>
         </section>
 
@@ -280,19 +298,55 @@ export default function ComponentsPage() {
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="md:col-span-2">
             <CardHeader>
-              <CardTitle>DataTable</CardTitle>
-              <CardDescription>Sortable rows with custom columns.</CardDescription>
+              <CardTitle>Pack Scenario: dashboard-foundation</CardTitle>
+              <CardDescription>
+                Search + table + pagination + empty-query fallback built from Wave C composites.
+              </CardDescription>
             </CardHeader>
-            <CardContent>
-              <DataTable
-                columns={[
-                  { key: "name", header: "Name", sortable: true },
-                  { key: "role", header: "Role" },
-                  { key: "score", header: "Score", sortable: true, align: "right" }
-                ]}
-                rows={memberRows}
+            <CardContent className="space-y-4">
+              <DataTableToolbar
+                value={toolbarQuery}
+                resultCount={filteredMemberRows.length}
+                onQueryChange={(value) => {
+                  setToolbarQuery(value);
+                  setToolbarPage(1);
+                }}
+                onRefresh={() => setToolbarPage(1)}
+                onAdd={() => setSelectedCommand("create-row")}
+                addLabel="Add teammate"
+              />
+
+              {filteredMemberRows.length === 0 ? (
+                <EmptySearchState
+                  query={toolbarQuery}
+                  clearLabel="Clear query"
+                  createLabel="Create teammate"
+                  onClear={() => {
+                    setToolbarQuery("");
+                    setToolbarPage(1);
+                  }}
+                  onCreate={() => setSelectedCommand("create-row")}
+                />
+              ) : (
+                <DataTable
+                  columns={[
+                    { key: "name", header: "Name", sortable: true },
+                    { key: "role", header: "Role" },
+                    { key: "score", header: "Score", sortable: true, align: "right" }
+                  ]}
+                  rows={visibleMemberRows}
+                />
+              )}
+
+              <PaginationBar
+                totalItems={filteredMemberRows.length}
+                page={toolbarPage}
+                pageSize={toolbarPageSize}
+                pageSizeOptions={[1, 2, 3]}
+                onPageChange={setToolbarPage}
+                onPageSizeChange={setToolbarPageSize}
               />
             </CardContent>
           </Card>
@@ -317,8 +371,8 @@ export default function ComponentsPage() {
 
           <Card className="md:col-span-2">
             <CardHeader>
-              <CardTitle>DateRangePicker / FilterBar</CardTitle>
-              <CardDescription>Wave B composites for dashboard filtering flows.</CardDescription>
+              <CardTitle>Pack Scenario: data-entry</CardTitle>
+              <CardDescription>Form-first filtering workflow with date window and status selection.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <DateRangePicker value={selectedRange} onChange={setSelectedRange} />

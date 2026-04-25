@@ -12,12 +12,16 @@ import {
   AccordionItem,
   AccordionTrigger,
   Button,
+  DataTable,
+  DataTableToolbar,
   DateRangePicker,
+  EmptySearchState,
   FilterBar,
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
   Input,
+  PaginationBar,
   Popover,
   PopoverContent,
   PopoverTrigger,
@@ -43,17 +47,37 @@ function queryModels(query: string) {
 export default function App() {
   const [query, setQuery] = useState("");
   const [healthStatus, setHealthStatus] = useState("healthy");
+  const [tableQuery, setTableQuery] = useState("");
+  const [tablePage, setTablePage] = useState(1);
+  const [tablePageSize, setTablePageSize] = useState(2);
   const [dateRange, setDateRange] = useState({ from: "2026-04-01", to: "2026-04-30" });
   const [filters, setFilters] = useState({ query: "", status: "all", range: { from: "", to: "" } });
   const models = useMemo(() => queryModels(query), [query]);
+  const filteredMembers = useMemo(() => {
+    const normalized = tableQuery.trim().toLowerCase();
+    if (!normalized) {
+      return demoTeamMembers;
+    }
+    return demoTeamMembers.filter((member) => {
+      return (
+        member.name.toLowerCase().includes(normalized) ||
+        member.role.toLowerCase().includes(normalized) ||
+        member.team.toLowerCase().includes(normalized)
+      );
+    });
+  }, [tableQuery]);
+  const pagedMembers = useMemo(() => {
+    const start = (tablePage - 1) * tablePageSize;
+    return filteredMembers.slice(start, start + tablePageSize);
+  }, [filteredMembers, tablePage, tablePageSize]);
 
   return (
     <main className="mx-auto flex min-h-screen w-full max-w-6xl flex-col gap-6 p-6 lg:p-10">
       <header className="space-y-4 rounded-xl border border-border bg-card p-6">
-        <p className="text-sm font-medium uppercase tracking-wide text-muted-foreground">FormaUI v0.3.3</p>
+        <p className="text-sm font-medium uppercase tracking-wide text-muted-foreground">FormaUI v0.3.5</p>
         <h1 className="text-3xl font-semibold tracking-tight">Vite Integration Example</h1>
         <p className="max-w-3xl text-sm text-muted-foreground">
-          This workspace demonstrates using FormaUI components and blocks in a Vite + React + TypeScript
+          This workspace demonstrates using FormaUI components, packs, and blocks in a Vite + React + TypeScript
           application.
         </p>
         <div className="flex flex-wrap items-center gap-3">
@@ -177,6 +201,55 @@ export default function App() {
           Filters: query={filters.query || "none"}, status={filters.status}, from={filters.range.from || "unset"},
           to={filters.range.to || "unset"}
         </p>
+      </section>
+
+      <section className="space-y-3 rounded-xl border border-border bg-card p-6">
+        <h2 className="text-lg font-semibold">Pack Scenario: dashboard-foundation</h2>
+        <p className="text-sm text-muted-foreground">
+          Demonstrates `npx formaui pack add dashboard-foundation` with table query, pagination, and empty-result
+          fallback.
+        </p>
+        <DataTableToolbar
+          value={tableQuery}
+          resultCount={filteredMembers.length}
+          onQueryChange={(value) => {
+            setTableQuery(value);
+            setTablePage(1);
+          }}
+          onRefresh={() => setTablePage(1)}
+          onAdd={() => setQuery("add-user")}
+          addLabel="Add member"
+        />
+        {filteredMembers.length === 0 ? (
+          <EmptySearchState
+            query={tableQuery}
+            clearLabel="Clear query"
+            createLabel="Create member"
+            onClear={() => {
+              setTableQuery("");
+              setTablePage(1);
+            }}
+            onCreate={() => setQuery("create-member")}
+          />
+        ) : (
+          <DataTable
+            columns={[
+              { key: "name", header: "Name", sortable: true },
+              { key: "role", header: "Role", sortable: true },
+              { key: "team", header: "Team" },
+              { key: "status", header: "Status" }
+            ]}
+            rows={pagedMembers}
+          />
+        )}
+        <PaginationBar
+          totalItems={filteredMembers.length}
+          page={tablePage}
+          pageSize={tablePageSize}
+          pageSizeOptions={[1, 2, 4]}
+          onPageChange={setTablePage}
+          onPageSizeChange={setTablePageSize}
+        />
       </section>
 
       <section className="grid gap-6 lg:grid-cols-2">
