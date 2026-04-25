@@ -111,9 +111,26 @@ export const componentRegistryItems: RegistryItem[] = [
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
+    name: "radio-group",
+    source: "packages/components/src/primitives/radio-group.tsx",
+    dependencies: ["@radix-ui/react-radio-group"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
     name: "select",
     source: "packages/components/src/primitives/select.tsx",
     dependencies: ["@radix-ui/react-select", "lucide-react"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "separator",
+    source: "packages/components/src/primitives/separator.tsx",
+    dependencies: ["@radix-ui/react-separator"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "skeleton",
+    source: "packages/components/src/primitives/skeleton.tsx",
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
@@ -149,9 +166,19 @@ export const componentRegistryItems: RegistryItem[] = [
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
+    name: "date-range-picker",
+    source: "packages/components/src/composites/date-range-picker.tsx",
+    registryDependencies: ["lib-cn", "input", "separator"]
+  }),
+  componentItem({
     name: "empty-state",
     source: "packages/components/src/composites/empty-state.tsx",
     registryDependencies: ["button"]
+  }),
+  componentItem({
+    name: "filter-bar",
+    source: "packages/components/src/composites/filter-bar.tsx",
+    registryDependencies: ["lib-cn", "button", "input", "radio-group", "separator", "date-range-picker"]
   }),
   componentItem({
     name: "form-field",

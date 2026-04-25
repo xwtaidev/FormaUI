@@ -6,7 +6,9 @@ import { describe, expect, it, vi } from "vitest";
 import {
   AppSidebar,
   DataTable,
+  DateRangePicker,
   EmptyState,
+  FilterBar,
   FormField,
   Input,
   MetricCard,
@@ -117,5 +119,60 @@ describe("composites", () => {
       keywords: ["undo"],
       label: "Rollback release"
     });
+  });
+
+  it("updates date-range-picker values", () => {
+    const onChange = vi.fn();
+
+    render(
+      <DateRangePicker
+        value={{ from: "2026-04-01", to: "2026-04-07" }}
+        onChange={onChange}
+      />
+    );
+
+    fireEvent.change(screen.getByLabelText("Start date"), {
+      target: { value: "2026-04-03" }
+    });
+
+    expect(onChange).toHaveBeenLastCalledWith({
+      from: "2026-04-03",
+      to: "2026-04-07"
+    });
+  });
+
+  it("updates and resets filters in filter-bar", () => {
+    const onChange = vi.fn();
+    const onReset = vi.fn();
+
+    render(
+      <FilterBar
+        statusOptions={[
+          { label: "All", value: "all" },
+          { label: "Open", value: "open" },
+          { label: "Closed", value: "closed" }
+        ]}
+        onChange={onChange}
+        onReset={onReset}
+      />
+    );
+
+    fireEvent.change(screen.getByRole("textbox", { name: "Filter query" }), {
+      target: { value: "release" }
+    });
+    fireEvent.click(screen.getByRole("radio", { name: "Closed" }));
+    const startDateInputs = screen.getAllByLabelText("Start date");
+    fireEvent.change(startDateInputs[startDateInputs.length - 1], {
+      target: { value: "2026-04-15" }
+    });
+    fireEvent.click(screen.getByRole("button", { name: "Reset filters" }));
+
+    expect(onChange).toHaveBeenCalled();
+    expect(onChange).toHaveBeenLastCalledWith({
+      query: "",
+      status: "all",
+      range: { from: "", to: "" }
+    });
+    expect(onReset).toHaveBeenCalledTimes(1);
   });
 });

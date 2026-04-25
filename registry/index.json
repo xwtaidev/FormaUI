@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-04-25T13:18:45.083Z",
-  "total": 47,
+  "generatedAt": "2026-04-25T13:30:20.737Z",
+  "total": 52,
   "items": [
     {
       "kind": "component",
@@ -204,6 +204,31 @@
     },
     {
       "kind": "component",
+      "name": "date-range-picker",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/date-range-picker.json",
+      "description": "component/date-range-picker",
+      "tags": [
+        "component",
+        "date-range-picker"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/date-range-picker.json"
+      ],
+      "checksum": "446d2b64c2fa0e1ac8ccbb60515515db3a784c6e857ec06197137db52cdd9f0b",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
       "name": "dialog",
       "type": "component",
       "version": "0.2.2",
@@ -270,6 +295,31 @@
         "registry/components/empty-state.json"
       ],
       "checksum": "2b5b701ff8d0a45897df3e1d868ad341178cff6635db7ce45ddde2a602ddfbb6",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "filter-bar",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/filter-bar.json",
+      "description": "component/filter-bar",
+      "tags": [
+        "component",
+        "filter-bar"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/filter-bar.json"
+      ],
+      "checksum": "96b6a11219acbe56f216335aba323e9d360de39cc5a0722fb05ab6e529586036",
       "category": "component",
       "scenarios": [
         "component"
@@ -479,6 +529,31 @@
     },
     {
       "kind": "component",
+      "name": "radio-group",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/radio-group.json",
+      "description": "component/radio-group",
+      "tags": [
+        "component",
+        "radio-group"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/radio-group.json"
+      ],
+      "checksum": "5b1a2c854df41a4aa1dc60e9fdf7d7473dab498075a7555849ad5fb0a460e558",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
       "name": "search-command",
       "type": "component",
       "version": "0.2.2",
@@ -520,6 +595,56 @@
         "registry/components/select.json"
       ],
       "checksum": "dd2edecbf366aa5b546edf8eaecbfab355848c3498b73ccef6acc76ee7849e08",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "separator",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/separator.json",
+      "description": "component/separator",
+      "tags": [
+        "component",
+        "separator"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/separator.json"
+      ],
+      "checksum": "9531476ac9804a92f496151d09059dd8fe8ff40669a2a8375502ab9762b82113",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "skeleton",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/skeleton.json",
+      "description": "component/skeleton",
+      "tags": [
+        "component",
+        "skeleton"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/skeleton.json"
+      ],
+      "checksum": "ae1971283b54bd596362be0eece2496cc5456346bf397169c1ad0007621d947c",
       "category": "component",
       "scenarios": [
         "component"
@@ -1448,6 +1573,39 @@
           }
         }
       },
+      "date-range-picker": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "date-range-picker",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/date-range-picker.json",
+            "description": "component/date-range-picker",
+            "tags": [
+              "component",
+              "date-range-picker"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/date-range-picker.json"
+            ],
+            "checksum": "446d2b64c2fa0e1ac8ccbb60515515db3a784c6e857ec06197137db52cdd9f0b",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
       "dialog": {
         "latest": "0.2.2",
         "versions": [
@@ -1538,6 +1696,39 @@
               "registry/components/empty-state.json"
             ],
             "checksum": "2b5b701ff8d0a45897df3e1d868ad341178cff6635db7ce45ddde2a602ddfbb6",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "filter-bar": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "filter-bar",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/filter-bar.json",
+            "description": "component/filter-bar",
+            "tags": [
+              "component",
+              "filter-bar"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/filter-bar.json"
+            ],
+            "checksum": "96b6a11219acbe56f216335aba323e9d360de39cc5a0722fb05ab6e529586036",
             "category": "component",
             "scenarios": [
               "component"
@@ -1811,6 +2002,39 @@
           }
         }
       },
+      "radio-group": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "radio-group",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/radio-group.json",
+            "description": "component/radio-group",
+            "tags": [
+              "component",
+              "radio-group"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/radio-group.json"
+            ],
+            "checksum": "5b1a2c854df41a4aa1dc60e9fdf7d7473dab498075a7555849ad5fb0a460e558",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
       "search-command": {
         "latest": "0.2.2",
         "versions": [
@@ -1868,6 +2092,72 @@
               "registry/components/select.json"
             ],
             "checksum": "dd2edecbf366aa5b546edf8eaecbfab355848c3498b73ccef6acc76ee7849e08",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "separator": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "separator",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/separator.json",
+            "description": "component/separator",
+            "tags": [
+              "component",
+              "separator"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/separator.json"
+            ],
+            "checksum": "9531476ac9804a92f496151d09059dd8fe8ff40669a2a8375502ab9762b82113",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "skeleton": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "skeleton",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/skeleton.json",
+            "description": "component/skeleton",
+            "tags": [
+              "component",
+              "skeleton"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/skeleton.json"
+            ],
+            "checksum": "ae1971283b54bd596362be0eece2496cc5456346bf397169c1ad0007621d947c",
             "category": "component",
             "scenarios": [
               "component"

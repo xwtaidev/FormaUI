@@ -28,6 +28,9 @@ import {
   PopoverContent,
   PopoverTrigger,
   Progress,
+  RadioGroup,
+  RadioGroupItem,
+  Separator,
   Select,
   SelectContent,
   SelectItem,
@@ -149,5 +152,32 @@ describe("primitives: radix and form", () => {
     expect(screen.getByText("Hover card content")).toBeDefined();
     expect(progress.getAttribute("role")).toBe("progressbar");
     expect(progress.getAttribute("aria-valuenow")).toBe("66");
+  });
+
+  it("renders wave-b primitives and keeps selection behavior predictable", () => {
+    const onValueChange = vi.fn();
+
+    render(
+      <div>
+        <Separator data-testid="separator" decorative={false} />
+
+        <RadioGroup value="all" onValueChange={onValueChange}>
+          <div className="flex items-center gap-2">
+            <RadioGroupItem id="status-all" value="all" />
+            <label htmlFor="status-all">All items</label>
+          </div>
+          <div className="flex items-center gap-2">
+            <RadioGroupItem id="status-open" value="open" />
+            <label htmlFor="status-open">Open items</label>
+          </div>
+        </RadioGroup>
+      </div>
+    );
+
+    const openRadio = screen.getByRole("radio", { name: "Open items" });
+    fireEvent.click(openRadio);
+
+    expect(screen.getByTestId("separator").getAttribute("role")).toBe("separator");
+    expect(onValueChange).toHaveBeenCalledWith("open");
   });
 });

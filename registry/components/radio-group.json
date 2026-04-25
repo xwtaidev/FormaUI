@@ -1,0 +1,38 @@
+{
+  "name": "radio-group",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "@radix-ui/react-radio-group"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/radio-group.tsx",
+      "target": "components/primitives/radio-group.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/radio-group",
+  "tags": [
+    "component",
+    "radio-group"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/radio-group.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "5b1a2c854df41a4aa1dc60e9fdf7d7473dab498075a7555849ad5fb0a460e558"
+}

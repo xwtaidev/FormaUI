@@ -3,7 +3,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
-import { Badge, Button, Card, CardContent, CardHeader, CardTitle, Progress } from "../src";
+import { Badge, Button, Card, CardContent, CardHeader, CardTitle, Progress, Skeleton } from "../src";
 
 describe("primitives: basic", () => {
   it("renders Button with requested variant", () => {
@@ -50,5 +50,13 @@ describe("primitives: basic", () => {
     const progress = screen.getByTestId("progress-basic");
     expect(progress.getAttribute("aria-valuenow")).toBe("40");
     expect(progress.className).toContain("bg-secondary");
+  });
+
+  it("renders Skeleton as loading placeholder", () => {
+    render(<Skeleton data-testid="skeleton" className="h-4 w-32" />);
+
+    const skeleton = screen.getByTestId("skeleton");
+    expect(skeleton.className).toContain("animate-pulse");
+    expect(skeleton.className).toContain("bg-muted");
   });
 });

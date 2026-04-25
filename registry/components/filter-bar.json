@@ -1,0 +1,42 @@
+{
+  "name": "filter-bar",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn",
+    "button",
+    "input",
+    "radio-group",
+    "separator",
+    "date-range-picker"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/composites/filter-bar.tsx",
+      "target": "components/composites/filter-bar.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/filter-bar",
+  "tags": [
+    "component",
+    "filter-bar"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/filter-bar.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "96b6a11219acbe56f216335aba323e9d360de39cc5a0722fb05ab6e529586036"
+}
