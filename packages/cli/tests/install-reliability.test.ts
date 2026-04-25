@@ -207,4 +207,31 @@ describe("formaui add install reliability", () => {
     }
   });
 
+  it("rolls back files when write transaction fails", async () => {
+    const { root: fixtureRoot, registryRoot } = await createRegistryFixture();
+    const projectRoot = await createProjectFixture({ packageManager: "unknown" });
+
+    try {
+      await mkdir(resolve(projectRoot, "components"), { recursive: true });
+      await writeFile(resolve(projectRoot, "components/primitives"), "not-a-directory", "utf8");
+
+      await expect(
+        runAddCommand({
+          name: "button",
+          kind: "component",
+          cwd: projectRoot,
+          yes: true,
+          registryRoot,
+          installCommandRunner: async () => {}
+        })
+      ).rejects.toThrow(/rolled back/i);
+
+      expect(await exists(resolve(projectRoot, "components/lib/cn.ts"))).toBe(false);
+      expect(await exists(resolve(projectRoot, "components/primitives"))).toBe(true);
+    } finally {
+      await rm(projectRoot, { recursive: true, force: true });
+      await rm(fixtureRoot, { recursive: true, force: true });
+    }
+  });
+
 });

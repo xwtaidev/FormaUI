@@ -15,7 +15,7 @@ import {
   type RegistryItem,
   type RegistryKind
 } from "../registry/load-item.js";
-import { findFileConflicts, writeFiles } from "../project/write-files.js";
+import { findFileConflicts, writeFiles, WriteFilesTransactionError } from "../project/write-files.js";
 import { createLogger, type Logger } from "../utils/logger.js";
 
 interface FormaUIConfig {
@@ -213,12 +213,29 @@ export async function runAddCommand(options: AddCommandOptions) {
     throw error;
   }
 
-  const writtenPaths = await writeFiles({
-    cwd,
-    files: filesToWrite,
-    overwrite: options.yes ?? false,
-    confirmOverwrite: options.confirmOverwrite
-  });
+  let writtenPaths: string[];
+  try {
+    writtenPaths = await writeFiles({
+      cwd,
+      files: filesToWrite,
+      overwrite: options.yes ?? false,
+      confirmOverwrite: options.confirmOverwrite
+    });
+  } catch (error) {
+    if (error instanceof WriteFilesTransactionError) {
+      if (error.rolledBack) {
+        throw new Error(
+          `Failed to write files for ${options.kind} \`${options.name}\`, and staged changes were rolled back. ` +
+            "Resolve the file-system conflict and re-run the command."
+        );
+      }
+      throw new Error(
+        `Failed to write files for ${options.kind} \`${options.name}\`, and rollback was only partially successful. ` +
+          `Manual cleanup may be required. Details: ${error.rollbackErrors.join("; ")}`
+      );
+    }
+    throw error;
+  }
 
   logger.success(`Installed ${options.kind} \`${options.name}\`.`);
 

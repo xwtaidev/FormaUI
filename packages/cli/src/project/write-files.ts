@@ -1,4 +1,4 @@
-import { access, mkdir, writeFile } from "node:fs/promises";
+import { access, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { constants } from "node:fs";
 import { dirname, resolve } from "node:path";
 
@@ -20,6 +20,26 @@ export interface WriteFilesOptions {
   overwrite?: boolean;
   dryRun?: boolean;
   confirmOverwrite?: (conflicts: string[]) => Promise<boolean>;
+}
+
+interface FileSnapshot {
+  existed: boolean;
+  content?: string;
+}
+
+export class WriteFilesTransactionError extends Error {
+  constructor(
+    public readonly originalError: unknown,
+    public readonly rollbackErrors: string[]
+  ) {
+    const reason = originalError instanceof Error ? originalError.message : String(originalError);
+    super(`Write transaction failed: ${reason}`);
+    this.name = "WriteFilesTransactionError";
+  }
+
+  get rolledBack() {
+    return this.rollbackErrors.length === 0;
+  }
 }
 
 async function pathExists(path: string) {
@@ -63,10 +83,52 @@ export async function writeFiles(options: WriteFilesOptions) {
     return options.files.map((file) => file.targetPath);
   }
 
-  for (const file of options.files) {
-    const outputPath = resolve(options.cwd, file.targetPath);
-    await mkdir(dirname(outputPath), { recursive: true });
-    await writeFile(outputPath, file.content, "utf8");
+  const snapshots = new Map<string, FileSnapshot>();
+  const touchedPaths: string[] = [];
+
+  try {
+    for (const file of options.files) {
+      const outputPath = resolve(options.cwd, file.targetPath);
+
+      if (!snapshots.has(outputPath)) {
+        const existed = await pathExists(outputPath);
+        if (existed) {
+          snapshots.set(outputPath, {
+            existed: true,
+            content: await readFile(outputPath, "utf8")
+          });
+        } else {
+          snapshots.set(outputPath, { existed: false });
+        }
+      }
+
+      await mkdir(dirname(outputPath), { recursive: true });
+      await writeFile(outputPath, file.content, "utf8");
+      touchedPaths.push(outputPath);
+    }
+  } catch (error) {
+    const rollbackErrors: string[] = [];
+    const rollbackTargets = Array.from(new Set(touchedPaths)).reverse();
+
+    for (const outputPath of rollbackTargets) {
+      const snapshot = snapshots.get(outputPath);
+      if (!snapshot) {
+        continue;
+      }
+
+      try {
+        if (snapshot.existed) {
+          await writeFile(outputPath, snapshot.content ?? "", "utf8");
+        } else {
+          await rm(outputPath, { force: true });
+        }
+      } catch (rollbackError) {
+        const reason = rollbackError instanceof Error ? rollbackError.message : String(rollbackError);
+        rollbackErrors.push(`${outputPath}: ${reason}`);
+      }
+    }
+
+    throw new WriteFilesTransactionError(error, rollbackErrors);
   }
 
   return options.files.map((file) => file.targetPath);
