@@ -1,3 +1,4 @@
+import React from "react";
 import Link from "next/link";
 
 const coverageRows = [
@@ -13,9 +14,9 @@ export default function DocsHomePage() {
     <div className="space-y-8">
       <h1>FormaUI Documentation</h1>
       <p>
-        FormaUI v0.3.5 completes the source-owned component expansion with pack workflows, migration guidance, and
-        validated Next/Vite showcase coverage. This documentation covers installation, migration, CLI workflows,
-        registry v3 metadata, and every installable asset.
+        FormaUI v0.4.1 starts the growth-focused release line with a production landing route, responsive information
+        architecture, and component-first composition rules. This documentation covers installation, migration, CLI
+        workflows, registry metadata, and every installable asset.
       </p>
 
       <div className="space-y-3 rounded-xl border border-slate-200 bg-white p-5">
@@ -36,6 +37,9 @@ export default function DocsHomePage() {
       <div className="space-y-2">
         <h2 className="m-0 text-xl font-semibold">Start Here</h2>
         <ul>
+          <li>
+            <Link href="/landing">Official landing (v0.4.1 foundation)</Link>
+          </li>
           <li>
             <Link href="/quick-start">Quick start</Link>
           </li>
