@@ -3,6 +3,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import {
+  getDefaultRegistryRoot,
   loadRegistryDependency,
   loadRegistryItem,
   type RegistryItem,
@@ -65,6 +66,7 @@ function applyAliases(targetPath: string, config: FormaUIConfig) {
 async function collectItemGraph(options: {
   rootItem: RegistryItem;
   registryRoot?: string;
+  fallbackRegistryRoot?: string;
 }) {
   const orderedItems: RegistryItem[] = [];
   const visited = new Set<string>();
@@ -79,7 +81,8 @@ async function collectItemGraph(options: {
     for (const dependency of item.registryDependencies) {
       const resolved = await loadRegistryDependency({
         dependency,
-        registryRoot: options.registryRoot
+        registryRoot: options.registryRoot,
+        fallbackRegistryRoot: options.fallbackRegistryRoot
       });
       await visit(resolved);
     }
@@ -115,15 +118,18 @@ export async function runAddCommand(options: AddCommandOptions) {
   const cwd = options.cwd ?? process.cwd();
   const logger = options.logger ?? createLogger();
   const config = await loadFormaUIConfig(cwd);
+  const fallbackRegistryRoot = options.registryRoot ? getDefaultRegistryRoot() : undefined;
   const rootItem = await loadRegistryItem({
     kind: options.kind,
     name: options.name,
-    registryRoot: options.registryRoot
+    registryRoot: options.registryRoot,
+    fallbackRegistryRoot
   });
 
   const items = await collectItemGraph({
     rootItem,
-    registryRoot: options.registryRoot
+    registryRoot: options.registryRoot,
+    fallbackRegistryRoot
   });
 
   const filesToWrite: Array<{ targetPath: string; content: string }> = [];

@@ -1,9 +1,9 @@
-import { access, constants } from "node:fs";
-import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
+import { constants } from "node:fs";
+import { access, mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { resolve } from "node:path";
 
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
 import { runCli } from "../src/index";
 import type { Logger } from "../src/utils/logger";
@@ -162,6 +162,95 @@ async function createRegistryFixture() {
     "utf8"
   );
 
+  await writeFile(
+    resolve(registryRoot, "index.json"),
+    JSON.stringify(
+      {
+        generatedAt: "2026-04-25T00:00:00.000Z",
+        total: 4,
+        items: [
+          {
+            kind: "component",
+            name: "button",
+            type: "component",
+            version: "0.2.2",
+            path: "components/button.json"
+          },
+          {
+            kind: "block",
+            name: "dashboard-shell",
+            type: "block",
+            version: "0.2.2",
+            path: "blocks/dashboard-shell.json"
+          },
+          {
+            kind: "template",
+            name: "ai-console-lite",
+            type: "template",
+            version: "0.2.2",
+            path: "templates/ai-console-lite.json"
+          },
+          {
+            kind: "theme",
+            name: "default",
+            type: "theme",
+            version: "0.2.2",
+            path: "themes/default.json"
+          }
+        ],
+        byKind: {
+          component: {
+            button: {
+              latest: "0.2.2",
+              versions: ["0.2.2"],
+              entries: {
+                "0.2.2": {
+                  path: "components/button.json"
+                }
+              }
+            }
+          },
+          block: {
+            "dashboard-shell": {
+              latest: "0.2.2",
+              versions: ["0.2.2"],
+              entries: {
+                "0.2.2": {
+                  path: "blocks/dashboard-shell.json"
+                }
+              }
+            }
+          },
+          template: {
+            "ai-console-lite": {
+              latest: "0.2.2",
+              versions: ["0.2.2"],
+              entries: {
+                "0.2.2": {
+                  path: "templates/ai-console-lite.json"
+                }
+              }
+            }
+          },
+          theme: {
+            default: {
+              latest: "0.2.2",
+              versions: ["0.2.2"],
+              entries: {
+                "0.2.2": {
+                  path: "themes/default.json"
+                }
+              }
+            }
+          }
+        }
+      },
+      null,
+      2
+    ),
+    "utf8"
+  );
+
   return { root, registryRoot };
 }
 
@@ -269,6 +358,63 @@ describe("formaui discoverability commands", () => {
       expect(await exists(resolve(projectRoot, "styles/formaui/default.css"))).toBe(false);
       expect(logs.info.some((line) => line.toLowerCase().includes("dry-run"))).toBe(true);
     } finally {
+      await rm(projectRoot, { recursive: true, force: true });
+      await rm(fixtureRoot, { recursive: true, force: true });
+    }
+  });
+
+  it("supports remote --registry URL and local fallback order for add", async () => {
+    const { root: fixtureRoot, registryRoot } = await createRegistryFixture();
+    const projectRoot = await createProjectFixture();
+    const logs = createLogBucket();
+    const logger = createCapturedLogger(logs);
+    const remoteRoot = "https://registry.example.test";
+    const remoteButton = JSON.parse(await readFile(resolve(registryRoot, "components/button.json"), "utf8"));
+    const originalFetch = globalThis.fetch;
+
+    try {
+      globalThis.fetch = vi.fn(async (input: RequestInfo | URL) => {
+        const requestUrl = String(input);
+        if (requestUrl === `${remoteRoot}/index.json`) {
+          return new Response(
+            JSON.stringify({
+              byKind: {
+                component: {
+                  button: {
+                    latest: "0.2.2",
+                    entries: {
+                      "0.2.2": {
+                        path: "components/button.json"
+                      }
+                    }
+                  }
+                }
+              }
+            }),
+            { status: 200, headers: { "content-type": "application/json" } }
+          );
+        }
+        if (requestUrl === `${remoteRoot}/components/button.json`) {
+          return new Response(JSON.stringify(remoteButton), {
+            status: 200,
+            headers: { "content-type": "application/json" }
+          });
+        }
+        return new Response("not found", { status: 404, statusText: "Not Found" });
+      }) as typeof fetch;
+
+      await runCli(["add", "button", "--cwd", projectRoot, "--registry", remoteRoot], { logger });
+      expect(await exists(resolve(projectRoot, "components/primitives/button.tsx"))).toBe(true);
+
+      await rm(resolve(projectRoot, "components"), { recursive: true, force: true });
+      globalThis.fetch = vi.fn(async () => {
+        throw new Error("Network unavailable");
+      }) as typeof fetch;
+
+      await runCli(["add", "button", "--cwd", projectRoot, "--registry", remoteRoot], { logger });
+      expect(await exists(resolve(projectRoot, "components/primitives/button.tsx"))).toBe(true);
+    } finally {
+      globalThis.fetch = originalFetch;
       await rm(projectRoot, { recursive: true, force: true });
       await rm(fixtureRoot, { recursive: true, force: true });
     }
