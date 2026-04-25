@@ -18,6 +18,7 @@ export interface WriteFilesOptions {
   cwd: string;
   files: WritableFile[];
   overwrite?: boolean;
+  dryRun?: boolean;
   confirmOverwrite?: (conflicts: string[]) => Promise<boolean>;
 }
 
@@ -30,8 +31,7 @@ async function pathExists(path: string) {
   }
 }
 
-export async function writeFiles(options: WriteFilesOptions) {
-  const overwrite = options.overwrite ?? false;
+export async function findFileConflicts(options: Pick<WriteFilesOptions, "cwd" | "files">) {
   const conflicts: string[] = [];
 
   for (const file of options.files) {
@@ -41,7 +41,15 @@ export async function writeFiles(options: WriteFilesOptions) {
     }
   }
 
-  if (conflicts.length > 0 && !overwrite) {
+  return conflicts;
+}
+
+export async function writeFiles(options: WriteFilesOptions) {
+  const overwrite = options.overwrite ?? false;
+  const dryRun = options.dryRun ?? false;
+  const conflicts = await findFileConflicts(options);
+
+  if (conflicts.length > 0 && !overwrite && !dryRun) {
     const confirmed = options.confirmOverwrite
       ? await options.confirmOverwrite(conflicts)
       : false;
@@ -49,6 +57,10 @@ export async function writeFiles(options: WriteFilesOptions) {
     if (!confirmed) {
       throw new FileConflictError(conflicts);
     }
+  }
+
+  if (dryRun) {
+    return options.files.map((file) => file.targetPath);
   }
 
   for (const file of options.files) {

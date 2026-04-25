@@ -8,7 +8,7 @@ import {
   type RegistryItem,
   type RegistryKind
 } from "../registry/load-item.js";
-import { writeFiles } from "../project/write-files.js";
+import { findFileConflicts, writeFiles } from "../project/write-files.js";
 import { createLogger, type Logger } from "../utils/logger.js";
 
 interface FormaUIConfig {
@@ -22,6 +22,7 @@ interface FormaUIConfig {
 export interface AddCommandOptions {
   cwd?: string;
   yes?: boolean;
+  dryRun?: boolean;
   name: string;
   kind: RegistryKind;
   logger?: Logger;
@@ -91,6 +92,25 @@ async function collectItemGraph(options: {
   return orderedItems;
 }
 
+function collectPackageRequirements(items: RegistryItem[]) {
+  const dependencies = new Set<string>();
+  const devDependencies = new Set<string>();
+
+  for (const item of items) {
+    for (const dependency of item.dependencies) {
+      dependencies.add(dependency);
+    }
+    for (const dependency of item.devDependencies) {
+      devDependencies.add(dependency);
+    }
+  }
+
+  return {
+    dependencies: Array.from(dependencies).sort(),
+    devDependencies: Array.from(devDependencies).sort()
+  };
+}
+
 export async function runAddCommand(options: AddCommandOptions) {
   const cwd = options.cwd ?? process.cwd();
   const logger = options.logger ?? createLogger();
@@ -117,6 +137,47 @@ export async function runAddCommand(options: AddCommandOptions) {
         content
       });
     }
+  }
+
+  if (options.dryRun) {
+    const conflicts = await findFileConflicts({
+      cwd,
+      files: filesToWrite
+    });
+    const packageRequirements = collectPackageRequirements(items);
+
+    logger.info(`[dry-run] Planned install for ${options.kind} \`${options.name}\`.`);
+    logger.info(`Items: ${items.map((item) => item.name).join(", ")}`);
+    logger.info(
+      `Dependencies: ${
+        packageRequirements.dependencies.length > 0
+          ? packageRequirements.dependencies.join(", ")
+          : "none"
+      }`
+    );
+    logger.info(
+      `Dev dependencies: ${
+        packageRequirements.devDependencies.length > 0
+          ? packageRequirements.devDependencies.join(", ")
+          : "none"
+      }`
+    );
+    logger.info("Planned files:");
+    for (const file of filesToWrite) {
+      logger.info(`- ${file.targetPath}`);
+    }
+    if (conflicts.length > 0) {
+      logger.warn(`Conflicting files: ${conflicts.join(", ")}`);
+    }
+
+    return {
+      dryRun: true,
+      items: items.map((item) => item.name),
+      files: filesToWrite.map((file) => file.targetPath),
+      dependencies: packageRequirements.dependencies,
+      devDependencies: packageRequirements.devDependencies,
+      conflicts
+    };
   }
 
   const writtenPaths = await writeFiles({
