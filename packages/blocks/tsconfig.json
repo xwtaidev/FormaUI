@@ -2,12 +2,7 @@
   "extends": "../tsconfig/react-library.json",
   "compilerOptions": {
     "outDir": "dist",
-    "rootDir": "..",
-    "baseUrl": ".",
-    "paths": {
-      "@formaui/components": ["../components/src/index.ts"],
-      "@formaui/components/*": ["../components/src/*"]
-    }
+    "rootDir": "src"
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["dist", "node_modules"]

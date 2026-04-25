@@ -1,0 +1,12 @@
+{
+  "$schema": "https://formaui.dev/schema.json",
+  "aliases": {
+    "components": "components",
+    "lib": "lib",
+    "styles": "styles"
+  },
+  "css": {
+    "entry": "app/globals.css",
+    "variables": "styles/formaui/default.css"
+  }
+}
