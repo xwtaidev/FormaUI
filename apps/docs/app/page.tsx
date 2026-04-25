@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const coverageRows = [
-  { kind: "Components", count: 24, href: "/components/button" },
+  { kind: "Components", count: 28, href: "/components/accordion" },
   { kind: "Blocks", count: 11, href: "/blocks/dashboard-shell" },
   { kind: "Templates", count: 3, href: "/templates/ai-console-lite" },
   { kind: "Themes", count: 2, href: "/theme/default" }
@@ -12,8 +12,9 @@ export default function DocsHomePage() {
     <div className="space-y-8">
       <h1>FormaUI Documentation</h1>
       <p>
-        FormaUI v0.2 is a source-owned design system for React teams. This documentation covers installation,
-        migration, CLI workflows, registry v2 metadata, and every installable asset.
+        FormaUI v0.3.2 expands the source-owned design system with Wave A primitives and richer registry metadata.
+        This documentation covers installation, migration, CLI workflows, registry v3 metadata, and every installable
+        asset.
       </p>
 
       <div className="space-y-3 rounded-xl border border-slate-200 bg-white p-5">
@@ -44,7 +45,10 @@ export default function DocsHomePage() {
             <Link href="/migration-v0.1-to-v0.2">Migration guide (v0.1 to v0.2)</Link>
           </li>
           <li>
-            <Link href="/registry">Registry v2 reference</Link>
+            <Link href="/registry">Registry v3 reference</Link>
+          </li>
+          <li>
+            <Link href="/components/accordion">New in v0.3.2: Wave A primitives</Link>
           </li>
         </ul>
       </div>

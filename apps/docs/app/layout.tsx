@@ -5,7 +5,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "FormaUI Docs",
-  description: "FormaUI v0.2 documentation"
+  description: "FormaUI v0.3 documentation"
 };
 
 const navSections: Array<{ title: string; links: Array<{ href: string; label: string }> }> = [
@@ -26,12 +26,13 @@ const navSections: Array<{ title: string; links: Array<{ href: string; label: st
     links: [
       { href: "/cli", label: "CLI Overview" },
       { href: "/cli/commands", label: "CLI Commands" },
-      { href: "/registry", label: "Registry v2" }
+      { href: "/registry", label: "Registry v3" }
     ]
   },
   {
     title: "Components",
     links: [
+      { href: "/components/accordion", label: "accordion" },
       { href: "/components/app-sidebar", label: "app-sidebar" },
       { href: "/components/avatar", label: "avatar" },
       { href: "/components/badge", label: "badge" },
@@ -43,10 +44,13 @@ const navSections: Array<{ title: string; links: Array<{ href: string; label: st
       { href: "/components/dropdown-menu", label: "dropdown-menu" },
       { href: "/components/empty-state", label: "empty-state" },
       { href: "/components/form-field", label: "form-field" },
+      { href: "/components/hover-card", label: "hover-card" },
       { href: "/components/input", label: "input" },
       { href: "/components/lib-cn", label: "lib-cn" },
       { href: "/components/metric-card", label: "metric-card" },
       { href: "/components/page-header", label: "page-header" },
+      { href: "/components/popover", label: "popover" },
+      { href: "/components/progress", label: "progress" },
       { href: "/components/search-command", label: "search-command" },
       { href: "/components/select", label: "select" },
       { href: "/components/status-badge", label: "status-badge" },
@@ -99,7 +103,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <aside className="border-b border-slate-200 p-6 lg:border-b-0 lg:border-r">
             <Link href="/" className="block">
               <p className="text-sm uppercase tracking-wide text-slate-500">FormaUI</p>
-              <h1 className="text-2xl font-semibold">v0.2 Docs</h1>
+              <h1 className="text-2xl font-semibold">v0.3.2 Docs</h1>
             </Link>
             <nav className="mt-6 space-y-6">
               {navSections.map((section) => (

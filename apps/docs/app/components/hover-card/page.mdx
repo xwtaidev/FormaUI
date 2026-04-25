@@ -1,0 +1,41 @@
+# Hover Card
+
+## Overview
+
+`HoverCard` previews extra context on pointer hover or keyboard focus without changing page layout.
+
+## Installation
+
+```bash
+npx formaui add hover-card
+```
+
+## Usage
+
+```tsx
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger
+} from "@/components/primitives/hover-card";
+
+export function MemberPreview() {
+  return (
+    <HoverCard>
+      <HoverCardTrigger>@design-team</HoverCardTrigger>
+      <HoverCardContent>Team details and quick links.</HoverCardContent>
+    </HoverCard>
+  );
+}
+```
+
+## Accessibility
+
+- Trigger supports keyboard focus and standard link/button semantics.
+- Content can be inspected without forcing route or modal transitions.
+- Interaction timing can be tuned with Radix delay props.
+
+## Source Code
+
+- `packages/components/src/primitives/hover-card.tsx`
+- `registry/components/hover-card.json`

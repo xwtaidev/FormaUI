@@ -3,6 +3,10 @@
 import { useState } from "react";
 
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
   Avatar,
   AvatarFallback,
   AvatarImage,
@@ -27,7 +31,14 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
   DataTable,
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
   Input,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+  Progress,
   SearchCommand,
   Select,
   SelectContent,
@@ -62,8 +73,8 @@ export default function ComponentsPage() {
         <section>
           <h2 className="text-2xl font-semibold">Primitive Components</h2>
           <p className="text-sm text-muted-foreground">
-            v0.2.4 component set: Button, Input, Textarea, Checkbox, Switch, Select, Dialog, DropdownMenu,
-            Tabs, Card, Badge, Avatar, Tooltip, DataTable, SearchCommand.
+            v0.3.2 component set: Button, Input, Textarea, Checkbox, Switch, Select, Dialog, DropdownMenu, Tabs,
+            Card, Badge, Avatar, Tooltip, Accordion, Popover, HoverCard, Progress, DataTable, SearchCommand.
           </p>
         </section>
 
@@ -173,6 +184,48 @@ export default function ComponentsPage() {
                 <AvatarImage src="https://i.pravatar.cc/120?img=8" alt="Workspace user" />
                 <AvatarFallback>XU</AvatarFallback>
               </Avatar>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Accordion / Popover / HoverCard / Progress</CardTitle>
+              <CardDescription>Wave A primitives for progressive disclosure and status feedback.</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="release-notes">
+                  <AccordionTrigger>Release Notes</AccordionTrigger>
+                  <AccordionContent>
+                    Wave A introduces lightweight primitives for overlays, previews, and completion states.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+
+              <div className="flex flex-wrap items-center gap-3">
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <Button variant="outline">Open Popover</Button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-64">
+                    Configure deployment guardrails and rollout rules.
+                  </PopoverContent>
+                </Popover>
+
+                <HoverCard>
+                  <HoverCardTrigger asChild>
+                    <Button variant="ghost">@formaui-release</Button>
+                  </HoverCardTrigger>
+                  <HoverCardContent className="w-64">
+                    Maintainers review accessibility and token consistency before every release.
+                  </HoverCardContent>
+                </HoverCard>
+              </div>
+
+              <div className="space-y-2">
+                <p className="text-sm text-muted-foreground">Migration progress: 72%</p>
+                <Progress value={72} />
+              </div>
             </CardContent>
           </Card>
 
