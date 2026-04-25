@@ -3,6 +3,7 @@ export { ApiKeyManager } from "./api-key-manager";
 export { BillingPanel } from "./billing-panel";
 export { DashboardShell } from "./dashboard-shell";
 export { LoginPanel } from "./login-panel";
+export { ModelSelector } from "./model-selector";
 export { NotificationPanel } from "./notification-panel";
 export { PricingSection } from "./pricing-section";
 export { SettingsLayout } from "./settings-layout";
@@ -13,6 +14,7 @@ export {
   demoAgentRuns,
   demoApiKeys,
   demoMetrics,
+  demoModelOptions,
   demoNotifications,
   demoPlans,
   demoSidebarItems,

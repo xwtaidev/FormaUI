@@ -10,6 +10,24 @@ export const defaultTheme = `:root {
   --border: 240 5.9% 90%;
   --ring: 240 5.9% 10%;
   --radius: 0.75rem;
+  --semantic-surface-base: var(--background);
+  --semantic-surface-raised: var(--card);
+  --semantic-surface-muted: var(--muted);
+  --semantic-text-primary: var(--foreground);
+  --semantic-text-secondary: var(--muted-foreground);
+  --semantic-border-default: var(--border);
+  --semantic-interactive-primary: var(--primary);
+  --semantic-interactive-primary-foreground: var(--primary-foreground);
+  --semantic-status-success: 142 71% 45%;
+  --semantic-status-warning: 38 92% 50%;
+  --semantic-status-danger: 0 84% 60%;
+  --semantic-status-info: 214 95% 60%;
+  --semantic-model-chip-bg: var(--muted);
+  --semantic-model-chip-border: var(--border);
+  --semantic-model-chip-foreground: var(--foreground);
+  --semantic-model-chip-selected-bg: var(--primary);
+  --semantic-model-chip-selected-border: var(--primary);
+  --semantic-model-chip-selected-foreground: var(--primary-foreground);
 }
 
 .dark {
@@ -23,6 +41,24 @@ export const defaultTheme = `:root {
   --muted-foreground: 240 5% 64.9%;
   --border: 240 3.7% 15.9%;
   --ring: 240 4.9% 83.9%;
+  --semantic-surface-base: var(--background);
+  --semantic-surface-raised: var(--card);
+  --semantic-surface-muted: var(--muted);
+  --semantic-text-primary: var(--foreground);
+  --semantic-text-secondary: var(--muted-foreground);
+  --semantic-border-default: var(--border);
+  --semantic-interactive-primary: var(--primary);
+  --semantic-interactive-primary-foreground: var(--primary-foreground);
+  --semantic-status-success: 142 58% 58%;
+  --semantic-status-warning: 40 95% 64%;
+  --semantic-status-danger: 0 91% 71%;
+  --semantic-status-info: 214 95% 72%;
+  --semantic-model-chip-bg: var(--card);
+  --semantic-model-chip-border: var(--border);
+  --semantic-model-chip-foreground: var(--foreground);
+  --semantic-model-chip-selected-bg: var(--primary);
+  --semantic-model-chip-selected-border: var(--primary);
+  --semantic-model-chip-selected-foreground: var(--primary-foreground);
 }
 `;
 
@@ -39,6 +75,24 @@ export const avocadoTheme = `/* Accent reference: #A8C66C */
   --border: 90 24% 85%;
   --ring: 89 43% 55%;
   --radius: 0.75rem;
+  --semantic-surface-base: var(--background);
+  --semantic-surface-raised: var(--card);
+  --semantic-surface-muted: var(--muted);
+  --semantic-text-primary: var(--foreground);
+  --semantic-text-secondary: var(--muted-foreground);
+  --semantic-border-default: var(--border);
+  --semantic-interactive-primary: var(--primary);
+  --semantic-interactive-primary-foreground: var(--primary-foreground);
+  --semantic-status-success: 124 52% 42%;
+  --semantic-status-warning: 36 82% 52%;
+  --semantic-status-danger: 0 76% 57%;
+  --semantic-status-info: 201 79% 48%;
+  --semantic-model-chip-bg: var(--muted);
+  --semantic-model-chip-border: var(--border);
+  --semantic-model-chip-foreground: var(--foreground);
+  --semantic-model-chip-selected-bg: var(--primary);
+  --semantic-model-chip-selected-border: var(--primary);
+  --semantic-model-chip-selected-foreground: var(--primary-foreground);
 }
 
 .dark {
@@ -52,6 +106,24 @@ export const avocadoTheme = `/* Accent reference: #A8C66C */
   --muted-foreground: 90 16% 73%;
   --border: 110 12% 24%;
   --ring: 89 43% 60%;
+  --semantic-surface-base: var(--background);
+  --semantic-surface-raised: var(--card);
+  --semantic-surface-muted: var(--muted);
+  --semantic-text-primary: var(--foreground);
+  --semantic-text-secondary: var(--muted-foreground);
+  --semantic-border-default: var(--border);
+  --semantic-interactive-primary: var(--primary);
+  --semantic-interactive-primary-foreground: var(--primary-foreground);
+  --semantic-status-success: 124 40% 64%;
+  --semantic-status-warning: 36 88% 66%;
+  --semantic-status-danger: 0 82% 70%;
+  --semantic-status-info: 201 85% 68%;
+  --semantic-model-chip-bg: var(--card);
+  --semantic-model-chip-border: var(--border);
+  --semantic-model-chip-foreground: var(--foreground);
+  --semantic-model-chip-selected-bg: var(--primary);
+  --semantic-model-chip-selected-border: var(--primary);
+  --semantic-model-chip-selected-foreground: var(--primary-foreground);
 }
 `;
 

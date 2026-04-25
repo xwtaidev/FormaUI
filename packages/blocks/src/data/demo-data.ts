@@ -55,6 +55,16 @@ export interface DemoNotification {
   time: string;
 }
 
+export interface DemoModelOption {
+  id: string;
+  name: string;
+  provider: "OpenAI" | "Anthropic" | "Google";
+  latencyMs: number;
+  costPerMillion: string;
+  contextWindow: string;
+  stability: "stable" | "beta" | "preview";
+}
+
 export const demoPlans: DemoPlan[] = [
   {
     name: "Starter",
@@ -205,5 +215,44 @@ export const demoNotifications: DemoNotification[] = [
     summary: "Chen joined the AI operations workspace.",
     level: "info",
     time: "1 hr ago"
+  }
+];
+
+export const demoModelOptions: DemoModelOption[] = [
+  {
+    id: "gpt-5.5",
+    name: "GPT-5.5",
+    provider: "OpenAI",
+    latencyMs: 420,
+    costPerMillion: "$5.00",
+    contextWindow: "256k",
+    stability: "stable"
+  },
+  {
+    id: "gpt-5.4-mini",
+    name: "GPT-5.4 Mini",
+    provider: "OpenAI",
+    latencyMs: 190,
+    costPerMillion: "$0.90",
+    contextWindow: "128k",
+    stability: "stable"
+  },
+  {
+    id: "claude-sonnet-4",
+    name: "Claude Sonnet 4",
+    provider: "Anthropic",
+    latencyMs: 510,
+    costPerMillion: "$3.00",
+    contextWindow: "200k",
+    stability: "beta"
+  },
+  {
+    id: "gemini-2.5-pro",
+    name: "Gemini 2.5 Pro",
+    provider: "Google",
+    latencyMs: 470,
+    costPerMillion: "$3.50",
+    contextWindow: "1M",
+    stability: "preview"
   }
 ];

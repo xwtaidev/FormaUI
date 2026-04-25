@@ -9,6 +9,7 @@ import {
   BillingPanel,
   DashboardShell,
   LoginPanel,
+  ModelSelector,
   NotificationPanel,
   PricingSection,
   SettingsLayout,
@@ -17,7 +18,7 @@ import {
 } from "../src";
 
 describe("blocks", () => {
-  it("renders all required v0.1.4 block labels", () => {
+  it("renders all required v0.2.5 block labels", () => {
     render(
       <div>
         <LoginPanel />
@@ -30,6 +31,7 @@ describe("blocks", () => {
         <AgentRunTimeline />
         <TeamMembersTable />
         <NotificationPanel />
+        <ModelSelector />
       </div>
     );
 
@@ -43,5 +45,6 @@ describe("blocks", () => {
     expect(screen.getAllByText("Agent runs").length).toBeGreaterThan(0);
     expect(screen.getAllByText("Team members").length).toBeGreaterThan(0);
     expect(screen.getAllByText("Notifications").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Model selector").length).toBeGreaterThan(0);
   });
 });
