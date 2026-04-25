@@ -1,0 +1,19 @@
+{
+  "name": "tooltip",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "@radix-ui/react-tooltip"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/tooltip.tsx",
+      "target": "components/primitives/tooltip.tsx"
+    }
+  ]
+}

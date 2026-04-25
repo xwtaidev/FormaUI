@@ -1,0 +1,19 @@
+{
+  "name": "switch",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "@radix-ui/react-switch"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/switch.tsx",
+      "target": "components/primitives/switch.tsx"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "status-badge",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "badge"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/composites/status-badge.tsx",
+      "target": "components/composites/status-badge.tsx"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "dropdown-menu",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "@radix-ui/react-dropdown-menu",
+    "lucide-react"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/dropdown-menu.tsx",
+      "target": "components/primitives/dropdown-menu.tsx"
+    }
+  ]
+}

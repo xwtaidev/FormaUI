@@ -1,0 +1,20 @@
+{
+  "name": "select",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "@radix-ui/react-select",
+    "lucide-react"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/select.tsx",
+      "target": "components/primitives/select.tsx"
+    }
+  ]
+}

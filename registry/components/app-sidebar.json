@@ -1,0 +1,16 @@
+{
+  "name": "app-sidebar",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "source": "packages/components/src/composites/app-sidebar.tsx",
+      "target": "components/composites/app-sidebar.tsx"
+    }
+  ]
+}

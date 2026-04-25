@@ -1,0 +1,18 @@
+{
+  "name": "page-header",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/composites/page-header.tsx",
+      "target": "components/composites/page-header.tsx"
+    }
+  ]
+}

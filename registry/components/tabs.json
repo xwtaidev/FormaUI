@@ -1,0 +1,19 @@
+{
+  "name": "tabs",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "@radix-ui/react-tabs"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/tabs.tsx",
+      "target": "components/primitives/tabs.tsx"
+    }
+  ]
+}

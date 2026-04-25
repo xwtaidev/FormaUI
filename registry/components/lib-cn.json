@@ -1,0 +1,16 @@
+{
+  "name": "lib-cn",
+  "type": "lib",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "source": "packages/components/src/lib/cn.ts",
+      "target": "components/lib/cn.ts"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "badge",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "class-variance-authority"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/badge.tsx",
+      "target": "components/primitives/badge.tsx"
+    }
+  ]
+}

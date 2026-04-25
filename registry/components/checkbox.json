@@ -1,0 +1,20 @@
+{
+  "name": "checkbox",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "@radix-ui/react-checkbox",
+    "lucide-react"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/checkbox.tsx",
+      "target": "components/primitives/checkbox.tsx"
+    }
+  ]
+}

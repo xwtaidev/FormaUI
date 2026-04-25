@@ -1,0 +1,19 @@
+{
+  "name": "button",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "class-variance-authority"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/button.tsx",
+      "target": "components/primitives/button.tsx"
+    }
+  ]
+}

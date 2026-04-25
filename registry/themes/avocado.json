@@ -1,0 +1,13 @@
+{
+  "name": "avocado",
+  "type": "theme",
+  "dependencies": [],
+  "devDependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "source": "packages/themes/src/avocado.css",
+      "target": "styles/formaui/avocado.css"
+    }
+  ]
+}

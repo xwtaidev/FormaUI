@@ -1,0 +1,18 @@
+{
+  "name": "empty-state",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/composites/empty-state.tsx",
+      "target": "components/composites/empty-state.tsx"
+    }
+  ]
+}

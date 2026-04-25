@@ -1,0 +1,13 @@
+{
+  "name": "default",
+  "type": "theme",
+  "dependencies": [],
+  "devDependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "source": "packages/themes/src/default.css",
+      "target": "styles/formaui/default.css"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "user-menu",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "avatar",
+    "dropdown-menu"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/composites/user-menu.tsx",
+      "target": "components/composites/user-menu.tsx"
+    }
+  ]
+}

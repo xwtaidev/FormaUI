@@ -1,0 +1,19 @@
+{
+  "name": "avatar",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "@radix-ui/react-avatar"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/avatar.tsx",
+      "target": "components/primitives/avatar.tsx"
+    }
+  ]
+}

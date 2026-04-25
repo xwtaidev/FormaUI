@@ -1,0 +1,20 @@
+{
+  "name": "dialog",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "@radix-ui/react-dialog",
+    "lucide-react"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/dialog.tsx",
+      "target": "components/primitives/dialog.tsx"
+    }
+  ]
+}

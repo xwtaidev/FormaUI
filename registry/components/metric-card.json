@@ -1,0 +1,18 @@
+{
+  "name": "metric-card",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "card"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/composites/metric-card.tsx",
+      "target": "components/composites/metric-card.tsx"
+    }
+  ]
+}

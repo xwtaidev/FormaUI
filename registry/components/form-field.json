@@ -1,0 +1,18 @@
+{
+  "name": "form-field",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/composites/form-field.tsx",
+      "target": "components/composites/form-field.tsx"
+    }
+  ]
+}

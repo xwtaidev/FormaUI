@@ -1,0 +1,18 @@
+{
+  "name": "theme-switcher",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/composites/theme-switcher.tsx",
+      "target": "components/composites/theme-switcher.tsx"
+    }
+  ]
+}
