@@ -14,5 +14,18 @@
       "source": "packages/components/src/primitives/input.tsx",
       "target": "components/primitives/input.tsx"
     }
-  ]
+  ],
+  "version": "0.2.2",
+  "description": "component/input",
+  "tags": [
+    "component",
+    "input"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/input.json"
+  ],
+  "checksum": "a57211bd9e6fca6a86166ec3aa42edf338efa73ccaa8fe2d088f31f94d8df4e3"
 }

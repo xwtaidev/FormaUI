@@ -16,5 +16,18 @@
       "source": "packages/blocks/src/agent-run-timeline.tsx",
       "target": "components/agent-run-timeline.tsx"
     }
-  ]
+  ],
+  "version": "0.2.2",
+  "description": "block/agent-run-timeline",
+  "tags": [
+    "block",
+    "agent-run-timeline"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/blocks/agent-run-timeline.json"
+  ],
+  "checksum": "d6ab2d3b7064a562b1e0966d074042157e35eb1a249947c60a1653785853ae63"
 }

@@ -9,5 +9,18 @@
       "source": "packages/themes/src/default.css",
       "target": "styles/formaui/default.css"
     }
-  ]
+  ],
+  "version": "0.2.2",
+  "description": "theme/default",
+  "tags": [
+    "theme",
+    "default"
+  ],
+  "frameworks": [
+    "css"
+  ],
+  "sources": [
+    "registry/themes/default.json"
+  ],
+  "checksum": "04f8e07acdf29ed06be69a6f7936758d984932d302fb27843258d30ffab489a3"
 }

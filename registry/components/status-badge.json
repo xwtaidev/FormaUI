@@ -14,5 +14,18 @@
       "source": "packages/components/src/composites/status-badge.tsx",
       "target": "components/composites/status-badge.tsx"
     }
-  ]
+  ],
+  "version": "0.2.2",
+  "description": "component/status-badge",
+  "tags": [
+    "component",
+    "status-badge"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/status-badge.json"
+  ],
+  "checksum": "e52708745bddced4e1995059e23607ab43012f78fd1d6de4207267ee04abf965"
 }

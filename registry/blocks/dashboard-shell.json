@@ -16,5 +16,18 @@
       "source": "packages/blocks/src/dashboard-shell.tsx",
       "target": "components/dashboard-shell.tsx"
     }
-  ]
+  ],
+  "version": "0.2.2",
+  "description": "block/dashboard-shell",
+  "tags": [
+    "block",
+    "dashboard-shell"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/blocks/dashboard-shell.json"
+  ],
+  "checksum": "ca7329c46b6ec6b61ed70ca994c89a9bddc0a0f5ecedf38c2f5e825117296f14"
 }

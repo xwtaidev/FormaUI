@@ -14,5 +14,18 @@
       "source": "packages/components/src/composites/form-field.tsx",
       "target": "components/composites/form-field.tsx"
     }
-  ]
+  ],
+  "version": "0.2.2",
+  "description": "component/form-field",
+  "tags": [
+    "component",
+    "form-field"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/form-field.json"
+  ],
+  "checksum": "ab576dbb291699bbd9a4454f6f553b3c97a059cb580ab9b1875f49c218914b22"
 }

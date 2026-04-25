@@ -16,5 +16,18 @@
       "source": "packages/blocks/src/billing-panel.tsx",
       "target": "components/billing-panel.tsx"
     }
-  ]
+  ],
+  "version": "0.2.2",
+  "description": "block/billing-panel",
+  "tags": [
+    "block",
+    "billing-panel"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/blocks/billing-panel.json"
+  ],
+  "checksum": "58e08b6e9fa04998a9445fab6f9fc77eaf9fceed7d1f1f135768919dc844c602"
 }

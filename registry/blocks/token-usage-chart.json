@@ -15,5 +15,18 @@
       "source": "packages/blocks/src/token-usage-chart.tsx",
       "target": "components/token-usage-chart.tsx"
     }
-  ]
+  ],
+  "version": "0.2.2",
+  "description": "block/token-usage-chart",
+  "tags": [
+    "block",
+    "token-usage-chart"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/blocks/token-usage-chart.json"
+  ],
+  "checksum": "1afbf5661f323e075485a38fc0126d5386988ca004789865af12165c4f64cd0e"
 }

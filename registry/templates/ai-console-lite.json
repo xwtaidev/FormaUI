@@ -25,5 +25,18 @@
       "source": "templates/ai-console-lite/registry.json",
       "target": "templates/ai-console-lite/registry.json"
     }
-  ]
+  ],
+  "version": "0.2.2",
+  "description": "template/ai-console-lite",
+  "tags": [
+    "template",
+    "ai-console-lite"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/templates/ai-console-lite.json"
+  ],
+  "checksum": "306413c3cb7701909882aaef6a6f1b486054816eed710c3caad6b3d35f166667"
 }

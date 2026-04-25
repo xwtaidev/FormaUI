@@ -16,5 +16,18 @@
       "source": "packages/components/src/primitives/checkbox.tsx",
       "target": "components/primitives/checkbox.tsx"
     }
-  ]
+  ],
+  "version": "0.2.2",
+  "description": "component/checkbox",
+  "tags": [
+    "component",
+    "checkbox"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/checkbox.json"
+  ],
+  "checksum": "5e7d1ea16004be8c30cd8d8ec123fe9afc7b0f460d9ebb161c32abd758dfcf86"
 }

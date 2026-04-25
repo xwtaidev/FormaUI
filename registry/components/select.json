@@ -16,5 +16,18 @@
       "source": "packages/components/src/primitives/select.tsx",
       "target": "components/primitives/select.tsx"
     }
-  ]
+  ],
+  "version": "0.2.2",
+  "description": "component/select",
+  "tags": [
+    "component",
+    "select"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/select.json"
+  ],
+  "checksum": "bebf00092323832e8746ea4b40e0d457b1b1c7a3f56412439031d485c6b3727b"
 }

@@ -15,5 +15,18 @@
       "source": "packages/components/src/primitives/switch.tsx",
       "target": "components/primitives/switch.tsx"
     }
-  ]
+  ],
+  "version": "0.2.2",
+  "description": "component/switch",
+  "tags": [
+    "component",
+    "switch"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/switch.json"
+  ],
+  "checksum": "7b8bd847a6f1ddae8f52516140c358ea93956bf57205c5d71f82514c1cb1509e"
 }

@@ -15,5 +15,18 @@
       "source": "packages/components/src/primitives/badge.tsx",
       "target": "components/primitives/badge.tsx"
     }
-  ]
+  ],
+  "version": "0.2.2",
+  "description": "component/badge",
+  "tags": [
+    "component",
+    "badge"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/badge.json"
+  ],
+  "checksum": "9aafdec0d5ffb4a46b78c2309e1fa820bc6dad74967af4ab7cb4b096106f4ef2"
 }

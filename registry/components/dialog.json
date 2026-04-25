@@ -16,5 +16,18 @@
       "source": "packages/components/src/primitives/dialog.tsx",
       "target": "components/primitives/dialog.tsx"
     }
-  ]
+  ],
+  "version": "0.2.2",
+  "description": "component/dialog",
+  "tags": [
+    "component",
+    "dialog"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/dialog.json"
+  ],
+  "checksum": "1ac2915a37309c54994a7cfcc3529458d7f4e701ddbde4335d460212eae60f75"
 }

@@ -12,5 +12,18 @@
       "source": "packages/components/src/lib/cn.ts",
       "target": "components/lib/cn.ts"
     }
-  ]
+  ],
+  "version": "0.2.2",
+  "description": "lib/lib-cn",
+  "tags": [
+    "lib",
+    "lib-cn"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/lib-cn.json"
+  ],
+  "checksum": "296aa16446d83537b325d2d3fbcfa326c5d9fdcf037e58c72368c8090f5601e9"
 }

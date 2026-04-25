@@ -14,5 +14,18 @@
       "source": "packages/components/src/composites/page-header.tsx",
       "target": "components/composites/page-header.tsx"
     }
-  ]
+  ],
+  "version": "0.2.2",
+  "description": "component/page-header",
+  "tags": [
+    "component",
+    "page-header"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/page-header.json"
+  ],
+  "checksum": "abcbc760d8ef6bb3b25d0db4d382f14dd2a2de31ef876416556c52b390a5c531"
 }

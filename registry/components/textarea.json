@@ -14,5 +14,18 @@
       "source": "packages/components/src/primitives/textarea.tsx",
       "target": "components/primitives/textarea.tsx"
     }
-  ]
+  ],
+  "version": "0.2.2",
+  "description": "component/textarea",
+  "tags": [
+    "component",
+    "textarea"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/textarea.json"
+  ],
+  "checksum": "e9b613a3fdf6f97b838b9f22ce2913e6fa062b971f0ad87d7132ff671f201a79"
 }

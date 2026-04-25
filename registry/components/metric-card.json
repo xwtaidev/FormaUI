@@ -14,5 +14,18 @@
       "source": "packages/components/src/composites/metric-card.tsx",
       "target": "components/composites/metric-card.tsx"
     }
-  ]
+  ],
+  "version": "0.2.2",
+  "description": "component/metric-card",
+  "tags": [
+    "component",
+    "metric-card"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/metric-card.json"
+  ],
+  "checksum": "cab61a21bb6571c1c1dc94a863fcdcd5b2b9d9cdb65dc5108b1d97e7f842eab7"
 }

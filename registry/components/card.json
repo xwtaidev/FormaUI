@@ -14,5 +14,18 @@
       "source": "packages/components/src/primitives/card.tsx",
       "target": "components/primitives/card.tsx"
     }
-  ]
+  ],
+  "version": "0.2.2",
+  "description": "component/card",
+  "tags": [
+    "component",
+    "card"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/card.json"
+  ],
+  "checksum": "44d0c6538e3f6796a972ae283c8a6258db6e2732cedf0fd57b1e163492e75336"
 }

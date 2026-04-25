@@ -15,5 +15,18 @@
       "source": "packages/components/src/primitives/tabs.tsx",
       "target": "components/primitives/tabs.tsx"
     }
-  ]
+  ],
+  "version": "0.2.2",
+  "description": "component/tabs",
+  "tags": [
+    "component",
+    "tabs"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/tabs.json"
+  ],
+  "checksum": "59d07617b605d19b9a2d46477a88be2f76c2702fb7abf7fd8131b3ee262d7e60"
 }

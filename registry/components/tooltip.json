@@ -15,5 +15,18 @@
       "source": "packages/components/src/primitives/tooltip.tsx",
       "target": "components/primitives/tooltip.tsx"
     }
-  ]
+  ],
+  "version": "0.2.2",
+  "description": "component/tooltip",
+  "tags": [
+    "component",
+    "tooltip"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/tooltip.json"
+  ],
+  "checksum": "1e97c9a6773a1dadc67ebe3875d8b9366b69aabfeb7fc7093b17d282b4ce7841"
 }

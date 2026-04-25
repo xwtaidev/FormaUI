@@ -15,5 +15,18 @@
       "source": "packages/components/src/primitives/button.tsx",
       "target": "components/primitives/button.tsx"
     }
-  ]
+  ],
+  "version": "0.2.2",
+  "description": "component/button",
+  "tags": [
+    "component",
+    "button"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/button.json"
+  ],
+  "checksum": "0c646789d91a2bcd4973868e9290ac1f0c98efeed3543e7e71850adbf0555fe0"
 }

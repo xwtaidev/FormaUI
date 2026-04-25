@@ -12,5 +12,18 @@
       "source": "packages/components/src/composites/app-sidebar.tsx",
       "target": "components/composites/app-sidebar.tsx"
     }
-  ]
+  ],
+  "version": "0.2.2",
+  "description": "component/app-sidebar",
+  "tags": [
+    "component",
+    "app-sidebar"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/app-sidebar.json"
+  ],
+  "checksum": "54ad98ec1cf2945add982b546582e0327a79a49693bc914a974aca94385c0033"
 }

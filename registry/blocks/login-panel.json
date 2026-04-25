@@ -17,5 +17,18 @@
       "source": "packages/blocks/src/login-panel.tsx",
       "target": "components/login-panel.tsx"
     }
-  ]
+  ],
+  "version": "0.2.2",
+  "description": "block/login-panel",
+  "tags": [
+    "block",
+    "login-panel"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/blocks/login-panel.json"
+  ],
+  "checksum": "2988b781e9417842b35f126367bdd05ae47c22d7b379382d43390551bb6e19ff"
 }

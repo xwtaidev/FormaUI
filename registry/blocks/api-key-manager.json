@@ -16,5 +16,18 @@
       "source": "packages/blocks/src/api-key-manager.tsx",
       "target": "components/api-key-manager.tsx"
     }
-  ]
+  ],
+  "version": "0.2.2",
+  "description": "block/api-key-manager",
+  "tags": [
+    "block",
+    "api-key-manager"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/blocks/api-key-manager.json"
+  ],
+  "checksum": "b0c201b9a2d0c8670ac5a7fe11fd89dde31379ce2ca7d7f88a6164af16cc83dc"
 }

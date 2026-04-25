@@ -15,5 +15,18 @@
       "source": "packages/components/src/primitives/avatar.tsx",
       "target": "components/primitives/avatar.tsx"
     }
-  ]
+  ],
+  "version": "0.2.2",
+  "description": "component/avatar",
+  "tags": [
+    "component",
+    "avatar"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/avatar.json"
+  ],
+  "checksum": "1cee526d688865185f5bd4426767995b314cda62294b3478190f1d28167093cc"
 }

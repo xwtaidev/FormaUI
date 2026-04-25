@@ -1,0 +1,1534 @@
+{
+  "generatedAt": "2026-04-25T08:20:36.071Z",
+  "total": 33,
+  "items": [
+    {
+      "kind": "component",
+      "name": "app-sidebar",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/app-sidebar.json",
+      "description": "component/app-sidebar",
+      "tags": [
+        "component",
+        "app-sidebar"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/app-sidebar.json"
+      ],
+      "checksum": "54ad98ec1cf2945add982b546582e0327a79a49693bc914a974aca94385c0033"
+    },
+    {
+      "kind": "component",
+      "name": "avatar",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/avatar.json",
+      "description": "component/avatar",
+      "tags": [
+        "component",
+        "avatar"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/avatar.json"
+      ],
+      "checksum": "1cee526d688865185f5bd4426767995b314cda62294b3478190f1d28167093cc"
+    },
+    {
+      "kind": "component",
+      "name": "badge",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/badge.json",
+      "description": "component/badge",
+      "tags": [
+        "component",
+        "badge"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/badge.json"
+      ],
+      "checksum": "9aafdec0d5ffb4a46b78c2309e1fa820bc6dad74967af4ab7cb4b096106f4ef2"
+    },
+    {
+      "kind": "component",
+      "name": "button",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/button.json",
+      "description": "component/button",
+      "tags": [
+        "component",
+        "button"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/button.json"
+      ],
+      "checksum": "0c646789d91a2bcd4973868e9290ac1f0c98efeed3543e7e71850adbf0555fe0"
+    },
+    {
+      "kind": "component",
+      "name": "card",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/card.json",
+      "description": "component/card",
+      "tags": [
+        "component",
+        "card"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/card.json"
+      ],
+      "checksum": "44d0c6538e3f6796a972ae283c8a6258db6e2732cedf0fd57b1e163492e75336"
+    },
+    {
+      "kind": "component",
+      "name": "checkbox",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/checkbox.json",
+      "description": "component/checkbox",
+      "tags": [
+        "component",
+        "checkbox"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/checkbox.json"
+      ],
+      "checksum": "5e7d1ea16004be8c30cd8d8ec123fe9afc7b0f460d9ebb161c32abd758dfcf86"
+    },
+    {
+      "kind": "component",
+      "name": "dialog",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/dialog.json",
+      "description": "component/dialog",
+      "tags": [
+        "component",
+        "dialog"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/dialog.json"
+      ],
+      "checksum": "1ac2915a37309c54994a7cfcc3529458d7f4e701ddbde4335d460212eae60f75"
+    },
+    {
+      "kind": "component",
+      "name": "dropdown-menu",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/dropdown-menu.json",
+      "description": "component/dropdown-menu",
+      "tags": [
+        "component",
+        "dropdown-menu"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/dropdown-menu.json"
+      ],
+      "checksum": "2393cbcbc799dc5734dca90d81b88ee2f32c96d4b3ec957a3c6d16715300e051"
+    },
+    {
+      "kind": "component",
+      "name": "empty-state",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/empty-state.json",
+      "description": "component/empty-state",
+      "tags": [
+        "component",
+        "empty-state"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/empty-state.json"
+      ],
+      "checksum": "0e087783e52d19806f0cd044be425dc2e1a31db305698f48d124035e0717ea53"
+    },
+    {
+      "kind": "component",
+      "name": "form-field",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/form-field.json",
+      "description": "component/form-field",
+      "tags": [
+        "component",
+        "form-field"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/form-field.json"
+      ],
+      "checksum": "ab576dbb291699bbd9a4454f6f553b3c97a059cb580ab9b1875f49c218914b22"
+    },
+    {
+      "kind": "component",
+      "name": "input",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/input.json",
+      "description": "component/input",
+      "tags": [
+        "component",
+        "input"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/input.json"
+      ],
+      "checksum": "a57211bd9e6fca6a86166ec3aa42edf338efa73ccaa8fe2d088f31f94d8df4e3"
+    },
+    {
+      "kind": "component",
+      "name": "lib-cn",
+      "type": "lib",
+      "version": "0.2.2",
+      "path": "components/lib-cn.json",
+      "description": "lib/lib-cn",
+      "tags": [
+        "lib",
+        "lib-cn"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/lib-cn.json"
+      ],
+      "checksum": "296aa16446d83537b325d2d3fbcfa326c5d9fdcf037e58c72368c8090f5601e9"
+    },
+    {
+      "kind": "component",
+      "name": "metric-card",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/metric-card.json",
+      "description": "component/metric-card",
+      "tags": [
+        "component",
+        "metric-card"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/metric-card.json"
+      ],
+      "checksum": "cab61a21bb6571c1c1dc94a863fcdcd5b2b9d9cdb65dc5108b1d97e7f842eab7"
+    },
+    {
+      "kind": "component",
+      "name": "page-header",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/page-header.json",
+      "description": "component/page-header",
+      "tags": [
+        "component",
+        "page-header"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/page-header.json"
+      ],
+      "checksum": "abcbc760d8ef6bb3b25d0db4d382f14dd2a2de31ef876416556c52b390a5c531"
+    },
+    {
+      "kind": "component",
+      "name": "select",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/select.json",
+      "description": "component/select",
+      "tags": [
+        "component",
+        "select"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/select.json"
+      ],
+      "checksum": "bebf00092323832e8746ea4b40e0d457b1b1c7a3f56412439031d485c6b3727b"
+    },
+    {
+      "kind": "component",
+      "name": "status-badge",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/status-badge.json",
+      "description": "component/status-badge",
+      "tags": [
+        "component",
+        "status-badge"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/status-badge.json"
+      ],
+      "checksum": "e52708745bddced4e1995059e23607ab43012f78fd1d6de4207267ee04abf965"
+    },
+    {
+      "kind": "component",
+      "name": "switch",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/switch.json",
+      "description": "component/switch",
+      "tags": [
+        "component",
+        "switch"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/switch.json"
+      ],
+      "checksum": "7b8bd847a6f1ddae8f52516140c358ea93956bf57205c5d71f82514c1cb1509e"
+    },
+    {
+      "kind": "component",
+      "name": "tabs",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/tabs.json",
+      "description": "component/tabs",
+      "tags": [
+        "component",
+        "tabs"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/tabs.json"
+      ],
+      "checksum": "59d07617b605d19b9a2d46477a88be2f76c2702fb7abf7fd8131b3ee262d7e60"
+    },
+    {
+      "kind": "component",
+      "name": "textarea",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/textarea.json",
+      "description": "component/textarea",
+      "tags": [
+        "component",
+        "textarea"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/textarea.json"
+      ],
+      "checksum": "e9b613a3fdf6f97b838b9f22ce2913e6fa062b971f0ad87d7132ff671f201a79"
+    },
+    {
+      "kind": "component",
+      "name": "theme-switcher",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/theme-switcher.json",
+      "description": "component/theme-switcher",
+      "tags": [
+        "component",
+        "theme-switcher"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/theme-switcher.json"
+      ],
+      "checksum": "5ec257651bddb60e506983700e4b171dc7b1ac62f2b52e4f3d8c449b7a199d7d"
+    },
+    {
+      "kind": "component",
+      "name": "tooltip",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/tooltip.json",
+      "description": "component/tooltip",
+      "tags": [
+        "component",
+        "tooltip"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/tooltip.json"
+      ],
+      "checksum": "1e97c9a6773a1dadc67ebe3875d8b9366b69aabfeb7fc7093b17d282b4ce7841"
+    },
+    {
+      "kind": "component",
+      "name": "user-menu",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/user-menu.json",
+      "description": "component/user-menu",
+      "tags": [
+        "component",
+        "user-menu"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/user-menu.json"
+      ],
+      "checksum": "443c321b0b0e31fd60689c4dc9f858b870619b9b804ee6e179bec22224f99ea9"
+    },
+    {
+      "kind": "block",
+      "name": "agent-run-timeline",
+      "type": "block",
+      "version": "0.2.2",
+      "path": "blocks/agent-run-timeline.json",
+      "description": "block/agent-run-timeline",
+      "tags": [
+        "block",
+        "agent-run-timeline"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/blocks/agent-run-timeline.json"
+      ],
+      "checksum": "d6ab2d3b7064a562b1e0966d074042157e35eb1a249947c60a1653785853ae63"
+    },
+    {
+      "kind": "block",
+      "name": "api-key-manager",
+      "type": "block",
+      "version": "0.2.2",
+      "path": "blocks/api-key-manager.json",
+      "description": "block/api-key-manager",
+      "tags": [
+        "block",
+        "api-key-manager"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/blocks/api-key-manager.json"
+      ],
+      "checksum": "b0c201b9a2d0c8670ac5a7fe11fd89dde31379ce2ca7d7f88a6164af16cc83dc"
+    },
+    {
+      "kind": "block",
+      "name": "billing-panel",
+      "type": "block",
+      "version": "0.2.2",
+      "path": "blocks/billing-panel.json",
+      "description": "block/billing-panel",
+      "tags": [
+        "block",
+        "billing-panel"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/blocks/billing-panel.json"
+      ],
+      "checksum": "58e08b6e9fa04998a9445fab6f9fc77eaf9fceed7d1f1f135768919dc844c602"
+    },
+    {
+      "kind": "block",
+      "name": "dashboard-shell",
+      "type": "block",
+      "version": "0.2.2",
+      "path": "blocks/dashboard-shell.json",
+      "description": "block/dashboard-shell",
+      "tags": [
+        "block",
+        "dashboard-shell"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/blocks/dashboard-shell.json"
+      ],
+      "checksum": "ca7329c46b6ec6b61ed70ca994c89a9bddc0a0f5ecedf38c2f5e825117296f14"
+    },
+    {
+      "kind": "block",
+      "name": "login-panel",
+      "type": "block",
+      "version": "0.2.2",
+      "path": "blocks/login-panel.json",
+      "description": "block/login-panel",
+      "tags": [
+        "block",
+        "login-panel"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/blocks/login-panel.json"
+      ],
+      "checksum": "2988b781e9417842b35f126367bdd05ae47c22d7b379382d43390551bb6e19ff"
+    },
+    {
+      "kind": "block",
+      "name": "pricing-section",
+      "type": "block",
+      "version": "0.2.2",
+      "path": "blocks/pricing-section.json",
+      "description": "block/pricing-section",
+      "tags": [
+        "block",
+        "pricing-section"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/blocks/pricing-section.json"
+      ],
+      "checksum": "466430e7b2e490909313d17fe3faa15018ed94b9213c23cdf4e845cb6c6f35d6"
+    },
+    {
+      "kind": "block",
+      "name": "settings-layout",
+      "type": "block",
+      "version": "0.2.2",
+      "path": "blocks/settings-layout.json",
+      "description": "block/settings-layout",
+      "tags": [
+        "block",
+        "settings-layout"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/blocks/settings-layout.json"
+      ],
+      "checksum": "7a601b08eec128ac6bbe0057a4f1116073752bdc7b231da5ff67aa7cd6387b30"
+    },
+    {
+      "kind": "block",
+      "name": "token-usage-chart",
+      "type": "block",
+      "version": "0.2.2",
+      "path": "blocks/token-usage-chart.json",
+      "description": "block/token-usage-chart",
+      "tags": [
+        "block",
+        "token-usage-chart"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/blocks/token-usage-chart.json"
+      ],
+      "checksum": "1afbf5661f323e075485a38fc0126d5386988ca004789865af12165c4f64cd0e"
+    },
+    {
+      "kind": "template",
+      "name": "ai-console-lite",
+      "type": "template",
+      "version": "0.2.2",
+      "path": "templates/ai-console-lite.json",
+      "description": "template/ai-console-lite",
+      "tags": [
+        "template",
+        "ai-console-lite"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/templates/ai-console-lite.json"
+      ],
+      "checksum": "306413c3cb7701909882aaef6a6f1b486054816eed710c3caad6b3d35f166667"
+    },
+    {
+      "kind": "theme",
+      "name": "avocado",
+      "type": "theme",
+      "version": "0.2.2",
+      "path": "themes/avocado.json",
+      "description": "theme/avocado",
+      "tags": [
+        "theme",
+        "avocado"
+      ],
+      "frameworks": [
+        "css"
+      ],
+      "sources": [
+        "registry/themes/avocado.json"
+      ],
+      "checksum": "80f94ce05b5a6ebe307b4a3a3b9798e959c6d35c5e9c0bbac39c03a5c5a3fc57"
+    },
+    {
+      "kind": "theme",
+      "name": "default",
+      "type": "theme",
+      "version": "0.2.2",
+      "path": "themes/default.json",
+      "description": "theme/default",
+      "tags": [
+        "theme",
+        "default"
+      ],
+      "frameworks": [
+        "css"
+      ],
+      "sources": [
+        "registry/themes/default.json"
+      ],
+      "checksum": "04f8e07acdf29ed06be69a6f7936758d984932d302fb27843258d30ffab489a3"
+    }
+  ],
+  "byKind": {
+    "component": {
+      "app-sidebar": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "app-sidebar",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/app-sidebar.json",
+            "description": "component/app-sidebar",
+            "tags": [
+              "component",
+              "app-sidebar"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/app-sidebar.json"
+            ],
+            "checksum": "54ad98ec1cf2945add982b546582e0327a79a49693bc914a974aca94385c0033"
+          }
+        }
+      },
+      "avatar": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "avatar",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/avatar.json",
+            "description": "component/avatar",
+            "tags": [
+              "component",
+              "avatar"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/avatar.json"
+            ],
+            "checksum": "1cee526d688865185f5bd4426767995b314cda62294b3478190f1d28167093cc"
+          }
+        }
+      },
+      "badge": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "badge",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/badge.json",
+            "description": "component/badge",
+            "tags": [
+              "component",
+              "badge"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/badge.json"
+            ],
+            "checksum": "9aafdec0d5ffb4a46b78c2309e1fa820bc6dad74967af4ab7cb4b096106f4ef2"
+          }
+        }
+      },
+      "button": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "button",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/button.json",
+            "description": "component/button",
+            "tags": [
+              "component",
+              "button"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/button.json"
+            ],
+            "checksum": "0c646789d91a2bcd4973868e9290ac1f0c98efeed3543e7e71850adbf0555fe0"
+          }
+        }
+      },
+      "card": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "card",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/card.json",
+            "description": "component/card",
+            "tags": [
+              "component",
+              "card"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/card.json"
+            ],
+            "checksum": "44d0c6538e3f6796a972ae283c8a6258db6e2732cedf0fd57b1e163492e75336"
+          }
+        }
+      },
+      "checkbox": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "checkbox",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/checkbox.json",
+            "description": "component/checkbox",
+            "tags": [
+              "component",
+              "checkbox"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/checkbox.json"
+            ],
+            "checksum": "5e7d1ea16004be8c30cd8d8ec123fe9afc7b0f460d9ebb161c32abd758dfcf86"
+          }
+        }
+      },
+      "dialog": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "dialog",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/dialog.json",
+            "description": "component/dialog",
+            "tags": [
+              "component",
+              "dialog"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/dialog.json"
+            ],
+            "checksum": "1ac2915a37309c54994a7cfcc3529458d7f4e701ddbde4335d460212eae60f75"
+          }
+        }
+      },
+      "dropdown-menu": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "dropdown-menu",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/dropdown-menu.json",
+            "description": "component/dropdown-menu",
+            "tags": [
+              "component",
+              "dropdown-menu"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/dropdown-menu.json"
+            ],
+            "checksum": "2393cbcbc799dc5734dca90d81b88ee2f32c96d4b3ec957a3c6d16715300e051"
+          }
+        }
+      },
+      "empty-state": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "empty-state",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/empty-state.json",
+            "description": "component/empty-state",
+            "tags": [
+              "component",
+              "empty-state"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/empty-state.json"
+            ],
+            "checksum": "0e087783e52d19806f0cd044be425dc2e1a31db305698f48d124035e0717ea53"
+          }
+        }
+      },
+      "form-field": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "form-field",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/form-field.json",
+            "description": "component/form-field",
+            "tags": [
+              "component",
+              "form-field"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/form-field.json"
+            ],
+            "checksum": "ab576dbb291699bbd9a4454f6f553b3c97a059cb580ab9b1875f49c218914b22"
+          }
+        }
+      },
+      "input": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "input",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/input.json",
+            "description": "component/input",
+            "tags": [
+              "component",
+              "input"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/input.json"
+            ],
+            "checksum": "a57211bd9e6fca6a86166ec3aa42edf338efa73ccaa8fe2d088f31f94d8df4e3"
+          }
+        }
+      },
+      "lib-cn": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "lib-cn",
+            "type": "lib",
+            "version": "0.2.2",
+            "path": "components/lib-cn.json",
+            "description": "lib/lib-cn",
+            "tags": [
+              "lib",
+              "lib-cn"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/lib-cn.json"
+            ],
+            "checksum": "296aa16446d83537b325d2d3fbcfa326c5d9fdcf037e58c72368c8090f5601e9"
+          }
+        }
+      },
+      "metric-card": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "metric-card",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/metric-card.json",
+            "description": "component/metric-card",
+            "tags": [
+              "component",
+              "metric-card"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/metric-card.json"
+            ],
+            "checksum": "cab61a21bb6571c1c1dc94a863fcdcd5b2b9d9cdb65dc5108b1d97e7f842eab7"
+          }
+        }
+      },
+      "page-header": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "page-header",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/page-header.json",
+            "description": "component/page-header",
+            "tags": [
+              "component",
+              "page-header"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/page-header.json"
+            ],
+            "checksum": "abcbc760d8ef6bb3b25d0db4d382f14dd2a2de31ef876416556c52b390a5c531"
+          }
+        }
+      },
+      "select": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "select",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/select.json",
+            "description": "component/select",
+            "tags": [
+              "component",
+              "select"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/select.json"
+            ],
+            "checksum": "bebf00092323832e8746ea4b40e0d457b1b1c7a3f56412439031d485c6b3727b"
+          }
+        }
+      },
+      "status-badge": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "status-badge",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/status-badge.json",
+            "description": "component/status-badge",
+            "tags": [
+              "component",
+              "status-badge"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/status-badge.json"
+            ],
+            "checksum": "e52708745bddced4e1995059e23607ab43012f78fd1d6de4207267ee04abf965"
+          }
+        }
+      },
+      "switch": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "switch",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/switch.json",
+            "description": "component/switch",
+            "tags": [
+              "component",
+              "switch"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/switch.json"
+            ],
+            "checksum": "7b8bd847a6f1ddae8f52516140c358ea93956bf57205c5d71f82514c1cb1509e"
+          }
+        }
+      },
+      "tabs": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "tabs",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/tabs.json",
+            "description": "component/tabs",
+            "tags": [
+              "component",
+              "tabs"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/tabs.json"
+            ],
+            "checksum": "59d07617b605d19b9a2d46477a88be2f76c2702fb7abf7fd8131b3ee262d7e60"
+          }
+        }
+      },
+      "textarea": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "textarea",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/textarea.json",
+            "description": "component/textarea",
+            "tags": [
+              "component",
+              "textarea"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/textarea.json"
+            ],
+            "checksum": "e9b613a3fdf6f97b838b9f22ce2913e6fa062b971f0ad87d7132ff671f201a79"
+          }
+        }
+      },
+      "theme-switcher": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "theme-switcher",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/theme-switcher.json",
+            "description": "component/theme-switcher",
+            "tags": [
+              "component",
+              "theme-switcher"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/theme-switcher.json"
+            ],
+            "checksum": "5ec257651bddb60e506983700e4b171dc7b1ac62f2b52e4f3d8c449b7a199d7d"
+          }
+        }
+      },
+      "tooltip": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "tooltip",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/tooltip.json",
+            "description": "component/tooltip",
+            "tags": [
+              "component",
+              "tooltip"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/tooltip.json"
+            ],
+            "checksum": "1e97c9a6773a1dadc67ebe3875d8b9366b69aabfeb7fc7093b17d282b4ce7841"
+          }
+        }
+      },
+      "user-menu": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "user-menu",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/user-menu.json",
+            "description": "component/user-menu",
+            "tags": [
+              "component",
+              "user-menu"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/user-menu.json"
+            ],
+            "checksum": "443c321b0b0e31fd60689c4dc9f858b870619b9b804ee6e179bec22224f99ea9"
+          }
+        }
+      }
+    },
+    "block": {
+      "agent-run-timeline": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "block",
+            "name": "agent-run-timeline",
+            "type": "block",
+            "version": "0.2.2",
+            "path": "blocks/agent-run-timeline.json",
+            "description": "block/agent-run-timeline",
+            "tags": [
+              "block",
+              "agent-run-timeline"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/blocks/agent-run-timeline.json"
+            ],
+            "checksum": "d6ab2d3b7064a562b1e0966d074042157e35eb1a249947c60a1653785853ae63"
+          }
+        }
+      },
+      "api-key-manager": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "block",
+            "name": "api-key-manager",
+            "type": "block",
+            "version": "0.2.2",
+            "path": "blocks/api-key-manager.json",
+            "description": "block/api-key-manager",
+            "tags": [
+              "block",
+              "api-key-manager"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/blocks/api-key-manager.json"
+            ],
+            "checksum": "b0c201b9a2d0c8670ac5a7fe11fd89dde31379ce2ca7d7f88a6164af16cc83dc"
+          }
+        }
+      },
+      "billing-panel": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "block",
+            "name": "billing-panel",
+            "type": "block",
+            "version": "0.2.2",
+            "path": "blocks/billing-panel.json",
+            "description": "block/billing-panel",
+            "tags": [
+              "block",
+              "billing-panel"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/blocks/billing-panel.json"
+            ],
+            "checksum": "58e08b6e9fa04998a9445fab6f9fc77eaf9fceed7d1f1f135768919dc844c602"
+          }
+        }
+      },
+      "dashboard-shell": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "block",
+            "name": "dashboard-shell",
+            "type": "block",
+            "version": "0.2.2",
+            "path": "blocks/dashboard-shell.json",
+            "description": "block/dashboard-shell",
+            "tags": [
+              "block",
+              "dashboard-shell"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/blocks/dashboard-shell.json"
+            ],
+            "checksum": "ca7329c46b6ec6b61ed70ca994c89a9bddc0a0f5ecedf38c2f5e825117296f14"
+          }
+        }
+      },
+      "login-panel": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "block",
+            "name": "login-panel",
+            "type": "block",
+            "version": "0.2.2",
+            "path": "blocks/login-panel.json",
+            "description": "block/login-panel",
+            "tags": [
+              "block",
+              "login-panel"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/blocks/login-panel.json"
+            ],
+            "checksum": "2988b781e9417842b35f126367bdd05ae47c22d7b379382d43390551bb6e19ff"
+          }
+        }
+      },
+      "pricing-section": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "block",
+            "name": "pricing-section",
+            "type": "block",
+            "version": "0.2.2",
+            "path": "blocks/pricing-section.json",
+            "description": "block/pricing-section",
+            "tags": [
+              "block",
+              "pricing-section"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/blocks/pricing-section.json"
+            ],
+            "checksum": "466430e7b2e490909313d17fe3faa15018ed94b9213c23cdf4e845cb6c6f35d6"
+          }
+        }
+      },
+      "settings-layout": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "block",
+            "name": "settings-layout",
+            "type": "block",
+            "version": "0.2.2",
+            "path": "blocks/settings-layout.json",
+            "description": "block/settings-layout",
+            "tags": [
+              "block",
+              "settings-layout"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/blocks/settings-layout.json"
+            ],
+            "checksum": "7a601b08eec128ac6bbe0057a4f1116073752bdc7b231da5ff67aa7cd6387b30"
+          }
+        }
+      },
+      "token-usage-chart": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "block",
+            "name": "token-usage-chart",
+            "type": "block",
+            "version": "0.2.2",
+            "path": "blocks/token-usage-chart.json",
+            "description": "block/token-usage-chart",
+            "tags": [
+              "block",
+              "token-usage-chart"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/blocks/token-usage-chart.json"
+            ],
+            "checksum": "1afbf5661f323e075485a38fc0126d5386988ca004789865af12165c4f64cd0e"
+          }
+        }
+      }
+    },
+    "template": {
+      "ai-console-lite": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "template",
+            "name": "ai-console-lite",
+            "type": "template",
+            "version": "0.2.2",
+            "path": "templates/ai-console-lite.json",
+            "description": "template/ai-console-lite",
+            "tags": [
+              "template",
+              "ai-console-lite"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/templates/ai-console-lite.json"
+            ],
+            "checksum": "306413c3cb7701909882aaef6a6f1b486054816eed710c3caad6b3d35f166667"
+          }
+        }
+      }
+    },
+    "theme": {
+      "avocado": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "theme",
+            "name": "avocado",
+            "type": "theme",
+            "version": "0.2.2",
+            "path": "themes/avocado.json",
+            "description": "theme/avocado",
+            "tags": [
+              "theme",
+              "avocado"
+            ],
+            "frameworks": [
+              "css"
+            ],
+            "sources": [
+              "registry/themes/avocado.json"
+            ],
+            "checksum": "80f94ce05b5a6ebe307b4a3a3b9798e959c6d35c5e9c0bbac39c03a5c5a3fc57"
+          }
+        }
+      },
+      "default": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "theme",
+            "name": "default",
+            "type": "theme",
+            "version": "0.2.2",
+            "path": "themes/default.json",
+            "description": "theme/default",
+            "tags": [
+              "theme",
+              "default"
+            ],
+            "frameworks": [
+              "css"
+            ],
+            "sources": [
+              "registry/themes/default.json"
+            ],
+            "checksum": "04f8e07acdf29ed06be69a6f7936758d984932d302fb27843258d30ffab489a3"
+          }
+        }
+      }
+    }
+  }
+}

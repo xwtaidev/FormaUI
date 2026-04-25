@@ -14,5 +14,18 @@
       "source": "packages/components/src/composites/empty-state.tsx",
       "target": "components/composites/empty-state.tsx"
     }
-  ]
+  ],
+  "version": "0.2.2",
+  "description": "component/empty-state",
+  "tags": [
+    "component",
+    "empty-state"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/empty-state.json"
+  ],
+  "checksum": "0e087783e52d19806f0cd044be425dc2e1a31db305698f48d124035e0717ea53"
 }

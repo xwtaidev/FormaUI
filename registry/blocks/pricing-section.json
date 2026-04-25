@@ -16,5 +16,18 @@
       "source": "packages/blocks/src/pricing-section.tsx",
       "target": "components/pricing-section.tsx"
     }
-  ]
+  ],
+  "version": "0.2.2",
+  "description": "block/pricing-section",
+  "tags": [
+    "block",
+    "pricing-section"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/blocks/pricing-section.json"
+  ],
+  "checksum": "466430e7b2e490909313d17fe3faa15018ed94b9213c23cdf4e845cb6c6f35d6"
 }

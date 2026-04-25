@@ -9,5 +9,18 @@
       "source": "packages/themes/src/avocado.css",
       "target": "styles/formaui/avocado.css"
     }
-  ]
+  ],
+  "version": "0.2.2",
+  "description": "theme/avocado",
+  "tags": [
+    "theme",
+    "avocado"
+  ],
+  "frameworks": [
+    "css"
+  ],
+  "sources": [
+    "registry/themes/avocado.json"
+  ],
+  "checksum": "80f94ce05b5a6ebe307b4a3a3b9798e959c6d35c5e9c0bbac39c03a5c5a3fc57"
 }

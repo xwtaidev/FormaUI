@@ -17,5 +17,18 @@
       "source": "packages/blocks/src/settings-layout.tsx",
       "target": "components/settings-layout.tsx"
     }
-  ]
+  ],
+  "version": "0.2.2",
+  "description": "block/settings-layout",
+  "tags": [
+    "block",
+    "settings-layout"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/blocks/settings-layout.json"
+  ],
+  "checksum": "7a601b08eec128ac6bbe0057a4f1116073752bdc7b231da5ff67aa7cd6387b30"
 }

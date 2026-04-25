@@ -15,5 +15,18 @@
       "source": "packages/components/src/composites/user-menu.tsx",
       "target": "components/composites/user-menu.tsx"
     }
-  ]
+  ],
+  "version": "0.2.2",
+  "description": "component/user-menu",
+  "tags": [
+    "component",
+    "user-menu"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/user-menu.json"
+  ],
+  "checksum": "443c321b0b0e31fd60689c4dc9f858b870619b9b804ee6e179bec22224f99ea9"
 }

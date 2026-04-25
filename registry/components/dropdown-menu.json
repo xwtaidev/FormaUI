@@ -16,5 +16,18 @@
       "source": "packages/components/src/primitives/dropdown-menu.tsx",
       "target": "components/primitives/dropdown-menu.tsx"
     }
-  ]
+  ],
+  "version": "0.2.2",
+  "description": "component/dropdown-menu",
+  "tags": [
+    "component",
+    "dropdown-menu"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/dropdown-menu.json"
+  ],
+  "checksum": "2393cbcbc799dc5734dca90d81b88ee2f32c96d4b3ec957a3c6d16715300e051"
 }
