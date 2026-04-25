@@ -1,3 +1,4 @@
+export * from "./accordion";
 export * from "./avatar";
 export * from "./badge";
 export * from "./button";
@@ -5,7 +6,10 @@ export * from "./card";
 export * from "./checkbox";
 export * from "./dialog";
 export * from "./dropdown-menu";
+export * from "./hover-card";
 export * from "./input";
+export * from "./popover";
+export * from "./progress";
 export * from "./select";
 export * from "./switch";
 export * from "./tabs";

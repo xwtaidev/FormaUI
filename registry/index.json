@@ -1,7 +1,32 @@
 {
-  "generatedAt": "2026-04-25T12:27:43.856Z",
-  "total": 43,
+  "generatedAt": "2026-04-25T13:18:45.083Z",
+  "total": 47,
   "items": [
+    {
+      "kind": "component",
+      "name": "accordion",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/accordion.json",
+      "description": "component/accordion",
+      "tags": [
+        "component",
+        "accordion"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/accordion.json"
+      ],
+      "checksum": "7427a91d327558559aae68b5aa37e1f83eed474bae862df778147734a724e5df",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
     {
       "kind": "component",
       "name": "app-sidebar",
@@ -279,6 +304,31 @@
     },
     {
       "kind": "component",
+      "name": "hover-card",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/hover-card.json",
+      "description": "component/hover-card",
+      "tags": [
+        "component",
+        "hover-card"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/hover-card.json"
+      ],
+      "checksum": "95ff1b16c880d9f55e0665147c2223d2faeb2fde4afb6d43436cd9be3086992f",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
       "name": "input",
       "type": "component",
       "version": "0.2.2",
@@ -370,6 +420,56 @@
         "registry/components/page-header.json"
       ],
       "checksum": "44066c728bbac87dc33d7b37a75da7a3df144d990539effdb9b0707e5234a9e1",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "popover",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/popover.json",
+      "description": "component/popover",
+      "tags": [
+        "component",
+        "popover"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/popover.json"
+      ],
+      "checksum": "618dec76e69470c5ccc96c6ca8a6d33e48d1bb88b7614c6b0d786f1946c4d0c7",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "progress",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/progress.json",
+      "description": "component/progress",
+      "tags": [
+        "component",
+        "progress"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/progress.json"
+      ],
+      "checksum": "6bfc21e21bbd1b78f62ace271bef949d6a3419aec4e01808c623bf5d4fd3c8d8",
       "category": "component",
       "scenarios": [
         "component"
@@ -1084,6 +1184,39 @@
   ],
   "byKind": {
     "component": {
+      "accordion": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "accordion",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/accordion.json",
+            "description": "component/accordion",
+            "tags": [
+              "component",
+              "accordion"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/accordion.json"
+            ],
+            "checksum": "7427a91d327558559aae68b5aa37e1f83eed474bae862df778147734a724e5df",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
       "app-sidebar": {
         "latest": "0.2.2",
         "versions": [
@@ -1447,6 +1580,39 @@
           }
         }
       },
+      "hover-card": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "hover-card",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/hover-card.json",
+            "description": "component/hover-card",
+            "tags": [
+              "component",
+              "hover-card"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/hover-card.json"
+            ],
+            "checksum": "95ff1b16c880d9f55e0665147c2223d2faeb2fde4afb6d43436cd9be3086992f",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
       "input": {
         "latest": "0.2.2",
         "versions": [
@@ -1570,6 +1736,72 @@
               "registry/components/page-header.json"
             ],
             "checksum": "44066c728bbac87dc33d7b37a75da7a3df144d990539effdb9b0707e5234a9e1",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "popover": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "popover",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/popover.json",
+            "description": "component/popover",
+            "tags": [
+              "component",
+              "popover"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/popover.json"
+            ],
+            "checksum": "618dec76e69470c5ccc96c6ca8a6d33e48d1bb88b7614c6b0d786f1946c4d0c7",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "progress": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "progress",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/progress.json",
+            "description": "component/progress",
+            "tags": [
+              "component",
+              "progress"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/progress.json"
+            ],
+            "checksum": "6bfc21e21bbd1b78f62ace271bef949d6a3419aec4e01808c623bf5d4fd3c8d8",
             "category": "component",
             "scenarios": [
               "component"

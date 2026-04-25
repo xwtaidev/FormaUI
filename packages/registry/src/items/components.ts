@@ -41,6 +41,12 @@ export const componentRegistryItems: RegistryItem[] = [
     ]
   },
   componentItem({
+    name: "accordion",
+    source: "packages/components/src/primitives/accordion.tsx",
+    dependencies: ["@radix-ui/react-accordion", "lucide-react"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
     name: "avatar",
     source: "packages/components/src/primitives/avatar.tsx",
     dependencies: ["@radix-ui/react-avatar"],
@@ -82,8 +88,26 @@ export const componentRegistryItems: RegistryItem[] = [
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
+    name: "hover-card",
+    source: "packages/components/src/primitives/hover-card.tsx",
+    dependencies: ["@radix-ui/react-hover-card"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
     name: "input",
     source: "packages/components/src/primitives/input.tsx",
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "popover",
+    source: "packages/components/src/primitives/popover.tsx",
+    dependencies: ["@radix-ui/react-popover"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "progress",
+    source: "packages/components/src/primitives/progress.tsx",
+    dependencies: ["@radix-ui/react-progress"],
     registryDependencies: ["lib-cn"]
   }),
   componentItem({

@@ -1,0 +1,39 @@
+{
+  "name": "accordion",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "@radix-ui/react-accordion",
+    "lucide-react"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/accordion.tsx",
+      "target": "components/primitives/accordion.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/accordion",
+  "tags": [
+    "component",
+    "accordion"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/accordion.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "7427a91d327558559aae68b5aa37e1f83eed474bae862df778147734a724e5df"
+}

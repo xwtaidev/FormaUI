@@ -4,6 +4,10 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
   Avatar,
   AvatarFallback,
   Checkbox,
@@ -16,7 +20,14 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
   Input,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+  Progress,
   Select,
   SelectContent,
   SelectItem,
@@ -100,5 +111,43 @@ describe("primitives: radix and form", () => {
     expect(screen.getAllByText("Helpful tip").length).toBeGreaterThan(0);
     expect(screen.getByLabelText("Accept terms")).toBeDefined();
     expect(screen.getByLabelText("Enable alerts")).toBeDefined();
+  });
+
+  it("renders wave-a primitives and keeps focus behavior predictable", () => {
+    render(
+      <div>
+        <Accordion type="single" collapsible>
+          <AccordionItem value="details">
+            <AccordionTrigger>Toggle details</AccordionTrigger>
+            <AccordionContent>Accordion content</AccordionContent>
+          </AccordionItem>
+        </Accordion>
+
+        <Popover open>
+          <PopoverTrigger>Open popover</PopoverTrigger>
+          <PopoverContent>Popover content</PopoverContent>
+        </Popover>
+
+        <HoverCard open>
+          <HoverCardTrigger>Hover target</HoverCardTrigger>
+          <HoverCardContent>Hover card content</HoverCardContent>
+        </HoverCard>
+
+        <Progress value={66} data-testid="progress" />
+      </div>
+    );
+
+    const accordionTrigger = screen.getByRole("button", { name: "Toggle details" });
+    accordionTrigger.focus();
+    expect(document.activeElement).toBe(accordionTrigger);
+    fireEvent.click(accordionTrigger);
+
+    const progress = screen.getByTestId("progress");
+
+    expect(screen.getByText("Accordion content")).toBeDefined();
+    expect(screen.getByText("Popover content")).toBeDefined();
+    expect(screen.getByText("Hover card content")).toBeDefined();
+    expect(progress.getAttribute("role")).toBe("progressbar");
+    expect(progress.getAttribute("aria-valuenow")).toBe("66");
   });
 });

@@ -3,7 +3,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
-import { Badge, Button, Card, CardContent, CardHeader, CardTitle } from "../src";
+import { Badge, Button, Card, CardContent, CardHeader, CardTitle, Progress } from "../src";
 
 describe("primitives: basic", () => {
   it("renders Button with requested variant", () => {
@@ -42,5 +42,13 @@ describe("primitives: basic", () => {
     const badge = screen.getByTestId("badge");
     expect(badge.textContent).toBe("New");
     expect(badge.className).toContain("border-border");
+  });
+
+  it("renders Progress with value metadata", () => {
+    render(<Progress value={40} data-testid="progress-basic" />);
+
+    const progress = screen.getByTestId("progress-basic");
+    expect(progress.getAttribute("aria-valuenow")).toBe("40");
+    expect(progress.className).toContain("bg-secondary");
   });
 });

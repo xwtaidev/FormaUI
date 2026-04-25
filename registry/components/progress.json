@@ -1,0 +1,38 @@
+{
+  "name": "progress",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "@radix-ui/react-progress"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/progress.tsx",
+      "target": "components/primitives/progress.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/progress",
+  "tags": [
+    "component",
+    "progress"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/progress.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "6bfc21e21bbd1b78f62ace271bef949d6a3419aec4e01808c623bf5d4fd3c8d8"
+}
