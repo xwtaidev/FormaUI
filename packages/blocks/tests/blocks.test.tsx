@@ -9,8 +9,10 @@ import {
   BillingPanel,
   DashboardShell,
   LoginPanel,
+  NotificationPanel,
   PricingSection,
   SettingsLayout,
+  TeamMembersTable,
   TokenUsageChart
 } from "../src";
 
@@ -26,6 +28,8 @@ describe("blocks", () => {
         <ApiKeyManager />
         <TokenUsageChart />
         <AgentRunTimeline />
+        <TeamMembersTable />
+        <NotificationPanel />
       </div>
     );
 
@@ -37,5 +41,7 @@ describe("blocks", () => {
     expect(screen.getAllByText("API keys").length).toBeGreaterThan(0);
     expect(screen.getAllByText("Token usage").length).toBeGreaterThan(0);
     expect(screen.getAllByText("Agent runs").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Team members").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Notifications").length).toBeGreaterThan(0);
   });
 });

@@ -38,6 +38,23 @@ export interface DemoMetric {
   delta: string;
 }
 
+export interface DemoTeamMember {
+  id: string;
+  name: string;
+  role: string;
+  team: string;
+  location: string;
+  status: "active" | "away" | "offline";
+}
+
+export interface DemoNotification {
+  id: string;
+  title: string;
+  summary: string;
+  level: "critical" | "info" | "success";
+  time: string;
+}
+
 export const demoPlans: DemoPlan[] = [
   {
     name: "Starter",
@@ -130,4 +147,63 @@ export const demoMetrics: DemoMetric[] = [
   { title: "MRR", value: "$84,120", delta: "+8.7%" },
   { title: "Active workspaces", value: "312", delta: "+14" },
   { title: "Automation success", value: "98.3%", delta: "+0.5%" }
+];
+
+export const demoTeamMembers: DemoTeamMember[] = [
+  {
+    id: "tm_01",
+    name: "Avery Lin",
+    role: "Product Lead",
+    team: "Platform",
+    location: "Singapore",
+    status: "active"
+  },
+  {
+    id: "tm_02",
+    name: "Riley Chen",
+    role: "ML Engineer",
+    team: "AI",
+    location: "Shanghai",
+    status: "away"
+  },
+  {
+    id: "tm_03",
+    name: "Jordan Patel",
+    role: "UX Designer",
+    team: "Experience",
+    location: "San Francisco",
+    status: "active"
+  },
+  {
+    id: "tm_04",
+    name: "Samira Khan",
+    role: "Customer Success",
+    team: "Operations",
+    location: "London",
+    status: "offline"
+  }
+];
+
+export const demoNotifications: DemoNotification[] = [
+  {
+    id: "ntf_01",
+    title: "Billing threshold reached",
+    summary: "Workspace usage passed 80% of monthly quota.",
+    level: "critical",
+    time: "5 min ago"
+  },
+  {
+    id: "ntf_02",
+    title: "Model warmup complete",
+    summary: "Realtime response latency dropped below 700ms.",
+    level: "success",
+    time: "22 min ago"
+  },
+  {
+    id: "ntf_03",
+    title: "New teammate invited",
+    summary: "Chen joined the AI operations workspace.",
+    level: "info",
+    time: "1 hr ago"
+  }
 ];

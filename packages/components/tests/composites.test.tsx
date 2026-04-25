@@ -5,11 +5,13 @@ import { describe, expect, it, vi } from "vitest";
 
 import {
   AppSidebar,
+  DataTable,
   EmptyState,
   FormField,
   Input,
   MetricCard,
   PageHeader,
+  SearchCommand,
   StatusBadge,
   ThemeSwitcher,
   UserMenu
@@ -63,5 +65,57 @@ describe("composites", () => {
     fireEvent.click(screen.getByRole("button", { name: "toggle theme" }));
 
     expect(onToggle).toHaveBeenCalledTimes(1);
+  });
+
+  it("renders data-table and sorts rows by sortable column", () => {
+    render(
+      <DataTable
+        columns={[
+          { key: "name", header: "Name" },
+          { key: "score", header: "Score", sortable: true }
+        ]}
+        rows={[
+          { name: "Alpha", score: 20 },
+          { name: "Bravo", score: 10 },
+          { name: "Charlie", score: 30 }
+        ]}
+      />
+    );
+
+    const headers = screen.getAllByRole("columnheader");
+    expect(headers.map((header) => header.textContent)).toContain("Name");
+    expect(headers.some((header) => header.textContent?.startsWith("Score"))).toBe(true);
+
+    fireEvent.click(screen.getByRole("button", { name: "Sort by Score" }));
+    const cells = screen.getAllByRole("cell");
+    expect(cells[0]?.textContent).toBe("Bravo");
+    expect(cells[2]?.textContent).toBe("Alpha");
+    expect(cells[5]?.textContent).toBe("30");
+  });
+
+  it("filters and selects commands in search-command", () => {
+    const onSelect = vi.fn();
+
+    render(
+      <SearchCommand
+        items={[
+          { id: "deploy", label: "Deploy project", keywords: ["ship"] },
+          { id: "rollback", label: "Rollback release", keywords: ["undo"] }
+        ]}
+        onSelect={onSelect}
+      />
+    );
+
+    fireEvent.change(screen.getByRole("textbox", { name: "Search command" }), {
+      target: { value: "undo" }
+    });
+
+    expect(screen.queryByText("Deploy project")).toBeNull();
+    fireEvent.click(screen.getByRole("button", { name: "Run Rollback release" }));
+    expect(onSelect).toHaveBeenCalledWith({
+      id: "rollback",
+      keywords: ["undo"],
+      label: "Rollback release"
+    });
   });
 });
