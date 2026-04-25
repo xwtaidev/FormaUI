@@ -80,6 +80,10 @@ async function createRegistryFixture() {
       {
         name: "button",
         type: "component",
+        category: "form-controls",
+        scenarios: ["forms", "settings"],
+        complexity: "low",
+        stability: "stable",
         dependencies: ["react"],
         devDependencies: [],
         registryDependencies: [],
@@ -102,6 +106,10 @@ async function createRegistryFixture() {
       {
         name: "dashboard-shell",
         type: "block",
+        category: "dashboard",
+        scenarios: ["analytics", "operations"],
+        complexity: "medium",
+        stability: "stable",
         dependencies: ["react"],
         devDependencies: [],
         registryDependencies: ["button"],
@@ -124,6 +132,10 @@ async function createRegistryFixture() {
       {
         name: "ai-console-lite",
         type: "template",
+        category: "starter-kit",
+        scenarios: ["ai", "dashboard"],
+        complexity: "high",
+        stability: "beta",
         dependencies: ["react"],
         devDependencies: [],
         registryDependencies: ["dashboard-shell"],
@@ -146,6 +158,10 @@ async function createRegistryFixture() {
       {
         name: "default",
         type: "theme",
+        category: "branding",
+        scenarios: ["theming"],
+        complexity: "low",
+        stability: "stable",
         dependencies: [],
         devDependencies: [],
         registryDependencies: [],
@@ -295,6 +311,25 @@ describe("formaui discoverability commands", () => {
       await runCli(["info", "button", "--registry", registryRoot], { logger });
       expect(logs.info.some((line) => line.includes("Name: button"))).toBe(true);
       expect(logs.info.some((line) => line.includes("Kind: component"))).toBe(true);
+    } finally {
+      await rm(fixtureRoot, { recursive: true, force: true });
+    }
+  });
+
+  it("supports list/search metadata filters for category and scenario", async () => {
+    const { root: fixtureRoot, registryRoot } = await createRegistryFixture();
+    const logs = createLogBucket();
+    const logger = createCapturedLogger(logs);
+
+    try {
+      await runCli(["list", "--registry", registryRoot, "--category", "dashboard"], { logger });
+      expect(logs.info.some((line) => line.includes("block/dashboard-shell"))).toBe(true);
+      expect(logs.info.some((line) => line.includes("component/button"))).toBe(false);
+
+      logs.info.length = 0;
+      await runCli(["search", "dashboard", "--registry", registryRoot, "--scenario", "ai"], { logger });
+      expect(logs.info.some((line) => line.includes("template/ai-console-lite"))).toBe(true);
+      expect(logs.info.some((line) => line.includes("block/dashboard-shell"))).toBe(false);
     } finally {
       await rm(fixtureRoot, { recursive: true, force: true });
     }

@@ -1,10 +1,11 @@
-export type RegistryKind = "component" | "block" | "template" | "theme";
+export type RegistryKind = "component" | "block" | "template" | "theme" | "pack";
 
 const DIRECTORY_BY_KIND: Record<RegistryKind, string> = {
   component: "components",
   block: "blocks",
   template: "templates",
-  theme: "themes"
+  theme: "themes",
+  pack: "packs"
 };
 
 interface RegistryIndexEntry {

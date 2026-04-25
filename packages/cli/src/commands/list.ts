@@ -6,13 +6,17 @@ export interface ListCommandOptions {
   logger?: Logger;
   registryRoot?: string;
   kind?: RegistryKind;
+  category?: string;
+  scenario?: string;
 }
 
 export async function runListCommand(options: ListCommandOptions = {}) {
   const logger = options.logger ?? createLogger();
   const entries = await listRegistryItems({
     registryRoot: options.registryRoot,
-    kind: options.kind
+    kind: options.kind,
+    category: options.category,
+    scenario: options.scenario
   });
 
   if (entries.length === 0) {
