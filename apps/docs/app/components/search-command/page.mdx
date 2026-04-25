@@ -1,0 +1,42 @@
+# SearchCommand
+
+## Overview
+
+`SearchCommand` provides command-style search and action execution with keyboard hint badges.
+
+## Install Command
+
+```bash
+npx formaui add search-command
+```
+
+## Usage
+
+```tsx
+import { SearchCommand } from "@/components/composites/search-command";
+
+export function CommandPalette() {
+  return (
+    <SearchCommand
+      items={[
+        { id: "deploy", label: "Deploy project", shortcut: "D" },
+        { id: "rollback", label: "Rollback release", shortcut: "R" }
+      ]}
+      onSelect={(item) => console.log(item.id)}
+    />
+  );
+}
+```
+
+## Dependencies
+
+Registry dependencies:
+
+- `input`
+- `button`
+- `badge`
+
+## Source Code
+
+- `packages/components/src/composites/search-command.tsx`
+- `registry/components/search-command.json`

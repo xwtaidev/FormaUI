@@ -120,6 +120,11 @@ export const componentRegistryItems: RegistryItem[] = [
     source: "packages/components/src/composites/app-sidebar.tsx"
   }),
   componentItem({
+    name: "data-table",
+    source: "packages/components/src/composites/data-table.tsx",
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
     name: "empty-state",
     source: "packages/components/src/composites/empty-state.tsx",
     registryDependencies: ["button"]
@@ -138,6 +143,11 @@ export const componentRegistryItems: RegistryItem[] = [
     name: "page-header",
     source: "packages/components/src/composites/page-header.tsx",
     registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "search-command",
+    source: "packages/components/src/composites/search-command.tsx",
+    registryDependencies: ["lib-cn", "badge", "button", "input"]
   }),
   componentItem({
     name: "status-badge",

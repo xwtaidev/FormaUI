@@ -1,0 +1,34 @@
+{
+  "name": "notification-panel",
+  "type": "block",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "card",
+    "badge",
+    "button",
+    "search-command"
+  ],
+  "files": [
+    {
+      "source": "packages/blocks/src/notification-panel.tsx",
+      "target": "components/notification-panel.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "block/notification-panel",
+  "tags": [
+    "block",
+    "notification-panel"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/blocks/notification-panel.json"
+  ],
+  "checksum": "03f8653d79d46bf7b380c516b034f92883390da321223a5e88c139145106e43c"
+}

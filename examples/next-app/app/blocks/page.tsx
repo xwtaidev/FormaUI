@@ -1,4 +1,11 @@
-import { AgentRunTimeline, DashboardShell, PricingSection, TokenUsageChart } from "@formaui/blocks";
+import {
+  AgentRunTimeline,
+  DashboardShell,
+  NotificationPanel,
+  PricingSection,
+  TeamMembersTable,
+  TokenUsageChart
+} from "@formaui/blocks";
 
 export default function BlocksPage() {
   return (
@@ -6,7 +13,8 @@ export default function BlocksPage() {
       <section>
         <h2 className="text-2xl font-semibold">Block Showcase</h2>
         <p className="text-sm text-muted-foreground">
-          Required v0.1 blocks: DashboardShell, PricingSection, TokenUsageChart, AgentRunTimeline.
+          v0.2.4 blocks: DashboardShell, PricingSection, TokenUsageChart, AgentRunTimeline,
+          TeamMembersTable, NotificationPanel.
         </p>
       </section>
 
@@ -23,6 +31,16 @@ export default function BlocksPage() {
       <section className="space-y-4">
         <h3 className="text-lg font-semibold">PricingSection</h3>
         <PricingSection />
+      </section>
+
+      <section className="space-y-4">
+        <h3 className="text-lg font-semibold">TeamMembersTable</h3>
+        <TeamMembersTable />
+      </section>
+
+      <section className="space-y-4">
+        <h3 className="text-lg font-semibold">NotificationPanel</h3>
+        <NotificationPanel />
       </section>
     </div>
   );

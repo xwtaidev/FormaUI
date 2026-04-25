@@ -5,7 +5,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "FormaUI Docs",
-  description: "FormaUI v0.1 documentation"
+  description: "FormaUI v0.2 documentation"
 };
 
 const links = [
@@ -19,9 +19,13 @@ const links = [
   { href: "/components/input", label: "Input" },
   { href: "/components/card", label: "Card" },
   { href: "/components/dialog", label: "Dialog" },
+  { href: "/components/data-table", label: "DataTable" },
+  { href: "/components/search-command", label: "SearchCommand" },
   { href: "/blocks/dashboard-shell", label: "DashboardShell" },
   { href: "/blocks/token-usage-chart", label: "TokenUsageChart" },
   { href: "/blocks/agent-run-timeline", label: "AgentRunTimeline" },
+  { href: "/blocks/team-members-table", label: "TeamMembersTable" },
+  { href: "/blocks/notification-panel", label: "NotificationPanel" },
   { href: "/templates/ai-console-lite", label: "ai-console-lite" },
   { href: "/cli", label: "CLI" },
   { href: "/registry", label: "Registry" }
@@ -35,7 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <aside className="border-b border-slate-200 p-6 lg:border-b-0 lg:border-r">
             <Link href="/" className="block">
               <p className="text-sm uppercase tracking-wide text-slate-500">FormaUI</p>
-              <h1 className="text-2xl font-semibold">v0.1 Docs</h1>
+              <h1 className="text-2xl font-semibold">v0.2 Docs</h1>
             </Link>
             <nav className="mt-6 space-y-2">
               {links.map((item) => (

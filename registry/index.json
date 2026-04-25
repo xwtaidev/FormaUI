@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-04-25T08:20:36.071Z",
-  "total": 33,
+  "generatedAt": "2026-04-25T09:01:38.103Z",
+  "total": 37,
   "items": [
     {
       "kind": "component",
@@ -115,6 +115,25 @@
         "registry/components/checkbox.json"
       ],
       "checksum": "5e7d1ea16004be8c30cd8d8ec123fe9afc7b0f460d9ebb161c32abd758dfcf86"
+    },
+    {
+      "kind": "component",
+      "name": "data-table",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/data-table.json",
+      "description": "component/data-table",
+      "tags": [
+        "component",
+        "data-table"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/data-table.json"
+      ],
+      "checksum": "85d5420699477539622d1fd021621d73a565b78fa7f7a9c3871b5e7a276f6c74"
     },
     {
       "kind": "component",
@@ -267,6 +286,25 @@
         "registry/components/page-header.json"
       ],
       "checksum": "abcbc760d8ef6bb3b25d0db4d382f14dd2a2de31ef876416556c52b390a5c531"
+    },
+    {
+      "kind": "component",
+      "name": "search-command",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/search-command.json",
+      "description": "component/search-command",
+      "tags": [
+        "component",
+        "search-command"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/search-command.json"
+      ],
+      "checksum": "0e47f756a29d007911b875b2b77056ced311a6bb114844ae81c8d2daef90b9c0"
     },
     {
       "kind": "component",
@@ -517,6 +555,25 @@
     },
     {
       "kind": "block",
+      "name": "notification-panel",
+      "type": "block",
+      "version": "0.2.2",
+      "path": "blocks/notification-panel.json",
+      "description": "block/notification-panel",
+      "tags": [
+        "block",
+        "notification-panel"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/blocks/notification-panel.json"
+      ],
+      "checksum": "03f8653d79d46bf7b380c516b034f92883390da321223a5e88c139145106e43c"
+    },
+    {
+      "kind": "block",
       "name": "pricing-section",
       "type": "block",
       "version": "0.2.2",
@@ -552,6 +609,25 @@
         "registry/blocks/settings-layout.json"
       ],
       "checksum": "7a601b08eec128ac6bbe0057a4f1116073752bdc7b231da5ff67aa7cd6387b30"
+    },
+    {
+      "kind": "block",
+      "name": "team-members-table",
+      "type": "block",
+      "version": "0.2.2",
+      "path": "blocks/team-members-table.json",
+      "description": "block/team-members-table",
+      "tags": [
+        "block",
+        "team-members-table"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/blocks/team-members-table.json"
+      ],
+      "checksum": "525c5dde7c35b2a3165c64be0904736f6922ece5d322f8681463aa8fb4cde437"
     },
     {
       "kind": "block",
@@ -794,6 +870,33 @@
           }
         }
       },
+      "data-table": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "data-table",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/data-table.json",
+            "description": "component/data-table",
+            "tags": [
+              "component",
+              "data-table"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/data-table.json"
+            ],
+            "checksum": "85d5420699477539622d1fd021621d73a565b78fa7f7a9c3871b5e7a276f6c74"
+          }
+        }
+      },
       "dialog": {
         "latest": "0.2.2",
         "versions": [
@@ -1007,6 +1110,33 @@
               "registry/components/page-header.json"
             ],
             "checksum": "abcbc760d8ef6bb3b25d0db4d382f14dd2a2de31ef876416556c52b390a5c531"
+          }
+        }
+      },
+      "search-command": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "search-command",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/search-command.json",
+            "description": "component/search-command",
+            "tags": [
+              "component",
+              "search-command"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/search-command.json"
+            ],
+            "checksum": "0e47f756a29d007911b875b2b77056ced311a6bb114844ae81c8d2daef90b9c0"
           }
         }
       },
@@ -1363,6 +1493,33 @@
           }
         }
       },
+      "notification-panel": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "block",
+            "name": "notification-panel",
+            "type": "block",
+            "version": "0.2.2",
+            "path": "blocks/notification-panel.json",
+            "description": "block/notification-panel",
+            "tags": [
+              "block",
+              "notification-panel"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/blocks/notification-panel.json"
+            ],
+            "checksum": "03f8653d79d46bf7b380c516b034f92883390da321223a5e88c139145106e43c"
+          }
+        }
+      },
       "pricing-section": {
         "latest": "0.2.2",
         "versions": [
@@ -1414,6 +1571,33 @@
               "registry/blocks/settings-layout.json"
             ],
             "checksum": "7a601b08eec128ac6bbe0057a4f1116073752bdc7b231da5ff67aa7cd6387b30"
+          }
+        }
+      },
+      "team-members-table": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "block",
+            "name": "team-members-table",
+            "type": "block",
+            "version": "0.2.2",
+            "path": "blocks/team-members-table.json",
+            "description": "block/team-members-table",
+            "tags": [
+              "block",
+              "team-members-table"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/blocks/team-members-table.json"
+            ],
+            "checksum": "525c5dde7c35b2a3165c64be0904736f6922ece5d322f8681463aa8fb4cde437"
           }
         }
       },

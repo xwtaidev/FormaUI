@@ -64,5 +64,15 @@ export const blockRegistryItems: RegistryItem[] = [
     name: "agent-run-timeline",
     source: "packages/blocks/src/agent-run-timeline.tsx",
     registryDependencies: ["card", "badge", "button"]
+  }),
+  blockItem({
+    name: "team-members-table",
+    source: "packages/blocks/src/team-members-table.tsx",
+    registryDependencies: ["card", "badge", "data-table"]
+  }),
+  blockItem({
+    name: "notification-panel",
+    source: "packages/blocks/src/notification-panel.tsx",
+    registryDependencies: ["card", "badge", "button", "search-command"]
   })
 ];

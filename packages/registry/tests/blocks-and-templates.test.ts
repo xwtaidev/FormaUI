@@ -18,13 +18,28 @@ const REQUIRED_BLOCKS = [
   "billing-panel",
   "api-key-manager",
   "token-usage-chart",
-  "agent-run-timeline"
+  "agent-run-timeline",
+  "team-members-table",
+  "notification-panel"
+] as const;
+
+const REQUIRED_COMPONENTS = [
+  "data-table",
+  "search-command"
 ] as const;
 
 const testFileDir = dirname(fileURLToPath(import.meta.url));
 const repoRoot = resolve(testFileDir, "../../..");
 
 describe("registry coverage: blocks and templates", () => {
+  it("contains all required v0.2.4 component registry items", () => {
+    const names = new Set(componentRegistryItems.map((item) => item.name));
+
+    for (const required of REQUIRED_COMPONENTS) {
+      expect(names.has(required)).toBe(true);
+    }
+  });
+
   it("contains all required block registry items", () => {
     const names = new Set(blockRegistryItems.map((item) => item.name));
 
@@ -34,6 +49,21 @@ describe("registry coverage: blocks and templates", () => {
 
     expect(blockRegistryItems).toHaveLength(REQUIRED_BLOCKS.length);
     expect(blockRegistryItems.every((item) => item.type === "block")).toBe(true);
+  });
+
+  it("declares block dependencies for new wave-1 blocks", () => {
+    const teamMembersTable = blockRegistryItems.find((item) => item.name === "team-members-table");
+    const notificationPanel = blockRegistryItems.find((item) => item.name === "notification-panel");
+
+    expect(teamMembersTable).toBeDefined();
+    expect(notificationPanel).toBeDefined();
+
+    if (!teamMembersTable || !notificationPanel) {
+      return;
+    }
+
+    expect(new Set(teamMembersTable.registryDependencies).has("data-table")).toBe(true);
+    expect(new Set(notificationPanel.registryDependencies).has("search-command")).toBe(true);
   });
 
   it("declares ai-console-lite with required dashboard and ai dependencies", () => {

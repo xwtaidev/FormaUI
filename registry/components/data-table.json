@@ -1,0 +1,31 @@
+{
+  "name": "data-table",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/composites/data-table.tsx",
+      "target": "components/composites/data-table.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/data-table",
+  "tags": [
+    "component",
+    "data-table"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/data-table.json"
+  ],
+  "checksum": "85d5420699477539622d1fd021621d73a565b78fa7f7a9c3871b5e7a276f6c74"
+}

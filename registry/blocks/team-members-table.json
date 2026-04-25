@@ -1,0 +1,33 @@
+{
+  "name": "team-members-table",
+  "type": "block",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "card",
+    "badge",
+    "data-table"
+  ],
+  "files": [
+    {
+      "source": "packages/blocks/src/team-members-table.tsx",
+      "target": "components/team-members-table.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "block/team-members-table",
+  "tags": [
+    "block",
+    "team-members-table"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/blocks/team-members-table.json"
+  ],
+  "checksum": "525c5dde7c35b2a3165c64be0904736f6922ece5d322f8681463aa8fb4cde437"
+}

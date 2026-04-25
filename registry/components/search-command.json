@@ -1,0 +1,34 @@
+{
+  "name": "search-command",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn",
+    "badge",
+    "button",
+    "input"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/composites/search-command.tsx",
+      "target": "components/composites/search-command.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/search-command",
+  "tags": [
+    "component",
+    "search-command"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/search-command.json"
+  ],
+  "checksum": "0e47f756a29d007911b875b2b77056ced311a6bb114844ae81c8d2daef90b9c0"
+}

@@ -26,7 +26,9 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  DataTable,
   Input,
+  SearchCommand,
   Select,
   SelectContent,
   SelectItem,
@@ -47,6 +49,12 @@ import {
 export default function ComponentsPage() {
   const [emailEnabled, setEmailEnabled] = useState(true);
   const [checked, setChecked] = useState(true);
+  const [selectedCommand, setSelectedCommand] = useState("none");
+  const memberRows = [
+    { name: "Avery Lin", role: "Product Lead", score: 98 },
+    { name: "Riley Chen", role: "ML Engineer", score: 92 },
+    { name: "Jordan Patel", role: "UX Designer", score: 95 }
+  ];
 
   return (
     <TooltipProvider>
@@ -54,8 +62,8 @@ export default function ComponentsPage() {
         <section>
           <h2 className="text-2xl font-semibold">Primitive Components</h2>
           <p className="text-sm text-muted-foreground">
-            v0.1 component set: Button, Input, Textarea, Checkbox, Switch, Select, Dialog, DropdownMenu,
-            Tabs, Card, Badge, Avatar, Tooltip.
+            v0.2.4 component set: Button, Input, Textarea, Checkbox, Switch, Select, Dialog, DropdownMenu,
+            Tabs, Card, Badge, Avatar, Tooltip, DataTable, SearchCommand.
           </p>
         </section>
 
@@ -165,6 +173,41 @@ export default function ComponentsPage() {
                 <AvatarImage src="https://i.pravatar.cc/120?img=8" alt="Workspace user" />
                 <AvatarFallback>XU</AvatarFallback>
               </Avatar>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>DataTable</CardTitle>
+              <CardDescription>Sortable rows with custom columns.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <DataTable
+                columns={[
+                  { key: "name", header: "Name", sortable: true },
+                  { key: "role", header: "Role" },
+                  { key: "score", header: "Score", sortable: true, align: "right" }
+                ]}
+                rows={memberRows}
+              />
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>SearchCommand</CardTitle>
+              <CardDescription>Command-style filtering and action execution.</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <SearchCommand
+                items={[
+                  { id: "deploy", label: "Deploy release", shortcut: "D" },
+                  { id: "rollback", label: "Rollback release", shortcut: "R" },
+                  { id: "audit", label: "Open audit log", shortcut: "A" }
+                ]}
+                onSelect={(item) => setSelectedCommand(item.id)}
+              />
+              <p className="text-sm text-muted-foreground">Selected command: {selectedCommand}</p>
             </CardContent>
           </Card>
         </section>
