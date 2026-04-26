@@ -5,7 +5,13 @@ import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 
+import BlogPage from "../app/blog/page";
+import ChangelogPage from "../app/changelog/page";
+import MarketingPage from "../app/marketing/page";
 import WebHomePage from "../app/page";
+import ProductPage from "../app/product/page";
+import ScenariosPage from "../app/scenarios/page";
+import ShowcasePage from "../app/showcase/page";
 
 const testDir = dirname(fileURLToPath(import.meta.url));
 
@@ -47,5 +53,27 @@ describe("web homepage smoke", () => {
     });
     expect(positions).toEqual([...positions].sort((a, b) => a - b));
     expect(html).toContain('href="https://docs.formaui.com"');
+  });
+});
+
+describe("web required route coverage", () => {
+  it("renders all required route pages with semantic h1 headings", () => {
+    const pages = [
+      { route: "/marketing", heading: "Marketing", component: <MarketingPage /> },
+      { route: "/product", heading: "Product", component: <ProductPage /> },
+      { route: "/scenarios", heading: "Scenarios", component: <ScenariosPage /> },
+      { route: "/showcase", heading: "Showcase", component: <ShowcasePage /> },
+      { route: "/blog", heading: "Blog", component: <BlogPage /> },
+      { route: "/changelog", heading: "Changelog", component: <ChangelogPage /> }
+    ];
+
+    pages.forEach((page) => {
+      const html = renderToStaticMarkup(page.component);
+      expect(html).toContain(`<h1>${page.heading}</h1>`);
+      expect(html).toContain('href="https://docs.formaui.com"');
+      expect(html).toContain('href="https://github.com/xwtaidev/FormaUI"');
+      expect(html).toContain('href="https://github.com/xwtaidev/FormaUI/tree/main/docs/releases"');
+      expect(html).toContain(`data-route="${page.route}"`);
+    });
   });
 });
