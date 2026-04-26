@@ -1,0 +1,37 @@
+{
+  "name": "logo-cloud",
+  "type": "block",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "card"
+  ],
+  "files": [
+    {
+      "source": "packages/blocks/src/logo-cloud.tsx",
+      "target": "components/logo-cloud.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "block/logo-cloud",
+  "tags": [
+    "block",
+    "logo-cloud"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/blocks/logo-cloud.json"
+  ],
+  "category": "block",
+  "scenarios": [
+    "block"
+  ],
+  "complexity": "medium",
+  "stability": "stable",
+  "checksum": "9d403df77a824a1f9e47864959fa39b03de04ff793c79d949a359cb3f180dce3"
+}

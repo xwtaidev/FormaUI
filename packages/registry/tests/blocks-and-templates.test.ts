@@ -21,7 +21,10 @@ const REQUIRED_BLOCKS = [
   "agent-run-timeline",
   "team-members-table",
   "notification-panel",
-  "model-selector"
+  "model-selector",
+  "hero-cta",
+  "feature-grid",
+  "logo-cloud"
 ] as const;
 
 const REQUIRED_COMPONENTS = [
@@ -62,18 +65,29 @@ describe("registry coverage: blocks and templates", () => {
     const teamMembersTable = blockRegistryItems.find((item) => item.name === "team-members-table");
     const notificationPanel = blockRegistryItems.find((item) => item.name === "notification-panel");
     const modelSelector = blockRegistryItems.find((item) => item.name === "model-selector");
+    const heroCta = blockRegistryItems.find((item) => item.name === "hero-cta");
+    const featureGrid = blockRegistryItems.find((item) => item.name === "feature-grid");
+    const logoCloud = blockRegistryItems.find((item) => item.name === "logo-cloud");
 
     expect(teamMembersTable).toBeDefined();
     expect(notificationPanel).toBeDefined();
     expect(modelSelector).toBeDefined();
+    expect(heroCta).toBeDefined();
+    expect(featureGrid).toBeDefined();
+    expect(logoCloud).toBeDefined();
 
-    if (!teamMembersTable || !notificationPanel || !modelSelector) {
+    if (!teamMembersTable || !notificationPanel || !modelSelector || !heroCta || !featureGrid || !logoCloud) {
       return;
     }
 
     expect(new Set(teamMembersTable.registryDependencies).has("data-table")).toBe(true);
     expect(new Set(notificationPanel.registryDependencies).has("search-command")).toBe(true);
     expect(new Set(modelSelector.registryDependencies).has("select")).toBe(true);
+    expect(new Set(heroCta.registryDependencies).has("button")).toBe(true);
+    expect(new Set(heroCta.registryDependencies).has("card")).toBe(true);
+    expect(new Set(featureGrid.registryDependencies).has("card")).toBe(true);
+    expect(new Set(featureGrid.registryDependencies).has("badge")).toBe(true);
+    expect(new Set(logoCloud.registryDependencies).has("card")).toBe(true);
   });
 
   it("declares ai-console-lite with required dashboard and ai dependencies", () => {

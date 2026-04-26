@@ -1,0 +1,39 @@
+{
+  "name": "hero-cta",
+  "type": "block",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "card",
+    "badge",
+    "button"
+  ],
+  "files": [
+    {
+      "source": "packages/blocks/src/hero-cta.tsx",
+      "target": "components/hero-cta.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "block/hero-cta",
+  "tags": [
+    "block",
+    "hero-cta"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/blocks/hero-cta.json"
+  ],
+  "category": "block",
+  "scenarios": [
+    "block"
+  ],
+  "complexity": "medium",
+  "stability": "stable",
+  "checksum": "d6518f8628944b5ec6a3038a4a9f6359e31928d472a7c1d8be5420ec7494b263"
+}

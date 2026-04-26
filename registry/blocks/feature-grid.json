@@ -1,0 +1,38 @@
+{
+  "name": "feature-grid",
+  "type": "block",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "card",
+    "badge"
+  ],
+  "files": [
+    {
+      "source": "packages/blocks/src/feature-grid.tsx",
+      "target": "components/feature-grid.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "block/feature-grid",
+  "tags": [
+    "block",
+    "feature-grid"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/blocks/feature-grid.json"
+  ],
+  "category": "block",
+  "scenarios": [
+    "block"
+  ],
+  "complexity": "medium",
+  "stability": "stable",
+  "checksum": "e8044405ac1b1dc0c4844e0250294ba529fc62a53aff307a6c616e9098dbba47"
+}
