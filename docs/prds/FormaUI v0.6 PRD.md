@@ -130,6 +130,37 @@ Stable dual-site architecture (v0.5)
 19. `input-otp`
 20. `label`
 
+#### A-1. 命名与别名策略冻结（v0.6.1）
+
+1. 官方组件名统一使用 `drawer`，`sheet` 仅作为兼容别名，不作为独立交付条目。
+2. 官方组件名统一使用 `combobox`，`autocomplete` 仅作为检索/迁移别名，不作为独立交付条目。
+3. 文档、registry、CLI 搜索默认展示官方组件名；别名仅用于兼容提示与迁移说明。
+
+#### A-2. 组件最小 API 面与依赖策略冻结（v0.6.1）
+
+| 组件 | 最小 API 面（v0.6） | 依赖策略 |
+| --- | --- | --- |
+| `alert` | `variant` `title` `description` `icon` `className` | Non-Radix（样式与语义容器） |
+| `breadcrumb` | `Breadcrumb` `BreadcrumbList` `BreadcrumbItem` `BreadcrumbLink` `BreadcrumbPage` `BreadcrumbSeparator` | Non-Radix（语义导航） |
+| `calendar` | `mode` `selected` `onSelect` `disabled` `initialFocus` | Non-Radix（`react-day-picker`） |
+| `collapse` | `Collapse` `CollapseTrigger` `CollapseContent`（支持受控/非受控） | Radix（`@radix-ui/react-collapsible`） |
+| `date-picker` | `value` `onChange` `placeholder` `disabled` `minDate` `maxDate` | Non-Radix（组合 `calendar` + `popover`） |
+| `drawer` | `Drawer` `DrawerTrigger` `DrawerContent` `DrawerHeader` `DrawerFooter` `side` `open` `onOpenChange` | Radix（复用 `@radix-ui/react-dialog`） |
+| `input-number` | `value` `defaultValue` `onValueChange` `min` `max` `step` `disabled` | Non-Radix（输入与步进逻辑） |
+| `navigation-menu` | `NavigationMenu` `NavigationMenuList` `NavigationMenuItem` `NavigationMenuTrigger` `NavigationMenuContent` `NavigationMenuLink` | Radix（`@radix-ui/react-navigation-menu`） |
+| `slider` | `Slider` `value` `defaultValue` `onValueChange` `min` `max` `step` `disabled` | Radix（`@radix-ui/react-slider`） |
+| `steps` | `Steps` `StepsItem` `current` `status` `direction` | Non-Radix（流程语义与状态） |
+| `toast` | `ToastProvider` `ToastViewport` `Toast` `ToastTitle` `ToastDescription` `ToastClose` | Radix（`@radix-ui/react-toast`） |
+| `typography` | `Typography`（`variant`/`as`/`className`） | Non-Radix（排版原语） |
+| `combobox` | `Combobox` `value` `onValueChange` `options` `placeholder` `emptyText` `disabled` | Non-Radix（组合 `popover` + `input`） |
+| `context-menu` | `ContextMenu` `ContextMenuTrigger` `ContextMenuContent` `ContextMenuItem` `ContextMenuSeparator` | Radix（`@radix-ui/react-context-menu`） |
+| `menubar` | `Menubar` `MenubarMenu` `MenubarTrigger` `MenubarContent` `MenubarItem` | Radix（`@radix-ui/react-menubar`） |
+| `toggle` | `Toggle` `pressed` `defaultPressed` `onPressedChange` `variant` `size` | Radix（`@radix-ui/react-toggle`） |
+| `toggle-group` | `ToggleGroup` `ToggleGroupItem` `type` `value` `onValueChange` `variant` `size` | Radix（`@radix-ui/react-toggle-group`） |
+| `upload` | `Upload` `accept` `maxSize` `onFileChange` `disabled`（v0.6 仅单文件） | Non-Radix（本地校验） |
+| `input-otp` | `InputOtp` `value` `onChange` `length` `disabled` | Non-Radix（`input-otp`） |
+| `label` | `Label` `htmlFor` `required` `disabled` | Radix（`@radix-ui/react-label`） |
+
 #### B. 每个组件必须满足的交付物
 
 1. 组件源码（`packages/components/src/primitives` 或合理归类）。
@@ -277,12 +308,12 @@ Stable dual-site architecture (v0.5)
 
 ---
 
-## 12. 待确认决策（Open Questions）
+## 12. 冻结决策（v0.6.1）
 
-1. `drawer` 与 `sheet` 是否采用双别名，还是统一一个官方组件名？
-2. `toast` 是否采用 headless + provider 方案，或使用更轻量的单入口 API？
-3. `upload` 在 v0.6 是否只交付基础版（单文件、本地校验），高级能力放 v0.7？
-4. `combobox` 与 `autocomplete` 是否采用统一组件名 + 别名策略？
+1. `drawer` 为官方组件名；`sheet` 作为兼容别名，文档与导航不单独陈列。
+2. `toast` 采用 provider + headless primitives 方案（保留可组合能力）。
+3. `upload` 在 v0.6 只交付基础版：单文件 + 本地校验；高级能力延后到 v0.7。
+4. `combobox` 为官方组件名；`autocomplete` 仅作为兼容别名与检索关键词。
 
 ---
 
