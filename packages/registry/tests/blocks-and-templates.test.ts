@@ -24,7 +24,10 @@ const REQUIRED_BLOCKS = [
   "model-selector",
   "hero-cta",
   "feature-grid",
-  "logo-cloud"
+  "logo-cloud",
+  "stats-strip",
+  "faq-accordion",
+  "final-cta"
 ] as const;
 
 const REQUIRED_COMPONENTS = [
@@ -68,6 +71,9 @@ describe("registry coverage: blocks and templates", () => {
     const heroCta = blockRegistryItems.find((item) => item.name === "hero-cta");
     const featureGrid = blockRegistryItems.find((item) => item.name === "feature-grid");
     const logoCloud = blockRegistryItems.find((item) => item.name === "logo-cloud");
+    const statsStrip = blockRegistryItems.find((item) => item.name === "stats-strip");
+    const faqAccordion = blockRegistryItems.find((item) => item.name === "faq-accordion");
+    const finalCta = blockRegistryItems.find((item) => item.name === "final-cta");
 
     expect(teamMembersTable).toBeDefined();
     expect(notificationPanel).toBeDefined();
@@ -75,8 +81,21 @@ describe("registry coverage: blocks and templates", () => {
     expect(heroCta).toBeDefined();
     expect(featureGrid).toBeDefined();
     expect(logoCloud).toBeDefined();
+    expect(statsStrip).toBeDefined();
+    expect(faqAccordion).toBeDefined();
+    expect(finalCta).toBeDefined();
 
-    if (!teamMembersTable || !notificationPanel || !modelSelector || !heroCta || !featureGrid || !logoCloud) {
+    if (
+      !teamMembersTable ||
+      !notificationPanel ||
+      !modelSelector ||
+      !heroCta ||
+      !featureGrid ||
+      !logoCloud ||
+      !statsStrip ||
+      !faqAccordion ||
+      !finalCta
+    ) {
       return;
     }
 
@@ -88,6 +107,10 @@ describe("registry coverage: blocks and templates", () => {
     expect(new Set(featureGrid.registryDependencies).has("card")).toBe(true);
     expect(new Set(featureGrid.registryDependencies).has("badge")).toBe(true);
     expect(new Set(logoCloud.registryDependencies).has("card")).toBe(true);
+    expect(new Set(statsStrip.registryDependencies).has("card")).toBe(true);
+    expect(new Set(faqAccordion.registryDependencies).has("accordion")).toBe(true);
+    expect(new Set(finalCta.registryDependencies).has("button")).toBe(true);
+    expect(new Set(finalCta.registryDependencies).has("badge")).toBe(true);
   });
 
   it("declares ai-console-lite with required dashboard and ai dependencies", () => {

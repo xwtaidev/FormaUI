@@ -1,0 +1,37 @@
+{
+  "name": "stats-strip",
+  "type": "block",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "card"
+  ],
+  "files": [
+    {
+      "source": "packages/blocks/src/stats-strip.tsx",
+      "target": "components/stats-strip.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "block/stats-strip",
+  "tags": [
+    "block",
+    "stats-strip"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/blocks/stats-strip.json"
+  ],
+  "category": "block",
+  "scenarios": [
+    "block"
+  ],
+  "complexity": "medium",
+  "stability": "stable",
+  "checksum": "28c3eeaa4e4f8a553c867bdd2ea9ae4b5051ddb52dda022be0285caad058b91b"
+}

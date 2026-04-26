@@ -94,5 +94,20 @@ export const blockRegistryItems: RegistryItem[] = [
     name: "logo-cloud",
     source: "packages/blocks/src/logo-cloud.tsx",
     registryDependencies: ["card"]
+  }),
+  blockItem({
+    name: "stats-strip",
+    source: "packages/blocks/src/stats-strip.tsx",
+    registryDependencies: ["card"]
+  }),
+  blockItem({
+    name: "faq-accordion",
+    source: "packages/blocks/src/faq-accordion.tsx",
+    registryDependencies: ["accordion"]
+  }),
+  blockItem({
+    name: "final-cta",
+    source: "packages/blocks/src/final-cta.tsx",
+    registryDependencies: ["card", "badge", "button"]
   })
 ];

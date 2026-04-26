@@ -1,0 +1,37 @@
+{
+  "name": "faq-accordion",
+  "type": "block",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "source": "packages/blocks/src/faq-accordion.tsx",
+      "target": "components/faq-accordion.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "block/faq-accordion",
+  "tags": [
+    "block",
+    "faq-accordion"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/blocks/faq-accordion.json"
+  ],
+  "category": "block",
+  "scenarios": [
+    "block"
+  ],
+  "complexity": "medium",
+  "stability": "stable",
+  "checksum": "b011ba7ec47d2dbff5b0843ff137d857bc69610f8fbeb6b6f51331ea3f28dcc4"
+}

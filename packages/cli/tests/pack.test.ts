@@ -56,6 +56,7 @@ async function createRegistryFixture() {
   const sourcesRoot = resolve(root, "sources");
 
   await mkdir(resolve(registryRoot, "components"), { recursive: true });
+  await mkdir(resolve(registryRoot, "blocks"), { recursive: true });
   await mkdir(resolve(registryRoot, "packs"), { recursive: true });
   await mkdir(sourcesRoot, { recursive: true });
 
@@ -64,6 +65,32 @@ async function createRegistryFixture() {
   await writeFile(
     resolve(sourcesRoot, "pagination-bar.tsx"),
     "export const PaginationBar = () => <nav>Pagination</nav>;\n",
+    "utf8"
+  );
+  await writeFile(resolve(sourcesRoot, "hero-cta.tsx"), "export const HeroCta = () => <section>Hero</section>;\n", "utf8");
+  await writeFile(
+    resolve(sourcesRoot, "feature-grid.tsx"),
+    "export const FeatureGrid = () => <section>Feature Grid</section>;\n",
+    "utf8"
+  );
+  await writeFile(
+    resolve(sourcesRoot, "logo-cloud.tsx"),
+    "export const LogoCloud = () => <section>Logo Cloud</section>;\n",
+    "utf8"
+  );
+  await writeFile(
+    resolve(sourcesRoot, "stats-strip.tsx"),
+    "export const StatsStrip = () => <section>Stats Strip</section>;\n",
+    "utf8"
+  );
+  await writeFile(
+    resolve(sourcesRoot, "faq-accordion.tsx"),
+    "export const FaqAccordion = () => <section>FAQ</section>;\n",
+    "utf8"
+  );
+  await writeFile(
+    resolve(sourcesRoot, "final-cta.tsx"),
+    "export const FinalCta = () => <section>Final CTA</section>;\n",
     "utf8"
   );
 
@@ -165,6 +192,55 @@ async function createRegistryFixture() {
     "utf8"
   );
 
+  const marketingBlocks = [
+    "hero-cta",
+    "feature-grid",
+    "logo-cloud",
+    "stats-strip",
+    "faq-accordion",
+    "final-cta"
+  ];
+
+  for (const blockName of marketingBlocks) {
+    await writeFile(
+      resolve(registryRoot, `blocks/${blockName}.json`),
+      JSON.stringify(
+        {
+          name: blockName,
+          type: "block",
+          dependencies: ["react"],
+          devDependencies: [],
+          registryDependencies: ["button"],
+          files: [{ source: resolve(sourcesRoot, `${blockName}.tsx`), target: `components/blocks/${blockName}.tsx` }]
+        },
+        null,
+        2
+      ),
+      "utf8"
+    );
+  }
+
+  await writeFile(
+    resolve(registryRoot, "packs/marketing-launch.json"),
+    JSON.stringify(
+      {
+        name: "marketing-launch",
+        type: "pack",
+        category: "marketing",
+        scenarios: ["landing", "growth"],
+        complexity: "medium",
+        stability: "beta",
+        dependencies: [],
+        devDependencies: [],
+        registryDependencies: marketingBlocks,
+        files: []
+      },
+      null,
+      2
+    ),
+    "utf8"
+  );
+
   return { root, registryRoot };
 }
 
@@ -216,6 +292,7 @@ describe("formaui pack command", () => {
       await runCli(["pack", "list", "--registry", registryRoot, "--scenario", "analytics"], { logger });
       expect(logs.info.some((line) => line.includes("pack/dashboard-foundation"))).toBe(true);
       expect(logs.info.some((line) => line.includes("pack/feedback-loading"))).toBe(false);
+      expect(logs.info.some((line) => line.includes("pack/marketing-launch"))).toBe(false);
 
       logs.info.length = 0;
       await runCli(["pack", "info", "dashboard-foundation", "--registry", registryRoot], { logger });
@@ -223,6 +300,13 @@ describe("formaui pack command", () => {
       expect(logs.info.some((line) => line.includes("Registry dependencies: lib-cn, button, pagination-bar"))).toBe(
         true
       );
+
+      logs.info.length = 0;
+      await runCli(["pack", "info", "marketing-launch", "--registry", registryRoot], { logger });
+      expect(logs.info.some((line) => line.includes("Category: marketing"))).toBe(true);
+      expect(
+        logs.info.some((line) => line.includes("Registry dependencies: hero-cta, feature-grid, logo-cloud"))
+      ).toBe(true);
     } finally {
       await rm(fixtureRoot, { recursive: true, force: true });
     }
@@ -259,6 +343,25 @@ describe("formaui pack command", () => {
       );
       expect(await exists(resolve(projectRoot, "components/lib/cn.ts"))).toBe(false);
       expect(logs.info.some((line) => line.toLowerCase().includes("dry-run"))).toBe(true);
+    } finally {
+      await rm(projectRoot, { recursive: true, force: true });
+      await rm(fixtureRoot, { recursive: true, force: true });
+    }
+  });
+
+  it("installs marketing-launch pack blocks", async () => {
+    const { root: fixtureRoot, registryRoot } = await createRegistryFixture();
+    const projectRoot = await createProjectFixture();
+
+    try {
+      await runCli(["pack", "add", "marketing-launch", "--cwd", projectRoot, "--registry", registryRoot], {
+        installCommandRunner: async () => {}
+      });
+
+      expect(await exists(resolve(projectRoot, "components/blocks/hero-cta.tsx"))).toBe(true);
+      expect(await exists(resolve(projectRoot, "components/blocks/faq-accordion.tsx"))).toBe(true);
+      expect(await exists(resolve(projectRoot, "components/blocks/final-cta.tsx"))).toBe(true);
+      expect(await exists(resolve(projectRoot, "components/primitives/button.tsx"))).toBe(true);
     } finally {
       await rm(projectRoot, { recursive: true, force: true });
       await rm(fixtureRoot, { recursive: true, force: true });

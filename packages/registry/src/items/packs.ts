@@ -72,5 +72,12 @@ export const packRegistryItems: RegistryItem[] = [
       "badge",
       "button"
     ]
+  }),
+  packItem({
+    name: "marketing-launch",
+    description: "Landing-ready marketing pack with hero, proof, FAQ and closing CTA sections.",
+    category: "marketing",
+    scenarios: ["landing", "growth", "conversion"],
+    registryDependencies: ["hero-cta", "feature-grid", "logo-cloud", "stats-strip", "faq-accordion", "final-cta"]
   })
 ];

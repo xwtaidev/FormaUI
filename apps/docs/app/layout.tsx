@@ -12,7 +12,7 @@ const navSections: Array<{ title: string; links: Array<{ href: string; label: st
   {
     title: "Getting Started",
     links: [
-      { href: "/landing", label: "Landing (v0.4.2)" },
+      { href: "/landing", label: "Landing (v0.4.3)" },
       { href: "/introduction", label: "Introduction" },
       { href: "/installation", label: "Installation" },
       { href: "/quick-start", label: "Quick Start" },
@@ -79,7 +79,8 @@ const navSections: Array<{ title: string; links: Array<{ href: string; label: st
       { href: "/packs", label: "Overview" },
       { href: "/packs/dashboard-foundation", label: "dashboard-foundation" },
       { href: "/packs/data-entry", label: "data-entry" },
-      { href: "/packs/feedback-loading", label: "feedback-loading" }
+      { href: "/packs/feedback-loading", label: "feedback-loading" },
+      { href: "/packs/marketing-launch", label: "marketing-launch" }
     ]
   },
   {
@@ -89,7 +90,9 @@ const navSections: Array<{ title: string; links: Array<{ href: string; label: st
       { href: "/blocks/api-key-manager", label: "api-key-manager" },
       { href: "/blocks/billing-panel", label: "billing-panel" },
       { href: "/blocks/dashboard-shell", label: "dashboard-shell" },
+      { href: "/blocks/faq-accordion", label: "faq-accordion" },
       { href: "/blocks/feature-grid", label: "feature-grid" },
+      { href: "/blocks/final-cta", label: "final-cta" },
       { href: "/blocks/hero-cta", label: "hero-cta" },
       { href: "/blocks/login-panel", label: "login-panel" },
       { href: "/blocks/logo-cloud", label: "logo-cloud" },
@@ -97,6 +100,7 @@ const navSections: Array<{ title: string; links: Array<{ href: string; label: st
       { href: "/blocks/notification-panel", label: "notification-panel" },
       { href: "/blocks/pricing-section", label: "pricing-section" },
       { href: "/blocks/settings-layout", label: "settings-layout" },
+      { href: "/blocks/stats-strip", label: "stats-strip" },
       { href: "/blocks/team-members-table", label: "team-members-table" },
       { href: "/blocks/token-usage-chart", label: "token-usage-chart" }
     ]
@@ -126,7 +130,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <aside className="border-b border-slate-200 p-6 lg:border-b-0 lg:border-r">
             <Link href="/" className="block">
               <p className="text-sm uppercase tracking-wide text-slate-500">FormaUI</p>
-              <h1 className="text-2xl font-semibold">v0.4.2 Docs</h1>
+              <h1 className="text-2xl font-semibold">v0.4.3 Docs</h1>
             </Link>
             <nav className="mt-6 space-y-6">
               {navSections.map((section) => (
