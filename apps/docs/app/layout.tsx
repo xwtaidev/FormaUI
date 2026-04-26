@@ -4,15 +4,34 @@ import Link from "next/link";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "FormaUI Docs",
-  description: "FormaUI v0.4.4 documentation"
+  metadataBase: new URL("https://formaui.com"),
+  title: {
+    default: "FormaUI Docs",
+    template: "%s | FormaUI"
+  },
+  description: "Official FormaUI documentation with source-owned components, blocks, templates, and landing guides.",
+  alternates: {
+    canonical: "/"
+  },
+  openGraph: {
+    title: "FormaUI Docs",
+    description: "Official FormaUI documentation with source-owned components, blocks, templates, and landing guides.",
+    url: "https://formaui.com",
+    siteName: "FormaUI",
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FormaUI Docs",
+    description: "Official FormaUI documentation with source-owned components, blocks, templates, and landing guides."
+  }
 };
 
 const navSections: Array<{ title: string; links: Array<{ href: string; label: string }> }> = [
   {
     title: "Getting Started",
     links: [
-      { href: "/landing", label: "Landing (v0.4.4)" },
+      { href: "/landing", label: "Landing (v0.4.5)" },
       { href: "/introduction", label: "Introduction" },
       { href: "/installation", label: "Installation" },
       { href: "/quick-start", label: "Quick Start" },
@@ -138,7 +157,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <aside className="border-b border-slate-200 p-6 lg:border-b-0 lg:border-r">
             <Link href="/" className="block">
               <p className="text-sm uppercase tracking-wide text-slate-500">FormaUI</p>
-              <h1 className="text-2xl font-semibold">v0.4.4 Docs</h1>
+              <h1 className="text-2xl font-semibold">v0.4.5 Docs</h1>
             </Link>
             <nav className="mt-6 space-y-6">
               {navSections.map((section) => (
