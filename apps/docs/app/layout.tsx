@@ -9,13 +9,15 @@ export const metadata: Metadata = {
     default: "FormaUI Docs",
     template: "%s | FormaUI"
   },
-  description: "Official FormaUI documentation with source-owned components, blocks, templates, and landing guides.",
+  description:
+    "Official FormaUI documentation with installation, components, blocks, templates, CLI, registry, and migration guides.",
   alternates: {
     canonical: "/"
   },
   openGraph: {
     title: "FormaUI Docs",
-    description: "Official FormaUI documentation with source-owned components, blocks, templates, and landing guides.",
+    description:
+      "Official FormaUI documentation with installation, components, blocks, templates, CLI, registry, and migration guides.",
     url: "https://formaui.com",
     siteName: "FormaUI",
     type: "website"
@@ -23,7 +25,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "FormaUI Docs",
-    description: "Official FormaUI documentation with source-owned components, blocks, templates, and landing guides."
+    description:
+      "Official FormaUI documentation with installation, components, blocks, templates, CLI, registry, and migration guides."
   }
 };
 
@@ -31,23 +34,12 @@ const navSections: Array<{ title: string; links: Array<{ href: string; label: st
   {
     title: "Getting Started",
     links: [
-      { href: "/landing", label: "Landing (v0.4.5)" },
       { href: "/introduction", label: "Introduction" },
       { href: "/installation", label: "Installation" },
       { href: "/quick-start", label: "Quick Start" },
       { href: "/design-system", label: "Design System" },
       { href: "/design-tokens", label: "Design Tokens" },
-      { href: "/theme", label: "Theme Overview" },
-      { href: "/migration-v0.1-to-v0.2", label: "Migration v0.1 to v0.2" },
-      { href: "/migration-v0.2-to-v0.3", label: "Migration v0.2 to v0.3" }
-    ]
-  },
-  {
-    title: "Landing",
-    links: [
-      { href: "/landing", label: "Landing Home" },
-      { href: "/landing/architecture", label: "Architecture" },
-      { href: "/landing/reuse-blocks", label: "Reuse Blocks" }
+      { href: "/theme", label: "Theme Overview" }
     ]
   },
   {
@@ -146,6 +138,14 @@ const navSections: Array<{ title: string; links: Array<{ href: string; label: st
       { href: "/theme/default", label: "default" },
       { href: "/theme/avocado", label: "avocado" }
     ]
+  },
+  {
+    title: "Migration",
+    links: [
+      { href: "/migration-v0.1-to-v0.2", label: "v0.1 to v0.2" },
+      { href: "/migration-v0.2-to-v0.3", label: "v0.2 to v0.3" },
+      { href: "/migration-v0.4-to-v0.5", label: "v0.4 to v0.5" }
+    ]
   }
 ];
 
@@ -157,8 +157,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <aside className="border-b border-slate-200 p-6 lg:border-b-0 lg:border-r">
             <Link href="/" className="block">
               <p className="text-sm uppercase tracking-wide text-slate-500">FormaUI</p>
-              <h1 className="text-2xl font-semibold">v0.4.5 Docs</h1>
+              <h1 className="text-2xl font-semibold">v0.5 Docs</h1>
             </Link>
+            <div className="mt-4">
+              <Link
+                href="https://formaui.com"
+                className="inline-flex rounded-md border border-slate-200 px-3 py-2 text-xs font-semibold uppercase tracking-wide text-slate-700 transition hover:bg-slate-100"
+              >
+                Open Web Site
+              </Link>
+            </div>
             <nav className="mt-6 space-y-6">
               {navSections.map((section) => (
                 <div key={section.title}>
