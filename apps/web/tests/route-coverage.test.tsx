@@ -23,12 +23,29 @@ describe("web workspace command entry", () => {
 });
 
 describe("web homepage smoke", () => {
-  it("renders homepage hero and docs navigation entry", () => {
+  it("renders homepage section sequence and docs entry", () => {
     const html = renderToStaticMarkup(<WebHomePage />);
+    const expectedSequence = [
+      "LandingHeader",
+      "LandingHero",
+      "LandingStats",
+      "LandingFeatures",
+      "LandingProof",
+      "LandingScenarios",
+      "LandingQuickStart",
+      "LandingBlocksFlow",
+      "LandingQualityGates",
+      "LandingFaq",
+      "LandingFinalCta",
+      "LandingFooter",
+      "LandingAnalytics"
+    ];
 
-    expect(html).toContain("FormaUI Web");
-    expect(html).toContain("Landing Placeholder");
+    const positions = expectedSequence.map((sectionName) => html.indexOf(`data-section="${sectionName}"`));
+    positions.forEach((position) => {
+      expect(position).toBeGreaterThan(-1);
+    });
+    expect(positions).toEqual([...positions].sort((a, b) => a - b));
     expect(html).toContain('href="https://docs.formaui.com"');
-    expect(html).toContain("Read Docs");
   });
 });
