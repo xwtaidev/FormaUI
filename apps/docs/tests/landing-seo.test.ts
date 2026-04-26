@@ -11,7 +11,8 @@ describe("landing seo baseline", () => {
     expect(rootMetadata.alternates?.canonical).toBe("/");
     expect(rootMetadata.openGraph?.title).toBeTypeOf("string");
     expect(rootMetadata.openGraph?.description).toBeTypeOf("string");
-    expect(rootMetadata.twitter?.card).toBe("summary_large_image");
+    const twitter = rootMetadata.twitter as { card?: string } | undefined;
+    expect(twitter?.card).toBe("summary_large_image");
   });
 
   it("defines landing metadata override", () => {
