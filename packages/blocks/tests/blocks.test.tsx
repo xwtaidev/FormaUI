@@ -1,6 +1,6 @@
 /* @vitest-environment jsdom */
 
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import {
@@ -9,6 +9,8 @@ import {
   BillingPanel,
   DashboardShell,
   FeatureGrid,
+  FaqAccordion,
+  FinalCta,
   HeroCta,
   LoginPanel,
   LogoCloud,
@@ -16,6 +18,7 @@ import {
   NotificationPanel,
   PricingSection,
   SettingsLayout,
+  StatsStrip,
   TeamMembersTable,
   TokenUsageChart
 } from "../src";
@@ -38,6 +41,9 @@ describe("blocks", () => {
         <HeroCta />
         <FeatureGrid />
         <LogoCloud />
+        <StatsStrip />
+        <FaqAccordion />
+        <FinalCta />
       </div>
     );
 
@@ -56,5 +62,20 @@ describe("blocks", () => {
     expect(screen.getAllByText("Book a live demo").length).toBeGreaterThan(0);
     expect(screen.getAllByText("Everything teams need to ship").length).toBeGreaterThan(0);
     expect(screen.getAllByText("Works with your stack").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Trusted by source-owned product teams").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Can I install only one block?").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Ready to launch your next page with FormaUI?").length).toBeGreaterThan(0);
+  });
+
+  it("toggles FAQ accordion answers", () => {
+    const { container } = render(<FaqAccordion />);
+    const scope = within(container);
+
+    const question = scope.getByText("Can I install only one block?");
+
+    expect(scope.queryByText("Yes. Every block ships as a standalone registry item.")).toBeNull();
+
+    fireEvent.click(question);
+    expect(scope.getByText("Yes. Every block ships as a standalone registry item.")).toBeDefined();
   });
 });
