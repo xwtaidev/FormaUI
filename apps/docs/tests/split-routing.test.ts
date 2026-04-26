@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -28,5 +28,16 @@ describe("docs split routing and navigation", () => {
     const layoutSource = readSource("../app/layout.tsx");
 
     expect(layoutSource).toContain('href: "/migration-v0.4-to-v0.5"');
+  });
+
+  it("has a v0.4 to v0.5 migration route document", () => {
+    const migrationPath = resolve(testDir, "../app/migration-v0.4-to-v0.5/page.mdx");
+
+    expect(existsSync(migrationPath)).toBe(true);
+
+    const migrationSource = readFileSync(migrationPath, "utf8");
+    expect(migrationSource).toContain("v0.4 -> v0.5");
+    expect(migrationSource).toContain("/landing");
+    expect(migrationSource).toContain("/product");
   });
 });

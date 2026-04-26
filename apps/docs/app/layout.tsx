@@ -144,7 +144,7 @@ const navSections: Array<{ title: string; links: Array<{ href: string; label: st
     links: [
       { href: "/migration-v0.1-to-v0.2", label: "v0.1 to v0.2" },
       { href: "/migration-v0.2-to-v0.3", label: "v0.2 to v0.3" },
-      { href: "/migration-v0.4-to-v0.5", label: "v0.4 to v0.5" }
+      { href: "/migration-v0.4-to-v0.5", label: "v0.4 to v0.5 (Site Split)" }
     ]
   }
 ];
