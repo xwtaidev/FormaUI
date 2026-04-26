@@ -11,7 +11,22 @@ export const metadata: Metadata = {
     default: "FormaUI Web",
     template: "%s | FormaUI"
   },
-  description: "FormaUI official website for brand, product, and growth content."
+  description: "FormaUI official website for brand, product, and growth content.",
+  alternates: {
+    canonical: "/"
+  },
+  openGraph: {
+    title: "FormaUI Web",
+    description: "FormaUI official website for brand, product, and growth content.",
+    url: "https://formaui.com",
+    siteName: "FormaUI",
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FormaUI Web",
+    description: "FormaUI official website for brand, product, and growth content."
+  }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

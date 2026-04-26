@@ -15,6 +15,8 @@ export default function ChangelogPage() {
           <Link href={webLinks.docs}>Back to Docs</Link>
           <Link href={webLinks.github}>GitHub</Link>
           <Link href={webLinks.releaseNotes}>Release Notes</Link>
+          <Link href={webLinks.releaseV5}>v0.5 Notes</Link>
+          <Link href={webLinks.migrationV4ToV5}>Migration v0.4 to v0.5</Link>
         </div>
       </section>
     </main>

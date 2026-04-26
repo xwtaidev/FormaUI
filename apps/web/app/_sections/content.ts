@@ -1,7 +1,9 @@
 export const webLinks = {
   docs: "https://docs.formaui.com",
   github: "https://github.com/xwtaidev/FormaUI",
-  releaseNotes: "https://github.com/xwtaidev/FormaUI/tree/main/docs/releases"
+  releaseNotes: "https://github.com/xwtaidev/FormaUI/tree/main/docs/releases",
+  releaseV5: "https://github.com/xwtaidev/FormaUI/blob/main/docs/releases/v0.5.md",
+  migrationV4ToV5: "https://docs.formaui.com/migration-v0.4-to-v0.5"
 } as const;
 
 export const globalNavItems = [
