@@ -1,0 +1,37 @@
+# Collapse
+
+## Overview
+
+`Collapse` reveals or hides secondary content inline without leaving the current page context.
+
+## Installation
+
+```bash
+npx formaui add collapse
+```
+
+## Usage
+
+```tsx
+import { Collapse, CollapseContent, CollapseTrigger } from "@/components/primitives/collapse";
+
+export function FiltersCollapse() {
+  return (
+    <Collapse>
+      <CollapseTrigger>Advanced filters</CollapseTrigger>
+      <CollapseContent>Project status, owner, and date-range selectors.</CollapseContent>
+    </Collapse>
+  );
+}
+```
+
+## Accessibility
+
+- Trigger is keyboard reachable and announced as a button.
+- Uses Radix state semantics for expanded/collapsed transitions.
+- Suitable for dense forms and stacked settings panels.
+
+## Source Code
+
+- `packages/components/src/primitives/collapse.tsx`
+- `registry/components/collapse.json`

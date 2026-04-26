@@ -1,0 +1,40 @@
+{
+  "name": "navigation-menu",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "@radix-ui/react-navigation-menu",
+    "class-variance-authority",
+    "lucide-react"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/navigation-menu.tsx",
+      "target": "components/primitives/navigation-menu.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/navigation-menu",
+  "tags": [
+    "component",
+    "navigation-menu"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/navigation-menu.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "6d40b31e8fff0781a965d84668c5f31569f2c6d485ee36a95687a7b4373b7103"
+}

@@ -1,0 +1,39 @@
+{
+  "name": "collapse",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "@radix-ui/react-collapsible",
+    "lucide-react"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/collapse.tsx",
+      "target": "components/primitives/collapse.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/collapse",
+  "tags": [
+    "component",
+    "collapse"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/collapse.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "738ed04cea9e51273f059108e86989e766f2dd1d44d3ac95fdd7edf363167323"
+}

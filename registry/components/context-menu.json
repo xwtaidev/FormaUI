@@ -1,0 +1,39 @@
+{
+  "name": "context-menu",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "@radix-ui/react-context-menu",
+    "lucide-react"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/context-menu.tsx",
+      "target": "components/primitives/context-menu.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/context-menu",
+  "tags": [
+    "component",
+    "context-menu"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/context-menu.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "81c5d158fcf7c6dce22c164a2764bab7b89237524ac3ad4bf36b792c84b90b40"
+}

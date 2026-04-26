@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-04-26T13:15:07.358Z",
-  "total": 67,
+  "generatedAt": "2026-04-26T14:14:03.591Z",
+  "total": 72,
   "items": [
     {
       "kind": "component",
@@ -229,6 +229,56 @@
     },
     {
       "kind": "component",
+      "name": "collapse",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/collapse.json",
+      "description": "component/collapse",
+      "tags": [
+        "component",
+        "collapse"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/collapse.json"
+      ],
+      "checksum": "738ed04cea9e51273f059108e86989e766f2dd1d44d3ac95fdd7edf363167323",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "context-menu",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/context-menu.json",
+      "description": "component/context-menu",
+      "tags": [
+        "component",
+        "context-menu"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/context-menu.json"
+      ],
+      "checksum": "81c5d158fcf7c6dce22c164a2764bab7b89237524ac3ad4bf36b792c84b90b40",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
       "name": "data-table",
       "type": "component",
       "version": "0.2.2",
@@ -320,6 +370,31 @@
         "registry/components/dialog.json"
       ],
       "checksum": "48804303bcb2609de1e3e00e5aafa2a2599bc6f782650f219313d65b4ac55804",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "drawer",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/drawer.json",
+      "description": "component/drawer",
+      "tags": [
+        "component",
+        "drawer"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/drawer.json"
+      ],
+      "checksum": "e150210f3f1f2a714967e3a10e9aabcc6c3ce5d3f7571dc3bcdfef4cf7c6cacf",
       "category": "component",
       "scenarios": [
         "component"
@@ -554,6 +629,31 @@
     },
     {
       "kind": "component",
+      "name": "menubar",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/menubar.json",
+      "description": "component/menubar",
+      "tags": [
+        "component",
+        "menubar"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/menubar.json"
+      ],
+      "checksum": "6a87809653d7a38a4c91c8a4a0847d3faa44586dd04b363afaceacb35986e0b9",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
       "name": "metric-card",
       "type": "component",
       "version": "0.2.2",
@@ -570,6 +670,31 @@
         "registry/components/metric-card.json"
       ],
       "checksum": "4ec25e473c2c455066c97457fc0ffd466552710f01aa6775cfed24ba8a96e345",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "navigation-menu",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/navigation-menu.json",
+      "description": "component/navigation-menu",
+      "tags": [
+        "component",
+        "navigation-menu"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/navigation-menu.json"
+      ],
+      "checksum": "6d40b31e8fff0781a965d84668c5f31569f2c6d485ee36a95687a7b4373b7103",
       "category": "component",
       "scenarios": [
         "component"
@@ -1983,6 +2108,72 @@
           }
         }
       },
+      "collapse": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "collapse",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/collapse.json",
+            "description": "component/collapse",
+            "tags": [
+              "component",
+              "collapse"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/collapse.json"
+            ],
+            "checksum": "738ed04cea9e51273f059108e86989e766f2dd1d44d3ac95fdd7edf363167323",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "context-menu": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "context-menu",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/context-menu.json",
+            "description": "component/context-menu",
+            "tags": [
+              "component",
+              "context-menu"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/context-menu.json"
+            ],
+            "checksum": "81c5d158fcf7c6dce22c164a2764bab7b89237524ac3ad4bf36b792c84b90b40",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
       "data-table": {
         "latest": "0.2.2",
         "versions": [
@@ -2106,6 +2297,39 @@
               "registry/components/dialog.json"
             ],
             "checksum": "48804303bcb2609de1e3e00e5aafa2a2599bc6f782650f219313d65b4ac55804",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "drawer": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "drawer",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/drawer.json",
+            "description": "component/drawer",
+            "tags": [
+              "component",
+              "drawer"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/drawer.json"
+            ],
+            "checksum": "e150210f3f1f2a714967e3a10e9aabcc6c3ce5d3f7571dc3bcdfef4cf7c6cacf",
             "category": "component",
             "scenarios": [
               "component"
@@ -2412,6 +2636,39 @@
           }
         }
       },
+      "menubar": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "menubar",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/menubar.json",
+            "description": "component/menubar",
+            "tags": [
+              "component",
+              "menubar"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/menubar.json"
+            ],
+            "checksum": "6a87809653d7a38a4c91c8a4a0847d3faa44586dd04b363afaceacb35986e0b9",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
       "metric-card": {
         "latest": "0.2.2",
         "versions": [
@@ -2436,6 +2693,39 @@
               "registry/components/metric-card.json"
             ],
             "checksum": "4ec25e473c2c455066c97457fc0ffd466552710f01aa6775cfed24ba8a96e345",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "navigation-menu": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "navigation-menu",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/navigation-menu.json",
+            "description": "component/navigation-menu",
+            "tags": [
+              "component",
+              "navigation-menu"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/navigation-menu.json"
+            ],
+            "checksum": "6d40b31e8fff0781a965d84668c5f31569f2c6d485ee36a95687a7b4373b7103",
             "category": "component",
             "scenarios": [
               "component"

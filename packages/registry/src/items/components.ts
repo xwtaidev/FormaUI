@@ -88,9 +88,27 @@ export const componentRegistryItems: RegistryItem[] = [
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
+    name: "collapse",
+    source: "packages/components/src/primitives/collapse.tsx",
+    dependencies: ["@radix-ui/react-collapsible", "lucide-react"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "context-menu",
+    source: "packages/components/src/primitives/context-menu.tsx",
+    dependencies: ["@radix-ui/react-context-menu", "lucide-react"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
     name: "dialog",
     source: "packages/components/src/primitives/dialog.tsx",
     dependencies: ["@radix-ui/react-dialog", "lucide-react"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "drawer",
+    source: "packages/components/src/primitives/drawer.tsx",
+    dependencies: ["@radix-ui/react-dialog", "class-variance-authority", "lucide-react"],
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
@@ -114,6 +132,18 @@ export const componentRegistryItems: RegistryItem[] = [
     name: "label",
     source: "packages/components/src/primitives/label.tsx",
     dependencies: ["@radix-ui/react-label"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "menubar",
+    source: "packages/components/src/primitives/menubar.tsx",
+    dependencies: ["@radix-ui/react-menubar", "lucide-react"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "navigation-menu",
+    source: "packages/components/src/primitives/navigation-menu.tsx",
+    dependencies: ["@radix-ui/react-navigation-menu", "class-variance-authority", "lucide-react"],
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
