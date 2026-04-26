@@ -4,8 +4,15 @@ import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { Badge, Button, Card, CardContent, CardHeader, CardTitle, Progress, Skeleton } from "../src";
+import * as componentExports from "../src";
 
 describe("primitives: basic", () => {
+  it("keeps pre-v0.6 basic exports stable", () => {
+    for (const name of ["Button", "Card", "CardHeader", "CardContent", "CardTitle", "Badge", "Progress", "Skeleton"]) {
+      expect(componentExports).toHaveProperty(name);
+    }
+  });
+
   it("renders Button with requested variant", () => {
     render(
       <Button variant="secondary" data-testid="btn">

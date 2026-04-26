@@ -47,8 +47,58 @@ import {
   TooltipProvider,
   TooltipTrigger
 } from "../src";
+import * as componentExports from "../src";
 
 describe("primitives: radix and form", () => {
+  it("keeps pre-v0.6 radix/form exports stable", () => {
+    for (const name of [
+      "Accordion",
+      "AccordionItem",
+      "AccordionTrigger",
+      "AccordionContent",
+      "Avatar",
+      "AvatarFallback",
+      "Checkbox",
+      "Dialog",
+      "DialogTrigger",
+      "DialogContent",
+      "DialogTitle",
+      "DialogDescription",
+      "DropdownMenu",
+      "DropdownMenuTrigger",
+      "DropdownMenuContent",
+      "DropdownMenuItem",
+      "HoverCard",
+      "HoverCardTrigger",
+      "HoverCardContent",
+      "Input",
+      "Popover",
+      "PopoverTrigger",
+      "PopoverContent",
+      "Progress",
+      "RadioGroup",
+      "RadioGroupItem",
+      "Select",
+      "SelectTrigger",
+      "SelectValue",
+      "SelectContent",
+      "SelectItem",
+      "Separator",
+      "Switch",
+      "Tabs",
+      "TabsList",
+      "TabsTrigger",
+      "TabsContent",
+      "Textarea",
+      "Tooltip",
+      "TooltipProvider",
+      "TooltipTrigger",
+      "TooltipContent"
+    ]) {
+      expect(componentExports).toHaveProperty(name);
+    }
+  });
+
   it("renders all primitives with controlled props", () => {
     render(
       <div>
