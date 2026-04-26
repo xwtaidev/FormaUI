@@ -14,9 +14,9 @@ export default function DocsHomePage() {
     <div className="space-y-8">
       <h1>FormaUI Documentation</h1>
       <p>
-        FormaUI v0.4.1 starts the growth-focused release line with a production landing route, responsive information
-        architecture, and component-first composition rules. This documentation covers installation, migration, CLI
-        workflows, registry metadata, and every installable asset.
+        FormaUI v0.4.4 extends the growth-focused release line with landing component-compliance gates and authoring
+        guidance, on top of the production landing route and reusable marketing composition. This documentation covers
+        installation, migration, CLI workflows, registry metadata, and every installable asset.
       </p>
 
       <div className="space-y-3 rounded-xl border border-slate-200 bg-white p-5">
@@ -38,7 +38,7 @@ export default function DocsHomePage() {
         <h2 className="m-0 text-xl font-semibold">Start Here</h2>
         <ul>
           <li>
-            <Link href="/landing">Official landing (v0.4.1 foundation)</Link>
+            <Link href="/landing">Official landing (v0.4.4)</Link>
           </li>
           <li>
             <Link href="/quick-start">Quick start</Link>
