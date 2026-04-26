@@ -8,7 +8,10 @@ import {
   ApiKeyManager,
   BillingPanel,
   DashboardShell,
+  FeatureGrid,
+  HeroCta,
   LoginPanel,
+  LogoCloud,
   ModelSelector,
   NotificationPanel,
   PricingSection,
@@ -32,6 +35,9 @@ describe("blocks", () => {
         <TeamMembersTable />
         <NotificationPanel />
         <ModelSelector />
+        <HeroCta />
+        <FeatureGrid />
+        <LogoCloud />
       </div>
     );
 
@@ -46,5 +52,9 @@ describe("blocks", () => {
     expect(screen.getAllByText("Team members").length).toBeGreaterThan(0);
     expect(screen.getAllByText("Notifications").length).toBeGreaterThan(0);
     expect(screen.getAllByText("Model selector").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Ship FormaUI faster").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Book a live demo").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Everything teams need to ship").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Works with your stack").length).toBeGreaterThan(0);
   });
 });
