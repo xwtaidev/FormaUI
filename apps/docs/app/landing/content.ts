@@ -3,39 +3,6 @@ export type SectionAnchor = {
   label: string;
 };
 
-export type Differentiator = {
-  title: string;
-  description: string;
-};
-
-export type AssetProof = {
-  label: string;
-  count: number;
-  href: string;
-};
-
-export type Scenario = {
-  title: string;
-  description: string;
-  href: string;
-};
-
-export type TrustItem = {
-  title: string;
-  detail: string;
-};
-
-export type QuickStartStep = {
-  title: string;
-  command: string;
-};
-
-export type FaqItem = {
-  id: string;
-  question: string;
-  answer: string;
-};
-
 export type FooterLink = {
   label: string;
   href: string;
@@ -43,97 +10,97 @@ export type FooterLink = {
 
 export const sectionAnchors: SectionAnchor[] = [
   { id: "hero", label: "Hero" },
-  { id: "core-differentiators", label: "Core Differentiators" },
-  { id: "asset-proof", label: "Asset Proof" },
-  { id: "scenario-showcase", label: "Scenario Showcase" },
-  { id: "quick-start-path", label: "Quick Start" },
-  { id: "trust-proof", label: "Trust" },
+  { id: "core-differentiators", label: "Features" },
+  { id: "scenario-showcase", label: "Scenarios" },
+  { id: "asset-proof", label: "Proof" },
   { id: "faq", label: "FAQ" },
+  { id: "quick-start-path", label: "Quick Start" },
   { id: "landing-footer", label: "Footer" }
 ];
 
-export const differentiators: Differentiator[] = [
-  {
-    title: "Source-Owned UI",
-    description: "You copy source files into your codebase and keep full control over behavior, styling, and release pace."
-  },
-  {
-    title: "Scenario Assets",
-    description: "Components, blocks, templates, and packs are aligned so teams can move from primitives to product sections quickly."
-  },
-  {
-    title: "CLI Workflow",
-    description: "Use `init`, `add`, and `pack add` to discover, validate, and ship assets with predictable registry metadata."
-  }
-];
+export const heroCtaContent = {
+  eyebrow: "FormaUI v0.4.3",
+  title: "Build Growth Pages with Source-Owned UI",
+  description:
+    "Compose your marketing narrative from installable blocks, keep full source ownership, and iterate without waiting on hosted lock-in.",
+  primaryCtaLabel: "Start Quick",
+  primaryCtaHref: "/quick-start",
+  secondaryCtaLabel: "Read Docs",
+  secondaryCtaHref: "/introduction"
+};
 
-export const assetProofItems: AssetProof[] = [
-  { label: "Components", count: 36, href: "/components/accordion" },
-  { label: "Blocks", count: 11, href: "/blocks/dashboard-shell" },
-  { label: "Templates", count: 3, href: "/templates/ai-console-lite" },
-  { label: "Packs", count: 3, href: "/packs" },
-  { label: "Themes", count: 2, href: "/theme/default" }
-];
+export const featureGridContent = {
+  title: "Core Differentiators",
+  description: "A practical growth stack for teams that want product velocity and long-term maintainability.",
+  features: [
+    {
+      title: "Source-Owned by Default",
+      description: "Copy code into your repo, version it with your app, and evolve behavior on your own schedule."
+    },
+    {
+      title: "Registry-Native Delivery",
+      description: "Install components, blocks, templates, and packs through a consistent discover/info/add workflow."
+    },
+    {
+      title: "Token-Compatible Blocks",
+      description: "Marketing sections stay aligned with your design tokens and app-level visual language."
+    },
+    {
+      title: "Scenario-Driven Composition",
+      description: "Start from high-level sections, then adapt only what your product context actually needs."
+    }
+  ]
+};
 
-export const scenarios: Scenario[] = [
-  {
-    title: "SaaS Dashboard",
-    description: "Compose account navigation, data table flows, and settings surfaces with shared primitives and blocks.",
-    href: "/blocks/dashboard-shell"
-  },
-  {
-    title: "AI Workspace",
-    description: "Assemble model switching, usage analytics, and notification flows while keeping product-specific source control.",
-    href: "/blocks/model-selector"
-  },
-  {
-    title: "Billing & Growth",
-    description: "Ship pricing and subscription UX with reusable blocks and extend only where your product needs differentiation.",
-    href: "/blocks/pricing-section"
-  }
-];
+export const logoCloudContent = {
+  title: "Scenario Showcase",
+  description: "Launch pages and docs surfaces that align with common product narratives.",
+  logos: ["SaaS Dashboard", "AI Workspace", "Developer Tools", "Growth Funnel", "Pricing + Billing", "Release Notes"]
+};
 
-export const trustItems: TrustItem[] = [
-  {
-    title: "v0.1 -> v0.3 shipped",
-    detail: "Validated source-owned loop, registry evolution, and pack workflows are already live in docs and examples."
-  },
-  {
-    title: "v0.4.1 now active",
-    detail: "Landing information architecture and responsive baseline are the foundation for growth-focused v0.4 milestones."
-  },
-  {
-    title: "Open release cadence",
-    detail: "Release notes and migration guides stay in-repo so teams can adopt updates without guessing hidden behaviors."
-  }
-];
+export const statsStripContent = {
+  title: "Asset Proof",
+  description: "Current v0.4 inventory baseline that teams can install and compose immediately.",
+  stats: [
+    { label: "Components", value: "36" },
+    { label: "Blocks", value: "14" },
+    { label: "Templates", value: "3" },
+    { label: "Packs", value: "3" }
+  ]
+};
 
-export const quickStartSteps: QuickStartStep[] = [
-  { title: "Initialize project", command: "npx formaui init" },
-  { title: "Discover by scenario", command: "npx formaui search dashboard --scenario saas" },
-  { title: "Install a pack", command: "npx formaui pack add dashboard-foundation" }
-];
+export const faqAccordionContent = {
+  title: "FAQ",
+  description: "Common adoption questions from teams evaluating FormaUI.",
+  items: [
+    {
+      id: "faq-1",
+      question: "Is FormaUI hosted or source-owned?",
+      answer: "Source-owned. You install assets into your repository and keep full control over updates."
+    },
+    {
+      id: "faq-2",
+      question: "Can we start from blocks instead of primitives?",
+      answer: "Yes. You can adopt marketing blocks first, then refine internals where product behavior requires it."
+    },
+    {
+      id: "faq-3",
+      question: "How does v0.4 improve on v0.3?",
+      answer:
+        "v0.4 adds an official landing baseline, reusable marketing blocks, and quality gates for conversion-oriented surfaces."
+    }
+  ]
+};
 
-export const faqItems: FaqItem[] = [
-  {
-    id: "faq-1",
-    question: "Is FormaUI a hosted component service?",
-    answer:
-      "No. FormaUI is source-owned. You install and own the code inside your repo so long-term customization stays under your control."
-  },
-  {
-    id: "faq-2",
-    question: "Can we start from higher-level assets?",
-    answer:
-      "Yes. You can adopt blocks and packs first, then drill into component-level edits where product behavior requires custom logic."
-  },
-  {
-    id: "faq-3",
-    question: "How does v0.4 differ from v0.3?",
-    answer:
-      "v0.4 adds growth-focused landing architecture, marketing block workflows, and hard quality gates for SEO, performance, and conversion."
-  }
-];
+export const finalCtaContent = {
+  eyebrow: "Ship with confidence",
+  title: "Ready to ship your landing with FormaUI?",
+  description: "Use official blocks as baseline, then iterate copy, layout, and behavior directly in your source tree.",
+  primaryCtaLabel: "Open Quick Start",
+  primaryCtaHref: "/quick-start",
+  secondaryCtaLabel: "Browse Introduction",
+  secondaryCtaHref: "/introduction"
+};
 
 export const footerLinks: FooterLink[] = [
   { label: "Docs", href: "/introduction" },

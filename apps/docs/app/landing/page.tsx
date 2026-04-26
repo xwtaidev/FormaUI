@@ -4,27 +4,30 @@ import { LandingCta } from "./_components/landing-cta";
 import { LandingHero } from "./_components/landing-hero";
 import { LandingProof } from "./_components/landing-proof";
 import {
-  assetProofItems,
-  differentiators,
-  faqItems,
+  faqAccordionContent,
+  featureGridContent,
+  finalCtaContent,
   footerLinks,
-  quickStartSteps,
-  scenarios,
+  heroCtaContent,
+  logoCloudContent,
   sectionAnchors,
-  trustItems
+  statsStripContent
 } from "./content";
 
 export default function LandingPage() {
   return (
     <div className="space-y-10 pb-6">
-      <LandingHero anchors={sectionAnchors} />
+      <LandingHero anchors={sectionAnchors} heroContent={heroCtaContent} />
       <LandingProof
-        differentiators={differentiators}
-        assetProofItems={assetProofItems}
-        scenarios={scenarios}
-        trustItems={trustItems}
+        featureGridContent={featureGridContent}
+        logoCloudContent={logoCloudContent}
+        statsStripContent={statsStripContent}
       />
-      <LandingCta quickStartSteps={quickStartSteps} faqItems={faqItems} footerLinks={footerLinks} />
+      <LandingCta
+        faqAccordionContent={faqAccordionContent}
+        finalCtaContent={finalCtaContent}
+        footerLinks={footerLinks}
+      />
     </div>
   );
 }

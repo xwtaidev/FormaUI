@@ -15,16 +15,15 @@ function readSource(relativePath: string): string {
 }
 
 describe("landing route foundation", () => {
-  it("renders required IA section anchors and CTA links", () => {
+  it("renders required IA section order and CTA links", () => {
     const html = renderToStaticMarkup(<LandingPage />);
-    const requiredSectionIds = [
+    const orderedSectionIds = [
       "hero",
       "core-differentiators",
       "asset-proof",
       "scenario-showcase",
-      "quick-start-path",
-      "trust-proof",
       "faq",
+      "quick-start-path",
       "landing-footer"
     ];
     const requiredLinks = [
@@ -34,9 +33,13 @@ describe("landing route foundation", () => {
       "https://github.com/xwtaidev/FormaUI"
     ];
 
-    requiredSectionIds.forEach((id) => {
+    orderedSectionIds.forEach((id) => {
       expect(html).toContain(`id="${id}"`);
     });
+
+    const indices = orderedSectionIds.map((id) => html.indexOf(`id="${id}"`));
+    const sortedIndices = [...indices].sort((a, b) => a - b);
+    expect(indices).toEqual(sortedIndices);
 
     requiredLinks.forEach((href) => {
       expect(html).toContain(`href="${href}"`);
@@ -50,17 +53,20 @@ describe("landing route foundation", () => {
 });
 
 describe("landing formaui composition", () => {
-  it("uses formaui button, accordion, and card interactions", () => {
+  it("composes landing sections from formaui blocks", () => {
     const heroSource = readSource("../app/landing/_components/landing-hero.tsx");
     const proofSource = readSource("../app/landing/_components/landing-proof.tsx");
     const ctaSource = readSource("../app/landing/_components/landing-cta.tsx");
 
-    expect(heroSource).toContain('from "@formaui/components"');
-    expect(proofSource).toContain('from "@formaui/components"');
-    expect(ctaSource).toContain('from "@formaui/components"');
+    expect(heroSource).toContain('from "@formaui/blocks"');
+    expect(proofSource).toContain('from "@formaui/blocks"');
+    expect(ctaSource).toContain('from "@formaui/blocks"');
 
-    expect(heroSource).toMatch(/\bButton\b/);
-    expect(proofSource).toMatch(/\bCard\b/);
-    expect(ctaSource).toMatch(/\bAccordion\b/);
+    expect(heroSource).toMatch(/\bHeroCta\b/);
+    expect(proofSource).toMatch(/\bFeatureGrid\b/);
+    expect(proofSource).toMatch(/\bLogoCloud\b/);
+    expect(proofSource).toMatch(/\bStatsStrip\b/);
+    expect(ctaSource).toMatch(/\bFaqAccordion\b/);
+    expect(ctaSource).toMatch(/\bFinalCta\b/);
   });
 });

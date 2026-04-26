@@ -8,6 +8,8 @@ export interface HeroCtaProps {
   description?: string;
   primaryCtaLabel?: string;
   secondaryCtaLabel?: string;
+  primaryCtaHref?: string;
+  secondaryCtaHref?: string;
 }
 
 export function HeroCta({
@@ -15,8 +17,13 @@ export function HeroCta({
   title = "Ship FormaUI faster",
   description = "Compose polished launch pages with installable blocks, shared tokens, and production-ready defaults.",
   primaryCtaLabel = "Start building",
-  secondaryCtaLabel = "Book a live demo"
+  secondaryCtaLabel = "Book a live demo",
+  primaryCtaHref,
+  secondaryCtaHref
 }: HeroCtaProps) {
+  const PrimaryButton = <Button>{primaryCtaLabel}</Button>;
+  const SecondaryButton = <Button variant="outline">{secondaryCtaLabel}</Button>;
+
   return (
     <Card>
       <CardHeader className="space-y-3">
@@ -25,8 +32,8 @@ export function HeroCta({
         <p className="max-w-2xl text-sm text-muted-foreground md:text-base">{description}</p>
       </CardHeader>
       <CardContent className="flex flex-wrap gap-3">
-        <Button>{primaryCtaLabel}</Button>
-        <Button variant="outline">{secondaryCtaLabel}</Button>
+        {primaryCtaHref ? <form action={primaryCtaHref}>{PrimaryButton}</form> : PrimaryButton}
+        {secondaryCtaHref ? <form action={secondaryCtaHref}>{SecondaryButton}</form> : SecondaryButton}
       </CardContent>
     </Card>
   );
