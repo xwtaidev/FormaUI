@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-04-26T01:48:47.234Z",
-  "total": 62,
+  "generatedAt": "2026-04-26T13:14:21.251Z",
+  "total": 67,
   "items": [
     {
       "kind": "component",
@@ -20,6 +20,31 @@
         "registry/components/accordion.json"
       ],
       "checksum": "7427a91d327558559aae68b5aa37e1f83eed474bae862df778147734a724e5df",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "alert",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/alert.json",
+      "description": "component/alert",
+      "tags": [
+        "component",
+        "alert"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/alert.json"
+      ],
+      "checksum": "2e99add86f031a1cac94de24d4bce60a08b87d66c6aa123a70a41e6719d4941c",
       "category": "component",
       "scenarios": [
         "component"
@@ -95,6 +120,31 @@
         "registry/components/badge.json"
       ],
       "checksum": "3bd5c4e9ce253a3815a09677eba9d4332eca29c5502c2b7be0e1998c6f854ab1",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "breadcrumb",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/breadcrumb.json",
+      "description": "component/breadcrumb",
+      "tags": [
+        "component",
+        "breadcrumb"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/breadcrumb.json"
+      ],
+      "checksum": "d68df13e92e38e7d43beac8f94b82b97d6f767aba9e48c2d2e7c8d2770846d28",
       "category": "component",
       "scenarios": [
         "component"
@@ -454,6 +504,31 @@
     },
     {
       "kind": "component",
+      "name": "label",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/label.json",
+      "description": "component/label",
+      "tags": [
+        "component",
+        "label"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/label.json"
+      ],
+      "checksum": "13e5394230cf709040b5aae7233011c93dcd31d20da396045f7fc244443d1e51",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
       "name": "lib-cn",
       "type": "lib",
       "version": "0.2.2",
@@ -754,6 +829,31 @@
     },
     {
       "kind": "component",
+      "name": "steps",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/steps.json",
+      "description": "component/steps",
+      "tags": [
+        "component",
+        "steps"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/steps.json"
+      ],
+      "checksum": "5d42f066bab5fc642d919e0d3c43e32af54afc2a9fd0a137a4b3ddaac8abfef1",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
       "name": "switch",
       "type": "component",
       "version": "0.2.2",
@@ -870,6 +970,31 @@
         "registry/components/tooltip.json"
       ],
       "checksum": "bea792e1c01b79bb845b71627dd4d7855f3a020971903da0632f3b724aa2cc16",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "typography",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/typography.json",
+      "description": "component/typography",
+      "tags": [
+        "component",
+        "typography"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/typography.json"
+      ],
+      "checksum": "4f0414dc745a906556e0901e3b490c9d8f1da423a706bc69039d766540e19a87",
       "category": "component",
       "scenarios": [
         "component"
@@ -1594,6 +1719,39 @@
           }
         }
       },
+      "alert": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "alert",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/alert.json",
+            "description": "component/alert",
+            "tags": [
+              "component",
+              "alert"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/alert.json"
+            ],
+            "checksum": "2e99add86f031a1cac94de24d4bce60a08b87d66c6aa123a70a41e6719d4941c",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
       "app-sidebar": {
         "latest": "0.2.2",
         "versions": [
@@ -1684,6 +1842,39 @@
               "registry/components/badge.json"
             ],
             "checksum": "3bd5c4e9ce253a3815a09677eba9d4332eca29c5502c2b7be0e1998c6f854ab1",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "breadcrumb": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "breadcrumb",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/breadcrumb.json",
+            "description": "component/breadcrumb",
+            "tags": [
+              "component",
+              "breadcrumb"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/breadcrumb.json"
+            ],
+            "checksum": "d68df13e92e38e7d43beac8f94b82b97d6f767aba9e48c2d2e7c8d2770846d28",
             "category": "component",
             "scenarios": [
               "component"
@@ -2155,6 +2346,39 @@
           }
         }
       },
+      "label": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "label",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/label.json",
+            "description": "component/label",
+            "tags": [
+              "component",
+              "label"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/label.json"
+            ],
+            "checksum": "13e5394230cf709040b5aae7233011c93dcd31d20da396045f7fc244443d1e51",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
       "lib-cn": {
         "latest": "0.2.2",
         "versions": [
@@ -2551,6 +2775,39 @@
           }
         }
       },
+      "steps": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "steps",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/steps.json",
+            "description": "component/steps",
+            "tags": [
+              "component",
+              "steps"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/steps.json"
+            ],
+            "checksum": "5d42f066bab5fc642d919e0d3c43e32af54afc2a9fd0a137a4b3ddaac8abfef1",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
       "switch": {
         "latest": "0.2.2",
         "versions": [
@@ -2707,6 +2964,39 @@
               "registry/components/tooltip.json"
             ],
             "checksum": "bea792e1c01b79bb845b71627dd4d7855f3a020971903da0632f3b724aa2cc16",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "typography": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "typography",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/typography.json",
+            "description": "component/typography",
+            "tags": [
+              "component",
+              "typography"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/typography.json"
+            ],
+            "checksum": "4f0414dc745a906556e0901e3b490c9d8f1da423a706bc69039d766540e19a87",
             "category": "component",
             "scenarios": [
               "component"

@@ -41,6 +41,12 @@ export const componentRegistryItems: RegistryItem[] = [
     ]
   },
   componentItem({
+    name: "alert",
+    source: "packages/components/src/primitives/alert.tsx",
+    dependencies: ["class-variance-authority"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
     name: "accordion",
     source: "packages/components/src/primitives/accordion.tsx",
     dependencies: ["@radix-ui/react-accordion", "lucide-react"],
@@ -62,6 +68,12 @@ export const componentRegistryItems: RegistryItem[] = [
     name: "button",
     source: "packages/components/src/primitives/button.tsx",
     dependencies: ["class-variance-authority"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "breadcrumb",
+    source: "packages/components/src/primitives/breadcrumb.tsx",
+    dependencies: ["lucide-react"],
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
@@ -96,6 +108,12 @@ export const componentRegistryItems: RegistryItem[] = [
   componentItem({
     name: "input",
     source: "packages/components/src/primitives/input.tsx",
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "label",
+    source: "packages/components/src/primitives/label.tsx",
+    dependencies: ["@radix-ui/react-label"],
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
@@ -134,6 +152,12 @@ export const componentRegistryItems: RegistryItem[] = [
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
+    name: "steps",
+    source: "packages/components/src/primitives/steps.tsx",
+    dependencies: ["class-variance-authority"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
     name: "switch",
     source: "packages/components/src/primitives/switch.tsx",
     dependencies: ["@radix-ui/react-switch"],
@@ -154,6 +178,12 @@ export const componentRegistryItems: RegistryItem[] = [
     name: "tooltip",
     source: "packages/components/src/primitives/tooltip.tsx",
     dependencies: ["@radix-ui/react-tooltip"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "typography",
+    source: "packages/components/src/primitives/typography.tsx",
+    dependencies: ["class-variance-authority"],
     registryDependencies: ["lib-cn"]
   }),
   componentItem({

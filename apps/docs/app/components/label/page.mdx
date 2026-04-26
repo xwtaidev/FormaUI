@@ -1,0 +1,40 @@
+# Label
+
+## Overview
+
+`Label` provides accessible form field labeling with optional required and disabled presentation states.
+
+## Installation
+
+```bash
+npx formaui add label
+```
+
+## Usage
+
+```tsx
+import { Label } from "@/components/primitives/label";
+import { Input } from "@/components/primitives/input";
+
+export function EmailField() {
+  return (
+    <div className="grid gap-2">
+      <Label htmlFor="team-email" required>
+        Team Email
+      </Label>
+      <Input id="team-email" type="email" placeholder="team@company.com" />
+    </div>
+  );
+}
+```
+
+## Accessibility
+
+- Built on `@radix-ui/react-label` for robust `htmlFor` behavior.
+- Required state includes visible and screen-reader-friendly indicators.
+- Disabled style can be paired with disabled input controls.
+
+## Source Code
+
+- `packages/components/src/primitives/label.tsx`
+- `registry/components/label.json`
