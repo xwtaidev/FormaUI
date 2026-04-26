@@ -19,7 +19,7 @@ export const sectionAnchors: SectionAnchor[] = [
 ];
 
 export const heroCtaContent = {
-  eyebrow: "FormaUI v0.4.4",
+  eyebrow: "FormaUI v0.4.5",
   title: "Build Growth Pages with Source-Owned UI",
   description:
     "Compose your marketing narrative from installable blocks, keep full source ownership, and iterate without waiting on hosted lock-in.",

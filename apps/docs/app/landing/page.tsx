@@ -1,6 +1,8 @@
 import React from "react";
 import type { Metadata } from "next";
 
+import { type LandingCtaEventName } from "./analytics";
+import { LandingAnalytics } from "./_components/landing-analytics";
 import { LandingCta } from "./_components/landing-cta";
 import { LandingHero } from "./_components/landing-hero";
 import { LandingProof } from "./_components/landing-proof";
@@ -36,9 +38,28 @@ export const metadata: Metadata = {
   }
 };
 
+const ctaTrackingRules: Array<{ selector: string; eventName: LandingCtaEventName; trigger: "click" | "submit" }> = [
+  { selector: 'a[href="/introduction"]', eventName: "cta_docs_click", trigger: "click" },
+  { selector: 'a[href="/quick-start"]', eventName: "cta_quick_start_click", trigger: "click" },
+  {
+    selector: 'a[href="https://github.com/xwtaidev/FormaUI/tree/main/examples"]',
+    eventName: "cta_examples_click",
+    trigger: "click"
+  },
+  {
+    selector: 'a[href="https://github.com/xwtaidev/FormaUI"]',
+    eventName: "cta_github_click",
+    trigger: "click"
+  },
+  { selector: 'form[action="/introduction"]', eventName: "cta_docs_click", trigger: "submit" },
+  { selector: 'form[action="/quick-start"]', eventName: "cta_quick_start_click", trigger: "submit" }
+];
+
 export default function LandingPage() {
   return (
-    <div className="space-y-10 pb-6">
+    <div id="landing-root" className="space-y-10 pb-6">
+      <LandingAnalytics rootId="landing-root" ctaTrackingRules={ctaTrackingRules} />
+      <h2 className="sr-only">Landing Overview</h2>
       <LandingHero anchors={sectionAnchors} heroContent={heroCtaContent} />
       <LandingProof
         featureGridContent={featureGridContent}
