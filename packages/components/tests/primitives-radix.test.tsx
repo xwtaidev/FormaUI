@@ -11,11 +11,22 @@ import {
   Avatar,
   AvatarFallback,
   Checkbox,
+  Collapse,
+  CollapseContent,
+  CollapseTrigger,
+  ContextMenu,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuTrigger,
   Dialog,
   DialogContent,
   DialogDescription,
   DialogTrigger,
   DialogTitle,
+  Drawer,
+  DrawerContent,
+  DrawerDescription,
+  DrawerTitle,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
@@ -24,6 +35,17 @@ import {
   HoverCardContent,
   HoverCardTrigger,
   Input,
+  Menubar,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarTrigger,
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
   Popover,
   PopoverContent,
   PopoverTrigger,
@@ -48,6 +70,16 @@ import {
   TooltipTrigger
 } from "../src";
 import * as componentExports from "../src";
+
+class ResizeObserverMock {
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+}
+
+if (!("ResizeObserver" in globalThis)) {
+  (globalThis as unknown as { ResizeObserver: typeof ResizeObserverMock }).ResizeObserver = ResizeObserverMock;
+}
 
 describe("primitives: radix and form", () => {
   it("keeps pre-v0.6 radix/form exports stable", () => {
@@ -229,5 +261,69 @@ describe("primitives: radix and form", () => {
 
     expect(screen.getByTestId("separator").getAttribute("role")).toBe("separator");
     expect(onValueChange).toHaveBeenCalledWith("open");
+  });
+
+  it("renders wave-b navigation and overlay primitives with interaction hooks", () => {
+    render(
+      <div>
+        <Collapse>
+          <CollapseTrigger>Show release notes</CollapseTrigger>
+          <CollapseContent>Wave B content</CollapseContent>
+        </Collapse>
+
+        <NavigationMenu>
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Guides</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <NavigationMenuLink href="/docs">Docs link</NavigationMenuLink>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
+
+        <Menubar>
+          <MenubarMenu open>
+            <MenubarTrigger>Edit</MenubarTrigger>
+            <MenubarContent>
+              <MenubarItem>Rename</MenubarItem>
+            </MenubarContent>
+          </MenubarMenu>
+        </Menubar>
+
+        <ContextMenu modal={false}>
+          <ContextMenuTrigger data-testid="canvas-trigger">Canvas</ContextMenuTrigger>
+          <ContextMenuContent>
+            <ContextMenuItem>Paste</ContextMenuItem>
+          </ContextMenuContent>
+        </ContextMenu>
+      </div>
+    );
+
+    fireEvent.click(screen.getByRole("button", { name: "Show release notes" }));
+    expect(screen.getByText("Wave B content")).toBeDefined();
+
+    const guidesTrigger = screen.getByRole("button", { name: "Guides" });
+    guidesTrigger.focus();
+    fireEvent.click(guidesTrigger);
+    expect(document.activeElement).toBe(guidesTrigger);
+    expect(screen.getByRole("link", { name: "Docs link" })).toBeDefined();
+
+    expect(screen.getByText("Rename")).toBeDefined();
+
+    fireEvent.contextMenu(screen.getByTestId("canvas-trigger"));
+    expect(screen.getByText("Paste")).toBeDefined();
+
+    render(
+      <Drawer open>
+        <DrawerContent side="left">
+          <DrawerTitle>Command Panel</DrawerTitle>
+          <DrawerDescription>Overlay content</DrawerDescription>
+        </DrawerContent>
+      </Drawer>
+    );
+
+    expect(screen.getByRole("dialog")).toBeDefined();
+    expect(screen.getByText("Overlay content")).toBeDefined();
   });
 });
