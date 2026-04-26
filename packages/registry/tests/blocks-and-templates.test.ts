@@ -21,7 +21,13 @@ const REQUIRED_BLOCKS = [
   "agent-run-timeline",
   "team-members-table",
   "notification-panel",
-  "model-selector"
+  "model-selector",
+  "hero-cta",
+  "feature-grid",
+  "logo-cloud",
+  "stats-strip",
+  "faq-accordion",
+  "final-cta"
 ] as const;
 
 const REQUIRED_COMPONENTS = [
@@ -62,18 +68,49 @@ describe("registry coverage: blocks and templates", () => {
     const teamMembersTable = blockRegistryItems.find((item) => item.name === "team-members-table");
     const notificationPanel = blockRegistryItems.find((item) => item.name === "notification-panel");
     const modelSelector = blockRegistryItems.find((item) => item.name === "model-selector");
+    const heroCta = blockRegistryItems.find((item) => item.name === "hero-cta");
+    const featureGrid = blockRegistryItems.find((item) => item.name === "feature-grid");
+    const logoCloud = blockRegistryItems.find((item) => item.name === "logo-cloud");
+    const statsStrip = blockRegistryItems.find((item) => item.name === "stats-strip");
+    const faqAccordion = blockRegistryItems.find((item) => item.name === "faq-accordion");
+    const finalCta = blockRegistryItems.find((item) => item.name === "final-cta");
 
     expect(teamMembersTable).toBeDefined();
     expect(notificationPanel).toBeDefined();
     expect(modelSelector).toBeDefined();
+    expect(heroCta).toBeDefined();
+    expect(featureGrid).toBeDefined();
+    expect(logoCloud).toBeDefined();
+    expect(statsStrip).toBeDefined();
+    expect(faqAccordion).toBeDefined();
+    expect(finalCta).toBeDefined();
 
-    if (!teamMembersTable || !notificationPanel || !modelSelector) {
+    if (
+      !teamMembersTable ||
+      !notificationPanel ||
+      !modelSelector ||
+      !heroCta ||
+      !featureGrid ||
+      !logoCloud ||
+      !statsStrip ||
+      !faqAccordion ||
+      !finalCta
+    ) {
       return;
     }
 
     expect(new Set(teamMembersTable.registryDependencies).has("data-table")).toBe(true);
     expect(new Set(notificationPanel.registryDependencies).has("search-command")).toBe(true);
     expect(new Set(modelSelector.registryDependencies).has("select")).toBe(true);
+    expect(new Set(heroCta.registryDependencies).has("button")).toBe(true);
+    expect(new Set(heroCta.registryDependencies).has("card")).toBe(true);
+    expect(new Set(featureGrid.registryDependencies).has("card")).toBe(true);
+    expect(new Set(featureGrid.registryDependencies).has("badge")).toBe(true);
+    expect(new Set(logoCloud.registryDependencies).has("card")).toBe(true);
+    expect(new Set(statsStrip.registryDependencies).has("card")).toBe(true);
+    expect(new Set(faqAccordion.registryDependencies).has("accordion")).toBe(true);
+    expect(new Set(finalCta.registryDependencies).has("button")).toBe(true);
+    expect(new Set(finalCta.registryDependencies).has("badge")).toBe(true);
   });
 
   it("declares ai-console-lite with required dashboard and ai dependencies", () => {

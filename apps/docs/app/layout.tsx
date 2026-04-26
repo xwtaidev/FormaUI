@@ -4,14 +4,34 @@ import Link from "next/link";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "FormaUI Docs",
-  description: "FormaUI v0.3 documentation"
+  metadataBase: new URL("https://formaui.com"),
+  title: {
+    default: "FormaUI Docs",
+    template: "%s | FormaUI"
+  },
+  description: "Official FormaUI documentation with source-owned components, blocks, templates, and landing guides.",
+  alternates: {
+    canonical: "/"
+  },
+  openGraph: {
+    title: "FormaUI Docs",
+    description: "Official FormaUI documentation with source-owned components, blocks, templates, and landing guides.",
+    url: "https://formaui.com",
+    siteName: "FormaUI",
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FormaUI Docs",
+    description: "Official FormaUI documentation with source-owned components, blocks, templates, and landing guides."
+  }
 };
 
 const navSections: Array<{ title: string; links: Array<{ href: string; label: string }> }> = [
   {
     title: "Getting Started",
     links: [
+      { href: "/landing", label: "Landing (v0.4.5)" },
       { href: "/introduction", label: "Introduction" },
       { href: "/installation", label: "Installation" },
       { href: "/quick-start", label: "Quick Start" },
@@ -20,6 +40,14 @@ const navSections: Array<{ title: string; links: Array<{ href: string; label: st
       { href: "/theme", label: "Theme Overview" },
       { href: "/migration-v0.1-to-v0.2", label: "Migration v0.1 to v0.2" },
       { href: "/migration-v0.2-to-v0.3", label: "Migration v0.2 to v0.3" }
+    ]
+  },
+  {
+    title: "Landing",
+    links: [
+      { href: "/landing", label: "Landing Home" },
+      { href: "/landing/architecture", label: "Architecture" },
+      { href: "/landing/reuse-blocks", label: "Reuse Blocks" }
     ]
   },
   {
@@ -78,7 +106,8 @@ const navSections: Array<{ title: string; links: Array<{ href: string; label: st
       { href: "/packs", label: "Overview" },
       { href: "/packs/dashboard-foundation", label: "dashboard-foundation" },
       { href: "/packs/data-entry", label: "data-entry" },
-      { href: "/packs/feedback-loading", label: "feedback-loading" }
+      { href: "/packs/feedback-loading", label: "feedback-loading" },
+      { href: "/packs/marketing-launch", label: "marketing-launch" }
     ]
   },
   {
@@ -88,11 +117,17 @@ const navSections: Array<{ title: string; links: Array<{ href: string; label: st
       { href: "/blocks/api-key-manager", label: "api-key-manager" },
       { href: "/blocks/billing-panel", label: "billing-panel" },
       { href: "/blocks/dashboard-shell", label: "dashboard-shell" },
+      { href: "/blocks/faq-accordion", label: "faq-accordion" },
+      { href: "/blocks/feature-grid", label: "feature-grid" },
+      { href: "/blocks/final-cta", label: "final-cta" },
+      { href: "/blocks/hero-cta", label: "hero-cta" },
       { href: "/blocks/login-panel", label: "login-panel" },
+      { href: "/blocks/logo-cloud", label: "logo-cloud" },
       { href: "/blocks/model-selector", label: "model-selector" },
       { href: "/blocks/notification-panel", label: "notification-panel" },
       { href: "/blocks/pricing-section", label: "pricing-section" },
       { href: "/blocks/settings-layout", label: "settings-layout" },
+      { href: "/blocks/stats-strip", label: "stats-strip" },
       { href: "/blocks/team-members-table", label: "team-members-table" },
       { href: "/blocks/token-usage-chart", label: "token-usage-chart" }
     ]
@@ -122,7 +157,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <aside className="border-b border-slate-200 p-6 lg:border-b-0 lg:border-r">
             <Link href="/" className="block">
               <p className="text-sm uppercase tracking-wide text-slate-500">FormaUI</p>
-              <h1 className="text-2xl font-semibold">v0.3.5 Docs</h1>
+              <h1 className="text-2xl font-semibold">v0.4.5 Docs</h1>
             </Link>
             <nav className="mt-6 space-y-6">
               {navSections.map((section) => (

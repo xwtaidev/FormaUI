@@ -79,5 +79,35 @@ export const blockRegistryItems: RegistryItem[] = [
     name: "model-selector",
     source: "packages/blocks/src/model-selector.tsx",
     registryDependencies: ["card", "badge", "button", "select"]
+  }),
+  blockItem({
+    name: "hero-cta",
+    source: "packages/blocks/src/hero-cta.tsx",
+    registryDependencies: ["card", "badge", "button"]
+  }),
+  blockItem({
+    name: "feature-grid",
+    source: "packages/blocks/src/feature-grid.tsx",
+    registryDependencies: ["card", "badge"]
+  }),
+  blockItem({
+    name: "logo-cloud",
+    source: "packages/blocks/src/logo-cloud.tsx",
+    registryDependencies: ["card"]
+  }),
+  blockItem({
+    name: "stats-strip",
+    source: "packages/blocks/src/stats-strip.tsx",
+    registryDependencies: ["card"]
+  }),
+  blockItem({
+    name: "faq-accordion",
+    source: "packages/blocks/src/faq-accordion.tsx",
+    registryDependencies: ["accordion"]
+  }),
+  blockItem({
+    name: "final-cta",
+    source: "packages/blocks/src/final-cta.tsx",
+    registryDependencies: ["card", "badge", "button"]
   })
 ];

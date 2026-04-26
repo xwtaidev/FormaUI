@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-04-25T13:45:14.103Z",
-  "total": 55,
+  "generatedAt": "2026-04-26T01:48:47.234Z",
+  "total": 62,
   "items": [
     {
       "kind": "component",
@@ -1004,6 +1004,106 @@
     },
     {
       "kind": "block",
+      "name": "faq-accordion",
+      "type": "block",
+      "version": "0.2.2",
+      "path": "blocks/faq-accordion.json",
+      "description": "block/faq-accordion",
+      "tags": [
+        "block",
+        "faq-accordion"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/blocks/faq-accordion.json"
+      ],
+      "checksum": "b011ba7ec47d2dbff5b0843ff137d857bc69610f8fbeb6b6f51331ea3f28dcc4",
+      "category": "block",
+      "scenarios": [
+        "block"
+      ],
+      "complexity": "medium",
+      "stability": "stable"
+    },
+    {
+      "kind": "block",
+      "name": "feature-grid",
+      "type": "block",
+      "version": "0.2.2",
+      "path": "blocks/feature-grid.json",
+      "description": "block/feature-grid",
+      "tags": [
+        "block",
+        "feature-grid"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/blocks/feature-grid.json"
+      ],
+      "checksum": "e8044405ac1b1dc0c4844e0250294ba529fc62a53aff307a6c616e9098dbba47",
+      "category": "block",
+      "scenarios": [
+        "block"
+      ],
+      "complexity": "medium",
+      "stability": "stable"
+    },
+    {
+      "kind": "block",
+      "name": "final-cta",
+      "type": "block",
+      "version": "0.2.2",
+      "path": "blocks/final-cta.json",
+      "description": "block/final-cta",
+      "tags": [
+        "block",
+        "final-cta"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/blocks/final-cta.json"
+      ],
+      "checksum": "bfc2449469a89776b4e67cc20d0cbd976664c4377ffdf2d0e43e4a6b5d8bc6e9",
+      "category": "block",
+      "scenarios": [
+        "block"
+      ],
+      "complexity": "medium",
+      "stability": "stable"
+    },
+    {
+      "kind": "block",
+      "name": "hero-cta",
+      "type": "block",
+      "version": "0.2.2",
+      "path": "blocks/hero-cta.json",
+      "description": "block/hero-cta",
+      "tags": [
+        "block",
+        "hero-cta"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/blocks/hero-cta.json"
+      ],
+      "checksum": "d6518f8628944b5ec6a3038a4a9f6359e31928d472a7c1d8be5420ec7494b263",
+      "category": "block",
+      "scenarios": [
+        "block"
+      ],
+      "complexity": "medium",
+      "stability": "stable"
+    },
+    {
+      "kind": "block",
       "name": "login-panel",
       "type": "block",
       "version": "0.2.2",
@@ -1020,6 +1120,31 @@
         "registry/blocks/login-panel.json"
       ],
       "checksum": "6c202a1dea8c09069823c1065d892adc2bf8f5db67e64cb4289509d92e299fc2",
+      "category": "block",
+      "scenarios": [
+        "block"
+      ],
+      "complexity": "medium",
+      "stability": "stable"
+    },
+    {
+      "kind": "block",
+      "name": "logo-cloud",
+      "type": "block",
+      "version": "0.2.2",
+      "path": "blocks/logo-cloud.json",
+      "description": "block/logo-cloud",
+      "tags": [
+        "block",
+        "logo-cloud"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/blocks/logo-cloud.json"
+      ],
+      "checksum": "9d403df77a824a1f9e47864959fa39b03de04ff793c79d949a359cb3f180dce3",
       "category": "block",
       "scenarios": [
         "block"
@@ -1120,6 +1245,31 @@
         "registry/blocks/settings-layout.json"
       ],
       "checksum": "f988cf5948bd1b5113ba5619ca504e285e29febd925b2d4c0ee4649c19099c16",
+      "category": "block",
+      "scenarios": [
+        "block"
+      ],
+      "complexity": "medium",
+      "stability": "stable"
+    },
+    {
+      "kind": "block",
+      "name": "stats-strip",
+      "type": "block",
+      "version": "0.2.2",
+      "path": "blocks/stats-strip.json",
+      "description": "block/stats-strip",
+      "tags": [
+        "block",
+        "stats-strip"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/blocks/stats-strip.json"
+      ],
+      "checksum": "28c3eeaa4e4f8a553c867bdd2ea9ae4b5051ddb52dda022be0285caad058b91b",
       "category": "block",
       "scenarios": [
         "block"
@@ -1377,6 +1527,33 @@
         "loading",
         "empty-state",
         "notifications"
+      ],
+      "complexity": "medium",
+      "stability": "beta"
+    },
+    {
+      "kind": "pack",
+      "name": "marketing-launch",
+      "type": "pack",
+      "version": "0.2.2",
+      "path": "packs/marketing-launch.json",
+      "description": "Landing-ready marketing pack with hero, proof, FAQ and closing CTA sections.",
+      "tags": [
+        "pack",
+        "marketing-launch"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/packs/marketing-launch.json"
+      ],
+      "checksum": "36498457c19b6c5ee709c5c7546fff0cc2200e311bd6845e853a8389d4971a43",
+      "category": "marketing",
+      "scenarios": [
+        "landing",
+        "growth",
+        "conversion"
       ],
       "complexity": "medium",
       "stability": "beta"
@@ -2706,6 +2883,138 @@
           }
         }
       },
+      "faq-accordion": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "block",
+            "name": "faq-accordion",
+            "type": "block",
+            "version": "0.2.2",
+            "path": "blocks/faq-accordion.json",
+            "description": "block/faq-accordion",
+            "tags": [
+              "block",
+              "faq-accordion"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/blocks/faq-accordion.json"
+            ],
+            "checksum": "b011ba7ec47d2dbff5b0843ff137d857bc69610f8fbeb6b6f51331ea3f28dcc4",
+            "category": "block",
+            "scenarios": [
+              "block"
+            ],
+            "complexity": "medium",
+            "stability": "stable"
+          }
+        }
+      },
+      "feature-grid": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "block",
+            "name": "feature-grid",
+            "type": "block",
+            "version": "0.2.2",
+            "path": "blocks/feature-grid.json",
+            "description": "block/feature-grid",
+            "tags": [
+              "block",
+              "feature-grid"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/blocks/feature-grid.json"
+            ],
+            "checksum": "e8044405ac1b1dc0c4844e0250294ba529fc62a53aff307a6c616e9098dbba47",
+            "category": "block",
+            "scenarios": [
+              "block"
+            ],
+            "complexity": "medium",
+            "stability": "stable"
+          }
+        }
+      },
+      "final-cta": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "block",
+            "name": "final-cta",
+            "type": "block",
+            "version": "0.2.2",
+            "path": "blocks/final-cta.json",
+            "description": "block/final-cta",
+            "tags": [
+              "block",
+              "final-cta"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/blocks/final-cta.json"
+            ],
+            "checksum": "bfc2449469a89776b4e67cc20d0cbd976664c4377ffdf2d0e43e4a6b5d8bc6e9",
+            "category": "block",
+            "scenarios": [
+              "block"
+            ],
+            "complexity": "medium",
+            "stability": "stable"
+          }
+        }
+      },
+      "hero-cta": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "block",
+            "name": "hero-cta",
+            "type": "block",
+            "version": "0.2.2",
+            "path": "blocks/hero-cta.json",
+            "description": "block/hero-cta",
+            "tags": [
+              "block",
+              "hero-cta"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/blocks/hero-cta.json"
+            ],
+            "checksum": "d6518f8628944b5ec6a3038a4a9f6359e31928d472a7c1d8be5420ec7494b263",
+            "category": "block",
+            "scenarios": [
+              "block"
+            ],
+            "complexity": "medium",
+            "stability": "stable"
+          }
+        }
+      },
       "login-panel": {
         "latest": "0.2.2",
         "versions": [
@@ -2730,6 +3039,39 @@
               "registry/blocks/login-panel.json"
             ],
             "checksum": "6c202a1dea8c09069823c1065d892adc2bf8f5db67e64cb4289509d92e299fc2",
+            "category": "block",
+            "scenarios": [
+              "block"
+            ],
+            "complexity": "medium",
+            "stability": "stable"
+          }
+        }
+      },
+      "logo-cloud": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "block",
+            "name": "logo-cloud",
+            "type": "block",
+            "version": "0.2.2",
+            "path": "blocks/logo-cloud.json",
+            "description": "block/logo-cloud",
+            "tags": [
+              "block",
+              "logo-cloud"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/blocks/logo-cloud.json"
+            ],
+            "checksum": "9d403df77a824a1f9e47864959fa39b03de04ff793c79d949a359cb3f180dce3",
             "category": "block",
             "scenarios": [
               "block"
@@ -2862,6 +3204,39 @@
               "registry/blocks/settings-layout.json"
             ],
             "checksum": "f988cf5948bd1b5113ba5619ca504e285e29febd925b2d4c0ee4649c19099c16",
+            "category": "block",
+            "scenarios": [
+              "block"
+            ],
+            "complexity": "medium",
+            "stability": "stable"
+          }
+        }
+      },
+      "stats-strip": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "block",
+            "name": "stats-strip",
+            "type": "block",
+            "version": "0.2.2",
+            "path": "blocks/stats-strip.json",
+            "description": "block/stats-strip",
+            "tags": [
+              "block",
+              "stats-strip"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/blocks/stats-strip.json"
+            ],
+            "checksum": "28c3eeaa4e4f8a553c867bdd2ea9ae4b5051ddb52dda022be0285caad058b91b",
             "category": "block",
             "scenarios": [
               "block"
@@ -3205,6 +3580,41 @@
               "loading",
               "empty-state",
               "notifications"
+            ],
+            "complexity": "medium",
+            "stability": "beta"
+          }
+        }
+      },
+      "marketing-launch": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "pack",
+            "name": "marketing-launch",
+            "type": "pack",
+            "version": "0.2.2",
+            "path": "packs/marketing-launch.json",
+            "description": "Landing-ready marketing pack with hero, proof, FAQ and closing CTA sections.",
+            "tags": [
+              "pack",
+              "marketing-launch"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/packs/marketing-launch.json"
+            ],
+            "checksum": "36498457c19b6c5ee709c5c7546fff0cc2200e311bd6845e853a8389d4971a43",
+            "category": "marketing",
+            "scenarios": [
+              "landing",
+              "growth",
+              "conversion"
             ],
             "complexity": "medium",
             "stability": "beta"

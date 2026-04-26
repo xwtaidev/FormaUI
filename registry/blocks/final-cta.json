@@ -1,0 +1,39 @@
+{
+  "name": "final-cta",
+  "type": "block",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "card",
+    "badge",
+    "button"
+  ],
+  "files": [
+    {
+      "source": "packages/blocks/src/final-cta.tsx",
+      "target": "components/final-cta.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "block/final-cta",
+  "tags": [
+    "block",
+    "final-cta"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/blocks/final-cta.json"
+  ],
+  "category": "block",
+  "scenarios": [
+    "block"
+  ],
+  "complexity": "medium",
+  "stability": "stable",
+  "checksum": "bfc2449469a89776b4e67cc20d0cbd976664c4377ffdf2d0e43e4a6b5d8bc6e9"
+}

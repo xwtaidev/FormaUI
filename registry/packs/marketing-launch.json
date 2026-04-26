@@ -1,0 +1,36 @@
+{
+  "name": "marketing-launch",
+  "type": "pack",
+  "description": "Landing-ready marketing pack with hero, proof, FAQ and closing CTA sections.",
+  "category": "marketing",
+  "scenarios": [
+    "landing",
+    "growth",
+    "conversion"
+  ],
+  "complexity": "medium",
+  "stability": "beta",
+  "dependencies": [],
+  "devDependencies": [],
+  "registryDependencies": [
+    "hero-cta",
+    "feature-grid",
+    "logo-cloud",
+    "stats-strip",
+    "faq-accordion",
+    "final-cta"
+  ],
+  "files": [],
+  "version": "0.2.2",
+  "tags": [
+    "pack",
+    "marketing-launch"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/packs/marketing-launch.json"
+  ],
+  "checksum": "36498457c19b6c5ee709c5c7546fff0cc2200e311bd6845e853a8389d4971a43"
+}

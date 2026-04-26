@@ -16,6 +16,7 @@ describe("registry packs", () => {
     expect(names.has("dashboard-foundation")).toBe(true);
     expect(names.has("data-entry")).toBe(true);
     expect(names.has("feedback-loading")).toBe(true);
+    expect(names.has("marketing-launch")).toBe(true);
   });
 
   it("declares pack item type and metadata", () => {
