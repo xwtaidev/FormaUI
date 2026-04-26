@@ -54,6 +54,13 @@ describe("web homepage smoke", () => {
     expect(positions).toEqual([...positions].sort((a, b) => a - b));
     expect(html).toContain('href="https://docs.formaui.com"');
   });
+
+  it("keeps web-to-docs cross-site links visible in global shell", () => {
+    const layoutSource = readFileSync(resolve(testDir, "../app/layout.tsx"), "utf8");
+
+    expect(layoutSource).toContain("webLinks.docs");
+    expect(layoutSource).toContain(">Docs<");
+  });
 });
 
 describe("web required route coverage", () => {
@@ -75,5 +82,12 @@ describe("web required route coverage", () => {
       expect(html).toContain('href="https://github.com/xwtaidev/FormaUI/tree/main/docs/releases"');
       expect(html).toContain(`data-route="${page.route}"`);
     });
+  });
+
+  it("keeps changelog-specific docs backlinks reachable", () => {
+    const html = renderToStaticMarkup(<ChangelogPage />);
+
+    expect(html).toContain('href="https://docs.formaui.com/migration-v0.4-to-v0.5"');
+    expect(html).toContain('href="https://github.com/xwtaidev/FormaUI/blob/main/docs/releases/v0.5.md"');
   });
 });

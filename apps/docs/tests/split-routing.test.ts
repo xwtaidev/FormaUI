@@ -24,6 +24,13 @@ describe("docs split routing and navigation", () => {
     expect(layoutSource).not.toContain('title: "Landing"');
   });
 
+  it("keeps docs-to-web cross-site entry visible in sidebar shell", () => {
+    const layoutSource = readSource("../app/layout.tsx");
+
+    expect(layoutSource).toContain('href="https://formaui.com"');
+    expect(layoutSource).toContain("Open Web Site");
+  });
+
   it("links migration v0.4 to v0.5 route in docs navigation", () => {
     const layoutSource = readSource("../app/layout.tsx");
 
@@ -56,7 +63,8 @@ describe("docs split routing and navigation", () => {
     const expectedRedirects = [
       { source: "/landing", destination: "https://formaui.com/" },
       { source: "/landing/architecture", destination: "https://formaui.com/product" },
-      { source: "/landing/reuse-blocks", destination: "https://formaui.com/showcase" }
+      { source: "/landing/reuse-blocks", destination: "https://formaui.com/showcase" },
+      { source: "/landing/:path*", destination: "https://formaui.com/" }
     ];
 
     expectedRedirects.forEach((expectedRedirect) => {
