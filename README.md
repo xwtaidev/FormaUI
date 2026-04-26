@@ -4,7 +4,7 @@ A source-owned design system for composing and shipping modern SaaS and AI produ
 
 FormaUI is not a traditional component library. It gives developers the source code of components, product blocks, templates, themes, and registry metadata so product teams can own and adapt their interfaces.
 
-## Quick Start (v0.4)
+## Quick Start (v0.4.6 GA)
 
 ```bash
 npx formaui init
@@ -24,6 +24,7 @@ npx formaui add date-range-picker
 - CLI pack workflow: `pack list`, `pack info`, `pack add`
 - Official landing route with reusable marketing composition: `/landing` in docs app
 - Landing authoring docs: `/landing/architecture` and `/landing/reuse-blocks`
+- Landing quality gates: component-compliance lint, CTA analytics tests, Lighthouse thresholds
 
 ## CLI Discoverability
 
@@ -58,6 +59,7 @@ npx formaui doctor
   - `apps/docs/app/landing/architecture/page.mdx`
   - `apps/docs/app/landing/reuse-blocks/page.mdx`
 - Release notes: `docs/releases/v0.1.md`, `docs/releases/v0.2.md`, `docs/releases/v0.3.md`
+- Latest release: `docs/releases/v0.4.md`
 - Migration guides:
   - `apps/docs/app/migration-v0.1-to-v0.2/page.mdx`
   - `apps/docs/app/migration-v0.2-to-v0.3/page.mdx`

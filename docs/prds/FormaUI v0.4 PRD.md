@@ -1,9 +1,9 @@
 # FormaUI v0.4 PRD
 
 > 版本：v0.4  
-> 状态：Draft（Planned）  
-> 日期：2026-04-25  
-> 阶段定位：从“可组合扩展版”升级为“可传播增长版”
+> 状态：GA（Released）  
+> 日期：2026-04-26  
+> 阶段定位：从“可组合扩展版”升级为“可传播增长版”（已发布）
 
 ---
 
@@ -35,12 +35,12 @@ v0.4 的核心任务是在 v0.3 工程化能力稳定的基础上，补齐“对
 - Registry 升级到 v3 元数据（`category/scenarios/complexity/stability`）。
 - 文档与迁移路径（`v0.2 -> v0.3`）收口完成。
 
-### 2.2 当前仓库基线（截至 2026-04-25）
+### 2.2 当前仓库基线（截至 2026-04-26）
 
 - `registry/components/*.json`: 36
-- `registry/blocks/*.json`: 11
+- `registry/blocks/*.json`: 17
 - `registry/templates/*.json`: 3
-- `registry/packs/*.json`: 3
+- `registry/packs/*.json`: 4
 - `registry/themes/*.json`: 2
 
 ### 2.3 当前主要短板（v0.4 重点）
@@ -123,7 +123,7 @@ Composable design system assets (v0.3)
 
 1. Landing 多语言（`en/zh`）文案切换机制。
 2. 轻量 A/B 文案实验框架（仅前端配置，不接入复杂实验平台）。
-3. 可复用的 `marketing-launch` pack（用于一键引入推广页基础组件集）。
+3. 可复用的 `marketing-launch` pack（用于一键引入推广页基础组件集，已在 v0.4 交付）。
 
 ### 6.3 非目标（v0.4 不做）
 
@@ -321,13 +321,13 @@ pnpm --filter docs lighthouse
 
 ## 12. 最终验收清单（v0.4 GA）
 
-- [ ] 官方 landing page 已上线并可访问
-- [ ] Landing 交互组件 100% 使用 FormaUI 组件
-- [ ] Marketing blocks 按清单完成并可独立安装
-- [ ] 文档覆盖 landing 架构、复用方式、维护流程
-- [ ] Lighthouse 与可访问性指标达到目标
-- [ ] 关键 CTA 埋点事件完整并可验证
-- [ ] 发布门禁命令全部通过
+- [x] 官方 landing page 已上线并可访问
+- [x] Landing 交互组件 100% 使用 FormaUI 组件
+- [x] Marketing blocks 按清单完成并可独立安装
+- [x] 文档覆盖 landing 架构、复用方式、维护流程
+- [x] Lighthouse 与可访问性指标达到目标
+- [x] 关键 CTA 埋点事件完整并可验证
+- [x] 发布门禁命令全部通过
 
 ---
 
@@ -336,4 +336,5 @@ pnpm --filter docs lighthouse
 - `docs/releases/v0.1.md`
 - `docs/releases/v0.2.md`
 - `docs/releases/v0.3.md`
+- `docs/releases/v0.4.md`
 - `docs/prds/FormaUI v0.3 PRD.md`
