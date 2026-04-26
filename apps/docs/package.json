@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "lint": "tsc -p tsconfig.json --noEmit",
+    "lint": "node ./scripts/check-landing-component-usage.mjs && tsc -p tsconfig.json --noEmit",
+    "lint:landing-components": "node ./scripts/check-landing-component-usage.mjs",
     "test": "vitest run --passWithNoTests",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
