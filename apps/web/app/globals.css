@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --landing-background: #f6f8fa;
+  --landing-foreground: #0f172a;
+}
+
+body {
+  @apply bg-slate-50 text-slate-950 antialiased;
+  background:
+    radial-gradient(circle at top right, rgba(16, 185, 129, 0.12), transparent 30%),
+    radial-gradient(circle at top left, rgba(15, 23, 42, 0.06), transparent 26%),
+    var(--landing-background);
+  color: var(--landing-foreground);
+}
+
+a {
+  @apply transition;
+}
+
+.site-chrome {
+  @apply bg-white/90 backdrop-blur;
+}
+
+.landing-shell {
+  @apply mx-auto w-full max-w-6xl px-6;
+}
+
+.landing-panel {
+  @apply bg-white/95 ring-1 ring-slate-200;
+}
+
+h1 {
+  @apply text-4xl font-semibold tracking-tight text-slate-950;
+}

@@ -3,10 +3,10 @@ import Link from "next/link";
 
 const coverageRows = [
   { kind: "Components", count: 36, href: "/components/accordion" },
-  { kind: "Blocks", count: 11, href: "/blocks/dashboard-shell" },
+  { kind: "Blocks", count: 17, href: "/blocks/dashboard-shell" },
   { kind: "Templates", count: 3, href: "/templates/ai-console-lite" },
-  { kind: "Themes", count: 2, href: "/theme/default" },
-  { kind: "Packs", count: 3, href: "/packs" }
+  { kind: "CLI Guides", count: 2, href: "/cli" },
+  { kind: "Migration Guides", count: 3, href: "/migration-v0.4-to-v0.5" }
 ];
 
 export default function DocsHomePage() {
@@ -14,9 +14,9 @@ export default function DocsHomePage() {
     <div className="space-y-8">
       <h1>FormaUI Documentation</h1>
       <p>
-        FormaUI v0.4.4 extends the growth-focused release line with landing component-compliance gates and authoring
-        guidance, on top of the production landing route and reusable marketing composition. This documentation covers
-        installation, migration, CLI workflows, registry metadata, and every installable asset.
+        FormaUI v0.5 documentation is now focused on implementation workflows: installation, components, blocks,
+        templates, CLI, registry, and migration guides. Marketing and brand storytelling routes now live in the
+        dedicated web app.
       </p>
 
       <div className="space-y-3 rounded-xl border border-slate-200 bg-white p-5">
@@ -38,25 +38,25 @@ export default function DocsHomePage() {
         <h2 className="m-0 text-xl font-semibold">Start Here</h2>
         <ul>
           <li>
-            <Link href="/landing">Official landing (v0.4.4)</Link>
+            <Link href="/installation">Installation</Link>
           </li>
           <li>
-            <Link href="/quick-start">Quick start</Link>
+            <Link href="/components/accordion">Components</Link>
           </li>
           <li>
-            <Link href="/cli/commands">CLI commands reference</Link>
+            <Link href="/blocks/dashboard-shell">Blocks</Link>
           </li>
           <li>
-            <Link href="/migration-v0.2-to-v0.3">Migration guide (v0.2 to v0.3)</Link>
+            <Link href="/templates/ai-console-lite">Templates</Link>
           </li>
           <li>
-            <Link href="/registry">Registry v3 reference</Link>
+            <Link href="/cli/commands">CLI commands</Link>
           </li>
           <li>
-            <Link href="/packs">Pack workflows and scenario bundles</Link>
+            <Link href="/registry">Registry reference</Link>
           </li>
           <li>
-            <Link href="/components/data-table-toolbar">New in v0.3.5: Wave C composites</Link>
+            <Link href="/migration-v0.4-to-v0.5">Migration v0.4 to v0.5</Link>
           </li>
         </ul>
       </div>

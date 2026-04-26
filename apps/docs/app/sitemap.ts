@@ -9,11 +9,15 @@ const routeConfig: Array<{
   priority: number;
 }> = [
   { path: "/", changeFrequency: "weekly", priority: 1 },
-  { path: "/landing", changeFrequency: "weekly", priority: 0.95 },
-  { path: "/quick-start", changeFrequency: "weekly", priority: 0.85 },
-  { path: "/introduction", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/installation", changeFrequency: "weekly", priority: 0.95 },
+  { path: "/quick-start", changeFrequency: "weekly", priority: 0.9 },
+  { path: "/introduction", changeFrequency: "monthly", priority: 0.85 },
+  { path: "/cli", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/registry", changeFrequency: "monthly", priority: 0.8 },
   { path: "/blocks", changeFrequency: "monthly", priority: 0.75 },
-  { path: "/components", changeFrequency: "monthly", priority: 0.75 }
+  { path: "/components", changeFrequency: "monthly", priority: 0.75 },
+  { path: "/templates", changeFrequency: "monthly", priority: 0.75 },
+  { path: "/migration-v0.4-to-v0.5", changeFrequency: "monthly", priority: 0.7 }
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

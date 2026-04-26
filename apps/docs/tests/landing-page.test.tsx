@@ -46,9 +46,16 @@ describe("landing route foundation", () => {
     });
   });
 
-  it("adds landing entry from docs home", () => {
+  it("prioritizes documentation entry points on docs home", () => {
     const html = renderToStaticMarkup(<DocsHomePage />);
-    expect(html).toContain('href="/landing"');
+    expect(html).not.toContain('href="/landing"');
+    expect(html).toContain('href="/installation"');
+    expect(html).toContain('href="/components/accordion"');
+    expect(html).toContain('href="/blocks/dashboard-shell"');
+    expect(html).toContain('href="/templates/ai-console-lite"');
+    expect(html).toContain('href="/cli/commands"');
+    expect(html).toContain('href="/registry"');
+    expect(html).toContain('href="/migration-v0.4-to-v0.5"');
   });
 });
 
