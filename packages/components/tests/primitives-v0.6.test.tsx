@@ -11,6 +11,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
+  Combobox,
   Collapse,
   CollapseContent,
   CollapseTrigger,
@@ -18,6 +19,7 @@ import {
   ContextMenuContent,
   ContextMenuItem,
   ContextMenuTrigger,
+  DatePicker,
   Drawer,
   DrawerContent,
   DrawerDescription,
@@ -42,10 +44,17 @@ import {
   Slider,
   Steps,
   StepsItem,
+  Toast,
+  ToastClose,
+  ToastDescription,
+  ToastProvider,
+  ToastTitle,
+  ToastViewport,
   Toggle,
   ToggleGroup,
   ToggleGroupItem,
-  Typography
+  Typography,
+  Upload
 } from "../src";
 import * as components from "../src";
 
@@ -62,10 +71,11 @@ if (!("ResizeObserver" in globalThis)) {
 const waveAExports = ["Alert", "Breadcrumb", "Label", "Typography", "Steps"] as const;
 const waveBExports = ["Collapse", "NavigationMenu", "Menubar", "ContextMenu", "Drawer"] as const;
 const waveCExports = ["InputNumber", "Slider", "Toggle", "ToggleGroup", "InputOtp"] as const;
+const waveDExports = ["Upload", "Calendar", "DatePicker", "Combobox", "Toast"] as const;
 
 describe("primitives: v0.6 harness", () => {
-  it("exports Wave A, Wave B, and Wave C entries from package root", () => {
-    for (const componentName of [...waveAExports, ...waveBExports, ...waveCExports]) {
+  it("exports Wave A, Wave B, Wave C, and Wave D entries from package root", () => {
+    for (const componentName of [...waveAExports, ...waveBExports, ...waveCExports, ...waveDExports]) {
       expect(components).toHaveProperty(componentName);
     }
   });
@@ -282,5 +292,77 @@ describe("primitives: v0.6 harness", () => {
     expect(onOtpChange).toHaveBeenCalled();
     expect((otpInputs[0] as HTMLInputElement).value).toBe("9");
     expect((otpInputs[3] as HTMLInputElement).value).toBe("6");
+  });
+
+  it("supports Wave D upload, date-picker, combobox, and toast lifecycle behavior", () => {
+    const onUploadChange = vi.fn();
+    const onDateChange = vi.fn();
+    const onComboboxChange = vi.fn();
+    const onToastOpenChange = vi.fn();
+
+    render(
+      <div>
+        <Upload
+          onValueChange={onUploadChange}
+          maxSizeInBytes={5}
+          allowedTypes={["image/png"]}
+          helperText="Upload a small PNG."
+          aria-label="Upload file"
+        />
+
+        <DatePicker defaultValue={new Date(2026, 3, 15)} onChange={onDateChange} placeholder="Pick due date" />
+
+        <Combobox
+          options={[
+            { value: "alpha", label: "Alpha Team" },
+            { value: "beta", label: "Beta Team" }
+          ]}
+          placeholder="Select owner"
+          searchPlaceholder="Search owner"
+          onValueChange={onComboboxChange}
+        />
+
+        <ToastProvider>
+          <Toast open onOpenChange={onToastOpenChange}>
+            <div className="space-y-1">
+              <ToastTitle>Saved</ToastTitle>
+              <ToastDescription>All changes synced.</ToastDescription>
+            </div>
+            <ToastClose />
+          </Toast>
+          <ToastViewport />
+        </ToastProvider>
+      </div>
+    );
+
+    const uploadInput = screen.getByLabelText("Upload file");
+    const invalidFile = new File(["invalid"], "invalid.txt", { type: "text/plain" });
+    fireEvent.change(uploadInput, { target: { files: [invalidFile] } });
+    expect(screen.getByRole("alert").textContent).toContain("File type must be one of");
+
+    const validFile = new File(["test"], "avatar.png", { type: "image/png" });
+    fireEvent.change(uploadInput, { target: { files: [validFile] } });
+    expect(onUploadChange).toHaveBeenCalledWith(validFile);
+    expect(screen.getByText(/avatar\.png/i)).toBeDefined();
+
+    fireEvent.click(screen.getByRole("button", { name: "April 15, 2026" }));
+    fireEvent.click(screen.getByRole("button", { name: "April 20, 2026" }));
+    const lastDateCall = onDateChange.mock.calls.at(-1)?.[0];
+    expect(lastDateCall).toBeInstanceOf(Date);
+    expect((lastDateCall as Date).getFullYear()).toBe(2026);
+    expect((lastDateCall as Date).getMonth()).toBe(3);
+    expect((lastDateCall as Date).getDate()).toBe(20);
+
+    fireEvent.click(screen.getByRole("combobox"));
+    fireEvent.change(screen.getByLabelText("Search owner"), { target: { value: "beta" } });
+    fireEvent.click(screen.getByRole("option", { name: "Beta Team" }));
+    expect(onComboboxChange).toHaveBeenCalledWith("beta");
+    expect(screen.getByRole("combobox").textContent).toContain("Beta Team");
+
+    expect(screen.getByText("Saved")).toBeDefined();
+    const toastItem = screen.getByText("Saved").closest("li");
+    expect(toastItem).toBeTruthy();
+    fireEvent.click(within(toastItem as HTMLElement).getByRole("button", { name: "Close" }));
+    expect(onToastOpenChange).toHaveBeenCalledWith(false);
   });
 });
