@@ -1,7 +1,7 @@
 /* @vitest-environment jsdom */
 
-import { fireEvent, render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { fireEvent, render, screen, within } from "@testing-library/react";
+import { describe, expect, it, vi } from "vitest";
 
 import {
   Alert,
@@ -23,6 +23,10 @@ import {
   DrawerDescription,
   DrawerTitle,
   DrawerTrigger,
+  FormField,
+  Input,
+  InputNumber,
+  InputOtp,
   Label,
   Menubar,
   MenubarContent,
@@ -35,8 +39,12 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
+  Slider,
   Steps,
   StepsItem,
+  Toggle,
+  ToggleGroup,
+  ToggleGroupItem,
   Typography
 } from "../src";
 import * as components from "../src";
@@ -53,10 +61,11 @@ if (!("ResizeObserver" in globalThis)) {
 
 const waveAExports = ["Alert", "Breadcrumb", "Label", "Typography", "Steps"] as const;
 const waveBExports = ["Collapse", "NavigationMenu", "Menubar", "ContextMenu", "Drawer"] as const;
+const waveCExports = ["InputNumber", "Slider", "Toggle", "ToggleGroup", "InputOtp"] as const;
 
 describe("primitives: v0.6 harness", () => {
-  it("exports Wave A and Wave B entries from package root", () => {
-    for (const componentName of [...waveAExports, ...waveBExports]) {
+  it("exports Wave A, Wave B, and Wave C entries from package root", () => {
+    for (const componentName of [...waveAExports, ...waveBExports, ...waveCExports]) {
       expect(components).toHaveProperty(componentName);
     }
   });
@@ -200,5 +209,78 @@ describe("primitives: v0.6 harness", () => {
 
     expect(screen.getByRole("dialog")).toBeDefined();
     expect(screen.getByText("Overlay body")).toBeDefined();
+  });
+
+  it("supports Wave C form controls with boundary and keyboard behavior", () => {
+    const onNumberChange = vi.fn();
+    const onOtpChange = vi.fn();
+
+    render(
+      <div>
+        <FormField label="Team Size" htmlFor="team-size" description="Used for access suggestions.">
+          <InputNumber
+            id="team-size"
+            data-testid="input-number"
+            min={1}
+            max={3}
+            defaultValue={2}
+            onValueChange={onNumberChange}
+          />
+        </FormField>
+
+        <FormField label="Project Name" htmlFor="project-name">
+          <Input id="project-name" defaultValue="FormaUI" />
+        </FormField>
+
+        <Slider data-testid="slider-root" defaultValue={[40]} max={100} step={5} />
+
+        <Toggle aria-label="Pin filters">Pin</Toggle>
+
+        <ToggleGroup type="single" defaultValue="all" aria-label="Filter mode">
+          <ToggleGroupItem value="all" aria-label="All items">
+            All
+          </ToggleGroupItem>
+          <ToggleGroupItem value="open" aria-label="Open items">
+            Open
+          </ToggleGroupItem>
+        </ToggleGroup>
+
+        <InputOtp length={4} defaultValue="12" onChange={onOtpChange} data-testid="otp-field" />
+      </div>
+    );
+
+    const inputNumber = screen.getByTestId("input-number");
+    fireEvent.keyDown(inputNumber, { key: "ArrowUp" });
+    fireEvent.keyDown(inputNumber, { key: "ArrowDown" });
+
+    const incrementButton = screen.getByRole("button", { name: "Increment value" });
+    const decrementButton = screen.getByRole("button", { name: "Decrement value" });
+    fireEvent.click(incrementButton);
+    fireEvent.click(decrementButton);
+
+    const sliderThumb = screen.getByRole("slider");
+    const toggle = screen.getByRole("button", { name: "Pin filters" });
+    const openToggleItem = screen.getByRole("radio", { name: "Open items" });
+    const otp = screen.getByTestId("otp-field");
+    const otpInputs = within(otp).getAllByRole("textbox");
+
+    fireEvent.click(toggle);
+    fireEvent.click(openToggleItem);
+    fireEvent.change(otpInputs[2], { target: { value: "3" } });
+    fireEvent.paste(otpInputs[0], {
+      clipboardData: {
+        getData: () => "9876"
+      }
+    });
+
+    expect(screen.getByLabelText("Team Size")).toBeDefined();
+    expect(screen.getByDisplayValue("FormaUI")).toBeDefined();
+    expect(onNumberChange).toHaveBeenCalled();
+    expect(sliderThumb.getAttribute("aria-valuenow")).toBe("40");
+    expect(toggle.getAttribute("data-state")).toBe("on");
+    expect(openToggleItem.getAttribute("data-state")).toBe("on");
+    expect(onOtpChange).toHaveBeenCalled();
+    expect((otpInputs[0] as HTMLInputElement).value).toBe("9");
+    expect((otpInputs[3] as HTMLInputElement).value).toBe("6");
   });
 });
