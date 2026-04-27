@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-04-26T14:14:03.591Z",
-  "total": 72,
+  "generatedAt": "2026-04-27T00:42:18.988Z",
+  "total": 77,
   "items": [
     {
       "kind": "component",
@@ -579,6 +579,56 @@
     },
     {
       "kind": "component",
+      "name": "input-number",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/input-number.json",
+      "description": "component/input-number",
+      "tags": [
+        "component",
+        "input-number"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/input-number.json"
+      ],
+      "checksum": "e1139862576ab3a34b00cbca2f3ba54360f6caa2763b15f9bd872f4598687fdc",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "input-otp",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/input-otp.json",
+      "description": "component/input-otp",
+      "tags": [
+        "component",
+        "input-otp"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/input-otp.json"
+      ],
+      "checksum": "6eb100c995ad79f5adaa32e8543c843833221be95038b8f25a9f0c5648e8c502",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
       "name": "label",
       "type": "component",
       "version": "0.2.2",
@@ -929,6 +979,31 @@
     },
     {
       "kind": "component",
+      "name": "slider",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/slider.json",
+      "description": "component/slider",
+      "tags": [
+        "component",
+        "slider"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/slider.json"
+      ],
+      "checksum": "d9dff6775aeb4b112b3a774a5b548b875337d1df1da5f097fcc44b00c1a8d911",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
       "name": "status-badge",
       "type": "component",
       "version": "0.2.2",
@@ -1070,6 +1145,56 @@
         "registry/components/theme-switcher.json"
       ],
       "checksum": "dd5f25fa0ce36437f19e833ed771ed3429e24c99a95e582eaa6fa977cf972194",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "toggle",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/toggle.json",
+      "description": "component/toggle",
+      "tags": [
+        "component",
+        "toggle"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/toggle.json"
+      ],
+      "checksum": "91b0830aa245c3944af6e892997098f4f5f08a3d161b6910ed93ed197bc7a2e5",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "toggle-group",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/toggle-group.json",
+      "description": "component/toggle-group",
+      "tags": [
+        "component",
+        "toggle-group"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/toggle-group.json"
+      ],
+      "checksum": "1ebec356c2bf6e7184a489f748a8ed63b24514ff3d1a1650b46d0b4d7dc29df2",
       "category": "component",
       "scenarios": [
         "component"
@@ -2570,6 +2695,72 @@
           }
         }
       },
+      "input-number": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "input-number",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/input-number.json",
+            "description": "component/input-number",
+            "tags": [
+              "component",
+              "input-number"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/input-number.json"
+            ],
+            "checksum": "e1139862576ab3a34b00cbca2f3ba54360f6caa2763b15f9bd872f4598687fdc",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "input-otp": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "input-otp",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/input-otp.json",
+            "description": "component/input-otp",
+            "tags": [
+              "component",
+              "input-otp"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/input-otp.json"
+            ],
+            "checksum": "6eb100c995ad79f5adaa32e8543c843833221be95038b8f25a9f0c5648e8c502",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
       "label": {
         "latest": "0.2.2",
         "versions": [
@@ -3032,6 +3223,39 @@
           }
         }
       },
+      "slider": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "slider",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/slider.json",
+            "description": "component/slider",
+            "tags": [
+              "component",
+              "slider"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/slider.json"
+            ],
+            "checksum": "d9dff6775aeb4b112b3a774a5b548b875337d1df1da5f097fcc44b00c1a8d911",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
       "status-badge": {
         "latest": "0.2.2",
         "versions": [
@@ -3221,6 +3445,72 @@
               "registry/components/theme-switcher.json"
             ],
             "checksum": "dd5f25fa0ce36437f19e833ed771ed3429e24c99a95e582eaa6fa977cf972194",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "toggle": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "toggle",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/toggle.json",
+            "description": "component/toggle",
+            "tags": [
+              "component",
+              "toggle"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/toggle.json"
+            ],
+            "checksum": "91b0830aa245c3944af6e892997098f4f5f08a3d161b6910ed93ed197bc7a2e5",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "toggle-group": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "toggle-group",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/toggle-group.json",
+            "description": "component/toggle-group",
+            "tags": [
+              "component",
+              "toggle-group"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/toggle-group.json"
+            ],
+            "checksum": "1ebec356c2bf6e7184a489f748a8ed63b24514ff3d1a1650b46d0b4d7dc29df2",
             "category": "component",
             "scenarios": [
               "component"

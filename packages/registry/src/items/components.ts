@@ -129,6 +129,16 @@ export const componentRegistryItems: RegistryItem[] = [
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
+    name: "input-number",
+    source: "packages/components/src/primitives/input-number.tsx",
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "input-otp",
+    source: "packages/components/src/primitives/input-otp.tsx",
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
     name: "label",
     source: "packages/components/src/primitives/label.tsx",
     dependencies: ["@radix-ui/react-label"],
@@ -182,6 +192,12 @@ export const componentRegistryItems: RegistryItem[] = [
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
+    name: "slider",
+    source: "packages/components/src/primitives/slider.tsx",
+    dependencies: ["@radix-ui/react-slider"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
     name: "steps",
     source: "packages/components/src/primitives/steps.tsx",
     dependencies: ["class-variance-authority"],
@@ -203,6 +219,18 @@ export const componentRegistryItems: RegistryItem[] = [
     name: "textarea",
     source: "packages/components/src/primitives/textarea.tsx",
     registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "toggle",
+    source: "packages/components/src/primitives/toggle.tsx",
+    dependencies: ["@radix-ui/react-toggle", "class-variance-authority"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "toggle-group",
+    source: "packages/components/src/primitives/toggle-group.tsx",
+    dependencies: ["@radix-ui/react-toggle-group", "class-variance-authority"],
+    registryDependencies: ["lib-cn", "toggle"]
   }),
   componentItem({
     name: "tooltip",

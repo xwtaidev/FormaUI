@@ -1,0 +1,37 @@
+{
+  "name": "input-number",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/input-number.tsx",
+      "target": "components/primitives/input-number.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/input-number",
+  "tags": [
+    "component",
+    "input-number"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/input-number.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "e1139862576ab3a34b00cbca2f3ba54360f6caa2763b15f9bd872f4598687fdc"
+}
