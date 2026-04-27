@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-04-27T00:42:18.988Z",
-  "total": 77,
+  "generatedAt": "2026-04-27T14:02:57.912Z",
+  "total": 82,
   "items": [
     {
       "kind": "component",
@@ -179,6 +179,31 @@
     },
     {
       "kind": "component",
+      "name": "calendar",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/calendar.json",
+      "description": "component/calendar",
+      "tags": [
+        "component",
+        "calendar"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/calendar.json"
+      ],
+      "checksum": "0db31d6891fbe3a222441f68139c34b475a90be3a8a6b4587c237255000d7c0d",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
       "name": "card",
       "type": "component",
       "version": "0.2.2",
@@ -254,6 +279,31 @@
     },
     {
       "kind": "component",
+      "name": "combobox",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/combobox.json",
+      "description": "component/combobox",
+      "tags": [
+        "component",
+        "combobox"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/combobox.json"
+      ],
+      "checksum": "1b528b9c5d7ff5bc99e3d4040bb84f850db25ffcafcd34b6fbe7c19fff5fdabe",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
       "name": "context-menu",
       "type": "component",
       "version": "0.2.2",
@@ -320,6 +370,31 @@
         "registry/components/data-table-toolbar.json"
       ],
       "checksum": "602c8f430ab1c8ac5c9c2aa3027dfe1916245951d245708a81f5f996f7516433",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "date-picker",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/date-picker.json",
+      "description": "component/date-picker",
+      "tags": [
+        "component",
+        "date-picker"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/date-picker.json"
+      ],
+      "checksum": "7df9cf25714b02399371ee83583e0fd94a27552a5e1d4a83740687bc9fc5ae3e",
       "category": "component",
       "scenarios": [
         "component"
@@ -1154,6 +1229,31 @@
     },
     {
       "kind": "component",
+      "name": "toast",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/toast.json",
+      "description": "component/toast",
+      "tags": [
+        "component",
+        "toast"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/toast.json"
+      ],
+      "checksum": "c8ace8ae7b5f179b5c44ea9d5ae7ee80cd46ff098fbf6af7f3a78dc3735064f2",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
       "name": "toggle",
       "type": "component",
       "version": "0.2.2",
@@ -1245,6 +1345,31 @@
         "registry/components/typography.json"
       ],
       "checksum": "4f0414dc745a906556e0901e3b490c9d8f1da423a706bc69039d766540e19a87",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "upload",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/upload.json",
+      "description": "component/upload",
+      "tags": [
+        "component",
+        "upload"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/upload.json"
+      ],
+      "checksum": "8f8303e791b5eb9a307fd90b8fc7f7e7fbdb8a8fbbc04da0140de16a6a9d1abc",
       "category": "component",
       "scenarios": [
         "component"
@@ -2167,6 +2292,39 @@
           }
         }
       },
+      "calendar": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "calendar",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/calendar.json",
+            "description": "component/calendar",
+            "tags": [
+              "component",
+              "calendar"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/calendar.json"
+            ],
+            "checksum": "0db31d6891fbe3a222441f68139c34b475a90be3a8a6b4587c237255000d7c0d",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
       "card": {
         "latest": "0.2.2",
         "versions": [
@@ -2266,6 +2424,39 @@
           }
         }
       },
+      "combobox": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "combobox",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/combobox.json",
+            "description": "component/combobox",
+            "tags": [
+              "component",
+              "combobox"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/combobox.json"
+            ],
+            "checksum": "1b528b9c5d7ff5bc99e3d4040bb84f850db25ffcafcd34b6fbe7c19fff5fdabe",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
       "context-menu": {
         "latest": "0.2.2",
         "versions": [
@@ -2356,6 +2547,39 @@
               "registry/components/data-table-toolbar.json"
             ],
             "checksum": "602c8f430ab1c8ac5c9c2aa3027dfe1916245951d245708a81f5f996f7516433",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "date-picker": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "date-picker",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/date-picker.json",
+            "description": "component/date-picker",
+            "tags": [
+              "component",
+              "date-picker"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/date-picker.json"
+            ],
+            "checksum": "7df9cf25714b02399371ee83583e0fd94a27552a5e1d4a83740687bc9fc5ae3e",
             "category": "component",
             "scenarios": [
               "component"
@@ -3454,6 +3678,39 @@
           }
         }
       },
+      "toast": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "toast",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/toast.json",
+            "description": "component/toast",
+            "tags": [
+              "component",
+              "toast"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/toast.json"
+            ],
+            "checksum": "c8ace8ae7b5f179b5c44ea9d5ae7ee80cd46ff098fbf6af7f3a78dc3735064f2",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
       "toggle": {
         "latest": "0.2.2",
         "versions": [
@@ -3577,6 +3834,39 @@
               "registry/components/typography.json"
             ],
             "checksum": "4f0414dc745a906556e0901e3b490c9d8f1da423a706bc69039d766540e19a87",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "upload": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "upload",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/upload.json",
+            "description": "component/upload",
+            "tags": [
+              "component",
+              "upload"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/upload.json"
+            ],
+            "checksum": "8f8303e791b5eb9a307fd90b8fc7f7e7fbdb8a8fbbc04da0140de16a6a9d1abc",
             "category": "component",
             "scenarios": [
               "component"

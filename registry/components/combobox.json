@@ -1,0 +1,41 @@
+{
+  "name": "combobox",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "lucide-react"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn",
+    "button",
+    "input",
+    "popover"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/combobox.tsx",
+      "target": "components/primitives/combobox.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/combobox",
+  "tags": [
+    "component",
+    "combobox"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/combobox.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "1b528b9c5d7ff5bc99e3d4040bb84f850db25ffcafcd34b6fbe7c19fff5fdabe"
+}

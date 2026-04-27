@@ -1,0 +1,38 @@
+{
+  "name": "calendar",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "lucide-react"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/calendar.tsx",
+      "target": "components/primitives/calendar.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/calendar",
+  "tags": [
+    "component",
+    "calendar"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/calendar.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "0db31d6891fbe3a222441f68139c34b475a90be3a8a6b4587c237255000d7c0d"
+}

@@ -71,6 +71,12 @@ export const componentRegistryItems: RegistryItem[] = [
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
+    name: "calendar",
+    source: "packages/components/src/primitives/calendar.tsx",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
     name: "breadcrumb",
     source: "packages/components/src/primitives/breadcrumb.tsx",
     dependencies: ["lucide-react"],
@@ -94,10 +100,22 @@ export const componentRegistryItems: RegistryItem[] = [
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
+    name: "combobox",
+    source: "packages/components/src/primitives/combobox.tsx",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["lib-cn", "button", "input", "popover"]
+  }),
+  componentItem({
     name: "context-menu",
     source: "packages/components/src/primitives/context-menu.tsx",
     dependencies: ["@radix-ui/react-context-menu", "lucide-react"],
     registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "date-picker",
+    source: "packages/components/src/primitives/date-picker.tsx",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["lib-cn", "button", "calendar", "popover"]
   }),
   componentItem({
     name: "dialog",
@@ -221,6 +239,12 @@ export const componentRegistryItems: RegistryItem[] = [
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
+    name: "toast",
+    source: "packages/components/src/primitives/toast.tsx",
+    dependencies: ["@radix-ui/react-toast", "class-variance-authority", "lucide-react"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
     name: "toggle",
     source: "packages/components/src/primitives/toggle.tsx",
     dependencies: ["@radix-ui/react-toggle", "class-variance-authority"],
@@ -242,6 +266,11 @@ export const componentRegistryItems: RegistryItem[] = [
     name: "typography",
     source: "packages/components/src/primitives/typography.tsx",
     dependencies: ["class-variance-authority"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "upload",
+    source: "packages/components/src/primitives/upload.tsx",
     registryDependencies: ["lib-cn"]
   }),
   componentItem({

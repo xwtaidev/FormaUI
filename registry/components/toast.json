@@ -1,0 +1,40 @@
+{
+  "name": "toast",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "@radix-ui/react-toast",
+    "class-variance-authority",
+    "lucide-react"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/toast.tsx",
+      "target": "components/primitives/toast.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/toast",
+  "tags": [
+    "component",
+    "toast"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/toast.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "c8ace8ae7b5f179b5c44ea9d5ae7ee80cd46ff098fbf6af7f3a78dc3735064f2"
+}

@@ -1,0 +1,45 @@
+# Upload
+
+## Overview
+
+`Upload` provides the v0.6 baseline upload flow: single file selection with local type and size validation.
+
+## Installation
+
+```bash
+npx formaui add upload
+```
+
+## Usage
+
+```tsx
+import { Upload } from "@/components/primitives/upload";
+
+export function AvatarUpload() {
+  return (
+    <Upload
+      accept="image/png,image/jpeg"
+      allowedTypes={["image/png", "image/jpeg"]}
+      maxSizeInBytes={2 * 1024 * 1024}
+      onValueChange={(file) => console.log(file)}
+    />
+  );
+}
+```
+
+## v0.6 Scope
+
+- Single-file flow only.
+- Validation is local (type and size); transport logic stays in app/business layers.
+- Drag-and-drop, chunking, and resumable upload are intentionally deferred.
+
+## Accessibility
+
+- Uses native file input semantics for assistive technologies.
+- Validation errors are exposed through `role="alert"`.
+- Includes explicit clear action to remove current selection.
+
+## Source Code
+
+- `packages/components/src/primitives/upload.tsx`
+- `registry/components/upload.json`

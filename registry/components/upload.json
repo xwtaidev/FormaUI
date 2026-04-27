@@ -1,0 +1,37 @@
+{
+  "name": "upload",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/upload.tsx",
+      "target": "components/primitives/upload.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/upload",
+  "tags": [
+    "component",
+    "upload"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/upload.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "8f8303e791b5eb9a307fd90b8fc7f7e7fbdb8a8fbbc04da0140de16a6a9d1abc"
+}
