@@ -41,6 +41,29 @@ function createLogBucket(): CapturedLogs {
   };
 }
 
+const v06ComponentNames = [
+  "alert",
+  "breadcrumb",
+  "label",
+  "typography",
+  "steps",
+  "collapse",
+  "navigation-menu",
+  "menubar",
+  "context-menu",
+  "drawer",
+  "input-number",
+  "slider",
+  "toggle",
+  "toggle-group",
+  "input-otp",
+  "upload",
+  "calendar",
+  "date-picker",
+  "combobox",
+  "toast"
+] as const;
+
 async function exists(path: string) {
   try {
     await access(path, constants.F_OK);
@@ -74,6 +97,39 @@ async function createRegistryFixture() {
     "utf8"
   );
   await writeFile(resolve(sourcesRoot, "default.css"), ":root { --background: #fff; }\n", "utf8");
+
+  for (const componentName of v06ComponentNames) {
+    await writeFile(
+      resolve(sourcesRoot, `${componentName}.tsx`),
+      `export const fixture = "${componentName}";\n`,
+      "utf8"
+    );
+    await writeFile(
+      resolve(registryRoot, `components/${componentName}.json`),
+      JSON.stringify(
+        {
+          name: componentName,
+          type: "component",
+          category: "wave-v06",
+          scenarios: ["v0.6", "primitives"],
+          complexity: "low",
+          stability: "beta",
+          dependencies: ["react"],
+          devDependencies: [],
+          registryDependencies: [],
+          files: [
+            {
+              source: resolve(sourcesRoot, `${componentName}.tsx`),
+              target: `components/primitives/${componentName}.tsx`
+            }
+          ]
+        },
+        null,
+        2
+      ),
+      "utf8"
+    );
+  }
 
   await writeFile(
     resolve(registryRoot, "components/button.json"),
@@ -370,6 +426,33 @@ describe("formaui discoverability commands", () => {
       await runCli(["search", "dashboard", "--registry", registryRoot, "--scenario", "ai"], { logger });
       expect(logs.info.some((line) => line.includes("template/ai-console-lite"))).toBe(true);
       expect(logs.info.some((line) => line.includes("block/dashboard-shell"))).toBe(false);
+    } finally {
+      await rm(fixtureRoot, { recursive: true, force: true });
+    }
+  });
+
+  it("surfaces v0.6 components through list/search/info flows", async () => {
+    const { root: fixtureRoot, registryRoot } = await createRegistryFixture();
+    const logs = createLogBucket();
+    const logger = createCapturedLogger(logs);
+
+    try {
+      await runCli(["list", "--registry", registryRoot, "--kind", "component"], { logger });
+      for (const componentName of v06ComponentNames) {
+        expect(logs.info.some((line) => line.includes(`component/${componentName}`))).toBe(true);
+      }
+
+      logs.info.length = 0;
+      await runCli(["search", "wave-v06", "--registry", registryRoot], { logger });
+      expect(logs.info.some((line) => line.includes("component/upload"))).toBe(true);
+      expect(logs.info.some((line) => line.includes("component/combobox"))).toBe(true);
+      expect(logs.info.some((line) => line.includes("component/toast"))).toBe(true);
+
+      logs.info.length = 0;
+      await runCli(["info", "upload", "--kind", "component", "--registry", registryRoot], { logger });
+      expect(logs.info.some((line) => line.includes("Name: upload"))).toBe(true);
+      expect(logs.info.some((line) => line.includes("Category: wave-v06"))).toBe(true);
+      expect(logs.info.some((line) => line.includes("Scenarios: v0.6, primitives"))).toBe(true);
     } finally {
       await rm(fixtureRoot, { recursive: true, force: true });
     }

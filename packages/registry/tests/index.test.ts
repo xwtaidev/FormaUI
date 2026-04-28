@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { buildRegistryIndex, type RegistryItem } from "../src";
+import { componentRegistryItems } from "../src/items/components";
 
 describe("registry index builder", () => {
   it("builds grouped index entries by kind/name/version", () => {
@@ -81,5 +82,42 @@ describe("registry index builder", () => {
 
     expect(result.byKind.theme.default?.latest).toBe("0.2.2");
     expect(result.byKind.theme.default?.entries["0.2.2"]?.path).toBe("themes/default.json");
+  });
+
+  it("includes v0.6 component wave entries in registry index output", () => {
+    const result = buildRegistryIndex({
+      items: componentRegistryItems,
+      generatedAt: "2026-04-28T00:00:00.000Z",
+      fallbackVersion: "0.6.0"
+    });
+
+    const v06ComponentNames = [
+      "alert",
+      "breadcrumb",
+      "label",
+      "typography",
+      "steps",
+      "collapse",
+      "navigation-menu",
+      "menubar",
+      "context-menu",
+      "drawer",
+      "input-number",
+      "slider",
+      "toggle",
+      "toggle-group",
+      "input-otp",
+      "upload",
+      "calendar",
+      "date-picker",
+      "combobox",
+      "toast"
+    ] as const;
+
+    for (const componentName of v06ComponentNames) {
+      expect(result.byKind.component[componentName]?.entries["0.6.0"]?.path).toBe(
+        `components/${componentName}.json`
+      );
+    }
   });
 });
