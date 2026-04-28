@@ -36,8 +36,9 @@ const defaultElementByVariant = {
 
 export type TypographyVariant = NonNullable<VariantProps<typeof typographyVariants>["variant"]>;
 
-export interface TypographyProps extends React.HTMLAttributes<HTMLElement>, VariantProps<typeof typographyVariants> {
+export interface TypographyProps extends React.HTMLAttributes<HTMLElement> {
   as?: keyof React.JSX.IntrinsicElements;
+  variant?: TypographyVariant;
 }
 
 export const Typography = React.forwardRef<HTMLElement, TypographyProps>(

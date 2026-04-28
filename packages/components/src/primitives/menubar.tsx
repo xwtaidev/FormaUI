@@ -17,7 +17,7 @@ export const Menubar = React.forwardRef<
 
 Menubar.displayName = MenubarPrimitive.Root.displayName;
 
-export const MenubarMenu = MenubarPrimitive.Menu;
+export const MenubarMenu: typeof MenubarPrimitive.Menu = MenubarPrimitive.Menu;
 
 export const MenubarGroup = MenubarPrimitive.Group;
 

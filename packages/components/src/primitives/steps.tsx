@@ -46,8 +46,9 @@ const StepsContext = React.createContext<StepsContextValue>({
   direction: "horizontal"
 });
 
-export interface StepsProps extends React.OlHTMLAttributes<HTMLOListElement>, VariantProps<typeof stepsVariants> {
+export interface StepsProps extends React.OlHTMLAttributes<HTMLOListElement> {
   current?: number;
+  direction?: NonNullable<VariantProps<typeof stepsVariants>["direction"]>;
 }
 
 const STEP_KEYS = new Set(["ArrowRight", "ArrowDown", "ArrowLeft", "ArrowUp", "Home", "End"]);

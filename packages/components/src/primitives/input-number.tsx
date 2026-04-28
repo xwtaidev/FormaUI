@@ -14,9 +14,12 @@ function clamp(value: number, min?: number, max?: number) {
 }
 
 export interface InputNumberProps
-  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "value" | "defaultValue" | "onChange"> {
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "value" | "defaultValue" | "onChange" | "min" | "max" | "step"> {
   value?: number;
   defaultValue?: number;
+  min?: number;
+  max?: number;
+  step?: number;
   onValueChange?: (value: number) => void;
 }
 
