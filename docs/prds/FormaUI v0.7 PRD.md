@@ -266,7 +266,47 @@ v0.6 (56 components, foundational parity)
 
 ---
 
-## 12. 参考链接
+## 12. v0.7.1 Contract Freeze（Scope / API / Dependency）
+
+### 12.1 Scope and Responsibility Boundaries
+
+1. `tree-select` 负责“层级选择 + 输入框回显”，`select` 仅负责“平铺选项选择”。
+2. `cascader` 负责“按层级路径逐级选择”，`tree-select` 负责“在树中直接展开选择”。
+3. `segmented` 负责“轻量模式切换”，`tabs` 负责“带面板内容的分区切换”。
+4. `anchor` 负责“页内目录跳转”，`affix` 负责“固定定位容器”，`backtop` 负责“快速回到顶部动作”。
+5. `result` 负责“结果页状态反馈”，`alert` 负责“局部内联告警提示”。
+6. `descriptions` 负责“键值对信息摘要”，`table`/`data-table` 负责“可操作数据网格”。
+
+### 12.2 Minimal API and Dependency Strategy (Frozen)
+
+| Component | Minimal API (v0.7) | Dependency Strategy |
+| --- | --- | --- |
+| `affix` | `children`, `offsetTop?`, `offsetBottom?`, `onChange?` | non-Radix + composition |
+| `anchor` | `items`, `value?`, `onValueChange?`, `offsetTop?` | non-Radix + composition |
+| `backtop` | `visibilityHeight?`, `target?`, `onClick?` | non-Radix + composition |
+| `cascader` | `options`, `value?`, `onValueChange?`, `placeholder?`, `disabled?` | non-Radix + composition (`popover` + `command`-like panel) |
+| `color-picker` | `value?`, `defaultValue?`, `onValueChange?`, `disabled?` | non-Radix + composition (`input` + popover panel) |
+| `rate` | `value?`, `defaultValue?`, `onValueChange?`, `count?`, `allowHalf?`, `disabled?` | non-Radix |
+| `time-picker` | `value?`, `defaultValue?`, `onValueChange?`, `format?`, `disabled?`, `placeholder?` | non-Radix + composition (`input` + panel) |
+| `tree` | `data`, `expandedKeys?`, `selectedKeys?`, `onExpandedChange?`, `onSelectedChange?` | non-Radix |
+| `tree-select` | `data`, `value?`, `onValueChange?`, `placeholder?`, `disabled?`, `multiple?` | non-Radix + composition (`popover` + `tree`) |
+| `transfer` | `data`, `targetKeys`, `selectedKeys?`, `onChange`, `onSelectChange?`, `disabled?` | non-Radix |
+| `segmented` | `options`, `value?`, `onValueChange?`, `disabled?`, `size?` | Radix (`@radix-ui/react-toggle-group`) |
+| `timeline` | `items`, `mode?`, `pending?` | non-Radix |
+| `descriptions` | `items`, `column?`, `size?`, `bordered?`, `labelWidth?` | non-Radix |
+| `result` | `status?`, `title`, `description?`, `extra?`, `icon?` | non-Radix |
+| `spin` | `spinning?`, `tip?`, `size?`, `children?`, `delay?` | non-Radix |
+| `image` | `src`, `alt`, `fallback?`, `preview?`, `onError?` | non-Radix |
+
+### 12.3 v0.7 Dependency Policy
+
+1. 仅 `segmented` 在 v0.7 P0 默认引入新增 Radix 依赖：`@radix-ui/react-toggle-group`（仓库已存在则不新增）。
+2. `tree` / `cascader` / `tree-select` / `transfer` 优先用组合实现，不新增重型树组件依赖。
+3. 所有新增组件必须遵循统一受控模式：优先 `value/onValueChange`，补充 `defaultValue` 非受控入口。
+
+---
+
+## 13. 参考链接
 
 1. [Element Plus Components Overview](https://element-plus.org/en-US/component/overview.html)
 2. [Ant Design 5 Components Overview](https://5x-ant-design.antgroup.com/components/overview/)
