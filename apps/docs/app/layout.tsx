@@ -54,24 +54,37 @@ const navSections: Array<{ title: string; links: Array<{ href: string; label: st
   {
     title: "Components",
     links: [
+      { href: "/components/alert", label: "alert" },
       { href: "/components/accordion", label: "accordion" },
       { href: "/components/app-sidebar", label: "app-sidebar" },
       { href: "/components/avatar", label: "avatar" },
       { href: "/components/badge", label: "badge" },
+      { href: "/components/breadcrumb", label: "breadcrumb" },
       { href: "/components/button", label: "button" },
+      { href: "/components/calendar", label: "calendar" },
       { href: "/components/card", label: "card" },
       { href: "/components/checkbox", label: "checkbox" },
+      { href: "/components/collapse", label: "collapse" },
+      { href: "/components/combobox", label: "combobox" },
+      { href: "/components/context-menu", label: "context-menu" },
       { href: "/components/data-table", label: "data-table" },
       { href: "/components/data-table-toolbar", label: "data-table-toolbar" },
+      { href: "/components/date-picker", label: "date-picker" },
       { href: "/components/dialog", label: "dialog" },
+      { href: "/components/drawer", label: "drawer" },
       { href: "/components/dropdown-menu", label: "dropdown-menu" },
       { href: "/components/empty-search-state", label: "empty-search-state" },
       { href: "/components/empty-state", label: "empty-state" },
       { href: "/components/form-field", label: "form-field" },
       { href: "/components/hover-card", label: "hover-card" },
       { href: "/components/input", label: "input" },
+      { href: "/components/input-number", label: "input-number" },
+      { href: "/components/input-otp", label: "input-otp" },
+      { href: "/components/label", label: "label" },
       { href: "/components/lib-cn", label: "lib-cn" },
       { href: "/components/metric-card", label: "metric-card" },
+      { href: "/components/menubar", label: "menubar" },
+      { href: "/components/navigation-menu", label: "navigation-menu" },
       { href: "/components/pagination-bar", label: "pagination-bar" },
       { href: "/components/page-header", label: "page-header" },
       { href: "/components/popover", label: "popover" },
@@ -81,12 +94,19 @@ const navSections: Array<{ title: string; links: Array<{ href: string; label: st
       { href: "/components/select", label: "select" },
       { href: "/components/separator", label: "separator" },
       { href: "/components/skeleton", label: "skeleton" },
+      { href: "/components/slider", label: "slider" },
+      { href: "/components/steps", label: "steps" },
       { href: "/components/status-badge", label: "status-badge" },
       { href: "/components/switch", label: "switch" },
       { href: "/components/tabs", label: "tabs" },
       { href: "/components/textarea", label: "textarea" },
+      { href: "/components/toast", label: "toast" },
       { href: "/components/theme-switcher", label: "theme-switcher" },
+      { href: "/components/toggle", label: "toggle" },
+      { href: "/components/toggle-group", label: "toggle-group" },
       { href: "/components/tooltip", label: "tooltip" },
+      { href: "/components/typography", label: "typography" },
+      { href: "/components/upload", label: "upload" },
       { href: "/components/user-menu", label: "user-menu" },
       { href: "/components/date-range-picker", label: "date-range-picker" },
       { href: "/components/filter-bar", label: "filter-bar" }
@@ -157,7 +177,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <aside className="border-b border-slate-200 p-6 lg:border-b-0 lg:border-r">
             <Link href="/" className="block">
               <p className="text-sm uppercase tracking-wide text-slate-500">FormaUI</p>
-              <h1 className="text-2xl font-semibold">v0.5 Docs</h1>
+              <h1 className="text-2xl font-semibold">v0.6 Docs</h1>
             </Link>
             <div className="mt-4">
               <Link

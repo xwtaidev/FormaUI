@@ -1,0 +1,38 @@
+{
+  "name": "label",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "@radix-ui/react-label"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/label.tsx",
+      "target": "components/primitives/label.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/label",
+  "tags": [
+    "component",
+    "label"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/label.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "13e5394230cf709040b5aae7233011c93dcd31d20da396045f7fc244443d1e51"
+}

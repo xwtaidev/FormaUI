@@ -41,6 +41,12 @@ export const componentRegistryItems: RegistryItem[] = [
     ]
   },
   componentItem({
+    name: "alert",
+    source: "packages/components/src/primitives/alert.tsx",
+    dependencies: ["class-variance-authority"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
     name: "accordion",
     source: "packages/components/src/primitives/accordion.tsx",
     dependencies: ["@radix-ui/react-accordion", "lucide-react"],
@@ -65,6 +71,18 @@ export const componentRegistryItems: RegistryItem[] = [
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
+    name: "calendar",
+    source: "packages/components/src/primitives/calendar.tsx",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "breadcrumb",
+    source: "packages/components/src/primitives/breadcrumb.tsx",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
     name: "card",
     source: "packages/components/src/primitives/card.tsx",
     registryDependencies: ["lib-cn"]
@@ -76,9 +94,39 @@ export const componentRegistryItems: RegistryItem[] = [
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
+    name: "collapse",
+    source: "packages/components/src/primitives/collapse.tsx",
+    dependencies: ["@radix-ui/react-collapsible", "lucide-react"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "combobox",
+    source: "packages/components/src/primitives/combobox.tsx",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["lib-cn", "button", "input", "popover"]
+  }),
+  componentItem({
+    name: "context-menu",
+    source: "packages/components/src/primitives/context-menu.tsx",
+    dependencies: ["@radix-ui/react-context-menu", "lucide-react"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "date-picker",
+    source: "packages/components/src/primitives/date-picker.tsx",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["lib-cn", "button", "calendar", "popover"]
+  }),
+  componentItem({
     name: "dialog",
     source: "packages/components/src/primitives/dialog.tsx",
     dependencies: ["@radix-ui/react-dialog", "lucide-react"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "drawer",
+    source: "packages/components/src/primitives/drawer.tsx",
+    dependencies: ["@radix-ui/react-dialog", "class-variance-authority", "lucide-react"],
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
@@ -96,6 +144,34 @@ export const componentRegistryItems: RegistryItem[] = [
   componentItem({
     name: "input",
     source: "packages/components/src/primitives/input.tsx",
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "input-number",
+    source: "packages/components/src/primitives/input-number.tsx",
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "input-otp",
+    source: "packages/components/src/primitives/input-otp.tsx",
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "label",
+    source: "packages/components/src/primitives/label.tsx",
+    dependencies: ["@radix-ui/react-label"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "menubar",
+    source: "packages/components/src/primitives/menubar.tsx",
+    dependencies: ["@radix-ui/react-menubar", "lucide-react"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "navigation-menu",
+    source: "packages/components/src/primitives/navigation-menu.tsx",
+    dependencies: ["@radix-ui/react-navigation-menu", "class-variance-authority", "lucide-react"],
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
@@ -134,6 +210,18 @@ export const componentRegistryItems: RegistryItem[] = [
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
+    name: "slider",
+    source: "packages/components/src/primitives/slider.tsx",
+    dependencies: ["@radix-ui/react-slider"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "steps",
+    source: "packages/components/src/primitives/steps.tsx",
+    dependencies: ["class-variance-authority"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
     name: "switch",
     source: "packages/components/src/primitives/switch.tsx",
     dependencies: ["@radix-ui/react-switch"],
@@ -151,9 +239,38 @@ export const componentRegistryItems: RegistryItem[] = [
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
+    name: "toast",
+    source: "packages/components/src/primitives/toast.tsx",
+    dependencies: ["@radix-ui/react-toast", "class-variance-authority", "lucide-react"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "toggle",
+    source: "packages/components/src/primitives/toggle.tsx",
+    dependencies: ["@radix-ui/react-toggle", "class-variance-authority"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "toggle-group",
+    source: "packages/components/src/primitives/toggle-group.tsx",
+    dependencies: ["@radix-ui/react-toggle-group", "class-variance-authority"],
+    registryDependencies: ["lib-cn", "toggle"]
+  }),
+  componentItem({
     name: "tooltip",
     source: "packages/components/src/primitives/tooltip.tsx",
     dependencies: ["@radix-ui/react-tooltip"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "typography",
+    source: "packages/components/src/primitives/typography.tsx",
+    dependencies: ["class-variance-authority"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "upload",
+    source: "packages/components/src/primitives/upload.tsx",
     registryDependencies: ["lib-cn"]
   }),
   componentItem({

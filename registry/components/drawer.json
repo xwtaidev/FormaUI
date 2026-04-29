@@ -1,0 +1,40 @@
+{
+  "name": "drawer",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "@radix-ui/react-dialog",
+    "class-variance-authority",
+    "lucide-react"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/drawer.tsx",
+      "target": "components/primitives/drawer.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/drawer",
+  "tags": [
+    "component",
+    "drawer"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/drawer.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "e150210f3f1f2a714967e3a10e9aabcc6c3ce5d3f7571dc3bcdfef4cf7c6cacf"
+}

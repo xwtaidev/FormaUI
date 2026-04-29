@@ -65,6 +65,18 @@ import {
   TooltipProvider,
   TooltipTrigger
 } from "@formaui/components";
+import {
+  Calendar,
+  Combobox,
+  DatePicker,
+  Toast,
+  ToastClose,
+  ToastDescription,
+  ToastProvider,
+  ToastTitle,
+  ToastViewport,
+  Upload
+} from "@formaui/components/src";
 
 export default function ComponentsPage() {
   const [emailEnabled, setEmailEnabled] = useState(true);
@@ -76,6 +88,11 @@ export default function ComponentsPage() {
   const [toolbarPageSize, setToolbarPageSize] = useState(2);
   const [selectedRange, setSelectedRange] = useState({ from: "2026-04-01", to: "2026-04-30" });
   const [filters, setFilters] = useState({ query: "", status: "all", range: { from: "", to: "" } });
+  const [calendarDate, setCalendarDate] = useState<Date | undefined>(new Date(2026, 3, 20));
+  const [singleDate, setSingleDate] = useState<Date | undefined>(new Date(2026, 3, 24));
+  const [owner, setOwner] = useState("design");
+  const [uploadedFileName, setUploadedFileName] = useState("none");
+  const [toastOpen, setToastOpen] = useState(false);
   const memberRows = [
     { name: "Avery Lin", role: "Product Lead", score: 98 },
     { name: "Riley Chen", role: "ML Engineer", score: 92 },
@@ -100,7 +117,7 @@ export default function ComponentsPage() {
         <section>
           <h2 className="text-2xl font-semibold">Primitive Components</h2>
           <p className="text-sm text-muted-foreground">
-            v0.3.5 component set includes Wave A/B/C coverage and pack-ready compositions for dashboard and form
+            v0.6 component set includes Wave A/B/C/D coverage and pack-ready compositions for dashboard and form
             workflows.
           </p>
         </section>
@@ -384,6 +401,69 @@ export default function ComponentsPage() {
                 Filters: query={filters.query || "none"}, status={filters.status}, from=
                 {filters.range.from || "unset"}, to={filters.range.to || "unset"}
               </p>
+            </CardContent>
+          </Card>
+
+          <Card className="md:col-span-2">
+            <CardHeader>
+              <CardTitle>Wave D Scenario: date, upload, feedback</CardTitle>
+              <CardDescription>
+                Combines upload, calendar, date-picker, combobox, and toast in a single scheduling flow.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-5">
+              <div className="grid gap-4 md:grid-cols-2">
+                <div className="space-y-2">
+                  <p className="text-sm font-medium">Calendar</p>
+                  <Calendar value={calendarDate} onSelect={setCalendarDate} />
+                  <p className="text-xs text-muted-foreground">
+                    Selected day: {calendarDate ? calendarDate.toDateString() : "none"}
+                  </p>
+                </div>
+                <div className="space-y-3">
+                  <p className="text-sm font-medium">Date picker / owner / upload</p>
+                  <DatePicker value={singleDate} onChange={setSingleDate} />
+                  <Combobox
+                    value={owner}
+                    onValueChange={setOwner}
+                    options={[
+                      { value: "design", label: "Design Team", keywords: ["ux", "ui"] },
+                      { value: "engineering", label: "Engineering Team", keywords: ["frontend", "backend"] },
+                      { value: "ops", label: "Operations Team", keywords: ["support"] }
+                    ]}
+                    placeholder="Select owner"
+                    searchPlaceholder="Search owner"
+                  />
+                  <Upload
+                    accept="image/png,image/jpeg"
+                    allowedTypes={["image/png", "image/jpeg"]}
+                    maxSizeInBytes={2 * 1024 * 1024}
+                    helperText="Upload release attachment (max 2MB)."
+                    onValueChange={(file) => setUploadedFileName(file?.name ?? "none")}
+                  />
+                  <p className="text-xs text-muted-foreground">Owner: {owner}</p>
+                  <p className="text-xs text-muted-foreground">Uploaded file: {uploadedFileName}</p>
+                </div>
+              </div>
+
+              <ToastProvider>
+                <div className="flex items-center gap-3">
+                  <Button type="button" onClick={() => setToastOpen(true)}>
+                    Trigger toast
+                  </Button>
+                  <p className="text-xs text-muted-foreground">
+                    Date: {singleDate ? singleDate.toDateString() : "none"}
+                  </p>
+                </div>
+                <Toast open={toastOpen} onOpenChange={setToastOpen}>
+                  <div className="space-y-1">
+                    <ToastTitle>Schedule saved</ToastTitle>
+                    <ToastDescription>Wave D fields were validated and captured.</ToastDescription>
+                  </div>
+                  <ToastClose />
+                </Toast>
+                <ToastViewport />
+              </ToastProvider>
             </CardContent>
           </Card>
         </section>

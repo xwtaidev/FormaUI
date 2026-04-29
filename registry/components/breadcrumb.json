@@ -1,0 +1,38 @@
+{
+  "name": "breadcrumb",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "lucide-react"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/breadcrumb.tsx",
+      "target": "components/primitives/breadcrumb.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/breadcrumb",
+  "tags": [
+    "component",
+    "breadcrumb"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/breadcrumb.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "d68df13e92e38e7d43beac8f94b82b97d6f767aba9e48c2d2e7c8d2770846d28"
+}

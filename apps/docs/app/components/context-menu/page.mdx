@@ -1,0 +1,45 @@
+# Context Menu
+
+## Overview
+
+`ContextMenu` exposes contextual commands from right-click or long-press interactions.
+
+## Installation
+
+```bash
+npx formaui add context-menu
+```
+
+## Usage
+
+```tsx
+import { ContextMenu, ContextMenuContent, ContextMenuItem, ContextMenuTrigger } from "@/components/primitives/context-menu";
+
+export function GridContextMenu() {
+  return (
+    <ContextMenu>
+      <ContextMenuTrigger className="rounded-md border border-dashed p-6">Right-click this card</ContextMenuTrigger>
+      <ContextMenuContent>
+        <ContextMenuItem>Duplicate row</ContextMenuItem>
+        <ContextMenuItem>Archive row</ContextMenuItem>
+      </ContextMenuContent>
+    </ContextMenu>
+  );
+}
+```
+
+## When to Use vs Menubar
+
+- `context-menu`: action scope is tied to a specific target element.
+- `menubar`: action scope is global for the current screen.
+
+## Accessibility
+
+- Supports keyboard opening and navigation through Radix behaviors.
+- Preserves semantic menuitem roles for assistive technologies.
+- Can be configured for non-modal interaction zones when needed.
+
+## Source Code
+
+- `packages/components/src/primitives/context-menu.tsx`
+- `registry/components/context-menu.json`

@@ -1,0 +1,38 @@
+{
+  "name": "steps",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "class-variance-authority"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/steps.tsx",
+      "target": "components/primitives/steps.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/steps",
+  "tags": [
+    "component",
+    "steps"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/steps.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "5d42f066bab5fc642d919e0d3c43e32af54afc2a9fd0a137a4b3ddaac8abfef1"
+}

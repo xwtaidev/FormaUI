@@ -1,0 +1,39 @@
+{
+  "name": "toggle",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "@radix-ui/react-toggle",
+    "class-variance-authority"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/toggle.tsx",
+      "target": "components/primitives/toggle.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/toggle",
+  "tags": [
+    "component",
+    "toggle"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/toggle.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "91b0830aa245c3944af6e892997098f4f5f08a3d161b6910ed93ed197bc7a2e5"
+}

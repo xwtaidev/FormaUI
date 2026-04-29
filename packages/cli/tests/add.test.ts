@@ -35,6 +35,11 @@ async function createRegistryFixture() {
     "export function MetricCard() { return <div>Metric</div>; }\n",
     "utf8"
   );
+  await writeFile(
+    resolve(root, "sources/upload.tsx"),
+    "export function Upload() { return <input type='file' />; }\n",
+    "utf8"
+  );
 
   await writeFile(
     resolve(root, "sources/dashboard-shell.tsx"),
@@ -139,6 +144,25 @@ async function createRegistryFixture() {
             source: resolve(root, "sources/metric-card.tsx"),
             target: "components/composites/metric-card.tsx"
           }
+        ]
+      },
+      null,
+      2
+    ),
+    "utf8"
+  );
+
+  await writeFile(
+    resolve(registryRoot, "components/upload.json"),
+    JSON.stringify(
+      {
+        name: "upload",
+        type: "component",
+        dependencies: ["react"],
+        devDependencies: [],
+        registryDependencies: ["lib-cn"],
+        files: [
+          { source: resolve(root, "sources/upload.tsx"), target: "components/primitives/upload.tsx" }
         ]
       },
       null,
@@ -336,6 +360,30 @@ describe("formaui add", () => {
       const cnFile = await readFile(resolve(projectRoot, "components/lib/cn.ts"), "utf8");
 
       expect(buttonFile).toContain("export function Button");
+      expect(cnFile).toContain("export function cn");
+    } finally {
+      await rm(projectRoot, { recursive: true, force: true });
+      await rm(registryFixtureRoot, { recursive: true, force: true });
+    }
+  });
+
+  it("copies Wave D component files through add command", async () => {
+    const { root: registryFixtureRoot, registryRoot } = await createRegistryFixture();
+    const projectRoot = await createProjectFixture();
+
+    try {
+      await runAddCommand({
+        name: "upload",
+        kind: "component",
+        cwd: projectRoot,
+        yes: true,
+        registryRoot
+      });
+
+      const uploadFile = await readFile(resolve(projectRoot, "components/primitives/upload.tsx"), "utf8");
+      const cnFile = await readFile(resolve(projectRoot, "components/lib/cn.ts"), "utf8");
+
+      expect(uploadFile).toContain("export function Upload");
       expect(cnFile).toContain("export function cn");
     } finally {
       await rm(projectRoot, { recursive: true, force: true });

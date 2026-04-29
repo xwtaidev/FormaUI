@@ -1,0 +1,38 @@
+{
+  "name": "alert",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "class-variance-authority"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/alert.tsx",
+      "target": "components/primitives/alert.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/alert",
+  "tags": [
+    "component",
+    "alert"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/alert.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "2e99add86f031a1cac94de24d4bce60a08b87d66c6aa123a70a41e6719d4941c"
+}

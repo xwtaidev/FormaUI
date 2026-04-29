@@ -1,0 +1,39 @@
+{
+  "name": "menubar",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "@radix-ui/react-menubar",
+    "lucide-react"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/menubar.tsx",
+      "target": "components/primitives/menubar.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/menubar",
+  "tags": [
+    "component",
+    "menubar"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/menubar.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "6a87809653d7a38a4c91c8a4a0847d3faa44586dd04b363afaceacb35986e0b9"
+}

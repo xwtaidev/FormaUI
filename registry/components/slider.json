@@ -1,0 +1,38 @@
+{
+  "name": "slider",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "@radix-ui/react-slider"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/slider.tsx",
+      "target": "components/primitives/slider.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/slider",
+  "tags": [
+    "component",
+    "slider"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/slider.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "d9dff6775aeb4b112b3a774a5b548b875337d1df1da5f097fcc44b00c1a8d911"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "typography",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "class-variance-authority"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/typography.tsx",
+      "target": "components/primitives/typography.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/typography",
+  "tags": [
+    "component",
+    "typography"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/typography.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "4f0414dc745a906556e0901e3b490c9d8f1da423a706bc69039d766540e19a87"
+}

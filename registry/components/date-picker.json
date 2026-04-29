@@ -1,0 +1,41 @@
+{
+  "name": "date-picker",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "lucide-react"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn",
+    "button",
+    "calendar",
+    "popover"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/date-picker.tsx",
+      "target": "components/primitives/date-picker.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/date-picker",
+  "tags": [
+    "component",
+    "date-picker"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/date-picker.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "7df9cf25714b02399371ee83583e0fd94a27552a5e1d4a83740687bc9fc5ae3e"
+}

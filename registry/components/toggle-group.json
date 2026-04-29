@@ -1,0 +1,40 @@
+{
+  "name": "toggle-group",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "@radix-ui/react-toggle-group",
+    "class-variance-authority"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn",
+    "toggle"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/toggle-group.tsx",
+      "target": "components/primitives/toggle-group.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/toggle-group",
+  "tags": [
+    "component",
+    "toggle-group"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/toggle-group.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "1ebec356c2bf6e7184a489f748a8ed63b24514ff3d1a1650b46d0b4d7dc29df2"
+}

@@ -1,0 +1,37 @@
+{
+  "name": "input-otp",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/input-otp.tsx",
+      "target": "components/primitives/input-otp.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/input-otp",
+  "tags": [
+    "component",
+    "input-otp"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/input-otp.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "6eb100c995ad79f5adaa32e8543c843833221be95038b8f25a9f0c5648e8c502"
+}

@@ -1,11 +1,18 @@
 /* @vitest-environment jsdom */
 
-import { render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { fireEvent, render, screen } from "@testing-library/react";
+import { describe, expect, it, vi } from "vitest";
 
-import { Badge, Button, Card, CardContent, CardHeader, CardTitle, Progress, Skeleton } from "../src";
+import { Badge, Button, Calendar, Card, CardContent, CardHeader, CardTitle, Progress, Skeleton } from "../src";
+import * as componentExports from "../src";
 
 describe("primitives: basic", () => {
+  it("keeps pre-v0.6 basic exports stable", () => {
+    for (const name of ["Button", "Card", "CardHeader", "CardContent", "CardTitle", "Badge", "Progress", "Skeleton"]) {
+      expect(componentExports).toHaveProperty(name);
+    }
+  });
+
   it("renders Button with requested variant", () => {
     render(
       <Button variant="secondary" data-testid="btn">
@@ -58,5 +65,22 @@ describe("primitives: basic", () => {
     const skeleton = screen.getByTestId("skeleton");
     expect(skeleton.className).toContain("animate-pulse");
     expect(skeleton.className).toContain("bg-muted");
+  });
+
+  it("renders Calendar and supports date selection plus month navigation", () => {
+    const onSelect = vi.fn();
+
+    render(<Calendar defaultValue={new Date(2026, 3, 10)} onSelect={onSelect} />);
+
+    expect(screen.getByText("April 2026")).toBeDefined();
+
+    const selectedDay = screen.getByRole("button", { name: "April 12, 2026" });
+    fireEvent.click(selectedDay);
+
+    expect(selectedDay.getAttribute("data-selected")).toBe("true");
+    expect(onSelect).toHaveBeenCalled();
+
+    fireEvent.click(screen.getByRole("button", { name: "Next month" }));
+    expect(screen.getByText("May 2026")).toBeDefined();
   });
 });
