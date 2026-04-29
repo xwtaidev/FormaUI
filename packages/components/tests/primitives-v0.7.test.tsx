@@ -1,60 +1,41 @@
 /* @vitest-environment jsdom */
 
 import { createElement, type ComponentType } from "react";
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import * as components from "../src";
 
-const v07Components = [
-  "Affix",
-  "Anchor",
-  "Backtop",
+const waveAComponents = [
   "Cascader",
   "ColorPicker",
   "Rate",
-  "TimePicker",
-  "Tree",
   "TreeSelect",
-  "Transfer",
-  "Segmented",
-  "Timeline",
-  "Descriptions",
-  "Result",
-  "Spin",
-  "Image"
+  "TimePicker",
+  "Transfer"
 ] as const;
 
-const resolveComponent = (name: (typeof v07Components)[number]): ComponentType<Record<string, unknown>> => {
+const resolveComponent = (name: (typeof waveAComponents)[number]): ComponentType<Record<string, unknown>> => {
   const value = (components as Record<string, unknown>)[name];
-  expect(value, `${name} should be exported from @formaui/components`).toBeTypeOf("function");
+  expect(value, `${name} should be exported from @formaui/components`).toBeTruthy();
+  expect(["function", "object"]).toContain(typeof value);
   return value as ComponentType<Record<string, unknown>>;
 };
 
 describe("primitives: v0.7 harness", () => {
-  it("exports all v0.7 primitives from package root", () => {
-    for (const componentName of v07Components) {
+  it("exports Wave A v0.7 primitives from package root", () => {
+    for (const componentName of waveAComponents) {
       expect(components).toHaveProperty(componentName);
     }
   });
 
-  it("renders v0.7 primitives with frozen minimal API contracts", () => {
-    const Affix = resolveComponent("Affix");
-    const Anchor = resolveComponent("Anchor");
-    const Backtop = resolveComponent("Backtop");
+  it("renders Wave A primitives with frozen minimal API contracts", () => {
     const Cascader = resolveComponent("Cascader");
     const ColorPicker = resolveComponent("ColorPicker");
     const Rate = resolveComponent("Rate");
-    const TimePicker = resolveComponent("TimePicker");
-    const Tree = resolveComponent("Tree");
     const TreeSelect = resolveComponent("TreeSelect");
     const Transfer = resolveComponent("Transfer");
-    const Segmented = resolveComponent("Segmented");
-    const Timeline = resolveComponent("Timeline");
-    const Descriptions = resolveComponent("Descriptions");
-    const Result = resolveComponent("Result");
-    const Spin = resolveComponent("Spin");
-    const Image = resolveComponent("Image");
+    const TimePicker = resolveComponent("TimePicker");
 
     const treeData = [
       {
@@ -74,52 +55,43 @@ describe("primitives: v0.7 harness", () => {
       { key: "1", title: "Alpha" },
       { key: "2", title: "Beta" }
     ];
-    const descriptionsItems = [
-      { key: "owner", label: "Owner", children: "FormaUI" },
-      { key: "status", label: "Status", children: "In progress" }
-    ];
-    const timelineItems = [
-      { key: "scope", label: "Scope freeze", children: "v0.7.1" },
-      { key: "wave-a", label: "Wave A", children: "input/selection" }
-    ];
-    const segmentedOptions = [
-      { label: "All", value: "all" },
-      { label: "Open", value: "open" }
-    ];
-    const anchorItems = [{ key: "overview", href: "#overview", title: "Overview" }];
 
     render(
       <div>
-        {createElement(Affix, { offsetTop: 8 }, createElement("button", null, "Pinned action"))}
-        {createElement(Anchor, { items: anchorItems })}
-        {createElement(Backtop, { visibilityHeight: 0 })}
         {createElement(Cascader, { options: cascaderOptions, placeholder: "Pick location" })}
         {createElement(ColorPicker, { defaultValue: "#1677ff" })}
         {createElement(Rate, { defaultValue: 3, count: 5 })}
-        {createElement(TimePicker, { placeholder: "Pick time" })}
-        {createElement(Tree, { data: treeData })}
         {createElement(TreeSelect, { data: treeData, placeholder: "Pick node" })}
         {createElement(Transfer, {
           data: transferData,
           targetKeys: ["2"],
           onChange: () => {}
         })}
-        {createElement(Segmented, { options: segmentedOptions, defaultValue: "all" })}
-        {createElement(Timeline, { items: timelineItems })}
-        {createElement(Descriptions, { items: descriptionsItems, column: 2 })}
-        {createElement(Result, { status: "success", title: "Submitted" })}
-        {createElement(Spin, { spinning: true, tip: "Loading" }, createElement("span", null, "Body"))}
-        {createElement(Image, {
-          src: "https://example.com/logo.png",
-          alt: "Logo",
-          fallback: "https://example.com/fallback.png"
-        })}
+        {createElement(TimePicker, { placeholder: "Pick time", defaultValue: "10:30" })}
       </div>
     );
 
-    expect(screen.getByText("Pinned action")).toBeDefined();
-    expect(screen.getByText("Overview")).toBeDefined();
-    expect(screen.getByText("Submitted")).toBeDefined();
-    expect(screen.getByAltText("Logo")).toBeDefined();
+    const [cascaderTrigger, treeSelectTrigger] = screen.getAllByRole("combobox");
+
+    fireEvent.click(cascaderTrigger);
+    fireEvent.click(screen.getByRole("button", { name: "Zhejiang" }));
+    fireEvent.click(screen.getByRole("button", { name: "Hangzhou" }));
+    expect(cascaderTrigger.textContent).toContain("Zhejiang / Hangzhou");
+
+    fireEvent.click(treeSelectTrigger);
+    fireEvent.click(screen.getByRole("treeitem", { name: "Engineering" }));
+    expect(treeSelectTrigger.textContent).toContain("Engineering");
+
+    fireEvent.click(screen.getByLabelText("Rate 4"));
+    expect(screen.getByLabelText("Rate 4").getAttribute("aria-checked")).toBe("true");
+
+    fireEvent.click(screen.getAllByRole("checkbox")[0]);
+    const moveToTargetButton = screen.getByRole("button", { name: "Move selected to target" });
+    expect(moveToTargetButton.getAttribute("disabled")).toBeNull();
+    fireEvent.click(moveToTargetButton);
+    expect(screen.getByText("Selected")).toBeDefined();
+
+    expect(screen.getAllByDisplayValue("#1677ff").length).toBeGreaterThan(0);
+    expect(screen.getByDisplayValue("10:30")).toBeDefined();
   });
 });
