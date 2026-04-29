@@ -1,0 +1,40 @@
+{
+  "name": "cascader",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "lucide-react"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn",
+    "button",
+    "popover"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/cascader.tsx",
+      "target": "components/primitives/cascader.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/cascader",
+  "tags": [
+    "component",
+    "cascader"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/cascader.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "7a640dab40b713a93a3c0b039e10e0892490e8347caecd3cf386b361dfe21f54"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "rate",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "lucide-react"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/rate.tsx",
+      "target": "components/primitives/rate.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/rate",
+  "tags": [
+    "component",
+    "rate"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/rate.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "df6593975379a31216b81e52b26b97dbdd8a7ae51e1d44eba4803e6ab3789bc0"
+}

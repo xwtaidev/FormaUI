@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-04-27T14:02:57.912Z",
-  "total": 82,
+  "generatedAt": "2026-04-29T14:32:05.908Z",
+  "total": 88,
   "items": [
     {
       "kind": "component",
@@ -229,6 +229,31 @@
     },
     {
       "kind": "component",
+      "name": "cascader",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/cascader.json",
+      "description": "component/cascader",
+      "tags": [
+        "component",
+        "cascader"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/cascader.json"
+      ],
+      "checksum": "7a640dab40b713a93a3c0b039e10e0892490e8347caecd3cf386b361dfe21f54",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
       "name": "checkbox",
       "type": "component",
       "version": "0.2.2",
@@ -270,6 +295,31 @@
         "registry/components/collapse.json"
       ],
       "checksum": "738ed04cea9e51273f059108e86989e766f2dd1d44d3ac95fdd7edf363167323",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "color-picker",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/color-picker.json",
+      "description": "component/color-picker",
+      "tags": [
+        "component",
+        "color-picker"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/color-picker.json"
+      ],
+      "checksum": "fb98b1e717074dd6e620411f868a1235e9bea686559f1ebc957e128b6d877ee0",
       "category": "component",
       "scenarios": [
         "component"
@@ -954,6 +1004,31 @@
     },
     {
       "kind": "component",
+      "name": "rate",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/rate.json",
+      "description": "component/rate",
+      "tags": [
+        "component",
+        "rate"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/rate.json"
+      ],
+      "checksum": "df6593975379a31216b81e52b26b97dbdd8a7ae51e1d44eba4803e6ab3789bc0",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
       "name": "search-command",
       "type": "component",
       "version": "0.2.2",
@@ -1229,6 +1304,31 @@
     },
     {
       "kind": "component",
+      "name": "time-picker",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/time-picker.json",
+      "description": "component/time-picker",
+      "tags": [
+        "component",
+        "time-picker"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/time-picker.json"
+      ],
+      "checksum": "2d7628bac19ee4721999511c8dd52eda5ba9df92f6a46d206719fdb7db84cb8a",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
       "name": "toast",
       "type": "component",
       "version": "0.2.2",
@@ -1320,6 +1420,56 @@
         "registry/components/tooltip.json"
       ],
       "checksum": "bea792e1c01b79bb845b71627dd4d7855f3a020971903da0632f3b724aa2cc16",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "transfer",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/transfer.json",
+      "description": "component/transfer",
+      "tags": [
+        "component",
+        "transfer"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/transfer.json"
+      ],
+      "checksum": "dc771f795ee778cc5ae81792788894b9b60e6a7fd3f988ea49c104672f4d0e11",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "tree-select",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/tree-select.json",
+      "description": "component/tree-select",
+      "tags": [
+        "component",
+        "tree-select"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/tree-select.json"
+      ],
+      "checksum": "d0874d60c4c57bfda815ffbc151811aac2406d384f99de462455e9ec1a190fa8",
       "category": "component",
       "scenarios": [
         "component"
@@ -2358,6 +2508,39 @@
           }
         }
       },
+      "cascader": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "cascader",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/cascader.json",
+            "description": "component/cascader",
+            "tags": [
+              "component",
+              "cascader"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/cascader.json"
+            ],
+            "checksum": "7a640dab40b713a93a3c0b039e10e0892490e8347caecd3cf386b361dfe21f54",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
       "checkbox": {
         "latest": "0.2.2",
         "versions": [
@@ -2415,6 +2598,39 @@
               "registry/components/collapse.json"
             ],
             "checksum": "738ed04cea9e51273f059108e86989e766f2dd1d44d3ac95fdd7edf363167323",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "color-picker": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "color-picker",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/color-picker.json",
+            "description": "component/color-picker",
+            "tags": [
+              "component",
+              "color-picker"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/color-picker.json"
+            ],
+            "checksum": "fb98b1e717074dd6e620411f868a1235e9bea686559f1ebc957e128b6d877ee0",
             "category": "component",
             "scenarios": [
               "component"
@@ -3315,6 +3531,39 @@
           }
         }
       },
+      "rate": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "rate",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/rate.json",
+            "description": "component/rate",
+            "tags": [
+              "component",
+              "rate"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/rate.json"
+            ],
+            "checksum": "df6593975379a31216b81e52b26b97dbdd8a7ae51e1d44eba4803e6ab3789bc0",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
       "search-command": {
         "latest": "0.2.2",
         "versions": [
@@ -3678,6 +3927,39 @@
           }
         }
       },
+      "time-picker": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "time-picker",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/time-picker.json",
+            "description": "component/time-picker",
+            "tags": [
+              "component",
+              "time-picker"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/time-picker.json"
+            ],
+            "checksum": "2d7628bac19ee4721999511c8dd52eda5ba9df92f6a46d206719fdb7db84cb8a",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
       "toast": {
         "latest": "0.2.2",
         "versions": [
@@ -3801,6 +4083,72 @@
               "registry/components/tooltip.json"
             ],
             "checksum": "bea792e1c01b79bb845b71627dd4d7855f3a020971903da0632f3b724aa2cc16",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "transfer": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "transfer",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/transfer.json",
+            "description": "component/transfer",
+            "tags": [
+              "component",
+              "transfer"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/transfer.json"
+            ],
+            "checksum": "dc771f795ee778cc5ae81792788894b9b60e6a7fd3f988ea49c104672f4d0e11",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "tree-select": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "tree-select",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/tree-select.json",
+            "description": "component/tree-select",
+            "tags": [
+              "component",
+              "tree-select"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/tree-select.json"
+            ],
+            "checksum": "d0874d60c4c57bfda815ffbc151811aac2406d384f99de462455e9ec1a190fa8",
             "category": "component",
             "scenarios": [
               "component"

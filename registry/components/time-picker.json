@@ -1,0 +1,39 @@
+{
+  "name": "time-picker",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "lucide-react"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn",
+    "input"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/time-picker.tsx",
+      "target": "components/primitives/time-picker.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/time-picker",
+  "tags": [
+    "component",
+    "time-picker"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/time-picker.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "2d7628bac19ee4721999511c8dd52eda5ba9df92f6a46d206719fdb7db84cb8a"
+}

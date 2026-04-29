@@ -1,0 +1,40 @@
+{
+  "name": "tree-select",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "lucide-react"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn",
+    "button",
+    "popover"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/tree-select.tsx",
+      "target": "components/primitives/tree-select.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/tree-select",
+  "tags": [
+    "component",
+    "tree-select"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/tree-select.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "d0874d60c4c57bfda815ffbc151811aac2406d384f99de462455e9ec1a190fa8"
+}

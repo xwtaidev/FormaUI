@@ -1,0 +1,38 @@
+{
+  "name": "color-picker",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn",
+    "input"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/color-picker.tsx",
+      "target": "components/primitives/color-picker.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/color-picker",
+  "tags": [
+    "component",
+    "color-picker"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/color-picker.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "fb98b1e717074dd6e620411f868a1235e9bea686559f1ebc957e128b6d877ee0"
+}

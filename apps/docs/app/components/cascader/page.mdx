@@ -1,0 +1,40 @@
+# Cascader
+
+## Overview
+
+`Cascader` provides hierarchical path selection with progressive drill-down panels.
+
+## Installation
+
+```bash
+npx formaui add cascader
+```
+
+## Usage
+
+```tsx
+import { Cascader } from "@/components/primitives/cascader";
+
+const locationOptions = [
+  {
+    value: "zhejiang",
+    label: "Zhejiang",
+    children: [{ value: "hangzhou", label: "Hangzhou" }]
+  }
+];
+
+export function LocationField() {
+  return <Cascader options={locationOptions} placeholder="Select location path" />;
+}
+```
+
+## v0.7 Scope
+
+- Single path selection (`string[]` path).
+- Popover based interaction with progressive levels.
+- Multi-select and async loading are out of scope for v0.7.
+
+## Source Code
+
+- `packages/components/src/primitives/cascader.tsx`
+- `registry/components/cascader.json`

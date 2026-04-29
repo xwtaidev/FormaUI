@@ -77,6 +77,12 @@ export const componentRegistryItems: RegistryItem[] = [
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
+    name: "cascader",
+    source: "packages/components/src/primitives/cascader.tsx",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["lib-cn", "button", "popover"]
+  }),
+  componentItem({
     name: "breadcrumb",
     source: "packages/components/src/primitives/breadcrumb.tsx",
     dependencies: ["lucide-react"],
@@ -86,6 +92,11 @@ export const componentRegistryItems: RegistryItem[] = [
     name: "card",
     source: "packages/components/src/primitives/card.tsx",
     registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "color-picker",
+    source: "packages/components/src/primitives/color-picker.tsx",
+    registryDependencies: ["lib-cn", "input"]
   }),
   componentItem({
     name: "checkbox",
@@ -193,6 +204,12 @@ export const componentRegistryItems: RegistryItem[] = [
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
+    name: "rate",
+    source: "packages/components/src/primitives/rate.tsx",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
     name: "select",
     source: "packages/components/src/primitives/select.tsx",
     dependencies: ["@radix-ui/react-select", "lucide-react"],
@@ -239,6 +256,12 @@ export const componentRegistryItems: RegistryItem[] = [
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
+    name: "time-picker",
+    source: "packages/components/src/primitives/time-picker.tsx",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["lib-cn", "input"]
+  }),
+  componentItem({
     name: "toast",
     source: "packages/components/src/primitives/toast.tsx",
     dependencies: ["@radix-ui/react-toast", "class-variance-authority", "lucide-react"],
@@ -261,6 +284,18 @@ export const componentRegistryItems: RegistryItem[] = [
     source: "packages/components/src/primitives/tooltip.tsx",
     dependencies: ["@radix-ui/react-tooltip"],
     registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "transfer",
+    source: "packages/components/src/primitives/transfer.tsx",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["lib-cn", "button"]
+  }),
+  componentItem({
+    name: "tree-select",
+    source: "packages/components/src/primitives/tree-select.tsx",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["lib-cn", "button", "popover"]
   }),
   componentItem({
     name: "typography",
