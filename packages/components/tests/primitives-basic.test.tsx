@@ -7,7 +7,7 @@ import { Badge, Button, Calendar, Card, CardContent, CardHeader, CardTitle, Prog
 import * as componentExports from "../src";
 
 describe("primitives: basic", () => {
-  it("keeps pre-v0.6 basic exports stable", () => {
+  it("keeps pre-v0.7 basic exports stable", () => {
     for (const name of ["Button", "Card", "CardHeader", "CardContent", "CardTitle", "Badge", "Progress", "Skeleton"]) {
       expect(componentExports).toHaveProperty(name);
     }
