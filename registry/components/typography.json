@@ -1,6 +1,12 @@
 {
   "name": "typography",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom",
@@ -28,11 +34,5 @@
   "sources": [
     "registry/components/typography.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "4f0414dc745a906556e0901e3b490c9d8f1da423a706bc69039d766540e19a87"
+  "checksum": "7fe581c1a1bfd0c6efb84a15d429953d60ecbcece976651eb3001471e221eb37"
 }

@@ -1,6 +1,12 @@
 {
   "name": "button",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom",
@@ -28,11 +34,5 @@
   "sources": [
     "registry/components/button.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "b002303ee8bc20f6bfa48fa815dd8dddf2916b45b144a849f9e48ed141b2bef8"
+  "checksum": "f3ead74c6c85c6b8c8f5926f152031f5fa4c2e68cb83f89744173863dc0ff0ae"
 }

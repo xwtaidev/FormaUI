@@ -1,6 +1,14 @@
 {
   "name": "transfer",
   "type": "component",
+  "category": "wave-v07",
+  "scenarios": [
+    "v0.7",
+    "selection",
+    "dual-list"
+  ],
+  "complexity": "high",
+  "stability": "beta",
   "dependencies": [
     "react",
     "react-dom",
@@ -29,11 +37,5 @@
   "sources": [
     "registry/components/transfer.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "dc771f795ee778cc5ae81792788894b9b60e6a7fd3f988ea49c104672f4d0e11"
+  "checksum": "e15b36d2fa709c9e2e430908577b92fb799a094728f38fbeeb734c3b5c4f46ae"
 }

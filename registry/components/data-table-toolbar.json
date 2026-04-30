@@ -1,6 +1,12 @@
 {
   "name": "data-table-toolbar",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom"
@@ -29,11 +35,5 @@
   "sources": [
     "registry/components/data-table-toolbar.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "602c8f430ab1c8ac5c9c2aa3027dfe1916245951d245708a81f5f996f7516433"
+  "checksum": "a46c23f9aebf1b241f1dc0b6b4d57103c9894ed86644d7d96a6bcfa2ff6b048a"
 }

@@ -1,6 +1,14 @@
 {
   "name": "spin",
   "type": "component",
+  "category": "wave-v07",
+  "scenarios": [
+    "v0.7",
+    "feedback",
+    "loading"
+  ],
+  "complexity": "low",
+  "stability": "beta",
   "dependencies": [
     "react",
     "react-dom",
@@ -28,11 +36,5 @@
   "sources": [
     "registry/components/spin.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "f0f59e0e1e0735166df1db08fa7d1fe7aa0dfc9f446a08b0578a25dfef46cf10"
+  "checksum": "d4e6ce9b4c06b608ceb4670931e67760808c20bf783c3ca30d6859363516957d"
 }

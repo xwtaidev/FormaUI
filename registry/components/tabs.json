@@ -1,6 +1,12 @@
 {
   "name": "tabs",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom",
@@ -28,11 +34,5 @@
   "sources": [
     "registry/components/tabs.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "2caf288b2b5d03035294041ed2ff81e732cb7c986e3a2248e0d5f5207437ff12"
+  "checksum": "64b019dfc8bd629678affeeb16052772055e03cfdc744674da40fee3184ec234"
 }

@@ -1,6 +1,14 @@
 {
   "name": "cascader",
   "type": "component",
+  "category": "wave-v07",
+  "scenarios": [
+    "v0.7",
+    "selection",
+    "hierarchy"
+  ],
+  "complexity": "high",
+  "stability": "beta",
   "dependencies": [
     "react",
     "react-dom",
@@ -30,11 +38,5 @@
   "sources": [
     "registry/components/cascader.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "7a640dab40b713a93a3c0b039e10e0892490e8347caecd3cf386b361dfe21f54"
+  "checksum": "04b36c1235b8c0ff7d608a68804f7e41533f7c1d210e240cda697202e029c103"
 }

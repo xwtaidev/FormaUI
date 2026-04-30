@@ -1,6 +1,12 @@
 {
   "name": "page-header",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom"
@@ -27,11 +33,5 @@
   "sources": [
     "registry/components/page-header.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "44066c728bbac87dc33d7b37a75da7a3df144d990539effdb9b0707e5234a9e1"
+  "checksum": "824a310762b37d0eabf9294c6d6812b65d2a3fa3163c58c0d8be67b4f3ff3f86"
 }

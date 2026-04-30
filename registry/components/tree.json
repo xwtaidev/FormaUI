@@ -1,6 +1,14 @@
 {
   "name": "tree",
   "type": "component",
+  "category": "wave-v07",
+  "scenarios": [
+    "v0.7",
+    "data-display",
+    "hierarchy"
+  ],
+  "complexity": "high",
+  "stability": "beta",
   "dependencies": [
     "react",
     "react-dom",
@@ -28,11 +36,5 @@
   "sources": [
     "registry/components/tree.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "c1cc654fad5f882831291002a2360c292731a36b5cf79a22460b7a7ebcb07006"
+  "checksum": "ef36c02561a0bde27b1e19b4cd409acd2b376acbc896faf3d66c933652bad0fc"
 }

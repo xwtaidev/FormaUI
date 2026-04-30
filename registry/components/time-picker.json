@@ -1,6 +1,14 @@
 {
   "name": "time-picker",
   "type": "component",
+  "category": "wave-v07",
+  "scenarios": [
+    "v0.7",
+    "input",
+    "datetime"
+  ],
+  "complexity": "low",
+  "stability": "beta",
   "dependencies": [
     "react",
     "react-dom",
@@ -29,11 +37,5 @@
   "sources": [
     "registry/components/time-picker.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "2d7628bac19ee4721999511c8dd52eda5ba9df92f6a46d206719fdb7db84cb8a"
+  "checksum": "d4d3bc447e2b08ef934b535df8e4a7d97fed0700d4b37c607c0ea61e22b19a40"
 }

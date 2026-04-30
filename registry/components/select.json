@@ -1,6 +1,12 @@
 {
   "name": "select",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom",
@@ -29,11 +35,5 @@
   "sources": [
     "registry/components/select.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "dd2edecbf366aa5b546edf8eaecbfab355848c3498b73ccef6acc76ee7849e08"
+  "checksum": "6b1c14b6203b84fe01bfa131d1ecfecc3a6a45289bf0a509eebf7105acf73091"
 }

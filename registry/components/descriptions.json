@@ -1,6 +1,14 @@
 {
   "name": "descriptions",
   "type": "component",
+  "category": "wave-v07",
+  "scenarios": [
+    "v0.7",
+    "display",
+    "summary"
+  ],
+  "complexity": "low",
+  "stability": "beta",
   "dependencies": [
     "react",
     "react-dom"
@@ -27,11 +35,5 @@
   "sources": [
     "registry/components/descriptions.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "ea4f5acc35ea76d095e6265695f591873d2f3a4ade4e6b41c335685367ddb484"
+  "checksum": "3d1a22f57d702c9a035fabb2ee00834ebe9b462809b957a34df6731572224c22"
 }

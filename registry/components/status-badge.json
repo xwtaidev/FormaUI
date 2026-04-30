@@ -1,6 +1,12 @@
 {
   "name": "status-badge",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom"
@@ -27,11 +33,5 @@
   "sources": [
     "registry/components/status-badge.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "49550a19991297eede69c40ab67fba71bf0f8fcdbc5441cea0e56e05530e46b0"
+  "checksum": "47caa8191ee3b9a9dcd4475e7b7f496ce3c496fc73817b747899a298f73802a8"
 }

@@ -1,6 +1,12 @@
 {
   "name": "app-sidebar",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom"
@@ -25,11 +31,5 @@
   "sources": [
     "registry/components/app-sidebar.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "40db1d63fa5ec24778a9d18642127c4463fe59fb014ec8900e2d50c3c7e1083a"
+  "checksum": "ed76fa30bc1f8948a80d42300e6472461002f0da469745bdc84a5fd5b94e50ab"
 }

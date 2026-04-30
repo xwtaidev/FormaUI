@@ -1,6 +1,12 @@
 {
   "name": "textarea",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom"
@@ -27,11 +33,5 @@
   "sources": [
     "registry/components/textarea.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "9dc7e36c5c1d7a2899d887967d5b216c7fa7484108ec615d4a20c5b144e955d8"
+  "checksum": "e7db20a366c4502e74dc37a1cb93313ebdacbfabcf5bf8882196f78c5f84b75e"
 }

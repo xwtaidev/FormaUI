@@ -1,6 +1,12 @@
 {
   "name": "badge",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom",
@@ -28,11 +34,5 @@
   "sources": [
     "registry/components/badge.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "3bd5c4e9ce253a3815a09677eba9d4332eca29c5502c2b7be0e1998c6f854ab1"
+  "checksum": "e2a1026b5f4f57c6fd7477c5a3d70595b4d00a86d4648e80e9dbd13a1475190b"
 }

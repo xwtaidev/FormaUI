@@ -1,6 +1,12 @@
 {
   "name": "pagination-bar",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom"
@@ -28,11 +34,5 @@
   "sources": [
     "registry/components/pagination-bar.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "39bdad3212dcfe3ef5e9f864a645b8c4373a16b3973acd20ca111ebf6d01a0c7"
+  "checksum": "daf19a306065ad36253d6f6ad3b277277752a2de28f324251838d5c7bb7e822a"
 }

@@ -1,6 +1,12 @@
 {
   "name": "popover",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom",
@@ -28,11 +34,5 @@
   "sources": [
     "registry/components/popover.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "618dec76e69470c5ccc96c6ca8a6d33e48d1bb88b7614c6b0d786f1946c4d0c7"
+  "checksum": "bcef716ad590a839f81647cc27ade7f4657a4bbd7f49e74c137b7108b26fa6ca"
 }

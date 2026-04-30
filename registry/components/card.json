@@ -1,6 +1,12 @@
 {
   "name": "card",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom"
@@ -27,11 +33,5 @@
   "sources": [
     "registry/components/card.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "2cea69127906c86e91d40f91869d9d22faffd30847bd7c6033df3e891fc70063"
+  "checksum": "359dc8ff483196c0d2a9eed38457938639f50bc2a886587d9e73f9287fe206a0"
 }

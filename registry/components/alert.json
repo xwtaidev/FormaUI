@@ -1,6 +1,12 @@
 {
   "name": "alert",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom",
@@ -28,11 +34,5 @@
   "sources": [
     "registry/components/alert.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "2e99add86f031a1cac94de24d4bce60a08b87d66c6aa123a70a41e6719d4941c"
+  "checksum": "c81716725479a1700f4ddc002d20536f2efb6543aa6d1a776dc6782e5ebda3b1"
 }

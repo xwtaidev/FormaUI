@@ -1,6 +1,14 @@
 {
   "name": "color-picker",
   "type": "component",
+  "category": "wave-v07",
+  "scenarios": [
+    "v0.7",
+    "input",
+    "theming"
+  ],
+  "complexity": "low",
+  "stability": "beta",
   "dependencies": [
     "react",
     "react-dom"
@@ -28,11 +36,5 @@
   "sources": [
     "registry/components/color-picker.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "fb98b1e717074dd6e620411f868a1235e9bea686559f1ebc957e128b6d877ee0"
+  "checksum": "e26b7e4a4021e79459086f7103e507646df1ff0d0e50637dbabb13f984e13f2d"
 }

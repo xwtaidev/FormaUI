@@ -1,6 +1,14 @@
 {
   "name": "image",
   "type": "component",
+  "category": "wave-v07",
+  "scenarios": [
+    "v0.7",
+    "media",
+    "preview"
+  ],
+  "complexity": "low",
+  "stability": "beta",
   "dependencies": [
     "react",
     "react-dom"
@@ -27,11 +35,5 @@
   "sources": [
     "registry/components/image.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "76d1ddef61d8d5527bf72c00d91518757bb48292f9089f98cb0edf185c836df5"
+  "checksum": "255d9e7ec3d1b116172dd7366c4cf48b1f59fc854e9c7fce2f42c0ea66a5f7f6"
 }

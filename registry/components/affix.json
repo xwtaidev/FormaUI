@@ -1,6 +1,14 @@
 {
   "name": "affix",
   "type": "component",
+  "category": "wave-v07",
+  "scenarios": [
+    "v0.7",
+    "navigation",
+    "sticky"
+  ],
+  "complexity": "medium",
+  "stability": "beta",
   "dependencies": [
     "react",
     "react-dom"
@@ -27,11 +35,5 @@
   "sources": [
     "registry/components/affix.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "da749e68e8e799845d5649121e793f5716aeeced7dac114988fe369a255fc70f"
+  "checksum": "c672e22b3df292480b7639008ca2ad1a53e989d6abf6051c26b12299a51fcfc4"
 }

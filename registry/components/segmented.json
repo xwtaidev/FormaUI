@@ -1,6 +1,14 @@
 {
   "name": "segmented",
   "type": "component",
+  "category": "wave-v07",
+  "scenarios": [
+    "v0.7",
+    "selection",
+    "switching"
+  ],
+  "complexity": "medium",
+  "stability": "beta",
   "dependencies": [
     "react",
     "react-dom",
@@ -28,11 +36,5 @@
   "sources": [
     "registry/components/segmented.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "1165d904da13c6195a0623c3f7a47dc9b40ccd8fc3d6c6d2bcd761244a8fef54"
+  "checksum": "1c129e621b9a77a2cfba9253f774eed44e509cff57ae0dcb5433cc2e89021554"
 }

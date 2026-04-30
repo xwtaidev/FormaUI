@@ -1,6 +1,12 @@
 {
   "name": "switch",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom",
@@ -28,11 +34,5 @@
   "sources": [
     "registry/components/switch.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "b90ab547b80c1e63addfaea10fdfe93925475a41e83450caf1a1ac66b5e90d4e"
+  "checksum": "d75aa4e85ff65b7ddd2d8ba4d9b241039c47bc8bc9507673d9f129827f303533"
 }

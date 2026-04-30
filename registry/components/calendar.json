@@ -1,6 +1,12 @@
 {
   "name": "calendar",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom",
@@ -28,11 +34,5 @@
   "sources": [
     "registry/components/calendar.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "0db31d6891fbe3a222441f68139c34b475a90be3a8a6b4587c237255000d7c0d"
+  "checksum": "94227531428bf011411e78241d5360ad1374114728faa054b4524d62db0f22ab"
 }

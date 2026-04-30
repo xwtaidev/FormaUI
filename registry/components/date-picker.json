@@ -1,6 +1,12 @@
 {
   "name": "date-picker",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom",
@@ -31,11 +37,5 @@
   "sources": [
     "registry/components/date-picker.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "7df9cf25714b02399371ee83583e0fd94a27552a5e1d4a83740687bc9fc5ae3e"
+  "checksum": "d4ca563bb174b504ca8b1b74564173ff128770ed3e37af34dd94dbca3d3bfb4d"
 }

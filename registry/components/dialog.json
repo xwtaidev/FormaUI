@@ -1,6 +1,12 @@
 {
   "name": "dialog",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom",
@@ -29,11 +35,5 @@
   "sources": [
     "registry/components/dialog.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "48804303bcb2609de1e3e00e5aafa2a2599bc6f782650f219313d65b4ac55804"
+  "checksum": "d9785bdc4124f058e9c30a3bc1718b0d8cba7aa91c1b083c2f45bfe7f02dfed7"
 }

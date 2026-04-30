@@ -1,6 +1,14 @@
 {
   "name": "anchor",
   "type": "component",
+  "category": "wave-v07",
+  "scenarios": [
+    "v0.7",
+    "navigation",
+    "in-page"
+  ],
+  "complexity": "medium",
+  "stability": "beta",
   "dependencies": [
     "react",
     "react-dom"
@@ -27,11 +35,5 @@
   "sources": [
     "registry/components/anchor.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "5ac962c6f31acf6c6a9da8f9e1a36d04c9ae31311231c9deba07aaf39bafadb6"
+  "checksum": "52524eb3df7aca73e363e7d4aa1d1b200dd7645a7eabbb3ab4d10d566def38f7"
 }

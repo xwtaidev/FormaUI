@@ -1,6 +1,12 @@
 {
   "name": "separator",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom",
@@ -28,11 +34,5 @@
   "sources": [
     "registry/components/separator.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "9531476ac9804a92f496151d09059dd8fe8ff40669a2a8375502ab9762b82113"
+  "checksum": "03a2cc53fe172ebc7f4db5d69edd6493163446453713276b20f5bdf61a8dfbcd"
 }

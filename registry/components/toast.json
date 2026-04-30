@@ -1,6 +1,12 @@
 {
   "name": "toast",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom",
@@ -30,11 +36,5 @@
   "sources": [
     "registry/components/toast.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "c8ace8ae7b5f179b5c44ea9d5ae7ee80cd46ff098fbf6af7f3a78dc3735064f2"
+  "checksum": "c952d870023569701cee0993b3b6c74982986ea71786fa32834888b77fde63dd"
 }

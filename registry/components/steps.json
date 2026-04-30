@@ -1,6 +1,12 @@
 {
   "name": "steps",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom",
@@ -28,11 +34,5 @@
   "sources": [
     "registry/components/steps.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "5d42f066bab5fc642d919e0d3c43e32af54afc2a9fd0a137a4b3ddaac8abfef1"
+  "checksum": "1dccc2294d73edaa31647ad75fd1e9987326c3307be01a30395eb458ec94a68b"
 }

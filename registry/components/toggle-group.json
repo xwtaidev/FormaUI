@@ -1,6 +1,12 @@
 {
   "name": "toggle-group",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom",
@@ -30,11 +36,5 @@
   "sources": [
     "registry/components/toggle-group.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "1ebec356c2bf6e7184a489f748a8ed63b24514ff3d1a1650b46d0b4d7dc29df2"
+  "checksum": "d49bf36ef12fad12c37d7e6a0113220ae053d9ad3c7a533c6d5de64d520b58f2"
 }

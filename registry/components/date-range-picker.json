@@ -1,6 +1,12 @@
 {
   "name": "date-range-picker",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom"
@@ -29,11 +35,5 @@
   "sources": [
     "registry/components/date-range-picker.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "446d2b64c2fa0e1ac8ccbb60515515db3a784c6e857ec06197137db52cdd9f0b"
+  "checksum": "60c8580dae858ea294a752aa2c53a7a45d3792eb2111b2f24b5cc51359c46bcc"
 }

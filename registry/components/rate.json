@@ -1,6 +1,14 @@
 {
   "name": "rate",
   "type": "component",
+  "category": "wave-v07",
+  "scenarios": [
+    "v0.7",
+    "input",
+    "feedback"
+  ],
+  "complexity": "low",
+  "stability": "beta",
   "dependencies": [
     "react",
     "react-dom",
@@ -28,11 +36,5 @@
   "sources": [
     "registry/components/rate.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "df6593975379a31216b81e52b26b97dbdd8a7ae51e1d44eba4803e6ab3789bc0"
+  "checksum": "a023154ec67e3ff8ab2c223dbde62de965b681bfa9db26ed29bec105a50a2eac"
 }

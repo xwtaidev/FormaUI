@@ -1,6 +1,12 @@
 {
   "name": "collapse",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom",
@@ -29,11 +35,5 @@
   "sources": [
     "registry/components/collapse.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "738ed04cea9e51273f059108e86989e766f2dd1d44d3ac95fdd7edf363167323"
+  "checksum": "813047bc09899dcf86a8475bf0ab9c8354d01168fb1b27505e5a27df93e83cf7"
 }

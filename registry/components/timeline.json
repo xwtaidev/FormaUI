@@ -1,6 +1,14 @@
 {
   "name": "timeline",
   "type": "component",
+  "category": "wave-v07",
+  "scenarios": [
+    "v0.7",
+    "display",
+    "progress"
+  ],
+  "complexity": "low",
+  "stability": "beta",
   "dependencies": [
     "react",
     "react-dom"
@@ -27,11 +35,5 @@
   "sources": [
     "registry/components/timeline.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "5e7cb0140a75a497ede70b366785229816cda7f6d9a9ac6fb7e4313f6f64f075"
+  "checksum": "ccc32e479bb6e71c561732664b8dae8863da1dc2d441517f84f242ec703a9df7"
 }

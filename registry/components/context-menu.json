@@ -1,6 +1,12 @@
 {
   "name": "context-menu",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom",
@@ -29,11 +35,5 @@
   "sources": [
     "registry/components/context-menu.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "81c5d158fcf7c6dce22c164a2764bab7b89237524ac3ad4bf36b792c84b90b40"
+  "checksum": "9633ef59f2847cac39f13d8c436b454ec012548e5f19eff220b4675da33820ac"
 }

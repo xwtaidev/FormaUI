@@ -1,6 +1,12 @@
 {
   "name": "input-number",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom"
@@ -27,11 +33,5 @@
   "sources": [
     "registry/components/input-number.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "e1139862576ab3a34b00cbca2f3ba54360f6caa2763b15f9bd872f4598687fdc"
+  "checksum": "28c0014b703950ffa2fdf4e2361989d44f421ceae89873f31f00ac32942c2231"
 }

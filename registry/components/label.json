@@ -1,6 +1,12 @@
 {
   "name": "label",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom",
@@ -28,11 +34,5 @@
   "sources": [
     "registry/components/label.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "13e5394230cf709040b5aae7233011c93dcd31d20da396045f7fc244443d1e51"
+  "checksum": "a8f94c208daa7d606184afd8e066542cc077d2595f12e4998843231f788c1246"
 }

@@ -1,6 +1,12 @@
 {
   "name": "slider",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom",
@@ -28,11 +34,5 @@
   "sources": [
     "registry/components/slider.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "d9dff6775aeb4b112b3a774a5b548b875337d1df1da5f097fcc44b00c1a8d911"
+  "checksum": "269b1776443d2eeb7bb0910d7c4264c5b9b321a5b4ecd7571847384a493fecaa"
 }

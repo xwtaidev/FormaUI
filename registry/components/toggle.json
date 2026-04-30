@@ -1,6 +1,12 @@
 {
   "name": "toggle",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom",
@@ -29,11 +35,5 @@
   "sources": [
     "registry/components/toggle.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "91b0830aa245c3944af6e892997098f4f5f08a3d161b6910ed93ed197bc7a2e5"
+  "checksum": "a7b0657cdd4162b0edfb8443fa2e1cc4b73e26e0ad42261cd27ee26b20f284d2"
 }

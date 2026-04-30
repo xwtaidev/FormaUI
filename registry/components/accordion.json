@@ -1,6 +1,12 @@
 {
   "name": "accordion",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom",
@@ -29,11 +35,5 @@
   "sources": [
     "registry/components/accordion.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "7427a91d327558559aae68b5aa37e1f83eed474bae862df778147734a724e5df"
+  "checksum": "97a8370518ae3abae7ed5ffdd583a8cb9d821055894bd2e6b601f3357e606bbf"
 }

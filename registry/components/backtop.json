@@ -1,6 +1,14 @@
 {
   "name": "backtop",
   "type": "component",
+  "category": "wave-v07",
+  "scenarios": [
+    "v0.7",
+    "navigation",
+    "scroll"
+  ],
+  "complexity": "low",
+  "stability": "beta",
   "dependencies": [
     "react",
     "react-dom",
@@ -29,11 +37,5 @@
   "sources": [
     "registry/components/backtop.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "3a001899418b472bdab37ad80f090e460018ce9d9da7dff1752aa8a93878b14c"
+  "checksum": "0ff4c2c31eb6c40e46d0b1771863d0d5f0eb632d7b10634f10119337af314efb"
 }

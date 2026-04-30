@@ -1,6 +1,14 @@
 {
   "name": "result",
   "type": "component",
+  "category": "wave-v07",
+  "scenarios": [
+    "v0.7",
+    "feedback",
+    "status"
+  ],
+  "complexity": "low",
+  "stability": "beta",
   "dependencies": [
     "react",
     "react-dom",
@@ -28,11 +36,5 @@
   "sources": [
     "registry/components/result.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "d04b286daccfa9dea1a2760bba4ea2c307ee25cf6819ae83aa009fbe4f85f30c"
+  "checksum": "25f3ea4cdb65bbc21d05405e44b2c114e59a2974c3a2bd4060beb404c39e2967"
 }
