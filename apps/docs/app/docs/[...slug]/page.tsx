@@ -1,0 +1,41 @@
+import { notFound } from "next/navigation";
+import { DocsBody, DocsDescription, DocsPage, DocsTitle } from "fumadocs-ui/page";
+
+import { source } from "@/lib/source";
+
+type Params = {
+  slug: string[];
+};
+
+export default async function Page(props: { params: Promise<Params> }) {
+  const params = await props.params;
+  const page = source.getPage(params.slug) as any;
+
+  if (!page) {
+    notFound();
+  }
+
+  const MDXContent = page.data.body;
+  const toc = Array.isArray(page.data.toc) ? page.data.toc : (page.data.toc?.items ?? []);
+
+  return (
+    <DocsPage toc={toc}>
+      <DocsTitle>{page.data.title}</DocsTitle>
+      <DocsDescription>{page.data.description}</DocsDescription>
+      <DocsBody>
+        <MDXContent />
+      </DocsBody>
+    </DocsPage>
+  );
+}
+
+export async function generateStaticParams() {
+  return source
+    .getPages()
+    .filter((page) => Array.isArray(page.slugs) && page.slugs.length > 0)
+    .map((page) => ({
+      slug: page.slugs
+    }));
+}
+
+export const dynamicParams = false;
