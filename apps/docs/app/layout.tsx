@@ -10,7 +10,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="flex min-h-screen flex-col antialiased">
-        <RootProvider>{children}</RootProvider>
+        <RootProvider search={{ options: { api: "/api/search" } }}>{children}</RootProvider>
       </body>
     </html>
   );

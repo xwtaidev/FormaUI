@@ -29,10 +29,14 @@ describe("sitemap + robots availability", () => {
     const urls = entries.map((entry) => entry.url);
 
     expect(urls).toContain("https://formaui.com/docs");
+    expect(urls).toContain("https://formaui.com/docs/components/overview");
+    expect(urls).toContain("https://formaui.com/docs/blocks/overview");
+    expect(urls).toContain("https://formaui.com/docs/migration/v0.8");
+    expect(urls).toContain("https://formaui.com/docs/release-notes/v0.8");
     expect(urls).toContain("https://formaui.com/docs/getting-started/introduction");
     expect(urls).toContain("https://formaui.com/docs/getting-started/installation");
     expect(urls).toContain("https://formaui.com/docs/getting-started/quick-start");
-    expect(entries.length).toBeGreaterThanOrEqual(3);
+    expect(entries.length).toBeGreaterThanOrEqual(10);
   });
 
   it("exports crawler rules for docs-critical routes and sitemap in robots", () => {
@@ -44,6 +48,9 @@ describe("sitemap + robots availability", () => {
 
     expect(allowRules).toContain("/docs");
     expect(allowRules).toContain("/docs/getting-started");
+    expect(allowRules).toContain("/docs/components");
+    expect(allowRules).toContain("/docs/migration");
+    expect(allowRules).toContain("/docs/release-notes");
     expect(rules.sitemap).toContain("https://formaui.com/sitemap.xml");
   });
 });
