@@ -3,7 +3,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
-import { Badge, Button, Calendar, Card, CardContent, CardHeader, CardTitle, Progress, Skeleton } from "../src";
+import { Badge, Button, Calendar, Card, CardContent, CardHeader, CardTitle, Image, Progress, Result, Skeleton, Spin } from "../src";
 import * as componentExports from "../src";
 
 describe("primitives: basic", () => {
@@ -82,5 +82,21 @@ describe("primitives: basic", () => {
 
     fireEvent.click(screen.getByRole("button", { name: "Next month" }));
     expect(screen.getByText("May 2026")).toBeDefined();
+  });
+
+  it("renders basic wave-b feedback primitives", () => {
+    render(
+      <div>
+        <Result status="info" title="Waiting for review" description="Please check the summary." />
+        <Spin spinning tip="Loading report">
+          <span>Summary content</span>
+        </Spin>
+        <Image src="https://example.com/cover.png" alt="Cover" />
+      </div>
+    );
+
+    expect(screen.getByRole("status")).toBeDefined();
+    expect(screen.getByText("Loading report")).toBeDefined();
+    expect(screen.getByAltText("Cover")).toBeDefined();
   });
 });

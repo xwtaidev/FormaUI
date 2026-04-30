@@ -14,8 +14,10 @@ const waveAComponents = [
   "TimePicker",
   "Transfer"
 ] as const;
+const waveBComponents = ["Descriptions", "Result", "Timeline", "Segmented", "Spin", "Image"] as const;
+const waveV07Components = [...waveAComponents, ...waveBComponents] as const;
 
-const resolveComponent = (name: (typeof waveAComponents)[number]): ComponentType<Record<string, unknown>> => {
+const resolveComponent = (name: (typeof waveV07Components)[number]): ComponentType<Record<string, unknown>> => {
   const value = (components as Record<string, unknown>)[name];
   expect(value, `${name} should be exported from @formaui/components`).toBeTruthy();
   expect(["function", "object"]).toContain(typeof value);
@@ -23,19 +25,25 @@ const resolveComponent = (name: (typeof waveAComponents)[number]): ComponentType
 };
 
 describe("primitives: v0.7 harness", () => {
-  it("exports Wave A v0.7 primitives from package root", () => {
-    for (const componentName of waveAComponents) {
+  it("exports Wave A and Wave B v0.7 primitives from package root", () => {
+    for (const componentName of waveV07Components) {
       expect(components).toHaveProperty(componentName);
     }
   });
 
-  it("renders Wave A primitives with frozen minimal API contracts", () => {
+  it("renders Wave A and Wave B primitives with frozen minimal API contracts", () => {
     const Cascader = resolveComponent("Cascader");
     const ColorPicker = resolveComponent("ColorPicker");
     const Rate = resolveComponent("Rate");
     const TreeSelect = resolveComponent("TreeSelect");
     const Transfer = resolveComponent("Transfer");
     const TimePicker = resolveComponent("TimePicker");
+    const Descriptions = resolveComponent("Descriptions");
+    const Result = resolveComponent("Result");
+    const Timeline = resolveComponent("Timeline");
+    const Segmented = resolveComponent("Segmented");
+    const Spin = resolveComponent("Spin");
+    const Image = resolveComponent("Image");
 
     const treeData = [
       {
@@ -55,6 +63,14 @@ describe("primitives: v0.7 harness", () => {
       { key: "1", title: "Alpha" },
       { key: "2", title: "Beta" }
     ];
+    const descriptionsItems = [
+      { key: "owner", label: "Owner", children: "FormaUI" },
+      { key: "status", label: "Status", children: "Draft" }
+    ];
+    const timelineItems = [
+      { key: "scope", label: "Scope", children: "v0.7.1 contract freeze" },
+      { key: "wave-a", label: "Wave A", children: "Input and selection" }
+    ];
 
     render(
       <div>
@@ -68,6 +84,22 @@ describe("primitives: v0.7 harness", () => {
           onChange: () => {}
         })}
         {createElement(TimePicker, { placeholder: "Pick time", defaultValue: "10:30" })}
+        {createElement(Descriptions, { items: descriptionsItems, column: 2, bordered: true })}
+        {createElement(Result, { status: "success", title: "Saved", description: "Configuration has been updated." })}
+        {createElement(Timeline, { items: timelineItems })}
+        {createElement(Segmented, {
+          options: [
+            { label: "All", value: "all" },
+            { label: "Open", value: "open" }
+          ],
+          defaultValue: "all"
+        })}
+        {createElement(Spin, { spinning: true, tip: "Loading" }, createElement("span", null, "Wave B content"))}
+        {createElement(Image, {
+          src: "https://example.com/asset.png",
+          fallback: "https://example.com/fallback.png",
+          alt: "Wave asset"
+        })}
       </div>
     );
 
@@ -93,5 +125,17 @@ describe("primitives: v0.7 harness", () => {
 
     expect(screen.getAllByDisplayValue("#1677ff").length).toBeGreaterThan(0);
     expect(screen.getByDisplayValue("10:30")).toBeDefined();
+
+    expect(screen.getByText("Owner")).toBeDefined();
+    expect(screen.getByRole("status")).toBeDefined();
+    expect(screen.getByText("Saved")).toBeDefined();
+    expect(screen.getByText("Scope")).toBeDefined();
+
+    const segmentedOpen = screen.getByRole("radio", { name: "Open" });
+    fireEvent.click(segmentedOpen);
+    expect(segmentedOpen.getAttribute("data-state")).toBe("on");
+
+    expect(screen.getByText("Loading")).toBeDefined();
+    expect(screen.getByAltText("Wave asset")).toBeDefined();
   });
 });
