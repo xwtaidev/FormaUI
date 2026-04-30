@@ -1,0 +1,40 @@
+# Result
+
+## Overview
+
+`Result` is a page-level feedback surface for success, warning, info, and error outcomes.
+
+## Installation
+
+```bash
+npx formaui add result
+```
+
+## Usage
+
+```tsx
+import { Button } from "@/components/primitives/button";
+import { Result } from "@/components/primitives/result";
+
+export function SaveOutcome() {
+  return (
+    <Result
+      status="success"
+      title="Saved successfully"
+      description="Your workspace settings are now active."
+      extra={<Button size="sm">Back to dashboard</Button>}
+    />
+  );
+}
+```
+
+## v0.7 Scope
+
+- Page-level outcome feedback with optional extra action area.
+- Preset status icon styles for `success` `info` `warning` `error`.
+- Inline notices still belong to `alert`.
+
+## Source Code
+
+- `packages/components/src/primitives/result.tsx`
+- `registry/components/result.json`

@@ -129,6 +129,11 @@ export const componentRegistryItems: RegistryItem[] = [
     registryDependencies: ["lib-cn", "button", "calendar", "popover"]
   }),
   componentItem({
+    name: "descriptions",
+    source: "packages/components/src/primitives/descriptions.tsx",
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
     name: "dialog",
     source: "packages/components/src/primitives/dialog.tsx",
     dependencies: ["@radix-ui/react-dialog", "lucide-react"],
@@ -150,6 +155,11 @@ export const componentRegistryItems: RegistryItem[] = [
     name: "hover-card",
     source: "packages/components/src/primitives/hover-card.tsx",
     dependencies: ["@radix-ui/react-hover-card"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "image",
+    source: "packages/components/src/primitives/image.tsx",
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
@@ -210,9 +220,21 @@ export const componentRegistryItems: RegistryItem[] = [
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
+    name: "result",
+    source: "packages/components/src/primitives/result.tsx",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
     name: "select",
     source: "packages/components/src/primitives/select.tsx",
     dependencies: ["@radix-ui/react-select", "lucide-react"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "segmented",
+    source: "packages/components/src/primitives/segmented.tsx",
+    dependencies: ["@radix-ui/react-toggle-group"],
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
@@ -230,6 +252,12 @@ export const componentRegistryItems: RegistryItem[] = [
     name: "slider",
     source: "packages/components/src/primitives/slider.tsx",
     dependencies: ["@radix-ui/react-slider"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "spin",
+    source: "packages/components/src/primitives/spin.tsx",
+    dependencies: ["lucide-react"],
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
@@ -260,6 +288,11 @@ export const componentRegistryItems: RegistryItem[] = [
     source: "packages/components/src/primitives/time-picker.tsx",
     dependencies: ["lucide-react"],
     registryDependencies: ["lib-cn", "input"]
+  }),
+  componentItem({
+    name: "timeline",
+    source: "packages/components/src/primitives/timeline.tsx",
+    registryDependencies: ["lib-cn"]
   }),
   componentItem({
     name: "toast",

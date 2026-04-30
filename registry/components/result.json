@@ -1,0 +1,38 @@
+{
+  "name": "result",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "lucide-react"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/result.tsx",
+      "target": "components/primitives/result.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/result",
+  "tags": [
+    "component",
+    "result"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/result.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "d04b286daccfa9dea1a2760bba4ea2c307ee25cf6819ae83aa009fbe4f85f30c"
+}

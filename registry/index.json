@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-04-29T14:32:05.908Z",
-  "total": 88,
+  "generatedAt": "2026-04-30T00:23:48.962Z",
+  "total": 94,
   "items": [
     {
       "kind": "component",
@@ -479,6 +479,31 @@
     },
     {
       "kind": "component",
+      "name": "descriptions",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/descriptions.json",
+      "description": "component/descriptions",
+      "tags": [
+        "component",
+        "descriptions"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/descriptions.json"
+      ],
+      "checksum": "ea4f5acc35ea76d095e6265695f591873d2f3a4ade4e6b41c335685367ddb484",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
       "name": "dialog",
       "type": "component",
       "version": "0.2.2",
@@ -670,6 +695,31 @@
         "registry/components/hover-card.json"
       ],
       "checksum": "95ff1b16c880d9f55e0665147c2223d2faeb2fde4afb6d43436cd9be3086992f",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "image",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/image.json",
+      "description": "component/image",
+      "tags": [
+        "component",
+        "image"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/image.json"
+      ],
+      "checksum": "76d1ddef61d8d5527bf72c00d91518757bb48292f9089f98cb0edf185c836df5",
       "category": "component",
       "scenarios": [
         "component"
@@ -1029,6 +1079,31 @@
     },
     {
       "kind": "component",
+      "name": "result",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/result.json",
+      "description": "component/result",
+      "tags": [
+        "component",
+        "result"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/result.json"
+      ],
+      "checksum": "d04b286daccfa9dea1a2760bba4ea2c307ee25cf6819ae83aa009fbe4f85f30c",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
       "name": "search-command",
       "type": "component",
       "version": "0.2.2",
@@ -1045,6 +1120,31 @@
         "registry/components/search-command.json"
       ],
       "checksum": "885d9c30bd73767ce095206f1122814ddf4c2546fbadb06823fa38a25939a73c",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "segmented",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/segmented.json",
+      "description": "component/segmented",
+      "tags": [
+        "component",
+        "segmented"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/segmented.json"
+      ],
+      "checksum": "1165d904da13c6195a0623c3f7a47dc9b40ccd8fc3d6c6d2bcd761244a8fef54",
       "category": "component",
       "scenarios": [
         "component"
@@ -1145,6 +1245,31 @@
         "registry/components/slider.json"
       ],
       "checksum": "d9dff6775aeb4b112b3a774a5b548b875337d1df1da5f097fcc44b00c1a8d911",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "spin",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/spin.json",
+      "description": "component/spin",
+      "tags": [
+        "component",
+        "spin"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/spin.json"
+      ],
+      "checksum": "f0f59e0e1e0735166df1db08fa7d1fe7aa0dfc9f446a08b0578a25dfef46cf10",
       "category": "component",
       "scenarios": [
         "component"
@@ -1320,6 +1445,31 @@
         "registry/components/time-picker.json"
       ],
       "checksum": "2d7628bac19ee4721999511c8dd52eda5ba9df92f6a46d206719fdb7db84cb8a",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "timeline",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/timeline.json",
+      "description": "component/timeline",
+      "tags": [
+        "component",
+        "timeline"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/timeline.json"
+      ],
+      "checksum": "5e7cb0140a75a497ede70b366785229816cda7f6d9a9ac6fb7e4313f6f64f075",
       "category": "component",
       "scenarios": [
         "component"
@@ -2838,6 +2988,39 @@
           }
         }
       },
+      "descriptions": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "descriptions",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/descriptions.json",
+            "description": "component/descriptions",
+            "tags": [
+              "component",
+              "descriptions"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/descriptions.json"
+            ],
+            "checksum": "ea4f5acc35ea76d095e6265695f591873d2f3a4ade4e6b41c335685367ddb484",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
       "dialog": {
         "latest": "0.2.2",
         "versions": [
@@ -3093,6 +3276,39 @@
               "registry/components/hover-card.json"
             ],
             "checksum": "95ff1b16c880d9f55e0665147c2223d2faeb2fde4afb6d43436cd9be3086992f",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "image": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "image",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/image.json",
+            "description": "component/image",
+            "tags": [
+              "component",
+              "image"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/image.json"
+            ],
+            "checksum": "76d1ddef61d8d5527bf72c00d91518757bb48292f9089f98cb0edf185c836df5",
             "category": "component",
             "scenarios": [
               "component"
@@ -3564,6 +3780,39 @@
           }
         }
       },
+      "result": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "result",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/result.json",
+            "description": "component/result",
+            "tags": [
+              "component",
+              "result"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/result.json"
+            ],
+            "checksum": "d04b286daccfa9dea1a2760bba4ea2c307ee25cf6819ae83aa009fbe4f85f30c",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
       "search-command": {
         "latest": "0.2.2",
         "versions": [
@@ -3588,6 +3837,39 @@
               "registry/components/search-command.json"
             ],
             "checksum": "885d9c30bd73767ce095206f1122814ddf4c2546fbadb06823fa38a25939a73c",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "segmented": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "segmented",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/segmented.json",
+            "description": "component/segmented",
+            "tags": [
+              "component",
+              "segmented"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/segmented.json"
+            ],
+            "checksum": "1165d904da13c6195a0623c3f7a47dc9b40ccd8fc3d6c6d2bcd761244a8fef54",
             "category": "component",
             "scenarios": [
               "component"
@@ -3720,6 +4002,39 @@
               "registry/components/slider.json"
             ],
             "checksum": "d9dff6775aeb4b112b3a774a5b548b875337d1df1da5f097fcc44b00c1a8d911",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "spin": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "spin",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/spin.json",
+            "description": "component/spin",
+            "tags": [
+              "component",
+              "spin"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/spin.json"
+            ],
+            "checksum": "f0f59e0e1e0735166df1db08fa7d1fe7aa0dfc9f446a08b0578a25dfef46cf10",
             "category": "component",
             "scenarios": [
               "component"
@@ -3951,6 +4266,39 @@
               "registry/components/time-picker.json"
             ],
             "checksum": "2d7628bac19ee4721999511c8dd52eda5ba9df92f6a46d206719fdb7db84cb8a",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "timeline": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "timeline",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/timeline.json",
+            "description": "component/timeline",
+            "tags": [
+              "component",
+              "timeline"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/timeline.json"
+            ],
+            "checksum": "5e7cb0140a75a497ede70b366785229816cda7f6d9a9ac6fb7e4313f6f64f075",
             "category": "component",
             "scenarios": [
               "component"

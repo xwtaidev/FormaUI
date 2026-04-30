@@ -1,0 +1,38 @@
+{
+  "name": "spin",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "lucide-react"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/spin.tsx",
+      "target": "components/primitives/spin.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/spin",
+  "tags": [
+    "component",
+    "spin"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/spin.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "f0f59e0e1e0735166df1db08fa7d1fe7aa0dfc9f446a08b0578a25dfef46cf10"
+}

@@ -1,0 +1,37 @@
+# Descriptions
+
+## Overview
+
+`Descriptions` renders compact key-value summaries for profile, order, and environment metadata panels.
+
+## Installation
+
+```bash
+npx formaui add descriptions
+```
+
+## Usage
+
+```tsx
+import { Descriptions } from "@/components/primitives/descriptions";
+
+const items = [
+  { key: "owner", label: "Owner", children: "FormaUI Team" },
+  { key: "status", label: "Status", children: "Draft" }
+];
+
+export function ProjectMeta() {
+  return <Descriptions items={items} column={2} bordered />;
+}
+```
+
+## v0.7 Scope
+
+- Focuses on read-only summary information.
+- Supports column layout and optional borders.
+- Editable table scenarios remain in `data-table`.
+
+## Source Code
+
+- `packages/components/src/primitives/descriptions.tsx`
+- `registry/components/descriptions.json`

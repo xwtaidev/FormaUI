@@ -1,0 +1,37 @@
+{
+  "name": "image",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/image.tsx",
+      "target": "components/primitives/image.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/image",
+  "tags": [
+    "component",
+    "image"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/image.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "76d1ddef61d8d5527bf72c00d91518757bb48292f9089f98cb0edf185c836df5"
+}

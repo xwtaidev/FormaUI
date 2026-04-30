@@ -1,0 +1,37 @@
+{
+  "name": "timeline",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/timeline.tsx",
+      "target": "components/primitives/timeline.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/timeline",
+  "tags": [
+    "component",
+    "timeline"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/timeline.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "5e7cb0140a75a497ede70b366785229816cda7f6d9a9ac6fb7e4313f6f64f075"
+}

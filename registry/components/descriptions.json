@@ -1,0 +1,37 @@
+{
+  "name": "descriptions",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/descriptions.tsx",
+      "target": "components/primitives/descriptions.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/descriptions",
+  "tags": [
+    "component",
+    "descriptions"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/descriptions.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "ea4f5acc35ea76d095e6265695f591873d2f3a4ade4e6b41c335685367ddb484"
+}
