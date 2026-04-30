@@ -1,0 +1,24 @@
+---
+title: Accessibility
+description: Accessibility baseline and implementation expectations for FormaUI.
+---
+
+# Accessibility
+
+FormaUI components are built with semantic HTML and keyboard-first interaction models.
+
+## Baseline
+
+- Prefer native elements (`button`, `input`, `label`) before ARIA fallbacks.
+- Keep visible focus styles on all interactive controls.
+- Ensure color contrast passes WCAG AA for text and controls.
+
+## Component Expectations
+
+- Dialogs and popovers must manage focus entry and return.
+- Form fields must expose labels, descriptions, and error text relationships.
+- Icon-only actions must provide accessible names.
+
+## Verification
+
+Use Storybook/manual checks plus automated tooling (Axe/Lighthouse) before release.

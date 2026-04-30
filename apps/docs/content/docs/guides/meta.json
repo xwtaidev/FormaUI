@@ -1,4 +1,8 @@
 {
   "title": "Guides",
-  "pages": []
+  "pages": [
+    "./integrations-nextjs",
+    "./integrations-vite",
+    "./monorepo"
+  ]
 }

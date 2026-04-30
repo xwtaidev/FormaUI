@@ -1,4 +1,8 @@
 {
   "title": "Foundations",
-  "pages": []
+  "pages": [
+    "./design-tokens",
+    "./theme",
+    "./accessibility"
+  ]
 }
