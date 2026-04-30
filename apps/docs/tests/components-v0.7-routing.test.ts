@@ -12,6 +12,11 @@ const waveCComponentNames = ["affix", "anchor", "backtop", "tree"] as const;
 const v07ComponentNames = [...waveAComponentNames, ...waveBComponentNames, ...waveCComponentNames] as const;
 
 describe("v0.7 docs routing coverage", () => {
+  it("tracks exactly 16 v0.7 components in routing coverage", () => {
+    expect(v07ComponentNames).toHaveLength(16);
+    expect(new Set(v07ComponentNames).size).toBe(16);
+  });
+
   it("keeps all v0.7 wave-a, wave-b, and wave-c component routes linked from sidebar navigation", () => {
     const layoutSource = readFileSync(resolve(testDir, "../app/layout.tsx"), "utf8");
 

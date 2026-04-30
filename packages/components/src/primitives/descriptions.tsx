@@ -9,7 +9,7 @@ export interface DescriptionsItem {
   span?: number;
 }
 
-export interface DescriptionsProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface DescriptionsProps extends React.HTMLAttributes<HTMLDListElement> {
   items: DescriptionsItem[];
   column?: number;
   size?: "sm" | "md";
@@ -22,7 +22,7 @@ const sizeStyles: Record<NonNullable<DescriptionsProps["size"]>, string> = {
   md: "px-4 py-3 text-sm"
 };
 
-export const Descriptions = React.forwardRef<HTMLDivElement, DescriptionsProps>(
+export const Descriptions = React.forwardRef<HTMLDListElement, DescriptionsProps>(
   ({ className, items, column = 3, size = "md", bordered = false, labelWidth, ...props }, ref) => {
     return (
       <dl

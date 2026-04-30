@@ -5,7 +5,7 @@ import { cn } from "../lib/cn";
 
 type ResultStatus = "success" | "info" | "warning" | "error";
 
-export interface ResultProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface ResultProps extends Omit<React.HTMLAttributes<HTMLDivElement>, "title"> {
   status?: ResultStatus;
   title: React.ReactNode;
   description?: React.ReactNode;

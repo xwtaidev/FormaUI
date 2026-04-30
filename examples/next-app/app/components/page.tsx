@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 import {
   Accordion,
@@ -66,15 +66,31 @@ import {
   TooltipTrigger
 } from "@formaui/components";
 import {
+  Affix,
+  Anchor,
+  Backtop,
   Calendar,
+  Cascader,
+  ColorPicker,
   Combobox,
   DatePicker,
+  Descriptions,
+  Image,
+  Rate,
+  Result,
+  Segmented,
+  Spin,
+  TimePicker,
+  Timeline,
   Toast,
   ToastClose,
   ToastDescription,
   ToastProvider,
   ToastTitle,
   ToastViewport,
+  Transfer,
+  Tree,
+  TreeSelect,
   Upload
 } from "@formaui/components/src";
 
@@ -93,6 +109,17 @@ export default function ComponentsPage() {
   const [owner, setOwner] = useState("design");
   const [uploadedFileName, setUploadedFileName] = useState("none");
   const [toastOpen, setToastOpen] = useState(false);
+  const [v07CascaderPath, setV07CascaderPath] = useState<string[]>(["platform", "alerts", "email"]);
+  const [v07TreeSelectValue, setV07TreeSelectValue] = useState("alerts-email");
+  const [v07TransferTargetKeys, setV07TransferTargetKeys] = useState<string[]>(["alerts-email", "alerts-slack"]);
+  const [v07TimeValue, setV07TimeValue] = useState("09:30");
+  const [v07ColorValue, setV07ColorValue] = useState("#1677ff");
+  const [v07RateValue, setV07RateValue] = useState(4);
+  const [v07SegmentValue, setV07SegmentValue] = useState("overview");
+  const [v07AnchorValue, setV07AnchorValue] = useState("v07-overview");
+  const [v07TreeExpandedKeys, setV07TreeExpandedKeys] = useState<string[]>(["alerts", "incidents"]);
+  const [v07TreeSelectedKeys, setV07TreeSelectedKeys] = useState<string[]>(["alerts-email"]);
+  const v07ScrollRef = useRef<HTMLDivElement | null>(null);
   const memberRows = [
     { name: "Avery Lin", role: "Product Lead", score: 98 },
     { name: "Riley Chen", role: "ML Engineer", score: 92 },
@@ -110,6 +137,30 @@ export default function ComponentsPage() {
   });
   const toolbarStart = (toolbarPage - 1) * toolbarPageSize;
   const visibleMemberRows = filteredMemberRows.slice(toolbarStart, toolbarStart + toolbarPageSize);
+  const v07TreeData = [
+    {
+      key: "alerts",
+      title: "Alerts",
+      children: [
+        { key: "alerts-email", title: "Email alerts" },
+        { key: "alerts-slack", title: "Slack alerts" }
+      ]
+    },
+    {
+      key: "incidents",
+      title: "Incidents",
+      children: [
+        { key: "incidents-p1", title: "P1 incident stream" },
+        { key: "incidents-p2", title: "P2 incident stream" }
+      ]
+    }
+  ];
+  const v07TransferData = [
+    { key: "alerts-email", title: "Email alerts" },
+    { key: "alerts-slack", title: "Slack alerts" },
+    { key: "alerts-pagerduty", title: "PagerDuty alerts" },
+    { key: "incidents-p1", title: "P1 incident stream" }
+  ];
 
   return (
     <TooltipProvider>
@@ -117,8 +168,8 @@ export default function ComponentsPage() {
         <section>
           <h2 className="text-2xl font-semibold">Primitive Components</h2>
           <p className="text-sm text-muted-foreground">
-            v0.6 component set includes Wave A/B/C/D coverage and pack-ready compositions for dashboard and form
-            workflows.
+            v0.7 extends the baseline with hierarchy, navigation, feedback, and media primitives alongside existing
+            pack-ready dashboard and form workflows.
           </p>
         </section>
 
@@ -464,6 +515,144 @@ export default function ComponentsPage() {
                 </Toast>
                 <ToastViewport />
               </ToastProvider>
+            </CardContent>
+          </Card>
+
+          <Card className="md:col-span-2">
+            <CardHeader>
+              <CardTitle>v0.7 Integrated Scenario: routing, hierarchy, and status loop</CardTitle>
+              <CardDescription>
+                Affix + anchor + hierarchy selectors + transfer + timeline + feedback in one release-ops workflow.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-5">
+              <Affix offsetTop={8} className="rounded-md border border-border bg-background p-2">
+                <Segmented
+                  value={v07SegmentValue}
+                  onValueChange={setV07SegmentValue}
+                  options={[
+                    { label: "Overview", value: "overview" },
+                    { label: "Routing", value: "routing" },
+                    { label: "Quality", value: "quality" }
+                  ]}
+                />
+              </Affix>
+
+              <div className="grid gap-4 lg:grid-cols-[220px_minmax(0,1fr)]">
+                <Anchor
+                  value={v07AnchorValue}
+                  onValueChange={setV07AnchorValue}
+                  offsetTop={12}
+                  items={[
+                    { key: "v07-overview", href: "#v07-overview", title: "Overview" },
+                    { key: "v07-routing", href: "#v07-routing", title: "Routing setup" },
+                    { key: "v07-quality", href: "#v07-quality", title: "Quality checks" }
+                  ]}
+                />
+
+                <div ref={v07ScrollRef} className="h-80 space-y-6 overflow-y-auto rounded-md border border-border p-4">
+                  <section id="v07-overview" className="space-y-3">
+                    <h4 className="text-sm font-semibold">Overview</h4>
+                    <Descriptions
+                      column={2}
+                      bordered
+                      items={[
+                        { key: "release", label: "Release", children: "v0.7.5" },
+                        { key: "segment", label: "Segment", children: v07SegmentValue },
+                        { key: "time", label: "Deploy time", children: v07TimeValue },
+                        { key: "theme", label: "Brand color", children: v07ColorValue }
+                      ]}
+                    />
+                    <Result
+                      status="success"
+                      title="Registry metadata converged"
+                      description="All v0.7 components are now discoverable in CLI list/search/info/add flows."
+                      extra={<Badge variant="secondary">Wave v0.7</Badge>}
+                    />
+                  </section>
+
+                  <section id="v07-routing" className="space-y-3">
+                    <h4 className="text-sm font-semibold">Routing setup</h4>
+                    <div className="grid gap-3 md:grid-cols-2">
+                      <Cascader
+                        value={v07CascaderPath}
+                        onValueChange={setV07CascaderPath}
+                        options={[
+                          {
+                            value: "platform",
+                            label: "Platform",
+                            children: [
+                              {
+                                value: "alerts",
+                                label: "Alerts",
+                                children: [
+                                  { value: "email", label: "Email" },
+                                  { value: "slack", label: "Slack" }
+                                ]
+                              },
+                              {
+                                value: "incidents",
+                                label: "Incidents",
+                                children: [{ value: "p1", label: "P1" }]
+                              }
+                            ]
+                          }
+                        ]}
+                      />
+                      <TreeSelect
+                        data={v07TreeData}
+                        value={v07TreeSelectValue}
+                        onValueChange={(value) => setV07TreeSelectValue(Array.isArray(value) ? value[0] ?? "" : value)}
+                      />
+                      <TimePicker value={v07TimeValue} onValueChange={setV07TimeValue} />
+                      <ColorPicker value={v07ColorValue} onValueChange={setV07ColorValue} />
+                    </div>
+                    <Transfer data={v07TransferData} targetKeys={v07TransferTargetKeys} onChange={setV07TransferTargetKeys} />
+                  </section>
+
+                  <section id="v07-quality" className="space-y-3">
+                    <h4 className="text-sm font-semibold">Quality checks</h4>
+                    <div className="grid gap-4 md:grid-cols-2">
+                      <div className="space-y-3">
+                        <Rate value={v07RateValue} onValueChange={setV07RateValue} allowHalf />
+                        <Spin spinning tip="Verifying docs routes..." className="rounded-md border border-border p-3">
+                          <p className="text-sm text-muted-foreground">
+                            v0.7 route coverage includes all 16 newly added component pages.
+                          </p>
+                        </Spin>
+                        <Timeline
+                          items={[
+                            { key: "t1", label: "Registry", children: "Metadata completed", color: "#16a34a" },
+                            { key: "t2", label: "CLI", children: "Discoverability tests passing", color: "#2563eb" }
+                          ]}
+                          pending="Building docs + examples"
+                        />
+                      </div>
+                      <div className="space-y-3">
+                        <Image
+                          alt="v0.7 quality gate"
+                          src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&q=80&auto=format&fit=crop"
+                          fallback="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=900&q=80&auto=format&fit=crop"
+                          className="h-36 w-full"
+                        />
+                        <Tree
+                          data={v07TreeData}
+                          expandedKeys={v07TreeExpandedKeys}
+                          onExpandedChange={setV07TreeExpandedKeys}
+                          selectedKeys={v07TreeSelectedKeys}
+                          onSelectedChange={setV07TreeSelectedKeys}
+                        />
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </div>
+
+              <Backtop
+                visibilityHeight={1200}
+                target={() => v07ScrollRef.current}
+                className="bottom-24 right-8"
+              />
             </CardContent>
           </Card>
         </section>

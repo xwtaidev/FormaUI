@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { cn } from "../lib/cn";
 
-export interface AffixProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface AffixProps extends Omit<React.HTMLAttributes<HTMLDivElement>, "onChange"> {
   offsetTop?: number;
   offsetBottom?: number;
   onChange?: (affixed: boolean) => void;

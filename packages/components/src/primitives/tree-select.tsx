@@ -5,15 +5,15 @@ import { cn } from "../lib/cn";
 import { Button } from "./button";
 import { Popover, PopoverContent, PopoverTrigger } from "./popover";
 
-export interface TreeNode {
+export interface TreeSelectNode {
   key: string;
   title: React.ReactNode;
   disabled?: boolean;
-  children?: TreeNode[];
+  children?: TreeSelectNode[];
 }
 
 export interface TreeSelectProps extends Omit<React.HTMLAttributes<HTMLDivElement>, "onChange" | "defaultValue"> {
-  data: TreeNode[];
+  data: TreeSelectNode[];
   value?: string | string[];
   defaultValue?: string | string[];
   onValueChange?: (value: string | string[]) => void;
@@ -22,7 +22,7 @@ export interface TreeSelectProps extends Omit<React.HTMLAttributes<HTMLDivElemen
   multiple?: boolean;
 }
 
-const flattenNodes = (nodes: TreeNode[]): Record<string, string> => {
+const flattenNodes = (nodes: TreeSelectNode[]): Record<string, string> => {
   return nodes.reduce<Record<string, string>>((acc, node) => {
     acc[node.key] = typeof node.title === "string" ? node.title : node.key;
     if (node.children?.length) {
@@ -89,7 +89,7 @@ export const TreeSelect = React.forwardRef<HTMLDivElement, TreeSelectProps>(
       commit([key]);
     };
 
-    const renderNodes = (nodes: TreeNode[], level: number) => (
+    const renderNodes = (nodes: TreeSelectNode[], level: number) => (
       <ul role={level === 0 ? "tree" : "group"} className={cn("space-y-1", level > 0 && "ml-4 border-l border-border pl-3")}>
         {nodes.map((node) => {
           const hasChildren = Boolean(node.children?.length);
