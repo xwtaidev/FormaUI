@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { metadata as rootMetadata } from "../app/layout";
+import { rootMetadata } from "../app/metadata";
 import { metadata as landingMetadata } from "../app/landing/page";
 import robots from "../app/robots";
 import sitemap from "../app/sitemap";
@@ -13,7 +13,7 @@ describe("docs seo baseline", () => {
     expect(rootMetadata.openGraph?.description).toBeTypeOf("string");
     const twitter = rootMetadata.twitter as { card?: string } | undefined;
     expect(twitter?.card).toBe("summary_large_image");
-    expect(rootMetadata.description).toContain("installation");
+    expect(rootMetadata.description).toContain("Fumadocs");
   });
 
   it("keeps landing page metadata available as a secondary route", () => {
@@ -28,13 +28,10 @@ describe("sitemap + robots availability", () => {
     const entries = sitemap();
     const urls = entries.map((entry) => entry.url);
 
-    expect(urls).toContain("https://formaui.com/installation");
-    expect(urls).toContain("https://formaui.com/components");
-    expect(urls).toContain("https://formaui.com/blocks");
-    expect(urls).toContain("https://formaui.com/templates");
-    expect(urls).toContain("https://formaui.com/cli");
-    expect(urls).toContain("https://formaui.com/registry");
-    expect(urls).toContain("https://formaui.com/migration-v0.4-to-v0.5");
+    expect(urls).toContain("https://formaui.com/docs");
+    expect(urls).toContain("https://formaui.com/docs/getting-started/introduction");
+    expect(urls).toContain("https://formaui.com/docs/getting-started/installation");
+    expect(urls).toContain("https://formaui.com/docs/getting-started/quick-start");
     expect(entries.length).toBeGreaterThanOrEqual(3);
   });
 
@@ -45,13 +42,8 @@ describe("sitemap + robots availability", () => {
       entry ? (Array.isArray(entry.allow) ? entry.allow : [entry.allow]) : []
     );
 
-    expect(allowRules).toContain("/installation");
-    expect(allowRules).toContain("/components");
-    expect(allowRules).toContain("/blocks");
-    expect(allowRules).toContain("/templates");
-    expect(allowRules).toContain("/cli");
-    expect(allowRules).toContain("/registry");
-    expect(allowRules).toContain("/migration-v0.4-to-v0.5");
+    expect(allowRules).toContain("/docs");
+    expect(allowRules).toContain("/docs/getting-started");
     expect(rules.sitemap).toContain("https://formaui.com/sitemap.xml");
   });
 });

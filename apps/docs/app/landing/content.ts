@@ -24,9 +24,9 @@ export const heroCtaContent = {
   description:
     "Compose your marketing narrative from installable blocks, keep full source ownership, and iterate without waiting on hosted lock-in.",
   primaryCtaLabel: "Start Quick",
-  primaryCtaHref: "/quick-start",
+  primaryCtaHref: "/docs/getting-started/quick-start",
   secondaryCtaLabel: "Read Docs",
-  secondaryCtaHref: "/introduction"
+  secondaryCtaHref: "/docs/getting-started/introduction"
 };
 
 export const featureGridContent = {
@@ -97,14 +97,14 @@ export const finalCtaContent = {
   title: "Ready to ship your landing with FormaUI?",
   description: "Use official blocks as baseline, then iterate copy, layout, and behavior directly in your source tree.",
   primaryCtaLabel: "Open Quick Start",
-  primaryCtaHref: "/quick-start",
+  primaryCtaHref: "/docs/getting-started/quick-start",
   secondaryCtaLabel: "Browse Introduction",
-  secondaryCtaHref: "/introduction"
+  secondaryCtaHref: "/docs/getting-started/introduction"
 };
 
 export const footerLinks: FooterLink[] = [
-  { label: "Docs", href: "/introduction" },
-  { label: "Quick Start", href: "/quick-start" },
+  { label: "Docs", href: "/docs/getting-started/introduction" },
+  { label: "Quick Start", href: "/docs/getting-started/quick-start" },
   { label: "Examples", href: "https://github.com/xwtaidev/FormaUI/tree/main/examples" },
   { label: "GitHub", href: "https://github.com/xwtaidev/FormaUI" },
   { label: "Release Notes", href: "https://github.com/xwtaidev/FormaUI/tree/main/docs/releases" }

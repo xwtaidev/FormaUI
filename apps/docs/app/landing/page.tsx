@@ -39,8 +39,8 @@ export const metadata: Metadata = {
 };
 
 const ctaTrackingRules: Array<{ selector: string; eventName: LandingCtaEventName; trigger: "click" | "submit" }> = [
-  { selector: 'a[href="/introduction"]', eventName: "cta_docs_click", trigger: "click" },
-  { selector: 'a[href="/quick-start"]', eventName: "cta_quick_start_click", trigger: "click" },
+  { selector: 'a[href="/docs/getting-started/introduction"]', eventName: "cta_docs_click", trigger: "click" },
+  { selector: 'a[href="/docs/getting-started/quick-start"]', eventName: "cta_quick_start_click", trigger: "click" },
   {
     selector: 'a[href="https://github.com/xwtaidev/FormaUI/tree/main/examples"]',
     eventName: "cta_examples_click",
@@ -51,8 +51,8 @@ const ctaTrackingRules: Array<{ selector: string; eventName: LandingCtaEventName
     eventName: "cta_github_click",
     trigger: "click"
   },
-  { selector: 'form[action="/introduction"]', eventName: "cta_docs_click", trigger: "submit" },
-  { selector: 'form[action="/quick-start"]', eventName: "cta_quick_start_click", trigger: "submit" }
+  { selector: 'form[action="/docs/getting-started/introduction"]', eventName: "cta_docs_click", trigger: "submit" },
+  { selector: 'form[action="/docs/getting-started/quick-start"]', eventName: "cta_quick_start_click", trigger: "submit" }
 ];
 
 export default function LandingPage() {

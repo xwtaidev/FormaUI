@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: "*",
-        allow: ["/", "/installation", "/components", "/blocks", "/templates", "/cli", "/registry", "/migration-v0.4-to-v0.5"],
+        allow: ["/", "/docs", "/docs/getting-started"],
         disallow: ["/api/", "/_next/"]
       }
     ],

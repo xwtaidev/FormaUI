@@ -1,0 +1,16 @@
+{
+  "title": "FormaUI Docs",
+  "pages": [
+    "./getting-started",
+    "./foundations",
+    "./components",
+    "./blocks",
+    "./templates",
+    "./guides",
+    "./cli",
+    "./registry",
+    "./migration",
+    "./release-notes",
+    "./resources"
+  ]
+}
