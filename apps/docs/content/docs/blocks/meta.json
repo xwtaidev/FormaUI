@@ -1,4 +1,23 @@
 {
   "title": "Blocks",
-  "pages": []
+  "pages": [
+    "./overview",
+    "./dashboard-shell",
+    "./api-key-manager",
+    "./token-usage-chart",
+    "./agent-run-timeline",
+    "./model-selector",
+    "./notification-panel",
+    "./billing-panel",
+    "./team-members-table",
+    "./settings-layout",
+    "./feature-grid",
+    "./logo-cloud",
+    "./hero-cta",
+    "./final-cta",
+    "./faq-accordion",
+    "./pricing-section",
+    "./login-panel",
+    "./stats-strip"
+  ]
 }

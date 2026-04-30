@@ -1,4 +1,9 @@
 {
   "title": "Templates",
-  "pages": []
+  "pages": [
+    "./overview",
+    "./ai-console-lite",
+    "./admin-dashboard",
+    "./saas-starter"
+  ]
 }

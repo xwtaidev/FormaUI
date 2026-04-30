@@ -1,0 +1,41 @@
+---
+title: DashboardShell
+description: Block documentation for DashboardShell.
+---
+
+# DashboardShell
+
+## Preview
+
+A two-column shell with app sidebar, page header, and metrics slot for dashboard composition.
+
+## Install Command
+
+```bash
+npx formaui block add dashboard-shell
+```
+
+## Use Case
+
+Use as the entry shell for SaaS admin consoles and AI operation panels.
+
+## Dependencies
+
+Registry dependencies:
+
+- `app-sidebar`
+- `page-header`
+- `metric-card`
+
+## Responsive Behavior
+
+Switches from a single-column flow to `md:grid-cols-[16rem_1fr]` layout on medium screens and up.
+
+## Customization Guide
+
+Pass custom `children` to inject block-level sections like charts, tables, and timelines.
+
+## Source Code
+
+- `packages/blocks/src/dashboard-shell.tsx`
+- `registry/blocks/dashboard-shell.json`
