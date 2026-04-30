@@ -15,6 +15,8 @@ describe("v0.8.1 docs navigation smoke", () => {
     const rootMeta = JSON.parse(readSource("../content/docs/meta.json")) as { pages: string[] };
     const normalized = rootMeta.pages.map((entry) => entry.replace(/^\.\//, ""));
     expect(normalized).toContain("getting-started");
+    expect(normalized).toContain("migration");
+    expect(normalized).toContain("release-notes");
   });
 
   it("uses DocsLayout page tree wiring for sidebar visibility", () => {

@@ -77,4 +77,30 @@ describe("v0.8.2 docs information architecture migration", () => {
       expect(new Set(pages)).toEqual(new Set(files));
     });
   });
+
+  it("migrates blocks/templates/resources/migration/release-notes domains", () => {
+    const domains = ["blocks", "templates", "resources", "migration", "release-notes"] as const;
+
+    domains.forEach((domain) => {
+      const dirPath = resolve(testDir, `../content/docs/${domain}`);
+      const files = readdirSync(dirPath)
+        .filter((file) => file.endsWith(".mdx"))
+        .map((file) => file.replace(/\.mdx$/, ""));
+      const pages = readMetaPages(`../content/docs/${domain}/meta.json`);
+
+      expect(files.length).toBeGreaterThan(0);
+      expect(pages.length).toBeGreaterThan(0);
+      expect(new Set(pages)).toEqual(new Set(files));
+    });
+  });
+
+  it("exposes v0.8 migration and release notes entry pages", () => {
+    const migrationPages = readMetaPages("../content/docs/migration/meta.json");
+    const releasePages = readMetaPages("../content/docs/release-notes/meta.json");
+
+    expect(migrationPages).toContain("v0.8");
+    expect(releasePages).toContain("v0.8");
+    expect(existsSync(resolve(testDir, "../content/docs/migration/v0.8.mdx"))).toBe(true);
+    expect(existsSync(resolve(testDir, "../content/docs/release-notes/v0.8.mdx"))).toBe(true);
+  });
 });
