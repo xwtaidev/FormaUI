@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --webpack",
     "lint": "node ./scripts/check-landing-component-usage.mjs && tsc -p tsconfig.json --noEmit",
     "lint:landing-components": "node ./scripts/check-landing-component-usage.mjs",
     "test": "vitest run --passWithNoTests",
@@ -16,23 +16,22 @@
   "dependencies": {
     "@formaui/blocks": "workspace:*",
     "@formaui/components": "workspace:*",
-    "fumadocs-core": "^14.0.0",
-    "fumadocs-mdx": "^11.0.0",
-    "fumadocs-ui": "^14.0.0",
-    "next": "^15.0.0",
+    "fumadocs-core": "^16.8.5",
+    "fumadocs-mdx": "^14.3.2",
+    "fumadocs-ui": "^16.8.5",
+    "next": "^16.2.4",
     "react": "^19.2.5",
     "react-dom": "^19.2.5"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.4",
     "@types/mdx": "^2.0.13",
     "@types/node": "^22.10.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "autoprefixer": "^10.4.20",
     "chrome-launcher": "^1.1.2",
     "lighthouse": "^12.8.2",
-    "postcss": "^8.5.3",
-    "tailwindcss": "^3.4.17",
+    "tailwindcss": "^4.2.4",
     "typescript": "^5.7.2"
   }
 }

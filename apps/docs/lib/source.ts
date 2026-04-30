@@ -1,10 +1,7 @@
 import { loader } from "fumadocs-core/source";
-
-const { docs } = require("../.source/index") as {
-  docs: { toFumadocsSource: () => unknown };
-};
+import { docs } from "collections/server";
 
 export const source = loader({
   baseUrl: "/docs",
-  source: docs.toFumadocsSource() as any
+  source: docs.toFumadocsSource()
 });
