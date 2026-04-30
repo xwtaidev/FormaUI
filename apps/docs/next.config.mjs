@@ -1,6 +1,6 @@
-import createMDX from "@next/mdx";
+import { createMDX } from "fumadocs-mdx/next";
 
-const withMDX = createMDX({});
+const withMDX = createMDX();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
