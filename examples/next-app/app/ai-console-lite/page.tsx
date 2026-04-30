@@ -1,3 +1,5 @@
+"use client";
+
 import { AgentRunTimeline } from "../../components/agent-run-timeline";
 import { ApiKeyManager } from "../../components/api-key-manager";
 import { DashboardShell } from "../../components/dashboard-shell";

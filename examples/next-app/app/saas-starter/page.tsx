@@ -1,3 +1,5 @@
+"use client";
+
 import { ModelSelector, NotificationPanel, PricingSection, TeamMembersTable } from "@formaui/blocks";
 import { Badge, Button, MetricCard, PageHeader } from "@formaui/components";
 
