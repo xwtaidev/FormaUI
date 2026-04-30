@@ -1,6 +1,9 @@
 export * from "./alert";
 export * from "./accordion";
+export * from "./affix";
+export * from "./anchor";
 export * from "./avatar";
+export * from "./backtop";
 export * from "./badge";
 export * from "./breadcrumb";
 export * from "./button";
@@ -47,6 +50,7 @@ export * from "./toggle";
 export * from "./toggle-group";
 export * from "./tooltip";
 export * from "./transfer";
+export * from "./tree";
 export * from "./tree-select";
 export * from "./typography";
 export * from "./upload";
