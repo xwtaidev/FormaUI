@@ -1,6 +1,12 @@
 {
   "name": "combobox",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom",
@@ -31,11 +37,5 @@
   "sources": [
     "registry/components/combobox.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "1b528b9c5d7ff5bc99e3d4040bb84f850db25ffcafcd34b6fbe7c19fff5fdabe"
+  "checksum": "c55ce68c6211897a4c334e48f3deef1861d79de62b6222c4a9ff133cf67d4470"
 }

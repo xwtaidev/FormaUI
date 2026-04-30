@@ -1,0 +1,41 @@
+{
+  "name": "backtop",
+  "type": "component",
+  "category": "wave-v07",
+  "scenarios": [
+    "v0.7",
+    "navigation",
+    "scroll"
+  ],
+  "complexity": "low",
+  "stability": "beta",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "lucide-react"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn",
+    "button"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/backtop.tsx",
+      "target": "components/primitives/backtop.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/backtop",
+  "tags": [
+    "component",
+    "backtop"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/backtop.json"
+  ],
+  "checksum": "0ff4c2c31eb6c40e46d0b1771863d0d5f0eb632d7b10634f10119337af314efb"
+}

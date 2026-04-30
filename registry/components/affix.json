@@ -1,0 +1,39 @@
+{
+  "name": "affix",
+  "type": "component",
+  "category": "wave-v07",
+  "scenarios": [
+    "v0.7",
+    "navigation",
+    "sticky"
+  ],
+  "complexity": "medium",
+  "stability": "beta",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/affix.tsx",
+      "target": "components/primitives/affix.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/affix",
+  "tags": [
+    "component",
+    "affix"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/affix.json"
+  ],
+  "checksum": "c672e22b3df292480b7639008ca2ad1a53e989d6abf6051c26b12299a51fcfc4"
+}

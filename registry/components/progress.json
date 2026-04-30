@@ -1,6 +1,12 @@
 {
   "name": "progress",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom",
@@ -28,11 +34,5 @@
   "sources": [
     "registry/components/progress.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "6bfc21e21bbd1b78f62ace271bef949d6a3419aec4e01808c623bf5d4fd3c8d8"
+  "checksum": "6eebd2a43fb9e967c54337f0fe9e55a9c52c15bfe13da521c281c0b804dfe570"
 }

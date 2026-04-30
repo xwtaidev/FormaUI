@@ -1,6 +1,12 @@
 {
   "name": "input",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom"
@@ -27,11 +33,5 @@
   "sources": [
     "registry/components/input.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "6488b70ec7ae7fa3cdb8ee18e0b32a9380ff5f1afafcf06f3226b928decf5f2c"
+  "checksum": "577c3734018f82bc029dccc79e779fa79f08b1feb3063d93d88010702033317b"
 }

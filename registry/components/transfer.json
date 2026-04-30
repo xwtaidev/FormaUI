@@ -1,0 +1,41 @@
+{
+  "name": "transfer",
+  "type": "component",
+  "category": "wave-v07",
+  "scenarios": [
+    "v0.7",
+    "selection",
+    "dual-list"
+  ],
+  "complexity": "high",
+  "stability": "beta",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "lucide-react"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn",
+    "button"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/transfer.tsx",
+      "target": "components/primitives/transfer.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/transfer",
+  "tags": [
+    "component",
+    "transfer"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/transfer.json"
+  ],
+  "checksum": "e15b36d2fa709c9e2e430908577b92fb799a094728f38fbeeb734c3b5c4f46ae"
+}

@@ -1,0 +1,42 @@
+{
+  "name": "tree-select",
+  "type": "component",
+  "category": "wave-v07",
+  "scenarios": [
+    "v0.7",
+    "selection",
+    "hierarchy"
+  ],
+  "complexity": "high",
+  "stability": "beta",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "lucide-react"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn",
+    "button",
+    "popover"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/tree-select.tsx",
+      "target": "components/primitives/tree-select.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/tree-select",
+  "tags": [
+    "component",
+    "tree-select"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/tree-select.json"
+  ],
+  "checksum": "7bde37859dac2c702b1f4c08ec5fc84319e63045b69568826150d41665079fa3"
+}

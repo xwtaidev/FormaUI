@@ -1,6 +1,12 @@
 {
   "name": "tooltip",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom",
@@ -28,11 +34,5 @@
   "sources": [
     "registry/components/tooltip.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "bea792e1c01b79bb845b71627dd4d7855f3a020971903da0632f3b724aa2cc16"
+  "checksum": "9ed4934785a997e8d04233bc85b9f55f8c1faf251524e55d321bdced7800260b"
 }

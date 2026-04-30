@@ -1,6 +1,12 @@
 {
   "name": "form-field",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom"
@@ -27,11 +33,5 @@
   "sources": [
     "registry/components/form-field.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "b298f7e71aa00e4c232e4a76e1d9f21b0aa43c226f5370da060d03b57ded0d91"
+  "checksum": "a492971d5b183e184b113760c29653819928975eca8c29943ffffedef041e043"
 }

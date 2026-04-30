@@ -1,0 +1,32 @@
+# Rate
+
+## Overview
+
+`Rate` is a star-based scoring input for feedback and quality assessment flows.
+
+## Installation
+
+```bash
+npx formaui add rate
+```
+
+## Usage
+
+```tsx
+import { Rate } from "@/components/primitives/rate";
+
+export function ScoreField() {
+  return <Rate defaultValue={3} count={5} onValueChange={(value) => console.log(value)} />;
+}
+```
+
+## v0.7 Scope
+
+- Click/hover rating feedback.
+- Controlled and uncontrolled modes.
+- Supports optional half-star precision.
+
+## Source Code
+
+- `packages/components/src/primitives/rate.tsx`
+- `registry/components/rate.json`

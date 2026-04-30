@@ -1,6 +1,12 @@
 {
   "name": "menubar",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom",
@@ -29,11 +35,5 @@
   "sources": [
     "registry/components/menubar.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "6a87809653d7a38a4c91c8a4a0847d3faa44586dd04b363afaceacb35986e0b9"
+  "checksum": "40f92150f3134182e91f03395b9939b258d2fc09c0e9affe11006ee1cf179c97"
 }

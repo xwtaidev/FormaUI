@@ -1,0 +1,40 @@
+{
+  "name": "segmented",
+  "type": "component",
+  "category": "wave-v07",
+  "scenarios": [
+    "v0.7",
+    "selection",
+    "switching"
+  ],
+  "complexity": "medium",
+  "stability": "beta",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "@radix-ui/react-toggle-group"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/segmented.tsx",
+      "target": "components/primitives/segmented.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/segmented",
+  "tags": [
+    "component",
+    "segmented"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/segmented.json"
+  ],
+  "checksum": "1c129e621b9a77a2cfba9253f774eed44e509cff57ae0dcb5433cc2e89021554"
+}

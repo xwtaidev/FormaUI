@@ -1,6 +1,12 @@
 {
   "name": "avatar",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom",
@@ -28,11 +34,5 @@
   "sources": [
     "registry/components/avatar.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "fce77803a0fd2eb2a7a06d3c96bd2ba34f73dcdd197c1f3f8bfec23446b16d25"
+  "checksum": "9f77c1c7ee5be0aca0767a1eaa3010d59ccd59f7867085db4cd0520cec6cafd9"
 }

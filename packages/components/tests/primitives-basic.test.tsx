@@ -3,11 +3,11 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
-import { Badge, Button, Calendar, Card, CardContent, CardHeader, CardTitle, Progress, Skeleton } from "../src";
+import { Affix, Anchor, Backtop, Badge, Button, Calendar, Card, CardContent, CardHeader, CardTitle, Image, Progress, Result, Skeleton, Spin, Tree } from "../src";
 import * as componentExports from "../src";
 
 describe("primitives: basic", () => {
-  it("keeps pre-v0.6 basic exports stable", () => {
+  it("keeps pre-v0.7 basic exports stable", () => {
     for (const name of ["Button", "Card", "CardHeader", "CardContent", "CardTitle", "Badge", "Progress", "Skeleton"]) {
       expect(componentExports).toHaveProperty(name);
     }
@@ -82,5 +82,52 @@ describe("primitives: basic", () => {
 
     fireEvent.click(screen.getByRole("button", { name: "Next month" }));
     expect(screen.getByText("May 2026")).toBeDefined();
+  });
+
+  it("renders basic wave-b feedback primitives", () => {
+    render(
+      <div>
+        <Result status="info" title="Waiting for review" description="Please check the summary." />
+        <Spin spinning tip="Loading report">
+          <span>Summary content</span>
+        </Spin>
+        <Image src="https://example.com/cover.png" alt="Cover" />
+      </div>
+    );
+
+    expect(screen.getByRole("status")).toBeDefined();
+    expect(screen.getByText("Loading report")).toBeDefined();
+    expect(screen.getByAltText("Cover")).toBeDefined();
+  });
+
+  it("renders basic wave-c navigation primitives", async () => {
+    const scrollToMock = vi.fn();
+    Object.defineProperty(window, "scrollTo", { configurable: true, writable: true, value: scrollToMock });
+    Object.defineProperty(window, "scrollY", { configurable: true, writable: true, value: 260 });
+
+    render(
+      <div>
+        <Affix offsetTop={8}>
+          <span>Sticky actions</span>
+        </Affix>
+        <Anchor items={[{ key: "overview", href: "#overview", title: "Overview" }]} />
+        <Backtop visibilityHeight={-1} />
+        <Tree
+          data={[
+            {
+              key: "root",
+              title: "Root",
+              children: [{ key: "leaf", title: "Leaf" }]
+            }
+          ]}
+        />
+      </div>
+    );
+
+    expect(screen.getByText("Sticky actions")).toBeDefined();
+    expect(screen.getByRole("link", { name: "Overview" })).toBeDefined();
+    expect(await screen.findByRole("button", { name: "Back to top" })).toBeDefined();
+    fireEvent.click(screen.getByRole("button", { name: "Expand node" }));
+    expect(screen.getByRole("treeitem", { name: "Leaf" })).toBeDefined();
   });
 });

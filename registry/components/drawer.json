@@ -1,6 +1,12 @@
 {
   "name": "drawer",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom",
@@ -30,11 +36,5 @@
   "sources": [
     "registry/components/drawer.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "e150210f3f1f2a714967e3a10e9aabcc6c3ce5d3f7571dc3bcdfef4cf7c6cacf"
+  "checksum": "162305cbd7e2db4fb2e1a174173065e805266ad0ba5594609ca560ab59329fe9"
 }

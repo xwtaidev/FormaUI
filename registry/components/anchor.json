@@ -1,0 +1,39 @@
+{
+  "name": "anchor",
+  "type": "component",
+  "category": "wave-v07",
+  "scenarios": [
+    "v0.7",
+    "navigation",
+    "in-page"
+  ],
+  "complexity": "medium",
+  "stability": "beta",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/anchor.tsx",
+      "target": "components/primitives/anchor.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/anchor",
+  "tags": [
+    "component",
+    "anchor"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/anchor.json"
+  ],
+  "checksum": "52524eb3df7aca73e363e7d4aa1d1b200dd7645a7eabbb3ab4d10d566def38f7"
+}

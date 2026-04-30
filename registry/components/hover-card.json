@@ -1,6 +1,12 @@
 {
   "name": "hover-card",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom",
@@ -28,11 +34,5 @@
   "sources": [
     "registry/components/hover-card.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "95ff1b16c880d9f55e0665147c2223d2faeb2fde4afb6d43436cd9be3086992f"
+  "checksum": "a5f61b100197abab6002f862d6d3c6bde70d134b07735cc23f66cfddda973caa"
 }

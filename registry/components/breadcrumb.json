@@ -1,6 +1,12 @@
 {
   "name": "breadcrumb",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom",
@@ -28,11 +34,5 @@
   "sources": [
     "registry/components/breadcrumb.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "d68df13e92e38e7d43beac8f94b82b97d6f767aba9e48c2d2e7c8d2770846d28"
+  "checksum": "464ca9ae2147640a75aa88d84d813a41bd5145af02412bf5858f5e1898ad3fe6"
 }

@@ -1,6 +1,12 @@
 {
   "name": "metric-card",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom"
@@ -27,11 +33,5 @@
   "sources": [
     "registry/components/metric-card.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "4ec25e473c2c455066c97457fc0ffd466552710f01aa6775cfed24ba8a96e345"
+  "checksum": "97c3ee61604e332902f66ee584d71a7faecfad459654b4a45214e8a53b66edfb"
 }

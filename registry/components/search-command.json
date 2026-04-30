@@ -1,6 +1,12 @@
 {
   "name": "search-command",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom"
@@ -30,11 +36,5 @@
   "sources": [
     "registry/components/search-command.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "885d9c30bd73767ce095206f1122814ddf4c2546fbadb06823fa38a25939a73c"
+  "checksum": "2d969acf0ef2ddfd76364f4928b4d7be3b0ec376eb740f612c20342a896629fa"
 }

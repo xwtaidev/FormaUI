@@ -8,10 +8,18 @@ function componentItem(options: {
   dependencies?: string[];
   registryDependencies?: string[];
   type?: RegistryItem["type"];
+  category?: RegistryItem["category"];
+  scenarios?: RegistryItem["scenarios"];
+  complexity?: RegistryItem["complexity"];
+  stability?: RegistryItem["stability"];
 }): RegistryItem {
   return {
     name: options.name,
     type: options.type ?? "component",
+    category: options.category,
+    scenarios: options.scenarios,
+    complexity: options.complexity,
+    stability: options.stability,
     dependencies: [...BASE_COMPONENT_DEPS, ...(options.dependencies ?? [])],
     devDependencies: [],
     registryDependencies: options.registryDependencies ?? [],
@@ -53,10 +61,38 @@ export const componentRegistryItems: RegistryItem[] = [
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
+    name: "affix",
+    source: "packages/components/src/primitives/affix.tsx",
+    category: "wave-v07",
+    scenarios: ["v0.7", "navigation", "sticky"],
+    complexity: "medium",
+    stability: "beta",
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "anchor",
+    source: "packages/components/src/primitives/anchor.tsx",
+    category: "wave-v07",
+    scenarios: ["v0.7", "navigation", "in-page"],
+    complexity: "medium",
+    stability: "beta",
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
     name: "avatar",
     source: "packages/components/src/primitives/avatar.tsx",
     dependencies: ["@radix-ui/react-avatar"],
     registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "backtop",
+    source: "packages/components/src/primitives/backtop.tsx",
+    category: "wave-v07",
+    scenarios: ["v0.7", "navigation", "scroll"],
+    complexity: "low",
+    stability: "beta",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["lib-cn", "button"]
   }),
   componentItem({
     name: "badge",
@@ -77,6 +113,16 @@ export const componentRegistryItems: RegistryItem[] = [
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
+    name: "cascader",
+    source: "packages/components/src/primitives/cascader.tsx",
+    category: "wave-v07",
+    scenarios: ["v0.7", "selection", "hierarchy"],
+    complexity: "high",
+    stability: "beta",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["lib-cn", "button", "popover"]
+  }),
+  componentItem({
     name: "breadcrumb",
     source: "packages/components/src/primitives/breadcrumb.tsx",
     dependencies: ["lucide-react"],
@@ -86,6 +132,15 @@ export const componentRegistryItems: RegistryItem[] = [
     name: "card",
     source: "packages/components/src/primitives/card.tsx",
     registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "color-picker",
+    source: "packages/components/src/primitives/color-picker.tsx",
+    category: "wave-v07",
+    scenarios: ["v0.7", "input", "theming"],
+    complexity: "low",
+    stability: "beta",
+    registryDependencies: ["lib-cn", "input"]
   }),
   componentItem({
     name: "checkbox",
@@ -118,6 +173,15 @@ export const componentRegistryItems: RegistryItem[] = [
     registryDependencies: ["lib-cn", "button", "calendar", "popover"]
   }),
   componentItem({
+    name: "descriptions",
+    source: "packages/components/src/primitives/descriptions.tsx",
+    category: "wave-v07",
+    scenarios: ["v0.7", "display", "summary"],
+    complexity: "low",
+    stability: "beta",
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
     name: "dialog",
     source: "packages/components/src/primitives/dialog.tsx",
     dependencies: ["@radix-ui/react-dialog", "lucide-react"],
@@ -139,6 +203,15 @@ export const componentRegistryItems: RegistryItem[] = [
     name: "hover-card",
     source: "packages/components/src/primitives/hover-card.tsx",
     dependencies: ["@radix-ui/react-hover-card"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "image",
+    source: "packages/components/src/primitives/image.tsx",
+    category: "wave-v07",
+    scenarios: ["v0.7", "media", "preview"],
+    complexity: "low",
+    stability: "beta",
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
@@ -193,9 +266,39 @@ export const componentRegistryItems: RegistryItem[] = [
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
+    name: "rate",
+    source: "packages/components/src/primitives/rate.tsx",
+    category: "wave-v07",
+    scenarios: ["v0.7", "input", "feedback"],
+    complexity: "low",
+    stability: "beta",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "result",
+    source: "packages/components/src/primitives/result.tsx",
+    category: "wave-v07",
+    scenarios: ["v0.7", "feedback", "status"],
+    complexity: "low",
+    stability: "beta",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
     name: "select",
     source: "packages/components/src/primitives/select.tsx",
     dependencies: ["@radix-ui/react-select", "lucide-react"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "segmented",
+    source: "packages/components/src/primitives/segmented.tsx",
+    category: "wave-v07",
+    scenarios: ["v0.7", "selection", "switching"],
+    complexity: "medium",
+    stability: "beta",
+    dependencies: ["@radix-ui/react-toggle-group"],
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
@@ -213,6 +316,16 @@ export const componentRegistryItems: RegistryItem[] = [
     name: "slider",
     source: "packages/components/src/primitives/slider.tsx",
     dependencies: ["@radix-ui/react-slider"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "spin",
+    source: "packages/components/src/primitives/spin.tsx",
+    category: "wave-v07",
+    scenarios: ["v0.7", "feedback", "loading"],
+    complexity: "low",
+    stability: "beta",
+    dependencies: ["lucide-react"],
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
@@ -239,6 +352,25 @@ export const componentRegistryItems: RegistryItem[] = [
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
+    name: "time-picker",
+    source: "packages/components/src/primitives/time-picker.tsx",
+    category: "wave-v07",
+    scenarios: ["v0.7", "input", "datetime"],
+    complexity: "low",
+    stability: "beta",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["lib-cn", "input"]
+  }),
+  componentItem({
+    name: "timeline",
+    source: "packages/components/src/primitives/timeline.tsx",
+    category: "wave-v07",
+    scenarios: ["v0.7", "display", "progress"],
+    complexity: "low",
+    stability: "beta",
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
     name: "toast",
     source: "packages/components/src/primitives/toast.tsx",
     dependencies: ["@radix-ui/react-toast", "class-variance-authority", "lucide-react"],
@@ -261,6 +393,36 @@ export const componentRegistryItems: RegistryItem[] = [
     source: "packages/components/src/primitives/tooltip.tsx",
     dependencies: ["@radix-ui/react-tooltip"],
     registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "transfer",
+    source: "packages/components/src/primitives/transfer.tsx",
+    category: "wave-v07",
+    scenarios: ["v0.7", "selection", "dual-list"],
+    complexity: "high",
+    stability: "beta",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["lib-cn", "button"]
+  }),
+  componentItem({
+    name: "tree",
+    source: "packages/components/src/primitives/tree.tsx",
+    category: "wave-v07",
+    scenarios: ["v0.7", "data-display", "hierarchy"],
+    complexity: "high",
+    stability: "beta",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "tree-select",
+    source: "packages/components/src/primitives/tree-select.tsx",
+    category: "wave-v07",
+    scenarios: ["v0.7", "selection", "hierarchy"],
+    complexity: "high",
+    stability: "beta",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["lib-cn", "button", "popover"]
   }),
   componentItem({
     name: "typography",

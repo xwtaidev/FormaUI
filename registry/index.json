@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-04-27T14:02:57.912Z",
-  "total": 82,
+  "generatedAt": "2026-04-30T00:54:09.281Z",
+  "total": 98,
   "items": [
     {
       "kind": "component",
@@ -19,13 +19,40 @@
       "sources": [
         "registry/components/accordion.json"
       ],
-      "checksum": "7427a91d327558559aae68b5aa37e1f83eed474bae862df778147734a724e5df",
+      "checksum": "97a8370518ae3abae7ed5ffdd583a8cb9d821055894bd2e6b601f3357e606bbf",
       "category": "component",
       "scenarios": [
         "component"
       ],
       "complexity": "low",
       "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "affix",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/affix.json",
+      "description": "component/affix",
+      "tags": [
+        "component",
+        "affix"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/affix.json"
+      ],
+      "checksum": "c672e22b3df292480b7639008ca2ad1a53e989d6abf6051c26b12299a51fcfc4",
+      "category": "wave-v07",
+      "scenarios": [
+        "v0.7",
+        "navigation",
+        "sticky"
+      ],
+      "complexity": "medium",
+      "stability": "beta"
     },
     {
       "kind": "component",
@@ -44,13 +71,40 @@
       "sources": [
         "registry/components/alert.json"
       ],
-      "checksum": "2e99add86f031a1cac94de24d4bce60a08b87d66c6aa123a70a41e6719d4941c",
+      "checksum": "c81716725479a1700f4ddc002d20536f2efb6543aa6d1a776dc6782e5ebda3b1",
       "category": "component",
       "scenarios": [
         "component"
       ],
       "complexity": "low",
       "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "anchor",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/anchor.json",
+      "description": "component/anchor",
+      "tags": [
+        "component",
+        "anchor"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/anchor.json"
+      ],
+      "checksum": "52524eb3df7aca73e363e7d4aa1d1b200dd7645a7eabbb3ab4d10d566def38f7",
+      "category": "wave-v07",
+      "scenarios": [
+        "v0.7",
+        "navigation",
+        "in-page"
+      ],
+      "complexity": "medium",
+      "stability": "beta"
     },
     {
       "kind": "component",
@@ -69,7 +123,7 @@
       "sources": [
         "registry/components/app-sidebar.json"
       ],
-      "checksum": "40db1d63fa5ec24778a9d18642127c4463fe59fb014ec8900e2d50c3c7e1083a",
+      "checksum": "ed76fa30bc1f8948a80d42300e6472461002f0da469745bdc84a5fd5b94e50ab",
       "category": "component",
       "scenarios": [
         "component"
@@ -94,13 +148,40 @@
       "sources": [
         "registry/components/avatar.json"
       ],
-      "checksum": "fce77803a0fd2eb2a7a06d3c96bd2ba34f73dcdd197c1f3f8bfec23446b16d25",
+      "checksum": "9f77c1c7ee5be0aca0767a1eaa3010d59ccd59f7867085db4cd0520cec6cafd9",
       "category": "component",
       "scenarios": [
         "component"
       ],
       "complexity": "low",
       "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "backtop",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/backtop.json",
+      "description": "component/backtop",
+      "tags": [
+        "component",
+        "backtop"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/backtop.json"
+      ],
+      "checksum": "0ff4c2c31eb6c40e46d0b1771863d0d5f0eb632d7b10634f10119337af314efb",
+      "category": "wave-v07",
+      "scenarios": [
+        "v0.7",
+        "navigation",
+        "scroll"
+      ],
+      "complexity": "low",
+      "stability": "beta"
     },
     {
       "kind": "component",
@@ -119,7 +200,7 @@
       "sources": [
         "registry/components/badge.json"
       ],
-      "checksum": "3bd5c4e9ce253a3815a09677eba9d4332eca29c5502c2b7be0e1998c6f854ab1",
+      "checksum": "e2a1026b5f4f57c6fd7477c5a3d70595b4d00a86d4648e80e9dbd13a1475190b",
       "category": "component",
       "scenarios": [
         "component"
@@ -144,7 +225,7 @@
       "sources": [
         "registry/components/breadcrumb.json"
       ],
-      "checksum": "d68df13e92e38e7d43beac8f94b82b97d6f767aba9e48c2d2e7c8d2770846d28",
+      "checksum": "464ca9ae2147640a75aa88d84d813a41bd5145af02412bf5858f5e1898ad3fe6",
       "category": "component",
       "scenarios": [
         "component"
@@ -169,7 +250,7 @@
       "sources": [
         "registry/components/button.json"
       ],
-      "checksum": "b002303ee8bc20f6bfa48fa815dd8dddf2916b45b144a849f9e48ed141b2bef8",
+      "checksum": "f3ead74c6c85c6b8c8f5926f152031f5fa4c2e68cb83f89744173863dc0ff0ae",
       "category": "component",
       "scenarios": [
         "component"
@@ -194,7 +275,7 @@
       "sources": [
         "registry/components/calendar.json"
       ],
-      "checksum": "0db31d6891fbe3a222441f68139c34b475a90be3a8a6b4587c237255000d7c0d",
+      "checksum": "94227531428bf011411e78241d5360ad1374114728faa054b4524d62db0f22ab",
       "category": "component",
       "scenarios": [
         "component"
@@ -219,13 +300,40 @@
       "sources": [
         "registry/components/card.json"
       ],
-      "checksum": "2cea69127906c86e91d40f91869d9d22faffd30847bd7c6033df3e891fc70063",
+      "checksum": "359dc8ff483196c0d2a9eed38457938639f50bc2a886587d9e73f9287fe206a0",
       "category": "component",
       "scenarios": [
         "component"
       ],
       "complexity": "low",
       "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "cascader",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/cascader.json",
+      "description": "component/cascader",
+      "tags": [
+        "component",
+        "cascader"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/cascader.json"
+      ],
+      "checksum": "04b36c1235b8c0ff7d608a68804f7e41533f7c1d210e240cda697202e029c103",
+      "category": "wave-v07",
+      "scenarios": [
+        "v0.7",
+        "selection",
+        "hierarchy"
+      ],
+      "complexity": "high",
+      "stability": "beta"
     },
     {
       "kind": "component",
@@ -244,7 +352,7 @@
       "sources": [
         "registry/components/checkbox.json"
       ],
-      "checksum": "6bd72eb6cefc7dd5e85e914a2cdea06ab16dd31cef2b370cd04bb913236586d6",
+      "checksum": "0a6ca495e70512dc4676789df2e2476eb78757cc7c64cc31b30a59822afbd9e9",
       "category": "component",
       "scenarios": [
         "component"
@@ -269,13 +377,40 @@
       "sources": [
         "registry/components/collapse.json"
       ],
-      "checksum": "738ed04cea9e51273f059108e86989e766f2dd1d44d3ac95fdd7edf363167323",
+      "checksum": "813047bc09899dcf86a8475bf0ab9c8354d01168fb1b27505e5a27df93e83cf7",
       "category": "component",
       "scenarios": [
         "component"
       ],
       "complexity": "low",
       "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "color-picker",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/color-picker.json",
+      "description": "component/color-picker",
+      "tags": [
+        "component",
+        "color-picker"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/color-picker.json"
+      ],
+      "checksum": "e26b7e4a4021e79459086f7103e507646df1ff0d0e50637dbabb13f984e13f2d",
+      "category": "wave-v07",
+      "scenarios": [
+        "v0.7",
+        "input",
+        "theming"
+      ],
+      "complexity": "low",
+      "stability": "beta"
     },
     {
       "kind": "component",
@@ -294,7 +429,7 @@
       "sources": [
         "registry/components/combobox.json"
       ],
-      "checksum": "1b528b9c5d7ff5bc99e3d4040bb84f850db25ffcafcd34b6fbe7c19fff5fdabe",
+      "checksum": "c55ce68c6211897a4c334e48f3deef1861d79de62b6222c4a9ff133cf67d4470",
       "category": "component",
       "scenarios": [
         "component"
@@ -319,7 +454,7 @@
       "sources": [
         "registry/components/context-menu.json"
       ],
-      "checksum": "81c5d158fcf7c6dce22c164a2764bab7b89237524ac3ad4bf36b792c84b90b40",
+      "checksum": "9633ef59f2847cac39f13d8c436b454ec012548e5f19eff220b4675da33820ac",
       "category": "component",
       "scenarios": [
         "component"
@@ -344,7 +479,7 @@
       "sources": [
         "registry/components/data-table.json"
       ],
-      "checksum": "1d92b6f3291a60fa87929dce9ab20e2c4b74a9c7017303ef89d695ab5f293ad7",
+      "checksum": "5f2cc727f8d9063adbf09999516b25d36cd5aea9e1637a9a6c4d2a449c71bff1",
       "category": "component",
       "scenarios": [
         "component"
@@ -369,7 +504,7 @@
       "sources": [
         "registry/components/data-table-toolbar.json"
       ],
-      "checksum": "602c8f430ab1c8ac5c9c2aa3027dfe1916245951d245708a81f5f996f7516433",
+      "checksum": "a46c23f9aebf1b241f1dc0b6b4d57103c9894ed86644d7d96a6bcfa2ff6b048a",
       "category": "component",
       "scenarios": [
         "component"
@@ -394,7 +529,7 @@
       "sources": [
         "registry/components/date-picker.json"
       ],
-      "checksum": "7df9cf25714b02399371ee83583e0fd94a27552a5e1d4a83740687bc9fc5ae3e",
+      "checksum": "d4ca563bb174b504ca8b1b74564173ff128770ed3e37af34dd94dbca3d3bfb4d",
       "category": "component",
       "scenarios": [
         "component"
@@ -419,13 +554,40 @@
       "sources": [
         "registry/components/date-range-picker.json"
       ],
-      "checksum": "446d2b64c2fa0e1ac8ccbb60515515db3a784c6e857ec06197137db52cdd9f0b",
+      "checksum": "60c8580dae858ea294a752aa2c53a7a45d3792eb2111b2f24b5cc51359c46bcc",
       "category": "component",
       "scenarios": [
         "component"
       ],
       "complexity": "low",
       "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "descriptions",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/descriptions.json",
+      "description": "component/descriptions",
+      "tags": [
+        "component",
+        "descriptions"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/descriptions.json"
+      ],
+      "checksum": "3d1a22f57d702c9a035fabb2ee00834ebe9b462809b957a34df6731572224c22",
+      "category": "wave-v07",
+      "scenarios": [
+        "v0.7",
+        "display",
+        "summary"
+      ],
+      "complexity": "low",
+      "stability": "beta"
     },
     {
       "kind": "component",
@@ -444,7 +606,7 @@
       "sources": [
         "registry/components/dialog.json"
       ],
-      "checksum": "48804303bcb2609de1e3e00e5aafa2a2599bc6f782650f219313d65b4ac55804",
+      "checksum": "d9785bdc4124f058e9c30a3bc1718b0d8cba7aa91c1b083c2f45bfe7f02dfed7",
       "category": "component",
       "scenarios": [
         "component"
@@ -469,7 +631,7 @@
       "sources": [
         "registry/components/drawer.json"
       ],
-      "checksum": "e150210f3f1f2a714967e3a10e9aabcc6c3ce5d3f7571dc3bcdfef4cf7c6cacf",
+      "checksum": "162305cbd7e2db4fb2e1a174173065e805266ad0ba5594609ca560ab59329fe9",
       "category": "component",
       "scenarios": [
         "component"
@@ -494,7 +656,7 @@
       "sources": [
         "registry/components/dropdown-menu.json"
       ],
-      "checksum": "d677f7d170cd6cea45cebefcdb23e9910bab49f9c69a487a02c902968b78f868",
+      "checksum": "9b6b45474738e61c95375f3f69a9de3d22e31c6fe0a3e9456a21badda1f01d16",
       "category": "component",
       "scenarios": [
         "component"
@@ -519,7 +681,7 @@
       "sources": [
         "registry/components/empty-search-state.json"
       ],
-      "checksum": "17fcc29333a6d8cfab6c05225734e5f2e7f25c84ae12417d111522ead4c77d61",
+      "checksum": "9ec033bc2cd7b9154ae2b727e6a1fb0be635c701435696d36dab3df58428b886",
       "category": "component",
       "scenarios": [
         "component"
@@ -544,7 +706,7 @@
       "sources": [
         "registry/components/empty-state.json"
       ],
-      "checksum": "2b5b701ff8d0a45897df3e1d868ad341178cff6635db7ce45ddde2a602ddfbb6",
+      "checksum": "f0a5789e210e85d7c71b029fbb07fd6a3f444ff581a7cbe908f0a84219050e30",
       "category": "component",
       "scenarios": [
         "component"
@@ -569,7 +731,7 @@
       "sources": [
         "registry/components/filter-bar.json"
       ],
-      "checksum": "96b6a11219acbe56f216335aba323e9d360de39cc5a0722fb05ab6e529586036",
+      "checksum": "975f8a8a49436258c168dab0bbfaa607112efe4591ee21fc9712d7bd9732d5f8",
       "category": "component",
       "scenarios": [
         "component"
@@ -594,7 +756,7 @@
       "sources": [
         "registry/components/form-field.json"
       ],
-      "checksum": "b298f7e71aa00e4c232e4a76e1d9f21b0aa43c226f5370da060d03b57ded0d91",
+      "checksum": "a492971d5b183e184b113760c29653819928975eca8c29943ffffedef041e043",
       "category": "component",
       "scenarios": [
         "component"
@@ -619,13 +781,40 @@
       "sources": [
         "registry/components/hover-card.json"
       ],
-      "checksum": "95ff1b16c880d9f55e0665147c2223d2faeb2fde4afb6d43436cd9be3086992f",
+      "checksum": "a5f61b100197abab6002f862d6d3c6bde70d134b07735cc23f66cfddda973caa",
       "category": "component",
       "scenarios": [
         "component"
       ],
       "complexity": "low",
       "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "image",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/image.json",
+      "description": "component/image",
+      "tags": [
+        "component",
+        "image"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/image.json"
+      ],
+      "checksum": "255d9e7ec3d1b116172dd7366c4cf48b1f59fc854e9c7fce2f42c0ea66a5f7f6",
+      "category": "wave-v07",
+      "scenarios": [
+        "v0.7",
+        "media",
+        "preview"
+      ],
+      "complexity": "low",
+      "stability": "beta"
     },
     {
       "kind": "component",
@@ -644,7 +833,7 @@
       "sources": [
         "registry/components/input.json"
       ],
-      "checksum": "6488b70ec7ae7fa3cdb8ee18e0b32a9380ff5f1afafcf06f3226b928decf5f2c",
+      "checksum": "577c3734018f82bc029dccc79e779fa79f08b1feb3063d93d88010702033317b",
       "category": "component",
       "scenarios": [
         "component"
@@ -669,7 +858,7 @@
       "sources": [
         "registry/components/input-number.json"
       ],
-      "checksum": "e1139862576ab3a34b00cbca2f3ba54360f6caa2763b15f9bd872f4598687fdc",
+      "checksum": "28c0014b703950ffa2fdf4e2361989d44f421ceae89873f31f00ac32942c2231",
       "category": "component",
       "scenarios": [
         "component"
@@ -694,7 +883,7 @@
       "sources": [
         "registry/components/input-otp.json"
       ],
-      "checksum": "6eb100c995ad79f5adaa32e8543c843833221be95038b8f25a9f0c5648e8c502",
+      "checksum": "30d47ad6a19486093f3ef8b1d0039e12d7cadc4065b6f602f76107597ee0fb23",
       "category": "component",
       "scenarios": [
         "component"
@@ -719,7 +908,7 @@
       "sources": [
         "registry/components/label.json"
       ],
-      "checksum": "13e5394230cf709040b5aae7233011c93dcd31d20da396045f7fc244443d1e51",
+      "checksum": "a8f94c208daa7d606184afd8e066542cc077d2595f12e4998843231f788c1246",
       "category": "component",
       "scenarios": [
         "component"
@@ -769,7 +958,7 @@
       "sources": [
         "registry/components/menubar.json"
       ],
-      "checksum": "6a87809653d7a38a4c91c8a4a0847d3faa44586dd04b363afaceacb35986e0b9",
+      "checksum": "40f92150f3134182e91f03395b9939b258d2fc09c0e9affe11006ee1cf179c97",
       "category": "component",
       "scenarios": [
         "component"
@@ -794,7 +983,7 @@
       "sources": [
         "registry/components/metric-card.json"
       ],
-      "checksum": "4ec25e473c2c455066c97457fc0ffd466552710f01aa6775cfed24ba8a96e345",
+      "checksum": "97c3ee61604e332902f66ee584d71a7faecfad459654b4a45214e8a53b66edfb",
       "category": "component",
       "scenarios": [
         "component"
@@ -819,7 +1008,7 @@
       "sources": [
         "registry/components/navigation-menu.json"
       ],
-      "checksum": "6d40b31e8fff0781a965d84668c5f31569f2c6d485ee36a95687a7b4373b7103",
+      "checksum": "1784a69f17a0839e7724d5ee79005a53e704da2cac9e3557da32823440ad2749",
       "category": "component",
       "scenarios": [
         "component"
@@ -844,7 +1033,7 @@
       "sources": [
         "registry/components/page-header.json"
       ],
-      "checksum": "44066c728bbac87dc33d7b37a75da7a3df144d990539effdb9b0707e5234a9e1",
+      "checksum": "824a310762b37d0eabf9294c6d6812b65d2a3fa3163c58c0d8be67b4f3ff3f86",
       "category": "component",
       "scenarios": [
         "component"
@@ -869,7 +1058,7 @@
       "sources": [
         "registry/components/pagination-bar.json"
       ],
-      "checksum": "39bdad3212dcfe3ef5e9f864a645b8c4373a16b3973acd20ca111ebf6d01a0c7",
+      "checksum": "daf19a306065ad36253d6f6ad3b277277752a2de28f324251838d5c7bb7e822a",
       "category": "component",
       "scenarios": [
         "component"
@@ -894,7 +1083,7 @@
       "sources": [
         "registry/components/popover.json"
       ],
-      "checksum": "618dec76e69470c5ccc96c6ca8a6d33e48d1bb88b7614c6b0d786f1946c4d0c7",
+      "checksum": "bcef716ad590a839f81647cc27ade7f4657a4bbd7f49e74c137b7108b26fa6ca",
       "category": "component",
       "scenarios": [
         "component"
@@ -919,7 +1108,7 @@
       "sources": [
         "registry/components/progress.json"
       ],
-      "checksum": "6bfc21e21bbd1b78f62ace271bef949d6a3419aec4e01808c623bf5d4fd3c8d8",
+      "checksum": "6eebd2a43fb9e967c54337f0fe9e55a9c52c15bfe13da521c281c0b804dfe570",
       "category": "component",
       "scenarios": [
         "component"
@@ -944,13 +1133,67 @@
       "sources": [
         "registry/components/radio-group.json"
       ],
-      "checksum": "5b1a2c854df41a4aa1dc60e9fdf7d7473dab498075a7555849ad5fb0a460e558",
+      "checksum": "4db5cfbeee776cb860f9a5d698fec783f224d07d61c6efd13ae5d10160e76829",
       "category": "component",
       "scenarios": [
         "component"
       ],
       "complexity": "low",
       "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "rate",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/rate.json",
+      "description": "component/rate",
+      "tags": [
+        "component",
+        "rate"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/rate.json"
+      ],
+      "checksum": "a023154ec67e3ff8ab2c223dbde62de965b681bfa9db26ed29bec105a50a2eac",
+      "category": "wave-v07",
+      "scenarios": [
+        "v0.7",
+        "input",
+        "feedback"
+      ],
+      "complexity": "low",
+      "stability": "beta"
+    },
+    {
+      "kind": "component",
+      "name": "result",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/result.json",
+      "description": "component/result",
+      "tags": [
+        "component",
+        "result"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/result.json"
+      ],
+      "checksum": "25f3ea4cdb65bbc21d05405e44b2c114e59a2974c3a2bd4060beb404c39e2967",
+      "category": "wave-v07",
+      "scenarios": [
+        "v0.7",
+        "feedback",
+        "status"
+      ],
+      "complexity": "low",
+      "stability": "beta"
     },
     {
       "kind": "component",
@@ -969,13 +1212,40 @@
       "sources": [
         "registry/components/search-command.json"
       ],
-      "checksum": "885d9c30bd73767ce095206f1122814ddf4c2546fbadb06823fa38a25939a73c",
+      "checksum": "2d969acf0ef2ddfd76364f4928b4d7be3b0ec376eb740f612c20342a896629fa",
       "category": "component",
       "scenarios": [
         "component"
       ],
       "complexity": "low",
       "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "segmented",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/segmented.json",
+      "description": "component/segmented",
+      "tags": [
+        "component",
+        "segmented"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/segmented.json"
+      ],
+      "checksum": "1c129e621b9a77a2cfba9253f774eed44e509cff57ae0dcb5433cc2e89021554",
+      "category": "wave-v07",
+      "scenarios": [
+        "v0.7",
+        "selection",
+        "switching"
+      ],
+      "complexity": "medium",
+      "stability": "beta"
     },
     {
       "kind": "component",
@@ -994,7 +1264,7 @@
       "sources": [
         "registry/components/select.json"
       ],
-      "checksum": "dd2edecbf366aa5b546edf8eaecbfab355848c3498b73ccef6acc76ee7849e08",
+      "checksum": "6b1c14b6203b84fe01bfa131d1ecfecc3a6a45289bf0a509eebf7105acf73091",
       "category": "component",
       "scenarios": [
         "component"
@@ -1019,7 +1289,7 @@
       "sources": [
         "registry/components/separator.json"
       ],
-      "checksum": "9531476ac9804a92f496151d09059dd8fe8ff40669a2a8375502ab9762b82113",
+      "checksum": "03a2cc53fe172ebc7f4db5d69edd6493163446453713276b20f5bdf61a8dfbcd",
       "category": "component",
       "scenarios": [
         "component"
@@ -1044,7 +1314,7 @@
       "sources": [
         "registry/components/skeleton.json"
       ],
-      "checksum": "ae1971283b54bd596362be0eece2496cc5456346bf397169c1ad0007621d947c",
+      "checksum": "ee94224f0dc42151df0b32d656116ca30a55ff84ee357b008f37981986bc5820",
       "category": "component",
       "scenarios": [
         "component"
@@ -1069,13 +1339,40 @@
       "sources": [
         "registry/components/slider.json"
       ],
-      "checksum": "d9dff6775aeb4b112b3a774a5b548b875337d1df1da5f097fcc44b00c1a8d911",
+      "checksum": "269b1776443d2eeb7bb0910d7c4264c5b9b321a5b4ecd7571847384a493fecaa",
       "category": "component",
       "scenarios": [
         "component"
       ],
       "complexity": "low",
       "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "spin",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/spin.json",
+      "description": "component/spin",
+      "tags": [
+        "component",
+        "spin"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/spin.json"
+      ],
+      "checksum": "d4e6ce9b4c06b608ceb4670931e67760808c20bf783c3ca30d6859363516957d",
+      "category": "wave-v07",
+      "scenarios": [
+        "v0.7",
+        "feedback",
+        "loading"
+      ],
+      "complexity": "low",
+      "stability": "beta"
     },
     {
       "kind": "component",
@@ -1094,7 +1391,7 @@
       "sources": [
         "registry/components/status-badge.json"
       ],
-      "checksum": "49550a19991297eede69c40ab67fba71bf0f8fcdbc5441cea0e56e05530e46b0",
+      "checksum": "47caa8191ee3b9a9dcd4475e7b7f496ce3c496fc73817b747899a298f73802a8",
       "category": "component",
       "scenarios": [
         "component"
@@ -1119,7 +1416,7 @@
       "sources": [
         "registry/components/steps.json"
       ],
-      "checksum": "5d42f066bab5fc642d919e0d3c43e32af54afc2a9fd0a137a4b3ddaac8abfef1",
+      "checksum": "1dccc2294d73edaa31647ad75fd1e9987326c3307be01a30395eb458ec94a68b",
       "category": "component",
       "scenarios": [
         "component"
@@ -1144,7 +1441,7 @@
       "sources": [
         "registry/components/switch.json"
       ],
-      "checksum": "b90ab547b80c1e63addfaea10fdfe93925475a41e83450caf1a1ac66b5e90d4e",
+      "checksum": "d75aa4e85ff65b7ddd2d8ba4d9b241039c47bc8bc9507673d9f129827f303533",
       "category": "component",
       "scenarios": [
         "component"
@@ -1169,7 +1466,7 @@
       "sources": [
         "registry/components/tabs.json"
       ],
-      "checksum": "2caf288b2b5d03035294041ed2ff81e732cb7c986e3a2248e0d5f5207437ff12",
+      "checksum": "64b019dfc8bd629678affeeb16052772055e03cfdc744674da40fee3184ec234",
       "category": "component",
       "scenarios": [
         "component"
@@ -1194,7 +1491,7 @@
       "sources": [
         "registry/components/textarea.json"
       ],
-      "checksum": "9dc7e36c5c1d7a2899d887967d5b216c7fa7484108ec615d4a20c5b144e955d8",
+      "checksum": "e7db20a366c4502e74dc37a1cb93313ebdacbfabcf5bf8882196f78c5f84b75e",
       "category": "component",
       "scenarios": [
         "component"
@@ -1219,13 +1516,67 @@
       "sources": [
         "registry/components/theme-switcher.json"
       ],
-      "checksum": "dd5f25fa0ce36437f19e833ed771ed3429e24c99a95e582eaa6fa977cf972194",
+      "checksum": "396d4756b4d3955e4fdb34a1c7dddb71a95b565b81d3bb12bd9778f54f9a1ad2",
       "category": "component",
       "scenarios": [
         "component"
       ],
       "complexity": "low",
       "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "time-picker",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/time-picker.json",
+      "description": "component/time-picker",
+      "tags": [
+        "component",
+        "time-picker"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/time-picker.json"
+      ],
+      "checksum": "d4d3bc447e2b08ef934b535df8e4a7d97fed0700d4b37c607c0ea61e22b19a40",
+      "category": "wave-v07",
+      "scenarios": [
+        "v0.7",
+        "input",
+        "datetime"
+      ],
+      "complexity": "low",
+      "stability": "beta"
+    },
+    {
+      "kind": "component",
+      "name": "timeline",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/timeline.json",
+      "description": "component/timeline",
+      "tags": [
+        "component",
+        "timeline"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/timeline.json"
+      ],
+      "checksum": "ccc32e479bb6e71c561732664b8dae8863da1dc2d441517f84f242ec703a9df7",
+      "category": "wave-v07",
+      "scenarios": [
+        "v0.7",
+        "display",
+        "progress"
+      ],
+      "complexity": "low",
+      "stability": "beta"
     },
     {
       "kind": "component",
@@ -1244,7 +1595,7 @@
       "sources": [
         "registry/components/toast.json"
       ],
-      "checksum": "c8ace8ae7b5f179b5c44ea9d5ae7ee80cd46ff098fbf6af7f3a78dc3735064f2",
+      "checksum": "c952d870023569701cee0993b3b6c74982986ea71786fa32834888b77fde63dd",
       "category": "component",
       "scenarios": [
         "component"
@@ -1269,7 +1620,7 @@
       "sources": [
         "registry/components/toggle.json"
       ],
-      "checksum": "91b0830aa245c3944af6e892997098f4f5f08a3d161b6910ed93ed197bc7a2e5",
+      "checksum": "a7b0657cdd4162b0edfb8443fa2e1cc4b73e26e0ad42261cd27ee26b20f284d2",
       "category": "component",
       "scenarios": [
         "component"
@@ -1294,7 +1645,7 @@
       "sources": [
         "registry/components/toggle-group.json"
       ],
-      "checksum": "1ebec356c2bf6e7184a489f748a8ed63b24514ff3d1a1650b46d0b4d7dc29df2",
+      "checksum": "d49bf36ef12fad12c37d7e6a0113220ae053d9ad3c7a533c6d5de64d520b58f2",
       "category": "component",
       "scenarios": [
         "component"
@@ -1319,13 +1670,94 @@
       "sources": [
         "registry/components/tooltip.json"
       ],
-      "checksum": "bea792e1c01b79bb845b71627dd4d7855f3a020971903da0632f3b724aa2cc16",
+      "checksum": "9ed4934785a997e8d04233bc85b9f55f8c1faf251524e55d321bdced7800260b",
       "category": "component",
       "scenarios": [
         "component"
       ],
       "complexity": "low",
       "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "transfer",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/transfer.json",
+      "description": "component/transfer",
+      "tags": [
+        "component",
+        "transfer"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/transfer.json"
+      ],
+      "checksum": "e15b36d2fa709c9e2e430908577b92fb799a094728f38fbeeb734c3b5c4f46ae",
+      "category": "wave-v07",
+      "scenarios": [
+        "v0.7",
+        "selection",
+        "dual-list"
+      ],
+      "complexity": "high",
+      "stability": "beta"
+    },
+    {
+      "kind": "component",
+      "name": "tree",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/tree.json",
+      "description": "component/tree",
+      "tags": [
+        "component",
+        "tree"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/tree.json"
+      ],
+      "checksum": "ef36c02561a0bde27b1e19b4cd409acd2b376acbc896faf3d66c933652bad0fc",
+      "category": "wave-v07",
+      "scenarios": [
+        "v0.7",
+        "data-display",
+        "hierarchy"
+      ],
+      "complexity": "high",
+      "stability": "beta"
+    },
+    {
+      "kind": "component",
+      "name": "tree-select",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/tree-select.json",
+      "description": "component/tree-select",
+      "tags": [
+        "component",
+        "tree-select"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/tree-select.json"
+      ],
+      "checksum": "7bde37859dac2c702b1f4c08ec5fc84319e63045b69568826150d41665079fa3",
+      "category": "wave-v07",
+      "scenarios": [
+        "v0.7",
+        "selection",
+        "hierarchy"
+      ],
+      "complexity": "high",
+      "stability": "beta"
     },
     {
       "kind": "component",
@@ -1344,7 +1776,7 @@
       "sources": [
         "registry/components/typography.json"
       ],
-      "checksum": "4f0414dc745a906556e0901e3b490c9d8f1da423a706bc69039d766540e19a87",
+      "checksum": "7fe581c1a1bfd0c6efb84a15d429953d60ecbcece976651eb3001471e221eb37",
       "category": "component",
       "scenarios": [
         "component"
@@ -1369,7 +1801,7 @@
       "sources": [
         "registry/components/upload.json"
       ],
-      "checksum": "8f8303e791b5eb9a307fd90b8fc7f7e7fbdb8a8fbbc04da0140de16a6a9d1abc",
+      "checksum": "a64f2abe623260258dba3cb01e70f6dd1df5dac21bd8578179afe55273e25189",
       "category": "component",
       "scenarios": [
         "component"
@@ -1394,7 +1826,7 @@
       "sources": [
         "registry/components/user-menu.json"
       ],
-      "checksum": "b4deecebf0000a162d720f8c308a1be5a9baef2edc8c48be6ab2ba175ef8de3c",
+      "checksum": "d3daf9bd551dc4997b5698ce0a25b166197dbd6a7e592cbc84f2529db18fcfb3",
       "category": "component",
       "scenarios": [
         "component"
@@ -2084,13 +2516,48 @@
             "sources": [
               "registry/components/accordion.json"
             ],
-            "checksum": "7427a91d327558559aae68b5aa37e1f83eed474bae862df778147734a724e5df",
+            "checksum": "97a8370518ae3abae7ed5ffdd583a8cb9d821055894bd2e6b601f3357e606bbf",
             "category": "component",
             "scenarios": [
               "component"
             ],
             "complexity": "low",
             "stability": "stable"
+          }
+        }
+      },
+      "affix": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "affix",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/affix.json",
+            "description": "component/affix",
+            "tags": [
+              "component",
+              "affix"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/affix.json"
+            ],
+            "checksum": "c672e22b3df292480b7639008ca2ad1a53e989d6abf6051c26b12299a51fcfc4",
+            "category": "wave-v07",
+            "scenarios": [
+              "v0.7",
+              "navigation",
+              "sticky"
+            ],
+            "complexity": "medium",
+            "stability": "beta"
           }
         }
       },
@@ -2117,13 +2584,48 @@
             "sources": [
               "registry/components/alert.json"
             ],
-            "checksum": "2e99add86f031a1cac94de24d4bce60a08b87d66c6aa123a70a41e6719d4941c",
+            "checksum": "c81716725479a1700f4ddc002d20536f2efb6543aa6d1a776dc6782e5ebda3b1",
             "category": "component",
             "scenarios": [
               "component"
             ],
             "complexity": "low",
             "stability": "stable"
+          }
+        }
+      },
+      "anchor": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "anchor",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/anchor.json",
+            "description": "component/anchor",
+            "tags": [
+              "component",
+              "anchor"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/anchor.json"
+            ],
+            "checksum": "52524eb3df7aca73e363e7d4aa1d1b200dd7645a7eabbb3ab4d10d566def38f7",
+            "category": "wave-v07",
+            "scenarios": [
+              "v0.7",
+              "navigation",
+              "in-page"
+            ],
+            "complexity": "medium",
+            "stability": "beta"
           }
         }
       },
@@ -2150,7 +2652,7 @@
             "sources": [
               "registry/components/app-sidebar.json"
             ],
-            "checksum": "40db1d63fa5ec24778a9d18642127c4463fe59fb014ec8900e2d50c3c7e1083a",
+            "checksum": "ed76fa30bc1f8948a80d42300e6472461002f0da469745bdc84a5fd5b94e50ab",
             "category": "component",
             "scenarios": [
               "component"
@@ -2183,13 +2685,48 @@
             "sources": [
               "registry/components/avatar.json"
             ],
-            "checksum": "fce77803a0fd2eb2a7a06d3c96bd2ba34f73dcdd197c1f3f8bfec23446b16d25",
+            "checksum": "9f77c1c7ee5be0aca0767a1eaa3010d59ccd59f7867085db4cd0520cec6cafd9",
             "category": "component",
             "scenarios": [
               "component"
             ],
             "complexity": "low",
             "stability": "stable"
+          }
+        }
+      },
+      "backtop": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "backtop",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/backtop.json",
+            "description": "component/backtop",
+            "tags": [
+              "component",
+              "backtop"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/backtop.json"
+            ],
+            "checksum": "0ff4c2c31eb6c40e46d0b1771863d0d5f0eb632d7b10634f10119337af314efb",
+            "category": "wave-v07",
+            "scenarios": [
+              "v0.7",
+              "navigation",
+              "scroll"
+            ],
+            "complexity": "low",
+            "stability": "beta"
           }
         }
       },
@@ -2216,7 +2753,7 @@
             "sources": [
               "registry/components/badge.json"
             ],
-            "checksum": "3bd5c4e9ce253a3815a09677eba9d4332eca29c5502c2b7be0e1998c6f854ab1",
+            "checksum": "e2a1026b5f4f57c6fd7477c5a3d70595b4d00a86d4648e80e9dbd13a1475190b",
             "category": "component",
             "scenarios": [
               "component"
@@ -2249,7 +2786,7 @@
             "sources": [
               "registry/components/breadcrumb.json"
             ],
-            "checksum": "d68df13e92e38e7d43beac8f94b82b97d6f767aba9e48c2d2e7c8d2770846d28",
+            "checksum": "464ca9ae2147640a75aa88d84d813a41bd5145af02412bf5858f5e1898ad3fe6",
             "category": "component",
             "scenarios": [
               "component"
@@ -2282,7 +2819,7 @@
             "sources": [
               "registry/components/button.json"
             ],
-            "checksum": "b002303ee8bc20f6bfa48fa815dd8dddf2916b45b144a849f9e48ed141b2bef8",
+            "checksum": "f3ead74c6c85c6b8c8f5926f152031f5fa4c2e68cb83f89744173863dc0ff0ae",
             "category": "component",
             "scenarios": [
               "component"
@@ -2315,7 +2852,7 @@
             "sources": [
               "registry/components/calendar.json"
             ],
-            "checksum": "0db31d6891fbe3a222441f68139c34b475a90be3a8a6b4587c237255000d7c0d",
+            "checksum": "94227531428bf011411e78241d5360ad1374114728faa054b4524d62db0f22ab",
             "category": "component",
             "scenarios": [
               "component"
@@ -2348,13 +2885,48 @@
             "sources": [
               "registry/components/card.json"
             ],
-            "checksum": "2cea69127906c86e91d40f91869d9d22faffd30847bd7c6033df3e891fc70063",
+            "checksum": "359dc8ff483196c0d2a9eed38457938639f50bc2a886587d9e73f9287fe206a0",
             "category": "component",
             "scenarios": [
               "component"
             ],
             "complexity": "low",
             "stability": "stable"
+          }
+        }
+      },
+      "cascader": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "cascader",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/cascader.json",
+            "description": "component/cascader",
+            "tags": [
+              "component",
+              "cascader"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/cascader.json"
+            ],
+            "checksum": "04b36c1235b8c0ff7d608a68804f7e41533f7c1d210e240cda697202e029c103",
+            "category": "wave-v07",
+            "scenarios": [
+              "v0.7",
+              "selection",
+              "hierarchy"
+            ],
+            "complexity": "high",
+            "stability": "beta"
           }
         }
       },
@@ -2381,7 +2953,7 @@
             "sources": [
               "registry/components/checkbox.json"
             ],
-            "checksum": "6bd72eb6cefc7dd5e85e914a2cdea06ab16dd31cef2b370cd04bb913236586d6",
+            "checksum": "0a6ca495e70512dc4676789df2e2476eb78757cc7c64cc31b30a59822afbd9e9",
             "category": "component",
             "scenarios": [
               "component"
@@ -2414,13 +2986,48 @@
             "sources": [
               "registry/components/collapse.json"
             ],
-            "checksum": "738ed04cea9e51273f059108e86989e766f2dd1d44d3ac95fdd7edf363167323",
+            "checksum": "813047bc09899dcf86a8475bf0ab9c8354d01168fb1b27505e5a27df93e83cf7",
             "category": "component",
             "scenarios": [
               "component"
             ],
             "complexity": "low",
             "stability": "stable"
+          }
+        }
+      },
+      "color-picker": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "color-picker",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/color-picker.json",
+            "description": "component/color-picker",
+            "tags": [
+              "component",
+              "color-picker"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/color-picker.json"
+            ],
+            "checksum": "e26b7e4a4021e79459086f7103e507646df1ff0d0e50637dbabb13f984e13f2d",
+            "category": "wave-v07",
+            "scenarios": [
+              "v0.7",
+              "input",
+              "theming"
+            ],
+            "complexity": "low",
+            "stability": "beta"
           }
         }
       },
@@ -2447,7 +3054,7 @@
             "sources": [
               "registry/components/combobox.json"
             ],
-            "checksum": "1b528b9c5d7ff5bc99e3d4040bb84f850db25ffcafcd34b6fbe7c19fff5fdabe",
+            "checksum": "c55ce68c6211897a4c334e48f3deef1861d79de62b6222c4a9ff133cf67d4470",
             "category": "component",
             "scenarios": [
               "component"
@@ -2480,7 +3087,7 @@
             "sources": [
               "registry/components/context-menu.json"
             ],
-            "checksum": "81c5d158fcf7c6dce22c164a2764bab7b89237524ac3ad4bf36b792c84b90b40",
+            "checksum": "9633ef59f2847cac39f13d8c436b454ec012548e5f19eff220b4675da33820ac",
             "category": "component",
             "scenarios": [
               "component"
@@ -2513,7 +3120,7 @@
             "sources": [
               "registry/components/data-table.json"
             ],
-            "checksum": "1d92b6f3291a60fa87929dce9ab20e2c4b74a9c7017303ef89d695ab5f293ad7",
+            "checksum": "5f2cc727f8d9063adbf09999516b25d36cd5aea9e1637a9a6c4d2a449c71bff1",
             "category": "component",
             "scenarios": [
               "component"
@@ -2546,7 +3153,7 @@
             "sources": [
               "registry/components/data-table-toolbar.json"
             ],
-            "checksum": "602c8f430ab1c8ac5c9c2aa3027dfe1916245951d245708a81f5f996f7516433",
+            "checksum": "a46c23f9aebf1b241f1dc0b6b4d57103c9894ed86644d7d96a6bcfa2ff6b048a",
             "category": "component",
             "scenarios": [
               "component"
@@ -2579,7 +3186,7 @@
             "sources": [
               "registry/components/date-picker.json"
             ],
-            "checksum": "7df9cf25714b02399371ee83583e0fd94a27552a5e1d4a83740687bc9fc5ae3e",
+            "checksum": "d4ca563bb174b504ca8b1b74564173ff128770ed3e37af34dd94dbca3d3bfb4d",
             "category": "component",
             "scenarios": [
               "component"
@@ -2612,13 +3219,48 @@
             "sources": [
               "registry/components/date-range-picker.json"
             ],
-            "checksum": "446d2b64c2fa0e1ac8ccbb60515515db3a784c6e857ec06197137db52cdd9f0b",
+            "checksum": "60c8580dae858ea294a752aa2c53a7a45d3792eb2111b2f24b5cc51359c46bcc",
             "category": "component",
             "scenarios": [
               "component"
             ],
             "complexity": "low",
             "stability": "stable"
+          }
+        }
+      },
+      "descriptions": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "descriptions",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/descriptions.json",
+            "description": "component/descriptions",
+            "tags": [
+              "component",
+              "descriptions"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/descriptions.json"
+            ],
+            "checksum": "3d1a22f57d702c9a035fabb2ee00834ebe9b462809b957a34df6731572224c22",
+            "category": "wave-v07",
+            "scenarios": [
+              "v0.7",
+              "display",
+              "summary"
+            ],
+            "complexity": "low",
+            "stability": "beta"
           }
         }
       },
@@ -2645,7 +3287,7 @@
             "sources": [
               "registry/components/dialog.json"
             ],
-            "checksum": "48804303bcb2609de1e3e00e5aafa2a2599bc6f782650f219313d65b4ac55804",
+            "checksum": "d9785bdc4124f058e9c30a3bc1718b0d8cba7aa91c1b083c2f45bfe7f02dfed7",
             "category": "component",
             "scenarios": [
               "component"
@@ -2678,7 +3320,7 @@
             "sources": [
               "registry/components/drawer.json"
             ],
-            "checksum": "e150210f3f1f2a714967e3a10e9aabcc6c3ce5d3f7571dc3bcdfef4cf7c6cacf",
+            "checksum": "162305cbd7e2db4fb2e1a174173065e805266ad0ba5594609ca560ab59329fe9",
             "category": "component",
             "scenarios": [
               "component"
@@ -2711,7 +3353,7 @@
             "sources": [
               "registry/components/dropdown-menu.json"
             ],
-            "checksum": "d677f7d170cd6cea45cebefcdb23e9910bab49f9c69a487a02c902968b78f868",
+            "checksum": "9b6b45474738e61c95375f3f69a9de3d22e31c6fe0a3e9456a21badda1f01d16",
             "category": "component",
             "scenarios": [
               "component"
@@ -2744,7 +3386,7 @@
             "sources": [
               "registry/components/empty-search-state.json"
             ],
-            "checksum": "17fcc29333a6d8cfab6c05225734e5f2e7f25c84ae12417d111522ead4c77d61",
+            "checksum": "9ec033bc2cd7b9154ae2b727e6a1fb0be635c701435696d36dab3df58428b886",
             "category": "component",
             "scenarios": [
               "component"
@@ -2777,7 +3419,7 @@
             "sources": [
               "registry/components/empty-state.json"
             ],
-            "checksum": "2b5b701ff8d0a45897df3e1d868ad341178cff6635db7ce45ddde2a602ddfbb6",
+            "checksum": "f0a5789e210e85d7c71b029fbb07fd6a3f444ff581a7cbe908f0a84219050e30",
             "category": "component",
             "scenarios": [
               "component"
@@ -2810,7 +3452,7 @@
             "sources": [
               "registry/components/filter-bar.json"
             ],
-            "checksum": "96b6a11219acbe56f216335aba323e9d360de39cc5a0722fb05ab6e529586036",
+            "checksum": "975f8a8a49436258c168dab0bbfaa607112efe4591ee21fc9712d7bd9732d5f8",
             "category": "component",
             "scenarios": [
               "component"
@@ -2843,7 +3485,7 @@
             "sources": [
               "registry/components/form-field.json"
             ],
-            "checksum": "b298f7e71aa00e4c232e4a76e1d9f21b0aa43c226f5370da060d03b57ded0d91",
+            "checksum": "a492971d5b183e184b113760c29653819928975eca8c29943ffffedef041e043",
             "category": "component",
             "scenarios": [
               "component"
@@ -2876,13 +3518,48 @@
             "sources": [
               "registry/components/hover-card.json"
             ],
-            "checksum": "95ff1b16c880d9f55e0665147c2223d2faeb2fde4afb6d43436cd9be3086992f",
+            "checksum": "a5f61b100197abab6002f862d6d3c6bde70d134b07735cc23f66cfddda973caa",
             "category": "component",
             "scenarios": [
               "component"
             ],
             "complexity": "low",
             "stability": "stable"
+          }
+        }
+      },
+      "image": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "image",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/image.json",
+            "description": "component/image",
+            "tags": [
+              "component",
+              "image"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/image.json"
+            ],
+            "checksum": "255d9e7ec3d1b116172dd7366c4cf48b1f59fc854e9c7fce2f42c0ea66a5f7f6",
+            "category": "wave-v07",
+            "scenarios": [
+              "v0.7",
+              "media",
+              "preview"
+            ],
+            "complexity": "low",
+            "stability": "beta"
           }
         }
       },
@@ -2909,7 +3586,7 @@
             "sources": [
               "registry/components/input.json"
             ],
-            "checksum": "6488b70ec7ae7fa3cdb8ee18e0b32a9380ff5f1afafcf06f3226b928decf5f2c",
+            "checksum": "577c3734018f82bc029dccc79e779fa79f08b1feb3063d93d88010702033317b",
             "category": "component",
             "scenarios": [
               "component"
@@ -2942,7 +3619,7 @@
             "sources": [
               "registry/components/input-number.json"
             ],
-            "checksum": "e1139862576ab3a34b00cbca2f3ba54360f6caa2763b15f9bd872f4598687fdc",
+            "checksum": "28c0014b703950ffa2fdf4e2361989d44f421ceae89873f31f00ac32942c2231",
             "category": "component",
             "scenarios": [
               "component"
@@ -2975,7 +3652,7 @@
             "sources": [
               "registry/components/input-otp.json"
             ],
-            "checksum": "6eb100c995ad79f5adaa32e8543c843833221be95038b8f25a9f0c5648e8c502",
+            "checksum": "30d47ad6a19486093f3ef8b1d0039e12d7cadc4065b6f602f76107597ee0fb23",
             "category": "component",
             "scenarios": [
               "component"
@@ -3008,7 +3685,7 @@
             "sources": [
               "registry/components/label.json"
             ],
-            "checksum": "13e5394230cf709040b5aae7233011c93dcd31d20da396045f7fc244443d1e51",
+            "checksum": "a8f94c208daa7d606184afd8e066542cc077d2595f12e4998843231f788c1246",
             "category": "component",
             "scenarios": [
               "component"
@@ -3074,7 +3751,7 @@
             "sources": [
               "registry/components/menubar.json"
             ],
-            "checksum": "6a87809653d7a38a4c91c8a4a0847d3faa44586dd04b363afaceacb35986e0b9",
+            "checksum": "40f92150f3134182e91f03395b9939b258d2fc09c0e9affe11006ee1cf179c97",
             "category": "component",
             "scenarios": [
               "component"
@@ -3107,7 +3784,7 @@
             "sources": [
               "registry/components/metric-card.json"
             ],
-            "checksum": "4ec25e473c2c455066c97457fc0ffd466552710f01aa6775cfed24ba8a96e345",
+            "checksum": "97c3ee61604e332902f66ee584d71a7faecfad459654b4a45214e8a53b66edfb",
             "category": "component",
             "scenarios": [
               "component"
@@ -3140,7 +3817,7 @@
             "sources": [
               "registry/components/navigation-menu.json"
             ],
-            "checksum": "6d40b31e8fff0781a965d84668c5f31569f2c6d485ee36a95687a7b4373b7103",
+            "checksum": "1784a69f17a0839e7724d5ee79005a53e704da2cac9e3557da32823440ad2749",
             "category": "component",
             "scenarios": [
               "component"
@@ -3173,7 +3850,7 @@
             "sources": [
               "registry/components/page-header.json"
             ],
-            "checksum": "44066c728bbac87dc33d7b37a75da7a3df144d990539effdb9b0707e5234a9e1",
+            "checksum": "824a310762b37d0eabf9294c6d6812b65d2a3fa3163c58c0d8be67b4f3ff3f86",
             "category": "component",
             "scenarios": [
               "component"
@@ -3206,7 +3883,7 @@
             "sources": [
               "registry/components/pagination-bar.json"
             ],
-            "checksum": "39bdad3212dcfe3ef5e9f864a645b8c4373a16b3973acd20ca111ebf6d01a0c7",
+            "checksum": "daf19a306065ad36253d6f6ad3b277277752a2de28f324251838d5c7bb7e822a",
             "category": "component",
             "scenarios": [
               "component"
@@ -3239,7 +3916,7 @@
             "sources": [
               "registry/components/popover.json"
             ],
-            "checksum": "618dec76e69470c5ccc96c6ca8a6d33e48d1bb88b7614c6b0d786f1946c4d0c7",
+            "checksum": "bcef716ad590a839f81647cc27ade7f4657a4bbd7f49e74c137b7108b26fa6ca",
             "category": "component",
             "scenarios": [
               "component"
@@ -3272,7 +3949,7 @@
             "sources": [
               "registry/components/progress.json"
             ],
-            "checksum": "6bfc21e21bbd1b78f62ace271bef949d6a3419aec4e01808c623bf5d4fd3c8d8",
+            "checksum": "6eebd2a43fb9e967c54337f0fe9e55a9c52c15bfe13da521c281c0b804dfe570",
             "category": "component",
             "scenarios": [
               "component"
@@ -3305,13 +3982,83 @@
             "sources": [
               "registry/components/radio-group.json"
             ],
-            "checksum": "5b1a2c854df41a4aa1dc60e9fdf7d7473dab498075a7555849ad5fb0a460e558",
+            "checksum": "4db5cfbeee776cb860f9a5d698fec783f224d07d61c6efd13ae5d10160e76829",
             "category": "component",
             "scenarios": [
               "component"
             ],
             "complexity": "low",
             "stability": "stable"
+          }
+        }
+      },
+      "rate": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "rate",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/rate.json",
+            "description": "component/rate",
+            "tags": [
+              "component",
+              "rate"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/rate.json"
+            ],
+            "checksum": "a023154ec67e3ff8ab2c223dbde62de965b681bfa9db26ed29bec105a50a2eac",
+            "category": "wave-v07",
+            "scenarios": [
+              "v0.7",
+              "input",
+              "feedback"
+            ],
+            "complexity": "low",
+            "stability": "beta"
+          }
+        }
+      },
+      "result": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "result",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/result.json",
+            "description": "component/result",
+            "tags": [
+              "component",
+              "result"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/result.json"
+            ],
+            "checksum": "25f3ea4cdb65bbc21d05405e44b2c114e59a2974c3a2bd4060beb404c39e2967",
+            "category": "wave-v07",
+            "scenarios": [
+              "v0.7",
+              "feedback",
+              "status"
+            ],
+            "complexity": "low",
+            "stability": "beta"
           }
         }
       },
@@ -3338,13 +4085,48 @@
             "sources": [
               "registry/components/search-command.json"
             ],
-            "checksum": "885d9c30bd73767ce095206f1122814ddf4c2546fbadb06823fa38a25939a73c",
+            "checksum": "2d969acf0ef2ddfd76364f4928b4d7be3b0ec376eb740f612c20342a896629fa",
             "category": "component",
             "scenarios": [
               "component"
             ],
             "complexity": "low",
             "stability": "stable"
+          }
+        }
+      },
+      "segmented": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "segmented",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/segmented.json",
+            "description": "component/segmented",
+            "tags": [
+              "component",
+              "segmented"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/segmented.json"
+            ],
+            "checksum": "1c129e621b9a77a2cfba9253f774eed44e509cff57ae0dcb5433cc2e89021554",
+            "category": "wave-v07",
+            "scenarios": [
+              "v0.7",
+              "selection",
+              "switching"
+            ],
+            "complexity": "medium",
+            "stability": "beta"
           }
         }
       },
@@ -3371,7 +4153,7 @@
             "sources": [
               "registry/components/select.json"
             ],
-            "checksum": "dd2edecbf366aa5b546edf8eaecbfab355848c3498b73ccef6acc76ee7849e08",
+            "checksum": "6b1c14b6203b84fe01bfa131d1ecfecc3a6a45289bf0a509eebf7105acf73091",
             "category": "component",
             "scenarios": [
               "component"
@@ -3404,7 +4186,7 @@
             "sources": [
               "registry/components/separator.json"
             ],
-            "checksum": "9531476ac9804a92f496151d09059dd8fe8ff40669a2a8375502ab9762b82113",
+            "checksum": "03a2cc53fe172ebc7f4db5d69edd6493163446453713276b20f5bdf61a8dfbcd",
             "category": "component",
             "scenarios": [
               "component"
@@ -3437,7 +4219,7 @@
             "sources": [
               "registry/components/skeleton.json"
             ],
-            "checksum": "ae1971283b54bd596362be0eece2496cc5456346bf397169c1ad0007621d947c",
+            "checksum": "ee94224f0dc42151df0b32d656116ca30a55ff84ee357b008f37981986bc5820",
             "category": "component",
             "scenarios": [
               "component"
@@ -3470,13 +4252,48 @@
             "sources": [
               "registry/components/slider.json"
             ],
-            "checksum": "d9dff6775aeb4b112b3a774a5b548b875337d1df1da5f097fcc44b00c1a8d911",
+            "checksum": "269b1776443d2eeb7bb0910d7c4264c5b9b321a5b4ecd7571847384a493fecaa",
             "category": "component",
             "scenarios": [
               "component"
             ],
             "complexity": "low",
             "stability": "stable"
+          }
+        }
+      },
+      "spin": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "spin",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/spin.json",
+            "description": "component/spin",
+            "tags": [
+              "component",
+              "spin"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/spin.json"
+            ],
+            "checksum": "d4e6ce9b4c06b608ceb4670931e67760808c20bf783c3ca30d6859363516957d",
+            "category": "wave-v07",
+            "scenarios": [
+              "v0.7",
+              "feedback",
+              "loading"
+            ],
+            "complexity": "low",
+            "stability": "beta"
           }
         }
       },
@@ -3503,7 +4320,7 @@
             "sources": [
               "registry/components/status-badge.json"
             ],
-            "checksum": "49550a19991297eede69c40ab67fba71bf0f8fcdbc5441cea0e56e05530e46b0",
+            "checksum": "47caa8191ee3b9a9dcd4475e7b7f496ce3c496fc73817b747899a298f73802a8",
             "category": "component",
             "scenarios": [
               "component"
@@ -3536,7 +4353,7 @@
             "sources": [
               "registry/components/steps.json"
             ],
-            "checksum": "5d42f066bab5fc642d919e0d3c43e32af54afc2a9fd0a137a4b3ddaac8abfef1",
+            "checksum": "1dccc2294d73edaa31647ad75fd1e9987326c3307be01a30395eb458ec94a68b",
             "category": "component",
             "scenarios": [
               "component"
@@ -3569,7 +4386,7 @@
             "sources": [
               "registry/components/switch.json"
             ],
-            "checksum": "b90ab547b80c1e63addfaea10fdfe93925475a41e83450caf1a1ac66b5e90d4e",
+            "checksum": "d75aa4e85ff65b7ddd2d8ba4d9b241039c47bc8bc9507673d9f129827f303533",
             "category": "component",
             "scenarios": [
               "component"
@@ -3602,7 +4419,7 @@
             "sources": [
               "registry/components/tabs.json"
             ],
-            "checksum": "2caf288b2b5d03035294041ed2ff81e732cb7c986e3a2248e0d5f5207437ff12",
+            "checksum": "64b019dfc8bd629678affeeb16052772055e03cfdc744674da40fee3184ec234",
             "category": "component",
             "scenarios": [
               "component"
@@ -3635,7 +4452,7 @@
             "sources": [
               "registry/components/textarea.json"
             ],
-            "checksum": "9dc7e36c5c1d7a2899d887967d5b216c7fa7484108ec615d4a20c5b144e955d8",
+            "checksum": "e7db20a366c4502e74dc37a1cb93313ebdacbfabcf5bf8882196f78c5f84b75e",
             "category": "component",
             "scenarios": [
               "component"
@@ -3668,13 +4485,83 @@
             "sources": [
               "registry/components/theme-switcher.json"
             ],
-            "checksum": "dd5f25fa0ce36437f19e833ed771ed3429e24c99a95e582eaa6fa977cf972194",
+            "checksum": "396d4756b4d3955e4fdb34a1c7dddb71a95b565b81d3bb12bd9778f54f9a1ad2",
             "category": "component",
             "scenarios": [
               "component"
             ],
             "complexity": "low",
             "stability": "stable"
+          }
+        }
+      },
+      "time-picker": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "time-picker",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/time-picker.json",
+            "description": "component/time-picker",
+            "tags": [
+              "component",
+              "time-picker"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/time-picker.json"
+            ],
+            "checksum": "d4d3bc447e2b08ef934b535df8e4a7d97fed0700d4b37c607c0ea61e22b19a40",
+            "category": "wave-v07",
+            "scenarios": [
+              "v0.7",
+              "input",
+              "datetime"
+            ],
+            "complexity": "low",
+            "stability": "beta"
+          }
+        }
+      },
+      "timeline": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "timeline",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/timeline.json",
+            "description": "component/timeline",
+            "tags": [
+              "component",
+              "timeline"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/timeline.json"
+            ],
+            "checksum": "ccc32e479bb6e71c561732664b8dae8863da1dc2d441517f84f242ec703a9df7",
+            "category": "wave-v07",
+            "scenarios": [
+              "v0.7",
+              "display",
+              "progress"
+            ],
+            "complexity": "low",
+            "stability": "beta"
           }
         }
       },
@@ -3701,7 +4588,7 @@
             "sources": [
               "registry/components/toast.json"
             ],
-            "checksum": "c8ace8ae7b5f179b5c44ea9d5ae7ee80cd46ff098fbf6af7f3a78dc3735064f2",
+            "checksum": "c952d870023569701cee0993b3b6c74982986ea71786fa32834888b77fde63dd",
             "category": "component",
             "scenarios": [
               "component"
@@ -3734,7 +4621,7 @@
             "sources": [
               "registry/components/toggle.json"
             ],
-            "checksum": "91b0830aa245c3944af6e892997098f4f5f08a3d161b6910ed93ed197bc7a2e5",
+            "checksum": "a7b0657cdd4162b0edfb8443fa2e1cc4b73e26e0ad42261cd27ee26b20f284d2",
             "category": "component",
             "scenarios": [
               "component"
@@ -3767,7 +4654,7 @@
             "sources": [
               "registry/components/toggle-group.json"
             ],
-            "checksum": "1ebec356c2bf6e7184a489f748a8ed63b24514ff3d1a1650b46d0b4d7dc29df2",
+            "checksum": "d49bf36ef12fad12c37d7e6a0113220ae053d9ad3c7a533c6d5de64d520b58f2",
             "category": "component",
             "scenarios": [
               "component"
@@ -3800,13 +4687,118 @@
             "sources": [
               "registry/components/tooltip.json"
             ],
-            "checksum": "bea792e1c01b79bb845b71627dd4d7855f3a020971903da0632f3b724aa2cc16",
+            "checksum": "9ed4934785a997e8d04233bc85b9f55f8c1faf251524e55d321bdced7800260b",
             "category": "component",
             "scenarios": [
               "component"
             ],
             "complexity": "low",
             "stability": "stable"
+          }
+        }
+      },
+      "transfer": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "transfer",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/transfer.json",
+            "description": "component/transfer",
+            "tags": [
+              "component",
+              "transfer"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/transfer.json"
+            ],
+            "checksum": "e15b36d2fa709c9e2e430908577b92fb799a094728f38fbeeb734c3b5c4f46ae",
+            "category": "wave-v07",
+            "scenarios": [
+              "v0.7",
+              "selection",
+              "dual-list"
+            ],
+            "complexity": "high",
+            "stability": "beta"
+          }
+        }
+      },
+      "tree": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "tree",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/tree.json",
+            "description": "component/tree",
+            "tags": [
+              "component",
+              "tree"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/tree.json"
+            ],
+            "checksum": "ef36c02561a0bde27b1e19b4cd409acd2b376acbc896faf3d66c933652bad0fc",
+            "category": "wave-v07",
+            "scenarios": [
+              "v0.7",
+              "data-display",
+              "hierarchy"
+            ],
+            "complexity": "high",
+            "stability": "beta"
+          }
+        }
+      },
+      "tree-select": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "tree-select",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/tree-select.json",
+            "description": "component/tree-select",
+            "tags": [
+              "component",
+              "tree-select"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/tree-select.json"
+            ],
+            "checksum": "7bde37859dac2c702b1f4c08ec5fc84319e63045b69568826150d41665079fa3",
+            "category": "wave-v07",
+            "scenarios": [
+              "v0.7",
+              "selection",
+              "hierarchy"
+            ],
+            "complexity": "high",
+            "stability": "beta"
           }
         }
       },
@@ -3833,7 +4825,7 @@
             "sources": [
               "registry/components/typography.json"
             ],
-            "checksum": "4f0414dc745a906556e0901e3b490c9d8f1da423a706bc69039d766540e19a87",
+            "checksum": "7fe581c1a1bfd0c6efb84a15d429953d60ecbcece976651eb3001471e221eb37",
             "category": "component",
             "scenarios": [
               "component"
@@ -3866,7 +4858,7 @@
             "sources": [
               "registry/components/upload.json"
             ],
-            "checksum": "8f8303e791b5eb9a307fd90b8fc7f7e7fbdb8a8fbbc04da0140de16a6a9d1abc",
+            "checksum": "a64f2abe623260258dba3cb01e70f6dd1df5dac21bd8578179afe55273e25189",
             "category": "component",
             "scenarios": [
               "component"
@@ -3899,7 +4891,7 @@
             "sources": [
               "registry/components/user-menu.json"
             ],
-            "checksum": "b4deecebf0000a162d720f8c308a1be5a9baef2edc8c48be6ab2ba175ef8de3c",
+            "checksum": "d3daf9bd551dc4997b5698ce0a25b166197dbd6a7e592cbc84f2529db18fcfb3",
             "category": "component",
             "scenarios": [
               "component"

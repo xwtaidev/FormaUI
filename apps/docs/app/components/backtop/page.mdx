@@ -1,0 +1,32 @@
+# Backtop
+
+## Overview
+
+`Backtop` shows a floating action that scrolls users back to the top after passing a threshold.
+
+## Installation
+
+```bash
+npx formaui add backtop
+```
+
+## Usage
+
+```tsx
+import { Backtop } from "@/components/primitives/backtop";
+
+export function LongPageBacktop() {
+  return <Backtop visibilityHeight={160} />;
+}
+```
+
+## v0.7 Scope
+
+- Visibility based on scroll position.
+- Supports custom target scroll container.
+- Includes smooth-scroll top behavior.
+
+## Source Code
+
+- `packages/components/src/primitives/backtop.tsx`
+- `registry/components/backtop.json`

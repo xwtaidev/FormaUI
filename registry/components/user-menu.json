@@ -1,6 +1,12 @@
 {
   "name": "user-menu",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom"
@@ -28,11 +34,5 @@
   "sources": [
     "registry/components/user-menu.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "b4deecebf0000a162d720f8c308a1be5a9baef2edc8c48be6ab2ba175ef8de3c"
+  "checksum": "d3daf9bd551dc4997b5698ce0a25b166197dbd6a7e592cbc84f2529db18fcfb3"
 }

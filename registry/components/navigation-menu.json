@@ -1,6 +1,12 @@
 {
   "name": "navigation-menu",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom",
@@ -30,11 +36,5 @@
   "sources": [
     "registry/components/navigation-menu.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "6d40b31e8fff0781a965d84668c5f31569f2c6d485ee36a95687a7b4373b7103"
+  "checksum": "1784a69f17a0839e7724d5ee79005a53e704da2cac9e3557da32823440ad2749"
 }

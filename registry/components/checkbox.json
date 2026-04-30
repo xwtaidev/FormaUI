@@ -1,6 +1,12 @@
 {
   "name": "checkbox",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom",
@@ -29,11 +35,5 @@
   "sources": [
     "registry/components/checkbox.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "6bd72eb6cefc7dd5e85e914a2cdea06ab16dd31cef2b370cd04bb913236586d6"
+  "checksum": "0a6ca495e70512dc4676789df2e2476eb78757cc7c64cc31b30a59822afbd9e9"
 }

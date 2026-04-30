@@ -1,0 +1,40 @@
+{
+  "name": "spin",
+  "type": "component",
+  "category": "wave-v07",
+  "scenarios": [
+    "v0.7",
+    "feedback",
+    "loading"
+  ],
+  "complexity": "low",
+  "stability": "beta",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "lucide-react"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/spin.tsx",
+      "target": "components/primitives/spin.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/spin",
+  "tags": [
+    "component",
+    "spin"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/spin.json"
+  ],
+  "checksum": "d4e6ce9b4c06b608ceb4670931e67760808c20bf783c3ca30d6859363516957d"
+}

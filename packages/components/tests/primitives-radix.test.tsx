@@ -82,7 +82,7 @@ if (!("ResizeObserver" in globalThis)) {
 }
 
 describe("primitives: radix and form", () => {
-  it("keeps pre-v0.6 radix/form exports stable", () => {
+  it("keeps pre-v0.7 radix/form exports stable", () => {
     for (const name of [
       "Accordion",
       "AccordionItem",

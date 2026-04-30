@@ -1,6 +1,12 @@
 {
   "name": "filter-bar",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom"
@@ -32,11 +38,5 @@
   "sources": [
     "registry/components/filter-bar.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "96b6a11219acbe56f216335aba323e9d360de39cc5a0722fb05ab6e529586036"
+  "checksum": "975f8a8a49436258c168dab0bbfaa607112efe4591ee21fc9712d7bd9732d5f8"
 }

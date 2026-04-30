@@ -1,6 +1,12 @@
 {
   "name": "skeleton",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom"
@@ -27,11 +33,5 @@
   "sources": [
     "registry/components/skeleton.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "ae1971283b54bd596362be0eece2496cc5456346bf397169c1ad0007621d947c"
+  "checksum": "ee94224f0dc42151df0b32d656116ca30a55ff84ee357b008f37981986bc5820"
 }

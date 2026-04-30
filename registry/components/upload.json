@@ -1,6 +1,12 @@
 {
   "name": "upload",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom"
@@ -27,11 +33,5 @@
   "sources": [
     "registry/components/upload.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "8f8303e791b5eb9a307fd90b8fc7f7e7fbdb8a8fbbc04da0140de16a6a9d1abc"
+  "checksum": "a64f2abe623260258dba3cb01e70f6dd1df5dac21bd8578179afe55273e25189"
 }

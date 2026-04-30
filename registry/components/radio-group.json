@@ -1,6 +1,12 @@
 {
   "name": "radio-group",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom",
@@ -28,11 +34,5 @@
   "sources": [
     "registry/components/radio-group.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "5b1a2c854df41a4aa1dc60e9fdf7d7473dab498075a7555849ad5fb0a460e558"
+  "checksum": "4db5cfbeee776cb860f9a5d698fec783f224d07d61c6efd13ae5d10160e76829"
 }

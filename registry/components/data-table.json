@@ -1,6 +1,12 @@
 {
   "name": "data-table",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom"
@@ -27,11 +33,5 @@
   "sources": [
     "registry/components/data-table.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "1d92b6f3291a60fa87929dce9ab20e2c4b74a9c7017303ef89d695ab5f293ad7"
+  "checksum": "5f2cc727f8d9063adbf09999516b25d36cd5aea9e1637a9a6c4d2a449c71bff1"
 }

@@ -1,0 +1,39 @@
+{
+  "name": "timeline",
+  "type": "component",
+  "category": "wave-v07",
+  "scenarios": [
+    "v0.7",
+    "display",
+    "progress"
+  ],
+  "complexity": "low",
+  "stability": "beta",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/timeline.tsx",
+      "target": "components/primitives/timeline.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/timeline",
+  "tags": [
+    "component",
+    "timeline"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/timeline.json"
+  ],
+  "checksum": "ccc32e479bb6e71c561732664b8dae8863da1dc2d441517f84f242ec703a9df7"
+}

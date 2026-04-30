@@ -1,0 +1,40 @@
+{
+  "name": "tree",
+  "type": "component",
+  "category": "wave-v07",
+  "scenarios": [
+    "v0.7",
+    "data-display",
+    "hierarchy"
+  ],
+  "complexity": "high",
+  "stability": "beta",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "lucide-react"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/tree.tsx",
+      "target": "components/primitives/tree.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/tree",
+  "tags": [
+    "component",
+    "tree"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/tree.json"
+  ],
+  "checksum": "ef36c02561a0bde27b1e19b4cd409acd2b376acbc896faf3d66c933652bad0fc"
+}

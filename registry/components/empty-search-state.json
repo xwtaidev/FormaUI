@@ -1,6 +1,12 @@
 {
   "name": "empty-search-state",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom"
@@ -28,11 +34,5 @@
   "sources": [
     "registry/components/empty-search-state.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "17fcc29333a6d8cfab6c05225734e5f2e7f25c84ae12417d111522ead4c77d61"
+  "checksum": "9ec033bc2cd7b9154ae2b727e6a1fb0be635c701435696d36dab3df58428b886"
 }

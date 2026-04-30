@@ -1,6 +1,12 @@
 {
   "name": "theme-switcher",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom"
@@ -27,11 +33,5 @@
   "sources": [
     "registry/components/theme-switcher.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "dd5f25fa0ce36437f19e833ed771ed3429e24c99a95e582eaa6fa977cf972194"
+  "checksum": "396d4756b4d3955e4fdb34a1c7dddb71a95b565b81d3bb12bd9778f54f9a1ad2"
 }

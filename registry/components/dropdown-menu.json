@@ -1,6 +1,12 @@
 {
   "name": "dropdown-menu",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom",
@@ -29,11 +35,5 @@
   "sources": [
     "registry/components/dropdown-menu.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "d677f7d170cd6cea45cebefcdb23e9910bab49f9c69a487a02c902968b78f868"
+  "checksum": "9b6b45474738e61c95375f3f69a9de3d22e31c6fe0a3e9456a21badda1f01d16"
 }

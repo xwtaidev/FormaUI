@@ -1,6 +1,12 @@
 {
   "name": "empty-state",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom"
@@ -27,11 +33,5 @@
   "sources": [
     "registry/components/empty-state.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "2b5b701ff8d0a45897df3e1d868ad341178cff6635db7ce45ddde2a602ddfbb6"
+  "checksum": "f0a5789e210e85d7c71b029fbb07fd6a3f444ff581a7cbe908f0a84219050e30"
 }

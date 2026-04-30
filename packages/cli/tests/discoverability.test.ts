@@ -64,6 +64,25 @@ const v06ComponentNames = [
   "toast"
 ] as const;
 
+const v07ComponentNames = [
+  "cascader",
+  "tree-select",
+  "transfer",
+  "time-picker",
+  "color-picker",
+  "rate",
+  "descriptions",
+  "result",
+  "timeline",
+  "segmented",
+  "spin",
+  "image",
+  "affix",
+  "anchor",
+  "backtop",
+  "tree"
+] as const;
+
 async function exists(path: string) {
   try {
     await access(path, constants.F_OK);
@@ -113,6 +132,39 @@ async function createRegistryFixture() {
           category: "wave-v06",
           scenarios: ["v0.6", "primitives"],
           complexity: "low",
+          stability: "beta",
+          dependencies: ["react"],
+          devDependencies: [],
+          registryDependencies: [],
+          files: [
+            {
+              source: resolve(sourcesRoot, `${componentName}.tsx`),
+              target: `components/primitives/${componentName}.tsx`
+            }
+          ]
+        },
+        null,
+        2
+      ),
+      "utf8"
+    );
+  }
+
+  for (const componentName of v07ComponentNames) {
+    await writeFile(
+      resolve(sourcesRoot, `${componentName}.tsx`),
+      `export const fixture = "${componentName}";\n`,
+      "utf8"
+    );
+    await writeFile(
+      resolve(registryRoot, `components/${componentName}.json`),
+      JSON.stringify(
+        {
+          name: componentName,
+          type: "component",
+          category: "wave-v07",
+          scenarios: ["v0.7", "primitives"],
+          complexity: "medium",
           stability: "beta",
           dependencies: ["react"],
           devDependencies: [],
@@ -468,6 +520,41 @@ describe("formaui discoverability commands", () => {
       expect(logs.info.some((line) => line.includes("pack/dashboard-foundation"))).toBe(true);
       expect(logs.info.some((line) => line.includes("component/button"))).toBe(false);
     } finally {
+      await rm(fixtureRoot, { recursive: true, force: true });
+    }
+  });
+
+  it("surfaces v0.7 components through list/search/info/add flows", async () => {
+    const { root: fixtureRoot, registryRoot } = await createRegistryFixture();
+    const projectRoot = await createProjectFixture();
+    const logs = createLogBucket();
+    const logger = createCapturedLogger(logs);
+
+    try {
+      await runCli(["list", "--registry", registryRoot, "--kind", "component", "--category", "wave-v07"], { logger });
+      for (const componentName of v07ComponentNames) {
+        expect(logs.info.some((line) => line.includes(`component/${componentName}`))).toBe(true);
+      }
+
+      logs.info.length = 0;
+      await runCli(["search", "v0.7", "--registry", registryRoot], { logger });
+      expect(logs.info.some((line) => line.includes("component/tree-select"))).toBe(true);
+      expect(logs.info.some((line) => line.includes("component/result"))).toBe(true);
+
+      logs.info.length = 0;
+      await runCli(["info", "cascader", "--kind", "component", "--registry", registryRoot], { logger });
+      expect(logs.info.some((line) => line.includes("Name: cascader"))).toBe(true);
+      expect(logs.info.some((line) => line.includes("Category: wave-v07"))).toBe(true);
+      expect(logs.info.some((line) => line.includes("Scenarios: v0.7, primitives"))).toBe(true);
+      expect(logs.info.some((line) => line.includes("Stability: beta"))).toBe(true);
+
+      await runCli(["add", "cascader", "--cwd", projectRoot, "--registry", registryRoot], {
+        logger,
+        installCommandRunner: async () => {}
+      });
+      expect(await exists(resolve(projectRoot, "components/primitives/cascader.tsx"))).toBe(true);
+    } finally {
+      await rm(projectRoot, { recursive: true, force: true });
       await rm(fixtureRoot, { recursive: true, force: true });
     }
   });

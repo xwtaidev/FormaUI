@@ -1,6 +1,12 @@
 {
   "name": "input-otp",
   "type": "component",
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
   "dependencies": [
     "react",
     "react-dom"
@@ -27,11 +33,5 @@
   "sources": [
     "registry/components/input-otp.json"
   ],
-  "category": "component",
-  "scenarios": [
-    "component"
-  ],
-  "complexity": "low",
-  "stability": "stable",
-  "checksum": "6eb100c995ad79f5adaa32e8543c843833221be95038b8f25a9f0c5648e8c502"
+  "checksum": "30d47ad6a19486093f3ef8b1d0039e12d7cadc4065b6f602f76107597ee0fb23"
 }

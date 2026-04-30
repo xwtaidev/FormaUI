@@ -1,0 +1,42 @@
+{
+  "name": "cascader",
+  "type": "component",
+  "category": "wave-v07",
+  "scenarios": [
+    "v0.7",
+    "selection",
+    "hierarchy"
+  ],
+  "complexity": "high",
+  "stability": "beta",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "lucide-react"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn",
+    "button",
+    "popover"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/cascader.tsx",
+      "target": "components/primitives/cascader.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/cascader",
+  "tags": [
+    "component",
+    "cascader"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/cascader.json"
+  ],
+  "checksum": "04b36c1235b8c0ff7d608a68804f7e41533f7c1d210e240cda697202e029c103"
+}

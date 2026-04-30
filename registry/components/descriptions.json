@@ -1,0 +1,39 @@
+{
+  "name": "descriptions",
+  "type": "component",
+  "category": "wave-v07",
+  "scenarios": [
+    "v0.7",
+    "display",
+    "summary"
+  ],
+  "complexity": "low",
+  "stability": "beta",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/descriptions.tsx",
+      "target": "components/primitives/descriptions.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/descriptions",
+  "tags": [
+    "component",
+    "descriptions"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/descriptions.json"
+  ],
+  "checksum": "3d1a22f57d702c9a035fabb2ee00834ebe9b462809b957a34df6731572224c22"
+}

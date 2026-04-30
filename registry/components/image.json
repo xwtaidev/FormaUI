@@ -1,0 +1,39 @@
+{
+  "name": "image",
+  "type": "component",
+  "category": "wave-v07",
+  "scenarios": [
+    "v0.7",
+    "media",
+    "preview"
+  ],
+  "complexity": "low",
+  "stability": "beta",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/image.tsx",
+      "target": "components/primitives/image.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/image",
+  "tags": [
+    "component",
+    "image"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/image.json"
+  ],
+  "checksum": "255d9e7ec3d1b116172dd7366c4cf48b1f59fc854e9c7fce2f42c0ea66a5f7f6"
+}

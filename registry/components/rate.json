@@ -1,0 +1,40 @@
+{
+  "name": "rate",
+  "type": "component",
+  "category": "wave-v07",
+  "scenarios": [
+    "v0.7",
+    "input",
+    "feedback"
+  ],
+  "complexity": "low",
+  "stability": "beta",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "lucide-react"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/rate.tsx",
+      "target": "components/primitives/rate.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/rate",
+  "tags": [
+    "component",
+    "rate"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/rate.json"
+  ],
+  "checksum": "a023154ec67e3ff8ab2c223dbde62de965b681bfa9db26ed29bec105a50a2eac"
+}
