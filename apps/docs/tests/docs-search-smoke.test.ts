@@ -24,4 +24,14 @@ describe("v0.8.1 docs navigation smoke", () => {
     expect(layoutSource).toContain("tree={source.pageTree}");
     expect(layoutSource).toContain("DocsLayout");
   });
+
+  it("wires fumadocs search api route from source", () => {
+    const apiSource = readSource("../app/api/search/route.ts");
+    const rootLayoutSource = readSource("../app/layout.tsx");
+
+    expect(apiSource).toContain('from "fumadocs-core/search/server"');
+    expect(apiSource).toContain("createFromSource(source)");
+    expect(apiSource).toContain("export const { GET }");
+    expect(rootLayoutSource).toContain('api: "/api/search"');
+  });
 });
