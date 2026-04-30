@@ -1,0 +1,37 @@
+{
+  "name": "anchor",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/anchor.tsx",
+      "target": "components/primitives/anchor.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/anchor",
+  "tags": [
+    "component",
+    "anchor"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/anchor.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "5ac962c6f31acf6c6a9da8f9e1a36d04c9ae31311231c9deba07aaf39bafadb6"
+}

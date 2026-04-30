@@ -1,0 +1,38 @@
+{
+  "name": "tree",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "lucide-react"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/tree.tsx",
+      "target": "components/primitives/tree.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/tree",
+  "tags": [
+    "component",
+    "tree"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/tree.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "c1cc654fad5f882831291002a2360c292731a36b5cf79a22460b7a7ebcb07006"
+}

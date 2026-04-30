@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-04-30T00:23:48.962Z",
-  "total": 94,
+  "generatedAt": "2026-04-30T00:44:09.927Z",
+  "total": 98,
   "items": [
     {
       "kind": "component",
@@ -29,6 +29,31 @@
     },
     {
       "kind": "component",
+      "name": "affix",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/affix.json",
+      "description": "component/affix",
+      "tags": [
+        "component",
+        "affix"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/affix.json"
+      ],
+      "checksum": "da749e68e8e799845d5649121e793f5716aeeced7dac114988fe369a255fc70f",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
       "name": "alert",
       "type": "component",
       "version": "0.2.2",
@@ -45,6 +70,31 @@
         "registry/components/alert.json"
       ],
       "checksum": "2e99add86f031a1cac94de24d4bce60a08b87d66c6aa123a70a41e6719d4941c",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "anchor",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/anchor.json",
+      "description": "component/anchor",
+      "tags": [
+        "component",
+        "anchor"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/anchor.json"
+      ],
+      "checksum": "5ac962c6f31acf6c6a9da8f9e1a36d04c9ae31311231c9deba07aaf39bafadb6",
       "category": "component",
       "scenarios": [
         "component"
@@ -95,6 +145,31 @@
         "registry/components/avatar.json"
       ],
       "checksum": "fce77803a0fd2eb2a7a06d3c96bd2ba34f73dcdd197c1f3f8bfec23446b16d25",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
+      "name": "backtop",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/backtop.json",
+      "description": "component/backtop",
+      "tags": [
+        "component",
+        "backtop"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/backtop.json"
+      ],
+      "checksum": "3a001899418b472bdab37ad80f090e460018ce9d9da7dff1752aa8a93878b14c",
       "category": "component",
       "scenarios": [
         "component"
@@ -1604,6 +1679,31 @@
     },
     {
       "kind": "component",
+      "name": "tree",
+      "type": "component",
+      "version": "0.2.2",
+      "path": "components/tree.json",
+      "description": "component/tree",
+      "tags": [
+        "component",
+        "tree"
+      ],
+      "frameworks": [
+        "react"
+      ],
+      "sources": [
+        "registry/components/tree.json"
+      ],
+      "checksum": "c1cc654fad5f882831291002a2360c292731a36b5cf79a22460b7a7ebcb07006",
+      "category": "component",
+      "scenarios": [
+        "component"
+      ],
+      "complexity": "low",
+      "stability": "stable"
+    },
+    {
+      "kind": "component",
       "name": "tree-select",
       "type": "component",
       "version": "0.2.2",
@@ -2394,6 +2494,39 @@
           }
         }
       },
+      "affix": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "affix",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/affix.json",
+            "description": "component/affix",
+            "tags": [
+              "component",
+              "affix"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/affix.json"
+            ],
+            "checksum": "da749e68e8e799845d5649121e793f5716aeeced7dac114988fe369a255fc70f",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
       "alert": {
         "latest": "0.2.2",
         "versions": [
@@ -2418,6 +2551,39 @@
               "registry/components/alert.json"
             ],
             "checksum": "2e99add86f031a1cac94de24d4bce60a08b87d66c6aa123a70a41e6719d4941c",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "anchor": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "anchor",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/anchor.json",
+            "description": "component/anchor",
+            "tags": [
+              "component",
+              "anchor"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/anchor.json"
+            ],
+            "checksum": "5ac962c6f31acf6c6a9da8f9e1a36d04c9ae31311231c9deba07aaf39bafadb6",
             "category": "component",
             "scenarios": [
               "component"
@@ -2484,6 +2650,39 @@
               "registry/components/avatar.json"
             ],
             "checksum": "fce77803a0fd2eb2a7a06d3c96bd2ba34f73dcdd197c1f3f8bfec23446b16d25",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "backtop": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "backtop",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/backtop.json",
+            "description": "component/backtop",
+            "tags": [
+              "component",
+              "backtop"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/backtop.json"
+            ],
+            "checksum": "3a001899418b472bdab37ad80f090e460018ce9d9da7dff1752aa8a93878b14c",
             "category": "component",
             "scenarios": [
               "component"
@@ -4464,6 +4663,39 @@
               "registry/components/transfer.json"
             ],
             "checksum": "dc771f795ee778cc5ae81792788894b9b60e6a7fd3f988ea49c104672f4d0e11",
+            "category": "component",
+            "scenarios": [
+              "component"
+            ],
+            "complexity": "low",
+            "stability": "stable"
+          }
+        }
+      },
+      "tree": {
+        "latest": "0.2.2",
+        "versions": [
+          "0.2.2"
+        ],
+        "entries": {
+          "0.2.2": {
+            "kind": "component",
+            "name": "tree",
+            "type": "component",
+            "version": "0.2.2",
+            "path": "components/tree.json",
+            "description": "component/tree",
+            "tags": [
+              "component",
+              "tree"
+            ],
+            "frameworks": [
+              "react"
+            ],
+            "sources": [
+              "registry/components/tree.json"
+            ],
+            "checksum": "c1cc654fad5f882831291002a2360c292731a36b5cf79a22460b7a7ebcb07006",
             "category": "component",
             "scenarios": [
               "component"

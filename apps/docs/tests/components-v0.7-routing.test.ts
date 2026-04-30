@@ -8,10 +8,11 @@ const testDir = dirname(fileURLToPath(import.meta.url));
 
 const waveAComponentNames = ["cascader", "tree-select", "transfer", "time-picker", "color-picker", "rate"] as const;
 const waveBComponentNames = ["descriptions", "result", "timeline", "segmented", "spin", "image"] as const;
-const v07ComponentNames = [...waveAComponentNames, ...waveBComponentNames] as const;
+const waveCComponentNames = ["affix", "anchor", "backtop", "tree"] as const;
+const v07ComponentNames = [...waveAComponentNames, ...waveBComponentNames, ...waveCComponentNames] as const;
 
 describe("v0.7 docs routing coverage", () => {
-  it("keeps all v0.7 wave-a and wave-b component routes linked from sidebar navigation", () => {
+  it("keeps all v0.7 wave-a, wave-b, and wave-c component routes linked from sidebar navigation", () => {
     const layoutSource = readFileSync(resolve(testDir, "../app/layout.tsx"), "utf8");
 
     for (const componentName of v07ComponentNames) {
@@ -19,7 +20,7 @@ describe("v0.7 docs routing coverage", () => {
     }
   });
 
-  it("has docs pages for all v0.7 wave-a and wave-b components", () => {
+  it("has docs pages for all v0.7 wave-a, wave-b, and wave-c components", () => {
     for (const componentName of v07ComponentNames) {
       const pagePath = resolve(testDir, `../app/components/${componentName}/page.mdx`);
       expect(existsSync(pagePath)).toBe(true);

@@ -1,0 +1,37 @@
+{
+  "name": "affix",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/affix.tsx",
+      "target": "components/primitives/affix.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/affix",
+  "tags": [
+    "component",
+    "affix"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/affix.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "da749e68e8e799845d5649121e793f5716aeeced7dac114988fe369a255fc70f"
+}

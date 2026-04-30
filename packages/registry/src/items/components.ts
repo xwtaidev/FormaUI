@@ -53,10 +53,26 @@ export const componentRegistryItems: RegistryItem[] = [
     registryDependencies: ["lib-cn"]
   }),
   componentItem({
+    name: "affix",
+    source: "packages/components/src/primitives/affix.tsx",
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "anchor",
+    source: "packages/components/src/primitives/anchor.tsx",
+    registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
     name: "avatar",
     source: "packages/components/src/primitives/avatar.tsx",
     dependencies: ["@radix-ui/react-avatar"],
     registryDependencies: ["lib-cn"]
+  }),
+  componentItem({
+    name: "backtop",
+    source: "packages/components/src/primitives/backtop.tsx",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["lib-cn", "button"]
   }),
   componentItem({
     name: "badge",
@@ -323,6 +339,12 @@ export const componentRegistryItems: RegistryItem[] = [
     source: "packages/components/src/primitives/transfer.tsx",
     dependencies: ["lucide-react"],
     registryDependencies: ["lib-cn", "button"]
+  }),
+  componentItem({
+    name: "tree",
+    source: "packages/components/src/primitives/tree.tsx",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["lib-cn"]
   }),
   componentItem({
     name: "tree-select",

@@ -1,0 +1,39 @@
+{
+  "name": "backtop",
+  "type": "component",
+  "dependencies": [
+    "react",
+    "react-dom",
+    "lucide-react"
+  ],
+  "devDependencies": [],
+  "registryDependencies": [
+    "lib-cn",
+    "button"
+  ],
+  "files": [
+    {
+      "source": "packages/components/src/primitives/backtop.tsx",
+      "target": "components/primitives/backtop.tsx"
+    }
+  ],
+  "version": "0.2.2",
+  "description": "component/backtop",
+  "tags": [
+    "component",
+    "backtop"
+  ],
+  "frameworks": [
+    "react"
+  ],
+  "sources": [
+    "registry/components/backtop.json"
+  ],
+  "category": "component",
+  "scenarios": [
+    "component"
+  ],
+  "complexity": "low",
+  "stability": "stable",
+  "checksum": "3a001899418b472bdab37ad80f090e460018ce9d9da7dff1752aa8a93878b14c"
+}
