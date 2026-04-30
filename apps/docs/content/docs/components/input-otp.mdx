@@ -1,0 +1,37 @@
+---
+title: Input OTP
+description: Component documentation for Input OTP.
+---
+
+# Input OTP
+
+## Overview
+
+`InputOtp` splits one-time-password input into fixed-length cells with paste and keyboard navigation support.
+
+## Installation
+
+```bash
+npx formaui add input-otp
+```
+
+## Usage
+
+```tsx
+import { InputOtp } from "@/components/primitives/input-otp";
+
+export function VerificationCode() {
+  return <InputOtp length={6} />;
+}
+```
+
+## Accessibility
+
+- Each cell is keyboard focusable and labeled by position.
+- Supports directional key navigation and backspace behavior.
+- Paste handling fills multiple cells in a single action.
+
+## Source Code
+
+- `packages/components/src/primitives/input-otp.tsx`
+- `registry/components/input-otp.json`

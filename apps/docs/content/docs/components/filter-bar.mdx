@@ -1,0 +1,56 @@
+---
+title: FilterBar
+description: Component documentation for FilterBar.
+---
+
+# FilterBar
+
+## Overview
+
+`FilterBar` combines keyword query, status selection, and date range controls into a reusable dashboard filtering surface.
+
+## Install Command
+
+```bash
+npx formaui add filter-bar
+```
+
+## Usage
+
+```tsx
+import { FilterBar } from "@/components/composites/filter-bar";
+
+export function IssuesFilter() {
+  return (
+    <FilterBar
+      onChange={(value) => console.log(value)}
+      statusOptions={[
+        { label: "All", value: "all" },
+        { label: "Open", value: "open" },
+        { label: "Closed", value: "closed" }
+      ]}
+    />
+  );
+}
+```
+
+## Scenario Guidance
+
+- Use at the top of tables and boards where users repeatedly adjust filters.
+- Prefer a single source of truth (`onChange`) to drive server/client queries.
+- Keep reset behavior visible to quickly return to default scope.
+
+## Dependencies
+
+Registry dependencies:
+
+- `button`
+- `input`
+- `radio-group`
+- `separator`
+- `date-range-picker`
+
+## Source Code
+
+- `packages/components/src/composites/filter-bar.tsx`
+- `registry/components/filter-bar.json`

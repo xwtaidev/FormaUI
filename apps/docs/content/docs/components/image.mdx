@@ -1,0 +1,44 @@
+---
+title: Image
+description: Component documentation for Image.
+---
+
+# Image
+
+## Overview
+
+`Image` provides consistent visual styling with fallback image support for broken URLs.
+
+## Installation
+
+```bash
+npx formaui add image
+```
+
+## Usage
+
+```tsx
+import { Image } from "@/components/primitives/image";
+
+export function CoverImage() {
+  return (
+    <Image
+      src="https://example.com/banner.png"
+      fallback="https://example.com/fallback.png"
+      alt="Workspace banner"
+      className="h-48 w-full object-cover"
+    />
+  );
+}
+```
+
+## v0.7 Scope
+
+- Native image rendering with fallback source switch on error.
+- Optional `preview` metadata flag for downstream integrations.
+- Advanced lightbox and zoom interactions are out of scope for v0.7.
+
+## Source Code
+
+- `packages/components/src/primitives/image.tsx`
+- `registry/components/image.json`

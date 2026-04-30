@@ -1,0 +1,43 @@
+---
+title: Input
+description: Component documentation for Input.
+---
+
+# Input
+
+## Overview
+
+`Input` provides a styled text field primitive with consistent border, focus ring, and disabled styles.
+
+## Preview
+
+Use for short single-line text values, emails, IDs, and command parameters.
+
+## Installation
+
+```bash
+npx formaui add input
+```
+
+## Usage
+
+```tsx
+import { Input } from "@/components/primitives/input";
+
+export function EmailField() {
+  return <Input type="email" placeholder="name@company.com" />;
+}
+```
+
+## Variants
+
+v0.1 ships a single core visual variant, designed to be extended in user code when needed.
+
+## Accessibility
+
+Built on native `<input>` semantics. Pair with labels and helper text for screen reader clarity.
+
+## Source Code
+
+- `packages/components/src/primitives/input.tsx`
+- `registry/components/input.json`

@@ -1,0 +1,64 @@
+---
+title: Navigation Menu
+description: Component documentation for Navigation Menu.
+---
+
+# Navigation Menu
+
+## Overview
+
+`NavigationMenu` handles top-level site navigation with expandable content panels.
+
+## Installation
+
+```bash
+npx formaui add navigation-menu
+```
+
+## Usage
+
+```tsx
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger
+} from "@/components/primitives/navigation-menu";
+
+export function DocsNavigation() {
+  return (
+    <NavigationMenu>
+      <NavigationMenuList>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Docs</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid gap-2 p-4">
+              <li>
+                <NavigationMenuLink href="/components">Component Catalog</NavigationMenuLink>
+              </li>
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+      </NavigationMenuList>
+    </NavigationMenu>
+  );
+}
+```
+
+## When to Use vs Menubar
+
+- `navigation-menu`: page and site navigation.
+- `menubar`: command-style actions (File/Edit/View).
+
+## Accessibility
+
+- Keyboard navigation is handled by Radix roving focus.
+- Trigger and content regions expose proper open/close semantics.
+- Viewport adapts for layered desktop menus.
+
+## Source Code
+
+- `packages/components/src/primitives/navigation-menu.tsx`
+- `registry/components/navigation-menu.json`

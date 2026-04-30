@@ -1,0 +1,37 @@
+---
+title: Input Number
+description: Component documentation for Input Number.
+---
+
+# Input Number
+
+## Overview
+
+`InputNumber` is a numeric control with increment/decrement actions, boundary clamping, and keyboard support.
+
+## Installation
+
+```bash
+npx formaui add input-number
+```
+
+## Usage
+
+```tsx
+import { InputNumber } from "@/components/primitives/input-number";
+
+export function TeamSizeField() {
+  return <InputNumber min={1} max={50} defaultValue={5} />;
+}
+```
+
+## Accessibility
+
+- Supports `ArrowUp`/`ArrowDown` keyboard stepping.
+- Keeps native number input semantics for assistive technologies.
+- Includes explicit increment/decrement button labels.
+
+## Source Code
+
+- `packages/components/src/primitives/input-number.tsx`
+- `registry/components/input-number.json`

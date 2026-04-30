@@ -1,0 +1,50 @@
+---
+title: Card
+description: Component documentation for Card.
+---
+
+# Card
+
+## Overview
+
+`Card` is a structural primitive for grouping related information.
+
+## Preview
+
+Use `CardHeader`, `CardTitle`, `CardDescription`, `CardContent`, and `CardFooter` to compose clear panels.
+
+## Installation
+
+```bash
+npx formaui add card
+```
+
+## Usage
+
+```tsx
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/primitives/card";
+
+export function MetricPanel() {
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>Daily Tokens</CardTitle>
+      </CardHeader>
+      <CardContent>412k</CardContent>
+    </Card>
+  );
+}
+```
+
+## Variants
+
+Card is intentionally compositional rather than prop-driven in v0.1.
+
+## Accessibility
+
+Relies on semantic HTML containers and heading structure from user composition.
+
+## Source Code
+
+- `packages/components/src/primitives/card.tsx`
+- `registry/components/card.json`

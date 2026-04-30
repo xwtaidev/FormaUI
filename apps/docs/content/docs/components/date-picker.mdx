@@ -1,0 +1,43 @@
+---
+title: Date Picker
+description: Component documentation for Date Picker.
+---
+
+# Date Picker
+
+## Overview
+
+`DatePicker` wraps `Calendar` in a popover trigger for single-date selection.
+
+## Installation
+
+```bash
+npx formaui add date-picker
+```
+
+## Usage
+
+```tsx
+import { DatePicker } from "@/components/primitives/date-picker";
+
+export function DueDateField() {
+  return <DatePicker placeholder="Pick due date" onChange={(date) => console.log(date)} />;
+}
+```
+
+## v0.6 Scope
+
+- Covers single-value selection only.
+- Range selection remains in `DateRangePicker` (`date-range-picker`) for v0.6 compatibility.
+- Time picking and timezone conversion are out of scope for this release.
+
+## Accessibility
+
+- Trigger is keyboard-focusable and uses button semantics.
+- Popover content exposes day cells with full date labels.
+- Includes an explicit clear action for removing current selection.
+
+## Source Code
+
+- `packages/components/src/primitives/date-picker.tsx`
+- `registry/components/date-picker.json`

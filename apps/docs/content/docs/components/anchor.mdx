@@ -1,0 +1,45 @@
+---
+title: Anchor
+description: Component documentation for Anchor.
+---
+
+# Anchor
+
+## Overview
+
+`Anchor` provides in-page section navigation with active state highlighting.
+
+## Installation
+
+```bash
+npx formaui add anchor
+```
+
+## Usage
+
+```tsx
+import { Anchor } from "@/components/primitives/anchor";
+
+export function PageAnchor() {
+  return (
+    <Anchor
+      items={[
+        { key: "overview", href: "#overview", title: "Overview" },
+        { key: "details", href: "#details", title: "Details" }
+      ]}
+      offsetTop={12}
+    />
+  );
+}
+```
+
+## v0.7 Scope
+
+- Click to update active anchor state.
+- Smooth scroll to in-page hash target.
+- Auto spy based on viewport intersection is out of scope for v0.7.
+
+## Source Code
+
+- `packages/components/src/primitives/anchor.tsx`
+- `registry/components/anchor.json`

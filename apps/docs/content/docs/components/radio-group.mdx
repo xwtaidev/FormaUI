@@ -1,0 +1,48 @@
+---
+title: RadioGroup
+description: Component documentation for RadioGroup.
+---
+
+# RadioGroup
+
+## Overview
+
+`RadioGroup` and `RadioGroupItem` provide single-choice selection for state filters and mode toggles.
+
+## Installation
+
+```bash
+npx formaui add radio-group
+```
+
+## Usage
+
+```tsx
+import { RadioGroup, RadioGroupItem } from "@/components/primitives/radio-group";
+
+export function StatusSelector() {
+  return (
+    <RadioGroup defaultValue="all" className="flex gap-3">
+      <label htmlFor="status-all" className="inline-flex items-center gap-2 text-sm">
+        <RadioGroupItem id="status-all" value="all" />
+        All
+      </label>
+      <label htmlFor="status-open" className="inline-flex items-center gap-2 text-sm">
+        <RadioGroupItem id="status-open" value="open" />
+        Open
+      </label>
+    </RadioGroup>
+  );
+}
+```
+
+## Accessibility
+
+- Built on Radix radio primitives with keyboard navigation and ARIA semantics.
+- Pair each item with a visible label (`htmlFor`) for clear screen-reader announcements.
+- Keep option labels concise and mutually exclusive.
+
+## Source Code
+
+- `packages/components/src/primitives/radio-group.tsx`
+- `registry/components/radio-group.json`

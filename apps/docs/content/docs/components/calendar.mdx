@@ -1,0 +1,37 @@
+---
+title: Calendar
+description: Component documentation for Calendar.
+---
+
+# Calendar
+
+## Overview
+
+`Calendar` is a month-view day selector with previous/next month navigation and single-date selection.
+
+## Installation
+
+```bash
+npx formaui add calendar
+```
+
+## Usage
+
+```tsx
+import { Calendar } from "@/components/primitives/calendar";
+
+export function BookingCalendar() {
+  return <Calendar onSelect={(date) => console.log(date)} />;
+}
+```
+
+## Accessibility
+
+- Day cells use full date labels (for example `April 20, 2026`).
+- Current selection is exposed through `data-selected` for styling and state checks.
+- Month navigation controls include explicit `Previous month` and `Next month` labels.
+
+## Source Code
+
+- `packages/components/src/primitives/calendar.tsx`
+- `registry/components/calendar.json`
