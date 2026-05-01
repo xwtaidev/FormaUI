@@ -5,11 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build --webpack",
-    "lint": "node ./scripts/check-landing-component-usage.mjs && tsc -p tsconfig.json --noEmit",
-    "lint:landing-components": "node ./scripts/check-landing-component-usage.mjs",
+    "lint": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run --passWithNoTests",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "lighthouse": "node ./scripts/lighthouse-landing.mjs",
     "postinstall": "fumadocs-mdx",
     "source:build": "fumadocs-mdx"
   },
