@@ -107,7 +107,6 @@ describe("v0.8.2 docs information architecture migration", () => {
 
     const rootPages = readMetaPages("../content/docs/components/meta.json");
     expect(rootPages).toEqual([
-      "overview",
       "(basics)",
       "(forms-inputs)",
       "(navigation)",
@@ -122,7 +121,7 @@ describe("v0.8.2 docs information architecture migration", () => {
       .map((entry) => stripGroupFolder(entry))
       .sort();
 
-    const metaSlugs = ["overview"];
+    const metaSlugs = ["index"];
     groupedFolders.forEach((folder) => {
       const folderPages = readMetaPages(`../content/docs/components/${folder}/meta.json`)
         .map((entry) => stripGroupFolder(`${folder}/${entry}`));
