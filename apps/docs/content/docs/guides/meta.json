@@ -3,6 +3,8 @@
   "pages": [
     "./integrations-nextjs",
     "./integrations-vite",
-    "./monorepo"
+    "./monorepo",
+    "./contributing-docs",
+    "./content-style-guide"
   ]
 }
