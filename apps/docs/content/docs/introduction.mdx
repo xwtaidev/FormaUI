@@ -1,11 +1,63 @@
 ---
 title: Introduction
 icon: BookOpen
-description: Learn what FormaUI is and how the docs are organized in v0.8.
+description: 了解 FormaUI 的定位、能力边界与文档导航方式。
 ---
 
 # Introduction
 
-FormaUI is a source-owned design system for teams shipping production React interfaces.
+FormaUI 是一套面向生产环境的 Source-Owned 设计系统。
 
-The v0.8 docs architecture is powered by Fumadocs and uses `content/docs` as the single source of truth.
+与传统“仅发布 npm 包”的 UI 库不同，FormaUI 的核心理念是：**把组件、区块、模板和主题的源码交付到你的仓库中**，让团队可以在自己的代码基线上持续演进，而不是被上游实现绑定。
+
+## 你可以从 FormaUI 获得什么
+
+- 可安装的组件体系：覆盖常见交互与业务 UI 基元
+- 可复用的产品级区块（Blocks）：用于快速搭建完整页面模块
+- 可落地的模板（Templates）：用于场景化起步，而不是从空白开始
+- 主题与设计令牌（Theme / Tokens）：保障一致性并支持品牌化定制
+- CLI 与 Registry 工作流：围绕发现、安装、升级与治理形成闭环
+
+## 适用团队
+
+FormaUI 主要适合以下类型的团队：
+
+- 需要快速交付 React 界面，同时保留长期可维护性的团队
+- 希望“先复用、后定制”，逐步沉淀内部设计资产的团队
+- 不希望受限于黑盒组件实现，要求对源码有完全控制权的团队
+
+## 设计原则
+
+### 1. Source-Owned First
+
+安装后代码进入你的仓库，版本、质量、发布节奏由你掌控。
+
+### 2. Composition over Monolith
+
+优先提供可组合能力（Components + Blocks + Templates），避免强绑定的一体化黑盒方案。
+
+### 3. Production Pragmatism
+
+文档、脚本与目录组织围绕“可上线”场景设计，而非仅展示组件示例。
+
+## 如何阅读本套文档
+
+建议按以下顺序阅读：
+
+1. [Installation](/docs/installation)：完成基础安装与项目接入。
+2. [Quick Start](/docs/quick-start)：在最短路径内跑通首个页面。
+3. Foundations / Components：建立设计令牌与组件层面的工程共识。
+4. Blocks / Templates：进入业务级复用与页面搭建阶段。
+5. Guides / CLI / Registry：完善团队协作、规范和自动化流程。
+
+## 版本与文档约定
+
+- 当前文档以 `v0.8` 信息架构为基线。
+- 文档内容源统一位于 `content/docs`。
+- `/docs/[...slug]` 为主路由入口，确保文档结构与目录一致。
+
+## 社区与反馈
+
+如果你在接入过程中遇到问题，或希望改进文档内容，欢迎到项目仓库提交 Issue 或 PR：
+
+- [FormaUI on GitHub](https://github.com/xwtaidev/FormaUI)
