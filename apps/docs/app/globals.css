@@ -4,7 +4,7 @@
 @source "../node_modules/fumadocs-ui/dist/**/*.js";
 
 :root {
-  --background: 90 33% 98%;
+  --background: 0 0% 96%;
   --foreground: 110 20% 16%;
   --card: 0 0% 100%;
   --card-foreground: 110 20% 16%;
@@ -17,15 +17,15 @@
 }
 
 .dark {
-  --background: 110 18% 10%;
-  --foreground: 90 25% 93%;
-  --card: 110 16% 13%;
-  --card-foreground: 90 25% 93%;
+  --background: 0 0% 7.04%;
+  --foreground: 210 20% 92%;
+  --card: 222 18% 11%;
+  --card-foreground: 210 20% 92%;
   --primary: 89 43% 60%;
-  --primary-foreground: 110 26% 10%;
-  --muted: 110 14% 18%;
-  --muted-foreground: 90 16% 73%;
-  --border: 110 12% 24%;
+  --primary-foreground: 120 26% 10%;
+  --muted: 222 14% 16%;
+  --muted-foreground: 215 16% 68%;
+  --border: 222 13% 24%;
   --ring: 89 43% 60%;
 }
 
