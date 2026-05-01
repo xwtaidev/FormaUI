@@ -1,15 +1,103 @@
 ---
 title: Installation
 icon: Download
-description: Install FormaUI packages and set up your project baseline.
+description: 在项目中安装 FormaUI 依赖并完成最小可用配置。
 ---
 
 # Installation
 
-Use your preferred package manager to install the packages you need:
+本章节用于完成 **FormaUI 的基础接入**：安装依赖、初始化 CLI、补齐框架配置，并验证安装结果。
 
-```bash title="bash"
-pnpm add @formaui/components @formaui/blocks
+## 适用场景
+
+- 你正在一个新的 Next.js/Vite 项目中接入 FormaUI。
+- 你希望先完成稳定的工程基线，再开始批量引入组件与区块。
+
+## 前置要求
+
+- Node.js `>= 20`
+- 包管理器：`pnpm`（推荐）、`npm`、`yarn` 或 `bun`
+- 已有 React 项目（Next.js / Vite 均可）
+
+## 1. 安装核心包
+
+根据你的包管理器执行以下命令：
+
+```bash title="pnpm"
+pnpm add @formaui/components @formaui/blocks @formaui/tailwind-preset
 ```
 
-Then configure your project according to the component and styling guides.
+```bash title="npm"
+npm install @formaui/components @formaui/blocks @formaui/tailwind-preset
+```
+
+```bash title="yarn"
+yarn add @formaui/components @formaui/blocks @formaui/tailwind-preset
+```
+
+```bash title="bun"
+bun add @formaui/components @formaui/blocks @formaui/tailwind-preset
+```
+
+## 2. 初始化 CLI（推荐）
+
+FormaUI CLI 用于发现、安装和诊断组件资源，建议在项目初始化时执行：
+
+```bash title="bash"
+npx formaui init
+```
+
+初始化后可继续使用：
+
+```bash title="bash"
+npx formaui doctor
+npx formaui list
+npx formaui search table
+```
+
+## 3. Next.js 推荐配置
+
+如果你使用 Next.js，请确保 `transpilePackages` 覆盖 FormaUI 包：
+
+```js title="next.config.mjs"
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  transpilePackages: ["@formaui/components", "@formaui/blocks", "@formaui/tailwind-preset"]
+};
+
+export default nextConfig;
+```
+
+在 Tailwind 配置中接入 FormaUI preset：
+
+```ts title="tailwind.config.ts"
+import type { Config } from "tailwindcss";
+import { formaUIPreset } from "@formaui/tailwind-preset";
+
+const config: Config = {
+  presets: [formaUIPreset as unknown as Partial<Config>],
+  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"]
+};
+
+export default config;
+```
+
+## 4. 验证安装是否成功
+
+建议使用以下清单确认安装完成：
+
+- `npx formaui doctor` 无阻断级错误
+- 项目可以正常启动（如 `pnpm dev`）
+- 页面中能成功渲染至少一个 FormaUI 组件
+
+你可以继续阅读 [Quick Start](/docs/quick-start)，在 15 分钟内完成第一屏落地示例。
+
+## 常见问题
+
+### 为什么推荐先做配置再引组件？
+
+因为组件和区块会依赖统一的样式基线（Tailwind preset 与主题变量）。先完成配置，可以避免后续大规模修复样式偏差。
+
+### `formaui` 命令不可用怎么办？
+
+请优先使用 `npx formaui <command>`。如果仍失败，检查 Node 版本与网络源配置，再重新执行 `npx formaui init`。
