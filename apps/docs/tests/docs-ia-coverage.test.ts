@@ -33,6 +33,17 @@ function readMetaPages(relativePath: string): string[] {
   return meta.pages.map(normalizeEntry);
 }
 
+function filterPageEntries(entries: string[]): string[] {
+  return entries.filter((entry) => !/^---.*---$/.test(entry));
+}
+
+function stripGroupFolder(pathname: string): string {
+  return pathname
+    .split("/")
+    .filter((segment) => !/^\(.*\)$/.test(segment))
+    .join("/");
+}
+
 describe("v0.8.2 docs information architecture migration", () => {
   it("defines benchmark-aligned top-level sections in content/docs/meta.json", () => {
     expect(readMetaPages("../content/docs/meta.json")).toEqual(expectedTopLevelSections);
@@ -67,8 +78,8 @@ describe("v0.8.2 docs information architecture migration", () => {
     ]);
   });
 
-  it("keeps components/cli/registry meta entries aligned with migrated files", () => {
-    const domains = ["components", "cli", "registry"] as const;
+  it("keeps cli/registry meta entries aligned with migrated files", () => {
+    const domains = ["cli", "registry"] as const;
 
     domains.forEach((domain) => {
       const dirPath = resolve(testDir, `../content/docs/${domain}`);
@@ -76,11 +87,49 @@ describe("v0.8.2 docs information architecture migration", () => {
         .filter((file) => file.endsWith(".mdx"))
         .map((file) => file.replace(/\.mdx$/, ""))
         .sort();
-      const pages = readMetaPages(`../content/docs/${domain}/meta.json`).sort();
+      const pages = filterPageEntries(readMetaPages(`../content/docs/${domain}/meta.json`)).sort();
 
       expect(files.length).toBeGreaterThan(0);
       expect(new Set(pages)).toEqual(new Set(files));
     });
+  });
+
+  it("keeps components grouped by folders and aligned with all component docs", () => {
+    const componentsDir = resolve(testDir, "../content/docs/components");
+    const groupedFolders = [
+      "(basics)",
+      "(forms-inputs)",
+      "(navigation)",
+      "(feedback-overlay)",
+      "(data-display)",
+      "(workflows)"
+    ] as const;
+
+    const rootPages = readMetaPages("../content/docs/components/meta.json");
+    expect(rootPages).toEqual([
+      "overview",
+      "(basics)",
+      "(forms-inputs)",
+      "(navigation)",
+      "(feedback-overlay)",
+      "(data-display)",
+      "(workflows)"
+    ]);
+
+    const componentFileSlugs = readdirSync(componentsDir, { recursive: true })
+      .filter((entry) => typeof entry === "string" && entry.endsWith(".mdx"))
+      .map((entry) => entry.replace(/\.mdx$/, ""))
+      .map((entry) => stripGroupFolder(entry))
+      .sort();
+
+    const metaSlugs = ["overview"];
+    groupedFolders.forEach((folder) => {
+      const folderPages = readMetaPages(`../content/docs/components/${folder}/meta.json`)
+        .map((entry) => stripGroupFolder(`${folder}/${entry}`));
+      metaSlugs.push(...folderPages);
+    });
+
+    expect(new Set(metaSlugs)).toEqual(new Set(componentFileSlugs));
   });
 
   it("migrates blocks/templates/resources/migration/release-notes domains", () => {
@@ -91,7 +140,7 @@ describe("v0.8.2 docs information architecture migration", () => {
       const files = readdirSync(dirPath)
         .filter((file) => file.endsWith(".mdx"))
         .map((file) => file.replace(/\.mdx$/, ""));
-      const pages = readMetaPages(`../content/docs/${domain}/meta.json`);
+      const pages = filterPageEntries(readMetaPages(`../content/docs/${domain}/meta.json`));
 
       expect(files.length).toBeGreaterThan(0);
       expect(pages.length).toBeGreaterThan(0);
