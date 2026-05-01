@@ -1,18 +1,86 @@
 ---
 title: Design Tokens
-description: Core token categories and usage model for FormaUI.
+description: FormaUI 的设计令牌体系、分层规则与工程接入方式。
 ---
 
 # Design Tokens
 
-v0.1 ships token categories for spacing, radius, typography, shadow, color, and motion.
+Design Tokens 是 FormaUI 视觉一致性的底层协议。无论你使用 primitives、composites 还是 blocks，最终都应通过 token 约束颜色、间距、圆角、阴影与动效。
 
-## Token Forms
+## 设计目标
 
-- TypeScript exports in `packages/tokens/src/*`
-- CSS variables consumed by themes
-- Tailwind mappings through `@formaui/tailwind-preset`
+- **一致性**：同类语义在不同页面保持稳定视觉表现。
+- **可替换性**：支持主题切换与品牌升级，而不大规模改业务组件。
+- **可维护性**：令牌变更有边界，减少“局部修一处、全局乱一片”。
 
-## Why This Matters
+## 当前令牌模块
 
-Tokens keep components and blocks visually consistent while still letting product teams customize brand direction later.
+FormaUI 当前提供以下 token 分类（位于 `packages/tokens/src`）：
+
+- `colors.ts`
+- `spacing.ts`
+- `radius.ts`
+- `typography.ts`
+- `shadow.ts`
+- `motion.ts`
+- `semantic.ts`
+
+其中 `semantic.ts` 是最关键的一层，定义了可直接被组件消费的语义变量映射，例如：
+
+- `semantic.surface.base`
+- `semantic.text.primary`
+- `semantic.border.default`
+- `semantic.interactive.primary`
+- `semantic.status.success`
+
+## 推荐分层模型
+
+在业务侧建议遵循以下分层：
+
+1. **基础值层**：原子值（颜色、尺寸、时长）。
+2. **语义层**：与业务语义绑定（surface/text/border/status）。
+3. **组件层**：组件仅消费语义层，不直接写死原子值。
+
+这样可以在主题切换时，只改变量定义，不改组件实现。
+
+## 在代码中使用 Token
+
+如果你在 monorepo 内开发，可直接引用 `@formaui/tokens`：
+
+```ts title="token-usage.ts"
+import { spacing, radius, semantic } from "@formaui/tokens";
+
+export const cardStyle = {
+  padding: spacing[4],
+  borderRadius: radius.lg,
+  borderColor: semantic.border.default,
+  color: semantic.text.primary,
+};
+```
+
+在样式层建议优先使用 CSS 变量与 Tailwind preset 的语义映射：
+
+```css title="globals.css"
+.card {
+  background: hsl(var(--semantic-surface-raised));
+  color: hsl(var(--semantic-text-primary));
+  border-color: hsl(var(--semantic-border-default));
+}
+```
+
+## Token 变更规范
+
+当你需要新增或调整 token，请遵循：
+
+1. 优先新增语义 token，避免在业务中暴露过多原子值。
+2. 同步更新 light/dark 变量定义，避免主题行为不一致。
+3. 验证核心组件（Button/Card/Input）在明暗模式都可读可用。
+4. 在发布说明中注明“破坏性 token 变更”。
+
+## 验收清单
+
+- 组件代码不再硬编码品牌色或像素值。
+- 主题切换后语义元素（背景、正文、边框、强调）表现一致。
+- Token 改动可通过少量变量更新完成，不触发大规模组件重构。
+
+下一步建议阅读 [Theme](/docs/foundations/theme)，将 token 与主题策略结合到实际项目中。

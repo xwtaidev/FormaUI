@@ -1,26 +1,97 @@
 ---
 title: Theme
-description: Built-in theme system and customization strategy.
+description: FormaUI 主题体系的接入方式、切换策略与自定义规范。
 ---
 
 # Theme
 
-FormaUI themes are CSS-variable based and shipped as installable registry items.
+FormaUI 主题基于 **CSS Variables** 构建，通过统一变量名驱动组件表现。你可以在不改组件源码的前提下完成品牌换肤与明暗模式切换。
 
-## Built-in Themes
+## 内置主题
 
-- [`default`](/docs/theme/default)
-- [`avocado`](/docs/theme/avocado)
+当前内置两套主题：
 
-Each theme includes both light and dark variable sets.
+- `default`
+- `avocado`
 
-## Install Commands
+每套主题均包含：
 
-```bash
+- `:root`（浅色变量）
+- `.dark`（深色变量）
+- 对应 `semantic-*` 语义变量映射
+
+## 主题安装
+
+使用 CLI 安装主题资源：
+
+```bash title="bash"
 npx formaui theme add default
 npx formaui theme add avocado
 ```
 
-## Customize
+安装后，你可以在项目的全局样式中按需启用对应变量。
 
-You can override variables in your project CSS after install, for example `--primary`, `--background`, and `--radius`.
+## 推荐接入方式
+
+### 1. 使用 Tailwind preset 对齐语义色
+
+```ts title="tailwind.config.ts"
+import type { Config } from "tailwindcss";
+import { formaUIPreset } from "@formaui/tailwind-preset";
+
+const config: Config = {
+  presets: [formaUIPreset as unknown as Partial<Config>],
+  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"]
+};
+
+export default config;
+```
+
+### 2. 在全局样式定义主题变量
+
+```css title="globals.css"
+:root {
+  --primary: 240 5.9% 10%;
+  --background: 0 0% 100%;
+}
+
+.dark {
+  --primary: 0 0% 98%;
+  --background: 240 10% 4%;
+}
+```
+
+### 3. 通过主题标识做品牌扩展（可选）
+
+```css title="globals.css"
+[data-theme="brand-x"] {
+  --primary: 212 100% 46%;
+  --ring: 212 100% 50%;
+}
+
+[data-theme="brand-x"].dark {
+  --primary: 212 100% 62%;
+}
+```
+
+## 自定义策略
+
+建议按以下优先级定制：
+
+1. 先改语义变量（如 `--primary`、`--muted`、`--border`）。
+2. 再改组件局部样式（仅在语义变量无法满足时）。
+3. 避免在业务页面直接写死色值，防止后续主题漂移。
+
+## 明暗模式建议
+
+- 保持同一语义在 light/dark 下的“意图一致”（例如 primary 始终代表主操作）。
+- 深色模式优先保证可读性与对比度，不追求与浅色模式完全同色相。
+- 对状态色（success/warning/danger/info）分别做明暗校验。
+
+## 验收清单
+
+- 主题切换不导致布局跳变或文本不可读。
+- 主按钮、输入框、卡片、链接等核心元素都继承语义变量。
+- 深色模式下仍保留品牌特征（primary/ring/accent），但背景保持舒适可读。
+
+你可以继续阅读 [Accessibility](/docs/foundations/accessibility)，将主题策略与无障碍规范一起纳入交付标准。
