@@ -48,6 +48,10 @@
   --color-fd-ring: hsl(var(--ring));
 }
 
+html {
+  scrollbar-gutter: stable both-edges;
+}
+
 body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
