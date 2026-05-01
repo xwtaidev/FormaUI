@@ -58,7 +58,9 @@ describe("v0.8.2 docs information architecture migration", () => {
     expect(readMetaPages("../content/docs/guides/meta.json")).toEqual([
       "integrations-nextjs",
       "integrations-vite",
-      "monorepo"
+      "monorepo",
+      "contributing-docs",
+      "content-style-guide"
     ]);
   });
 
