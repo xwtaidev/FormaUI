@@ -4,6 +4,20 @@ icon: BookOpen
 description: 了解 FormaUI 的定位、能力边界与文档导航方式。
 ---
 
+import {
+  Blocks,
+  Compass,
+  Component,
+  Download,
+  GitBranch,
+  History,
+  Layers,
+  LayoutTemplate,
+  Package,
+  Rocket,
+  SquareTerminal
+} from "lucide-react";
+
 # Introduction
 
 FormaUI 是一套面向生产环境的 Source-Owned 设计系统。
@@ -49,6 +63,76 @@ FormaUI 主要适合以下类型的团队：
 3. Foundations / Components：建立设计令牌与组件层面的工程共识。
 4. Blocks / Templates：进入业务级复用与页面搭建阶段。
 5. Guides / CLI / Registry：完善团队协作、规范和自动化流程。
+
+## 章节导航
+
+<Cards>
+  <Card
+    title="Installation"
+    description="安装 FormaUI 依赖并完成项目初始化。"
+    icon={<Download className="text-sky-500" />}
+    href="/docs/installation"
+  />
+  <Card
+    title="Quick Start"
+    description="用最短路径跑通第一个页面。"
+    icon={<Rocket className="text-emerald-500" />}
+    href="/docs/quick-start"
+  />
+  <Card
+    title="Foundations"
+    description="理解设计令牌、主题与可访问性基线。"
+    icon={<Layers className="text-violet-500" />}
+    href="/docs/foundations/design-tokens"
+  />
+  <Card
+    title="Components"
+    description="查看组件能力、API 与使用范式。"
+    icon={<Component className="text-violet-500" />}
+    href="/docs/components/overview"
+  />
+  <Card
+    title="Blocks"
+    description="复用产品级页面区块，提高搭建效率。"
+    icon={<Blocks className="text-amber-500" />}
+    href="/docs/blocks/overview"
+  />
+  <Card
+    title="Templates"
+    description="从场景模板快速起步，再按需定制。"
+    icon={<LayoutTemplate className="text-amber-500" />}
+    href="/docs/templates/overview"
+  />
+  <Card
+    title="Guides"
+    description="查看集成实践与工程化建议。"
+    icon={<Compass className="text-sky-500" />}
+    href="/docs/guides/integrations-nextjs"
+  />
+  <Card
+    title="CLI"
+    description="通过 CLI 完成发现、安装与维护流程。"
+    icon={<SquareTerminal className="text-emerald-500" />}
+    href="/docs/cli/overview"
+  />
+  <Card
+    title="Registry"
+    description="了解资源元数据与发布组织方式。"
+    icon={<Package className="text-violet-500" />}
+    href="/docs/registry/overview"
+  />
+  <Card
+    title="Migration & Release Notes"
+    description="跟踪版本变更与升级路径。"
+    icon={
+      <div className="flex items-center gap-1">
+        <GitBranch className="text-amber-500" />
+        <History className="text-emerald-500" />
+      </div>
+    }
+    href="/docs/migration/overview"
+  />
+</Cards>
 
 ## 版本与文档约定
 
