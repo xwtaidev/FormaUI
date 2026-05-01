@@ -8,13 +8,16 @@ const testDir = dirname(fileURLToPath(import.meta.url));
 
 const expectedTopLevelSections = [
   "getting-started",
+  "---Core System---",
   "foundations",
   "components",
   "blocks",
   "templates",
+  "---Build & Ship---",
   "guides",
   "cli",
   "registry",
+  "---Lifecycle---",
   "migration",
   "release-notes",
   "resources"

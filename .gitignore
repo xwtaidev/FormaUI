@@ -26,3 +26,5 @@ pnpm-debug.log*
 # Editor / IDE
 .vscode
 .idea
+
+.playwright-mcp
