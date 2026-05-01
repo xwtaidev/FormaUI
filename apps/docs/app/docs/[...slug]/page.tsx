@@ -21,7 +21,7 @@ export default async function Page(props: { params: Promise<Params> }) {
   const toc = Array.isArray(page.data.toc) ? page.data.toc : (page.data.toc?.items ?? []);
 
   return (
-    <DocsPage toc={toc}>
+    <DocsPage toc={toc} tableOfContent={{ style: 'clerk', }}>
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
