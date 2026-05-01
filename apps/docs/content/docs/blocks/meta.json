@@ -1,5 +1,6 @@
 {
   "title": "Blocks",
+  "icon": "Blocks",
   "pages": [
     "./overview",
     "./dashboard-shell",

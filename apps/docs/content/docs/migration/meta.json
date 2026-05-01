@@ -1,5 +1,6 @@
 {
   "title": "Migration",
+  "icon": "GitBranch",
   "pages": [
     "./overview",
     "./v0.8",

@@ -1,5 +1,6 @@
 {
   "title": "CLI",
+  "icon": "SquareTerminal",
   "pages": [
     "./overview",
     "./commands"

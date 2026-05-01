@@ -1,5 +1,6 @@
 {
   "title": "Registry",
+  "icon": "Package",
   "pages": [
     "./overview"
   ]
