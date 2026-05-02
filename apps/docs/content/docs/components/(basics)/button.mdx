@@ -1,44 +1,186 @@
 ---
 title: Button
-description: Component documentation for Button.
+description: 主要操作按钮组件，支持多种视觉变体与尺寸。
 ---
+
+import { ButtonInteractiveDemo } from "@/components/demos/button-interactive-demo";
+import {
+  DangerActionDemo,
+  SubmitActionDemo,
+  ToolbarActionsDemo
+} from "@/components/demos/button-case-demos";
 
 # Button
 
-## Overview
+`Button` 是最常用的交互组件，用于触发页面上的主要或次要动作。
 
-`Button` is the primary action primitive with variant and size support through `class-variance-authority`.
+它基于语义化 `<button>` 实现，默认继承 FormaUI 的主题变量与焦点样式，适合作为操作入口的标准组件。
 
-## Preview
+## 可视化展示
 
-Primary, secondary, outline, ghost, and destructive variants are provided in v0.1.
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[260px] items-center justify-center p-6">
+    <ButtonInteractiveDemo />
+  </div>
+</div>
 
-## Installation
+```tsx title="components/demos/button-interactive-demo.tsx"
+"use client";
 
-```bash
-npx formaui add button
-```
+import { Button } from "@formaui/components";
 
-## Usage
+export function ButtonInteractiveDemo() {
+  return (
+    <div className="w-full max-w-3xl space-y-4">
+      <div className="grid grid-cols-5 gap-3">
+        <Button variant="default" className="w-full">Primary</Button>
+        <Button variant="secondary" className="w-full">Secondary</Button>
+        <Button variant="outline" className="w-full">Outline</Button>
+        <Button variant="ghost" className="w-full">Ghost</Button>
+        <Button variant="destructive" className="w-full">Destructive</Button>
+      </div>
 
-```tsx
-import { Button } from "@/components/primitives/button";
+      <div className="grid grid-cols-4 gap-3">
+        <Button variant="outline" size="sm" className="w-full">Small</Button>
+        <Button variant="outline" size="md" className="w-full">Medium</Button>
+        <Button variant="outline" size="lg" className="w-full">Large</Button>
+        <Button variant="outline" size="icon" className="w-full" aria-label="Icon button">
+          +
+        </Button>
+      </div>
 
-export function Actions() {
-  return <Button variant="default">Save</Button>;
+      <div className="grid grid-cols-2 gap-3">
+        <Button disabled className="w-full">Disabled</Button>
+        <Button variant="outline" disabled className="w-full">Disabled Outline</Button>
+      </div>
+    </div>
+  );
 }
 ```
 
-## Variants
+## 安装方式
 
-- `variant`: `default`, `secondary`, `outline`, `ghost`, `destructive`
-- `size`: `sm`, `md`, `lg`, `icon`
+### 通过 CLI 安装
 
-## Accessibility
+```bash title="CLI"
+npx formaui add button
+```
 
-Uses native `<button>` behavior, focus-visible ring styles, and disabled states.
+### 通过包依赖使用
 
-## Source Code
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
+
+## 使用方式
+
+```tsx title="Basic Usage"
+import { Button } from "@formaui/components";
+
+export function BasicActions() {
+  return (
+    <div className="flex items-center gap-2">
+      <Button>保存更改</Button>
+      <Button variant="outline">取消</Button>
+    </div>
+  );
+}
+```
+
+## 案例
+
+### 1. 工具栏主次操作
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[96px] items-center justify-center p-6">
+    <ToolbarActionsDemo />
+  </div>
+</div>
+
+```tsx title="Toolbar Actions"
+import { Button } from "@formaui/components";
+
+export function ToolbarActions() {
+  return (
+    <div className="flex items-center gap-2">
+      <Button>发布</Button>
+      <Button variant="secondary">预览</Button>
+      <Button variant="ghost">草稿</Button>
+    </div>
+  );
+}
+```
+
+### 2. 危险操作确认入口
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[96px] items-center justify-center p-6">
+    <DangerActionDemo />
+  </div>
+</div>
+
+```tsx title="Danger Action"
+import { Button } from "@formaui/components";
+import { Trash2 } from "lucide-react";
+
+export function DangerAction() {
+  return (
+    <Button variant="destructive" className="gap-2">
+      <Trash2 className="h-4 w-4" />
+      删除项目
+    </Button>
+  );
+}
+```
+
+### 3. 禁用状态与加载前保护
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[96px] items-center justify-center p-6">
+    <SubmitActionDemo />
+  </div>
+</div>
+
+```tsx title="Pending and Disabled State"
+import { Button } from "@formaui/components";
+
+export function SubmitAction({ pending }: { pending: boolean }) {
+  return (
+    <Button disabled={pending}>
+      {pending ? "提交中..." : "提交"}
+    </Button>
+  );
+}
+```
+
+## API Reference
+
+### Props
+
+| Prop | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- |
+| `variant` | `"default" \| "secondary" \| "outline" \| "ghost" \| "destructive"` | `"default"` | 按钮视觉样式 |
+| `size` | `"sm" \| "md" \| "lg" \| "icon"` | `"md"` | 按钮尺寸 |
+| `className` | `string` | `-` | 追加自定义样式 |
+| `disabled` | `boolean` | `false` | 禁用交互并降低可见度 |
+| `type` | `"button" \| "submit" \| "reset"` | `"button"`（浏览器默认） | 用于表单提交语义 |
+
+### 继承属性
+
+`Button` 继承 `React.ButtonHTMLAttributes<HTMLButtonElement>`，可直接使用：
+
+- `onClick`
+- `aria-*`
+- `data-*`
+- `name` / `value`
+
+## 可访问性
+
+- 使用原生 `<button>` 元素，默认支持键盘交互。
+- 内置 `focus-visible` 样式，满足可见焦点要求。
+- `size="icon"` 时必须提供可访问名称（如 `aria-label`）。
+
+## 源码位置
 
 - `packages/components/src/primitives/button.tsx`
 - `registry/components/button.json`
