@@ -1,0 +1,9 @@
+{
+  "title": "Resources",
+  "icon": "Library",
+  "pages": [
+    "./figma",
+    "./examples",
+    "./community"
+  ]
+}

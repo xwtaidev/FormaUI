@@ -1,0 +1,67 @@
+---
+title: Registry
+description: Registry schema, structure, and dependency resolution model.
+---
+
+# Registry
+
+The v0.3 registry is a versioned manifest + item set that describes installable assets, scenario metadata, and pack
+compositions.
+
+## v0.3 Index
+
+- `registry/index.json` contains normalized entries for all installable items.
+- Query shape is grouped by `kind / name / version` with metadata fields used by CLI filters.
+- CLI commands (`list`, `search`, `info`, `pack list/info/add`) consume this data for discoverability and install.
+
+## Item Schema (v3)
+
+Every registry item uses this shape:
+
+```ts
+interface RegistryItem {
+  version: string;
+  description?: string;
+  tags?: string[];
+  frameworks?: string[];
+  sources?: string[];
+  checksum?: string;
+  category?: string;
+  scenarios?: string[];
+  complexity?: "low" | "medium" | "high";
+  stability?: "stable" | "beta" | "experimental" | "deprecated";
+  name: string;
+  type: "component" | "block" | "template" | "theme" | "pack" | "hook" | "lib" | "style" | "config";
+  dependencies: string[];
+  devDependencies: string[];
+  registryDependencies: string[];
+  files: Array<{ source: string; target: string }>;
+}
+```
+
+## Type Folders
+
+- `registry/components/*.json`
+- `registry/blocks/*.json`
+- `registry/templates/*.json`
+- `registry/themes/*.json`
+- `registry/packs/*.json`
+
+## Resolution Rules
+
+1. Load root item by kind and name.
+2. Resolve `registryDependencies` recursively.
+3. Copy files into target project paths.
+4. Respect path aliases in `formaui.json` (`components`, `lib`, `styles`).
+5. For pack items, use metadata (`category`, `scenarios`) to support discovery filters.
+
+## Coverage Snapshot
+
+Current v0.3 index totals (`registry/index.json`):
+
+- Components: 36
+- Blocks: 11
+- Templates: 3
+- Themes: 2
+- Packs: 3
+- Total items: 55

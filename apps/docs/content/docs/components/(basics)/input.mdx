@@ -1,0 +1,173 @@
+---
+title: Input
+description: 单行文本输入组件，提供统一边框、焦点环与禁用态表现。
+---
+
+import {
+  InputDisabledCaseDemo,
+  InputInteractiveDemo,
+  InputProfileCaseDemo,
+  InputSearchCaseDemo
+} from "@/components/demos/input-textarea-demos";
+
+# Input
+
+`Input` 是表单中的基础单行输入组件，适用于邮箱、搜索、密码、编号等短文本场景。
+
+组件基于原生 `<input>` 封装，默认提供一致的尺寸、边框、焦点态与禁用态，可直接用于业务页面。
+
+## 可视化展示
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[300px] items-center justify-center p-6">
+    <InputInteractiveDemo />
+  </div>
+</div>
+
+```tsx title="components/demos/input-textarea-demos.tsx"
+"use client";
+
+import { Input } from "@formaui/components";
+
+export function InputInteractiveDemo() {
+  return (
+    <div className="grid w-full max-w-3xl gap-4 md:grid-cols-2">
+      <Input type="email" placeholder="team@example.com" />
+      <Input type="password" placeholder="请输入密码" />
+      <Input type="search" placeholder="搜索组件名称..." />
+      <Input value="tok_live_xxxxxx" readOnly disabled />
+    </div>
+  );
+}
+```
+
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
+npx formaui add input
+```
+
+### 通过包依赖使用
+
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
+
+## 使用方式
+
+```tsx title="Basic Usage"
+import { Input } from "@formaui/components";
+
+export function EmailField() {
+  return <Input type="email" placeholder="name@company.com" />;
+}
+```
+
+## 案例
+
+### 1. 个人资料字段
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[120px] items-center justify-center p-6">
+    <InputProfileCaseDemo />
+  </div>
+</div>
+
+```tsx title="Profile Field"
+import { Input } from "@formaui/components";
+
+export function ProfileField() {
+  return (
+    <div className="space-y-2">
+      <label htmlFor="profile-name" className="text-sm font-medium">
+        显示名称
+      </label>
+      <Input id="profile-name" placeholder="请输入显示名称" />
+    </div>
+  );
+}
+```
+
+### 2. 搜索栏输入
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[120px] items-center justify-center p-6">
+    <InputSearchCaseDemo />
+  </div>
+</div>
+
+```tsx title="Search Input"
+import { Input } from "@formaui/components";
+
+export function SearchInput() {
+  return (
+    <div className="space-y-2">
+      <label htmlFor="component-search" className="text-sm font-medium">
+        组件搜索
+      </label>
+      <Input id="component-search" type="search" placeholder="例如：Button / Table / Drawer" />
+    </div>
+  );
+}
+```
+
+### 3. 禁用只读字段
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[120px] items-center justify-center p-6">
+    <InputDisabledCaseDemo />
+  </div>
+</div>
+
+```tsx title="Disabled Readonly Input"
+import { Input } from "@formaui/components";
+
+export function DisabledReadonlyInput() {
+  return (
+    <div className="space-y-2">
+      <label htmlFor="org-id" className="text-sm font-medium">
+        组织 ID
+      </label>
+      <Input id="org-id" value="org_7f2ad9c4" disabled readOnly />
+    </div>
+  );
+}
+```
+
+## API Reference
+
+### Props
+
+`Input` 继承 `React.ComponentProps<"input">`，常用属性如下：
+
+| Prop | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- |
+| `type` | `string` | `"text"` | 输入类型，例如 `email`、`password`、`search` |
+| `placeholder` | `string` | `-` | 占位提示文本 |
+| `value` | `string \| number \| readonly string[]` | `-` | 受控值 |
+| `defaultValue` | `string \| number \| readonly string[]` | `-` | 非受控初始值 |
+| `disabled` | `boolean` | `false` | 禁用交互并降低可见度 |
+| `readOnly` | `boolean` | `false` | 只读，不可编辑但可聚焦 |
+| `className` | `string` | `-` | 追加自定义样式 |
+
+### 继承属性
+
+可直接使用标准输入属性：
+
+- `onChange`
+- `onBlur` / `onFocus`
+- `name`
+- `aria-*` / `data-*`
+
+## 可访问性
+
+- 建议为输入框提供可见文本标签，并通过 `htmlFor + id` 关联。
+- 使用 `type` 表达字段语义（如 `email`、`search`）以提升输入体验。
+- 对禁用或只读字段，建议提供辅助说明，避免用户误解为系统异常。
+
+## 源码位置
+
+- `packages/components/src/primitives/input.tsx`
+- `registry/components/input.json`

@@ -1,0 +1,37 @@
+---
+title: Slider
+description: Component documentation for Slider.
+---
+
+# Slider
+
+## Overview
+
+`Slider` provides drag-based and keyboard-accessible value adjustment for ranges.
+
+## Installation
+
+```bash
+npx formaui add slider
+```
+
+## Usage
+
+```tsx
+import { Slider } from "@/components/primitives/slider";
+
+export function VolumeSlider() {
+  return <Slider defaultValue={[40]} max={100} step={5} className="w-64" />;
+}
+```
+
+## Accessibility
+
+- Uses Radix slider semantics and focus behavior.
+- Exposes `role="slider"` with value metadata.
+- Supports keyboard adjustments for precise control.
+
+## Source Code
+
+- `packages/components/src/primitives/slider.tsx`
+- `registry/components/slider.json`

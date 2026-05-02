@@ -1,21 +1,99 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "fumadocs-ui/css/neutral.css";
+@import "fumadocs-ui/css/preset.css";
+@source "../node_modules/fumadocs-ui/dist/**/*.js";
+@source "../../../packages/components/src/**/*.{ts,tsx}";
+@source "../../../packages/blocks/src/**/*.{ts,tsx}";
 
 :root {
-  --background: 0 0% 100%;
-  --foreground: 240 10% 4%;
+  --background: 0 0% 96%;
+  --foreground: 110 20% 16%;
   --card: 0 0% 100%;
-  --card-foreground: 240 10% 4%;
-  --primary: 240 5.9% 10%;
-  --primary-foreground: 0 0% 98%;
-  --muted: 240 4.8% 95.9%;
-  --muted-foreground: 240 3.8% 46.1%;
-  --border: 240 5.9% 90%;
+  --card-foreground: 110 20% 16%;
+  --primary: 89 43% 60%;
+  --primary-foreground: 110 30% 12%;
+  --muted: 90 30% 94%;
+  --muted-foreground: 110 12% 38%;
+  --border: 90 24% 85%;
+  --ring: 89 43% 55%;
+}
+
+.dark {
+  --background: 0 0% 7.04%;
+  --foreground: 210 20% 92%;
+  --card: 110 9% 11%;
+  --card-foreground: 210 20% 92%;
+  --primary: 89 43% 60%;
+  --primary-foreground: 120 26% 10%;
+  --muted: 112 12% 15%;
+  --muted-foreground: 95 14% 74%;
+  --border: 110 10% 24%;
+  --ring: 89 43% 60%;
+  --color-fd-primary: hsl(var(--primary));
+  --color-fd-primary-foreground: hsl(var(--primary-foreground));
+  --color-fd-secondary: hsl(112 11% 17%);
+  --color-fd-secondary-foreground: hsl(var(--foreground));
+  --color-fd-accent: hsl(112 14% 19%);
+  --color-fd-accent-foreground: hsl(var(--foreground));
+  --color-fd-muted: hsl(var(--muted));
+  --color-fd-muted-foreground: hsl(var(--muted-foreground));
+  --color-fd-border: hsl(var(--border));
+  --color-fd-ring: hsl(var(--ring));
+}
+
+.dark #nd-sidebar,
+.dark #nd-sidebar-mobile {
+  --color-fd-muted: hsl(112 13% 14%);
+  --color-fd-secondary: hsl(112 11% 17%);
+  --color-fd-muted-foreground: hsl(95 14% 74%);
+  --color-fd-accent: hsl(112 14% 19%);
+  --color-fd-border: hsl(110 10% 24%);
+}
+
+@theme {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--card));
+  --color-popover-foreground: hsl(var(--card-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--muted));
+  --color-secondary-foreground: hsl(var(--foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--muted));
+  --color-accent-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-ring: hsl(var(--ring));
+
+  --color-fd-background: hsl(var(--background));
+  --color-fd-foreground: hsl(var(--foreground));
+  --color-fd-card: hsl(var(--card));
+  --color-fd-card-foreground: hsl(var(--card-foreground));
+  --color-fd-popover: hsl(var(--card));
+  --color-fd-popover-foreground: hsl(var(--card-foreground));
+  --color-fd-primary: hsl(var(--primary));
+  --color-fd-primary-foreground: hsl(var(--primary-foreground));
+  --color-fd-secondary: hsl(var(--muted));
+  --color-fd-secondary-foreground: hsl(var(--foreground));
+  --color-fd-accent: hsl(var(--muted));
+  --color-fd-accent-foreground: hsl(var(--foreground));
+  --color-fd-muted: hsl(var(--muted));
+  --color-fd-muted-foreground: hsl(var(--muted-foreground));
+  --color-fd-border: hsl(var(--border));
+  --color-fd-ring: hsl(var(--ring));
+}
+
+html {
+  scrollbar-gutter: stable;
 }
 
 body {
-  @apply bg-white text-slate-950 antialiased;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  @apply antialiased;
 }
 
 .docs-prose h1 {
@@ -32,21 +110,28 @@ body {
 
 .docs-prose p,
 .docs-prose li {
-  @apply text-base leading-7 text-slate-700;
+  @apply text-base leading-7;
+  color: hsl(var(--muted-foreground));
 }
 
 .docs-prose code {
-  @apply rounded bg-slate-100 px-1.5 py-0.5 text-sm;
+  @apply rounded px-1.5 py-0.5 text-sm;
+  background-color: hsl(var(--muted));
 }
 
 .docs-prose pre {
-  @apply overflow-x-auto rounded-lg border border-slate-200 bg-slate-950 p-4 text-slate-100;
+  @apply overflow-x-auto rounded-lg border p-4;
+  border-color: hsl(var(--border));
+  background-color: hsl(var(--card));
+  color: hsl(var(--foreground));
 }
 
 .docs-prose pre code {
-  @apply bg-transparent p-0 text-slate-100;
+  @apply bg-transparent p-0;
+  color: hsl(var(--foreground));
 }
 
 .docs-prose a {
-  @apply text-sky-700 underline underline-offset-2;
+  color: hsl(var(--primary));
+  @apply underline underline-offset-2;
 }

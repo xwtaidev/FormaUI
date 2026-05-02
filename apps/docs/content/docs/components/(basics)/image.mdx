@@ -1,0 +1,157 @@
+---
+title: Image
+description: 图片展示组件，提供统一样式、失败回退与预览标记能力。
+---
+
+import {
+  ImageCoverCaseDemo,
+  ImageFallbackCaseDemo,
+  ImageGalleryCaseDemo,
+  ImageInteractiveDemo
+} from "@/components/demos/badge-separator-skeleton-image-demos";
+
+# Image
+
+`Image` 是基于原生 `<img>` 封装的图片组件，提供一致边框样式与 `fallback` 兜底能力。
+
+当主图加载失败时，组件可自动切换到回退地址，避免出现破图占位。
+
+## 可视化展示
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[300px] items-center justify-center p-6">
+    <ImageInteractiveDemo />
+  </div>
+</div>
+
+```tsx title="components/demos/badge-separator-skeleton-image-demos.tsx"
+"use client";
+
+import { Image } from "@formaui/components";
+```
+
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
+npx formaui add image
+```
+
+### 通过包依赖使用
+
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
+
+## 使用方式
+
+```tsx title="Basic Usage"
+import { Image } from "@formaui/components";
+
+export function CoverImage() {
+  return (
+    <Image
+      src="https://example.com/banner.png"
+      fallback="https://example.com/fallback.png"
+      alt="Workspace banner"
+      className="h-48 w-full object-cover"
+    />
+  );
+}
+```
+
+## 案例
+
+### 1. 封面图展示
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[220px] items-center justify-center p-6">
+    <ImageCoverCaseDemo />
+  </div>
+</div>
+
+```tsx title="Cover Image"
+import { Image } from "@formaui/components";
+
+export function CoverImageBlock() {
+  return (
+    <Image
+      src="https://example.com/cover.png"
+      alt="Feature cover"
+      className="h-44 w-full rounded-lg object-cover"
+    />
+  );
+}
+```
+
+### 2. 加载失败回退
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[190px] items-center justify-center p-6">
+    <ImageFallbackCaseDemo />
+  </div>
+</div>
+
+```tsx title="Fallback Image"
+import { Image } from "@formaui/components";
+
+export function FallbackImage() {
+  return (
+    <Image
+      src="/missing-avatar.png"
+      fallback="/fallback-avatar.png"
+      alt="Fallback avatar demo"
+      className="h-36 w-full rounded-lg object-cover"
+    />
+  );
+}
+```
+
+### 3. 图库网格
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[170px] items-center justify-center p-6">
+    <ImageGalleryCaseDemo />
+  </div>
+</div>
+
+```tsx title="Image Gallery"
+import { Image } from "@formaui/components";
+
+export function ImageGallery() {
+  return (
+    <div className="grid grid-cols-3 gap-3">
+      <Image src="/a.png" alt="Avatar A" className="h-24 w-24 rounded-lg object-cover" />
+      <Image src="/b.png" alt="Avatar B" className="h-24 w-24 rounded-lg object-cover" />
+      <Image src="/c.png" alt="Avatar C" className="h-24 w-24 rounded-lg object-cover" />
+    </div>
+  );
+}
+```
+
+## API Reference
+
+### Props
+
+`Image` 继承 `React.ImgHTMLAttributes<HTMLImageElement>`（不含原生 `onError`，由组件定义为无参函数），常用属性如下：
+
+| Prop | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- |
+| `src` | `string \| undefined` | `-` | 主图地址 |
+| `alt` | `string \| undefined` | `-` | 替代文本 |
+| `fallback` | `string \| undefined` | `-` | 主图失败时切换的兜底图地址 |
+| `preview` | `boolean` | `false` | 预览标记（写入 `data-preview`） |
+| `onError` | `() => void` | `-` | 触发加载失败时回调 |
+| `className` | `string` | `-` | 追加自定义样式 |
+
+## 可访问性
+
+- 必须提供有意义的 `alt` 文本，避免空洞描述。
+- 装饰性图片可使用空 `alt=""`，并避免承载关键信息。
+- 对失败回退图，建议仍保持准确的 `alt` 语义。
+
+## 源码位置
+
+- `packages/components/src/primitives/image.tsx`
+- `registry/components/image.json`

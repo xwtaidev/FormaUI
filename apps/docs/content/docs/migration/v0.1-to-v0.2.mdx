@@ -1,0 +1,74 @@
+---
+title: "Migration: v0.1 to v0.2"
+description: "Migration guide v0.1-to-v0.2."
+---
+
+# Migration: v0.1 to v0.2
+
+This guide upgrades existing FormaUI v0.1 projects to v0.2 workflows.
+
+## 1. Upgrade CLI Usage
+
+v0.2 adds discovery and diagnostics commands:
+
+```bash
+npx formaui list
+npx formaui search <keyword>
+npx formaui info <name>
+npx formaui doctor
+```
+
+## 2. Regenerate Project Baseline
+
+Run `init` again to ensure `formaui.json` and CSS variable references match v0.2 defaults.
+
+```bash
+npx formaui init --yes
+```
+
+## 3. Validate Install Plans
+
+Use dry-run before applying asset changes:
+
+```bash
+npx formaui add data-table --dry-run
+npx formaui block add model-selector --dry-run
+npx formaui template add saas-starter --dry-run
+```
+
+## 4. Adopt Registry v2 Metadata
+
+If you maintain internal registry mirrors, include v2 fields:
+
+- `version`
+- `description`
+- `tags`
+- `frameworks`
+- `sources`
+- `checksum`
+
+## 5. Verify Themes and Semantic Tokens
+
+v0.2 assets consume semantic variables. Ensure your stylesheet still defines:
+
+- `--semantic-surface-*`
+- `--semantic-text-*`
+- `--semantic-border-default`
+- `--semantic-model-chip-*`
+
+Re-apply theme if needed:
+
+```bash
+npx formaui theme add default --yes
+```
+
+## 6. Final Checks
+
+```bash
+pnpm lint
+pnpm typecheck
+pnpm test
+pnpm build
+```
+
+If these pass, the project is on the v0.2 baseline.

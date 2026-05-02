@@ -1,0 +1,45 @@
+---
+title: Tree Select
+description: Component documentation for Tree Select.
+---
+
+# Tree Select
+
+## Overview
+
+`TreeSelect` combines trigger input behavior with tree-based hierarchical selection.
+
+## Installation
+
+```bash
+npx formaui add tree-select
+```
+
+## Usage
+
+```tsx
+import { TreeSelect } from "@/components/primitives/tree-select";
+
+const treeData = [
+  {
+    key: "engineering",
+    title: "Engineering",
+    children: [{ key: "frontend", title: "Frontend" }]
+  }
+];
+
+export function OwnerTreeField() {
+  return <TreeSelect data={treeData} placeholder="Select owner node" />;
+}
+```
+
+## v0.7 Scope
+
+- Single and multiple modes.
+- Controlled and uncontrolled value patterns.
+- Built on top of `Tree` + `Popover` composition.
+
+## Source Code
+
+- `packages/components/src/primitives/tree-select.tsx`
+- `registry/components/tree-select.json`

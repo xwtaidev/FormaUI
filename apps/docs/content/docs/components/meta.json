@@ -1,0 +1,12 @@
+{
+  "title": "Components",
+  "icon": "Component",
+  "pages": [
+    "./(basics)",
+    "./(forms-inputs)",
+    "./(navigation)",
+    "./(feedback-overlay)",
+    "./(data-display)",
+    "./(workflows)"
+  ]
+}

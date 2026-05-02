@@ -1,0 +1,173 @@
+---
+title: Textarea
+description: 多行文本输入组件，适用于备注、反馈、说明等长文本场景。
+---
+
+import {
+  TextareaBioCaseDemo,
+  TextareaDisabledCaseDemo,
+  TextareaInteractiveDemo,
+  TextareaReviewCaseDemo
+} from "@/components/demos/input-textarea-demos";
+
+# Textarea
+
+`Textarea` 是表单中的多行输入组件，适用于发布备注、问题描述、反馈建议等需要较长文本输入的场景。
+
+组件基于原生 `<textarea>` 封装，默认提供统一边框、焦点环与禁用态表现，并支持通过 `className` 调整高度。
+
+## 可视化展示
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[320px] items-center justify-center p-6">
+    <TextareaInteractiveDemo />
+  </div>
+</div>
+
+```tsx title="components/demos/input-textarea-demos.tsx"
+"use client";
+
+import { Textarea } from "@formaui/components";
+
+export function TextareaInteractiveDemo() {
+  return (
+    <div className="grid w-full max-w-3xl gap-4 md:grid-cols-2">
+      <Textarea placeholder="请输入版本更新摘要..." />
+      <Textarea placeholder="请描述你的反馈..." />
+      <Textarea className="min-h-32" placeholder="支持通过 className 调整高度" />
+      <Textarea value="该字段由系统自动生成，不可编辑。" disabled readOnly />
+    </div>
+  );
+}
+```
+
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
+npx formaui add textarea
+```
+
+### 通过包依赖使用
+
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
+
+## 使用方式
+
+```tsx title="Basic Usage"
+import { Textarea } from "@formaui/components";
+
+export function FeedbackField() {
+  return <Textarea placeholder="请输入你的反馈内容..." />;
+}
+```
+
+## 案例
+
+### 1. 发布备注录入
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[140px] items-center justify-center p-6">
+    <TextareaReviewCaseDemo />
+  </div>
+</div>
+
+```tsx title="Release Note Textarea"
+import { Textarea } from "@formaui/components";
+
+export function ReleaseNoteTextarea() {
+  return (
+    <div className="space-y-2">
+      <label htmlFor="release-note" className="text-sm font-medium">
+        发布备注
+      </label>
+      <Textarea id="release-note" placeholder="请输入本次发布的关键变更..." />
+    </div>
+  );
+}
+```
+
+### 2. 个人简介编辑
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[170px] items-center justify-center p-6">
+    <TextareaBioCaseDemo />
+  </div>
+</div>
+
+```tsx title="Bio Textarea"
+import { Textarea } from "@formaui/components";
+
+export function BioTextarea() {
+  return (
+    <div className="space-y-2">
+      <label htmlFor="user-bio" className="text-sm font-medium">
+        个人简介
+      </label>
+      <Textarea id="user-bio" className="min-h-32" placeholder="简要介绍你的背景与擅长方向" />
+    </div>
+  );
+}
+```
+
+### 3. 审计日志只读展示
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[140px] items-center justify-center p-6">
+    <TextareaDisabledCaseDemo />
+  </div>
+</div>
+
+```tsx title="Disabled Readonly Textarea"
+import { Textarea } from "@formaui/components";
+
+export function DisabledReadonlyTextarea() {
+  return (
+    <div className="space-y-2">
+      <label htmlFor="audit-log" className="text-sm font-medium">
+        审计日志
+      </label>
+      <Textarea id="audit-log" value="该字段来源于审计系统同步，当前不可编辑。" disabled readOnly />
+    </div>
+  );
+}
+```
+
+## API Reference
+
+### Props
+
+`Textarea` 继承 `React.ComponentProps<"textarea">`，常用属性如下：
+
+| Prop | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- |
+| `placeholder` | `string` | `-` | 占位提示文本 |
+| `value` | `string` | `-` | 受控值 |
+| `defaultValue` | `string` | `-` | 非受控初始值 |
+| `disabled` | `boolean` | `false` | 禁用交互并降低可见度 |
+| `readOnly` | `boolean` | `false` | 只读，不可编辑 |
+| `rows` | `number` | `-` | 指定可见行数 |
+| `className` | `string` | `-` | 追加自定义样式（如调整高度） |
+
+### 继承属性
+
+可直接使用标准多行输入属性：
+
+- `onChange`
+- `onBlur` / `onFocus`
+- `name`
+- `aria-*` / `data-*`
+
+## 可访问性
+
+- 为 `Textarea` 提供明确的文本标签，并通过 `htmlFor + id` 关联。
+- 对长度受限的字段，建议增加字数说明或错误提示。
+- 对只读/禁用态字段，建议说明“不可编辑原因”，提升可理解性。
+
+## 源码位置
+
+- `packages/components/src/primitives/textarea.tsx`
+- `registry/components/textarea.json`

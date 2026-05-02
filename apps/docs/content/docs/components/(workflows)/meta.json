@@ -1,0 +1,13 @@
+{
+  "title": "Composed Workflows",
+  "pages": [
+    "./data-table",
+    "./data-table-toolbar",
+    "./pagination-bar",
+    "./filter-bar",
+    "./search-command",
+    "./metric-card",
+    "./theme-switcher",
+    "./user-menu"
+  ]
+}

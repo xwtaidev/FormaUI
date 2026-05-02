@@ -1,0 +1,8 @@
+{
+  "title": "Release Notes",
+  "icon": "History",
+  "pages": [
+    "./overview",
+    "./v0.8"
+  ]
+}

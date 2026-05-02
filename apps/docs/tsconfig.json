@@ -5,9 +5,17 @@
     "paths": {
       "@/*": [
         "./*"
+      ],
+      "collections/*": [
+        "./.source/*"
+      ],
+      "fumadocs-mdx:collections/*": [
+        "./.source/*"
       ]
     },
     "noEmit": true,
+    "declaration": false,
+    "declarationMap": false,
     "incremental": true,
     "plugins": [
       {
@@ -26,6 +34,7 @@
     ".next/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    ".source"
   ]
 }

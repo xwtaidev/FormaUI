@@ -1,0 +1,59 @@
+---
+title: Foundations Overview
+description: Foundations 章节总览：设计令牌、主题与可访问性基线。
+---
+
+import { Accessibility, Layers, Palette, Waypoints } from "lucide-react";
+
+# Foundations Overview
+
+Foundations 是 FormaUI 的工程基线章节，聚焦三个问题：
+
+- 设计值如何统一表达（Design Tokens）
+- 视觉主题如何稳定演进（Theme）
+- 交互与内容如何满足可访问性要求（Accessibility）
+
+如果你的团队正在把组件体系从“能用”升级为“可持续维护”，建议先完成本章节再进入大规模业务落地。
+
+## 本章包含内容
+
+<Cards>
+  <Card
+    title="Design Tokens"
+    description="建立 token 分层、语义映射与变更规范，避免样式漂移。"
+    icon={<Layers className="text-violet-500" />}
+    href="/docs/foundations/design-tokens"
+  />
+  <Card
+    title="Theme"
+    description="掌握主题变量接入、明暗模式策略与品牌化扩展方式。"
+    icon={<Palette className="text-emerald-500" />}
+    href="/docs/foundations/theme"
+  />
+  <Card
+    title="Accessibility"
+    description="落实键盘访问、焦点管理、对比度与发布前无障碍验收。"
+    icon={<Accessibility className="text-sky-500" />}
+    href="/docs/foundations/accessibility"
+  />
+</Cards>
+
+## 建议阅读顺序
+
+1. **Design Tokens**：先统一设计语义与变量分层。
+2. **Theme**：再建立 light/dark 与品牌主题策略。
+3. **Accessibility**：最后把可访问性纳入发布门禁。
+
+## 适用角色
+
+- 设计系统维护者
+- 前端基础架构负责人
+- 需要统一多业务线 UI 规范的团队
+
+## 完成本章后的收益
+
+- 样式变更从“页面级修修补补”转为“语义变量级治理”
+- 深色模式与品牌化定制成本显著下降
+- 组件交付具备明确的可访问性验收标准
+
+阅读完本章后，建议继续进入 [Components Overview](/docs/components)，开始组件层面的能力选型与落地。

@@ -1,0 +1,48 @@
+---
+title: Content Style Guide
+description: Writing style, structure, and quality standards for FormaUI docs.
+---
+
+# Content Style Guide
+
+## Writing Principles
+
+- Be explicit and action-oriented.
+- Prefer concrete commands and file paths over abstract advice.
+- Keep terminology consistent with code and registry names.
+
+## Page Structure
+
+Recommended structure for most pages:
+
+1. What this page covers
+2. Core concepts or setup steps
+3. Command/code examples
+4. Validation or troubleshooting
+
+## Frontmatter
+
+Each page should include:
+
+- `title`: concise and human-readable
+- `description`: one-sentence summary for SEO/search context
+
+## Code and Command Snippets
+
+- Use fenced code blocks with language identifiers.
+- Keep snippets runnable where possible.
+- Prefer `pnpm` / `npx formaui` command forms used in the repo.
+
+## Link and Reference Rules
+
+- Use absolute docs paths (`/docs/...`) for internal docs links.
+- Reference source paths exactly when pointing to files.
+- Avoid stale links to pre-v0.8 routes when `/docs/*` equivalents exist.
+
+## Quality Bar
+
+Before merge, pages must satisfy:
+
+- Discoverable in domain `meta.json`
+- No broken internal links in sampled checks
+- Matches IA conventions and naming rules

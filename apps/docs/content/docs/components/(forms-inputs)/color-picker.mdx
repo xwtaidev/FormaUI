@@ -1,0 +1,37 @@
+---
+title: Color Picker
+description: Component documentation for Color Picker.
+---
+
+# Color Picker
+
+## Overview
+
+`ColorPicker` provides a swatch selector and editable hex value in one compact control.
+
+## Installation
+
+```bash
+npx formaui add color-picker
+```
+
+## Usage
+
+```tsx
+import { ColorPicker } from "@/components/primitives/color-picker";
+
+export function BrandColorField() {
+  return <ColorPicker defaultValue="#1677ff" onValueChange={(color) => console.log(color)} />;
+}
+```
+
+## v0.7 Scope
+
+- Hex color picking and text editing.
+- Controlled and uncontrolled modes.
+- Gradient/palette management is out of scope for v0.7.
+
+## Source Code
+
+- `packages/components/src/primitives/color-picker.tsx`
+- `registry/components/color-picker.json`

@@ -1,0 +1,16 @@
+{
+  "title": "Basics",
+  "pages": [
+    "./lib-cn",
+    "./typography",
+    "./button",
+    "./label",
+    "./input",
+    "./textarea",
+    "./card",
+    "./badge",
+    "./separator",
+    "./skeleton",
+    "./image"
+  ]
+}

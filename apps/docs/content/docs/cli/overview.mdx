@@ -1,0 +1,27 @@
+---
+title: CLI Overview
+description: Command groups and workflows for FormaUI CLI.
+---
+
+# CLI
+
+FormaUI v0.3 CLI focuses on reliable install flows, metadata-driven discoverability, pack workflows, and diagnostics.
+
+## Core Commands
+
+```bash
+formaui init
+formaui add <name>
+formaui block add <name>
+formaui template add <name>
+formaui theme add <name>
+formaui pack list
+formaui pack info <name>
+formaui pack add <name>
+formaui list [--kind <component|block|template|theme|pack>]
+formaui search <keyword> [--kind <...>] [--category <name>] [--scenario <name>]
+formaui info <name> [--kind <...>] [--category <name>] [--scenario <name>]
+formaui doctor
+```
+
+For parameter-level examples, see [Commands](/docs/cli/commands).

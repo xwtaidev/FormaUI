@@ -1,0 +1,9 @@
+{
+  "title": "Foundations",
+  "icon": "Layers",
+  "pages": [
+    "./design-tokens",
+    "./theme",
+    "./accessibility"
+  ]
+}

@@ -1,0 +1,91 @@
+---
+title: Commands
+description: Detailed command syntax and examples.
+---
+
+# CLI Commands
+
+This page documents v0.3 command syntax, metadata filters, and pack workflows.
+
+## Global Flags
+
+- `--cwd <path>`: run the command in a target project directory.
+- `--yes`: skip interactive overwrite prompts.
+- `--registry <url|path>`: resolve items from remote registry URL or local path.
+- `--dry-run`: print plan only, no writes or dependency install.
+
+## `formaui list [kind]`
+
+List installable assets by kind.
+
+```bash
+npx formaui list
+npx formaui list --kind component
+npx formaui list --kind pack
+npx formaui list --category dashboard
+npx formaui list --scenario analytics
+```
+
+## `formaui search <keyword>`
+
+Searches registry metadata by name and tags.
+
+```bash
+npx formaui search chart
+npx formaui search dashboard
+npx formaui search table --kind component
+npx formaui search loading --scenario loading
+```
+
+## `formaui info <name>`
+
+Prints registry item detail (`kind`, dependencies, files, source path, metadata).
+
+```bash
+npx formaui info data-table
+npx formaui info admin-dashboard
+npx formaui info dashboard-foundation --kind pack
+npx formaui info filter-bar --kind component --category component
+```
+
+## `formaui pack <subcommand>`
+
+Pack commands operate on scenario-based install bundles.
+
+```bash
+npx formaui pack list
+npx formaui pack list --category forms
+npx formaui pack info dashboard-foundation
+npx formaui pack add dashboard-foundation --dry-run
+npx formaui pack add feedback-loading
+```
+
+## `formaui doctor`
+
+Prints environment and project configuration checks:
+
+- React dependency
+- Tailwind setup
+- TypeScript config
+- CSS entry and FormaUI variables file
+
+```bash
+npx formaui doctor
+```
+
+## Install Commands
+
+```bash
+npx formaui init
+npx formaui add button
+npx formaui block add dashboard-shell
+npx formaui template add ai-console-lite
+npx formaui theme add default
+npx formaui pack add data-entry
+```
+
+Use `--dry-run` first to preview file writes and package changes:
+
+```bash
+npx formaui template add saas-starter --dry-run
+```

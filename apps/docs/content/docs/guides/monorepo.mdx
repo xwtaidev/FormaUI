@@ -1,0 +1,25 @@
+---
+title: Monorepo Strategy
+description: Organize FormaUI usage in multi-package repositories.
+---
+
+# Monorepo Strategy
+
+## Workspace Layout
+
+A common setup is:
+
+- `apps/*` for product applications
+- `packages/ui` for shared product-level wrappers
+- `packages/config` for lint/ts/tailwind presets
+
+## Integration Pattern
+
+1. Run CLI commands against target apps with `--cwd`.
+2. Keep shared utilities (`cn`, tokens, theme CSS) in reusable packages where appropriate.
+3. Version internal UI abstractions with normal workspace flows.
+
+## Operational Tips
+
+- Use `formaui doctor` in CI for baseline checks.
+- Standardize aliases and CSS entry points across apps.

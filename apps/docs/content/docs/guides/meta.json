@@ -1,0 +1,11 @@
+{
+  "title": "Guides",
+  "icon": "Compass",
+  "pages": [
+    "./integrations-nextjs",
+    "./integrations-vite",
+    "./monorepo",
+    "./contributing-docs",
+    "./content-style-guide"
+  ]
+}

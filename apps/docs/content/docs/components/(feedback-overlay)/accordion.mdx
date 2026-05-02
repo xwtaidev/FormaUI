@@ -1,0 +1,49 @@
+---
+title: Accordion
+description: Component documentation for Accordion.
+---
+
+# Accordion
+
+## Overview
+
+`Accordion` helps reveal dense content progressively while preserving keyboard-first navigation.
+
+## Installation
+
+```bash
+npx formaui add accordion
+```
+
+## Usage
+
+```tsx
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger
+} from "@/components/primitives/accordion";
+
+export function FAQAccordion() {
+  return (
+    <Accordion type="single" collapsible>
+      <AccordionItem value="item-1">
+        <AccordionTrigger>What is FormaUI?</AccordionTrigger>
+        <AccordionContent>FormaUI is a source-owned design system for React teams.</AccordionContent>
+      </AccordionItem>
+    </Accordion>
+  );
+}
+```
+
+## Accessibility
+
+- Uses Radix semantics for `aria-expanded` and `aria-controls`.
+- Trigger remains keyboard focusable with visible focus ring styles.
+- Supports Enter/Space activation on the trigger button.
+
+## Source Code
+
+- `packages/components/src/primitives/accordion.tsx`
+- `registry/components/accordion.json`

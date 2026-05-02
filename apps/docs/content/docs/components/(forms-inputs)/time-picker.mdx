@@ -1,0 +1,37 @@
+---
+title: Time Picker
+description: Component documentation for Time Picker.
+---
+
+# Time Picker
+
+## Overview
+
+`TimePicker` is a compact time-only input with controlled and uncontrolled value support.
+
+## Installation
+
+```bash
+npx formaui add time-picker
+```
+
+## Usage
+
+```tsx
+import { TimePicker } from "@/components/primitives/time-picker";
+
+export function StartTimeField() {
+  return <TimePicker defaultValue="10:30" onValueChange={(time) => console.log(time)} />;
+}
+```
+
+## v0.7 Scope
+
+- Time-only picking via native time input.
+- `value` / `defaultValue` / `onValueChange` contracts.
+- Date+time fusion stays in `date-picker` + composition.
+
+## Source Code
+
+- `packages/components/src/primitives/time-picker.tsx`
+- `registry/components/time-picker.json`

@@ -1,0 +1,26 @@
+{
+  "title": "Forms & Inputs",
+  "pages": [
+    "./checkbox",
+    "./radio-group",
+    "./switch",
+    "./select",
+    "./cascader",
+    "./combobox",
+    "./input-number",
+    "./input-otp",
+    "./slider",
+    "./rate",
+    "./date-picker",
+    "./time-picker",
+    "./date-range-picker",
+    "./color-picker",
+    "./tree-select",
+    "./upload",
+    "./transfer",
+    "./form-field",
+    "./segmented",
+    "./toggle",
+    "./toggle-group"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "title": "Migration",
+  "icon": "GitBranch",
+  "pages": [
+    "./overview",
+    "./v0.8",
+    "./v0.4-to-v0.5",
+    "./v0.2-to-v0.3",
+    "./v0.1-to-v0.2"
+  ]
+}

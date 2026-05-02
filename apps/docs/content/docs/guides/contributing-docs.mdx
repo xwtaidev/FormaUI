@@ -1,0 +1,47 @@
+---
+title: Contributing Docs
+description: Workflow and rules for adding or updating FormaUI docs pages.
+---
+
+# Contributing Docs
+
+This guide defines the expected workflow for contributing documentation in the v0.8 Fumadocs architecture.
+
+## 1. Content Location
+
+All canonical docs pages live under:
+
+- `apps/docs/content/docs/<domain>/*.mdx`
+
+Top-level domains are defined in `apps/docs/content/docs/meta.json`.
+
+## 2. Naming Rules
+
+- Use lowercase kebab-case for filenames and slugs.
+- Keep one topic per page.
+- Prefer stable slugs; avoid churn unless there is a breaking IA change.
+
+## 3. Navigation Rules (`meta.json`)
+
+Each domain must define a `meta.json` file with explicit page order.
+
+- Every `*.mdx` page in the domain must be listed in `pages`.
+- `pages` entries should use `./slug` form.
+- Avoid orphan pages not referenced by `meta.json`.
+
+## 4. Authoring Checklist
+
+1. Add or update MDX page with frontmatter (`title`, `description`).
+2. Update domain `meta.json` order.
+3. Verify internal links and command snippets.
+4. Run docs quality gates.
+
+## 5. Required Checks
+
+```bash
+pnpm --filter docs test
+pnpm --filter docs lint
+pnpm --filter docs build
+```
+
+For release-level changes, run full workspace gates from repo root.

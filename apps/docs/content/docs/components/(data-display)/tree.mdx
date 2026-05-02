@@ -1,0 +1,48 @@
+---
+title: Tree
+description: Component documentation for Tree.
+---
+
+# Tree
+
+## Overview
+
+`Tree` renders hierarchical data with expand/collapse and selection interactions.
+
+## Installation
+
+```bash
+npx formaui add tree
+```
+
+## Usage
+
+```tsx
+import { Tree } from "@/components/primitives/tree";
+
+const treeData = [
+  {
+    key: "engineering",
+    title: "Engineering",
+    children: [
+      { key: "frontend", title: "Frontend" },
+      { key: "backend", title: "Backend" }
+    ]
+  }
+];
+
+export function TeamTree() {
+  return <Tree data={treeData} defaultExpandedKeys={["engineering"]} />;
+}
+```
+
+## v0.7 Scope
+
+- Expand/collapse + select behavior.
+- Controlled and uncontrolled expanded/selected keys.
+- Keyboard support for expand/collapse/select.
+
+## Source Code
+
+- `packages/components/src/primitives/tree.tsx`
+- `registry/components/tree.json`

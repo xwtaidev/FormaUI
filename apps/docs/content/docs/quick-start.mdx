@@ -1,0 +1,101 @@
+---
+title: Quick Start
+icon: Rocket
+description: 15 分钟完成第一个可运行的 FormaUI 页面。
+---
+
+# Quick Start
+
+本章节演示如何从零开始搭建一个 **可运行、可扩展** 的 FormaUI 页面，目标是在 15 分钟内完成第一屏交付。
+
+## 目标
+
+完成后你将获得：
+
+- 一个可运行的 Next.js 页面
+- 至少 1 个基础组件和 1 个区块组件
+- 可继续扩展到业务页面的工程结构
+
+## 第 1 步：确认依赖已安装
+
+如果尚未安装，请先完成 [Installation](/docs/installation)。
+
+至少需要以下依赖：
+
+```bash title="bash"
+pnpm add @formaui/components @formaui/blocks @formaui/tailwind-preset
+```
+
+## 第 2 步：创建第一个页面
+
+在 `app/page.tsx`（或你的业务路由页面）中加入如下代码：
+
+```tsx title="app/page.tsx"
+import { Button, Card, CardContent, CardDescription, CardHeader, CardTitle } from "@formaui/components";
+import { FeatureGrid } from "@formaui/blocks";
+
+export default function Page() {
+  return (
+    <main className="mx-auto max-w-6xl space-y-8 px-6 py-10">
+      <Card>
+        <CardHeader>
+          <CardTitle>FormaUI 快速开始</CardTitle>
+          <CardDescription>你已经成功接入基础组件与区块能力。</CardDescription>
+        </CardHeader>
+        <CardContent className="flex items-center gap-3">
+          <Button>开始构建</Button>
+          <Button variant="outline">查看组件目录</Button>
+        </CardContent>
+      </Card>
+
+      <FeatureGrid
+        title="为什么使用 FormaUI"
+        description="面向产品团队的源码自持 UI 体系，支持快速定制与长期演进。"
+        features={[
+          { title: "源码可控", description: "组件代码在你的仓库中可持续演进。" },
+          { title: "组合高效", description: "使用 blocks 快速拼装业务页面。" },
+          { title: "设计一致", description: "统一 token / theme / preset，降低样式漂移。" }
+        ]}
+      />
+    </main>
+  );
+}
+```
+
+## 第 3 步：启动并验证
+
+```bash title="bash"
+pnpm dev
+```
+
+访问本地地址后，确认以下内容：
+
+- 页面正常渲染，无运行时报错
+- `Button` 样式和交互正常
+- `FeatureGrid` 区块布局完整
+
+如果你已通过以上验证，说明 FormaUI 已具备可用的开发基线。
+
+## 第 4 步：进入生产化流程
+
+建议按照以下顺序继续：
+
+1. 使用 `npx formaui search <keyword>` 查找目标组件。
+2. 参考 [Foundations](/docs/foundations/design-tokens) 统一 token 与主题策略。
+3. 在 [Components](/docs/components/button) 和 [Blocks](/docs/blocks/feature-grid) 中逐步替换占位实现。
+4. 通过 `npx formaui doctor` 作为交付前的诊断检查。
+
+## 常见问题
+
+### 组件样式不生效
+
+优先检查：
+
+- 是否接入 `@formaui/tailwind-preset`
+- Tailwind `content` 是否包含你的页面目录
+- 是否遗漏全局样式入口（如 `app/globals.css`）
+
+### 什么时候该用 components，什么时候该用 blocks？
+
+- `components`：适合需要精细控制交互和布局的场景。
+- `blocks`：适合快速搭建完整业务区块，减少页面组装成本。
