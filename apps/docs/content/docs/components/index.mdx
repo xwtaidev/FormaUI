@@ -1,14 +1,81 @@
 ---
 title: Components Overview
-description: Component catalog and usage strategy.
+description: Components 章节总览：组件分组、使用策略与落地顺序。
 ---
+
+import { Blocks, Component, Compass, LayoutTemplate, Package, SquareTerminal } from "lucide-react";
 
 # Components Overview
 
-The Components section contains installable primitives and composites.
+Components 是 FormaUI 的核心能力层，提供可复用的基础组件与组合组件。
 
-## Usage Model
+本章节按工程实践拆分为多个文件夹分组，目标是让你在真实业务里更快完成“选型、接入、定制、验收”的闭环。
 
-1. Discover components by name.
-2. Install with CLI (`formaui add <name>`).
-3. Customize source files directly in your repository.
+## 本章包含内容
+
+<Cards>
+  <Card
+    title="Basics"
+    description="基础组件与通用能力（Button/Input/Card/Typography 等）。"
+    icon={<Component className="text-violet-500" />}
+    href="/docs/components/button"
+  />
+  <Card
+    title="Forms & Inputs"
+    description="表单与输入类组件（Select/DatePicker/Upload/TreeSelect 等）。"
+    icon={<Package className="text-emerald-500" />}
+    href="/docs/components/checkbox"
+  />
+  <Card
+    title="Navigation"
+    description="导航与信息组织组件（NavigationMenu/Tabs/Breadcrumb 等）。"
+    icon={<Compass className="text-sky-500" />}
+    href="/docs/components/navigation-menu"
+  />
+  <Card
+    title="Feedback & Overlay"
+    description="反馈与浮层组件（Alert/Dialog/Drawer/Toast 等）。"
+    icon={<Blocks className="text-amber-500" />}
+    href="/docs/components/alert"
+  />
+  <Card
+    title="Data Display"
+    description="数据展示组件（Descriptions/Timeline/Progress/Tree 等）。"
+    icon={<LayoutTemplate className="text-violet-500" />}
+    href="/docs/components/descriptions"
+  />
+  <Card
+    title="Composed Workflows"
+    description="业务流程型组件（DataTable/FilterBar/Pagination 等）。"
+    icon={<SquareTerminal className="text-emerald-500" />}
+    href="/docs/components/data-table"
+  />
+</Cards>
+
+## 推荐阅读顺序
+
+1. **Basics**：先建立组件 API 与样式基线认知。
+2. **Forms & Inputs**：优先覆盖业务表单链路。
+3. **Navigation + Feedback**：补齐核心交互和状态反馈。
+4. **Data Display + Workflows**：进入复杂页面与业务流程搭建。
+
+## 推荐使用流程
+
+1. 在章节中找到目标组件并确认 API。
+2. 使用 `npx formaui add <name>` 安装对应组件源码。
+3. 在业务页面先做最小接入，再按场景扩展变体。
+4. 联动 [Foundations](/docs/foundations) 检查 token、主题与无障碍约束。
+
+## 适用角色
+
+- 业务前端开发者
+- 设计系统维护者
+- 负责组件治理与交付规范的技术负责人
+
+## 完成本章后的收益
+
+- 组件选型有清晰路径，减少“重复造轮子”
+- 业务页面组装速度更快，风格一致性更强
+- 组件定制与后续升级具备稳定工程边界
+
+如果你希望进一步提升页面搭建效率，建议继续阅读 [Blocks Overview](/docs/blocks/overview)。
