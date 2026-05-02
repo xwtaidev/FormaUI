@@ -1,43 +1,79 @@
 ---
 title: Date Picker
-description: Component documentation for Date Picker.
+description: 单日期选择组件，支持弹层日历与清空操作。
 ---
+
+import {
+  DatePickerDeadlineCaseDemo,
+  DatePickerInteractiveDemo,
+} from "@/components/demos/forms-inputs-demos";
 
 # Date Picker
 
-## Overview
+`DatePicker` 适用于截止日期、计划日期、发布日期等单日期选择场景。
 
-`DatePicker` wraps `Calendar` in a popover trigger for single-date selection.
+## 可视化展示
 
-## Installation
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[220px] items-center justify-center p-6">
+    <DatePickerInteractiveDemo />
+  </div>
+</div>
 
-```bash
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
 npx formaui add date-picker
 ```
 
-## Usage
+### 通过包依赖使用
 
-```tsx
-import { DatePicker } from "@/components/primitives/date-picker";
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
 
-export function DueDateField() {
-  return <DatePicker placeholder="Pick due date" onChange={(date) => console.log(date)} />;
+## 使用方式
+
+```tsx title="Basic Usage"
+import { DatePicker } from "@formaui/components";
+
+export function ReleaseDateField() {
+  return <DatePicker placeholder="选择发布日期" />;
 }
 ```
 
-## v0.6 Scope
+## 案例
 
-- Covers single-value selection only.
-- Range selection remains in `DateRangePicker` (`date-range-picker`) for v0.6 compatibility.
-- Time picking and timezone conversion are out of scope for this release.
+### 1. 截止日期设置（受控）
 
-## Accessibility
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[132px] items-center justify-center p-6">
+    <DatePickerDeadlineCaseDemo />
+  </div>
+</div>
 
-- Trigger is keyboard-focusable and uses button semantics.
-- Popover content exposes day cells with full date labels.
-- Includes an explicit clear action for removing current selection.
+## API Reference
 
-## Source Code
+### Props
+
+| Prop           | 类型                                 | 默认值          | 说明           |
+| -------------- | ------------------------------------ | --------------- | -------------- |
+| `value`        | `Date`                               | `-`             | 受控选中日期   |
+| `defaultValue` | `Date`                               | `-`             | 非受控初始日期 |
+| `onChange`     | `(value: Date \| undefined) => void` | `-`             | 日期变更回调   |
+| `placeholder`  | `string`                             | `"Pick a date"` | 占位文案       |
+| `disabled`     | `boolean`                            | `false`         | 禁用触发器     |
+| `className`    | `string`                             | `-`             | 触发器样式扩展 |
+
+## 可访问性
+
+- 触发器使用按钮语义，支持键盘打开日历。
+- 已选日期支持清空操作，避免强制保留错误值。
+- 建议在表单中搭配字段标签说明日期含义。
+
+## 源码位置
 
 - `packages/components/src/primitives/date-picker.tsx`
 - `registry/components/date-picker.json`

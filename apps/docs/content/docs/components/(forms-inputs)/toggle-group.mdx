@@ -1,46 +1,96 @@
 ---
 title: Toggle Group
-description: Component documentation for Toggle Group.
+description: 切换按钮组组件，支持单选或多选模式。
 ---
+
+import { ToggleGroupInteractiveDemo } from "@/components/demos/forms-inputs-demos";
 
 # Toggle Group
 
-## Overview
+`ToggleGroup` 适用于文本样式、对齐方式、过滤标签等集合型切换场景。
 
-`ToggleGroup` coordinates multiple toggles in single or multiple selection mode.
+## 可视化展示
 
-## Installation
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[180px] items-center justify-center p-6">
+    <ToggleGroupInteractiveDemo />
+  </div>
+</div>
 
-```bash
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
 npx formaui add toggle-group
 ```
 
-## Usage
+### 通过包依赖使用
 
-```tsx
-import { ToggleGroup, ToggleGroupItem } from "@/components/primitives/toggle-group";
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
 
-export function StatusFilter() {
+## 使用方式
+
+```tsx title="Basic Usage"
+"use client";
+
+import * as React from "react";
+import { ToggleGroup, ToggleGroupItem } from "@formaui/components";
+
+export function AlignField() {
+  const [value, setValue] = React.useState("center");
   return (
-    <ToggleGroup type="single" defaultValue="all" aria-label="Filter mode">
-      <ToggleGroupItem value="all" aria-label="All items">
-        All
+    <ToggleGroup
+      type="single"
+      value={value}
+      onValueChange={(next) => next && setValue(next)}
+    >
+      <ToggleGroupItem value="left" aria-label="Left">
+        左
       </ToggleGroupItem>
-      <ToggleGroupItem value="open" aria-label="Open items">
-        Open
+      <ToggleGroupItem value="center" aria-label="Center">
+        中
+      </ToggleGroupItem>
+      <ToggleGroupItem value="right" aria-label="Right">
+        右
       </ToggleGroupItem>
     </ToggleGroup>
   );
 }
 ```
 
-## Accessibility
+## API Reference
 
-- Radix roving focus enables keyboard traversal.
-- `type="single"` maps to radio-like selection behavior.
-- Shares variants with `toggle` for consistent states.
+### `ToggleGroup` Props
 
-## Source Code
+`ToggleGroup` 继承 `React.ComponentPropsWithoutRef<typeof ToggleGroupPrimitive.Root>`，核心属性：
+
+| Prop            | 类型                     | 说明             |
+| --------------- | ------------------------ | ---------------- |
+| `type`          | `"single" \| "multiple"` | 选择模式（必填） |
+| `value`         | `string \| string[]`     | 受控值           |
+| `defaultValue`  | `string \| string[]`     | 非受控初始值     |
+| `onValueChange` | `(value: any) => void`   | 值变化回调       |
+| `disabled`      | `boolean`                | 禁用整个组       |
+
+### `ToggleGroupItem` Props
+
+| Prop       | 类型                     | 默认值      | 说明           |
+| ---------- | ------------------------ | ----------- | -------------- |
+| `value`    | `string`                 | `-`         | 选项值（必填） |
+| `variant`  | `"default" \| "outline"` | `"default"` | 视觉样式       |
+| `size`     | `"sm" \| "md" \| "lg"`   | `"md"`      | 尺寸           |
+| `disabled` | `boolean`                | `false`     | 禁用当前项     |
+
+## 可访问性
+
+- 基于 Radix ToggleGroup，支持键盘导航。
+- 单选模式建议用互斥含义明确的文案。
+- 为每项提供 `aria-label` 便于读屏器朗读。
+
+## 源码位置
 
 - `packages/components/src/primitives/toggle-group.tsx`
 - `registry/components/toggle-group.json`

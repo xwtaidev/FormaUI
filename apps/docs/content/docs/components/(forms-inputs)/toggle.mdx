@@ -1,37 +1,68 @@
 ---
 title: Toggle
-description: Component documentation for Toggle.
+description: 单个切换按钮组件，适用于二态开关型命令。
 ---
+
+import { ToggleInteractiveDemo } from "@/components/demos/forms-inputs-demos";
 
 # Toggle
 
-## Overview
+`Toggle` 用于单个命令按钮的开关状态切换，例如加粗、收藏、启用项。
 
-`Toggle` is a two-state pressed control for inline on/off actions.
+## 可视化展示
 
-## Installation
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[180px] items-center justify-center p-6">
+    <ToggleInteractiveDemo />
+  </div>
+</div>
 
-```bash
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
 npx formaui add toggle
 ```
 
-## Usage
+### 通过包依赖使用
 
-```tsx
-import { Toggle } from "@/components/primitives/toggle";
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
 
-export function PinToggle() {
-  return <Toggle aria-label="Pin filters">Pin</Toggle>;
+## 使用方式
+
+```tsx title="Basic Usage"
+import { Toggle } from "@formaui/components";
+
+export function BoldToggle() {
+  return <Toggle aria-label="Toggle bold">B</Toggle>;
 }
 ```
 
-## Accessibility
+## API Reference
 
-- Maintains pressed state with Radix toggle semantics.
-- Keyboard focus and activation are supported by default.
-- Works for icon-only or text toggles with `aria-label`.
+### Props
 
-## Source Code
+`Toggle` 继承 `React.ComponentPropsWithoutRef<typeof TogglePrimitive.Root>`：
+
+| Prop              | 类型                         | 默认值      | 说明           |
+| ----------------- | ---------------------------- | ----------- | -------------- |
+| `pressed`         | `boolean`                    | `-`         | 受控开关状态   |
+| `defaultPressed`  | `boolean`                    | `false`     | 非受控初始状态 |
+| `onPressedChange` | `(pressed: boolean) => void` | `-`         | 状态变化回调   |
+| `variant`         | `"default" \| "outline"`     | `"default"` | 视觉样式       |
+| `size`            | `"sm" \| "md" \| "lg"`       | `"md"`      | 尺寸           |
+| `disabled`        | `boolean`                    | `false`     | 禁用交互       |
+
+## 可访问性
+
+- 状态通过 `aria-pressed` 自动暴露给辅助技术。
+- 建议始终提供可读标签或 `aria-label`。
+- 用于关键行为时建议增加文案反馈。
+
+## 源码位置
 
 - `packages/components/src/primitives/toggle.tsx`
 - `registry/components/toggle.json`

@@ -1,37 +1,80 @@
 ---
 title: Rate
-description: Component documentation for Rate.
+description: 评分组件，支持整星与半星评分交互。
 ---
+
+import {
+  RateInteractiveDemo,
+  RateReviewCaseDemo,
+} from "@/components/demos/forms-inputs-demos";
 
 # Rate
 
-## Overview
+`Rate` 适用于满意度评价、内容评分等需要星级反馈的场景。
 
-`Rate` is a star-based scoring input for feedback and quality assessment flows.
+## 可视化展示
 
-## Installation
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[220px] items-center justify-center p-6">
+    <RateInteractiveDemo />
+  </div>
+</div>
 
-```bash
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
 npx formaui add rate
 ```
 
-## Usage
+### 通过包依赖使用
 
-```tsx
-import { Rate } from "@/components/primitives/rate";
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
 
-export function ScoreField() {
-  return <Rate defaultValue={3} count={5} onValueChange={(value) => console.log(value)} />;
+## 使用方式
+
+```tsx title="Basic Usage"
+import { Rate } from "@formaui/components";
+
+export function ReviewScoreField() {
+  return <Rate allowHalf defaultValue={4.5} />;
 }
 ```
 
-## v0.7 Scope
+## 案例
 
-- Click/hover rating feedback.
-- Controlled and uncontrolled modes.
-- Supports optional half-star precision.
+### 1. 评论评分（受控）
 
-## Source Code
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[132px] items-center justify-center p-6">
+    <RateReviewCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### Props
+
+| Prop            | 类型                      | 默认值  | 说明           |
+| --------------- | ------------------------- | ------- | -------------- |
+| `value`         | `number`                  | `-`     | 受控评分值     |
+| `defaultValue`  | `number`                  | `0`     | 非受控初始评分 |
+| `onValueChange` | `(value: number) => void` | `-`     | 评分变化回调   |
+| `count`         | `number`                  | `5`     | 星星总数       |
+| `allowHalf`     | `boolean`                 | `false` | 是否启用半星   |
+| `disabled`      | `boolean`                 | `false` | 禁用交互       |
+| `className`     | `string`                  | `-`     | 容器样式扩展   |
+
+## 可访问性
+
+- 每个评分按钮使用 `role="radio"`，整体容器为 `role="radiogroup"`。
+- 每个评分项带有 `aria-label`，便于语音输出。
+- 半星模式建议搭配文本提示，减少视觉歧义。
+
+## 源码位置
 
 - `packages/components/src/primitives/rate.tsx`
 - `registry/components/rate.json`

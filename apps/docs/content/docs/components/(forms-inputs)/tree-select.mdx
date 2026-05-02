@@ -1,45 +1,85 @@
 ---
 title: Tree Select
-description: Component documentation for Tree Select.
+description: 树形选择组件，支持层级展开与单选/多选。
 ---
+
+import { TreeSelectInteractiveDemo } from "@/components/demos/forms-inputs-demos";
 
 # Tree Select
 
-## Overview
+`TreeSelect` 适用于组织架构、目录分类、标签树等层级型数据选择。
 
-`TreeSelect` combines trigger input behavior with tree-based hierarchical selection.
+## 可视化展示
 
-## Installation
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[220px] items-center justify-center p-6">
+    <TreeSelectInteractiveDemo />
+  </div>
+</div>
 
-```bash
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
 npx formaui add tree-select
 ```
 
-## Usage
+### 通过包依赖使用
 
-```tsx
-import { TreeSelect } from "@/components/primitives/tree-select";
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
 
-const treeData = [
+## 使用方式
+
+```tsx title="Basic Usage"
+import { TreeSelect } from "@formaui/components";
+
+const data = [
   {
     key: "engineering",
     title: "Engineering",
-    children: [{ key: "frontend", title: "Frontend" }]
-  }
+    children: [{ key: "frontend", title: "Frontend" }],
+  },
 ];
 
-export function OwnerTreeField() {
-  return <TreeSelect data={treeData} placeholder="Select owner node" />;
+export function TeamField() {
+  return <TreeSelect data={data} placeholder="选择团队" />;
 }
 ```
 
-## v0.7 Scope
+## API Reference
 
-- Single and multiple modes.
-- Controlled and uncontrolled value patterns.
-- Built on top of `Tree` + `Popover` composition.
+### Props
 
-## Source Code
+| Prop            | 类型                                  | 默认值               | 说明               |
+| --------------- | ------------------------------------- | -------------------- | ------------------ |
+| `data`          | `TreeSelectNode[]`                    | `-`                  | 树节点数据（必填） |
+| `value`         | `string \| string[]`                  | `-`                  | 受控值             |
+| `defaultValue`  | `string \| string[]`                  | `multiple ? [] : ""` | 非受控初始值       |
+| `onValueChange` | `(value: string \| string[]) => void` | `-`                  | 选中值变化回调     |
+| `placeholder`   | `string`                              | `"Select from tree"` | 占位文案           |
+| `multiple`      | `boolean`                             | `false`              | 是否多选           |
+| `disabled`      | `boolean`                             | `false`              | 禁用交互           |
+| `className`     | `string`                              | `-`                  | 容器样式扩展       |
+
+### `TreeSelectNode`
+
+| 字段       | 类型               | 说明         |
+| ---------- | ------------------ | ------------ |
+| `key`      | `string`           | 节点唯一标识 |
+| `title`    | `ReactNode`        | 节点文案     |
+| `disabled` | `boolean`          | 禁用当前节点 |
+| `children` | `TreeSelectNode[]` | 子节点       |
+
+## 可访问性
+
+- 树容器采用 `role="tree"`，子层使用 `role="group"`。
+- 节点提供 `aria-expanded` 与 `aria-selected` 状态。
+- 多选模式建议配合已选摘要，避免遗漏。
+
+## 源码位置
 
 - `packages/components/src/primitives/tree-select.tsx`
 - `registry/components/tree-select.json`

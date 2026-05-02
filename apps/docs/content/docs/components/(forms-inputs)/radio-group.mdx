@@ -1,33 +1,95 @@
 ---
 title: RadioGroup
-description: Component documentation for RadioGroup.
+description: 单选分组组件，适用于互斥选项的状态切换与配置选择。
 ---
+
+import {
+  PlanSelectorCaseDemo,
+  RadioGroupInteractiveDemo,
+  StatusFilterCaseDemo,
+} from "@/components/demos/radio-switch-demos";
 
 # RadioGroup
 
-## Overview
+`RadioGroup` 与 `RadioGroupItem` 用于处理「互斥单选」场景，常见于状态筛选、模式切换、方案选择等交互。
 
-`RadioGroup` and `RadioGroupItem` provide single-choice selection for state filters and mode toggles.
+它基于 Radix Radio Group 实现，内置键盘导航与焦点样式，并继承 FormaUI 主题变量。
 
-## Installation
+## 可视化展示
 
-```bash
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[260px] items-center justify-center p-6">
+    <RadioGroupInteractiveDemo />
+  </div>
+</div>
+
+```tsx title="components/demos/radio-switch-demos.tsx"
+"use client";
+
+import { RadioGroup, RadioGroupItem } from "@formaui/components";
+
+export function RadioGroupInteractiveDemo() {
+  return (
+    <RadioGroup defaultValue="all" className="space-y-2">
+      <label
+        htmlFor="status-all"
+        className="inline-flex items-center gap-2 text-sm"
+      >
+        <RadioGroupItem id="status-all" value="all" />
+        全部
+      </label>
+      <label
+        htmlFor="status-open"
+        className="inline-flex items-center gap-2 text-sm"
+      >
+        <RadioGroupItem id="status-open" value="open" />
+        进行中
+      </label>
+      <label
+        htmlFor="status-closed"
+        className="inline-flex items-center gap-2 text-sm"
+      >
+        <RadioGroupItem id="status-closed" value="closed" />
+        已完成
+      </label>
+    </RadioGroup>
+  );
+}
+```
+
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
 npx formaui add radio-group
 ```
 
-## Usage
+### 通过包依赖使用
 
-```tsx
-import { RadioGroup, RadioGroupItem } from "@/components/primitives/radio-group";
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
+
+## 使用方式
+
+```tsx title="Basic Usage"
+import { RadioGroup, RadioGroupItem } from "@formaui/components";
 
 export function StatusSelector() {
   return (
     <RadioGroup defaultValue="all" className="flex gap-3">
-      <label htmlFor="status-all" className="inline-flex items-center gap-2 text-sm">
+      <label
+        htmlFor="status-all"
+        className="inline-flex items-center gap-2 text-sm"
+      >
         <RadioGroupItem id="status-all" value="all" />
         All
       </label>
-      <label htmlFor="status-open" className="inline-flex items-center gap-2 text-sm">
+      <label
+        htmlFor="status-open"
+        className="inline-flex items-center gap-2 text-sm"
+      >
         <RadioGroupItem id="status-open" value="open" />
         Open
       </label>
@@ -36,13 +98,133 @@ export function StatusSelector() {
 }
 ```
 
-## Accessibility
+## 案例
 
-- Built on Radix radio primitives with keyboard navigation and ARIA semantics.
-- Pair each item with a visible label (`htmlFor`) for clear screen-reader announcements.
-- Keep option labels concise and mutually exclusive.
+### 1. 任务状态筛选
 
-## Source Code
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[144px] items-center justify-center p-6">
+    <StatusFilterCaseDemo />
+  </div>
+</div>
+
+```tsx title="Status Filter"
+"use client";
+
+import * as React from "react";
+import { RadioGroup, RadioGroupItem } from "@formaui/components";
+
+export function StatusFilter() {
+  const [value, setValue] = React.useState("all");
+
+  return (
+    <RadioGroup value={value} onValueChange={setValue} className="flex gap-4">
+      <label
+        htmlFor="status-filter-all"
+        className="inline-flex items-center gap-2 text-sm"
+      >
+        <RadioGroupItem id="status-filter-all" value="all" />
+        全部
+      </label>
+      <label
+        htmlFor="status-filter-open"
+        className="inline-flex items-center gap-2 text-sm"
+      >
+        <RadioGroupItem id="status-filter-open" value="open" />
+        进行中
+      </label>
+      <label
+        htmlFor="status-filter-done"
+        className="inline-flex items-center gap-2 text-sm"
+      >
+        <RadioGroupItem id="status-filter-done" value="done" />
+        已完成
+      </label>
+    </RadioGroup>
+  );
+}
+```
+
+### 2. 方案选择
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[240px] items-center justify-center p-6">
+    <PlanSelectorCaseDemo />
+  </div>
+</div>
+
+```tsx title="Plan Selector"
+"use client";
+
+import * as React from "react";
+import { RadioGroup, RadioGroupItem } from "@formaui/components";
+
+export function PlanSelector() {
+  const [plan, setPlan] = React.useState("pro");
+
+  return (
+    <RadioGroup value={plan} onValueChange={setPlan} className="space-y-2">
+      <label
+        htmlFor="plan-starter"
+        className="flex items-start gap-3 rounded-md border border-fd-border p-3"
+      >
+        <RadioGroupItem id="plan-starter" value="starter" />
+        <span className="text-sm">Starter</span>
+      </label>
+      <label
+        htmlFor="plan-pro"
+        className="flex items-start gap-3 rounded-md border border-fd-border p-3"
+      >
+        <RadioGroupItem id="plan-pro" value="pro" />
+        <span className="text-sm">Pro</span>
+      </label>
+    </RadioGroup>
+  );
+}
+```
+
+## API Reference
+
+### `RadioGroup` Props
+
+| Prop            | 类型                      | 默认值  | 说明           |
+| --------------- | ------------------------- | ------- | -------------- |
+| `value`         | `string`                  | `-`     | 受控选中值     |
+| `defaultValue`  | `string`                  | `-`     | 非受控初始值   |
+| `onValueChange` | `(value: string) => void` | `-`     | 选中项变更回调 |
+| `name`          | `string`                  | `-`     | 表单字段名     |
+| `required`      | `boolean`                 | `false` | 表单必填校验   |
+| `disabled`      | `boolean`                 | `false` | 禁用整个分组   |
+| `className`     | `string`                  | `-`     | 追加自定义样式 |
+
+### `RadioGroupItem` Props
+
+| Prop        | 类型      | 默认值  | 说明             |
+| ----------- | --------- | ------- | ---------------- |
+| `value`     | `string`  | `-`     | 单选项值（必填） |
+| `id`        | `string`  | `-`     | 与 label 关联    |
+| `disabled`  | `boolean` | `false` | 禁用当前选项     |
+| `className` | `string`  | `-`     | 追加自定义样式   |
+
+### 继承属性
+
+- `RadioGroup` 继承 `React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root>`
+- `RadioGroupItem` 继承 `React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item>`
+
+常用扩展属性：
+
+- `aria-*`
+- `data-*`
+- `onFocus` / `onBlur`
+
+## 可访问性
+
+- 基于 Radix Radio Group，支持键盘方向键切换与焦点管理。
+- 每个 `RadioGroupItem` 必须有清晰文案标签，并通过 `id` 与 `label` 关联。
+- 同一分组内选项应保持语义互斥，避免出现含义重叠选项。
+- 默认选项建议显式设置，避免“未选择”导致提交歧义。
+
+## 源码位置
 
 - `packages/components/src/primitives/radio-group.tsx`
 - `registry/components/radio-group.json`

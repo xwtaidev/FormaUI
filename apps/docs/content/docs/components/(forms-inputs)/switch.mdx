@@ -1,31 +1,193 @@
 ---
 title: Switch
-description: Component documentation for Switch.
+description: 开关组件，适用于开启/关闭类状态切换。
 ---
+
+import {
+  FeatureFlagCaseDemo,
+  NotificationSwitchCaseDemo,
+  SwitchInteractiveDemo,
+} from "@/components/demos/radio-switch-demos";
 
 # Switch
 
-## Overview
+`Switch` 用于在两个互斥状态间快速切换，常见于通知配置、功能开关、偏好设置等场景。
 
-`switch` is an installable component shipped in FormaUI v0.2.
+它基于 Radix Switch 构建，提供清晰的启用/禁用反馈，并默认继承 FormaUI 主题与焦点样式。
 
-## Install Command
+## 可视化展示
 
-```bash
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[260px] items-center justify-center p-6">
+    <SwitchInteractiveDemo />
+  </div>
+</div>
+
+```tsx title="components/demos/radio-switch-demos.tsx"
+"use client";
+
+import * as React from "react";
+import { Switch } from "@formaui/components";
+
+export function SwitchInteractiveDemo() {
+  const [enabled, setEnabled] = React.useState(true);
+
+  return (
+    <label
+      htmlFor="switch-demo-enabled"
+      className="flex items-center justify-between gap-3"
+    >
+      <span className="text-sm">自动保存</span>
+      <Switch
+        id="switch-demo-enabled"
+        checked={enabled}
+        onCheckedChange={setEnabled}
+      />
+    </label>
+  );
+}
+```
+
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
 npx formaui add switch
 ```
 
-## Registry Metadata
+### 通过包依赖使用
 
-- kind: `component`
-- version: `0.2.2`
-- frameworks: `react`
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
 
-## Dependencies
+## 使用方式
 
-- `lib-cn`
+```tsx title="Basic Usage"
+import { Switch } from "@formaui/components";
 
-## Source Code
+export function AutoSaveToggle() {
+  return (
+    <label
+      htmlFor="auto-save"
+      className="flex items-center justify-between gap-3"
+    >
+      <span className="text-sm">自动保存</span>
+      <Switch id="auto-save" defaultChecked />
+    </label>
+  );
+}
+```
+
+## 案例
+
+### 1. 通知设置开关组
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[208px] items-center justify-center p-6">
+    <NotificationSwitchCaseDemo />
+  </div>
+</div>
+
+```tsx title="Notification Settings"
+import { Switch } from "@formaui/components";
+
+export function NotificationSettings() {
+  return (
+    <div className="space-y-3">
+      <label
+        htmlFor="notify-release"
+        className="flex items-center justify-between gap-3"
+      >
+        <span className="text-sm">版本更新通知</span>
+        <Switch id="notify-release" defaultChecked />
+      </label>
+      <label
+        htmlFor="notify-risk"
+        className="flex items-center justify-between gap-3"
+      >
+        <span className="text-sm">风险预警通知</span>
+        <Switch id="notify-risk" defaultChecked />
+      </label>
+      <label
+        htmlFor="notify-marketing"
+        className="flex items-center justify-between gap-3"
+      >
+        <span className="text-sm">营销邮件通知</span>
+        <Switch id="notify-marketing" />
+      </label>
+    </div>
+  );
+}
+```
+
+### 2. 功能灰度开关（受控）
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[140px] items-center justify-center p-6">
+    <FeatureFlagCaseDemo />
+  </div>
+</div>
+
+```tsx title="Feature Flag"
+"use client";
+
+import * as React from "react";
+import { Switch } from "@formaui/components";
+
+export function FeatureFlagToggle() {
+  const [enabled, setEnabled] = React.useState(false);
+
+  return (
+    <label
+      htmlFor="feature-flag"
+      className="flex items-center justify-between gap-3"
+    >
+      <span className="text-sm">启用新仪表盘布局</span>
+      <Switch
+        id="feature-flag"
+        checked={enabled}
+        onCheckedChange={setEnabled}
+      />
+    </label>
+  );
+}
+```
+
+## API Reference
+
+### Props
+
+| Prop              | 类型                         | 默认值  | 说明           |
+| ----------------- | ---------------------------- | ------- | -------------- |
+| `checked`         | `boolean`                    | `-`     | 受控开关状态   |
+| `defaultChecked`  | `boolean`                    | `false` | 非受控初始状态 |
+| `onCheckedChange` | `(checked: boolean) => void` | `-`     | 状态变更回调   |
+| `disabled`        | `boolean`                    | `false` | 禁用交互       |
+| `required`        | `boolean`                    | `false` | 表单必填校验   |
+| `name`            | `string`                     | `-`     | 表单字段名     |
+| `value`           | `string`                     | `"on"`  | 表单提交值     |
+| `id`              | `string`                     | `-`     | 用于关联 label |
+| `className`       | `string`                     | `-`     | 追加自定义样式 |
+
+### 继承属性
+
+`Switch` 继承 `React.ComponentPropsWithoutRef<typeof SwitchPrimitive.Root>`，可直接使用：
+
+- `aria-*`
+- `data-*`
+- `onFocus` / `onBlur`
+- `onKeyDown`
+
+## 可访问性
+
+- 基于 Radix Switch，默认提供屏幕阅读器所需语义与键盘可操作性。
+- 建议与可见文本标签配对，避免仅靠图标表达开关含义。
+- 对于关键配置，建议同时提供状态说明文案（如“已开启/已关闭”）。
+- 禁用状态应说明原因，避免用户误判为可操作异常。
+
+## 源码位置
 
 - `packages/components/src/primitives/switch.tsx`
 - `registry/components/switch.json`

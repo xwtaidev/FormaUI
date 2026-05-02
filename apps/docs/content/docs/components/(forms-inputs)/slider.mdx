@@ -1,37 +1,87 @@
 ---
 title: Slider
-description: Component documentation for Slider.
+description: 滑块组件，适用于范围或强度值连续调节。
 ---
+
+import {
+  SliderInteractiveDemo,
+  SliderVolumeCaseDemo,
+} from "@/components/demos/forms-inputs-demos";
 
 # Slider
 
-## Overview
+`Slider` 适合音量、阈值、价格区间等连续值输入场景。
 
-`Slider` provides drag-based and keyboard-accessible value adjustment for ranges.
+## 可视化展示
 
-## Installation
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[220px] items-center justify-center p-6">
+    <SliderInteractiveDemo />
+  </div>
+</div>
 
-```bash
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
 npx formaui add slider
 ```
 
-## Usage
+### 通过包依赖使用
 
-```tsx
-import { Slider } from "@/components/primitives/slider";
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
 
-export function VolumeSlider() {
-  return <Slider defaultValue={[40]} max={100} step={5} className="w-64" />;
+## 使用方式
+
+```tsx title="Basic Usage"
+"use client";
+
+import * as React from "react";
+import { Slider } from "@formaui/components";
+
+export function VolumeField() {
+  const [value, setValue] = React.useState([50]);
+  return <Slider value={value} onValueChange={setValue} max={100} step={1} />;
 }
 ```
 
-## Accessibility
+## 案例
 
-- Uses Radix slider semantics and focus behavior.
-- Exposes `role="slider"` with value metadata.
-- Supports keyboard adjustments for precise control.
+### 1. 音量调节
 
-## Source Code
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[132px] items-center justify-center p-6">
+    <SliderVolumeCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### Props
+
+`Slider` 继承 `React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>`，常用参数如下：
+
+| Prop            | 类型                        | 默认值  | 说明                    |
+| --------------- | --------------------------- | ------- | ----------------------- |
+| `value`         | `number[]`                  | `-`     | 受控值（支持单值/区间） |
+| `defaultValue`  | `number[]`                  | `-`     | 非受控初始值            |
+| `onValueChange` | `(value: number[]) => void` | `-`     | 值变化回调              |
+| `min`           | `number`                    | `0`     | 最小值                  |
+| `max`           | `number`                    | `100`   | 最大值                  |
+| `step`          | `number`                    | `1`     | 步进粒度                |
+| `disabled`      | `boolean`                   | `false` | 禁用交互                |
+| `className`     | `string`                    | `-`     | 根容器样式扩展          |
+
+## 可访问性
+
+- 基于 Radix Slider，支持键盘方向键调节。
+- 区间滑块建议搭配数值文本同步显示。
+- 对关键参数建议增加单位说明（如 `%`、`ms`）。
+
+## 源码位置
 
 - `packages/components/src/primitives/slider.tsx`
 - `registry/components/slider.json`

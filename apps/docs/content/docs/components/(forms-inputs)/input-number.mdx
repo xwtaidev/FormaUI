@@ -1,37 +1,115 @@
 ---
 title: Input Number
-description: Component documentation for Input Number.
+description: 数值输入组件，支持步进、边界限制与键盘增减。
 ---
+
+import {
+  InputNumberBudgetCaseDemo,
+  InputNumberInteractiveDemo,
+  InputNumberQuotaCaseDemo,
+} from "@/components/demos/select-suite-demos";
 
 # Input Number
 
-## Overview
+`InputNumber` 适用于配额、预算、数量等数值输入场景，支持按钮步进与键盘方向键操作。
 
-`InputNumber` is a numeric control with increment/decrement actions, boundary clamping, and keyboard support.
+组件内置 `min/max` 边界钳制与 `step` 增减逻辑，支持受控与非受控两种模式。
 
-## Installation
+## 可视化展示
 
-```bash
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[260px] items-center justify-center p-6">
+    <InputNumberInteractiveDemo />
+  </div>
+</div>
+
+```tsx title="components/demos/select-suite-demos.tsx"
+import { InputNumber } from "@formaui/components";
+
+export function InputNumberInteractiveDemo() {
+  return (
+    <div className="space-y-3">
+      <InputNumber min={1} max={20} defaultValue={5} />
+      <InputNumber min={0} max={10} step={0.5} defaultValue={2.5} />
+    </div>
+  );
+}
+```
+
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
 npx formaui add input-number
 ```
 
-## Usage
+### 通过包依赖使用
 
-```tsx
-import { InputNumber } from "@/components/primitives/input-number";
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
+
+## 使用方式
+
+```tsx title="Basic Usage"
+import { InputNumber } from "@formaui/components";
 
 export function TeamSizeField() {
   return <InputNumber min={1} max={50} defaultValue={5} />;
 }
 ```
 
-## Accessibility
+## 案例
 
-- Supports `ArrowUp`/`ArrowDown` keyboard stepping.
-- Keeps native number input semantics for assistive technologies.
-- Includes explicit increment/decrement button labels.
+### 1. 并发配额（受控）
 
-## Source Code
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[148px] items-center justify-center p-6">
+    <InputNumberQuotaCaseDemo />
+  </div>
+</div>
+
+### 2. 预算上限（步长为 100）
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[132px] items-center justify-center p-6">
+    <InputNumberBudgetCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### Props
+
+| Prop            | 类型                      | 默认值       | 说明               |
+| --------------- | ------------------------- | ------------ | ------------------ |
+| `value`         | `number`                  | `-`          | 受控数值           |
+| `defaultValue`  | `number`                  | `min` 或 `0` | 非受控初始值       |
+| `min`           | `number`                  | `-`          | 最小边界           |
+| `max`           | `number`                  | `-`          | 最大边界           |
+| `step`          | `number`                  | `1`          | 每次增减步长       |
+| `onValueChange` | `(value: number) => void` | `-`          | 数值变更回调       |
+| `disabled`      | `boolean`                 | `false`      | 禁用输入与增减按钮 |
+| `className`     | `string`                  | `-`          | 输入框样式扩展     |
+
+### 继承属性
+
+`InputNumber` 继承 `Omit<React.InputHTMLAttributes<HTMLInputElement>, ...>`，可直接使用常见原生属性：
+
+- `name`
+- `id`
+- `aria-*`
+- `onFocus` / `onBlur`
+
+## 可访问性
+
+- 支持 `ArrowUp` / `ArrowDown` 键盘步进。
+- 保留原生 `input[type="number"]` 语义，便于辅助技术识别。
+- 内置增减按钮分别带有 `aria-label`，提升可读性。
+- 对关键字段建议同时展示单位或范围说明。
+
+## 源码位置
 
 - `packages/components/src/primitives/input-number.tsx`
 - `registry/components/input-number.json`

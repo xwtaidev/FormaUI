@@ -1,37 +1,80 @@
 ---
 title: Input OTP
-description: Component documentation for Input OTP.
+description: 一次性验证码输入组件，支持逐格输入与粘贴分发。
 ---
+
+import {
+  InputOtpInteractiveDemo,
+  InputOtpLoginCaseDemo,
+} from "@/components/demos/forms-inputs-demos";
 
 # Input OTP
 
-## Overview
+`InputOtp` 适用于登录验证、敏感操作确认等验证码输入场景。
 
-`InputOtp` splits one-time-password input into fixed-length cells with paste and keyboard navigation support.
+## 可视化展示
 
-## Installation
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[220px] items-center justify-center p-6">
+    <InputOtpInteractiveDemo />
+  </div>
+</div>
 
-```bash
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
 npx formaui add input-otp
 ```
 
-## Usage
+### 通过包依赖使用
 
-```tsx
-import { InputOtp } from "@/components/primitives/input-otp";
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
 
-export function VerificationCode() {
+## 使用方式
+
+```tsx title="Basic Usage"
+import { InputOtp } from "@formaui/components";
+
+export function VerifyCodeField() {
   return <InputOtp length={6} />;
 }
 ```
 
-## Accessibility
+## 案例
 
-- Each cell is keyboard focusable and labeled by position.
-- Supports directional key navigation and backspace behavior.
-- Paste handling fills multiple cells in a single action.
+### 1. 登录验证码（受控）
 
-## Source Code
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[132px] items-center justify-center p-6">
+    <InputOtpLoginCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### Props
+
+| Prop             | 类型                      | 默认值  | 说明             |
+| ---------------- | ------------------------- | ------- | ---------------- |
+| `value`          | `string`                  | `-`     | 受控验证码值     |
+| `defaultValue`   | `string`                  | `""`    | 非受控初始值     |
+| `length`         | `number`                  | `6`     | 验证码位数       |
+| `onChange`       | `(value: string) => void` | `-`     | 值变更回调       |
+| `disabled`       | `boolean`                 | `false` | 禁用输入         |
+| `inputClassName` | `string`                  | `-`     | 单格输入样式扩展 |
+| `className`      | `string`                  | `-`     | 容器样式扩展     |
+
+## 可访问性
+
+- 每个输入格带有 `aria-label`（Digit N）。
+- 支持左右方向键切换焦点与 Backspace 回退。
+- 支持粘贴自动分发，提高键盘与屏幕阅读器用户效率。
+
+## 源码位置
 
 - `packages/components/src/primitives/input-otp.tsx`
 - `registry/components/input-otp.json`

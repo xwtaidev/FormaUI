@@ -1,49 +1,88 @@
 ---
-title: DateRangePicker
-description: Component documentation for DateRangePicker.
+title: Date Range Picker
+description: 日期范围选择组件，适用于报表与统计区间筛选。
 ---
 
-# DateRangePicker
+import {
+  DateRangePickerCaseDemo,
+  DateRangePickerInteractiveDemo,
+} from "@/components/demos/forms-inputs-demos";
 
-## Overview
+# Date Range Picker
 
-`DateRangePicker` offers a lightweight start/end date selection panel for reporting windows and audit history filters.
+`DateRangePicker` 用于选择开始与结束日期，适合报表筛选、活动周期设置等场景。
 
-## Install Command
+## 可视化展示
 
-```bash
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[220px] items-center justify-center p-6">
+    <DateRangePickerInteractiveDemo />
+  </div>
+</div>
+
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
 npx formaui add date-range-picker
 ```
 
-## Usage
+### 通过包依赖使用
 
-```tsx
-import { DateRangePicker } from "@/components/composites/date-range-picker";
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
 
-export function ReportRange() {
+## 使用方式
+
+```tsx title="Basic Usage"
+import { DateRangePicker } from "@formaui/components";
+
+export function ReportRangeField() {
   return (
-    <DateRangePicker
-      value={{ from: "2026-04-01", to: "2026-04-30" }}
-      onChange={(range) => console.log(range)}
-    />
+    <DateRangePicker defaultValue={{ from: "2026-05-01", to: "2026-05-31" }} />
   );
 }
 ```
 
-## Scenario Guidance
+## 案例
 
-- Use in analytics/reporting screens to scope metrics by release period.
-- Keep labels explicit (`Start date`/`End date`) to reduce date ambiguity.
-- Pair with status/search controls when users need multi-dimensional filtering.
+### 1. 报表时间区间（受控）
 
-## Dependencies
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[152px] items-center justify-center p-6">
+    <DateRangePickerCaseDemo />
+  </div>
+</div>
 
-Registry dependencies:
+## API Reference
 
-- `input`
-- `separator`
+### Props
 
-## Source Code
+| Prop           | 类型                              | 默认值         | 说明           |
+| -------------- | --------------------------------- | -------------- | -------------- |
+| `value`        | `Partial<DateRangeValue>`         | `-`            | 受控区间       |
+| `defaultValue` | `Partial<DateRangeValue>`         | `-`            | 非受控初始区间 |
+| `onChange`     | `(value: DateRangeValue) => void` | `-`            | 区间变更回调   |
+| `fromLabel`    | `string`                          | `"Start date"` | 起始日期标签   |
+| `toLabel`      | `string`                          | `"End date"`   | 结束日期标签   |
+| `className`    | `string`                          | `-`            | 容器样式扩展   |
+
+### `DateRangeValue`
+
+| 字段   | 类型     | 说明                   |
+| ------ | -------- | ---------------------- |
+| `from` | `string` | 起始日期（YYYY-MM-DD） |
+| `to`   | `string` | 结束日期（YYYY-MM-DD） |
+
+## 可访问性
+
+- 起止日期均有显式标签，便于辅助技术识别。
+- 结束日期输入会自动带 `min=from`，减少非法范围。
+- 建议在业务层补充“结束时间不早于开始时间”的校验提示。
+
+## 源码位置
 
 - `packages/components/src/composites/date-range-picker.tsx`
 - `registry/components/date-range-picker.json`

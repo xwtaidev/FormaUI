@@ -1,42 +1,133 @@
 ---
 title: Combobox
-description: Component documentation for Combobox.
+description: 可搜索下拉选择组件，适用于中小规模候选项快速检索。
 ---
+
+import {
+  ComboboxFilterCaseDemo,
+  ComboboxInteractiveDemo,
+  ComboboxOwnerCaseDemo,
+} from "@/components/demos/select-suite-demos";
 
 # Combobox
 
-## Overview
+`Combobox` 结合触发按钮、搜索输入与候选列表，适合负责人选择、成员检索、标签选择等查找场景。
 
-`Combobox` combines a trigger button, searchable input, and selectable option list for compact lookup flows.
+它支持受控与非受控模式，内置关键词过滤、空态文案和禁用选项处理。
 
-## Installation
+## 可视化展示
 
-```bash
-npx formaui add combobox
-```
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[260px] items-center justify-center p-6">
+    <ComboboxInteractiveDemo />
+  </div>
+</div>
 
-## Usage
-
-```tsx
-import { Combobox } from "@/components/primitives/combobox";
+```tsx title="components/demos/select-suite-demos.tsx"
+import { Combobox } from "@formaui/components";
 
 const ownerOptions = [
   { value: "alpha", label: "Alpha Team" },
-  { value: "beta", label: "Beta Team" }
+  { value: "beta", label: "Beta Team" },
 ];
 
 export function OwnerPicker() {
-  return <Combobox options={ownerOptions} placeholder="Select owner" onValueChange={console.log} />;
+  return (
+    <Combobox
+      options={ownerOptions}
+      placeholder="Select owner"
+      searchPlaceholder="Search owners"
+    />
+  );
 }
 ```
 
-## Accessibility
+## 安装方式
 
-- Trigger uses `role="combobox"` with expanded state.
-- Option list is exposed as `role="listbox"` and each item as `role="option"`.
-- Search input has explicit label text for screen readers.
+### 通过 CLI 安装
 
-## Source Code
+```bash title="CLI"
+npx formaui add combobox
+```
+
+### 通过包依赖使用
+
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
+
+## 使用方式
+
+```tsx title="Basic Usage"
+import { Combobox } from "@formaui/components";
+
+const ownerOptions = [
+  { value: "alpha", label: "Alpha Team" },
+  { value: "beta", label: "Beta Team" },
+];
+
+export function OwnerPicker() {
+  return (
+    <Combobox
+      options={ownerOptions}
+      placeholder="Select owner"
+      onValueChange={console.log}
+    />
+  );
+}
+```
+
+## 案例
+
+### 1. Issue Owner 选择（受控）
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[152px] items-center justify-center p-6">
+    <ComboboxOwnerCaseDemo />
+  </div>
+</div>
+
+### 2. 条件筛选下的候选列表
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[180px] items-center justify-center p-6">
+    <ComboboxFilterCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### Props
+
+| Prop                | 类型                      | 默认值                | 说明               |
+| ------------------- | ------------------------- | --------------------- | ------------------ |
+| `options`           | `ComboboxOption[]`        | `-`                   | 候选项列表（必填） |
+| `value`             | `string`                  | `-`                   | 受控选中值         |
+| `defaultValue`      | `string`                  | `""`                  | 非受控初始值       |
+| `onValueChange`     | `(value: string) => void` | `-`                   | 选中值变更回调     |
+| `placeholder`       | `string`                  | `"Select an option"`  | 按钮占位文案       |
+| `searchPlaceholder` | `string`                  | `"Search options"`    | 搜索输入占位文案   |
+| `emptyMessage`      | `string`                  | `"No options found."` | 搜索无结果文案     |
+| `disabled`          | `boolean`                 | `false`               | 禁用交互           |
+| `className`         | `string`                  | `-`                   | 外层容器样式       |
+
+### `ComboboxOption` 结构
+
+| 字段       | 类型       | 说明           |
+| ---------- | ---------- | -------------- |
+| `value`    | `string`   | 选项值         |
+| `label`    | `string`   | 选项文案       |
+| `keywords` | `string[]` | 额外搜索关键词 |
+| `disabled` | `boolean`  | 禁用当前选项   |
+
+## 可访问性
+
+- 触发器使用 `role="combobox"` 并暴露展开状态。
+- 候选列表使用 `role="listbox"`，选项使用 `role="option"`。
+- 搜索输入通过 `aria-label` 提供明确语义。
+- 空态文案应描述“无结果”而非留空，避免用户困惑。
+
+## 源码位置
 
 - `packages/components/src/primitives/combobox.tsx`
 - `registry/components/combobox.json`

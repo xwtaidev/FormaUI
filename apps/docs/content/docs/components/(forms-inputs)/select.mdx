@@ -1,31 +1,155 @@
 ---
 title: Select
-description: Component documentation for Select.
+description: 下拉选择组件，适用于单值枚举选项选择。
 ---
+
+import {
+  SelectInteractiveDemo,
+  SelectStatusCaseDemo,
+  SelectThemeCaseDemo,
+} from "@/components/demos/select-suite-demos";
 
 # Select
 
-## Overview
+`Select` 用于从有限选项中选择单个值，适合状态筛选、环境切换、配置项选择等场景。
 
-`select` is an installable component shipped in FormaUI v0.2.
+它基于 Radix Select 构建，包含触发器、选项面板、选项项等组合式 primitives，并继承 FormaUI 主题样式。
 
-## Install Command
+## 可视化展示
 
-```bash
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[260px] items-center justify-center p-6">
+    <SelectInteractiveDemo />
+  </div>
+</div>
+
+```tsx title="components/demos/select-suite-demos.tsx"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@formaui/components";
+
+export function SelectInteractiveDemo() {
+  return (
+    <Select defaultValue="production">
+      <SelectTrigger>
+        <SelectValue placeholder="选择环境" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="development">Development</SelectItem>
+        <SelectItem value="staging">Staging</SelectItem>
+        <SelectItem value="production">Production</SelectItem>
+      </SelectContent>
+    </Select>
+  );
+}
+```
+
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
 npx formaui add select
 ```
 
-## Registry Metadata
+### 通过包依赖使用
 
-- kind: `component`
-- version: `0.2.2`
-- frameworks: `react`
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
 
-## Dependencies
+## 使用方式
 
-- `lib-cn`
+```tsx title="Basic Usage"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@formaui/components";
 
-## Source Code
+export function StatusSelect() {
+  return (
+    <Select defaultValue="open">
+      <SelectTrigger className="w-56">
+        <SelectValue placeholder="选择状态" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="todo">待处理</SelectItem>
+        <SelectItem value="open">进行中</SelectItem>
+        <SelectItem value="done">已完成</SelectItem>
+      </SelectContent>
+    </Select>
+  );
+}
+```
+
+## 案例
+
+### 1. 任务状态筛选
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[132px] items-center justify-center p-6">
+    <SelectStatusCaseDemo />
+  </div>
+</div>
+
+### 2. 主题模式切换
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[144px] items-center justify-center p-6">
+    <SelectThemeCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### `Select`（Root）Props
+
+| Prop            | 类型                      | 默认值  | 说明           |
+| --------------- | ------------------------- | ------- | -------------- |
+| `value`         | `string`                  | `-`     | 受控选中值     |
+| `defaultValue`  | `string`                  | `-`     | 非受控初始值   |
+| `onValueChange` | `(value: string) => void` | `-`     | 选中值变化回调 |
+| `name`          | `string`                  | `-`     | 表单字段名     |
+| `disabled`      | `boolean`                 | `false` | 禁用选择器     |
+| `required`      | `boolean`                 | `false` | 表单必填校验   |
+
+### `SelectTrigger` Props
+
+| Prop        | 类型        | 默认值  | 说明                   |
+| ----------- | ----------- | ------- | ---------------------- |
+| `className` | `string`    | `-`     | 追加触发器样式         |
+| `children`  | `ReactNode` | `-`     | 通常包含 `SelectValue` |
+| `disabled`  | `boolean`   | `false` | 禁用触发器交互         |
+
+### `SelectItem` Props
+
+| Prop        | 类型      | 默认值  | 说明           |
+| ----------- | --------- | ------- | -------------- |
+| `value`     | `string`  | `-`     | 选项值（必填） |
+| `disabled`  | `boolean` | `false` | 禁用当前选项   |
+| `className` | `string`  | `-`     | 追加选项样式   |
+
+### 继承属性
+
+- `SelectTrigger` 继承 `React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>`
+- `SelectContent` 继承 `React.ComponentPropsWithoutRef<typeof SelectPrimitive.Content>`
+- `SelectItem` 继承 `React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item>`
+
+## 可访问性
+
+- 基于 Radix Select，默认提供键盘导航与 ARIA 语义。
+- `SelectTrigger` 应提供清晰占位文案，避免空状态不可理解。
+- 选项文案需明确区分，避免含义重叠。
+- 禁用选项应明确展示不可选状态，避免误触。
+
+## 源码位置
 
 - `packages/components/src/primitives/select.tsx`
 - `registry/components/select.json`

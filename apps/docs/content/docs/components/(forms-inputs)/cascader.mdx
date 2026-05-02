@@ -1,45 +1,133 @@
 ---
 title: Cascader
-description: Component documentation for Cascader.
+description: 级联选择组件，适用于层级路径型数据选择。
 ---
+
+import {
+  CascaderCategoryCaseDemo,
+  CascaderInteractiveDemo,
+  CascaderLocationCaseDemo,
+} from "@/components/demos/select-suite-demos";
 
 # Cascader
 
-## Overview
+`Cascader` 用于选择层级路径数据，常见于地区、组织、分类等逐级下钻场景。
 
-`Cascader` provides hierarchical path selection with progressive drill-down panels.
+它基于 `Popover + Button` 组合实现，支持受控与非受控路径，并在每一级展示对应子选项。
 
-## Installation
+## 可视化展示
 
-```bash
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[260px] items-center justify-center p-6">
+    <CascaderInteractiveDemo />
+  </div>
+</div>
+
+```tsx title="components/demos/select-suite-demos.tsx"
+import { Cascader } from "@formaui/components";
+
+const options = [
+  {
+    value: "asia",
+    label: "Asia",
+    children: [
+      {
+        value: "china",
+        label: "China",
+        children: [{ value: "hangzhou", label: "Hangzhou" }],
+      },
+    ],
+  },
+];
+
+export function CascaderInteractiveDemo() {
+  return <Cascader options={options} placeholder="请选择地区路径" />;
+}
+```
+
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
 npx formaui add cascader
 ```
 
-## Usage
+### 通过包依赖使用
 
-```tsx
-import { Cascader } from "@/components/primitives/cascader";
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
+
+## 使用方式
+
+```tsx title="Basic Usage"
+import { Cascader } from "@formaui/components";
 
 const locationOptions = [
   {
     value: "zhejiang",
     label: "Zhejiang",
-    children: [{ value: "hangzhou", label: "Hangzhou" }]
-  }
+    children: [{ value: "hangzhou", label: "Hangzhou" }],
+  },
 ];
 
 export function LocationField() {
-  return <Cascader options={locationOptions} placeholder="Select location path" />;
+  return (
+    <Cascader options={locationOptions} placeholder="Select location path" />
+  );
 }
 ```
 
-## v0.7 Scope
+## 案例
 
-- Single path selection (`string[]` path).
-- Popover based interaction with progressive levels.
-- Multi-select and async loading are out of scope for v0.7.
+### 1. 办公地点选择（受控）
 
-## Source Code
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[160px] items-center justify-center p-6">
+    <CascaderLocationCaseDemo />
+  </div>
+</div>
+
+### 2. 组件分类路径选择
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[132px] items-center justify-center p-6">
+    <CascaderCategoryCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### Props
+
+| Prop            | 类型                        | 默认值          | 说明               |
+| --------------- | --------------------------- | --------------- | ------------------ |
+| `options`       | `CascaderOption[]`          | `-`             | 级联选项树（必填） |
+| `value`         | `string[]`                  | `-`             | 受控路径值         |
+| `defaultValue`  | `string[]`                  | `[]`            | 非受控初始路径     |
+| `onValueChange` | `(value: string[]) => void` | `-`             | 路径变更回调       |
+| `placeholder`   | `string`                    | `"Select path"` | 未选择时占位文案   |
+| `disabled`      | `boolean`                   | `false`         | 禁用交互           |
+| `className`     | `string`                    | `-`             | 外层容器样式       |
+
+### `CascaderOption` 结构
+
+| 字段       | 类型               | 说明             |
+| ---------- | ------------------ | ---------------- |
+| `value`    | `string`           | 当前节点值       |
+| `label`    | `string`           | 当前节点展示文案 |
+| `disabled` | `boolean`          | 是否禁用当前节点 |
+| `children` | `CascaderOption[]` | 子级节点         |
+
+## 可访问性
+
+- 触发器使用按钮语义并带有展开状态，便于辅助技术识别。
+- 建议为层级路径提供清晰占位文案，帮助用户理解选择粒度。
+- 禁用节点会保持可见但不可交互，避免路径断层误解。
+- 长路径场景建议在提交前展示最终路径确认文案。
+
+## 源码位置
 
 - `packages/components/src/primitives/cascader.tsx`
 - `registry/components/cascader.json`

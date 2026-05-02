@@ -1,50 +1,77 @@
 ---
 title: Upload
-description: Component documentation for Upload.
+description: 单文件上传组件，支持文件类型与大小校验。
 ---
+
+import { UploadInteractiveDemo } from "@/components/demos/forms-inputs-demos";
 
 # Upload
 
-## Overview
+`Upload` 适用于头像、附件、报告等单文件上传场景，内置基础本地校验能力。
 
-`Upload` provides the v0.6 baseline upload flow: single file selection with local type and size validation.
+## 可视化展示
 
-## Installation
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[220px] items-center justify-center p-6">
+    <UploadInteractiveDemo />
+  </div>
+</div>
 
-```bash
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
 npx formaui add upload
 ```
 
-## Usage
+### 通过包依赖使用
 
-```tsx
-import { Upload } from "@/components/primitives/upload";
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
 
-export function AvatarUpload() {
+## 使用方式
+
+```tsx title="Basic Usage"
+import { Upload } from "@formaui/components";
+
+export function AvatarUploadField() {
   return (
     <Upload
-      accept="image/png,image/jpeg"
       allowedTypes={["image/png", "image/jpeg"]}
       maxSizeInBytes={2 * 1024 * 1024}
-      onValueChange={(file) => console.log(file)}
+      helperText="仅支持 PNG/JPEG，最大 2MB"
     />
   );
 }
 ```
 
-## v0.6 Scope
+## API Reference
 
-- Single-file flow only.
-- Validation is local (type and size); transport logic stays in app/business layers.
-- Drag-and-drop, chunking, and resumable upload are intentionally deferred.
+### Props
 
-## Accessibility
+| Prop                | 类型                                | 默认值                                           | 说明               |
+| ------------------- | ----------------------------------- | ------------------------------------------------ | ------------------ |
+| `value`             | `File \| null`                      | `-`                                              | 受控文件值         |
+| `defaultValue`      | `File \| null`                      | `null`                                           | 非受控初始值       |
+| `onValueChange`     | `(file: File \| null) => void`      | `-`                                              | 文件变更回调       |
+| `onValidationError` | `(message: string \| null) => void` | `-`                                              | 校验错误回调       |
+| `maxSizeInBytes`    | `number`                            | `-`                                              | 文件大小上限       |
+| `allowedTypes`      | `string[]`                          | `-`                                              | 允许的 MIME 类型   |
+| `helperText`        | `string`                            | `"Single file upload. Validation runs locally."` | 辅助文案           |
+| `clearLabel`        | `string`                            | `"Clear file"`                                   | 清除按钮无障碍文案 |
+| `disabled`          | `boolean`                           | `false`                                          | 禁用交互           |
+| `className`         | `string`                            | `-`                                              | 容器样式扩展       |
+| `inputClassName`    | `string`                            | `-`                                              | 输入框样式扩展     |
 
-- Uses native file input semantics for assistive technologies.
-- Validation errors are exposed through `role="alert"`.
-- Includes explicit clear action to remove current selection.
+## 可访问性
 
-## Source Code
+- 文件输入提供默认 `aria-label`，可按场景覆盖。
+- 校验错误通过 `role="alert"` 输出，便于读屏器感知。
+- 已选文件展示支持单独移除按钮。
+
+## 源码位置
 
 - `packages/components/src/primitives/upload.tsx`
 - `registry/components/upload.json`

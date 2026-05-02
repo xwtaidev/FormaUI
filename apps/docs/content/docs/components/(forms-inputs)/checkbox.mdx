@@ -1,31 +1,219 @@
 ---
 title: Checkbox
-description: Component documentation for Checkbox.
+description: 复选框组件，支持单项选择、禁用状态与半选状态。
 ---
+
+import {
+  AgreementCaseDemo,
+  CheckboxInteractiveDemo,
+  PermissionsCaseDemo,
+  PreferencesCaseDemo,
+} from "@/components/demos/checkbox-demos";
 
 # Checkbox
 
-## Overview
+`Checkbox` 用于处理「可多选」场景，适合设置项、权限矩阵、筛选条件等交互。
 
-`checkbox` is an installable component shipped in FormaUI v0.2.
+它基于 Radix Checkbox 构建，支持 `checked`、`unchecked` 与 `indeterminate` 三种状态，并继承 FormaUI 的主题与焦点样式。
 
-## Install Command
+## 可视化展示
 
-```bash
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[260px] items-center justify-center p-6">
+    <CheckboxInteractiveDemo />
+  </div>
+</div>
+
+```tsx title="components/demos/checkbox-demos.tsx"
+"use client";
+
+import { Checkbox } from "@formaui/components";
+
+export function CheckboxInteractiveDemo() {
+  return (
+    <div className="grid w-full max-w-3xl gap-4 md:grid-cols-2">
+      <label
+        htmlFor="demo-checkbox-checked"
+        className="flex items-start gap-3 rounded-lg border border-fd-border p-4"
+      >
+        <Checkbox id="demo-checkbox-checked" defaultChecked />
+        <span className="space-y-1">
+          <span className="block text-sm font-medium">默认勾选</span>
+          <span className="block text-xs text-fd-muted-foreground">
+            用于预设已开启选项
+          </span>
+        </span>
+      </label>
+
+      <label
+        htmlFor="demo-checkbox-unchecked"
+        className="flex items-start gap-3 rounded-lg border border-fd-border p-4"
+      >
+        <Checkbox id="demo-checkbox-unchecked" />
+        <span className="space-y-1">
+          <span className="block text-sm font-medium">未勾选</span>
+          <span className="block text-xs text-fd-muted-foreground">
+            等待用户主动选择
+          </span>
+        </span>
+      </label>
+    </div>
+  );
+}
+```
+
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
 npx formaui add checkbox
 ```
 
-## Registry Metadata
+### 通过包依赖使用
 
-- kind: `component`
-- version: `0.2.2`
-- frameworks: `react`
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
 
-## Dependencies
+## 使用方式
 
-- `lib-cn`
+```tsx title="Basic Usage"
+import { Checkbox } from "@formaui/components";
 
-## Source Code
+export function NotificationPreference() {
+  return (
+    <label htmlFor="notify-release" className="flex items-start gap-3">
+      <Checkbox id="notify-release" defaultChecked />
+      <span className="text-sm">接收版本更新通知</span>
+    </label>
+  );
+}
+```
+
+## 案例
+
+### 1. 多项通知偏好设置
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[168px] items-center justify-center p-6">
+    <PreferencesCaseDemo />
+  </div>
+</div>
+
+```tsx title="Preferences"
+import { Checkbox } from "@formaui/components";
+
+export function Preferences() {
+  return (
+    <div className="space-y-3">
+      <label htmlFor="pref-release" className="flex items-start gap-3">
+        <Checkbox id="pref-release" defaultChecked />
+        <span className="text-sm">接收版本更新通知</span>
+      </label>
+      <label htmlFor="pref-security" className="flex items-start gap-3">
+        <Checkbox id="pref-security" defaultChecked />
+        <span className="text-sm">接收安全告警通知</span>
+      </label>
+      <label htmlFor="pref-marketing" className="flex items-start gap-3">
+        <Checkbox id="pref-marketing" />
+        <span className="text-sm">接收营销活动邮件</span>
+      </label>
+    </div>
+  );
+}
+```
+
+### 2. 协议确认项
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[120px] items-center justify-center p-6">
+    <AgreementCaseDemo />
+  </div>
+</div>
+
+```tsx title="Agreement"
+import { Checkbox } from "@formaui/components";
+
+export function AgreementField() {
+  return (
+    <label htmlFor="agreement-terms" className="flex items-start gap-3">
+      <Checkbox id="agreement-terms" required />
+      <span className="text-sm">我已阅读并同意服务协议与隐私政策</span>
+    </label>
+  );
+}
+```
+
+### 3. 权限选择（含半选状态）
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[260px] items-center justify-center p-6">
+    <PermissionsCaseDemo />
+  </div>
+</div>
+
+```tsx title="Permissions with Indeterminate"
+"use client";
+
+import * as React from "react";
+import { Checkbox } from "@formaui/components";
+
+const items = ["read", "write", "publish"] as const;
+
+export function PermissionsSelector() {
+  const [selected, setSelected] = React.useState<string[]>(["read"]);
+  const allChecked = selected.length === items.length;
+  const indeterminate = selected.length > 0 && !allChecked;
+
+  return (
+    <label htmlFor="all" className="flex items-start gap-3">
+      <Checkbox
+        id="all"
+        checked={allChecked ? true : indeterminate ? "indeterminate" : false}
+        onCheckedChange={(checked) => {
+          setSelected(checked === true ? [...items] : []);
+        }}
+      />
+      <span className="text-sm">全选权限</span>
+    </label>
+  );
+}
+```
+
+## API Reference
+
+### Props
+
+| Prop              | 类型                                            | 默认值  | 说明                 |
+| ----------------- | ----------------------------------------------- | ------- | -------------------- |
+| `checked`         | `boolean \| "indeterminate"`                    | `-`     | 受控状态值，支持半选 |
+| `defaultChecked`  | `boolean`                                       | `false` | 非受控初始状态       |
+| `onCheckedChange` | `(checked: boolean \| "indeterminate") => void` | `-`     | 状态变更回调         |
+| `disabled`        | `boolean`                                       | `false` | 禁用交互并降低可见度 |
+| `required`        | `boolean`                                       | `false` | 表单必填校验         |
+| `name`            | `string`                                        | `-`     | 表单字段名           |
+| `value`           | `string`                                        | `"on"`  | 表单提交值           |
+| `id`              | `string`                                        | `-`     | 用于关联可点击标签   |
+| `className`       | `string`                                        | `-`     | 追加自定义样式       |
+
+### 继承属性
+
+`Checkbox` 继承 `React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>`，可直接使用：
+
+- `aria-*`
+- `data-*`
+- `onFocus` / `onBlur`
+- `onKeyDown`
+
+## 可访问性
+
+- 基于 Radix Checkbox，默认提供 `role="checkbox"` 与键盘交互支持。
+- 为每个 `Checkbox` 提供清晰的文本标签，避免无语义图标作为唯一说明。
+- 父级「全选」状态建议使用 `indeterminate` 反馈子项部分选中。
+- 禁用状态仅用于不可操作场景，避免误导用户。
+
+## 源码位置
 
 - `packages/components/src/primitives/checkbox.tsx`
 - `registry/components/checkbox.json`

@@ -1,37 +1,78 @@
 ---
 title: Color Picker
-description: Component documentation for Color Picker.
+description: 颜色选择组件，支持色板与十六进制输入联动。
 ---
+
+import {
+  ColorPickerInteractiveDemo,
+  ColorPickerThemeCaseDemo,
+} from "@/components/demos/forms-inputs-demos";
 
 # Color Picker
 
-## Overview
+`ColorPicker` 用于选择主题色、品牌色等视觉配置，支持色板选择与 HEX 文本输入。
 
-`ColorPicker` provides a swatch selector and editable hex value in one compact control.
+## 可视化展示
 
-## Installation
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[220px] items-center justify-center p-6">
+    <ColorPickerInteractiveDemo />
+  </div>
+</div>
 
-```bash
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
 npx formaui add color-picker
 ```
 
-## Usage
+### 通过包依赖使用
 
-```tsx
-import { ColorPicker } from "@/components/primitives/color-picker";
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
 
-export function BrandColorField() {
-  return <ColorPicker defaultValue="#1677ff" onValueChange={(color) => console.log(color)} />;
+## 使用方式
+
+```tsx title="Basic Usage"
+import { ColorPicker } from "@formaui/components";
+
+export function ThemeColorField() {
+  return <ColorPicker defaultValue="#1677ff" />;
 }
 ```
 
-## v0.7 Scope
+## 案例
 
-- Hex color picking and text editing.
-- Controlled and uncontrolled modes.
-- Gradient/palette management is out of scope for v0.7.
+### 1. 主题主色配置（受控）
 
-## Source Code
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[132px] items-center justify-center p-6">
+    <ColorPickerThemeCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### Props
+
+| Prop            | 类型                      | 默认值      | 说明         |
+| --------------- | ------------------------- | ----------- | ------------ |
+| `value`         | `string`                  | `-`         | 受控颜色值   |
+| `defaultValue`  | `string`                  | `"#1677ff"` | 非受控初始值 |
+| `onValueChange` | `(value: string) => void` | `-`         | 颜色变更回调 |
+| `disabled`      | `boolean`                 | `false`     | 禁用交互     |
+| `className`     | `string`                  | `-`         | 外层容器样式 |
+
+## 可访问性
+
+- 色板输入使用 `input[type="color"]`，支持原生辅助能力。
+- 文本输入建议保持 HEX 格式，避免非预期颜色值。
+- 禁用状态会同时作用于色板与文本输入。
+
+## 源码位置
 
 - `packages/components/src/primitives/color-picker.tsx`
 - `registry/components/color-picker.json`

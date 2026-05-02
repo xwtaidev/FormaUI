@@ -1,37 +1,80 @@
 ---
 title: Time Picker
-description: Component documentation for Time Picker.
+description: 时间选择组件，支持 24h / 12h 展示格式。
 ---
+
+import {
+  TimePickerInteractiveDemo,
+  TimePickerMeetingCaseDemo,
+} from "@/components/demos/forms-inputs-demos";
 
 # Time Picker
 
-## Overview
+`TimePicker` 适用于会议时间、提醒时间、营业时段等时刻输入场景。
 
-`TimePicker` is a compact time-only input with controlled and uncontrolled value support.
+## 可视化展示
 
-## Installation
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[220px] items-center justify-center p-6">
+    <TimePickerInteractiveDemo />
+  </div>
+</div>
 
-```bash
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
 npx formaui add time-picker
 ```
 
-## Usage
+### 通过包依赖使用
 
-```tsx
-import { TimePicker } from "@/components/primitives/time-picker";
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
 
-export function StartTimeField() {
-  return <TimePicker defaultValue="10:30" onValueChange={(time) => console.log(time)} />;
+## 使用方式
+
+```tsx title="Basic Usage"
+import { TimePicker } from "@formaui/components";
+
+export function MeetingTimeField() {
+  return <TimePicker defaultValue="09:30" step={300} />;
 }
 ```
 
-## v0.7 Scope
+## 案例
 
-- Time-only picking via native time input.
-- `value` / `defaultValue` / `onValueChange` contracts.
-- Date+time fusion stays in `date-picker` + composition.
+### 1. 会议时间设置（受控）
 
-## Source Code
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[132px] items-center justify-center p-6">
+    <TimePickerMeetingCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### Props
+
+| Prop            | 类型                      | 默认值  | 说明                  |
+| --------------- | ------------------------- | ------- | --------------------- |
+| `value`         | `string`                  | `-`     | 受控时间值（`HH:mm`） |
+| `defaultValue`  | `string`                  | `""`    | 非受控初始值          |
+| `onValueChange` | `(value: string) => void` | `-`     | 时间变更回调          |
+| `format`        | `"24h" \| "12h"`          | `"24h"` | 显示格式              |
+| `step`          | `number`                  | `60`    | 秒级步进              |
+| `disabled`      | `boolean`                 | `false` | 禁用交互              |
+| `className`     | `string`                  | `-`     | 输入样式扩展          |
+
+## 可访问性
+
+- 使用 `input[type="time"]` 保持原生语义。
+- 左侧图标仅作视觉辅助，不替代字段标签。
+- 建议在表单外层补充时区说明。
+
+## 源码位置
 
 - `packages/components/src/primitives/time-picker.tsx`
 - `registry/components/time-picker.json`

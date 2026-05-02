@@ -1,44 +1,86 @@
 ---
 title: Transfer
-description: Component documentation for Transfer.
+description: 穿梭框组件，支持在可选与已选列表间移动项目。
 ---
+
+import { TransferInteractiveDemo } from "@/components/demos/forms-inputs-demos";
 
 # Transfer
 
-## Overview
+`Transfer` 适用于权限分配、成员分组、资源授权等双列表迁移场景。
 
-`Transfer` moves records between source and target lists for dual-list assignment workflows.
+## 可视化展示
 
-## Installation
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[280px] items-center justify-center p-6">
+    <TransferInteractiveDemo />
+  </div>
+</div>
 
-```bash
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
 npx formaui add transfer
 ```
 
-## Usage
+### 通过包依赖使用
 
-```tsx
-import { useState } from "react";
-import { Transfer } from "@/components/primitives/transfer";
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
 
-const items = [
-  { key: "1", title: "Alpha Team" },
-  { key: "2", title: "Beta Team" }
+## 使用方式
+
+```tsx title="Basic Usage"
+"use client";
+
+import * as React from "react";
+import { Transfer } from "@formaui/components";
+
+const data = [
+  { key: "read", title: "读取数据" },
+  { key: "write", title: "编辑内容" },
 ];
 
-export function TeamTransfer() {
-  const [targetKeys, setTargetKeys] = useState<string[]>(["2"]);
-  return <Transfer data={items} targetKeys={targetKeys} onChange={setTargetKeys} />;
+export function PermissionTransfer() {
+  const [targetKeys, setTargetKeys] = React.useState<string[]>(["read"]);
+  return (
+    <Transfer data={data} targetKeys={targetKeys} onChange={setTargetKeys} />
+  );
 }
 ```
 
-## v0.7 Scope
+## API Reference
 
-- Manual move left/right actions with selected state.
-- Supports controlled `targetKeys`.
-- Search/filter and pagination are out of scope for v0.7.
+### Props
 
-## Source Code
+| Prop             | 类型                                           | 默认值  | 说明                      |
+| ---------------- | ---------------------------------------------- | ------- | ------------------------- |
+| `data`           | `TransferItem[]`                               | `-`     | 全量数据列表（必填）      |
+| `targetKeys`     | `string[]`                                     | `-`     | 右侧已选 key 列表（必填） |
+| `selectedKeys`   | `string[]`                                     | `-`     | 受控选中项 key 列表       |
+| `onChange`       | `(targetKeys: string[]) => void`               | `-`     | 右侧列表变化回调（必填）  |
+| `onSelectChange` | `(source: string[], target: string[]) => void` | `-`     | 选中项变化回调            |
+| `disabled`       | `boolean`                                      | `false` | 禁用整体交互              |
+| `className`      | `string`                                       | `-`     | 容器样式扩展              |
+
+### `TransferItem`
+
+| 字段       | 类型      | 说明       |
+| ---------- | --------- | ---------- |
+| `key`      | `string`  | 唯一标识   |
+| `title`    | `string`  | 展示文案   |
+| `disabled` | `boolean` | 禁用当前项 |
+
+## 可访问性
+
+- 每项通过原生 checkbox 表达选中状态。
+- 操作按钮提供明确 `aria-label`（左右移动）。
+- 建议对“无项目”状态提供解释文案。
+
+## 源码位置
 
 - `packages/components/src/primitives/transfer.tsx`
 - `registry/components/transfer.json`
