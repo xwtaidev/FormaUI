@@ -1,31 +1,181 @@
 ---
 title: LibCn
-description: Component documentation for LibCn.
+description: 类名组合工具函数，统一处理条件类名与 Tailwind 冲突覆盖。
 ---
+
+import {
+  LibCnInteractiveDemo,
+  ListRowDemo,
+  OverrideButtonDemo,
+  StatusPillDemo
+} from "@/components/demos/lib-cn-demos";
 
 # LibCn
 
-## Overview
+`cn` 是 FormaUI 的基础工具函数，用于组合多个 className 输入，并自动处理 Tailwind 冲突类。
 
-`lib-cn` is an installable component shipped in FormaUI v0.2.
+它内部等价于 `twMerge(clsx(...))`：先做条件拼接，再做冲突合并，保证最终输出可预测。
 
-## Install Command
+## 可视化展示
 
-```bash
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[200px] items-center justify-center p-6">
+    <LibCnInteractiveDemo />
+  </div>
+</div>
+
+```tsx title="components/demos/lib-cn-demos.tsx"
+"use client";
+
+import { cn } from "@formaui/components";
+
+const mergedButtonClass = cn(
+  "rounded-md bg-zinc-900 px-4 py-2 text-white",
+  "bg-zinc-800",
+  "px-3",
+  "bg-primary text-primary-foreground"
+);
+```
+
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
 npx formaui add lib-cn
 ```
 
-## Registry Metadata
+### 通过包依赖使用
 
-- kind: `component`
-- version: `0.2.2`
-- frameworks: `react`
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
 
-## Dependencies
+## 使用方式
 
-- No registry dependencies.
+```tsx title="Basic Usage"
+import { cn } from "@formaui/components";
 
-## Source Code
+export function Demo({ active }: { active: boolean }) {
+  return (
+    <div
+      className={cn(
+        "rounded-md border px-3 py-2 text-sm",
+        active ? "border-primary text-primary" : "border-border text-muted-foreground"
+      )}
+    >
+      当前状态
+    </div>
+  );
+}
+```
+
+## 案例
+
+### 1. 条件状态标签
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[96px] items-center justify-center p-6">
+    <StatusPillDemo />
+  </div>
+</div>
+
+```tsx title="Status Pill"
+import { cn } from "@formaui/components";
+
+export function StatusPill() {
+  const className = cn(
+    "inline-flex rounded-full px-2.5 py-1 text-xs font-medium",
+    "bg-amber-100 text-amber-800",
+    true && "bg-emerald-100 text-emerald-800"
+  );
+
+  return <span className={className}>已上线</span>;
+}
+```
+
+### 2. Tailwind 冲突类覆盖
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[96px] items-center justify-center p-6">
+    <OverrideButtonDemo />
+  </div>
+</div>
+
+```tsx title="Override Conflicts"
+import { cn } from "@formaui/components";
+
+export function CtaButton() {
+  const className = cn(
+    "rounded-md bg-zinc-800 px-2 py-2 text-white",
+    "px-5",
+    "bg-primary text-primary-foreground"
+  );
+
+  return <button className={className}>立即体验</button>;
+}
+```
+
+### 3. 列表行基础样式复用
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[140px] items-center justify-center p-6">
+    <ListRowDemo />
+  </div>
+</div>
+
+```tsx title="Reusable Row Class"
+import { cn } from "@formaui/components";
+
+const rowClass = cn(
+  "flex items-center justify-between rounded-md border px-3 py-2 text-sm",
+  "border-fd-border",
+  "bg-background"
+);
+
+export function TicketRows() {
+  return (
+    <div className="space-y-2">
+      <div className={rowClass}>...</div>
+      <div className={rowClass}>...</div>
+    </div>
+  );
+}
+```
+
+## API Reference
+
+### 函数签名
+
+```ts title="Signature"
+cn(...inputs: ClassValue[]): string
+```
+
+### 参数说明
+
+| 参数 | 类型 | 说明 |
+| --- | --- | --- |
+| `inputs` | `ClassValue[]` | 支持字符串、数组、对象、布尔值、`null`、`undefined` 等 `clsx` 可解析输入 |
+
+### 返回值
+
+| 返回值 | 类型 | 说明 |
+| --- | --- | --- |
+| `className` | `string` | 拼接并冲突合并后的最终类名字符串 |
+
+### 行为规则
+
+- 先执行 `clsx`：处理条件逻辑与多形态输入。
+- 再执行 `tailwind-merge`：同组冲突类保留“最后一个”。
+- 对非冲突类保持原有顺序，避免不可预期样式抖动。
+
+## 可访问性
+
+- `cn` 本身不处理语义，仅负责类名计算。
+- 建议将 `cn` 与语义化标签、`aria-*` 属性配合使用。
+- 避免仅通过颜色变化表达状态，应搭配文本说明（如“已上线”、“处理中”）。
+
+## 源码位置
 
 - `packages/components/src/lib/cn.ts`
 - `registry/components/lib-cn.json`

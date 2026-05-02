@@ -1,43 +1,218 @@
 ---
 title: Typography
-description: Component documentation for Typography.
+description: 语义化排版组件，统一标题、正文、辅助文本与代码片段的视觉规范。
 ---
+
+import {
+  ArticleTypographyDemo,
+  HeroTypographyDemo,
+  MetricsTypographyDemo,
+  TypographyInteractiveDemo
+} from "@/components/demos/typography-demos";
 
 # Typography
 
-## Overview
+`Typography` 用于统一文本的语义与视觉层级，避免在业务页面中重复手写零散的字体样式。
 
-`Typography` standardizes semantic text styles with a minimal `variant` + `as` API.
+它通过 `variant` 定义常见文本角色，并允许通过 `as` 覆盖渲染标签，兼顾可访问性与样式一致性。
 
-## Installation
+## 可视化展示
 
-```bash
-npx formaui add typography
-```
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[320px] items-center justify-center p-6">
+    <TypographyInteractiveDemo />
+  </div>
+</div>
 
-## Usage
+```tsx title="components/demos/typography-demos.tsx"
+"use client";
 
-```tsx
-import { Typography } from "@/components/primitives/typography";
+import { Typography } from "@formaui/components";
 
-export function ReleaseSummary() {
+export function TypographyInteractiveDemo() {
   return (
-    <div className="space-y-3">
-      <Typography variant="h2">v0.6 Release Scope</Typography>
-      <Typography variant="lead">Wave A introduces semantic building blocks.</Typography>
-      <Typography variant="muted">Use as overrides when integrating into existing design systems.</Typography>
+    <div className="w-full max-w-3xl space-y-4">
+      <Typography variant="h1">FormaUI Design System</Typography>
+      <Typography variant="lead">
+        面向业务系统的现代化组件体系，强调一致性、可维护性与开发效率。
+      </Typography>
+
+      <div className="space-y-2">
+        <Typography variant="h2">章节标题（h2）</Typography>
+        <Typography variant="h3">小节标题（h3）</Typography>
+        <Typography variant="h4">段落标题（h4）</Typography>
+      </div>
+
+      <Typography variant="body">
+        这是正文文本（body）示例，用于展示默认段落行高与阅读节奏。它适合说明型内容与业务规则描述。
+      </Typography>
+
+      <div className="flex flex-wrap items-center gap-3">
+        <Typography variant="small">辅助信息（small）</Typography>
+        <Typography variant="muted">次要说明（muted）</Typography>
+        <Typography variant="code">pnpm add @formaui/components</Typography>
+      </div>
     </div>
   );
 }
 ```
 
-## Accessibility
+## 安装方式
 
-- Maps text variants to semantic defaults (`h1-h4`, `p`, `small`, `code`).
-- Supports explicit `as` overrides without dropping shared visual styling.
-- Keeps heading structure predictable for assistive navigation.
+### 通过 CLI 安装
 
-## Source Code
+```bash title="CLI"
+npx formaui add typography
+```
+
+### 通过包依赖使用
+
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
+
+## 使用方式
+
+```tsx title="Basic Usage"
+import { Typography } from "@formaui/components";
+
+export function ReleaseSummary() {
+  return (
+    <div className="space-y-3">
+      <Typography variant="h2">v0.8 发布说明</Typography>
+      <Typography variant="lead">本版本聚焦文档质量、组件一致性与开发者体验。</Typography>
+      <Typography variant="body">
+        通过语义化排版组件，页面在不同模块间保持一致的阅读层级与节奏。
+      </Typography>
+      <Typography variant="muted">更新时间：2026-05-02</Typography>
+    </div>
+  );
+}
+```
+
+## 案例
+
+### 1. 页面 Hero 区标题组合
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[120px] items-center justify-center p-6">
+    <HeroTypographyDemo />
+  </div>
+</div>
+
+```tsx title="Hero Typography"
+import { Typography } from "@formaui/components";
+
+export function HeroTypography() {
+  return (
+    <div className="space-y-2">
+      <Typography variant="h2">发布 v0.9 版本</Typography>
+      <Typography variant="lead">统一组件 API，降低跨项目接入与维护成本。</Typography>
+    </div>
+  );
+}
+```
+
+### 2. 文章内容区排版
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[180px] items-center justify-center p-6">
+    <ArticleTypographyDemo />
+  </div>
+</div>
+
+```tsx title="Article Typography"
+import { Typography } from "@formaui/components";
+
+export function ArticleTypography() {
+  return (
+    <div className="max-w-2xl space-y-3">
+      <Typography variant="h3">可维护性的核心是约束</Typography>
+      <Typography variant="body">
+        在多人协作中，文本层级是信息架构的一部分。通过统一的排版语义，文档、后台界面与营销页可以共享一致的阅读体验。
+      </Typography>
+      <Typography variant="muted">
+        更新时间：2026-05-02 · 阅读时长：5 分钟
+      </Typography>
+    </div>
+  );
+}
+```
+
+### 3. 指标卡片中的文本层级
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[180px] items-center justify-center p-6">
+    <MetricsTypographyDemo />
+  </div>
+</div>
+
+```tsx title="Metrics Typography"
+import { Typography } from "@formaui/components";
+
+export function MetricsTypography() {
+  return (
+    <div className="grid w-full max-w-2xl grid-cols-3 gap-4">
+      <div className="rounded-lg border border-fd-border p-4">
+        <Typography variant="muted">转化率</Typography>
+        <Typography variant="h3">12.8%</Typography>
+        <Typography variant="small">较上周 +1.6%</Typography>
+      </div>
+      <div className="rounded-lg border border-fd-border p-4">
+        <Typography variant="muted">活跃用户</Typography>
+        <Typography variant="h3">18,420</Typography>
+        <Typography variant="small">较上周 +3.2%</Typography>
+      </div>
+      <div className="rounded-lg border border-fd-border p-4">
+        <Typography variant="muted">工单处理</Typography>
+        <Typography variant="h3">97.4%</Typography>
+        <Typography variant="small">SLA 达标</Typography>
+      </div>
+    </div>
+  );
+}
+```
+
+## API Reference
+
+### Props
+
+| Prop | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- |
+| `variant` | `"h1" \| "h2" \| "h3" \| "h4" \| "lead" \| "body" \| "small" \| "muted" \| "code"` | `"body"` | 文本样式变体 |
+| `as` | `keyof React.JSX.IntrinsicElements` | 按 `variant` 自动推断 | 覆盖渲染标签（如 `h2` 样式但渲染成 `h3`） |
+| `className` | `string` | `-` | 追加自定义样式 |
+
+### Variant 语义映射
+
+| variant | 默认标签 | 推荐用途 |
+| --- | --- | --- |
+| `h1` | `h1` | 页面主标题 |
+| `h2` | `h2` | 章节标题 |
+| `h3` | `h3` | 小节标题 |
+| `h4` | `h4` | 组内标题 |
+| `lead` | `p` | 导语/摘要 |
+| `body` | `p` | 正文段落 |
+| `small` | `small` | 标签、补充说明 |
+| `muted` | `p` | 次要信息 |
+| `code` | `code` | 行内代码片段 |
+
+### 继承属性
+
+`Typography` 继承 `React.HTMLAttributes<HTMLElement>`，可直接使用：
+
+- `id`
+- `aria-*`
+- `data-*`
+- `onClick`
+
+## 可访问性
+
+- 默认按语义标签渲染，利于屏幕阅读器理解文档结构。
+- 当需要视觉与语义分离时，使用 `as` 覆盖标签并保持层级正确。
+- 标题建议按 `h1 -> h2 -> h3` 顺序递进，避免跳级。
+
+## 源码位置
 
 - `packages/components/src/primitives/typography.tsx`
 - `registry/components/typography.json`
