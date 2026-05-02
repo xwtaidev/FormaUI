@@ -1,24 +1,53 @@
 ---
 title: Separator
-description: Component documentation for Separator.
+description: 分隔线组件，用于在布局中划分内容层级与操作分组。
 ---
+
+import {
+  SeparatorInteractiveDemo,
+  SeparatorSectionCaseDemo,
+  SeparatorSemanticCaseDemo,
+  SeparatorToolbarCaseDemo
+} from "@/components/demos/badge-separator-skeleton-image-demos";
 
 # Separator
 
-## Overview
+`Separator` 用于在界面中创建清晰的视觉分段，可用于表单、卡片、工具栏和面板布局。
 
-`Separator` creates visual boundaries between content blocks in toolbars, command panels, and dense dashboards.
+组件支持横向和纵向方向，并可通过 `decorative` 控制其是否仅作为视觉装饰。
 
-## Installation
+## 可视化展示
 
-```bash
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[240px] items-center justify-center p-6">
+    <SeparatorInteractiveDemo />
+  </div>
+</div>
+
+```tsx title="components/demos/badge-separator-skeleton-image-demos.tsx"
+"use client";
+
+import { Separator } from "@formaui/components";
+```
+
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
 npx formaui add separator
 ```
 
-## Usage
+### 通过包依赖使用
 
-```tsx
-import { Separator } from "@/components/primitives/separator";
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
+
+## 使用方式
+
+```tsx title="Basic Usage"
+import { Separator } from "@formaui/components";
 
 export function FilterPanel() {
   return (
@@ -31,13 +60,97 @@ export function FilterPanel() {
 }
 ```
 
-## Scenario Guidance
+## 案例
 
-- Use horizontal separators to split grouped controls.
-- Use vertical separators inside compact action bars.
-- Keep decorative separators for visual grouping; set `decorative={false}` when semantic separation matters.
+### 1. 工具栏纵向分割
 
-## Source Code
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[100px] items-center justify-center p-6">
+    <SeparatorToolbarCaseDemo />
+  </div>
+</div>
+
+```tsx title="Toolbar Separator"
+import { Separator } from "@formaui/components";
+
+export function ToolbarSeparator() {
+  return (
+    <div className="flex h-9 items-center gap-3">
+      <span>编辑</span>
+      <Separator orientation="vertical" />
+      <span>预览</span>
+      <Separator orientation="vertical" />
+      <span>发布</span>
+    </div>
+  );
+}
+```
+
+### 2. 设置分区
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[170px] items-center justify-center p-6">
+    <SeparatorSectionCaseDemo />
+  </div>
+</div>
+
+```tsx title="Section Separator"
+import { Separator } from "@formaui/components";
+
+export function SectionSeparator() {
+  return (
+    <div className="space-y-2">
+      <p>邮件提醒</p>
+      <Separator />
+      <p>站内信提醒</p>
+      <Separator />
+      <p>Webhook 推送</p>
+    </div>
+  );
+}
+```
+
+### 3. 语义分段
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[120px] items-center justify-center p-6">
+    <SeparatorSemanticCaseDemo />
+  </div>
+</div>
+
+```tsx title="Semantic Separator"
+import { Separator } from "@formaui/components";
+
+export function SemanticSeparator() {
+  return (
+    <div className="space-y-2">
+      <p className="text-muted-foreground">语义分组（decorative=false）</p>
+      <Separator decorative={false} />
+      <p>用于真正表达结构分段，而不只是视觉装饰。</p>
+    </div>
+  );
+}
+```
+
+## API Reference
+
+### Props
+
+`Separator` 继承 `React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root>`，常用属性如下：
+
+| Prop | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- |
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | 分隔线方向 |
+| `decorative` | `boolean` | `true` | 是否仅作视觉装饰 |
+| `className` | `string` | `-` | 追加自定义样式 |
+
+## 可访问性
+
+- 纯视觉分隔使用默认 `decorative={true}`。
+- 当分隔线表达结构语义时，设置 `decorative={false}`。
+- 纵向分隔需确保父容器有明确高度，否则不可见。
+
+## 源码位置
 
 - `packages/components/src/primitives/separator.tsx`
 - `registry/components/separator.json`
