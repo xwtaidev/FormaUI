@@ -1,28 +1,31 @@
 ---
-title: DataTable
-description: Component documentation for DataTable.
+title: Data Table
+description: 表格工作流组件，适用于可排序数据列表与后台管理视图。
 ---
 
-# DataTable
+import {
+  DataTableCaseDemo,
+  DataTableInteractiveDemo,
+} from "@/components/demos/workflows-demos";
 
-## Overview
+# Data Table
 
-`DataTable` is a composite for sortable tabular views with custom cell rendering and empty-state fallback.
+`DataTable` 用于构建可排序数据表，支持列对齐、自定义渲染和空数据回退。
 
-## Install Command
+## 可视化展示
 
-```bash
-npx formaui add data-table
-```
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[320px] items-center justify-center p-6">
+    <DataTableInteractiveDemo />
+  </div>
+</div>
 
-## Usage
-
-```tsx
-import { DataTable } from "@/components/composites/data-table";
+```tsx title="components/demos/workflows-demos.tsx"
+import { DataTable } from "@formaui/components";
 
 const rows = [
   { name: "Avery Lin", role: "Product Lead", score: 98 },
-  { name: "Riley Chen", role: "ML Engineer", score: 92 }
+  { name: "Riley Chen", role: "ML Engineer", score: 92 },
 ];
 
 export function TeamTable() {
@@ -31,7 +34,7 @@ export function TeamTable() {
       columns={[
         { key: "name", header: "Name", sortable: true },
         { key: "role", header: "Role" },
-        { key: "score", header: "Score", sortable: true, align: "right" }
+        { key: "score", header: "Score", sortable: true, align: "right" },
       ]}
       rows={rows}
     />
@@ -39,13 +42,84 @@ export function TeamTable() {
 }
 ```
 
-## Key Features
+## 安装方式
 
-- Sort toggle by column (`asc`/`desc`)
-- Custom cell renderer for badges/actions
-- Alignment controls per column
+### 通过 CLI 安装
 
-## Source Code
+```bash title="CLI"
+npx formaui add data-table
+```
+
+### 通过包依赖使用
+
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
+
+## 使用方式
+
+```tsx title="Basic Usage"
+import { DataTable } from "@formaui/components";
+
+const rows = [
+  { name: "Avery Lin", role: "Product Lead", score: 98 },
+  { name: "Riley Chen", role: "ML Engineer", score: 92 },
+];
+
+export function TeamTable() {
+  return (
+    <DataTable
+      columns={[
+        { key: "name", header: "Name", sortable: true },
+        { key: "role", header: "Role" },
+        { key: "score", header: "Score", sortable: true, align: "right" },
+      ]}
+      rows={rows}
+    />
+  );
+}
+```
+
+## 案例
+
+### 1. 团队积分表
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[220px] items-center justify-center p-6">
+    <DataTableCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### `DataTable` Props
+
+| Prop           | 类型                       | 默认值                | 说明           |
+| -------------- | -------------------------- | --------------------- | -------------- |
+| `columns`      | `DataTableColumn<TData>[]` | `-`                   | 列配置（必填） |
+| `rows`         | `TData[]`                  | `-`                   | 行数据（必填） |
+| `caption`      | `string`                   | `-`                   | 表格标题       |
+| `className`    | `string`                   | `-`                   | 追加容器样式   |
+| `emptyMessage` | `string`                   | `"No records found."` | 空数据提示文案 |
+
+### `DataTableColumn` 结构
+
+| 字段        | 类型                                  | 默认值   | 说明               |
+| ----------- | ------------------------------------- | -------- | ------------------ |
+| `key`       | `Extract<keyof TData, string>`        | `-`      | 列字段键（必填）   |
+| `header`    | `string`                              | `-`      | 列头文案（必填）   |
+| `sortable`  | `boolean`                             | `false`  | 是否可排序         |
+| `align`     | `"left" \| "center" \| "right"`       | `"left"` | 列内容对齐方式     |
+| `className` | `string`                              | `-`      | 追加列样式         |
+| `render`    | `(value, row, rowIndex) => ReactNode` | `-`      | 自定义单元格渲染器 |
+
+## 可访问性
+
+- 基于原生 `<table>` 语义，适合表格类读屏场景。
+- 可排序列使用按钮触发，支持键盘激活。
+- 建议为关键数据列保持稳定顺序，避免频繁重排影响可读性。
+
+## 源码位置
 
 - `packages/components/src/composites/data-table.tsx`
 - `registry/components/data-table.json`

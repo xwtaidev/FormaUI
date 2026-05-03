@@ -1,31 +1,34 @@
 ---
-title: SearchCommand
-description: Component documentation for SearchCommand.
+title: Search Command
+description: 命令式搜索组件，适用于快捷操作面板和动作检索入口。
 ---
 
-# SearchCommand
+import {
+  SearchCommandCaseDemo,
+  SearchCommandInteractiveDemo,
+} from "@/components/demos/workflows-demos";
 
-## Overview
+# Search Command
 
-`SearchCommand` provides command-style search and action execution with keyboard hint badges.
+`SearchCommand` 用于快速检索并执行动作，支持关键词过滤、描述信息和快捷键提示。
 
-## Install Command
+## 可视化展示
 
-```bash
-npx formaui add search-command
-```
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[320px] items-center justify-center p-6">
+    <SearchCommandInteractiveDemo />
+  </div>
+</div>
 
-## Usage
-
-```tsx
-import { SearchCommand } from "@/components/composites/search-command";
+```tsx title="components/demos/workflows-demos.tsx"
+import { SearchCommand } from "@formaui/components";
 
 export function CommandPalette() {
   return (
     <SearchCommand
       items={[
         { id: "deploy", label: "Deploy project", shortcut: "D" },
-        { id: "rollback", label: "Rollback release", shortcut: "R" }
+        { id: "rollback", label: "Rollback release", shortcut: "R" },
       ]}
       onSelect={(item) => console.log(item.id)}
     />
@@ -33,15 +36,78 @@ export function CommandPalette() {
 }
 ```
 
-## Dependencies
+## 安装方式
 
-Registry dependencies:
+### 通过 CLI 安装
 
-- `input`
-- `button`
-- `badge`
+```bash title="CLI"
+npx formaui add search-command
+```
 
-## Source Code
+### 通过包依赖使用
+
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
+
+## 使用方式
+
+```tsx title="Basic Usage"
+import { SearchCommand } from "@formaui/components";
+
+export function CommandPalette() {
+  return (
+    <SearchCommand
+      items={[
+        { id: "deploy", label: "Deploy project", shortcut: "D" },
+        { id: "rollback", label: "Rollback release", shortcut: "R" },
+      ]}
+      onSelect={(item) => console.log(item.id)}
+    />
+  );
+}
+```
+
+## 案例
+
+### 1. 发布命令面板
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[220px] items-center justify-center p-6">
+    <SearchCommandCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### `SearchCommand` Props
+
+| Prop           | 类型                                | 默认值                    | 说明               |
+| -------------- | ----------------------------------- | ------------------------- | ------------------ |
+| `items`        | `SearchCommandItem[]`               | `-`                       | 命令项列表（必填） |
+| `onSelect`     | `(item: SearchCommandItem) => void` | `-`                       | 选择命令回调       |
+| `title`        | `string`                            | `"Command menu"`          | 面板标题           |
+| `placeholder`  | `string`                            | `"Search command"`        | 查询输入占位文案   |
+| `emptyMessage` | `string`                            | `"No matching commands."` | 无匹配提示文案     |
+| `className`    | `string`                            | `-`                       | 追加容器样式       |
+
+### `SearchCommandItem` 结构
+
+| 字段          | 类型       | 默认值 | 说明           |
+| ------------- | ---------- | ------ | -------------- |
+| `id`          | `string`   | `-`    | 命令唯一标识   |
+| `label`       | `string`   | `-`    | 命令标题       |
+| `description` | `string`   | `-`    | 命令描述       |
+| `keywords`    | `string[]` | `-`    | 额外搜索关键词 |
+| `shortcut`    | `string`   | `-`    | 快捷键提示     |
+
+## 可访问性
+
+- 输入框具备 `aria-label`，支持键盘快速筛选。
+- 命令项使用按钮语义，适合回车/空格触发。
+- 建议 `label` 简洁明确，`shortcut` 与实际键位保持一致。
+
+## 源码位置
 
 - `packages/components/src/composites/search-command.tsx`
 - `registry/components/search-command.json`

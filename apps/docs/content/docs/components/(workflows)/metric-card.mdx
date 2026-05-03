@@ -1,31 +1,99 @@
 ---
-title: MetricCard
-description: Component documentation for MetricCard.
+title: Metric Card
+description: 指标卡片组件，适用于概览页 KPI、业务趋势和状态摘要展示。
 ---
 
-# MetricCard
+import {
+  MetricCardCaseDemo,
+  MetricCardInteractiveDemo,
+} from "@/components/demos/workflows-demos";
 
-## Overview
+# Metric Card
 
-`metric-card` is an installable component shipped in FormaUI v0.2.
+`MetricCard` 用于展示核心指标值，并可附带变化趋势和描述信息。
 
-## Install Command
+## 可视化展示
 
-```bash
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[240px] items-center justify-center p-6">
+    <MetricCardInteractiveDemo />
+  </div>
+</div>
+
+```tsx title="components/demos/workflows-demos.tsx"
+import { MetricCard } from "@formaui/components";
+
+export function RevenueMetric() {
+  return (
+    <MetricCard
+      title="Revenue"
+      value="$128,430"
+      delta="+12.4%"
+      description="Compared with last month"
+    />
+  );
+}
+```
+
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
 npx formaui add metric-card
 ```
 
-## Registry Metadata
+### 通过包依赖使用
 
-- kind: `component`
-- version: `0.2.2`
-- frameworks: `react`
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
 
-## Dependencies
+## 使用方式
 
-- `card`
+```tsx title="Basic Usage"
+import { MetricCard } from "@formaui/components";
 
-## Source Code
+export function RevenueMetric() {
+  return (
+    <MetricCard
+      title="Revenue"
+      value="$128,430"
+      delta="+12.4%"
+      description="Compared with last month"
+    />
+  );
+}
+```
+
+## 案例
+
+### 1. 月活用户指标卡
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[140px] items-center justify-center p-6">
+    <MetricCardCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### `MetricCard` Props
+
+| Prop          | 类型     | 默认值 | 说明             |
+| ------------- | -------- | ------ | ---------------- |
+| `title`       | `string` | `-`    | 指标标题（必填） |
+| `value`       | `string` | `-`    | 指标数值（必填） |
+| `delta`       | `string` | `-`    | 趋势变化文案     |
+| `description` | `string` | `-`    | 补充说明文案     |
+
+## 可访问性
+
+- 建议标题与数值保持简短，便于快速扫描。
+- `delta` 建议包含方向语义（如 `+12%` / `-4%`）。
+- 多卡片并列时建议搭配分组标题，提升上下文可读性。
+
+## 源码位置
 
 - `packages/components/src/composites/metric-card.tsx`
 - `registry/components/metric-card.json`

@@ -1,31 +1,103 @@
 ---
-title: ThemeSwitcher
-description: Component documentation for ThemeSwitcher.
+title: Theme Switcher
+description: 主题切换组件，适用于应用级 light/dark 模式切换入口。
 ---
 
-# ThemeSwitcher
+import {
+  ThemeSwitcherCaseDemo,
+  ThemeSwitcherInteractiveDemo,
+} from "@/components/demos/workflows-demos";
 
-## Overview
+# Theme Switcher
 
-`theme-switcher` is an installable component shipped in FormaUI v0.2.
+`ThemeSwitcher` 用于在浅色与深色主题之间切换，适合作为页面头部的全局控制器。
 
-## Install Command
+## 可视化展示
 
-```bash
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[180px] items-center justify-center p-6">
+    <ThemeSwitcherInteractiveDemo />
+  </div>
+</div>
+
+```tsx title="components/demos/workflows-demos.tsx"
+import * as React from "react";
+import { ThemeSwitcher } from "@formaui/components";
+
+export function ThemeControl() {
+  const [theme, setTheme] = React.useState<"light" | "dark">("light");
+
+  return (
+    <ThemeSwitcher
+      theme={theme}
+      onToggle={() =>
+        setTheme((current) => (current === "dark" ? "light" : "dark"))
+      }
+    />
+  );
+}
+```
+
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
 npx formaui add theme-switcher
 ```
 
-## Registry Metadata
+### 通过包依赖使用
 
-- kind: `component`
-- version: `0.2.2`
-- frameworks: `react`
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
 
-## Dependencies
+## 使用方式
 
-- `button`
+```tsx title="Basic Usage"
+import * as React from "react";
+import { ThemeSwitcher } from "@formaui/components";
 
-## Source Code
+export function ThemeControl() {
+  const [theme, setTheme] = React.useState<"light" | "dark">("light");
+
+  return (
+    <ThemeSwitcher
+      theme={theme}
+      onToggle={() =>
+        setTheme((current) => (current === "dark" ? "light" : "dark"))
+      }
+    />
+  );
+}
+```
+
+## 案例
+
+### 1. 顶栏主题切换
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[120px] items-center justify-center p-6">
+    <ThemeSwitcherCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### `ThemeSwitcher` Props
+
+| Prop       | 类型                | 默认值 | 说明                 |
+| ---------- | ------------------- | ------ | -------------------- |
+| `theme`    | `"light" \| "dark"` | `-`    | 当前主题（必填）     |
+| `onToggle` | `() => void`        | `-`    | 触发切换回调（必填） |
+
+## 可访问性
+
+- 切换按钮内置 `aria-label="toggle theme"`。
+- 建议在切换后同步更新页面主题变量与持久化状态。
+- 可在外层补充当前主题文本提示，提升状态可见性。
+
+## 源码位置
 
 - `packages/components/src/composites/theme-switcher.tsx`
 - `registry/components/theme-switcher.json`

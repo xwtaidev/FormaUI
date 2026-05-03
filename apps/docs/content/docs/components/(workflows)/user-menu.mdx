@@ -1,32 +1,97 @@
 ---
-title: UserMenu
-description: Component documentation for UserMenu.
+title: User Menu
+description: 用户菜单组件，适用于头像入口、账号信息和退出动作场景。
 ---
 
-# UserMenu
+import {
+  UserMenuCaseDemo,
+  UserMenuInteractiveDemo,
+} from "@/components/demos/workflows-demos";
 
-## Overview
+# User Menu
 
-`user-menu` is an installable component shipped in FormaUI v0.2.
+`UserMenu` 将头像入口与下拉菜单组合为统一账户操作区，适合导航栏与侧边栏头部。
 
-## Install Command
+## 可视化展示
 
-```bash
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[180px] items-center justify-center p-6">
+    <UserMenuInteractiveDemo />
+  </div>
+</div>
+
+```tsx title="components/demos/workflows-demos.tsx"
+import { UserMenu } from "@formaui/components";
+
+export function AccountMenu() {
+  return (
+    <UserMenu
+      name="Jane Doe"
+      email="jane.doe@formaui.dev"
+      onSignOut={() => console.log("sign out")}
+    />
+  );
+}
+```
+
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
 npx formaui add user-menu
 ```
 
-## Registry Metadata
+### 通过包依赖使用
 
-- kind: `component`
-- version: `0.2.2`
-- frameworks: `react`
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
 
-## Dependencies
+## 使用方式
 
-- `avatar`
-- `dropdown-menu`
+```tsx title="Basic Usage"
+import { UserMenu } from "@formaui/components";
 
-## Source Code
+export function AccountMenu() {
+  return (
+    <UserMenu
+      name="Jane Doe"
+      email="jane.doe@formaui.dev"
+      onSignOut={() => console.log("sign out")}
+    />
+  );
+}
+```
+
+## 案例
+
+### 1. 顶栏账户菜单
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[120px] items-center justify-center p-6">
+    <UserMenuCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### `UserMenu` Props
+
+| Prop          | 类型         | 默认值 | 说明             |
+| ------------- | ------------ | ------ | ---------------- |
+| `name`        | `string`     | `-`    | 用户名（必填）   |
+| `email`       | `string`     | `-`    | 用户邮箱（必填） |
+| `onSignOut`   | `() => void` | `-`    | 退出动作回调     |
+| `defaultOpen` | `boolean`    | `-`    | 菜单初始展开状态 |
+
+## 可访问性
+
+- 头像触发器提供 `aria-label="Open user menu"`。
+- 下拉内容包含账户名和邮箱，便于读屏理解当前身份。
+- 退出动作建议保留清晰文案并配合二次确认策略（按业务需要）。
+
+## 源码位置
 
 - `packages/components/src/composites/user-menu.tsx`
 - `registry/components/user-menu.json`

@@ -1,25 +1,27 @@
 ---
-title: DataTableToolbar
-description: Component documentation for DataTableToolbar.
+title: Data Table Toolbar
+description: 表格工具栏组件，适用于搜索、刷新、创建等列表操作入口。
 ---
 
-# DataTableToolbar
+import {
+  DataTableToolbarCaseDemo,
+  DataTableToolbarInteractiveDemo,
+} from "@/components/demos/workflows-demos";
 
-## Overview
+# Data Table Toolbar
 
-`DataTableToolbar` provides a reusable table header row with query input, result count, refresh action, and create
-action.
+`DataTableToolbar` 提供表格场景常用的查询、结果统计与操作按钮组合。
 
-## Install Command
+## 可视化展示
 
-```bash
-npx formaui add data-table-toolbar
-```
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[240px] items-center justify-center p-6">
+    <DataTableToolbarInteractiveDemo />
+  </div>
+</div>
 
-## Usage
-
-```tsx
-import { DataTableToolbar } from "@/components/composites/data-table-toolbar";
+```tsx title="components/demos/workflows-demos.tsx"
+import { DataTableToolbar } from "@formaui/components";
 
 export function CustomersToolbar() {
   return (
@@ -34,21 +36,71 @@ export function CustomersToolbar() {
 }
 ```
 
-## Scenario Guidance
+## 安装方式
 
-- Use above `DataTable` or list views with frequent search and add actions.
-- Keep query state controlled by parent pages for URL/server synchronization.
-- Pair with `pagination-bar` for complete table workflow coverage.
+### 通过 CLI 安装
 
-## Dependencies
+```bash title="CLI"
+npx formaui add data-table-toolbar
+```
 
-Registry dependencies:
+### 通过包依赖使用
 
-- `lib-cn`
-- `button`
-- `input`
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
 
-## Source Code
+## 使用方式
+
+```tsx title="Basic Usage"
+import { DataTableToolbar } from "@formaui/components";
+
+export function CustomersToolbar() {
+  return (
+    <DataTableToolbar
+      resultCount={24}
+      onQueryChange={(value) => console.log(value)}
+      onRefresh={() => console.log("refresh")}
+      onAdd={() => console.log("add")}
+      addLabel="Add customer"
+    />
+  );
+}
+```
+
+## 案例
+
+### 1. 客户列表工具栏
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[180px] items-center justify-center p-6">
+    <DataTableToolbarCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### `DataTableToolbar` Props
+
+| Prop               | 类型                      | 默认值             | 说明             |
+| ------------------ | ------------------------- | ------------------ | ---------------- |
+| `value`            | `string`                  | `-`                | 受控查询值       |
+| `defaultValue`     | `string`                  | `-`                | 非受控初始查询值 |
+| `resultCount`      | `number`                  | `-`                | 结果数量         |
+| `onQueryChange`    | `(value: string) => void` | `-`                | 查询变化回调     |
+| `onRefresh`        | `() => void`              | `-`                | 刷新动作回调     |
+| `onAdd`            | `() => void`              | `-`                | 新增动作回调     |
+| `queryPlaceholder` | `string`                  | `"Search rows..."` | 查询输入占位文案 |
+| `addLabel`         | `string`                  | `"Add row"`        | 新增按钮文案     |
+| `className`        | `string`                  | `-`                | 追加容器样式     |
+
+## 可访问性
+
+- 查询输入框包含语义化标签与 `aria-label`。
+- 结果数量区域使用 `aria-live="polite"` 提示变化。
+- 操作按钮建议保持稳定顺序（刷新在前、新增在后）。
+
+## 源码位置
 
 - `packages/components/src/composites/data-table-toolbar.tsx`
 - `registry/components/data-table-toolbar.json`

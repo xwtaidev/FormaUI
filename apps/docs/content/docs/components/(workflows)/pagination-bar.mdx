@@ -1,24 +1,27 @@
 ---
-title: PaginationBar
-description: Component documentation for PaginationBar.
+title: Pagination Bar
+description: 分页工作流组件，适用于列表或表格的数据翻页与页大小控制。
 ---
 
-# PaginationBar
+import {
+  PaginationBarCaseDemo,
+  PaginationBarInteractiveDemo,
+} from "@/components/demos/workflows-demos";
 
-## Overview
+# Pagination Bar
 
-`PaginationBar` adds page navigation and page-size controls for dataset views.
+`PaginationBar` 提供页码切换、页大小切换与总量展示，适合中后台数据列表场景。
 
-## Install Command
+## 可视化展示
 
-```bash
-npx formaui add pagination-bar
-```
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[220px] items-center justify-center p-6">
+    <PaginationBarInteractiveDemo />
+  </div>
+</div>
 
-## Usage
-
-```tsx
-import { PaginationBar } from "@/components/composites/pagination-bar";
+```tsx title="components/demos/workflows-demos.tsx"
+import { PaginationBar } from "@formaui/components";
 
 export function TeamPagination() {
   return (
@@ -33,20 +36,71 @@ export function TeamPagination() {
 }
 ```
 
-## Scenario Guidance
+## 安装方式
 
-- Use under tables/lists where users need clear page boundaries.
-- Keep `page` and `pageSize` in route/query state for shareable URLs.
-- Use with `data-table-toolbar` to keep search + pagination cohesive.
+### 通过 CLI 安装
 
-## Dependencies
+```bash title="CLI"
+npx formaui add pagination-bar
+```
 
-Registry dependencies:
+### 通过包依赖使用
 
-- `lib-cn`
-- `button`
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
 
-## Source Code
+## 使用方式
+
+```tsx title="Basic Usage"
+import { PaginationBar } from "@formaui/components";
+
+export function TeamPagination() {
+  return (
+    <PaginationBar
+      totalItems={128}
+      defaultPage={1}
+      defaultPageSize={20}
+      onPageChange={(page) => console.log(page)}
+      onPageSizeChange={(size) => console.log(size)}
+    />
+  );
+}
+```
+
+## 案例
+
+### 1. 团队列表分页条
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[160px] items-center justify-center p-6">
+    <PaginationBarCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### `PaginationBar` Props
+
+| Prop               | 类型                         | 默认值         | 说明               |
+| ------------------ | ---------------------------- | -------------- | ------------------ |
+| `totalItems`       | `number`                     | `-`            | 总数据量（必填）   |
+| `page`             | `number`                     | `-`            | 受控当前页         |
+| `defaultPage`      | `number`                     | `1`            | 非受控初始页       |
+| `pageSize`         | `number`                     | `-`            | 受控每页数量       |
+| `defaultPageSize`  | `number`                     | `10`           | 非受控初始每页数量 |
+| `pageSizeOptions`  | `number[]`                   | `[10, 20, 50]` | 每页数量候选项     |
+| `onPageChange`     | `(page: number) => void`     | `-`            | 页码变化回调       |
+| `onPageSizeChange` | `(pageSize: number) => void` | `-`            | 每页数量变化回调   |
+| `className`        | `string`                     | `-`            | 追加容器样式       |
+
+## 可访问性
+
+- 组件根节点为 `nav` 且包含 `aria-label`，便于辅助技术识别。
+- 页码文案区域使用 `aria-live="polite"` 同步分页状态。
+- 上一页/下一页按钮在边界条件下自动禁用，降低误操作。
+
+## 源码位置
 
 - `packages/components/src/composites/pagination-bar.tsx`
 - `registry/components/pagination-bar.json`
