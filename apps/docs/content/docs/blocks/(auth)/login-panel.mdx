@@ -1,34 +1,94 @@
 ---
 title: LoginPanel
-description: Block documentation for LoginPanel.
+description: 登录面板区块，适用于后台与工作区登录入口页面。
 ---
+
+import { LoginPanelBlockDemo } from "@/components/demos/auth-demos";
 
 # LoginPanel
 
-## Overview
+`LoginPanel` 是用于账号登录的认证入口区块，适合产品后台、管理系统和工作区登录页。
 
-`login-panel` is an installable block shipped in FormaUI v0.2.
+它基于 `Card + Input + Checkbox + Button` 组合实现，内置邮箱、密码与记住登录状态字段。
 
-## Install Command
+## 可视化展示
 
-```bash
-npx formaui block add login-panel
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[420px] items-center justify-center p-6">
+    <LoginPanelBlockDemo />
+  </div>
+</div>
+
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
+npx formaui add login-panel
 ```
 
-## Registry Metadata
+### 通过包依赖使用
 
-- kind: `block`
-- version: `0.2.2`
-- frameworks: `react`
+```bash title="Package Manager"
+pnpm add @formaui/blocks
+```
 
-## Dependencies
+## 使用方式
+
+```tsx title="Basic Usage"
+import { LoginPanel } from "@formaui/blocks";
+
+export function SignInPage() {
+  return (
+    <main className="flex min-h-screen items-center justify-center p-6">
+      <LoginPanel />
+    </main>
+  );
+}
+```
+
+## 案例
+
+### 1. 登录页与品牌头部组合
+
+```tsx title="Branded Login"
+import { LoginPanel } from "@formaui/blocks";
+
+export function WorkspaceLogin() {
+  return (
+    <main className="grid min-h-screen place-items-center bg-muted/20 p-6">
+      <section className="space-y-4 text-center">
+        <h1 className="text-2xl font-semibold">FormaUI Console</h1>
+        <p className="text-sm text-muted-foreground">Sign in to continue</p>
+        <LoginPanel />
+      </section>
+    </main>
+  );
+}
+```
+
+## API Reference
+
+### Props
+
+当前版本 `LoginPanel` 不暴露组件 props，默认渲染标准登录表单结构。
+
+如需接入真实认证流程，建议安装后在 `components/login-panel.tsx` 中绑定提交事件、校验与 API 请求逻辑。
+
+### 依赖组件
 
 - `card`
 - `input`
 - `checkbox`
 - `button`
 
-## Source Code
+## 响应式与可访问性
+
+- 表单默认容器宽度为 `max-w-md`，在移动端和桌面端都保持良好可读性。
+- 字段标签通过 `htmlFor` 关联输入框，提升读屏可用性。
+- 使用语义化表单控件，支持键盘聚焦与操作。
+
+## 源码位置
 
 - `packages/blocks/src/login-panel.tsx`
 - `registry/blocks/login-panel.json`
