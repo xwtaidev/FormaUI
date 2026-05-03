@@ -1,24 +1,36 @@
 ---
 title: Commands
-description: Detailed command syntax and examples.
+description: FormaUI CLI 命令参考：语法、参数、示例与常见组合。
 ---
 
-# CLI Commands
+# Commands
 
-This page documents v0.3 command syntax, metadata filters, and pack workflows.
+本页提供 FormaUI CLI 的参数级参考，适合作为日常查询手册。
 
-## Global Flags
+## 全局参数
 
-- `--cwd <path>`: run the command in a target project directory.
-- `--yes`: skip interactive overwrite prompts.
-- `--registry <url|path>`: resolve items from remote registry URL or local path.
-- `--dry-run`: print plan only, no writes or dependency install.
+| 参数 | 说明 |
+| --- | --- |
+| `--cwd <path>` | 在目标项目目录执行命令 |
+| `--registry <url|path>` | 指定远端或本地 registry 源 |
+| `--dry-run` | 仅输出安装计划，不写入文件 |
+| `-y, --yes` | 覆盖冲突文件时跳过确认 |
 
-## `formaui list [kind]`
+## `formaui init`
 
-List installable assets by kind.
+初始化项目配置与基础文件。
 
-```bash
+```bash title="Usage"
+npx formaui init
+npx formaui init --cwd apps/web
+npx formaui init --yes
+```
+
+## `formaui list`
+
+列出可安装资产。
+
+```bash title="Usage"
 npx formaui list
 npx formaui list --kind component
 npx formaui list --kind pack
@@ -26,66 +38,127 @@ npx formaui list --category dashboard
 npx formaui list --scenario analytics
 ```
 
-## `formaui search <keyword>`
+## `formaui search <query>`
 
-Searches registry metadata by name and tags.
+按关键词检索资产名称与元数据。
 
-```bash
+```bash title="Usage"
 npx formaui search chart
-npx formaui search dashboard
-npx formaui search table --kind component
-npx formaui search loading --scenario loading
+npx formaui search dashboard --kind block
+npx formaui search table --scenario dashboard
 ```
 
 ## `formaui info <name>`
 
-Prints registry item detail (`kind`, dependencies, files, source path, metadata).
+查看单个资产详情（类型、依赖、文件写入目标、稳定性等）。
 
-```bash
+```bash title="Usage"
 npx formaui info data-table
-npx formaui info admin-dashboard
-npx formaui info dashboard-foundation --kind pack
-npx formaui info filter-bar --kind component --category component
+npx formaui info dashboard-shell --kind block
+npx formaui info ai-console-lite --kind template
 ```
 
-## `formaui pack <subcommand>`
+## `formaui add <name>`
 
-Pack commands operate on scenario-based install bundles.
+安装通用资产（由 CLI 根据名称和 registry 数据解析）。
 
-```bash
+```bash title="Usage"
+npx formaui add button
+npx formaui add feature-grid --dry-run
+npx formaui add data-table --cwd apps/docs
+```
+
+## `formaui block add <name>`
+
+显式安装 block 类型资产。
+
+```bash title="Usage"
+npx formaui block add dashboard-shell
+npx formaui block add token-usage-chart --dry-run
+```
+
+## `formaui template add <name>`
+
+安装 template 及其依赖图。
+
+```bash title="Usage"
+npx formaui template add ai-console-lite
+npx formaui template add saas-starter --dry-run
+```
+
+## `formaui theme add <name>`
+
+安装主题资产。
+
+```bash title="Usage"
+npx formaui theme add default
+npx formaui theme add avocado --cwd apps/web
+```
+
+## `formaui pack <list|info|add>`
+
+批量安装场景包。
+
+```bash title="Usage"
 npx formaui pack list
 npx formaui pack list --category forms
 npx formaui pack info dashboard-foundation
-npx formaui pack add dashboard-foundation --dry-run
-npx formaui pack add feedback-loading
+npx formaui pack add dashboard-foundation
+npx formaui pack add marketing-launch --dry-run
 ```
 
 ## `formaui doctor`
 
-Prints environment and project configuration checks:
+检查项目环境与配置健康度。
 
-- React dependency
-- Tailwind setup
-- TypeScript config
-- CSS entry and FormaUI variables file
+```bash title="Usage"
+npx formaui doctor
+npx formaui doctor --cwd apps/web
+```
 
-```bash
+## 常见命令组合
+
+### 新项目首轮接入
+
+```bash title="Bootstrap"
+npx formaui init
+npx formaui list --kind component
+npx formaui add button
 npx formaui doctor
 ```
 
-## Install Commands
+### 先发现再安装
 
-```bash
-npx formaui init
-npx formaui add button
-npx formaui block add dashboard-shell
-npx formaui template add ai-console-lite
-npx formaui theme add default
-npx formaui pack add data-entry
+```bash title="Discover then Install"
+npx formaui search table --scenario dashboard
+npx formaui info data-table --kind component
+npx formaui add data-table --dry-run
+npx formaui add data-table
 ```
 
-Use `--dry-run` first to preview file writes and package changes:
+### Monorepo 定向安装
 
-```bash
-npx formaui template add saas-starter --dry-run
+```bash title="Monorepo"
+npx formaui add feature-grid --cwd apps/web
+npx formaui template add ai-console-lite --cwd apps/web --dry-run
+npx formaui doctor --cwd apps/web
 ```
+
+## 故障排查
+
+### 命令执行成功但文件不在预期目录
+
+优先检查是否传入 `--cwd`，并用 `--dry-run` 预览写入计划。
+
+### 资产名称冲突或歧义
+
+先执行 `info <name> --kind <type>`，确认类型后再安装。
+
+### 依赖安装失败
+
+检查包管理器锁文件、网络源与权限，然后重试命令。
+
+## 下一步
+
+- [CLI Overview](/docs/cli/overview)
+- [Registry Overview](/docs/registry/overview)

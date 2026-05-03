@@ -1,25 +1,46 @@
 ---
-title: Registry
-description: Registry schema, structure, and dependency resolution model.
+title: Registry Overview
+description: FormaUI Registry 架构总览：索引结构、资产 schema、依赖解析与治理策略。
 ---
 
-# Registry
+# Registry Overview
 
-The v0.3 registry is a versioned manifest + item set that describes installable assets, scenario metadata, and pack
-compositions.
+Registry 是 FormaUI 可安装资产的事实来源。CLI 通过读取 registry 元数据完成发现、过滤、依赖解析与文件落盘。
 
-## v0.3 Index
+本页聚焦三个问题：
 
-- `registry/index.json` contains normalized entries for all installable items.
-- Query shape is grouped by `kind / name / version` with metadata fields used by CLI filters.
-- CLI commands (`list`, `search`, `info`, `pack list/info/add`) consume this data for discoverability and install.
+- registry 如何组织（索引与分类型目录）
+- 资产元数据如何描述安装行为
+- 团队如何治理与验证 registry 变更
 
-## Item Schema (v3)
+## 目录结构
 
-Every registry item uses this shape:
+```text title="registry/"
+registry/
+  index.json
+  components/*.json
+  blocks/*.json
+  templates/*.json
+  themes/*.json
+  packs/*.json
+```
 
-```ts
+## 索引文件（`registry/index.json`）
+
+索引文件用于 CLI discoverability 流程（`list/search/info`）。
+
+核心字段：
+
+- `generatedAt`: 生成时间戳
+- `total`: 索引资产数量
+- `items[]`: 轻量资产摘要（用于过滤和检索）
+
+## 资产文件 Schema（按单个 `*.json`）
+
+```ts title="RegistryItem"
 interface RegistryItem {
+  name: string;
+  type: "component" | "block" | "template" | "theme" | "pack" | "hook" | "lib" | "style" | "config";
   version: string;
   description?: string;
   tags?: string[];
@@ -30,8 +51,6 @@ interface RegistryItem {
   scenarios?: string[];
   complexity?: "low" | "medium" | "high";
   stability?: "stable" | "beta" | "experimental" | "deprecated";
-  name: string;
-  type: "component" | "block" | "template" | "theme" | "pack" | "hook" | "lib" | "style" | "config";
   dependencies: string[];
   devDependencies: string[];
   registryDependencies: string[];
@@ -39,29 +58,73 @@ interface RegistryItem {
 }
 ```
 
-## Type Folders
+## 依赖解析流程
 
-- `registry/components/*.json`
-- `registry/blocks/*.json`
-- `registry/templates/*.json`
-- `registry/themes/*.json`
-- `registry/packs/*.json`
+CLI 安装时按以下流程执行：
 
-## Resolution Rules
+1. 读取目标资产定义（`type + name`）。
+2. 递归解析 `registryDependencies` 依赖图。
+3. 计算 `dependencies/devDependencies` 安装集合。
+4. 将 `files` 写入目标项目路径。
+5. 输出安装日志或 `--dry-run` 计划。
 
-1. Load root item by kind and name.
-2. Resolve `registryDependencies` recursively.
-3. Copy files into target project paths.
-4. Respect path aliases in `formaui.json` (`components`, `lib`, `styles`).
-5. For pack items, use metadata (`category`, `scenarios`) to support discovery filters.
+## 与 CLI 的关系
 
-## Coverage Snapshot
+常用映射：
 
-Current v0.3 index totals (`registry/index.json`):
+- `list/search/info`：读取 `index.json` + 资产元数据
+- `add/block add/template add/theme add`：读取单资产 + 依赖图
+- `pack add`：读取 `packs/*.json` 并批量展开其 `registryDependencies`
 
-- Components: 36
-- Blocks: 11
-- Templates: 3
-- Themes: 2
-- Packs: 3
-- Total items: 55
+## 元数据设计建议
+
+1. `name` 与文件名保持一致，避免歧义。
+2. `category` 与 `scenarios` 用于检索，不用于表达业务实现细节。
+3. `stability` 必须反映真实状态（不要默认 `stable`）。
+4. `files.target` 保持可预测路径，减少升级冲突。
+
+## 变更治理清单
+
+修改 registry 项目前建议确认：
+
+- `name/type/version` 与目标资产一致
+- `registryDependencies` 无循环或遗漏
+- `files.source` 存在且 `files.target` 路径合理
+- `category/scenarios/complexity/stability` 与文档一致
+
+## 验证建议
+
+```bash title="Validation"
+npx formaui list
+npx formaui info <name>
+npx formaui add <name> --dry-run
+npx formaui doctor
+```
+
+如为批量包变更，额外验证：
+
+```bash title="Pack Validation"
+npx formaui pack list
+npx formaui pack info <name>
+npx formaui pack add <name> --dry-run
+```
+
+## 常见问题
+
+### `list/search` 查不到新增资产
+
+通常是 `index.json` 未同步更新，或 `type/name` 元数据不一致。
+
+### 安装时漏文件或目标路径错误
+
+优先检查资产 `files` 字段，尤其是 `target` 是否与项目目录约定一致。
+
+### `pack add` 只装了部分资产
+
+检查 pack 文件内 `registryDependencies` 是否完整，并确认依赖名称和类型可解析。
+
+## 下一步
+
+- [CLI Overview](/docs/cli/overview)
+- [Commands](/docs/cli/commands)
+- [Monorepo Strategy](/docs/guides/monorepo)

@@ -1,27 +1,105 @@
 ---
 title: CLI Overview
-description: Command groups and workflows for FormaUI CLI.
+description: FormaUI CLI 总览：发现、安装、诊断与批量安装工作流。
 ---
 
-# CLI
+# CLI Overview
 
-FormaUI v0.3 CLI focuses on reliable install flows, metadata-driven discoverability, pack workflows, and diagnostics.
+FormaUI CLI 是文档与注册中心之间的执行入口，用于完成四类任务：
 
-## Core Commands
+- 发现资产（`list` / `search` / `info`）
+- 安装资产（`add` / `block add` / `template add` / `theme add`）
+- 批量安装（`pack`）
+- 环境诊断（`doctor`）
 
-```bash
-formaui init
-formaui add <name>
-formaui block add <name>
-formaui template add <name>
-formaui theme add <name>
-formaui pack list
-formaui pack info <name>
-formaui pack add <name>
-formaui list [--kind <component|block|template|theme|pack>]
-formaui search <keyword> [--kind <...>] [--category <name>] [--scenario <name>]
-formaui info <name> [--kind <...>] [--category <name>] [--scenario <name>]
-formaui doctor
+本页提供“先做什么、再做什么”的工作流总览；参数级细节见 [Commands](/docs/cli/commands)。
+
+## 适用范围
+
+- 单仓库或 monorepo 项目
+- Next.js / Vite React 项目
+- 需要 source-owned 组件、区块与模板安装流的团队
+
+## 快速开始
+
+```bash title="CLI"
+npx formaui init
+npx formaui list --kind component
+npx formaui search table --scenario dashboard
+npx formaui add data-table
+npx formaui doctor
 ```
 
-For parameter-level examples, see [Commands](/docs/cli/commands).
+## 命令分组
+
+### 1) 发现资产
+
+```bash title="Discover"
+npx formaui list [--kind <component|block|template|theme|pack>]
+npx formaui search <query> [--kind <...>] [--category <name>] [--scenario <name>]
+npx formaui info <name> [--kind <...>]
+```
+
+### 2) 安装单个资产
+
+```bash title="Install"
+npx formaui add <name>
+npx formaui block add <name>
+npx formaui template add <name>
+npx formaui theme add <name>
+```
+
+### 3) 批量安装场景包
+
+```bash title="Pack"
+npx formaui pack list
+npx formaui pack info <name>
+npx formaui pack add <name>
+```
+
+### 4) 环境检查
+
+```bash title="Doctor"
+npx formaui doctor
+```
+
+## 推荐工作流
+
+1. 先 `list/search` 确定资产候选。
+2. 用 `info` 审查依赖、文件写入目标和稳定性元数据。
+3. 使用 `--dry-run` 预演安装计划。
+4. 执行安装并运行项目验证。
+5. 交付前运行 `doctor` + 项目构建。
+
+## 全局参数（常用）
+
+- `--cwd <path>`：在指定目录执行（monorepo 场景推荐）
+- `--registry <url|path>`：切换远端或本地 registry
+- `--dry-run`：仅输出安装计划，不写入文件
+- `-y, --yes`：跳过覆盖确认
+
+## 验证清单
+
+安装后建议确认：
+
+- 目标文件写入路径符合预期
+- `pnpm dev` 可正常启动
+- `pnpm build` 或等效构建通过
+- `npx formaui doctor` 无阻断级错误
+
+## 常见问题
+
+### 为什么推荐先 `--dry-run`
+
+因为它能提前暴露写入路径、依赖安装和覆盖冲突，避免批量改动后回滚成本。
+
+### `add` 和 `block add/template add` 怎么选
+
+- 你明确知道资产类型时可用 typed command（如 `block add`）。
+- 只按名称安装时可先尝试 `add`，必要时结合 `info --kind` 消歧。
+
+## 下一步
+
+- [Commands](/docs/cli/commands)
+- [Registry Overview](/docs/registry/overview)
+- [Monorepo Strategy](/docs/guides/monorepo)
