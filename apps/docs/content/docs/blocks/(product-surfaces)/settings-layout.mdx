@@ -1,34 +1,85 @@
 ---
 title: SettingsLayout
-description: Block documentation for SettingsLayout.
+description: 设置中心区块，内置资料、通知与安全分栏布局。
 ---
+
+import { SettingsLayoutBlockDemo } from "@/components/demos/product-surfaces-demos";
 
 # SettingsLayout
 
-## Overview
+`SettingsLayout` 是面向产品设置页的标准区块，帮助你快速交付具备一致交互模式的设置中心。
 
-`settings-layout` is an installable block shipped in FormaUI v0.2.
+它基于 `Tabs + Card + Input + Switch` 组合实现，覆盖常见的资料、通知与安全配置场景。
 
-## Install Command
+## 可视化展示
 
-```bash
-npx formaui block add settings-layout
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[460px] items-center justify-center p-6">
+    <SettingsLayoutBlockDemo />
+  </div>
+</div>
+
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
+npx formaui add settings-layout
 ```
 
-## Registry Metadata
+### 通过包依赖使用
 
-- kind: `block`
-- version: `0.2.2`
-- frameworks: `react`
+```bash title="Package Manager"
+pnpm add @formaui/blocks
+```
 
-## Dependencies
+## 使用方式
+
+```tsx title="Basic Usage"
+import { SettingsLayout } from "@formaui/blocks";
+
+export function SettingsPage() {
+  return <SettingsLayout />;
+}
+```
+
+## 案例
+
+### 1. 作为账户设置页主内容
+
+```tsx title="Settings Center"
+import { SettingsLayout } from "@formaui/blocks";
+
+export function WorkspaceSettings() {
+  return (
+    <section className="mx-auto max-w-4xl">
+      <SettingsLayout />
+    </section>
+  );
+}
+```
+
+## API Reference
+
+### Props
+
+当前版本 `SettingsLayout` 不暴露组件 props，默认渲染预设设置结构。
+
+如需接入真实配置项，建议安装后在 `components/settings-layout.tsx` 中替换默认字段与开关逻辑。
+
+### 依赖组件
 
 - `tabs`
 - `card`
 - `input`
 - `switch`
 
-## Source Code
+## 响应式与可访问性
+
+- 标签页结构在小屏下仍保持可触达，适配移动端滚动。
+- 使用语义化表单控件（`input` / `switch`），默认支持键盘焦点和读屏朗读。
+
+## 源码位置
 
 - `packages/blocks/src/settings-layout.tsx`
 - `registry/blocks/settings-layout.json`

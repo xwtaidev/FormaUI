@@ -1,33 +1,85 @@
 ---
 title: ApiKeyManager
-description: Block documentation for ApiKeyManager.
+description: API Key 管理区块，用于创建、轮换与吊销工作区密钥。
 ---
+
+import { ApiKeyManagerBlockDemo } from "@/components/demos/product-surfaces-demos";
 
 # ApiKeyManager
 
-## Overview
+`ApiKeyManager` 用于展示和管理工作区 API Key 生命周期，适合接入开发者后台或安全设置页。
 
-`api-key-manager` is an installable block shipped in FormaUI v0.2.
+它通过 `Card + Badge + Button` 组合呈现密钥信息、状态与操作入口。
 
-## Install Command
+## 可视化展示
 
-```bash
-npx formaui block add api-key-manager
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[360px] items-center justify-center p-6">
+    <ApiKeyManagerBlockDemo />
+  </div>
+</div>
+
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
+npx formaui add api-key-manager
 ```
 
-## Registry Metadata
+### 通过包依赖使用
 
-- kind: `block`
-- version: `0.2.2`
-- frameworks: `react`
+```bash title="Package Manager"
+pnpm add @formaui/blocks
+```
 
-## Dependencies
+## 使用方式
+
+```tsx title="Basic Usage"
+import { ApiKeyManager } from "@formaui/blocks";
+
+export function ApiAccessPage() {
+  return <ApiKeyManager />;
+}
+```
+
+## 案例
+
+### 1. 嵌入安全设置区域
+
+```tsx title="Security Section"
+import { ApiKeyManager, SettingsLayout } from "@formaui/blocks";
+
+export function SecurityAndKeys() {
+  return (
+    <div className="space-y-6">
+      <SettingsLayout />
+      <ApiKeyManager />
+    </div>
+  );
+}
+```
+
+## API Reference
+
+### Props
+
+当前版本 `ApiKeyManager` 不暴露组件 props，默认渲染演示密钥数据。
+
+接入生产数据时，建议安装后在 `components/api-key-manager.tsx` 中将 `demoApiKeys` 替换为你的密钥列表与操作逻辑。
+
+### 依赖组件
 
 - `card`
 - `badge`
 - `button`
 
-## Source Code
+## 响应式与可访问性
+
+- 密钥项在窄屏下自动换行，状态与操作区保持可触达。
+- 状态文本与标签并存（`active/revoked`），避免仅依赖颜色传达状态。
+
+## 源码位置
 
 - `packages/blocks/src/api-key-manager.tsx`
 - `registry/blocks/api-key-manager.json`

@@ -1,33 +1,85 @@
 ---
 title: BillingPanel
-description: Block documentation for BillingPanel.
+description: 订阅与账单区块，用于展示席位、续费时间与支付操作。
 ---
+
+import { BillingPanelBlockDemo } from "@/components/demos/product-surfaces-demos";
 
 # BillingPanel
 
-## Overview
+`BillingPanel` 用于承载订阅计划、席位使用和账单动作，是 SaaS 后台常见的计费管理模块。
 
-`billing-panel` is an installable block shipped in FormaUI v0.2.
+它通过 `Card + Badge + Button` 组合，提供结构化账单信息与关键动作入口。
 
-## Install Command
+## 可视化展示
 
-```bash
-npx formaui block add billing-panel
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[360px] items-center justify-center p-6">
+    <BillingPanelBlockDemo />
+  </div>
+</div>
+
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
+npx formaui add billing-panel
 ```
 
-## Registry Metadata
+### 通过包依赖使用
 
-- kind: `block`
-- version: `0.2.2`
-- frameworks: `react`
+```bash title="Package Manager"
+pnpm add @formaui/blocks
+```
 
-## Dependencies
+## 使用方式
+
+```tsx title="Basic Usage"
+import { BillingPanel } from "@formaui/blocks";
+
+export function BillingPage() {
+  return <BillingPanel />;
+}
+```
+
+## 案例
+
+### 1. 与成员管理组合成运营页
+
+```tsx title="Billing + Team"
+import { BillingPanel, TeamMembersTable } from "@formaui/blocks";
+
+export function WorkspaceOps() {
+  return (
+    <div className="space-y-4">
+      <BillingPanel />
+      <TeamMembersTable />
+    </div>
+  );
+}
+```
+
+## API Reference
+
+### Props
+
+当前版本 `BillingPanel` 不暴露组件 props，默认渲染演示订阅信息。
+
+如需对接真实账单系统，建议安装后在 `components/billing-panel.tsx` 中替换价格、席位和按钮行为。
+
+### 依赖组件
 
 - `card`
 - `badge`
 - `button`
 
-## Source Code
+## 响应式与可访问性
+
+- 账单摘要卡片在小屏单列、桌面多列，信息分层清晰。
+- 关键动作按钮具备明确文案，便于键盘与辅助技术识别。
+
+## 源码位置
 
 - `packages/blocks/src/billing-panel.tsx`
 - `registry/blocks/billing-panel.json`
