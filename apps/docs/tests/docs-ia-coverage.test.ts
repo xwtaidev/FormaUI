@@ -18,7 +18,6 @@ const expectedTopLevelSections = [
   "cli",
   "registry",
   "---Lifecycle---",
-  "migration",
   "release-notes",
   "resources"
 ] as const;
@@ -131,8 +130,8 @@ describe("v0.8.2 docs information architecture migration", () => {
     expect(new Set(metaSlugs)).toEqual(new Set(componentFileSlugs));
   });
 
-  it("migrates blocks/templates/resources/migration/release-notes domains", () => {
-    const domains = ["blocks", "templates", "resources", "migration", "release-notes"] as const;
+  it("migrates blocks/templates/resources/release-notes domains", () => {
+    const domains = ["blocks", "templates", "resources", "release-notes"] as const;
 
     domains.forEach((domain) => {
       const dirPath = resolve(testDir, `../content/docs/${domain}`);
@@ -147,13 +146,10 @@ describe("v0.8.2 docs information architecture migration", () => {
     });
   });
 
-  it("exposes v0.8 migration and release notes entry pages", () => {
-    const migrationPages = readMetaPages("../content/docs/migration/meta.json");
+  it("exposes v0.8 release notes entry pages", () => {
     const releasePages = readMetaPages("../content/docs/release-notes/meta.json");
 
-    expect(migrationPages).toContain("v0.8");
     expect(releasePages).toContain("v0.8");
-    expect(existsSync(resolve(testDir, "../content/docs/migration/v0.8.mdx"))).toBe(true);
     expect(existsSync(resolve(testDir, "../content/docs/release-notes/v0.8.mdx"))).toBe(true);
   });
 });

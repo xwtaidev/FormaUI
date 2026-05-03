@@ -56,9 +56,9 @@ export function NavigationMenuInteractiveDemo() {
                   href: "/docs/foundations",
                 },
                 {
-                  title: "Migration",
-                  desc: "版本迁移策略与兼容指南。",
-                  href: "/docs/migration",
+                  title: "Release Notes",
+                  desc: "版本更新与变更记录。",
+                  href: "/docs/release-notes/overview",
                 },
               ]}
             />

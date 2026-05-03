@@ -18,7 +18,6 @@ export default function robots(): MetadataRoute.Robots {
           "/docs/guides",
           "/docs/cli",
           "/docs/registry",
-          "/docs/migration",
           "/docs/release-notes",
           "/docs/resources"
         ],

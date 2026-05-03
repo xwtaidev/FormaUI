@@ -9,7 +9,6 @@ import {
   Compass,
   Component,
   Download,
-  GitBranch,
   History,
   Layers,
   LayoutTemplate,
@@ -122,15 +121,10 @@ FormaUI 主要适合以下类型的团队：
     href="/docs/registry/overview"
   />
   <Card
-    title="Migration & Release Notes"
+    title="Release Notes"
     description="跟踪版本变更与升级路径。"
-    icon={
-      <div className="flex items-center gap-1">
-        <GitBranch className="text-amber-500" />
-        <History className="text-emerald-500" />
-      </div>
-    }
-    href="/docs/migration/overview"
+    icon={<History className="text-emerald-500" />}
+    href="/docs/release-notes/overview"
   />
 </Cards>
 
