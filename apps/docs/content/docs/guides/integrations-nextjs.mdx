@@ -1,30 +1,167 @@
 ---
 title: Integrations for Next.js
-description: Recommended setup for using FormaUI in Next.js projects.
+description: 在 Next.js 项目中接入 FormaUI 的推荐实践：配置、首屏验证与生产化落地。
 ---
 
 # Integrations for Next.js
 
-## Install
+本指南遵循主流开源文档常见结构：**前置条件 → 最小示例 → 验证清单 → 常见问题 → 下一步**。
 
-```bash
-pnpm add @formaui/components @formaui/blocks
+目标是在你的 Next.js 项目中建立一个稳定、可扩展的 FormaUI 集成基线。
+
+## 适用范围
+
+- Next.js `14+`（App Router）
+- React `18+`
+- 希望采用 Source-Owned 方式维护组件和区块源码的团队
+
+## 你将完成
+
+- 安装 FormaUI 包与 CLI
+- 配置 Next.js / Tailwind 的关键项
+- 渲染一个可运行的组件 + 区块页面
+- 完成一套可复用的上线前验证
+
+## 第 1 步：安装依赖与初始化
+
+```bash title="pnpm"
+pnpm add @formaui/components @formaui/blocks @formaui/tailwind-preset
 ```
 
-## Initialize CLI
-
-```bash
+```bash title="CLI"
 npx formaui init
 ```
 
-## Recommended Setup
+可选诊断命令：
 
-1. Ensure `react` and `next` are already installed.
-2. Configure Tailwind and global CSS entry.
-3. Add required alias paths in your TS config.
-4. Install primitives/blocks with `formaui add` and `formaui block add`.
+```bash title="CLI"
+npx formaui doctor
+npx formaui list
+```
 
-## Best Practices
+## 第 2 步：配置 Next.js 与 Tailwind
 
-- Use `--dry-run` before batch installs.
-- Keep installed source files editable in your repository.
+### 2.1 Next.js transpilePackages
+
+```js title="next.config.mjs"
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  transpilePackages: ["@formaui/components", "@formaui/blocks", "@formaui/tailwind-preset"]
+};
+
+export default nextConfig;
+```
+
+### 2.2 Tailwind preset
+
+```ts title="tailwind.config.ts"
+import type { Config } from "tailwindcss";
+import { formaUIPreset } from "@formaui/tailwind-preset";
+
+const config: Config = {
+  presets: [formaUIPreset as unknown as Partial<Config>],
+  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"]
+};
+
+export default config;
+```
+
+### 2.3 TypeScript 路径别名（推荐）
+
+```json title="tsconfig.json"
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    }
+  }
+}
+```
+
+## 第 3 步：安装首批可用资产
+
+```bash title="CLI"
+npx formaui add button
+npx formaui add feature-grid
+```
+
+> `formaui add` 会把源码安装到你的仓库中，后续可直接按业务修改。
+
+## 第 4 步：渲染最小可运行页面
+
+```tsx title="app/page.tsx"
+import { Button, Card, CardContent, CardDescription, CardHeader, CardTitle } from "@formaui/components";
+import { FeatureGrid } from "@formaui/blocks";
+
+export default function Page() {
+  return (
+    <main className="mx-auto max-w-6xl space-y-8 px-6 py-10">
+      <Card>
+        <CardHeader>
+          <CardTitle>FormaUI + Next.js</CardTitle>
+          <CardDescription>Integration baseline is ready.</CardDescription>
+        </CardHeader>
+        <CardContent className="flex items-center gap-3">
+          <Button>Primary Action</Button>
+          <Button variant="outline">Secondary Action</Button>
+        </CardContent>
+      </Card>
+
+      <FeatureGrid
+        title="Build Faster with FormaUI"
+        description="Composable source-owned UI assets for product teams."
+      />
+    </main>
+  );
+}
+```
+
+## 第 5 步：验证清单
+
+启动开发环境：
+
+```bash title="dev"
+pnpm dev
+```
+
+确认以下项目：
+
+- 页面可正常渲染，无运行时报错
+- `Button` 样式与交互生效
+- `FeatureGrid` 布局完整，断点切换正常
+- `npx formaui doctor` 无阻断级错误
+
+## 生产实践建议
+
+1. 把页面拆分为“布局骨架 + 业务区块 + 数据层”三层结构，便于后续模板升级。
+2. 对高频复用模块优先采用 `formaui add` 安装源码，再在本地二次封装。
+3. 在 CI 中加入基础校验：`typecheck`、`build`、关键页面截图或交互 smoke test。
+4. 版本升级前先在分支执行 `--dry-run` 与对比评审，避免批量覆盖自定义改动。
+
+## 常见问题
+
+### 样式不生效
+
+优先检查：
+
+- 是否接入 `@formaui/tailwind-preset`
+- Tailwind `content` 是否覆盖 `app/` 与 `components/`
+- 是否正确加载全局样式入口（如 `app/globals.css`）
+
+### 组件能编译但页面出现 hydration 警告
+
+- 检查是否把依赖浏览器能力的逻辑放入了 Client Component。
+- 若组件使用事件/状态，确认其文件包含 `"use client"`。
+
+### 安装命令执行后找不到文件
+
+- 先执行 `npx formaui list` 确认资源名称。
+- 使用 `npx formaui add <name> --dry-run` 预览将写入的路径。
+
+## 下一步
+
+- [Components Overview](/docs/components)
+- [Blocks Overview](/docs/blocks)
+- [Templates Overview](/docs/templates)
+- [Registry Overview](/docs/registry/overview)
