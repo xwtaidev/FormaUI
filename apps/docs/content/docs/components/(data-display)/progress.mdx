@@ -1,24 +1,27 @@
 ---
 title: Progress
-description: Component documentation for Progress.
+description: 进度条组件，适用于上传、处理任务和流程完成度反馈。
 ---
+
+import {
+  ProgressCaseDemo,
+  ProgressInteractiveDemo,
+} from "@/components/demos/data-display-demos";
 
 # Progress
 
-## Overview
+`Progress` 用于表达阶段完成比例，支持受控数值与可访问进度语义。
 
-`Progress` provides a compact indicator for completion, upload status, or long-running tasks.
+## 可视化展示
 
-## Installation
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[240px] items-center justify-center p-6">
+    <ProgressInteractiveDemo />
+  </div>
+</div>
 
-```bash
-npx formaui add progress
-```
-
-## Usage
-
-```tsx
-import { Progress } from "@/components/primitives/progress";
+```tsx title="components/demos/data-display-demos.tsx"
+import { Progress } from "@formaui/components";
 
 export function UploadProgress() {
   return (
@@ -30,13 +33,64 @@ export function UploadProgress() {
 }
 ```
 
-## Accessibility
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
+npx formaui add progress
+```
+
+### 通过包依赖使用
+
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
+
+## 使用方式
+
+```tsx title="Basic Usage"
+import { Progress } from "@formaui/components";
+
+export function UploadProgress() {
+  return (
+    <div className="space-y-2">
+      <p className="text-sm text-muted-foreground">Uploading files...</p>
+      <Progress value={72} />
+    </div>
+  );
+}
+```
+
+## 案例
+
+### 1. 文件上传进度
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[140px] items-center justify-center p-6">
+    <ProgressCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### `Progress` Props
+
+`Progress` 继承 `React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root>`：
+
+| Prop        | 类型     | 默认值 | 说明                           |
+| ----------- | -------- | ------ | ------------------------------ |
+| `value`     | `number` | `0`    | 当前进度值（会被归一到 0-100） |
+| `max`       | `number` | `100`  | 最大值（Radix 默认）           |
+| `className` | `string` | `-`    | 追加容器样式                   |
+
+## 可访问性
 
 - Exposes `role="progressbar"` and `aria-valuenow` through Radix.
 - Accepts controlled `value` in the 0-100 range.
 - Works well with screen-reader friendly status text nearby.
 
-## Source Code
+## 源码位置
 
 - `packages/components/src/primitives/progress.tsx`
 - `registry/components/progress.json`

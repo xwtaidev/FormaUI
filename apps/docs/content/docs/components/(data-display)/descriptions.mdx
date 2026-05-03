@@ -1,28 +1,31 @@
 ---
 title: Descriptions
-description: Component documentation for Descriptions.
+description: 描述列表组件，适用于资料面板、订单摘要和环境信息展示。
 ---
+
+import {
+  DescriptionsCaseDemo,
+  DescriptionsInteractiveDemo,
+} from "@/components/demos/data-display-demos";
 
 # Descriptions
 
-## Overview
+`Descriptions` 用于展示紧凑的键值信息，可通过列数与边框快速构建结构化信息面板。
 
-`Descriptions` renders compact key-value summaries for profile, order, and environment metadata panels.
+## 可视化展示
 
-## Installation
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[260px] items-center justify-center p-6">
+    <DescriptionsInteractiveDemo />
+  </div>
+</div>
 
-```bash
-npx formaui add descriptions
-```
-
-## Usage
-
-```tsx
-import { Descriptions } from "@/components/primitives/descriptions";
+```tsx title="components/demos/data-display-demos.tsx"
+import { Descriptions } from "@formaui/components";
 
 const items = [
   { key: "owner", label: "Owner", children: "FormaUI Team" },
-  { key: "status", label: "Status", children: "Draft" }
+  { key: "status", label: "Status", children: "Draft" },
 ];
 
 export function ProjectMeta() {
@@ -30,13 +33,74 @@ export function ProjectMeta() {
 }
 ```
 
-## v0.7 Scope
+## 安装方式
 
-- Focuses on read-only summary information.
-- Supports column layout and optional borders.
-- Editable table scenarios remain in `data-table`.
+### 通过 CLI 安装
 
-## Source Code
+```bash title="CLI"
+npx formaui add descriptions
+```
+
+### 通过包依赖使用
+
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
+
+## 使用方式
+
+```tsx title="Basic Usage"
+import { Descriptions } from "@formaui/components";
+
+const items = [
+  { key: "owner", label: "Owner", children: "FormaUI Team" },
+  { key: "status", label: "Status", children: "Draft" },
+];
+
+export function ProjectMeta() {
+  return <Descriptions items={items} column={2} bordered />;
+}
+```
+
+## 案例
+
+### 1. 项目摘要面板
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[180px] items-center justify-center p-6">
+    <DescriptionsCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### `Descriptions` Props
+
+| Prop         | 类型                 | 默认值  | 说明               |
+| ------------ | -------------------- | ------- | ------------------ |
+| `items`      | `DescriptionsItem[]` | `-`     | 描述项数组（必填） |
+| `column`     | `number`             | `3`     | 栅格列数           |
+| `size`       | `"sm" \| "md"`       | `"md"`  | 项目尺寸           |
+| `bordered`   | `boolean`            | `false` | 是否显示边框       |
+| `labelWidth` | `number \| string`   | `-`     | 标签宽度           |
+| `className`  | `string`             | `-`     | 追加容器样式       |
+
+### `DescriptionsItem` 结构
+
+| 字段       | 类型              | 默认值 | 说明             |
+| ---------- | ----------------- | ------ | ---------------- |
+| `key`      | `string`          | `-`    | 唯一键值（必填） |
+| `label`    | `React.ReactNode` | `-`    | 标签文案         |
+| `children` | `React.ReactNode` | `-`    | 内容区域         |
+| `span`     | `number`          | `-`    | 跨列数           |
+
+## 可访问性
+
+- 基于语义化 `dl/dt/dd` 结构，适合键值信息读屏。
+- 标签建议短文本、内容建议可扫描，避免长段落堆叠。
+- 对于可编辑信息建议搭配表单组件，不建议直接在 `Descriptions` 内编辑。
+
+## 源码位置
 
 - `packages/components/src/primitives/descriptions.tsx`
 - `registry/components/descriptions.json`

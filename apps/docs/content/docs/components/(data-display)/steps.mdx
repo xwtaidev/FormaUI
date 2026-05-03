@@ -1,43 +1,131 @@
 ---
 title: Steps
-description: Component documentation for Steps.
+description: 步骤条组件，适用于多阶段流程、引导向导与发布清单。
 ---
+
+import {
+  StepsCaseDemo,
+  StepsInteractiveDemo,
+} from "@/components/demos/data-display-demos";
 
 # Steps
 
-## Overview
+`Steps` 用于展示多阶段流程，支持当前步骤高亮、完成状态与键盘导航。
 
-`Steps` visualizes multi-stage workflows such as onboarding, setup, or release pipelines.
+## 可视化展示
 
-## Installation
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[280px] items-center justify-center p-6">
+    <StepsInteractiveDemo />
+  </div>
+</div>
 
-```bash
-npx formaui add steps
-```
-
-## Usage
-
-```tsx
-import { Steps, StepsItem } from "@/components/primitives/steps";
+```tsx title="components/demos/data-display-demos.tsx"
+import { Steps, StepsItem } from "@formaui/components";
 
 export function ReleaseSteps() {
   return (
     <Steps current={1} aria-label="Release checklist">
-      <StepsItem index={0} heading="Freeze contracts" description="Finalize naming and API scope." />
-      <StepsItem index={1} heading="Ship Wave A" description="Deliver alert, breadcrumb, label, typography, and steps." />
-      <StepsItem index={2} heading="Docs convergence" description="Publish docs and registry entries." />
+      <StepsItem
+        index={0}
+        heading="Freeze contracts"
+        description="Finalize naming and API scope."
+      />
+      <StepsItem
+        index={1}
+        heading="Ship Wave A"
+        description="Deliver docs and component updates."
+      />
+      <StepsItem
+        index={2}
+        heading="Publish release"
+        description="Sync changelog and release tags."
+      />
     </Steps>
   );
 }
 ```
 
-## Accessibility
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
+npx formaui add steps
+```
+
+### 通过包依赖使用
+
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
+
+## 使用方式
+
+```tsx title="Basic Usage"
+import { Steps, StepsItem } from "@formaui/components";
+
+export function ReleaseSteps() {
+  return (
+    <Steps current={1} aria-label="Release checklist">
+      <StepsItem
+        index={0}
+        heading="Freeze contracts"
+        description="Finalize naming and API scope."
+      />
+      <StepsItem
+        index={1}
+        heading="Ship Wave A"
+        description="Deliver alert, breadcrumb, label, typography, and steps."
+      />
+      <StepsItem
+        index={2}
+        heading="Docs convergence"
+        description="Publish docs and registry entries."
+      />
+    </Steps>
+  );
+}
+```
+
+## 案例
+
+### 1. 发布流程步骤条
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[180px] items-center justify-center p-6">
+    <StepsCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### `Steps` Props
+
+| Prop        | 类型                         | 默认值         | 说明         |
+| ----------- | ---------------------------- | -------------- | ------------ |
+| `current`   | `number`                     | `-`            | 当前步骤索引 |
+| `direction` | `"horizontal" \| "vertical"` | `"horizontal"` | 步骤排列方向 |
+| `className` | `string`                     | `-`            | 追加容器样式 |
+
+### `StepsItem` Props
+
+| Prop          | 类型                                   | 默认值   | 说明           |
+| ------------- | -------------------------------------- | -------- | -------------- |
+| `index`       | `number`                               | `-`      | 步骤索引       |
+| `heading`     | `React.ReactNode`                      | `-`      | 步骤标题       |
+| `description` | `React.ReactNode`                      | `-`      | 步骤描述       |
+| `status`      | `"pending" \| "active" \| "completed"` | 自动推导 | 步骤状态       |
+| `disabled`    | `boolean`                              | `false`  | 禁用当前步骤项 |
+| `className`   | `string`                               | `-`      | 追加步骤项样式 |
+
+## 可访问性
 
 - Supports keyboard traversal with `Arrow` keys, `Home`, and `End`.
 - Active step is exposed through `aria-current="step"`.
 - Works in horizontal and vertical layouts via the `direction` prop.
 
-## Source Code
+## 源码位置
 
 - `packages/components/src/primitives/steps.tsx`
 - `registry/components/steps.json`

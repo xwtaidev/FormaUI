@@ -1,28 +1,60 @@
 ---
 title: Timeline
-description: Component documentation for Timeline.
+description: 时间线组件，适用于发布里程碑、审批流程与操作日志展示。
 ---
+
+import {
+  TimelineCaseDemo,
+  TimelineInteractiveDemo,
+} from "@/components/demos/data-display-demos";
 
 # Timeline
 
-## Overview
+`Timeline` 用于按时间顺序展示事件，支持标签、内容与待处理节点（pending）表达。
 
-`Timeline` presents chronological events such as release milestones, approval chains, and activity logs.
+## 可视化展示
 
-## Installation
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[280px] items-center justify-center p-6">
+    <TimelineInteractiveDemo />
+  </div>
+</div>
 
-```bash
+```tsx title="components/demos/data-display-demos.tsx"
+import { Timeline } from "@formaui/components";
+
+const items = [
+  { key: "scope", label: "Scope", children: "v0.8.x Docs & Components" },
+  { key: "wave-a", label: "Wave A", children: "Inputs and navigation aligned" },
+];
+
+export function ReleaseTimeline() {
+  return <Timeline items={items} pending="Publishing changelog..." />;
+}
+```
+
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
 npx formaui add timeline
 ```
 
-## Usage
+### 通过包依赖使用
 
-```tsx
-import { Timeline } from "@/components/primitives/timeline";
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
+
+## 使用方式
+
+```tsx title="Basic Usage"
+import { Timeline } from "@formaui/components";
 
 const items = [
   { key: "scope", label: "Scope", children: "v0.7.1 contract freeze" },
-  { key: "wave-a", label: "Wave A", children: "Input and selection completed" }
+  { key: "wave-a", label: "Wave A", children: "Input and selection completed" },
 ];
 
 export function ReleaseTimeline() {
@@ -30,13 +62,43 @@ export function ReleaseTimeline() {
 }
 ```
 
-## v0.7 Scope
+## 案例
 
-- Event list with label + content blocks.
-- Supports pending tail node.
-- Does not include virtualized long-list behavior.
+### 1. 发布流程时间线
 
-## Source Code
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[180px] items-center justify-center p-6">
+    <TimelineCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### `Timeline` Props
+
+| Prop        | 类型                | 默认值   | 说明                   |
+| ----------- | ------------------- | -------- | ---------------------- |
+| `items`     | `TimelineItem[]`    | `-`      | 时间线节点数组（必填） |
+| `mode`      | `"left" \| "right"` | `"left"` | 文本对齐方向           |
+| `pending`   | `React.ReactNode`   | `-`      | 末尾待处理节点内容     |
+| `className` | `string`            | `-`      | 追加容器样式           |
+
+### `TimelineItem` 结构
+
+| 字段       | 类型              | 默认值 | 说明             |
+| ---------- | ----------------- | ------ | ---------------- |
+| `key`      | `string`          | `-`    | 唯一键值（必填） |
+| `label`    | `React.ReactNode` | `-`    | 节点标签         |
+| `children` | `React.ReactNode` | `-`    | 节点内容         |
+| `color`    | `string`          | `-`    | 节点圆点颜色     |
+
+## 可访问性
+
+- 建议 `items` 顺序与真实时间一致，避免读屏理解错位。
+- `label` 使用可扫描短语，`children` 表达核心事件。
+- 长时间线建议按阶段拆分，降低一次性信息密度。
+
+## 源码位置
 
 - `packages/components/src/primitives/timeline.tsx`
 - `registry/components/timeline.json`

@@ -1,31 +1,82 @@
 ---
-title: StatusBadge
-description: Component documentation for StatusBadge.
+title: Status Badge
+description: 状态徽章组件，适用于在线状态、风险等级与任务结果标记。
 ---
 
-# StatusBadge
+import {
+  StatusBadgeCaseDemo,
+  StatusBadgeInteractiveDemo,
+} from "@/components/demos/data-display-demos";
 
-## Overview
+# Status Badge
 
-`status-badge` is an installable component shipped in FormaUI v0.2.
+`StatusBadge` 是对 `Badge` 的语义化封装，用于以统一视觉表达在线、离线、警告和错误状态。
 
-## Install Command
+## 可视化展示
 
-```bash
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[180px] items-center justify-center p-6">
+    <StatusBadgeInteractiveDemo />
+  </div>
+</div>
+
+```tsx title="components/demos/data-display-demos.tsx"
+import { StatusBadge } from "@formaui/components";
+
+export function ServerStatus() {
+  return <StatusBadge status="online" />;
+}
+```
+
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
 npx formaui add status-badge
 ```
 
-## Registry Metadata
+### 通过包依赖使用
 
-- kind: `component`
-- version: `0.2.2`
-- frameworks: `react`
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
 
-## Dependencies
+## 使用方式
 
-- `badge`
+```tsx title="Basic Usage"
+import { StatusBadge } from "@formaui/components";
 
-## Source Code
+export function ServerStatus() {
+  return <StatusBadge status="online" />;
+}
+```
+
+## 案例
+
+### 1. 运行状态标记
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[120px] items-center justify-center p-6">
+    <StatusBadgeCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### `StatusBadge` Props
+
+| Prop     | 类型                                            | 默认值 | 说明             |
+| -------- | ----------------------------------------------- | ------ | ---------------- |
+| `status` | `"online" \| "offline" \| "warning" \| "error"` | `-`    | 状态类型（必填） |
+
+## 可访问性
+
+- 建议与可读文本搭配使用，避免仅靠颜色传达状态。
+- 状态值应来自受控业务枚举，避免引入非标准语义。
+- 用于关键告警时建议搭配 `Alert` 或 `Result` 提供更完整上下文。
+
+## 源码位置
 
 - `packages/components/src/composites/status-badge.tsx`
 - `registry/components/status-badge.json`

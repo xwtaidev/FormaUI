@@ -1,24 +1,27 @@
 ---
 title: Tree
-description: Component documentation for Tree.
+description: 树形结构组件，适用于组织层级、目录结构与权限节点展示。
 ---
+
+import {
+  TreeCaseDemo,
+  TreeInteractiveDemo,
+} from "@/components/demos/data-display-demos";
 
 # Tree
 
-## Overview
+`Tree` 用于展示层级数据，支持节点展开/收起、选中状态与受控/非受控管理。
 
-`Tree` renders hierarchical data with expand/collapse and selection interactions.
+## 可视化展示
 
-## Installation
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[340px] items-center justify-center p-6">
+    <TreeInteractiveDemo />
+  </div>
+</div>
 
-```bash
-npx formaui add tree
-```
-
-## Usage
-
-```tsx
-import { Tree } from "@/components/primitives/tree";
+```tsx title="components/demos/data-display-demos.tsx"
+import { Tree } from "@formaui/components";
 
 const treeData = [
   {
@@ -26,9 +29,9 @@ const treeData = [
     title: "Engineering",
     children: [
       { key: "frontend", title: "Frontend" },
-      { key: "backend", title: "Backend" }
-    ]
-  }
+      { key: "backend", title: "Backend" },
+    ],
+  },
 ];
 
 export function TeamTree() {
@@ -36,13 +39,83 @@ export function TeamTree() {
 }
 ```
 
-## v0.7 Scope
+## 安装方式
 
-- Expand/collapse + select behavior.
-- Controlled and uncontrolled expanded/selected keys.
-- Keyboard support for expand/collapse/select.
+### 通过 CLI 安装
 
-## Source Code
+```bash title="CLI"
+npx formaui add tree
+```
+
+### 通过包依赖使用
+
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
+
+## 使用方式
+
+```tsx title="Basic Usage"
+import { Tree } from "@formaui/components";
+
+const treeData = [
+  {
+    key: "engineering",
+    title: "Engineering",
+    children: [
+      { key: "frontend", title: "Frontend" },
+      { key: "backend", title: "Backend" },
+    ],
+  },
+];
+
+export function TeamTree() {
+  return <Tree data={treeData} defaultExpandedKeys={["engineering"]} />;
+}
+```
+
+## 案例
+
+### 1. 团队组织树
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[220px] items-center justify-center p-6">
+    <TreeCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### `Tree` Props
+
+| Prop                  | 类型                               | 默认值  | 说明               |
+| --------------------- | ---------------------------------- | ------- | ------------------ |
+| `data`                | `TreeNode[]`                       | `-`     | 树节点数据（必填） |
+| `expandedKeys`        | `string[]`                         | `-`     | 受控展开节点       |
+| `defaultExpandedKeys` | `string[]`                         | `[]`    | 非受控初始展开节点 |
+| `selectedKeys`        | `string[]`                         | `-`     | 受控选中节点       |
+| `defaultSelectedKeys` | `string[]`                         | `[]`    | 非受控初始选中节点 |
+| `onExpandedChange`    | `(expandedKeys: string[]) => void` | `-`     | 展开状态变化回调   |
+| `onSelectedChange`    | `(selectedKeys: string[]) => void` | `-`     | 选中状态变化回调   |
+| `multiple`            | `boolean`                          | `false` | 是否允许多选       |
+| `className`           | `string`                           | `-`     | 追加容器样式       |
+
+### `TreeNode` 结构
+
+| 字段       | 类型              | 默认值 | 说明           |
+| ---------- | ----------------- | ------ | -------------- |
+| `key`      | `string`          | `-`    | 节点唯一键值   |
+| `title`    | `React.ReactNode` | `-`    | 节点标题       |
+| `disabled` | `boolean`         | `-`    | 禁用选中与交互 |
+| `children` | `TreeNode[]`      | `-`    | 子节点列表     |
+
+## 可访问性
+
+- 节点按钮提供 `aria-expanded` 与 `aria-selected` 状态语义。
+- 默认支持键盘 `ArrowLeft/ArrowRight/Enter/Space` 操作。
+- 层级深度建议保持可读，超长树结构可分段或按需加载。
+
+## 源码位置
 
 - `packages/components/src/primitives/tree.tsx`
 - `registry/components/tree.json`
