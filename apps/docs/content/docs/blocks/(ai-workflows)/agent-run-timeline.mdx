@@ -1,40 +1,100 @@
 ---
 title: AgentRunTimeline
-description: Block documentation for AgentRunTimeline.
+description: Agent 执行轨迹区块，用于展示任务状态、开始时间与最近执行记录。
 ---
+
+import { AgentRunTimelineBlockDemo } from "@/components/demos/ai-workflows-demos";
 
 # AgentRunTimeline
 
-## Preview
+`AgentRunTimeline` 用于展示近期 Agent 运行记录，帮助团队快速感知执行状态、失败任务与当前运行中的作业。
 
-Timeline list for agent run status, duration, and recent activity context.
+它由 `Card + Badge + Button` 组合构成，适合 AI 控制台中的运行监控面板。
 
-## Install Command
+## 可视化展示
 
-```bash
-npx formaui block add agent-run-timeline
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[320px] items-center justify-center p-6">
+    <AgentRunTimelineBlockDemo />
+  </div>
+</div>
+
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
+npx formaui add agent-run-timeline
 ```
 
-## Use Case
+### 通过包依赖使用
 
-Audit model or agent execution history in console-style interfaces.
+```bash title="Package Manager"
+pnpm add @formaui/blocks
+```
 
-## Dependencies
+## 使用方式
 
-Registry dependencies:
+```tsx title="Basic Usage"
+import { AgentRunTimeline } from "@formaui/blocks";
+
+export function RunsPanel() {
+  return <AgentRunTimeline />;
+}
+```
+
+## 案例
+
+### 1. 作为运行中心主视图区块
+
+```tsx title="Operations Panel"
+import { AgentRunTimeline, DashboardShell } from "@formaui/blocks";
+
+export function AgentOpsPage() {
+  return (
+    <DashboardShell>
+      <AgentRunTimeline />
+    </DashboardShell>
+  );
+}
+```
+
+### 2. 与模型选择区块联动展示
+
+```tsx title="Run History + Model Policy"
+import { AgentRunTimeline, ModelSelector } from "@formaui/blocks";
+
+export function RoutingConsole() {
+  return (
+    <div className="grid gap-4 xl:grid-cols-2">
+      <ModelSelector />
+      <AgentRunTimeline />
+    </div>
+  );
+}
+```
+
+## API Reference
+
+### Props
+
+当前版本 `AgentRunTimeline` 不暴露组件 props，默认渲染演示运行记录。
+
+接入线上数据时，建议安装后在 `components/agent-run-timeline.tsx` 中将 `demoAgentRuns` 替换为你的任务执行数据源。
+
+### 依赖组件
 
 - `card`
-- `status-badge`
+- `badge`
+- `button`
 
-## Responsive Behavior
+## 响应式与可访问性
 
-Behaves as a stacked list component and adapts to both side-by-side and full-width layouts.
+- 记录条目在窄屏下自动换行，宽屏保持信息并排。
+- 状态标签使用 `Badge` 文本表达（`success/running/failed`），避免仅凭颜色识别。
+- 头部操作按钮使用语义化 `<button>`，支持键盘触发。
 
-## Customization Guide
-
-Replace demo runs with backend event data and map statuses to your own operational taxonomy.
-
-## Source Code
+## 源码位置
 
 - `packages/blocks/src/agent-run-timeline.tsx`
 - `registry/blocks/agent-run-timeline.json`

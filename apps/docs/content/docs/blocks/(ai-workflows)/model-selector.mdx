@@ -1,37 +1,132 @@
 ---
 title: ModelSelector
-description: Block documentation for ModelSelector.
+description: 模型选择区块，支持按 Provider 过滤并对比成本、延迟与上下文窗口。
 ---
+
+import { ModelSelectorBlockDemo } from "@/components/demos/ai-workflows-demos";
 
 # ModelSelector
 
-## Overview
+`ModelSelector` 用于在多个模型之间进行选择与比较，帮助团队在速度、成本和上下文窗口之间做工程取舍。
 
-`ModelSelector` helps teams compare model options by provider, latency, cost, and context limits before routing traffic.
+它内置 Provider 过滤、可选模型高亮和当前选择反馈，适合作为 AI 配置页或运行入口页的核心区块。
 
-## Install Command
+## 可视化展示
 
-```bash
-npx formaui block add model-selector
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[420px] items-center justify-center p-6">
+    <ModelSelectorBlockDemo />
+  </div>
+</div>
+
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
+npx formaui add model-selector
 ```
 
-## Included Composition
+### 通过包依赖使用
 
-- Selection container (`card`)
-- Status tags (`badge`)
-- Primary action (`button`)
-- Provider filtering (`select`)
+```bash title="Package Manager"
+pnpm add @formaui/blocks
+```
 
-## Semantic Token Usage
+## 使用方式
 
-This block consumes semantic aliases such as:
+```tsx title="Basic Usage"
+import { ModelSelector } from "@formaui/blocks";
 
-- `--semantic-model-chip-bg`
-- `--semantic-model-chip-selected-bg`
-- `--semantic-text-primary`
-- `--semantic-border-default`
+export function ModelRouteSection() {
+  return <ModelSelector />;
+}
+```
 
-## Source Code
+## 案例
+
+### 1. 自定义标题与说明
+
+```tsx title="Custom Heading"
+import { ModelSelector } from "@formaui/blocks";
+
+export function WorkspaceModelPolicy() {
+  return (
+    <ModelSelector
+      title="Workspace model policy"
+      description="Choose a default model for new automations in this workspace."
+    />
+  );
+}
+```
+
+### 2. 传入业务模型清单
+
+```tsx title="Controlled Model List"
+import { ModelSelector } from "@formaui/blocks";
+
+const models = [
+  {
+    id: "gpt-5.5",
+    name: "GPT-5.5",
+    provider: "OpenAI",
+    latencyMs: 420,
+    costPerMillion: "$5.00",
+    contextWindow: "256k",
+    stability: "stable"
+  },
+  {
+    id: "claude-sonnet-4",
+    name: "Claude Sonnet 4",
+    provider: "Anthropic",
+    latencyMs: 510,
+    costPerMillion: "$3.00",
+    contextWindow: "200k",
+    stability: "beta"
+  }
+] as const;
+
+export function RoutedModels() {
+  return <ModelSelector models={[...models]} />;
+}
+```
+
+## API Reference
+
+### Props
+
+| Prop | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- |
+| `models` | `DemoModelOption[]` | `demoModelOptions` | 模型候选列表 |
+| `title` | `string` | `"Model selector"` | 区块标题 |
+| `description` | `string` | `"Pick the best-fit model by speed, cost, and context limits."` | 区块说明 |
+
+`DemoModelOption` 结构：
+
+| 字段 | 类型 | 说明 |
+| --- | --- | --- |
+| `id` | `string` | 模型唯一标识 |
+| `name` | `string` | 模型名称 |
+| `provider` | `"OpenAI" \| "Anthropic" \| "Google"` | 模型提供方 |
+| `latencyMs` | `number` | 延迟（毫秒） |
+| `costPerMillion` | `string` | 每百万 token 成本 |
+| `contextWindow` | `string` | 上下文窗口 |
+| `stability` | `"stable" \| "beta" \| "preview"` | 稳定性标签 |
+
+### 依赖组件
+
+- `card`
+- `badge`
+- `button`
+- `select`
+
+## 响应式与可访问性
+
+- 在 `md` 及以上断点自动切换为左右分栏，移动端保持单列。
+- Provider 筛选基于可访问的 `Select` 组件，支持键盘导航。
+- 模型选项使用 `button` 实现，可通过键盘聚焦与触发。
+
+## 源码位置
 
 - `packages/blocks/src/model-selector.tsx`
 - `registry/blocks/model-selector.json`

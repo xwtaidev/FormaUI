@@ -1,39 +1,103 @@
 ---
 title: TokenUsageChart
-description: Block documentation for TokenUsageChart.
+description: Token 使用趋势区块，适用于 AI 控制台与运营看板。
 ---
+
+import { TokenUsageChartBlockDemo } from "@/components/demos/ai-workflows-demos";
 
 # TokenUsageChart
 
-## Preview
+`TokenUsageChart` 是一个轻量的用量可视化区块，用于展示最近时间窗口内的 Token 消耗趋势。
 
-A card-style chart section for token usage trend visibility.
+它基于 `Card + Badge` 组合实现，适合作为 AI 产品仪表盘中的基础监控卡片。
 
-## Install Command
+## 可视化展示
 
-```bash
-npx formaui block add token-usage-chart
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[300px] items-center justify-center p-6">
+    <TokenUsageChartBlockDemo />
+  </div>
+</div>
+
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
+npx formaui add token-usage-chart
 ```
 
-## Use Case
+### 通过包依赖使用
 
-Track model token consumption by day or interval in AI product dashboards.
+```bash title="Package Manager"
+pnpm add @formaui/blocks
+```
 
-## Dependencies
+## 使用方式
 
-Registry dependencies:
+```tsx title="Basic Usage"
+import { TokenUsageChart } from "@formaui/blocks";
+
+export function UsagePanel() {
+  return (
+    <section className="grid gap-4 md:grid-cols-2">
+      <TokenUsageChart />
+    </section>
+  );
+}
+```
+
+## 案例
+
+### 1. 作为 Dashboard 基础监控卡片
+
+```tsx title="Dashboard Section"
+import { DashboardShell, TokenUsageChart } from "@formaui/blocks";
+
+export function AiOpsOverview() {
+  return (
+    <DashboardShell>
+      <TokenUsageChart />
+    </DashboardShell>
+  );
+}
+```
+
+### 2. 与执行轨迹区块并排展示
+
+```tsx title="Usage + Timeline"
+import { AgentRunTimeline, TokenUsageChart } from "@formaui/blocks";
+
+export function UsageAndRuns() {
+  return (
+    <div className="grid gap-4 lg:grid-cols-2">
+      <TokenUsageChart />
+      <AgentRunTimeline />
+    </div>
+  );
+}
+```
+
+## API Reference
+
+### Props
+
+当前版本 `TokenUsageChart` 不暴露组件 props，直接渲染预设结构与演示数据。
+
+如果需要接入真实业务数据，建议安装后在你的仓库内修改 `components/token-usage-chart.tsx`，将 `demoTokenUsage` 替换为后端指标数据。
+
+### 依赖组件
 
 - `card`
+- `badge`
 
-## Responsive Behavior
+## 响应式与可访问性
 
-Fits a single grid cell and scales naturally when placed in one or two column dashboard sections.
+- 默认可在单列或双列网格中自然伸缩。
+- 条形图使用文本标签同步呈现数值，不依赖纯颜色传达信息。
+- 卡片标题与描述提供语义化信息，便于快速扫描与读屏理解。
 
-## Customization Guide
-
-Swap demo data points with your product telemetry and tune labels or axis density for your scale.
-
-## Source Code
+## 源码位置
 
 - `packages/blocks/src/token-usage-chart.tsx`
 - `registry/blocks/token-usage-chart.json`
