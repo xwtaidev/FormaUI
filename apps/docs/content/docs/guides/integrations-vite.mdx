@@ -1,30 +1,155 @@
 ---
 title: Integrations for Vite
-description: Recommended setup for using FormaUI in Vite + React projects.
+description: 在 Vite + React 项目中接入 FormaUI 的推荐实践：配置、验证与排障。
 ---
 
 # Integrations for Vite
 
-## Install
+本指南采用开源项目常见文档结构：**前置条件 → 步骤 → 验证 → 常见问题 → 下一步**。
 
-```bash
-pnpm add @formaui/components @formaui/blocks
+目标是在 Vite + React 项目中建立稳定、可扩展的 FormaUI 集成基线。
+
+## 适用范围
+
+- Vite `5+`
+- React `18+`
+- TypeScript 项目（推荐）
+
+## 你将完成
+
+- 安装 FormaUI 包与 CLI
+- 配置 Tailwind preset 与路径别名
+- 渲染最小可运行页面
+- 完成集成验证与基础排障
+
+## 第 1 步：安装依赖与初始化
+
+```bash title="pnpm"
+pnpm add @formaui/components @formaui/blocks @formaui/tailwind-preset
 ```
 
-## Initialize CLI
-
-```bash
+```bash title="CLI"
 npx formaui init
 ```
 
-## Recommended Setup
+可选诊断：
 
-1. Start from a React + TypeScript Vite template.
-2. Enable Tailwind and include FormaUI styles.
-3. Configure import aliases (`@/components`, `@/lib`, `@/styles`).
-4. Install components/blocks from the registry.
+```bash title="CLI"
+npx formaui doctor
+npx formaui list
+```
 
-## Best Practices
+## 第 2 步：配置 Tailwind 与路径别名
 
-- Keep generated files source-owned and version-controlled.
-- Prefer pack commands for scenario-based adoption.
+### 2.1 Tailwind 接入 FormaUI preset
+
+```ts title="tailwind.config.ts"
+import type { Config } from "tailwindcss";
+import { formaUIPreset } from "@formaui/tailwind-preset";
+
+const config: Config = {
+  presets: [formaUIPreset as unknown as Partial<Config>],
+  content: ["./index.html", "./src/**/*.{ts,tsx}"]
+};
+
+export default config;
+```
+
+### 2.2 Vite 别名（推荐）
+
+```ts title="vite.config.ts"
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import path from "node:path";
+
+export default defineConfig({
+  plugins: [react()],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src")
+    }
+  }
+});
+```
+
+### 2.3 TypeScript paths（与 Vite 对齐）
+
+```json title="tsconfig.json"
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  }
+}
+```
+
+## 第 3 步：安装首批资产
+
+```bash title="CLI"
+npx formaui add button
+npx formaui add feature-grid
+```
+
+## 第 4 步：渲染最小可运行页面
+
+```tsx title="src/App.tsx"
+import { Button, Card, CardContent, CardDescription, CardHeader, CardTitle } from "@formaui/components";
+import { FeatureGrid } from "@formaui/blocks";
+
+export default function App() {
+  return (
+    <main className="mx-auto max-w-6xl space-y-8 px-6 py-10">
+      <Card>
+        <CardHeader>
+          <CardTitle>FormaUI + Vite</CardTitle>
+          <CardDescription>Integration baseline is ready.</CardDescription>
+        </CardHeader>
+        <CardContent className="flex items-center gap-3">
+          <Button>Primary Action</Button>
+          <Button variant="outline">Secondary Action</Button>
+        </CardContent>
+      </Card>
+
+      <FeatureGrid title="Build Faster" description="Source-owned composable UI assets." />
+    </main>
+  );
+}
+```
+
+## 第 5 步：验证清单
+
+```bash title="dev"
+pnpm dev
+```
+
+- 页面渲染正常，无运行时报错
+- `Button` 样式与交互正确
+- `FeatureGrid` 在不同断点布局正常
+- `npx formaui doctor` 无阻断级错误
+
+## 常见问题
+
+### 样式未生效
+
+- 检查 `@formaui/tailwind-preset` 是否已接入
+- 检查 Tailwind `content` 是否覆盖 `src/**/*.{ts,tsx}`
+- 检查全局样式是否在入口文件中加载
+
+### 别名能通过编译但编辑器报错
+
+- 检查 `vite.config.ts` 与 `tsconfig.json` 的别名是否一致
+- 重启 TS Server 或重新启动开发服务
+
+### 资源安装到错误目录
+
+- 执行 `npx formaui add <name> --dry-run` 先预览写入路径
+- 在 monorepo 场景使用 `--cwd` 指定目标应用目录
+
+## 下一步
+
+- [Integrations for Next.js](/docs/guides/integrations-nextjs)
+- [Monorepo Strategy](/docs/guides/monorepo)
+- [Components Overview](/docs/components)
+- [Blocks Overview](/docs/blocks)

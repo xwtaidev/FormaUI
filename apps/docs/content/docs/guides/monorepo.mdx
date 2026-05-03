@@ -1,25 +1,101 @@
 ---
 title: Monorepo Strategy
-description: Organize FormaUI usage in multi-package repositories.
+description: 在多包仓库中组织 FormaUI 资产的推荐策略：目录、安装流与升级治理。
 ---
 
 # Monorepo Strategy
 
-## Workspace Layout
+本指南遵循开源项目常见的工程文档结构：**目标 → 推荐布局 → 操作流程 → 校验与治理**。
 
-A common setup is:
+目标是在 monorepo 中做到“多应用复用 + 各应用可独立演进”。
 
-- `apps/*` for product applications
-- `packages/ui` for shared product-level wrappers
-- `packages/config` for lint/ts/tailwind presets
+## 适用范围
 
-## Integration Pattern
+- `pnpm` workspaces（推荐）
+- Turborepo / Nx / 自定义 workspace 管理
+- 同时维护多个应用（如 `apps/web`、`apps/docs`）
 
-1. Run CLI commands against target apps with `--cwd`.
-2. Keep shared utilities (`cn`, tokens, theme CSS) in reusable packages where appropriate.
-3. Version internal UI abstractions with normal workspace flows.
+## 目标原则
 
-## Operational Tips
+1. **安装边界清晰**：组件安装到目标应用，而不是错误写入仓库根目录。
+2. **复用边界清晰**：共享基础能力，避免过早抽象业务特化组件。
+3. **升级边界清晰**：保持 source-owned 可控，同时降低批量升级风险。
 
-- Use `formaui doctor` in CI for baseline checks.
-- Standardize aliases and CSS entry points across apps.
+## 推荐目录布局
+
+```text title="Workspace Layout"
+apps/
+  web/
+  docs/
+packages/
+  ui/              # 可复用封装层（可选）
+  config/          # eslint/ts/tailwind 共享配置（可选）
+```
+
+## 集成流程
+
+### 第 1 步：在目标应用目录初始化
+
+```bash title="CLI"
+npx formaui init --cwd apps/web
+npx formaui init --cwd apps/docs
+```
+
+### 第 2 步：按应用安装资产
+
+```bash title="CLI"
+npx formaui add button --cwd apps/web
+npx formaui add feature-grid --cwd apps/web
+npx formaui add data-table --cwd apps/docs
+```
+
+> 使用 `--dry-run` 预览写入结果，避免误写入。
+
+### 第 3 步：抽取稳定复用层（可选）
+
+- 把稳定的基础封装（如 `cn`、主题变量、通用 layout）放到 `packages/ui`。
+- 业务特定区块优先保留在应用内，避免过早共享导致耦合。
+
+### 第 4 步：统一配置基线
+
+- 统一 Tailwind preset 与 TS alias 策略。
+- 在每个应用中保持一致的 CSS 入口和主题加载顺序。
+
+## 升级与治理策略
+
+1. 升级前先在分支执行 `formaui add <name> --dry-run`。
+2. 分应用分批升级，避免一次性跨应用大改。
+3. 关键组件升级后运行页面级回归（视觉或交互 smoke test）。
+4. 对公共封装包采用语义化版本管理，明确变更影响面。
+
+## CI 校验建议
+
+```bash title="CI Checks"
+npx formaui doctor --cwd apps/web
+npx formaui doctor --cwd apps/docs
+pnpm -r typecheck
+pnpm -r build
+```
+
+## 常见问题
+
+### 安装文件出现在仓库根目录
+
+- 通常是未传 `--cwd`。
+- 解决方式：显式指定目标应用目录并重新安装。
+
+### 多应用样式表现不一致
+
+- 检查 Tailwind preset 是否在每个应用都接入。
+- 检查是否存在不同的全局样式加载顺序。
+
+### 共享包改动导致多个应用同时回归失败
+
+- 说明共享层职责过重。
+- 建议将业务特化逻辑下沉回应用层，保留共享层最小稳定集合。
+
+## 下一步
+
+- [Integrations for Next.js](/docs/guides/integrations-nextjs)
+- [Integrations for Vite](/docs/guides/integrations-vite)
+- [Contributing Docs](/docs/guides/contributing-docs)
