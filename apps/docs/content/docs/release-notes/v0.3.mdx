@@ -1,0 +1,57 @@
+---
+title: v0.3
+description: FormaUI v0.3 发布记录：组件扩展、pack 工作流与 registry v3 discoverability。
+---
+
+# FormaUI v0.3 Release Notes
+
+## Snapshot
+
+- Date: 2026-04-25
+- Status: GA
+- Version Line: `v0.3.1 -> v0.3.6`
+
+## TL;DR
+
+v0.3 将资产交付从“可规模使用”推进到“可组合扩展”：新增 12 组件、引入 3 个官方 pack、并升级 registry discoverability 能力。
+
+## Highlights
+
+- 新增 12 个组件，组件总数达到 36。
+- 新增 `pack list/info/add` 工作流。
+- Registry v3 增加 `category/scenarios/complexity/stability` 元数据。
+- Next/Vite 官方示例与文档完成 v0.3 覆盖。
+
+## Delivered Scope
+
+- Component Wave A/B/C 三波次交付。
+- Pack：`dashboard-foundation`、`data-entry`、`feedback-loading`。
+- CLI discoverability 支持基于元数据过滤。
+
+## Upgrade Notes
+
+- 推荐升级流：`doctor -> discover -> dry-run -> install -> build checks`。
+- 大规模场景安装建议优先 `pack add`，再补单组件。
+
+## Quality Gates
+
+```bash
+pnpm lint
+pnpm typecheck
+pnpm test
+pnpm build
+pnpm registry:build
+```
+
+结果：全部通过。
+
+## Known Limitations
+
+- 官方支持仍以 React 为主。
+- `recommend` 智能推荐与私有 registry 权限不在 v0.3 GA 范围。
+
+## References
+
+- Full repository release record: `docs/releases/v0.3.md`
+- PRD: `docs/prds/FormaUI v0.3 PRD.md`
+- Plan: `docs/superpowers/plans/2026-04-25-formaui-v0.3-implementation-plan.md`

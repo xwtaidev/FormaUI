@@ -1,0 +1,57 @@
+---
+title: v0.4
+description: FormaUI v0.4 发布记录：官方 landing、营销 blocks 与性能/SEO 门禁。
+---
+
+# FormaUI v0.4 Release Notes
+
+## Snapshot
+
+- Date: 2026-04-26
+- Status: GA
+- Version Line: `v0.4.1 -> v0.4.6`
+
+## TL;DR
+
+v0.4 的核心是“增长面交付”：官方 landing 上线、6 个营销 blocks 发布、并建立 landing 质量门禁。
+
+## Highlights
+
+- 官方 landing route（`/landing`）上线。
+- 6 个营销 blocks 交付（hero/feature/logo/stats/faq/final-cta）。
+- `marketing-launch` pack 提供场景化批量安装。
+- Lighthouse 与 SEO/Analytics 基线纳入发布流程。
+
+## Delivered Scope
+
+- Landing IA 与组件化区段交付。
+- 6 个营销 blocks 的源码、registry、文档、示例全链路交付。
+- 组件合规脚本、CTA 埋点与 Lighthouse 门禁完备。
+
+## Upgrade Notes
+
+- 营销落地页优先推荐使用 `npx formaui pack add marketing-launch` 起步。
+- 建议把 docs lighthouse 检查纳入 CI。
+
+## Quality Gates
+
+```bash
+pnpm lint
+pnpm typecheck
+pnpm test
+pnpm build
+pnpm registry:build
+pnpm --filter docs lighthouse
+```
+
+结果：发布门禁通过。
+
+## Known Limitations
+
+- section 级曝光埋点（`section_view`）未在 v0.4 GA 范围内。
+
+## References
+
+- Full repository release record: `docs/releases/v0.4.md`
+- PRD: `docs/prds/FormaUI v0.4 PRD.md`
+- Plan: `docs/superpowers/plans/2026-04-25-formaui-v0.4-implementation-plan.md`

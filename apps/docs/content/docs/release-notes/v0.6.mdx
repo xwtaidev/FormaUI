@@ -1,0 +1,54 @@
+---
+title: v0.6
+description: FormaUI v0.6 发布记录：组件命名与 API 合约冻结、交付矩阵占位。
+---
+
+# FormaUI v0.6 Release Notes
+
+## Snapshot
+
+- Date: 2026-04-26
+- Status: Draft
+- Version Line: `v0.6.1 -> v0.6.7`
+
+## TL;DR
+
+v0.6.1 的核心是“合约冻结”而非大规模功能发布：确定关键组件命名、别名策略、依赖基线，并建立后续波次交付矩阵。
+
+## Highlights
+
+- 冻结 20 个基础组件的命名与最小 API 约束。
+- 明确兼容别名策略（如 `drawer/sheet`、`combobox/autocomplete`）。
+- 建立 v0.6.2~v0.6.5 分波次交付矩阵占位。
+
+## Delivered Scope
+
+- 官方命名与别名策略确定。
+- Radix 依赖基线清单确定。
+- 组件波次交付矩阵完成（状态字段：`todo/in-progress/done/blocked`）。
+
+## Upgrade Notes
+
+- 别名仅用于兼容，不作为独立组件条目进入主导航。
+- 后续版本应优先使用官方命名，避免在新代码里引入旧别名。
+
+## Quality Gates
+
+v0.6 当前为 Draft 线，建议在 GA 前执行完整门禁：
+
+```bash
+pnpm lint
+pnpm typecheck
+pnpm test
+pnpm build
+```
+
+## Known Limitations
+
+- 该版本以规范冻结为主，交付矩阵中大量条目处于占位状态。
+
+## References
+
+- Full repository release record: `docs/releases/v0.6.md`
+- PRD: `docs/prds/FormaUI v0.6 PRD.md`
+- Plan: `docs/superpowers/plans/2026-04-26-formaui-v0.6-implementation-plan.md`

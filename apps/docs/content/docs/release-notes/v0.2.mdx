@@ -1,0 +1,61 @@
+---
+title: v0.2
+description: FormaUI v0.2 发布记录：CLI v2、registry v2 与资产扩展波次。
+---
+
+# FormaUI v0.2 Release Notes
+
+## Snapshot
+
+- Date: 2026-04-25
+- Status: GA
+- Version Line: `v0.2.1 -> v0.2.6`
+
+## TL;DR
+
+v0.2 把 v0.1 的“可跑通”升级为“可规模使用”：CLI 可发现/可诊断/可预演，registry 升级到 v2，并新增组件、blocks 和模板资产。
+
+## Highlights
+
+- CLI v2：`list/search/info/doctor` + `--dry-run` + `--registry`。
+- Registry v2：版本化索引与扩展元数据。
+- 新增组件：`data-table`、`search-command`。
+- 新增 blocks：`team-members-table`、`notification-panel`、`model-selector`。
+- 新增模板：`saas-starter`、`admin-dashboard`。
+
+## Delivered Scope
+
+- CLI discoverability 与安装可靠性增强。
+- Registry v2 schema 与 index 交付。
+- Docs 与 Next/Vite 双示例覆盖完成。
+
+## Upgrade Notes
+
+推荐迁移步骤：
+
+1. `npx formaui doctor`
+2. `npx formaui add <name> --dry-run`
+3. 执行真实安装
+4. 运行 `lint/typecheck/test/build`
+
+## Quality Gates
+
+```bash
+pnpm lint
+pnpm typecheck
+pnpm test
+pnpm build
+```
+
+结果：全部通过。
+
+## Known Limitations
+
+- 官方支持仍聚焦 React 生态。
+- 私有 registry 鉴权不在 v0.2 交付范围。
+
+## References
+
+- Full repository release record: `docs/releases/v0.2.md`
+- PRD: `docs/prds/FormaUI v0.2 PRD.md`
+- Plan: `docs/superpowers/plans/2026-04-25-formaui-v0.2-implementation-plan.md`

@@ -1,0 +1,53 @@
+---
+title: v0.5
+description: FormaUI v0.5 发布记录：官网与文档站拆分、跨站路由迁移与质量门禁。
+---
+
+# FormaUI v0.5 Release Notes
+
+## Snapshot
+
+- Date: 2026-04-26
+- Status: GA
+- Version Line: `v0.5.1 -> v0.5.6`
+
+## TL;DR
+
+v0.5 完成了站点职责拆分：`apps/web` 聚焦品牌与增长，`apps/docs` 聚焦开发者文档。
+
+## Highlights
+
+- Web 7 条核心路由与 Docs 7 类核心文档路由全部交付。
+- 旧 docs 营销路由重定向到 web（跨站迁移完成）。
+- 跨站入口（Web -> Docs / Docs -> Web）建立并通过回归测试。
+
+## Delivered Scope
+
+1. Workspace Split Foundation：`apps/web` 脚手架与工作区接入。
+2. Web IA Delivery：品牌与增长路由集交付。
+3. Docs Scope Convergence：文档站职责收敛。
+4. Routing & SEO Migration：重定向映射与 SEO 输出。
+5. GA Hardening：回归套件与发布清单闭环。
+
+## Upgrade Notes
+
+- 如果使用旧 docs 营销链接（如 `/landing/*`），需要确认已走向 web 目标地址。
+- 站点集成脚本与外链应更新为新路由体系。
+
+## Quality Gates
+
+```bash
+pnpm lint && pnpm typecheck && pnpm test && pnpm build
+```
+
+结果：全部通过。
+
+## Known Limitations
+
+- 多语言站点与 A/B 路由实验不在该版本发布范围内。
+
+## References
+
+- Full repository release record: `docs/releases/v0.5.md`
+- PRD: `docs/prds/FormaUI v0.5 PRD.md`
+- Plan: `docs/superpowers/plans/2026-04-26-formaui-v0.5-implementation-plan.md`

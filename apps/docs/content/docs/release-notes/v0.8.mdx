@@ -1,10 +1,60 @@
 ---
 title: v0.8
-description: FormaUI v0.8 release notes.
+description: FormaUI v0.8 发布记录：文档架构迁移、搜索与 SEO 基线、发布门禁。
 ---
 
 # FormaUI v0.8 Release Notes
 
-v0.8 delivers the documentation architecture upgrade to a Fumadocs-native content model and benchmark-aligned information architecture.
+## Snapshot
 
-For the repository-level release record, see `docs/releases/v0.8.md`.
+- Date: 2026-05-01
+- Status: GA Ready
+- Version Line: `v0.8.1 -> v0.8.5`
+
+## TL;DR
+
+v0.8 完成文档服务升级：采用 Fumadocs 原生内容架构，信息架构对齐 benchmark 模型，并补齐搜索与 SEO 基线。
+
+## Highlights
+
+- 文档内容统一迁移到 `apps/docs/content/docs/**`。
+- `/docs/[...slug]` 成为 canonical 文档路由入口。
+- 搜索 API（Orama）与 sitemap/robots 基线接入。
+- 文档治理指南（贡献流程与写作规范）完成并纳入门禁。
+
+## Delivered Scope
+
+1. Docs Core Bootstrap：content source + docs routing + page tree。
+2. IA Migration：核心栏目迁移与导航收口。
+3. Search/SEO Baseline：搜索路由、sitemap、robots 完成。
+4. GA Hardening：质量门禁、回归测试与发布清单闭环。
+
+## Upgrade Notes
+
+- 旧文档组织方式切换为 source-driven（`meta.json` 驱动导航）。
+- 新增或修改文档时需同步更新对应 `meta.json`。
+- 建议将 docs 质量门禁纳入常规 CI。
+
+## Quality Gates
+
+执行日期：2026-05-01 (Asia/Shanghai)
+
+```bash
+pnpm lint
+pnpm typecheck
+pnpm test
+pnpm build
+```
+
+结果：全部通过（exit code `0`）。
+
+## Known Limitations
+
+- 历史非 `/docs/*` 深链仍可能存在外部引用，需要后续逐步收敛。
+- 搜索相关性仍有优化空间，当前以结构正确性与关键词抽样为主。
+
+## References
+
+- Full repository release record: `docs/releases/v0.8.md`
+- PRD: `docs/prds/FormaUI v0.8 PRD.md`
+- Plan: `docs/superpowers/plans/2026-04-30-formaui-v0.8-implementation-plan.md`
