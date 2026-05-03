@@ -1,28 +1,77 @@
 ---
 title: admin-dashboard
-description: Template documentation for admin-dashboard.
+description: 运营控制台模板，聚焦告警、审计、模型治理与团队协作。
 ---
+
+import { AdminDashboardTemplateDemo } from "@/components/demos/templates-demos";
 
 # admin-dashboard
 
-## Overview
+`admin-dashboard` 是面向运营和治理场景的模板，适合需要统一监控、分级处理和模型策略管理的后台系统。
 
-`admin-dashboard` is an operations control template for usage visibility, run timelines, incident response, and model governance.
+它默认覆盖审批、SLA、升级事件、通知面板与成员协同模块，可作为管理端首页骨架。
 
-## Install Command
+## 可视化展示
 
-```bash
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[780px] items-center justify-center p-6">
+    <AdminDashboardTemplateDemo />
+  </div>
+</div>
+
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
 npx formaui template add admin-dashboard
 ```
 
-## What It Installs
+### 通过包依赖使用
 
-- `app/admin-dashboard/page.tsx`
-- Template registry metadata and all required registry dependencies
+```bash title="Package Manager"
+pnpm add @formaui/blocks @formaui/components
+```
 
-## Composition
+## 使用方式
 
-Primary assets included:
+```tsx title="Installed Route"
+import { DashboardShell } from "@/components/dashboard-shell";
+import { NotificationPanel } from "@/components/notification-panel";
+
+export default function AdminDashboardPage() {
+  return (
+    <DashboardShell>
+      <NotificationPanel />
+    </DashboardShell>
+  );
+}
+```
+
+## 案例
+
+### 1. 接入团队告警分派流
+
+1. 用 `NotificationPanel` 接入告警列表与分派动作。
+2. 用 `TeamMembersTable` 显示负责人和值班状态。
+3. 结合 `ModelSelector` 定义模型路由策略。
+
+### 2. 增加运营报表导出能力
+
+- 在 `PageHeader` actions 区扩展导出按钮。
+- 将关键指标区与时序图表组件联动。
+
+## API Reference
+
+### 模板输出
+
+| 项目 | 说明 |
+| --- | --- |
+| 路由文件 | `app/admin-dashboard/page.tsx` |
+| 类型 | `template` |
+| 稳定性 | `stable` |
+
+### 组合资产
 
 - `dashboard-shell`
 - `token-usage-chart`
@@ -34,7 +83,13 @@ Primary assets included:
 - `metric-card`
 - `button`
 
-## Source Code
+## 响应式与可访问性
+
+- 模板内双列区块在窄屏自动折叠为单列，保证信息连续阅读。
+- 通知、表格、选择器均继承基础组件无障碍能力。
+- 建议上线前补充键盘操作回归与颜色对比度检查。
+
+## 源码位置
 
 - `templates/admin-dashboard/page.tsx`
 - `registry/templates/admin-dashboard.json`

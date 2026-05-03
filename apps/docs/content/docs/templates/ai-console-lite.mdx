@@ -1,28 +1,77 @@
 ---
 title: ai-console-lite
-description: Template documentation for ai-console-lite.
+description: 轻量 AI 控制台模板，覆盖指标、用量、执行轨迹、密钥与设置管理。
 ---
+
+import { AiConsoleLiteTemplateDemo } from "@/components/demos/templates-demos";
 
 # ai-console-lite
 
-## Overview
+`ai-console-lite` 是一个面向 AI 产品后台的完整起步模板，适合快速搭建“监控 + 运营 + 管理”一体化页面。
 
-`ai-console-lite` is a template composition that combines dashboard structure, metrics, charts, timelines, settings, and key management.
+它组合了 `dashboard-shell`、用量图、运行轨迹、密钥管理和设置布局，可直接作为 `app/ai-console-lite/page.tsx` 的起点。
 
-## Install Command
+## 可视化展示
 
-```bash
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[760px] items-center justify-center p-6">
+    <AiConsoleLiteTemplateDemo />
+  </div>
+</div>
+
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
 npx formaui template add ai-console-lite
 ```
 
-## What It Installs
+### 通过包依赖使用
 
-- `app/ai-console-lite/page.tsx`
-- Registry dependencies required by the template graph
+```bash title="Package Manager"
+pnpm add @formaui/blocks @formaui/components
+```
 
-## Composition
+## 使用方式
 
-The template composes these primary assets:
+```tsx title="Installed Route"
+import { DashboardShell } from "@/components/dashboard-shell";
+import { TokenUsageChart } from "@/components/token-usage-chart";
+
+export default function AiConsoleLitePage() {
+  return (
+    <DashboardShell>
+      <TokenUsageChart />
+    </DashboardShell>
+  );
+}
+```
+
+## 案例
+
+### 1. 替换为业务真实数据
+
+1. 将 `MetricCard` 的演示数值替换为业务指标。
+2. 将 `TokenUsageChart` 和 `AgentRunTimeline` 绑定真实 API。
+3. 将 `ApiKeyManager` 接入密钥轮换/吊销动作。
+
+### 2. 拆分页面区域提升可维护性
+
+- 把模板中的“指标区/运行区/设置区”拆成独立容器组件。
+- 保留 `DashboardShell` 作为统一骨架，便于后续模板升级。
+
+## API Reference
+
+### 模板输出
+
+| 项目 | 说明 |
+| --- | --- |
+| 路由文件 | `app/ai-console-lite/page.tsx` |
+| 类型 | `template` |
+| 稳定性 | `stable` |
+
+### 组合资产
 
 - `dashboard-shell`
 - `token-usage-chart`
@@ -33,7 +82,13 @@ The template composes these primary assets:
 - `metric-card`
 - `button`
 
-## Source Code
+## 响应式与可访问性
+
+- 主页面继承 `DashboardShell` 响应式布局策略（移动端单列、桌面分区）。
+- 由语义化标题、按钮与表单控件组成，保留键盘访问基础。
+- 建议在接入真实数据后补充空状态与错误状态提示。
+
+## 源码位置
 
 - `templates/ai-console-lite/page.tsx`
 - `registry/templates/ai-console-lite.json`

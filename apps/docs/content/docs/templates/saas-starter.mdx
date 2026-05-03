@@ -1,28 +1,78 @@
 ---
 title: saas-starter
-description: Template documentation for saas-starter.
+description: SaaS 起步模板，整合定价、团队运营、通知与模型策略。
 ---
+
+import { SaasStarterTemplateDemo } from "@/components/demos/templates-demos";
 
 # saas-starter
 
-## Overview
+`saas-starter` 是一个偏业务化的 SaaS 页面模板，适合快速搭建“增长 + 运营 + 治理”并存的工作区首页。
 
-`saas-starter` is a production-oriented template that combines pricing, operations visibility, and model control in one starter route.
+模板默认组合定价区块、团队管理、通知面板和模型策略模块，便于从 MVP 到生产页面平滑演进。
 
-## Install Command
+## 可视化展示
 
-```bash
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[760px] items-center justify-center p-6">
+    <SaasStarterTemplateDemo />
+  </div>
+</div>
+
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
 npx formaui template add saas-starter
 ```
 
-## What It Installs
+### 通过包依赖使用
 
-- `app/saas-starter/page.tsx`
-- Template registry metadata and all required registry dependencies
+```bash title="Package Manager"
+pnpm add @formaui/blocks @formaui/components
+```
 
-## Composition
+## 使用方式
 
-Primary assets included:
+```tsx title="Installed Route"
+import { PricingSection } from "@/components/pricing-section";
+import { TeamMembersTable } from "@/components/team-members-table";
+
+export default function SaasStarterPage() {
+  return (
+    <main className="space-y-8 p-6">
+      <PricingSection />
+      <TeamMembersTable />
+    </main>
+  );
+}
+```
+
+## 案例
+
+### 1. 调整为销售驱动落地页
+
+1. 保留 `PricingSection` 作为核心转化区。
+2. 弱化运维模块，保留必要的通知摘要。
+3. 将 CTA 按钮接入你的注册/付费流程。
+
+### 2. 扩展为多租户工作区首页
+
+- 在顶部指标区增加租户级使用统计。
+- 将 `ModelSelector` 与权限体系联动，按角色显示可选模型。
+
+## API Reference
+
+### 模板输出
+
+| 项目 | 说明 |
+| --- | --- |
+| 路由文件 | `app/saas-starter/page.tsx` |
+| 类型 | `template` |
+| 稳定性 | `stable` |
+
+### 组合资产
 
 - `pricing-section`
 - `team-members-table`
@@ -33,7 +83,13 @@ Primary assets included:
 - `button`
 - `badge`
 
-## Source Code
+## 响应式与可访问性
+
+- 主内容采用纵向分区结构，移动端与桌面端都可保持清晰阅读节奏。
+- 定价卡片、表格和通知组件沿用可访问组件基线。
+- 建议为关键 CTA 提供明确文案与焦点样式验证。
+
+## 源码位置
 
 - `templates/saas-starter/page.tsx`
 - `registry/templates/saas-starter.json`
