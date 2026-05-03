@@ -1,17 +1,82 @@
 ---
 title: Figma
-description: Design kit and design-to-code workflow resources.
+description: Figma 资源与设计交付规范：命名对齐、状态映射与设计到代码协作流程。
 ---
 
 # Figma
 
-## Design Kit
+本页用于统一 FormaUI 在设计稿阶段的协作标准，重点是减少“设计命名”和“代码实现”之间的翻译成本。
 
-- Use the FormaUI component and token definitions as the source of truth for UI primitives.
-- Keep variant names aligned with code component names to reduce translation costs.
+## 适用范围
 
-## Design-to-Code Workflow
+- 负责维护 Figma 组件库、页面模板的设计团队
+- 负责将设计稿落地为 React 代码的前端团队
+- 希望建立稳定设计交付规范的项目负责人
 
-1. Start from component and block definitions in docs.
-2. Align naming and states in Figma components.
-3. Validate behavior and accessibility constraints in code before publishing.
+## 你将获得
+
+- 一套可执行的设计交付流程（从组件命名到开发验收）
+- 一套与 FormaUI 代码资产一致的命名与状态规则
+- 一份可复用的设计交付检查清单
+
+## 资源内容
+
+### 1. 组件与区块命名对齐
+
+- 组件命名优先与 `/docs/components` 的标题保持一致
+- 区块命名优先与 `/docs/blocks` 的 slug 和标题保持一致
+- 变体命名使用语义化维度（如 `size`、`variant`、`state`），避免视觉导向命名
+
+### 2. 状态与交互覆盖要求
+
+每个高频组件至少覆盖以下状态：
+
+- Default
+- Hover
+- Active
+- Focus Visible
+- Disabled
+- Loading（如组件存在异步操作）
+
+### 3. 令牌映射基线
+
+- 色彩、字体、圆角、阴影优先绑定到 Foundations 中定义的 token 语义
+- 禁止在交付组件里直接使用“无来源”的一次性样式值
+
+## 推荐工作流
+
+1. 从 [Components Overview](/docs/components) 与 [Blocks Overview](/docs/blocks) 确认目标资产范围。
+2. 在 Figma 中建立组件集，先完成结构与状态，不先做品牌化微调。
+3. 对齐命名：组件名、变体维度、变体值与代码文档保持一致。
+4. 按业务页面组合为区块，并给出默认文案与空数据态。
+5. 与前端协作完成首轮实现，针对状态差异做双向修正。
+6. 合并前执行验收清单，确认可维护性与一致性。
+
+## 验证清单
+
+- 组件名称、变体维度与文档一致
+- 关键交互状态在设计稿中可见且命名明确
+- 区块层级结构可直接映射到代码组件树
+- token 使用符合 Foundations 约束
+- 前端实现后无关键视觉偏差或状态遗漏
+
+## 常见问题
+
+### 为什么设计稿看起来一致，但代码复用率很低？
+
+常见原因是设计命名未与代码对齐，或把多个语义不同的模块混在同一个组件集里。优先拆分语义边界，再统一命名。
+
+### 是否需要先做完整高保真再交给开发？
+
+不建议。先完成结构、状态与命名对齐，再做视觉细化，整体协作效率更高。
+
+### 什么时候应该新增组件，而不是继续扩展变体？
+
+当结构语义明显变化（不仅是样式变化）时，应新增组件，避免一个组件承载过多不相关场景。
+
+## 下一步
+
+- [Foundations Overview](/docs/foundations)
+- [Components Overview](/docs/components)
+- [Blocks Overview](/docs/blocks)
+- [Templates Overview](/docs/templates/overview)

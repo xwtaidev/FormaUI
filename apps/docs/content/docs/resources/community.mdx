@@ -1,17 +1,79 @@
 ---
 title: Community
-description: Community contribution channels and ecosystem practices.
+description: 社区协作与贡献规范：反馈渠道、Issue/PR 提交流程与质量标准。
 ---
 
 # Community
 
-## Contribution Direction
+FormaUI 社区协作遵循开源项目常见实践：问题可复现、讨论可追踪、改动可验证。
 
-- Share reusable patterns as registry-ready components or blocks.
-- Propose documentation improvements with concrete migration and usage examples.
+## 适用范围
 
-## Collaboration Practices
+- 反馈功能需求、问题报告或文档改进建议
+- 贡献组件、区块、模板或文档内容
+- 参与版本迭代与发布说明完善
 
-- Prefer reproducible issue reports with command output.
-- Include screenshots and route paths for docs issues.
-- Keep naming aligned with existing IA and slug conventions.
+## 参与渠道
+
+- GitHub 仓库主页：[xwtaidev/FormaUI](https://github.com/xwtaidev/FormaUI)
+- 问题反馈（Issues）：[Report an issue](https://github.com/xwtaidev/FormaUI/issues)
+- 功能讨论（Discussions）：[Start a discussion](https://github.com/xwtaidev/FormaUI/discussions)
+
+## 贡献方向
+
+- 组件与区块：提高可复用性、可访问性和工程一致性
+- 模板与示例：补齐真实场景与迁移路径
+- 文档内容：提升可执行性、可验证性、结构一致性
+
+## 提交流程
+
+### 第 1 步：先确认问题边界
+
+- 这是 bug、功能请求，还是文档改进？
+- 是否已有相同 Issue/Discussion？
+- 能否在最新代码中稳定复现？
+
+### 第 2 步：提交高质量 Issue
+
+建议包含：
+
+- 复现步骤（按顺序）
+- 期望结果与实际结果
+- 运行环境（Node、包管理器、框架版本）
+- 关键日志或截图
+
+### 第 3 步：提交 PR
+
+建议包含：
+
+- 变更目标与动机
+- 影响范围（哪些目录与页面）
+- 验证结果（执行了哪些命令）
+- 兼容性说明（是否影响路由、命名或数据结构）
+
+## 质量标准
+
+- 命名与文档信息架构保持一致（title、slug、meta 顺序）
+- 代码和文档示例可运行、可验证
+- 不引入无来源的设计/实现约定
+- 改动尽量聚焦单一主题，减少无关修改
+
+## 常见问题
+
+### 提交文档 PR 需要跑哪些检查？
+
+至少执行 `pnpm --filter docs source:build`，若涉及较大改动建议执行完整 `test/lint/build`。
+
+### 只想提建议，不会提 PR，可以吗？
+
+可以。通过 Discussions 或 Issues 提交背景、目标和预期结果，同样有价值。
+
+### 如何提高 PR 合并效率？
+
+把问题描述、验证命令和影响范围写清楚，并保持改动聚焦，通常能显著减少往返沟通。
+
+## 下一步
+
+- [Contributing Docs](/docs/guides/contributing-docs)
+- [Content Style Guide](/docs/guides/content-style-guide)
+- [Release Notes Overview](/docs/release-notes/overview)

@@ -1,17 +1,80 @@
 ---
 title: Examples
-description: Reference examples and implementation starters.
+description: 官方示例项目指南：如何运行、验证与迁移到业务仓库。
 ---
 
 # Examples
 
-## Official Example Apps
+本页汇总 FormaUI 官方示例工程，并提供从“本地跑通”到“迁移落地”的最短路径。
 
-- `examples/next-app`: Next.js baseline integration.
-- `examples/vite-app`: Vite + React baseline integration.
+## 适用范围
 
-## Recommended Workflow
+- 正在评估 FormaUI 接入成本的团队
+- 需要一个可运行基线来验证组件、区块和主题的团队
+- 计划将示例能力迁移到现有业务项目的团队
 
-1. Start with the example closest to your runtime.
-2. Install required components/blocks/templates with CLI.
-3. Move shared abstractions into your own domain packages.
+## 示例清单
+
+| 示例 | 路径 | 技术栈 | 适用场景 |
+| --- | --- | --- | --- |
+| Next.js 示例 | `examples/next-app` | Next.js + React | App Router 应用、服务端渲染场景 |
+| Vite 示例 | `examples/vite-app` | Vite + React | 纯前端 SPA、轻量运行时场景 |
+
+## 快速开始
+
+### 第 1 步：安装依赖
+
+```bash title="Workspace Root"
+pnpm install
+```
+
+### 第 2 步：启动目标示例
+
+```bash title="Run Next.js Example"
+pnpm --filter next-app dev
+```
+
+```bash title="Run Vite Example"
+pnpm --filter vite-app dev
+```
+
+### 第 3 步：验证基础能力
+
+- 组件（如 Button、Card）渲染与交互正常
+- 区块（Blocks）布局在常见断点下展示正常
+- 控制台无关键运行错误
+
+## 推荐迁移流程
+
+1. 先选与你目标运行时一致的示例（Next.js 或 Vite）。
+2. 把示例中的主题、Tailwind preset、基础组件结构迁移到业务项目。
+3. 用 CLI 安装你需要的组件/区块，而不是整体复制示例源码。
+4. 把业务通用封装抽到共享层，避免直接在示例目录长期开发。
+
+## 验证清单
+
+- 示例能在本地稳定启动
+- 类型检查通过（`pnpm --filter <app> typecheck`）
+- 生产构建通过（`pnpm --filter <app> build`）
+- 关键页面与组件交互符合预期
+
+## 常见问题
+
+### 我应该从哪个示例开始？
+
+优先选择与你线上运行时一致的示例：SSR/混合渲染场景用 Next.js，纯 SPA 场景用 Vite。
+
+### 可以直接把整个示例目录复制到业务仓库吗？
+
+可以作为起步，但不建议长期保留。更推荐按需迁移配置与资产，保持业务仓库结构清晰。
+
+### 示例能跑通，但接入业务项目后样式不一致怎么办？
+
+先核对 Tailwind preset、全局样式入口和内容扫描路径，三者不一致最常导致样式偏差。
+
+## 下一步
+
+- [Integrations for Next.js](/docs/guides/integrations-nextjs)
+- [Integrations for Vite](/docs/guides/integrations-vite)
+- [Monorepo Strategy](/docs/guides/monorepo)
+- [CLI](/docs/cli/overview)
