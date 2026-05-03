@@ -1,0 +1,8 @@
+{
+  "title": "AI Workflows",
+  "pages": [
+    "./token-usage-chart",
+    "./model-selector",
+    "./agent-run-timeline"
+  ]
+}

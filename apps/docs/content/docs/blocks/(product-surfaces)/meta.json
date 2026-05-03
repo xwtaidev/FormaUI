@@ -1,0 +1,11 @@
+{
+  "title": "Product Surfaces",
+  "pages": [
+    "./dashboard-shell",
+    "./settings-layout",
+    "./api-key-manager",
+    "./billing-panel",
+    "./team-members-table",
+    "./notification-panel"
+  ]
+}

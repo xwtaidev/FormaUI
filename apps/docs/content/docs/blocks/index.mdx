@@ -1,0 +1,69 @@
+---
+title: Blocks Overview
+description: Blocks 章节总览：场景分组、落地策略与接入顺序。
+---
+
+import { Bot, LayoutDashboard, ShieldCheck, Sparkles } from "lucide-react";
+
+# Blocks Overview
+
+Blocks 是 FormaUI 的产品级复用层，由多个 Components 组合而成，面向真实业务页面模块。
+
+本章节按场景分组组织，目标是让你更快完成“选块、安装、拼装、定制”的交付闭环。
+
+## 本章包含内容
+
+<Cards>
+  <Card
+    title="AI Workflows"
+    description="AI 产品流程区块（TokenUsageChart / ModelSelector / AgentRunTimeline）。"
+    icon={<Bot className="text-violet-500" />}
+    href="/docs/blocks/token-usage-chart"
+  />
+  <Card
+    title="Product Surfaces"
+    description="SaaS 产品核心界面区块（DashboardShell / SettingsLayout / BillingPanel 等）。"
+    icon={<LayoutDashboard className="text-emerald-500" />}
+    href="/docs/blocks/dashboard-shell"
+  />
+  <Card
+    title="Growth & Marketing"
+    description="增长与营销区块（HeroCta / FeatureGrid / PricingSection / FinalCta 等）。"
+    icon={<Sparkles className="text-sky-500" />}
+    href="/docs/blocks/hero-cta"
+  />
+  <Card
+    title="Auth"
+    description="认证与登录入口区块（LoginPanel）。"
+    icon={<ShieldCheck className="text-amber-500" />}
+    href="/docs/blocks/login-panel"
+  />
+</Cards>
+
+## 推荐阅读顺序
+
+1. **Product Surfaces**：先搭建应用主框架与核心页面骨架。
+2. **AI Workflows**：补齐模型、用量、执行轨迹等 AI 场景能力。
+3. **Growth & Marketing**：完善获客、定价与转化链路。
+4. **Auth**：最后接入登录入口与权限入口页面。
+
+## 推荐使用流程
+
+1. 在本章按场景找到目标 Block。
+2. 使用 `npx formaui add <name>` 安装对应 Block 源码。
+3. 按业务数据结构替换示例数据，并联动主题 token 做视觉对齐。
+4. 回到 [Components Overview](/docs/components) 查阅底层组件约束，确保后续可维护性。
+
+## 适用角色
+
+- 业务前端开发者
+- 负责页面搭建效率的产品工程师
+- 负责资产复用与规范落地的设计系统维护者
+
+## 完成本章后的收益
+
+- 页面级搭建速度显著提升，减少重复拼装成本
+- 业务模块结构更统一，跨页面体验一致性更强
+- 源码可控，可在不破坏升级边界的前提下按需深度定制
+
+如果你希望进一步组合完整页面，建议继续阅读 [Templates Overview](/docs/templates/overview)。

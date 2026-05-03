@@ -1,0 +1,12 @@
+{
+  "title": "Growth & Marketing",
+  "pages": [
+    "./hero-cta",
+    "./feature-grid",
+    "./logo-cloud",
+    "./stats-strip",
+    "./pricing-section",
+    "./faq-accordion",
+    "./final-cta"
+  ]
+}

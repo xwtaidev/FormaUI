@@ -12,7 +12,7 @@ const routeConfig: Array<{
   { path: "/docs", changeFrequency: "weekly", priority: 0.95 },
   { path: "/docs/foundations/design-tokens", changeFrequency: "weekly", priority: 0.9 },
   { path: "/docs/components/overview", changeFrequency: "weekly", priority: 0.9 },
-  { path: "/docs/blocks/overview", changeFrequency: "weekly", priority: 0.88 },
+  { path: "/docs/blocks", changeFrequency: "weekly", priority: 0.88 },
   { path: "/docs/templates/overview", changeFrequency: "weekly", priority: 0.88 },
   { path: "/docs/guides/integrations-nextjs", changeFrequency: "weekly", priority: 0.87 },
   { path: "/docs/cli/overview", changeFrequency: "weekly", priority: 0.86 },
