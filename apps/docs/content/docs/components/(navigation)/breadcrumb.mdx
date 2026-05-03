@@ -1,31 +1,34 @@
 ---
 title: Breadcrumb
-description: Component documentation for Breadcrumb.
+description: 面包屑导航组件，用于展示当前页面在信息架构中的路径。
 ---
+
+import {
+  BreadcrumbInteractiveDemo,
+  ResourceBreadcrumbCaseDemo,
+} from "@/components/demos/navigation-core-demos";
 
 # Breadcrumb
 
-## Overview
+`Breadcrumb` 用于展示层级路径并帮助用户快速定位当前位置，常见于后台系统与文档站。
 
-`Breadcrumb` displays hierarchical navigation paths and clarifies the current location in a workflow.
+## 可视化展示
 
-## Installation
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[160px] items-center justify-center p-6">
+    <BreadcrumbInteractiveDemo />
+  </div>
+</div>
 
-```bash
-npx formaui add breadcrumb
-```
-
-## Usage
-
-```tsx
+```tsx title="components/demos/navigation-core-demos.tsx"
 import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
-  BreadcrumbSeparator
-} from "@/components/primitives/breadcrumb";
+  BreadcrumbSeparator,
+} from "@formaui/components";
 
 export function ProjectBreadcrumb() {
   return (
@@ -44,13 +47,86 @@ export function ProjectBreadcrumb() {
 }
 ```
 
-## Accessibility
+## 安装方式
 
-- Uses native `<nav aria-label="Breadcrumb">` semantics.
-- Current page is marked with `aria-current="page"`.
-- Link and separator structure remains screen-reader friendly.
+### 通过 CLI 安装
 
-## Source Code
+```bash title="CLI"
+npx formaui add breadcrumb
+```
+
+### 通过包依赖使用
+
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
+
+## 使用方式
+
+```tsx title="Basic Usage"
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@formaui/components";
+
+export function BasicBreadcrumb() {
+  return (
+    <Breadcrumb>
+      <BreadcrumbList>
+        <BreadcrumbItem>
+          <BreadcrumbLink href="/docs">Docs</BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbSeparator />
+        <BreadcrumbItem>
+          <BreadcrumbPage>Components</BreadcrumbPage>
+        </BreadcrumbItem>
+      </BreadcrumbList>
+    </Breadcrumb>
+  );
+}
+```
+
+## 案例
+
+### 1. 文档资源路径导航
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[140px] items-center justify-center p-6">
+    <ResourceBreadcrumbCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### 组件 Props
+
+| 组件                  | 关键 Props                | 说明                    |
+| --------------------- | ------------------------- | ----------------------- |
+| `Breadcrumb`          | `aria-label`, `className` | 外层导航容器（`<nav>`） |
+| `BreadcrumbList`      | `className`               | 路径列表容器（`<ol>`）  |
+| `BreadcrumbItem`      | `className`               | 路径节点（`<li>`）      |
+| `BreadcrumbLink`      | `href`, `className`       | 可点击路径节点          |
+| `BreadcrumbPage`      | `className`               | 当前页节点（不可点击）  |
+| `BreadcrumbSeparator` | `children`, `className`   | 分隔符节点              |
+
+### 继承属性
+
+- `Breadcrumb` 继承 `React.ComponentPropsWithoutRef<"nav">`
+- `BreadcrumbList` 继承 `React.ComponentPropsWithoutRef<"ol">`
+- `BreadcrumbLink` 继承 `React.ComponentPropsWithoutRef<"a">`
+
+## 可访问性
+
+- 使用原生 `<nav aria-label="Breadcrumb">` 语义。
+- 当前页通过 `aria-current="page"` 标记。
+- 分隔符使用 `aria-hidden`，避免重复朗读。
+- 路径层级建议控制在 2~4 层，避免冗长。
+
+## 源码位置
 
 - `packages/components/src/primitives/breadcrumb.tsx`
 - `registry/components/breadcrumb.json`

@@ -1,24 +1,35 @@
 ---
 title: Menubar
-description: Component documentation for Menubar.
+description: 桌面风格命令菜单组件，适合持续可见的命令入口。
 ---
+
+import {
+  EditorMenubarCaseDemo,
+  MenubarInteractiveDemo,
+} from "@/components/demos/command-menu-demos";
 
 # Menubar
 
-## Overview
+`Menubar` 用于承载常驻命令入口，常见于编辑器、后台工作台等高频操作场景。
 
-`Menubar` provides desktop-style command menus for actions like File, Edit, and View.
+它基于 Radix Menubar 构建，支持子菜单、勾选项、禁用项与键盘导航。
 
-## Installation
+## 可视化展示
 
-```bash
-npx formaui add menubar
-```
+<div className="not-prose my-4 overflow-visible rounded-xl border border-fd-border">
+  <div className="flex min-h-[220px] items-start justify-center overflow-visible p-6 pt-12">
+    <MenubarInteractiveDemo />
+  </div>
+</div>
 
-## Usage
-
-```tsx
-import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarTrigger } from "@/components/primitives/menubar";
+```tsx title="components/demos/command-menu-demos.tsx"
+import {
+  Menubar,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarTrigger,
+} from "@formaui/components";
 
 export function EditorMenubar() {
   return (
@@ -35,18 +46,86 @@ export function EditorMenubar() {
 }
 ```
 
-## When to Use vs Context Menu
+## 安装方式
 
-- `menubar`: always-visible action surface.
-- `context-menu`: right-click contextual action surface.
+### 通过 CLI 安装
 
-## Accessibility
+```bash title="CLI"
+npx formaui add menubar
+```
 
-- Radix provides keyboard traversal and submenu semantics.
-- Menu items support disabled and checked states.
-- Works well for productivity-heavy command surfaces.
+### 通过包依赖使用
 
-## Source Code
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
+
+## 使用方式
+
+```tsx title="Basic Usage"
+import {
+  Menubar,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarTrigger,
+} from "@formaui/components";
+
+export function EditorMenubar() {
+  return (
+    <Menubar>
+      <MenubarMenu>
+        <MenubarTrigger>File</MenubarTrigger>
+        <MenubarContent>
+          <MenubarItem>New project</MenubarItem>
+          <MenubarItem>Export report</MenubarItem>
+        </MenubarContent>
+      </MenubarMenu>
+    </Menubar>
+  );
+}
+```
+
+## 案例
+
+### 1. 编辑器命令栏
+
+<div className="not-prose my-4 overflow-visible rounded-xl border border-fd-border">
+  <div className="flex min-h-[180px] items-start justify-center overflow-visible p-6 pt-10">
+    <EditorMenubarCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### `Menubar`（Root）Props
+
+`Menubar` 继承 `React.ComponentPropsWithoutRef<typeof MenubarPrimitive.Root>`，常用参数：
+
+| Prop            | 类型                      | 默认值 | 说明             |
+| --------------- | ------------------------- | ------ | ---------------- |
+| `value`         | `string`                  | `-`    | 受控激活菜单值   |
+| `defaultValue`  | `string`                  | `-`    | 非受控初始菜单值 |
+| `onValueChange` | `(value: string) => void` | `-`    | 菜单切换回调     |
+| `className`     | `string`                  | `-`    | 根容器样式扩展   |
+
+### 常用子组件 Props
+
+| 组件                  | 关键 Props                         | 说明           |
+| --------------------- | ---------------------------------- | -------------- |
+| `MenubarTrigger`      | `disabled`, `className`            | 顶层菜单触发器 |
+| `MenubarContent`      | `align`, `sideOffset`, `className` | 下拉内容区     |
+| `MenubarItem`         | `disabled`, `inset`                | 普通命令项     |
+| `MenubarCheckboxItem` | `checked`, `onCheckedChange`       | 可勾选命令项   |
+| `MenubarSubTrigger`   | `inset`                            | 子菜单触发项   |
+
+## 可访问性
+
+- 基于 Radix，支持键盘遍历与子菜单语义。
+- 勾选项、禁用项状态对辅助技术可感知。
+- 适合常驻命令面板，不适合纯导航信息架构。
+
+## 源码位置
 
 - `packages/components/src/primitives/menubar.tsx`
 - `registry/components/menubar.json`

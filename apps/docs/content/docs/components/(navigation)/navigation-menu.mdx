@@ -1,31 +1,37 @@
 ---
 title: Navigation Menu
-description: Component documentation for Navigation Menu.
+description: 顶部导航菜单组件，支持触发展开式面板导航。
 ---
+
+import {
+  DocsNavigationCaseDemo,
+  NavigationMenuInteractiveDemo,
+  ProductNavigationCaseDemo,
+} from "@/components/demos/navigation-menu-demos";
 
 # Navigation Menu
 
-## Overview
+`NavigationMenu` 用于网站或控制台顶部导航，适合承载一级分类入口与二级内容面板。
 
-`NavigationMenu` handles top-level site navigation with expandable content panels.
+它基于 Radix Navigation Menu 构建，提供触发器、内容区、指示器和视口等组合能力。
 
-## Installation
+## 可视化展示
 
-```bash
-npx formaui add navigation-menu
-```
+<div className="not-prose my-4 overflow-visible rounded-xl border border-fd-border">
+  <div className="flex min-h-[380px] items-start justify-center overflow-visible p-6 pt-16">
+    <NavigationMenuInteractiveDemo />
+  </div>
+</div>
 
-## Usage
-
-```tsx
+```tsx title="components/demos/navigation-menu-demos.tsx"
 import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger
-} from "@/components/primitives/navigation-menu";
+  NavigationMenuTrigger,
+} from "@formaui/components";
 
 export function DocsNavigation() {
   return (
@@ -34,9 +40,14 @@ export function DocsNavigation() {
         <NavigationMenuItem>
           <NavigationMenuTrigger>Docs</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-2 p-4">
+            <ul className="grid w-[480px] gap-2 p-4 sm:grid-cols-2">
               <li>
-                <NavigationMenuLink href="/components">Component Catalog</NavigationMenuLink>
+                <NavigationMenuLink
+                  href="/docs/components"
+                  className="block rounded-md p-3 hover:bg-fd-muted"
+                >
+                  组件目录
+                </NavigationMenuLink>
               </li>
             </ul>
           </NavigationMenuContent>
@@ -47,18 +58,111 @@ export function DocsNavigation() {
 }
 ```
 
-## When to Use vs Menubar
+## 安装方式
 
-- `navigation-menu`: page and site navigation.
-- `menubar`: command-style actions (File/Edit/View).
+### 通过 CLI 安装
 
-## Accessibility
+```bash title="CLI"
+npx formaui add navigation-menu
+```
 
-- Keyboard navigation is handled by Radix roving focus.
-- Trigger and content regions expose proper open/close semantics.
-- Viewport adapts for layered desktop menus.
+### 通过包依赖使用
 
-## Source Code
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
+
+## 使用方式
+
+```tsx title="Basic Usage"
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@formaui/components";
+
+export function DocsNavigation() {
+  return (
+    <NavigationMenu>
+      <NavigationMenuList>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Docs</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid gap-2 p-4">
+              <li>
+                <NavigationMenuLink href="/components">
+                  Component Catalog
+                </NavigationMenuLink>
+              </li>
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+      </NavigationMenuList>
+    </NavigationMenu>
+  );
+}
+```
+
+## 案例
+
+### 1. 文档站导航入口
+
+<div className="not-prose my-4 overflow-visible rounded-xl border border-fd-border">
+  <div className="flex min-h-[320px] items-start justify-center overflow-visible p-6 pt-12">
+    <DocsNavigationCaseDemo />
+  </div>
+</div>
+
+### 2. 产品站导航入口
+
+<div className="not-prose my-4 overflow-visible rounded-xl border border-fd-border">
+  <div className="flex min-h-[320px] items-start justify-center overflow-visible p-6 pt-12">
+    <ProductNavigationCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### `NavigationMenu`（Root）Props
+
+`NavigationMenu` 继承 `React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Root>`，常用参数：
+
+| Prop                | 类型                      | 默认值              | 说明             |
+| ------------------- | ------------------------- | ------------------- | ---------------- |
+| `value`             | `string`                  | `-`                 | 受控激活项值     |
+| `defaultValue`      | `string`                  | `-`                 | 非受控初始激活项 |
+| `onValueChange`     | `(value: string) => void` | `-`                 | 激活项变化回调   |
+| `delayDuration`     | `number`                  | `200`（Radix 默认） | 打开延迟         |
+| `skipDelayDuration` | `number`                  | `300`（Radix 默认） | 跳过延迟时长     |
+| `className`         | `string`                  | `-`                 | 根节点样式扩展   |
+
+### 常用子组件 Props
+
+| 组件                      | 关键 Props              | 说明                 |
+| ------------------------- | ----------------------- | -------------------- |
+| `NavigationMenuTrigger`   | `disabled`, `className` | 导航触发按钮         |
+| `NavigationMenuContent`   | `className`             | 展开内容面板         |
+| `NavigationMenuLink`      | `href`, `className`     | 面板内导航链接       |
+| `NavigationMenuIndicator` | `className`             | 当前激活项下方指示器 |
+| `NavigationMenuViewport`  | `className`             | 内容区域视口容器     |
+
+### 继承属性
+
+- `NavigationMenuTrigger` 继承 `React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Trigger>`
+- `NavigationMenuContent` 继承 `React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Content>`
+- `NavigationMenuLink` 继承 `React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Link>`
+
+## 可访问性
+
+- 基于 Radix roving focus，支持键盘在菜单项间移动。
+- 触发器与内容区自动暴露展开/收起语义状态。
+- 建议每个一级入口保持信息架构清晰，避免超深层级。
+- 若用于纯命令操作（如 File/Edit/View），优先考虑 `Menubar`。
+
+## 源码位置
 
 - `packages/components/src/primitives/navigation-menu.tsx`
 - `registry/components/navigation-menu.json`

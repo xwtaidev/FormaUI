@@ -1,31 +1,112 @@
 ---
-title: AppSidebar
-description: Component documentation for AppSidebar.
+title: App Sidebar
+description: 应用侧边栏组件，适用于后台与控制台的主导航。
 ---
 
-# AppSidebar
+import {
+  AppSidebarInteractiveDemo,
+  WorkspaceSidebarCaseDemo,
+} from "@/components/demos/navigation-layout-demos";
 
-## Overview
+# App Sidebar
 
-`app-sidebar` is an installable component shipped in FormaUI v0.2.
+`AppSidebar` 用于后台应用的左侧主导航区域，支持应用名、导航项与底部补充信息。
 
-## Install Command
+## 可视化展示
 
-```bash
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[320px] items-center justify-center p-6">
+    <AppSidebarInteractiveDemo />
+  </div>
+</div>
+
+```tsx title="components/demos/navigation-layout-demos.tsx"
+import { AppSidebar } from "@formaui/components";
+
+export function WorkspaceSidebar() {
+  return (
+    <AppSidebar
+      appName="Workspace"
+      items={[
+        { label: "Dashboard", active: true },
+        { label: "Tasks" },
+        { label: "Settings" },
+      ]}
+      footer="4 seats available"
+    />
+  );
+}
+```
+
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
 npx formaui add app-sidebar
 ```
 
-## Registry Metadata
+### 通过包依赖使用
 
-- kind: `component`
-- version: `0.2.2`
-- frameworks: `react`
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
 
-## Dependencies
+## 使用方式
 
-- No registry dependencies.
+```tsx title="Basic Usage"
+import { AppSidebar } from "@formaui/components";
 
-## Source Code
+export function BasicSidebar() {
+  return (
+    <AppSidebar
+      appName="Forma Console"
+      items={[
+        { label: "Overview", active: true },
+        { label: "Projects" },
+        { label: "Members" },
+      ]}
+      footer="v0.9.0"
+    />
+  );
+}
+```
+
+## 案例
+
+### 1. 工作台主导航
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[280px] items-center justify-center p-6">
+    <WorkspaceSidebarCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### Props
+
+| Prop      | 类型               | 默认值 | 说明             |
+| --------- | ------------------ | ------ | ---------------- |
+| `appName` | `string`           | `-`    | 侧边栏顶部应用名 |
+| `items`   | `AppSidebarItem[]` | `-`    | 导航项列表       |
+| `footer`  | `string`           | `-`    | 底部辅助文案     |
+
+### `AppSidebarItem`
+
+| 字段     | 类型      | 说明             |
+| -------- | --------- | ---------------- |
+| `label`  | `string`  | 导航项名称       |
+| `href`   | `string`  | 目标链接（可选） |
+| `active` | `boolean` | 当前激活状态     |
+
+## 可访问性
+
+- 使用 `aside + nav` 结构，语义清晰。
+- 激活项通过显著视觉状态区分。
+- 建议在外层应用中补充 `aria-label` 说明导航区域用途。
+
+## 源码位置
 
 - `packages/components/src/composites/app-sidebar.tsx`
 - `registry/components/app-sidebar.json`

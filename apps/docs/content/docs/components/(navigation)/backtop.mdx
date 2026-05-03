@@ -1,37 +1,93 @@
 ---
 title: Backtop
-description: Component documentation for Backtop.
+description: 返回顶部组件，支持阈值显示与自定义滚动容器。
 ---
+
+import {
+  BacktopInteractiveDemo,
+  BacktopLongPageCaseDemo,
+} from "@/components/demos/navigation-utility-demos";
 
 # Backtop
 
-## Overview
+`Backtop` 用于在长页面或长列表中快速回到顶部，提升滚动场景下的操作效率。
 
-`Backtop` shows a floating action that scrolls users back to the top after passing a threshold.
+## 可视化展示
 
-## Installation
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[360px] items-center justify-center p-6">
+    <BacktopInteractiveDemo />
+  </div>
+</div>
 
-```bash
-npx formaui add backtop
-```
-
-## Usage
-
-```tsx
-import { Backtop } from "@/components/primitives/backtop";
+```tsx title="components/demos/navigation-utility-demos.tsx"
+import { Backtop } from "@formaui/components";
 
 export function LongPageBacktop() {
   return <Backtop visibilityHeight={160} />;
 }
 ```
 
-## v0.7 Scope
+## 安装方式
 
-- Visibility based on scroll position.
-- Supports custom target scroll container.
-- Includes smooth-scroll top behavior.
+### 通过 CLI 安装
 
-## Source Code
+```bash title="CLI"
+npx formaui add backtop
+```
+
+### 通过包依赖使用
+
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
+
+## 使用方式
+
+```tsx title="Basic Usage"
+import { Backtop } from "@formaui/components";
+
+export function PageBacktop() {
+  return <Backtop visibilityHeight={240} />;
+}
+```
+
+## 案例
+
+### 1. 面板滚动回顶
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[300px] items-center justify-center p-6">
+    <BacktopLongPageCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### Props
+
+| Prop               | 类型                                  | 默认值 | 说明                                 |
+| ------------------ | ------------------------------------- | ------ | ------------------------------------ |
+| `visibilityHeight` | `number`                              | `400`  | 超过该滚动高度后显示按钮             |
+| `target`           | `() => Window \| HTMLElement \| null` | `-`    | 自定义滚动容器获取函数               |
+| `onClick`          | `() => void`                          | `-`    | 点击回调（滚动前后触发逻辑可自定义） |
+| `className`        | `string`                              | `-`    | 按钮样式扩展                         |
+
+### 继承属性
+
+`Backtop` 继承 `Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "onClick">`，可直接使用：
+
+- `disabled`
+- `aria-*`
+- `data-*`
+
+## 可访问性
+
+- 默认提供 `aria-label="Back to top"`。
+- 使用语义化按钮，支持键盘触发。
+- 建议在移动端避免遮挡底部核心操作区。
+
+## 源码位置
 
 - `packages/components/src/primitives/backtop.tsx`
 - `registry/components/backtop.json`

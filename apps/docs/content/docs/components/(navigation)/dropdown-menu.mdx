@@ -1,31 +1,134 @@
 ---
 title: DropdownMenu
-description: Component documentation for DropdownMenu.
+description: 下拉操作菜单组件，适用于就近触发的上下文动作集合。
 ---
+
+import {
+  DropdownMenuInteractiveDemo,
+  RowActionsCaseDemo,
+} from "@/components/demos/command-menu-demos";
 
 # DropdownMenu
 
-## Overview
+`DropdownMenu` 用于在按钮附近弹出动作列表，适合列表行操作、卡片快捷操作、用户操作面板等场景。
 
-`dropdown-menu` is an installable component shipped in FormaUI v0.2.
+它支持分组、分隔线、勾选项和子菜单，能在保持界面简洁的同时提供完整操作入口。
 
-## Install Command
+## 可视化展示
 
-```bash
+<div className="not-prose my-4 overflow-visible rounded-xl border border-fd-border">
+  <div className="flex min-h-[220px] items-start justify-center overflow-visible p-6 pt-12">
+    <DropdownMenuInteractiveDemo />
+  </div>
+</div>
+
+```tsx title="components/demos/command-menu-demos.tsx"
+import {
+  Button,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@formaui/components";
+
+export function QuickActionsMenu() {
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="outline">Open Actions</Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent>
+        <DropdownMenuItem>Open Details</DropdownMenuItem>
+        <DropdownMenuItem>Copy Link</DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}
+```
+
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
 npx formaui add dropdown-menu
 ```
 
-## Registry Metadata
+### 通过包依赖使用
 
-- kind: `component`
-- version: `0.2.2`
-- frameworks: `react`
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
 
-## Dependencies
+## 使用方式
 
-- `lib-cn`
+```tsx title="Basic Usage"
+import {
+  Button,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@formaui/components";
 
-## Source Code
+export function RowMenu() {
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="ghost" size="sm">
+          Actions
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        <DropdownMenuItem>Edit</DropdownMenuItem>
+        <DropdownMenuItem>Duplicate</DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}
+```
+
+## 案例
+
+### 1. 行内操作菜单
+
+<div className="not-prose my-4 overflow-visible rounded-xl border border-fd-border">
+  <div className="flex min-h-[180px] items-start justify-center overflow-visible p-6 pt-10">
+    <RowActionsCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### `DropdownMenu`（Root）Props
+
+`DropdownMenu` 继承 `React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Root>`：
+
+| Prop           | 类型                      | 默认值               | 说明             |
+| -------------- | ------------------------- | -------------------- | ---------------- |
+| `open`         | `boolean`                 | `-`                  | 受控开关状态     |
+| `defaultOpen`  | `boolean`                 | `false`              | 非受控初始状态   |
+| `onOpenChange` | `(open: boolean) => void` | `-`                  | 开关变化回调     |
+| `modal`        | `boolean`                 | `true`（Radix 默认） | 是否模态捕获焦点 |
+
+### 常用子组件 Props
+
+| 组件                       | 关键 Props                         | 说明         |
+| -------------------------- | ---------------------------------- | ------------ |
+| `DropdownMenuTrigger`      | `asChild`                          | 触发元素包装 |
+| `DropdownMenuContent`      | `sideOffset`, `align`, `className` | 菜单内容容器 |
+| `DropdownMenuItem`         | `disabled`, `inset`                | 普通操作项   |
+| `DropdownMenuCheckboxItem` | `checked`, `onCheckedChange`       | 勾选项       |
+| `DropdownMenuSubTrigger`   | `inset`                            | 子菜单触发项 |
+
+## 可访问性
+
+- 基于 Radix DropdownMenu，支持键盘导航与焦点管理。
+- `DropdownMenuTrigger` 建议使用可访问名称明确的按钮。
+- 对危险动作建议增加视觉分隔与二次确认流程。
+- 行内操作场景建议使用 `align=\"end\"` 降低遮挡风险。
+
+## 源码位置
 
 - `packages/components/src/primitives/dropdown-menu.tsx`
 - `registry/components/dropdown-menu.json`

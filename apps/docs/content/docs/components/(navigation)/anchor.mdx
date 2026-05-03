@@ -1,31 +1,34 @@
 ---
 title: Anchor
-description: Component documentation for Anchor.
+description: 页面锚点导航组件，适用于长内容分段跳转。
 ---
+
+import {
+  AnchorArticleCaseDemo,
+  AnchorInteractiveDemo,
+} from "@/components/demos/navigation-layout-demos";
 
 # Anchor
 
-## Overview
+`Anchor` 用于当前页面内的分段导航，适合文档、说明页、设置页等长内容场景。
 
-`Anchor` provides in-page section navigation with active state highlighting.
+## 可视化展示
 
-## Installation
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[300px] items-center justify-center p-6">
+    <AnchorInteractiveDemo />
+  </div>
+</div>
 
-```bash
-npx formaui add anchor
-```
-
-## Usage
-
-```tsx
-import { Anchor } from "@/components/primitives/anchor";
+```tsx title="components/demos/navigation-layout-demos.tsx"
+import { Anchor } from "@formaui/components";
 
 export function PageAnchor() {
   return (
     <Anchor
       items={[
         { key: "overview", href: "#overview", title: "Overview" },
-        { key: "details", href: "#details", title: "Details" }
+        { key: "details", href: "#details", title: "Details" },
       ]}
       offsetTop={12}
     />
@@ -33,13 +36,78 @@ export function PageAnchor() {
 }
 ```
 
-## v0.7 Scope
+## 安装方式
 
-- Click to update active anchor state.
-- Smooth scroll to in-page hash target.
-- Auto spy based on viewport intersection is out of scope for v0.7.
+### 通过 CLI 安装
 
-## Source Code
+```bash title="CLI"
+npx formaui add anchor
+```
+
+### 通过包依赖使用
+
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
+
+## 使用方式
+
+```tsx title="Basic Usage"
+import { Anchor } from "@formaui/components";
+
+export function DocAnchor() {
+  return (
+    <Anchor
+      defaultValue="intro"
+      items={[
+        { key: "intro", href: "#intro", title: "Introduction" },
+        { key: "api", href: "#api", title: "API" },
+      ]}
+      offsetTop={80}
+    />
+  );
+}
+```
+
+## 案例
+
+### 1. 文档目录锚点
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[180px] items-center justify-center p-6">
+    <AnchorArticleCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### Props
+
+| Prop            | 类型                      | 默认值          | 说明               |
+| --------------- | ------------------------- | --------------- | ------------------ |
+| `items`         | `AnchorItem[]`            | `-`             | 锚点项列表（必填） |
+| `value`         | `string`                  | `-`             | 受控激活项 key     |
+| `defaultValue`  | `string`                  | `items[0]?.key` | 非受控初始激活项   |
+| `onValueChange` | `(value: string) => void` | `-`             | 激活项变化回调     |
+| `offsetTop`     | `number`                  | `0`             | 滚动偏移量         |
+| `className`     | `string`                  | `-`             | 容器样式扩展       |
+
+### `AnchorItem`
+
+| 字段    | 类型        | 说明                     |
+| ------- | ----------- | ------------------------ |
+| `key`   | `string`    | 锚点唯一标识             |
+| `href`  | `string`    | 锚点目标（通常为 `#id`） |
+| `title` | `ReactNode` | 导航文案                 |
+
+## 可访问性
+
+- 使用 `nav` 语义容器，便于辅助技术识别为导航区。
+- 当前激活项通过 `aria-current="location"` 标记。
+- 建议目标区块有清晰标题，并与锚点文案一致。
+- 当前版本不包含自动滚动监听（scroll spy）。
+
+## 源码位置
 
 - `packages/components/src/primitives/anchor.tsx`
 - `registry/components/anchor.json`

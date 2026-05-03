@@ -1,29 +1,39 @@
 ---
 title: Context Menu
-description: Component documentation for Context Menu.
+description: 上下文菜单组件，适用于目标元素就近操作。
 ---
+
+import {
+  ContextMenuInteractiveDemo,
+  GridContextCaseDemo,
+} from "@/components/demos/navigation-core-demos";
 
 # Context Menu
 
-## Overview
+`ContextMenu` 用于在右键（或长按）目标元素时提供上下文相关操作，适合表格行、卡片、树节点等局部操作场景。
 
-`ContextMenu` exposes contextual commands from right-click or long-press interactions.
+## 可视化展示
 
-## Installation
+<div className="not-prose my-4 overflow-visible rounded-xl border border-fd-border">
+  <div className="flex min-h-[260px] items-start justify-center overflow-visible p-6 pt-14">
+    <ContextMenuInteractiveDemo />
+  </div>
+</div>
 
-```bash
-npx formaui add context-menu
-```
-
-## Usage
-
-```tsx
-import { ContextMenu, ContextMenuContent, ContextMenuItem, ContextMenuTrigger } from "@/components/primitives/context-menu";
+```tsx title="components/demos/navigation-core-demos.tsx"
+import {
+  ContextMenu,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuTrigger,
+} from "@formaui/components";
 
 export function GridContextMenu() {
   return (
     <ContextMenu>
-      <ContextMenuTrigger className="rounded-md border border-dashed p-6">Right-click this card</ContextMenuTrigger>
+      <ContextMenuTrigger className="rounded-md border border-dashed p-6">
+        Right-click this card
+      </ContextMenuTrigger>
       <ContextMenuContent>
         <ContextMenuItem>Duplicate row</ContextMenuItem>
         <ContextMenuItem>Archive row</ContextMenuItem>
@@ -33,18 +43,82 @@ export function GridContextMenu() {
 }
 ```
 
-## When to Use vs Menubar
+## 安装方式
 
-- `context-menu`: action scope is tied to a specific target element.
-- `menubar`: action scope is global for the current screen.
+### 通过 CLI 安装
 
-## Accessibility
+```bash title="CLI"
+npx formaui add context-menu
+```
 
-- Supports keyboard opening and navigation through Radix behaviors.
-- Preserves semantic menuitem roles for assistive technologies.
-- Can be configured for non-modal interaction zones when needed.
+### 通过包依赖使用
 
-## Source Code
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
+
+## 使用方式
+
+```tsx title="Basic Usage"
+import {
+  ContextMenu,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuTrigger,
+} from "@formaui/components";
+
+export function CardContextMenu() {
+  return (
+    <ContextMenu>
+      <ContextMenuTrigger>Card A-102</ContextMenuTrigger>
+      <ContextMenuContent>
+        <ContextMenuItem>Edit</ContextMenuItem>
+        <ContextMenuItem>Copy link</ContextMenuItem>
+      </ContextMenuContent>
+    </ContextMenu>
+  );
+}
+```
+
+## 案例
+
+### 1. 卡片右键操作
+
+<div className="not-prose my-4 overflow-visible rounded-xl border border-fd-border">
+  <div className="flex min-h-[200px] items-start justify-center overflow-visible p-6 pt-12">
+    <GridContextCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### `ContextMenu`（Root）Props
+
+`ContextMenu` 继承 `React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.Root>`：
+
+| Prop           | 类型                      | 默认值               | 说明                 |
+| -------------- | ------------------------- | -------------------- | -------------------- |
+| `modal`        | `boolean`                 | `true`（Radix 默认） | 是否使用模态焦点策略 |
+| `onOpenChange` | `(open: boolean) => void` | `-`                  | 开关状态变化回调     |
+
+### 常用子组件 Props
+
+| 组件                      | 关键 Props                         | 说明         |
+| ------------------------- | ---------------------------------- | ------------ |
+| `ContextMenuTrigger`      | `disabled`                         | 触发目标区域 |
+| `ContextMenuContent`      | `className`, `sideOffset`（Radix） | 菜单内容容器 |
+| `ContextMenuItem`         | `disabled`, `inset`                | 普通操作项   |
+| `ContextMenuCheckboxItem` | `checked`, `onCheckedChange`       | 可勾选项     |
+| `ContextMenuSubTrigger`   | `inset`                            | 子菜单触发项 |
+
+## 可访问性
+
+- 基于 Radix，支持键盘打开与菜单内导航。
+- 菜单项保持 `menuitem` 语义，便于辅助技术识别。
+- 对高风险操作建议增加分隔和确认流程。
+- 触发区域应有明确视觉提示，避免误触发。
+
+## 源码位置
 
 - `packages/components/src/primitives/context-menu.tsx`
 - `registry/components/context-menu.json`

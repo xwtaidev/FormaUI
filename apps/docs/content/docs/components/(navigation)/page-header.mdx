@@ -1,31 +1,97 @@
 ---
-title: PageHeader
-description: Component documentation for PageHeader.
+title: Page Header
+description: 页面头部组件，用于统一标题、描述与操作区布局。
 ---
 
-# PageHeader
+import {
+  PageHeaderInteractiveDemo,
+  ProjectHeaderCaseDemo,
+} from "@/components/demos/navigation-layout-demos";
 
-## Overview
+# Page Header
 
-`page-header` is an installable component shipped in FormaUI v0.2.
+`PageHeader` 用于页面顶部信息区，统一承载标题、说明文案与右侧操作按钮。
 
-## Install Command
+## 可视化展示
 
-```bash
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[220px] items-center justify-center p-6">
+    <PageHeaderInteractiveDemo />
+  </div>
+</div>
+
+```tsx title="components/demos/navigation-layout-demos.tsx"
+import { Button, PageHeader } from "@formaui/components";
+
+export function ProjectHeader() {
+  return (
+    <PageHeader
+      title="Projects"
+      description="管理项目、成员与发布节奏。"
+      actions={<Button>新建项目</Button>}
+    />
+  );
+}
+```
+
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
 npx formaui add page-header
 ```
 
-## Registry Metadata
+### 通过包依赖使用
 
-- kind: `component`
-- version: `0.2.2`
-- frameworks: `react`
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
 
-## Dependencies
+## 使用方式
 
-- `lib-cn`
+```tsx title="Basic Usage"
+import { Button, PageHeader } from "@formaui/components";
 
-## Source Code
+export function TeamPageHeader() {
+  return (
+    <PageHeader
+      title="Team"
+      description="管理成员权限与协作规则。"
+      actions={<Button variant="outline">邀请成员</Button>}
+    />
+  );
+}
+```
+
+## 案例
+
+### 1. 项目页顶部信息区
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[160px] items-center justify-center p-6">
+    <ProjectHeaderCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### Props
+
+| Prop          | 类型        | 默认值 | 说明             |
+| ------------- | ----------- | ------ | ---------------- |
+| `title`       | `string`    | `-`    | 页面主标题       |
+| `description` | `string`    | `-`    | 标题下方说明文案 |
+| `actions`     | `ReactNode` | `-`    | 右侧操作区内容   |
+| `className`   | `string`    | `-`    | 外层容器样式扩展 |
+
+## 可访问性
+
+- 标题使用语义化层级（组件内为 `h1`）。
+- 操作区建议使用具备可访问名称的按钮控件。
+- 说明文案应简洁，避免与正文重复。
+
+## 源码位置
 
 - `packages/components/src/composites/page-header.tsx`
 - `registry/components/page-header.json`
