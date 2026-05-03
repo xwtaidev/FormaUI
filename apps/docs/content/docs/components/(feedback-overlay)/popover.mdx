@@ -1,25 +1,32 @@
 ---
 title: Popover
-description: Component documentation for Popover.
+description: 浮层弹出组件，适用于就近配置、短表单与快捷操作。
 ---
+
+import {
+  FilterPopoverCaseDemo,
+  PopoverInteractiveDemo,
+} from "@/components/demos/popover-hover-tooltip-demos";
 
 # Popover
 
-## Overview
+`Popover` 用于在触发元素附近展示上下文内容，适合筛选面板、短配置项、轻量操作集合。
 
-`Popover` is a focused overlay for contextual actions, short forms, or configuration controls.
+## 可视化展示
 
-## Installation
+<div className="not-prose my-4 overflow-visible rounded-xl border border-fd-border">
+  <div className="flex min-h-[220px] items-start justify-center overflow-visible p-6 pt-12">
+    <PopoverInteractiveDemo />
+  </div>
+</div>
 
-```bash
-npx formaui add popover
-```
-
-## Usage
-
-```tsx
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/primitives/popover";
-import { Button } from "@/components/primitives/button";
+```tsx title="components/demos/popover-hover-tooltip-demos.tsx"
+import {
+  Button,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@formaui/components";
 
 export function FiltersPopover() {
   return (
@@ -33,13 +40,82 @@ export function FiltersPopover() {
 }
 ```
 
-## Accessibility
+## 安装方式
 
-- Uses Radix focus management for layered content.
-- Supports Escape to dismiss and returns focus to trigger.
-- Works with keyboard navigation inside popover content.
+### 通过 CLI 安装
 
-## Source Code
+```bash title="CLI"
+npx formaui add popover
+```
+
+### 通过包依赖使用
+
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
+
+## 使用方式
+
+```tsx title="Basic Usage"
+import {
+  Button,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@formaui/components";
+
+export function QuickConfigPopover() {
+  return (
+    <Popover>
+      <PopoverTrigger asChild>
+        <Button variant="outline" size="sm">
+          快速配置
+        </Button>
+      </PopoverTrigger>
+      <PopoverContent className="w-72">配置项内容</PopoverContent>
+    </Popover>
+  );
+}
+```
+
+## 案例
+
+### 1. 高级筛选浮层
+
+<div className="not-prose my-4 overflow-visible rounded-xl border border-fd-border">
+  <div className="flex min-h-[180px] items-start justify-center overflow-visible p-6 pt-10">
+    <FilterPopoverCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### `Popover`（Root）Props
+
+`Popover` 继承 `React.ComponentPropsWithoutRef<typeof PopoverPrimitive.Root>`：
+
+| Prop           | 类型                      | 默认值                | 说明                 |
+| -------------- | ------------------------- | --------------------- | -------------------- |
+| `open`         | `boolean`                 | `-`                   | 受控开关状态         |
+| `defaultOpen`  | `boolean`                 | `false`               | 非受控初始状态       |
+| `onOpenChange` | `(open: boolean) => void` | `-`                   | 开关变化回调         |
+| `modal`        | `boolean`                 | `false`（Radix 默认） | 是否启用模态焦点行为 |
+
+### `PopoverContent` Props
+
+| Prop         | 类型                           | 默认值     | 说明             |
+| ------------ | ------------------------------ | ---------- | ---------------- |
+| `align`      | `"start" \| "center" \| "end"` | `"center"` | 内容对齐方式     |
+| `sideOffset` | `number`                       | `4`        | 与触发器间距     |
+| `className`  | `string`                       | `-`        | 内容容器样式扩展 |
+
+## 可访问性
+
+- 具备 Esc 关闭与焦点回退至触发器行为。
+- 建议触发器使用有明确语义的按钮文案。
+- 浮层内容建议控制在短流程，避免替代完整页面。
+
+## 源码位置
 
 - `packages/components/src/primitives/popover.tsx`
 - `registry/components/popover.json`

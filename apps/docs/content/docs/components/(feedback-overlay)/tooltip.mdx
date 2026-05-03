@@ -1,31 +1,131 @@
 ---
 title: Tooltip
-description: Component documentation for Tooltip.
+description: 轻量提示组件，适用于图标按钮与短文案解释。
 ---
+
+import {
+  IconTooltipCaseDemo,
+  TooltipInteractiveDemo,
+} from "@/components/demos/popover-hover-tooltip-demos";
 
 # Tooltip
 
-## Overview
+`Tooltip` 用于展示简短提示文案，适合图标按钮含义说明、状态解释和快捷键提示。
 
-`tooltip` is an installable component shipped in FormaUI v0.2.
+## 可视化展示
 
-## Install Command
+<div className="not-prose my-4 overflow-visible rounded-xl border border-fd-border">
+  <div className="flex min-h-[200px] items-start justify-center overflow-visible p-6 pt-12">
+    <TooltipInteractiveDemo />
+  </div>
+</div>
 
-```bash
+```tsx title="components/demos/popover-hover-tooltip-demos.tsx"
+import {
+  Button,
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@formaui/components";
+
+export function SaveTooltip() {
+  return (
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button variant="outline" size="sm">
+            保存
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>保存当前草稿</TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
+  );
+}
+```
+
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
 npx formaui add tooltip
 ```
 
-## Registry Metadata
+### 通过包依赖使用
 
-- kind: `component`
-- version: `0.2.2`
-- frameworks: `react`
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
 
-## Dependencies
+## 使用方式
 
-- `lib-cn`
+```tsx title="Basic Usage"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@formaui/components";
 
-## Source Code
+export function BasicTooltip() {
+  return (
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <span className="underline decoration-dotted">
+            什么是 API Credits？
+          </span>
+        </TooltipTrigger>
+        <TooltipContent>用于计量模型调用消耗的额度。</TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
+  );
+}
+```
+
+## 案例
+
+### 1. 图标按钮提示
+
+<div className="not-prose my-4 overflow-visible rounded-xl border border-fd-border">
+  <div className="flex min-h-[160px] items-start justify-center overflow-visible p-6 pt-10">
+    <IconTooltipCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### `TooltipProvider` Props
+
+| Prop                | 类型     | 默认值              | 说明                 |
+| ------------------- | -------- | ------------------- | -------------------- |
+| `delayDuration`     | `number` | `700`（Radix 默认） | 全局打开延迟         |
+| `skipDelayDuration` | `number` | `300`（Radix 默认） | 连续触发跳过延迟时长 |
+
+### `Tooltip`（Root）Props
+
+| Prop           | 类型                      | 默认值  | 说明           |
+| -------------- | ------------------------- | ------- | -------------- |
+| `open`         | `boolean`                 | `-`     | 受控开关状态   |
+| `defaultOpen`  | `boolean`                 | `false` | 非受控初始状态 |
+| `onOpenChange` | `(open: boolean) => void` | `-`     | 开关变化回调   |
+
+### `TooltipContent` Props
+
+| Prop         | 类型     | 默认值 | 说明           |
+| ------------ | -------- | ------ | -------------- |
+| `sideOffset` | `number` | `4`    | 与触发器间距   |
+| `className`  | `string` | `-`    | 提示层样式扩展 |
+
+## 可访问性
+
+- 建议 Tooltip 文案保持简短，不承载关键操作。
+- 触发元素需具备可访问名称（文本或 `aria-label`）。
+- 在移动端应避免依赖仅悬停可见的信息。
+
+## 源码位置
 
 - `packages/components/src/primitives/tooltip.tsx`
 - `registry/components/tooltip.json`
