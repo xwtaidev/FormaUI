@@ -1,0 +1,66 @@
+---
+title: Templates Overview
+description: Templates 章节总览：场景模板、组合策略与落地步骤。
+---
+
+import { Gauge, ShieldCheck, Sparkles } from "lucide-react";
+
+# Templates Overview
+
+Templates 是 FormaUI 的页面起步章节，聚焦三个问题：
+
+- 如何基于成熟组合快速起一个可运行页面
+- 如何在保留源码所有权的前提下按业务改造
+- 如何把组件与区块复用沉淀成团队级页面范式
+
+如果你的团队希望从“组件拼装”升级到“页面级交付”，建议在完成 Components 和 Blocks 后进入本章节。
+
+## 本章包含内容
+
+<Cards>
+  <Card
+    title="ai-console-lite"
+    description="轻量 AI 控制台模板，覆盖指标、用量、执行轨迹与密钥管理。"
+    icon={<Sparkles className="text-violet-500" />}
+    href="/docs/templates/ai-console-lite"
+  />
+  <Card
+    title="admin-dashboard"
+    description="运营控制台模板，聚焦告警分级、运行审计、模型治理与团队协作。"
+    icon={<ShieldCheck className="text-emerald-500" />}
+    href="/docs/templates/admin-dashboard"
+  />
+  <Card
+    title="saas-starter"
+    description="SaaS 起步模板，整合定价、成员管理、通知与模型策略入口。"
+    icon={<Gauge className="text-sky-500" />}
+    href="/docs/templates/saas-starter"
+  />
+</Cards>
+
+## 建议阅读顺序
+
+1. **ai-console-lite**：先理解 AI 产品基础控制台组合方式。
+2. **admin-dashboard**：再进入运营与治理视角的复杂页面拼装。
+3. **saas-starter**：最后落地到完整 SaaS 起步页面结构。
+
+## 推荐使用流程
+
+1. 按业务场景选择最接近的模板。
+2. 使用 `npx formaui template add <name>` 安装模板源码。
+3. 优先替换页面数据结构和文案，再调整布局与交互细节。
+4. 回查 [Blocks Overview](/docs/blocks) 与 [Foundations Overview](/docs/foundations) 校验复用边界与主题一致性。
+
+## 适用角色
+
+- 负责页面快速交付的产品前端开发者
+- 负责搭建内部 Starter Kit 的工程团队
+- 需要统一多业务线页面骨架的设计系统维护者
+
+## 完成本章后的收益
+
+- 页面起步时间从“天级拼装”收敛到“小时级改造”
+- 复杂页面结构具备可复制的组合范式
+- 模板、区块、组件之间形成可持续演进的工程闭环
+
+如果你希望进一步规范安装、发布与版本管理流程，建议继续阅读 [Registry Overview](/docs/registry/overview) 与 [CLI Overview](/docs/cli/overview)。

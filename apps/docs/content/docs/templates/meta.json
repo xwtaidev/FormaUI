@@ -2,7 +2,6 @@
   "title": "Templates",
   "icon": "LayoutTemplate",
   "pages": [
-    "./overview",
     "./ai-console-lite",
     "./admin-dashboard",
     "./saas-starter"
