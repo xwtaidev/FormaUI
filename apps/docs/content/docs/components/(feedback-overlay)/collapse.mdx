@@ -1,42 +1,114 @@
 ---
 title: Collapse
-description: Component documentation for Collapse.
+description: 折叠面板组件，适用于展开/收起次级内容。
 ---
+
+import {
+  CollapseInteractiveDemo,
+  FiltersCollapseCaseDemo,
+} from "@/components/demos/feedback-structure-demos";
 
 # Collapse
 
-## Overview
+`Collapse` 用于在不离开当前页面上下文的情况下展开或收起补充内容。
 
-`Collapse` reveals or hides secondary content inline without leaving the current page context.
+## 可视化展示
 
-## Installation
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[260px] items-center justify-center p-6">
+    <CollapseInteractiveDemo />
+  </div>
+</div>
 
-```bash
-npx formaui add collapse
-```
-
-## Usage
-
-```tsx
-import { Collapse, CollapseContent, CollapseTrigger } from "@/components/primitives/collapse";
+```tsx title="components/demos/feedback-structure-demos.tsx"
+import {
+  Collapse,
+  CollapseContent,
+  CollapseTrigger,
+} from "@formaui/components";
 
 export function FiltersCollapse() {
   return (
     <Collapse>
       <CollapseTrigger>Advanced filters</CollapseTrigger>
-      <CollapseContent>Project status, owner, and date-range selectors.</CollapseContent>
+      <CollapseContent>
+        Project status, owner, and date-range selectors.
+      </CollapseContent>
     </Collapse>
   );
 }
 ```
 
-## Accessibility
+## 安装方式
 
-- Trigger is keyboard reachable and announced as a button.
-- Uses Radix state semantics for expanded/collapsed transitions.
-- Suitable for dense forms and stacked settings panels.
+### 通过 CLI 安装
 
-## Source Code
+```bash title="CLI"
+npx formaui add collapse
+```
+
+### 通过包依赖使用
+
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
+
+## 使用方式
+
+```tsx title="Basic Usage"
+import {
+  Collapse,
+  CollapseContent,
+  CollapseTrigger,
+} from "@formaui/components";
+
+export function SettingsCollapse() {
+  return (
+    <Collapse defaultOpen>
+      <CollapseTrigger>高级设置</CollapseTrigger>
+      <CollapseContent>通知频率、缓存策略与实验特性配置。</CollapseContent>
+    </Collapse>
+  );
+}
+```
+
+## 案例
+
+### 1. 高级筛选折叠区
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[180px] items-center justify-center p-6">
+    <FiltersCollapseCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### `Collapse`（Root）Props
+
+`Collapse` 继承 `React.ComponentPropsWithoutRef<typeof CollapsiblePrimitive.Root>`：
+
+| Prop           | 类型                      | 默认值  | 说明           |
+| -------------- | ------------------------- | ------- | -------------- |
+| `open`         | `boolean`                 | `-`     | 受控开关状态   |
+| `defaultOpen`  | `boolean`                 | `false` | 非受控初始状态 |
+| `onOpenChange` | `(open: boolean) => void` | `-`     | 开关变化回调   |
+| `disabled`     | `boolean`                 | `false` | 禁用交互       |
+
+### 常用子组件 Props
+
+| 组件              | 关键 Props  | 说明         |
+| ----------------- | ----------- | ------------ |
+| `CollapseTrigger` | `className` | 触发器按钮   |
+| `CollapseContent` | `className` | 折叠内容容器 |
+
+## 可访问性
+
+- 触发器默认可键盘访问并暴露展开状态。
+- 适合承载次级信息，不建议隐藏关键主路径内容。
+- 长内容建议分段，避免单次展开信息过密。
+
+## 源码位置
 
 - `packages/components/src/primitives/collapse.tsx`
 - `registry/components/collapse.json`

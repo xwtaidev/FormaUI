@@ -1,49 +1,126 @@
 ---
 title: Accordion
-description: Component documentation for Accordion.
+description: 手风琴组件，适用于多段内容的渐进式展开。
 ---
+
+import {
+  AccordionInteractiveDemo,
+  FAQAccordionCaseDemo,
+} from "@/components/demos/feedback-structure-demos";
 
 # Accordion
 
-## Overview
+`Accordion` 用于按条目逐段展开内容，适合 FAQ、配置分组、信息分层展示等场景。
 
-`Accordion` helps reveal dense content progressively while preserving keyboard-first navigation.
+## 可视化展示
 
-## Installation
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[280px] items-center justify-center p-6">
+    <AccordionInteractiveDemo />
+  </div>
+</div>
 
-```bash
-npx formaui add accordion
-```
-
-## Usage
-
-```tsx
+```tsx title="components/demos/feedback-structure-demos.tsx"
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
-  AccordionTrigger
-} from "@/components/primitives/accordion";
+  AccordionTrigger,
+} from "@formaui/components";
 
 export function FAQAccordion() {
   return (
     <Accordion type="single" collapsible>
       <AccordionItem value="item-1">
         <AccordionTrigger>What is FormaUI?</AccordionTrigger>
-        <AccordionContent>FormaUI is a source-owned design system for React teams.</AccordionContent>
+        <AccordionContent>
+          FormaUI is a source-owned design system for React teams.
+        </AccordionContent>
       </AccordionItem>
     </Accordion>
   );
 }
 ```
 
-## Accessibility
+## 安装方式
 
-- Uses Radix semantics for `aria-expanded` and `aria-controls`.
-- Trigger remains keyboard focusable with visible focus ring styles.
-- Supports Enter/Space activation on the trigger button.
+### 通过 CLI 安装
 
-## Source Code
+```bash title="CLI"
+npx formaui add accordion
+```
+
+### 通过包依赖使用
+
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
+
+## 使用方式
+
+```tsx title="Basic Usage"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@formaui/components";
+
+export function PolicyAccordion() {
+  return (
+    <Accordion type="multiple" className="w-full">
+      <AccordionItem value="security">
+        <AccordionTrigger>安全策略</AccordionTrigger>
+        <AccordionContent>支持权限隔离、审计日志与访问控制。</AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="billing">
+        <AccordionTrigger>计费策略</AccordionTrigger>
+        <AccordionContent>支持月付、年付与配额管理。</AccordionContent>
+      </AccordionItem>
+    </Accordion>
+  );
+}
+```
+
+## 案例
+
+### 1. FAQ 手风琴
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[180px] items-center justify-center p-6">
+    <FAQAccordionCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### `Accordion`（Root）Props
+
+`Accordion` 继承 `React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Root>`：
+
+| Prop            | 类型                     | 默认值                 | 说明             |
+| --------------- | ------------------------ | ---------------------- | ---------------- |
+| `type`          | `"single" \| "multiple"` | `-`                    | 展开模式（必填） |
+| `value`         | `string \| string[]`     | `-`                    | 受控激活项       |
+| `defaultValue`  | `string \| string[]`     | `-`                    | 非受控初始激活项 |
+| `onValueChange` | `(value: any) => void`   | `-`                    | 激活项变化回调   |
+| `collapsible`   | `boolean`                | `false`（single 模式） | 是否允许全部收起 |
+
+### 常用子组件 Props
+
+| 组件               | 关键 Props  | 说明         |
+| ------------------ | ----------- | ------------ |
+| `AccordionItem`    | `value`     | 单个条目容器 |
+| `AccordionTrigger` | `className` | 条目触发器   |
+| `AccordionContent` | `className` | 条目内容区   |
+
+## 可访问性
+
+- 基于 Radix 语义，自动处理 `aria-expanded` 与 `aria-controls`。
+- Trigger 保持键盘可聚焦与回车/空格触发。
+- 建议标题明确且可扫描，提升多项内容检索效率。
+
+## 源码位置
 
 - `packages/components/src/primitives/accordion.tsx`
 - `registry/components/accordion.json`

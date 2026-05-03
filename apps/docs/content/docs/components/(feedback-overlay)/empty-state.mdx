@@ -1,31 +1,97 @@
 ---
-title: EmptyState
-description: Component documentation for EmptyState.
+title: Empty State
+description: 空状态组件，适用于无数据、无结果与引导下一步操作场景。
 ---
 
-# EmptyState
+import {
+  EmptySearchCaseDemo,
+  EmptyStateInteractiveDemo,
+} from "@/components/demos/feedback-structure-demos";
 
-## Overview
+# Empty State
 
-`empty-state` is an installable component shipped in FormaUI v0.2.
+`EmptyState` 用于在内容为空时提供状态说明和下一步动作，引导用户从“无内容”进入“可行动”状态。
 
-## Install Command
+## 可视化展示
 
-```bash
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[280px] items-center justify-center p-6">
+    <EmptyStateInteractiveDemo />
+  </div>
+</div>
+
+```tsx title="components/demos/feedback-structure-demos.tsx"
+import { EmptyState } from "@formaui/components";
+
+export function ProjectEmptyState() {
+  return (
+    <EmptyState
+      title="暂无项目"
+      description="创建你的第一个项目以开始协作。"
+      actionLabel="新建项目"
+    />
+  );
+}
+```
+
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
 npx formaui add empty-state
 ```
 
-## Registry Metadata
+### 通过包依赖使用
 
-- kind: `component`
-- version: `0.2.2`
-- frameworks: `react`
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
 
-## Dependencies
+## 使用方式
 
-- `button`
+```tsx title="Basic Usage"
+import { EmptyState } from "@formaui/components";
 
-## Source Code
+export function SearchEmpty() {
+  return (
+    <EmptyState
+      title="未找到结果"
+      description="尝试调整关键词或清空筛选。"
+      actionLabel="清空筛选"
+    />
+  );
+}
+```
+
+## 案例
+
+### 1. 搜索无结果态
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[180px] items-center justify-center p-6">
+    <EmptySearchCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### Props
+
+| Prop          | 类型         | 默认值 | 说明         |
+| ------------- | ------------ | ------ | ------------ |
+| `title`       | `string`     | `-`    | 空状态主标题 |
+| `description` | `string`     | `-`    | 说明文案     |
+| `actionLabel` | `string`     | `-`    | 操作按钮文案 |
+| `onAction`    | `() => void` | `-`    | 操作按钮回调 |
+
+## 可访问性
+
+- 标题与描述应直观解释“为什么为空”和“下一步做什么”。
+- 动作按钮建议使用可执行动词（如“新建”、“重试”、“清空筛选”）。
+- 空状态不应替代错误状态，异常场景建议使用 `Alert` 或 `Result`。
+
+## 源码位置
 
 - `packages/components/src/composites/empty-state.tsx`
 - `registry/components/empty-state.json`
