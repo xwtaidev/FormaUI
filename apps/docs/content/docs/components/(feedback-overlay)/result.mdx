@@ -1,25 +1,27 @@
 ---
 title: Result
-description: Component documentation for Result.
+description: 页面级结果反馈组件，适用于成功、信息、警告、错误等状态展示。
 ---
+
+import {
+  ResultCaseDemo,
+  ResultInteractiveDemo,
+} from "@/components/demos/feedback-structure-demos";
 
 # Result
 
-## Overview
+`Result` 用于在关键流程完成后提供页面级反馈，支持状态图标、标题描述与后续操作区域。
 
-`Result` is a page-level feedback surface for success, warning, info, and error outcomes.
+## 可视化展示
 
-## Installation
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[320px] items-center justify-center p-6">
+    <ResultInteractiveDemo />
+  </div>
+</div>
 
-```bash
-npx formaui add result
-```
-
-## Usage
-
-```tsx
-import { Button } from "@/components/primitives/button";
-import { Result } from "@/components/primitives/result";
+```tsx title="components/demos/feedback-structure-demos.tsx"
+import { Button, Result } from "@formaui/components";
 
 export function SaveOutcome() {
   return (
@@ -33,13 +35,76 @@ export function SaveOutcome() {
 }
 ```
 
-## v0.7 Scope
+## 安装方式
 
-- Page-level outcome feedback with optional extra action area.
-- Preset status icon styles for `success` `info` `warning` `error`.
-- Inline notices still belong to `alert`.
+### 通过 CLI 安装
 
-## Source Code
+```bash title="CLI"
+npx formaui add result
+```
+
+### 通过包依赖使用
+
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
+
+## 使用方式
+
+```tsx title="Basic Usage"
+import { Button, Result } from "@formaui/components";
+
+export function SaveOutcome() {
+  return (
+    <Result
+      status="success"
+      title="Saved successfully"
+      description="Your workspace settings are now active."
+      extra={<Button size="sm">Back to dashboard</Button>}
+    />
+  );
+}
+```
+
+## 案例
+
+### 1. 同步失败重试反馈
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[220px] items-center justify-center p-6">
+    <ResultCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### Props
+
+| Prop          | 类型                                          | 默认值   | 说明                         |
+| ------------- | --------------------------------------------- | -------- | ---------------------------- |
+| `status`      | `"success" \| "info" \| "warning" \| "error"` | `"info"` | 状态语义，影响默认图标与颜色 |
+| `title`       | `React.ReactNode`                             | `-`      | 结果标题（必填）             |
+| `description` | `React.ReactNode`                             | `-`      | 结果描述文案                 |
+| `extra`       | `React.ReactNode`                             | `-`      | 额外操作区域                 |
+| `icon`        | `React.ReactNode`                             | `-`      | 自定义图标，覆盖默认图标     |
+| `className`   | `string`                                      | `-`      | 追加容器样式                 |
+
+### 继承属性
+
+`Result` 继承 `React.HTMLAttributes<HTMLDivElement>`（除 `title`），可直接使用：
+
+- `id`
+- `aria-*`
+- `data-*`
+- `onClick`
+
+## 可访问性
+
+- 组件根节点使用 `role="status"`，可向辅助技术标识状态反馈。
+- 标题应准确描述结果，描述区域提供可执行下一步建议。
+- 若同时提供 `extra` 操作，建议保持 1-2 个高优先级动作。
+
+## 源码位置
 
 - `packages/components/src/primitives/result.tsx`
 - `registry/components/result.json`

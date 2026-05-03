@@ -10,7 +10,10 @@ import {
   Collapse,
   CollapseContent,
   CollapseTrigger,
+  EmptySearchState,
   EmptyState,
+  Result,
+  Spin,
   Toast,
   ToastClose,
   ToastDescription,
@@ -182,5 +185,113 @@ export function EmptySearchCaseDemo() {
       description="Try adjusting keywords or removing filters."
       actionLabel="Reset filters"
     />
+  );
+}
+
+export function EmptySearchStateInteractiveDemo() {
+  return (
+    <div className="w-full max-w-3xl space-y-3">
+      <EmptySearchState
+        query="billing owner"
+        clearLabel="清空搜索"
+        createLabel="添加成员"
+      />
+      <EmptySearchState
+        title="暂无匹配结果"
+        description="尝试缩小筛选范围或创建新的记录。"
+        clearLabel="重置筛选"
+        createLabel="新建记录"
+      />
+    </div>
+  );
+}
+
+export function EmptySearchStateCaseDemo() {
+  return (
+    <EmptySearchState
+      query="project-alpha"
+      clearLabel="Reset search"
+      createLabel="Create project"
+    />
+  );
+}
+
+export function ResultInteractiveDemo() {
+  return (
+    <div className="grid w-full max-w-3xl gap-3 md:grid-cols-2">
+      <Result
+        status="success"
+        title="发布成功"
+        description="版本已上线并通知团队。"
+        extra={<Button size="sm">查看版本</Button>}
+      />
+      <Result
+        status="warning"
+        title="配额即将耗尽"
+        description="本月调用量已达到 90%，建议升级套餐。"
+        extra={
+          <Button size="sm" variant="outline">
+            查看计费
+          </Button>
+        }
+      />
+    </div>
+  );
+}
+
+export function ResultCaseDemo() {
+  return (
+    <Result
+      status="error"
+      title="同步失败"
+      description="请检查网络连接后重试。"
+      extra={<Button size="sm">重新同步</Button>}
+    />
+  );
+}
+
+export function SpinInteractiveDemo() {
+  const [spinningA, setSpinningA] = React.useState(true);
+  const [spinningB, setSpinningB] = React.useState(false);
+
+  return (
+    <div className="w-full max-w-3xl space-y-3">
+      <div className="flex flex-wrap gap-2">
+        <Button size="sm" onClick={() => setSpinningA((value) => !value)}>
+          切换报表加载
+        </Button>
+        <Button
+          size="sm"
+          variant="outline"
+          onClick={() => setSpinningB((value) => !value)}
+        >
+          切换延迟加载
+        </Button>
+      </div>
+
+      <div className="grid gap-3 md:grid-cols-2">
+        <Spin spinning={spinningA} tip="加载报表中...">
+          <div className="rounded-md border border-fd-border p-4 text-sm text-fd-muted-foreground">
+            报表内容区域
+          </div>
+        </Spin>
+
+        <Spin spinning={spinningB} delay={300} size="lg" tip="同步任务中...">
+          <div className="rounded-md border border-fd-border p-4 text-sm text-fd-muted-foreground">
+            同步结果区域
+          </div>
+        </Spin>
+      </div>
+    </div>
+  );
+}
+
+export function SpinCaseDemo() {
+  return (
+    <Spin spinning tip="Loading report">
+      <div className="rounded-md border border-fd-border p-4">
+        Report content
+      </div>
+    </Spin>
   );
 }

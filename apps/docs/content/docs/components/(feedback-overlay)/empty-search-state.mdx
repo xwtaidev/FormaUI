@@ -1,31 +1,32 @@
 ---
-title: EmptySearchState
-description: Component documentation for EmptySearchState.
+title: Empty Search State
+description: 搜索空结果状态组件，适用于列表/表格在查询无匹配时的引导反馈。
 ---
 
-# EmptySearchState
+import {
+  EmptySearchStateCaseDemo,
+  EmptySearchStateInteractiveDemo,
+} from "@/components/demos/feedback-structure-demos";
 
-## Overview
+# Empty Search State
 
-`EmptySearchState` is a focused empty-result UI for query-based lists with clear and create actions.
+`EmptySearchState` 用于在搜索或筛选无结果时提供恢复路径与下一步动作，帮助用户快速从“无匹配”回到可操作状态。
 
-## Install Command
+## 可视化展示
 
-```bash
-npx formaui add empty-search-state
-```
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[320px] items-center justify-center p-6">
+    <EmptySearchStateInteractiveDemo />
+  </div>
+</div>
 
-## Usage
-
-```tsx
-import { EmptySearchState } from "@/components/composites/empty-search-state";
+```tsx title="components/demos/feedback-structure-demos.tsx"
+import { EmptySearchState } from "@formaui/components";
 
 export function NoResultPanel() {
   return (
     <EmptySearchState
       query="billing owner"
-      onClear={() => console.log("clear")}
-      onCreate={() => console.log("create")}
       clearLabel="Reset search"
       createLabel="Add teammate"
     />
@@ -33,20 +34,68 @@ export function NoResultPanel() {
 }
 ```
 
-## Scenario Guidance
+## 安装方式
 
-- Use when list/table filters return no matches.
-- Keep actions explicit: one to recover query scope, one to add new entities.
-- Pair with `data-table-toolbar` and `filter-bar` for dashboard flows.
+### 通过 CLI 安装
 
-## Dependencies
+```bash title="CLI"
+npx formaui add empty-search-state
+```
 
-Registry dependencies:
+### 通过包依赖使用
 
-- `lib-cn`
-- `button`
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
 
-## Source Code
+## 使用方式
+
+```tsx title="Basic Usage"
+import { EmptySearchState } from "@formaui/components";
+
+export function NoResultPanel() {
+  return (
+    <EmptySearchState
+      query="billing owner"
+      clearLabel="清空搜索"
+      createLabel="添加成员"
+    />
+  );
+}
+```
+
+## 案例
+
+### 1. 列表搜索无结果引导
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[180px] items-center justify-center p-6">
+    <EmptySearchStateCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### Props
+
+| Prop          | 类型         | 默认值                  | 说明                         |
+| ------------- | ------------ | ----------------------- | ---------------------------- |
+| `query`       | `string`     | `-`                     | 当前搜索词，用于拼接默认文案 |
+| `title`       | `string`     | `"No matching results"` | 自定义标题                   |
+| `description` | `string`     | `-`                     | 自定义描述文案               |
+| `clearLabel`  | `string`     | `"Clear search"`        | 清空动作按钮文案             |
+| `createLabel` | `string`     | `"Create item"`         | 创建动作按钮文案             |
+| `onClear`     | `() => void` | `-`                     | 点击清空动作回调             |
+| `onCreate`    | `() => void` | `-`                     | 点击创建动作回调             |
+| `className`   | `string`     | `-`                     | 追加容器样式                 |
+
+## 可访问性
+
+- 容器使用 `aria-live="polite"`，可在状态变化时向读屏器播报更新。
+- 两个动作按钮应使用明确动词，避免“确定/取消”等低语义文案。
+- 建议保持一个“恢复查询”动作和一个“继续创建”动作，减少用户决策成本。
+
+## 源码位置
 
 - `packages/components/src/composites/empty-search-state.tsx`
 - `registry/components/empty-search-state.json`
