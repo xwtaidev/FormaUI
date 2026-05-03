@@ -1,48 +1,134 @@
 ---
 title: Content Style Guide
-description: Writing style, structure, and quality standards for FormaUI docs.
+description: FormaUI 文档写作与结构规范：页面类型、风格约束、示例标准与质量门禁。
 ---
 
 # Content Style Guide
 
-## Writing Principles
+本指南定义 FormaUI 文档的内容标准，目标是确保文档在不同贡献者之间保持一致的可读性与可执行性。
 
-- Be explicit and action-oriented.
-- Prefer concrete commands and file paths over abstract advice.
-- Keep terminology consistent with code and registry names.
+规范参考开源项目常见写作模式：页面类型分层、清晰结构、可运行示例、可验证结论。
 
-## Page Structure
+## 1. 页面类型模型
 
-Recommended structure for most pages:
+建议使用四类页面模型组织内容：
 
-1. What this page covers
-2. Core concepts or setup steps
-3. Command/code examples
-4. Validation or troubleshooting
+1. 教程（Tutorial）：带读者从 0 到 1 完成目标。
+2. 操作指南（How-to）：解决单一任务，强调步骤与结果。
+3. 参考文档（Reference）：准确描述 API、参数、约束。
+4. 解释文档（Explanation）：说明设计动机、取舍与原则。
 
-## Frontmatter
+> 一个页面可以主打一种类型，必要时包含少量辅助内容，但不要混成“什么都有”。
 
-Each page should include:
+## 2. 写作原则
 
-- `title`: concise and human-readable
-- `description`: one-sentence summary for SEO/search context
+- 使用直接、主动、现在时表达。
+- 用真实命令、真实路径、真实文件名。
+- 避免“简单地/只需/显然”等弱化难度的词。
+- 概念术语与代码命名保持一致（组件名、包名、命令名）。
 
-## Code and Command Snippets
+## 3. 推荐页面结构
 
-- Use fenced code blocks with language identifiers.
-- Keep snippets runnable where possible.
-- Prefer `pnpm` / `npx formaui` command forms used in the repo.
+多数指南类页面建议采用：
 
-## Link and Reference Rules
+1. 适用范围
+2. 你将完成
+3. 分步操作
+4. 验证清单
+5. 常见问题
+6. 下一步
 
-- Use absolute docs paths (`/docs/...`) for internal docs links.
-- Reference source paths exactly when pointing to files.
-- Avoid stale links to pre-v0.8 routes when `/docs/*` equivalents exist.
+组件/区块类页面建议采用：
 
-## Quality Bar
+1. 组件定位
+2. 可视化展示
+3. 安装方式
+4. 使用方式
+5. 案例
+6. API Reference
+7. 响应式与可访问性
+8. 源码位置
 
-Before merge, pages must satisfy:
+## 4. Frontmatter 规范
 
-- Discoverable in domain `meta.json`
-- No broken internal links in sampled checks
-- Matches IA conventions and naming rules
+每页必须包含：
+
+- `title`：简洁、可读、可索引
+- `description`：一句话说明页面价值
+
+示例：
+
+```mdx title="frontmatter"
+---
+title: Integrations for Next.js
+description: 在 Next.js 项目中接入 FormaUI 的推荐实践。
+---
+```
+
+## 5. 命令与代码示例规范
+
+### 命令块
+
+- 使用带语言标识的代码块：`bash`
+- 命令默认优先 `pnpm` 与 `npx formaui`
+- 一组命令只完成一个任务
+
+```bash title="CLI"
+npx formaui add button
+```
+
+### 代码块
+
+- 必须标注语言（`tsx` / `ts` / `json` / `js`）
+- 尽量提供文件名标题（如 `app/page.tsx`）
+- 示例要最小可运行，避免伪代码
+
+```tsx title="app/page.tsx"
+export default function Page() {
+  return <main>Hello FormaUI</main>;
+}
+```
+
+## 6. 链接与路径规范
+
+- 内部链接统一使用绝对 docs 路径：`/docs/...`
+- 指向代码时写真实仓库路径
+- 避免引用已废弃路由或历史 slug
+
+## 7. 质量门禁
+
+文档合并前至少满足：
+
+- 页面已注册在对应 `meta.json`
+- 内链可访问
+- 命令可执行且与当前仓库实践一致
+- 页面结构符合其主类型（Tutorial/How-to/Reference/Explanation）
+
+推荐执行：
+
+```bash title="Docs Gates"
+pnpm --filter docs test
+pnpm --filter docs lint
+pnpm --filter docs build
+```
+
+最低执行：
+
+```bash title="Minimum"
+pnpm --filter docs source:build
+```
+
+## 8. 评审建议
+
+评审时重点关注：
+
+- 是否回答“这页帮我完成什么”
+- 是否提供了可执行的下一步
+- 是否存在重复、冗长或不可验证结论
+- 是否与同域页面结构保持一致
+
+## 下一步
+
+- [Contributing Docs](/docs/guides/contributing-docs)
+- [Integrations for Next.js](/docs/guides/integrations-nextjs)
+- [Monorepo Strategy](/docs/guides/monorepo)

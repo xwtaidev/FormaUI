@@ -1,47 +1,126 @@
 ---
 title: Contributing Docs
-description: Workflow and rules for adding or updating FormaUI docs pages.
+description: 面向贡献者的文档协作流程：从选题、编写到评审与发布的完整规范。
 ---
 
 # Contributing Docs
 
-This guide defines the expected workflow for contributing documentation in the v0.8 Fumadocs architecture.
+本指南定义 FormaUI 文档贡献流程，目标是让新老贡献者都能产出**结构一致、可验证、可维护**的文档。
 
-## 1. Content Location
+内容参考常见开源文档协作模式：明确范围、标准化流程、可执行检查、可追溯评审。
 
-All canonical docs pages live under:
+## 适用范围
+
+- 适用于 `apps/docs/content/docs` 下的所有页面
+- 适用于新增页面、重写页面、信息架构调整
+- 适用于日常 PR 与发布前文档收敛
+
+## 文档内容位置
+
+所有正式文档页面位于：
 
 - `apps/docs/content/docs/<domain>/*.mdx`
 
-Top-level domains are defined in `apps/docs/content/docs/meta.json`.
+导航结构与顺序由 `meta.json` 决定：
 
-## 2. Naming Rules
+- 根导航：`apps/docs/content/docs/meta.json`
+- 分域导航：`apps/docs/content/docs/<domain>/meta.json`
 
-- Use lowercase kebab-case for filenames and slugs.
-- Keep one topic per page.
-- Prefer stable slugs; avoid churn unless there is a breaking IA change.
+## 贡献流程
 
-## 3. Navigation Rules (`meta.json`)
+### 第 1 步：确定变更类型
 
-Each domain must define a `meta.json` file with explicit page order.
+在动笔前先明确本次属于：
 
-- Every `*.mdx` page in the domain must be listed in `pages`.
-- `pages` entries should use `./slug` form.
-- Avoid orphan pages not referenced by `meta.json`.
+- 新增主题
+- 现有页面重构
+- 信息架构迁移
+- 错误修复（事实、命令、路径、链接）
 
-## 4. Authoring Checklist
+### 第 2 步：创建或更新页面
 
-1. Add or update MDX page with frontmatter (`title`, `description`).
-2. Update domain `meta.json` order.
-3. Verify internal links and command snippets.
-4. Run docs quality gates.
+要求：
 
-## 5. Required Checks
+- 文件名使用小写 kebab-case
+- 一个页面聚焦一个主题
+- frontmatter 至少包含 `title` 与 `description`
 
-```bash
+示例：
+
+```mdx title="page frontmatter"
+---
+title: Example Page
+description: One-sentence summary for readers and search.
+---
+```
+
+### 第 3 步：同步导航配置
+
+- 每个新增 `*.mdx` 都必须在对应 `meta.json` 的 `pages` 中注册
+- `pages` 条目使用 `./slug` 形式
+- 不允许出现未注册页面（orphan page）
+
+### 第 4 步：本地验证
+
+```bash title="Required Checks"
 pnpm --filter docs test
 pnpm --filter docs lint
 pnpm --filter docs build
 ```
 
-For release-level changes, run full workspace gates from repo root.
+如果仅改动 MDX 内容，至少执行：
+
+```bash title="Minimum Check"
+pnpm --filter docs source:build
+```
+
+### 第 5 步：提交与评审
+
+PR 描述建议包含：
+
+1. 变更目标（为什么改）
+2. 影响范围（哪些页面/域）
+3. 验证方式（跑了哪些命令）
+4. 兼容性说明（是否涉及 slug 或导航调整）
+
+## PR 审核清单
+
+审核者至少确认以下项目：
+
+- 结构是否清晰（目标、步骤、验证、排障、下一步）
+- 命令是否可执行，路径是否真实存在
+- 内链是否使用 `/docs/...` 且可访问
+- 页面是否已在 `meta.json` 注册且顺序合理
+- 文案是否与现有术语一致（组件名、命令名、目录名）
+
+## 何时需要信息架构评审
+
+以下变更应先进行 IA 评审再合并：
+
+- 新增顶级域或大规模目录重排
+- slug 变更（会影响历史链接）
+- 页面从参考型改为教程型（定位变化明显）
+
+## 常见错误
+
+### 页面存在但侧边栏不可见
+
+通常是未更新 `meta.json`，或 `pages` 顺序配置遗漏。
+
+### 命令可读但不可执行
+
+常见原因：
+
+- 包管理器命令与仓库实践不一致
+- 示例依赖未声明
+- 路径基于错误工作目录
+
+### 大段原则缺少可执行步骤
+
+文档应优先给出“先做什么、再做什么、如何验证”，避免只给抽象建议。
+
+## 下一步
+
+- [Content Style Guide](/docs/guides/content-style-guide)
+- [Integrations for Next.js](/docs/guides/integrations-nextjs)
+- [Integrations for Vite](/docs/guides/integrations-vite)
