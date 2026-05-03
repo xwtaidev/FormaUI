@@ -1,29 +1,37 @@
 ---
 title: Alert
-description: Component documentation for Alert.
+description: 内联反馈提示组件，适用于状态通知、告警与错误提醒。
 ---
+
+import {
+  AlertInteractiveDemo,
+  BillingWarningCaseDemo,
+  RetryErrorCaseDemo,
+} from "@/components/demos/alert-demos";
 
 # Alert
 
-## Overview
+`Alert` 用于在页面中就地展示反馈信息，常见于告警提示、操作成功通知、错误反馈等场景。
 
-`Alert` is a semantic feedback container for inline warnings, errors, and operational notices.
+它支持多种语义变体、图标与附加操作区域，适合与表单、列表、详情页组合使用。
 
-## Installation
+## 可视化展示
 
-```bash
-npx formaui add alert
-```
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[360px] items-center justify-center p-6">
+    <AlertInteractiveDemo />
+  </div>
+</div>
 
-## Usage
-
-```tsx
-import { Alert } from "@/components/primitives/alert";
+```tsx title="components/demos/alert-demos.tsx"
+import { Alert } from "@formaui/components";
+import { AlertTriangle } from "lucide-react";
 
 export function BillingAlert() {
   return (
     <Alert
       variant="warning"
+      icon={<AlertTriangle />}
       title="Usage threshold reached"
       description="Your project consumed 85% of this month's credits."
     />
@@ -31,13 +39,87 @@ export function BillingAlert() {
 }
 ```
 
-## Accessibility
+## 安装方式
 
-- Defaults to `role="status"` for assistive technologies.
-- Supports clear title/description hierarchy for fast screen-reader parsing.
-- Works well with keyboard-focusable actions when composed with `button` or `link`.
+### 通过 CLI 安装
 
-## Source Code
+```bash title="CLI"
+npx formaui add alert
+```
+
+### 通过包依赖使用
+
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
+
+## 使用方式
+
+```tsx title="Basic Usage"
+import { Alert } from "@formaui/components";
+import { CheckCircle2 } from "lucide-react";
+
+export function PublishSuccessAlert() {
+  return (
+    <Alert
+      variant="success"
+      icon={<CheckCircle2 />}
+      title="发布成功"
+      description="新版本已成功发布到生产环境。"
+    />
+  );
+}
+```
+
+## 案例
+
+### 1. 账单告警提示
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[132px] items-center justify-center p-6">
+    <BillingWarningCaseDemo />
+  </div>
+</div>
+
+### 2. 错误重试入口
+
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[160px] items-center justify-center p-6">
+    <RetryErrorCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### Props
+
+| Prop          | 类型                                                   | 默认值      | 说明                   |
+| ------------- | ------------------------------------------------------ | ----------- | ---------------------- |
+| `variant`     | `"default" \| "success" \| "warning" \| "destructive"` | `"default"` | 反馈语义样式           |
+| `title`       | `ReactNode`                                            | `-`         | 提示标题               |
+| `description` | `ReactNode`                                            | `-`         | 提示描述               |
+| `icon`        | `ReactNode`                                            | `-`         | 左侧图标               |
+| `children`    | `ReactNode`                                            | `-`         | 扩展内容（如操作按钮） |
+| `role`        | `string`                                               | `"status"`  | 辅助技术语义角色       |
+| `className`   | `string`                                               | `-`         | 容器样式扩展           |
+
+### 继承属性
+
+`Alert` 继承 `Omit<React.HTMLAttributes<HTMLDivElement>, "title">`，可直接使用：
+
+- `id`
+- `aria-*`
+- `data-*`
+- `onClick`
+
+## 可访问性
+
+- 默认 `role="status"`，可按场景改为 `alert` 等角色。
+- 标题与描述分层结构有助于读屏器快速解析信息。
+- 搭配按钮动作时，建议按钮文案明确（如“重试”、“查看详情”）。
+- `destructive` 场景建议同时给出可恢复路径。
+
+## 源码位置
 
 - `packages/components/src/primitives/alert.tsx`
 - `registry/components/alert.json`

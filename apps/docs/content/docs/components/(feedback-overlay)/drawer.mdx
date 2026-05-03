@@ -1,40 +1,49 @@
 ---
 title: Drawer
-description: Component documentation for Drawer.
+description: 抽屉面板组件，适用于侧边配置与分步任务流程。
 ---
+
+import {
+  DrawerInteractiveDemo,
+  SettingsDrawerCaseDemo,
+} from "@/components/demos/dialog-drawer-demos";
 
 # Drawer
 
-## Overview
+`Drawer` 用于从页面边缘滑出内容面板，适合设置面板、详情预览、轻量多步骤任务。
 
-`Drawer` presents side-mounted overlay panels for settings, previews, and multi-step side tasks.
+它支持 `top / bottom / left / right` 多方向布局，基于 Radix Dialog 提供焦点与遮罩能力。
 
-## Installation
+## 可视化展示
 
-```bash
-npx formaui add drawer
-```
+<div className="not-prose my-4 overflow-visible rounded-xl border border-fd-border">
+  <div className="flex min-h-[220px] items-start justify-center overflow-visible p-6 pt-12">
+    <DrawerInteractiveDemo />
+  </div>
+</div>
 
-## Usage
-
-```tsx
+```tsx title="components/demos/dialog-drawer-demos.tsx"
 import {
   Drawer,
   DrawerContent,
   DrawerDescription,
   DrawerHeader,
   DrawerTitle,
-  DrawerTrigger
-} from "@/components/primitives/drawer";
+  DrawerTrigger,
+} from "@formaui/components";
 
 export function SettingsDrawer() {
   return (
     <Drawer>
-      <DrawerTrigger className="rounded-md border px-3 py-2 text-sm">Open settings</DrawerTrigger>
+      <DrawerTrigger className="rounded-md border px-3 py-2 text-sm">
+        Open settings
+      </DrawerTrigger>
       <DrawerContent side="right">
         <DrawerHeader>
           <DrawerTitle>Workspace Settings</DrawerTitle>
-          <DrawerDescription>Update notification, privacy, and access preferences.</DrawerDescription>
+          <DrawerDescription>
+            Update notification, privacy, and access preferences.
+          </DrawerDescription>
         </DrawerHeader>
       </DrawerContent>
     </Drawer>
@@ -42,13 +51,103 @@ export function SettingsDrawer() {
 }
 ```
 
-## Accessibility
+## 安装方式
 
-- Built on Radix dialog primitives for focus lock and escape-close behavior.
-- Supports directional placement with the `side` prop.
-- Includes labeled title/description semantics for screen readers.
+### 通过 CLI 安装
 
-## Source Code
+```bash title="CLI"
+npx formaui add drawer
+```
+
+### 通过包依赖使用
+
+```bash title="Package Manager"
+pnpm add @formaui/components
+```
+
+## 使用方式
+
+```tsx title="Basic Usage"
+import {
+  Button,
+  Drawer,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@formaui/components";
+
+export function ProfileDrawer() {
+  return (
+    <Drawer>
+      <DrawerTrigger asChild>
+        <Button variant="outline">编辑资料</Button>
+      </DrawerTrigger>
+      <DrawerContent side="right">
+        <DrawerHeader>
+          <DrawerTitle>Profile Settings</DrawerTitle>
+          <DrawerDescription>更新头像、昵称和偏好配置。</DrawerDescription>
+        </DrawerHeader>
+        <DrawerFooter>
+          <Button variant="outline">取消</Button>
+          <Button>保存</Button>
+        </DrawerFooter>
+      </DrawerContent>
+    </Drawer>
+  );
+}
+```
+
+## 案例
+
+### 1. 侧边设置抽屉
+
+<div className="not-prose my-4 overflow-visible rounded-xl border border-fd-border">
+  <div className="flex min-h-[180px] items-start justify-center overflow-visible p-6 pt-10">
+    <SettingsDrawerCaseDemo />
+  </div>
+</div>
+
+## API Reference
+
+### `Drawer`（Root）Props
+
+`Drawer` 继承 `React.ComponentPropsWithoutRef<typeof DialogPrimitive.Root>`：
+
+| Prop           | 类型                      | 默认值               | 说明                 |
+| -------------- | ------------------------- | -------------------- | -------------------- |
+| `open`         | `boolean`                 | `-`                  | 受控开关状态         |
+| `defaultOpen`  | `boolean`                 | `false`              | 非受控初始状态       |
+| `onOpenChange` | `(open: boolean) => void` | `-`                  | 开关变化回调         |
+| `modal`        | `boolean`                 | `true`（Radix 默认） | 是否启用模态焦点策略 |
+
+### `DrawerContent` Props
+
+| Prop        | 类型                                     | 默认值    | 说明             |
+| ----------- | ---------------------------------------- | --------- | ---------------- |
+| `side`      | `"top" \| "bottom" \| "left" \| "right"` | `"right"` | 抽屉弹出方向     |
+| `className` | `string`                                 | `-`       | 内容容器样式扩展 |
+
+### 常用子组件 Props
+
+| 组件                | 关键 Props  | 说明         |
+| ------------------- | ----------- | ------------ |
+| `DrawerTrigger`     | `asChild`   | 触发元素包装 |
+| `DrawerHeader`      | `className` | 头部容器     |
+| `DrawerTitle`       | `className` | 标题节点     |
+| `DrawerDescription` | `className` | 描述节点     |
+| `DrawerFooter`      | `className` | 底部操作区   |
+
+## 可访问性
+
+- 继承 Dialog 的焦点锁定、Esc 关闭和遮罩语义。
+- 标题与描述用于辅助技术理解抽屉上下文。
+- 推荐在抽屉内提供清晰主操作与取消操作。
+- 移动端底部抽屉建议避免遮挡系统手势区域。
+
+## 源码位置
 
 - `packages/components/src/primitives/drawer.tsx`
 - `registry/components/drawer.json`
