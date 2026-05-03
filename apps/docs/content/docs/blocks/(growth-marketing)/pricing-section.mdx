@@ -1,33 +1,84 @@
 ---
 title: PricingSection
-description: Block documentation for PricingSection.
+description: 定价卡片区块，用于展示套餐梯度与转化按钮。
 ---
+
+import { PricingSectionBlockDemo } from "@/components/demos/growth-marketing-demos";
 
 # PricingSection
 
-## Overview
+`PricingSection` 用于在营销页展示套餐对比和购买入口，覆盖常见 SaaS 定价展示需求。
 
-`pricing-section` is an installable block shipped in FormaUI v0.2.
+它默认使用三档计划示例数据，并内置高亮推荐套餐样式。
 
-## Install Command
+## 可视化展示
 
-```bash
-npx formaui block add pricing-section
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[520px] items-center justify-center p-6">
+    <PricingSectionBlockDemo />
+  </div>
+</div>
+
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
+npx formaui add pricing-section
 ```
 
-## Registry Metadata
+### 通过包依赖使用
 
-- kind: `block`
-- version: `0.2.2`
-- frameworks: `react`
+```bash title="Package Manager"
+pnpm add @formaui/blocks
+```
 
-## Dependencies
+## 使用方式
+
+```tsx title="Basic Usage"
+import { PricingSection } from "@formaui/blocks";
+
+export function PricingPage() {
+  return <PricingSection />;
+}
+```
+
+## 案例
+
+### 1. 作为落地页中段转化区
+
+```tsx title="Landing Pricing"
+import { PricingSection } from "@formaui/blocks";
+
+export function GrowthPricingSection() {
+  return (
+    <section className="mx-auto max-w-6xl">
+      <PricingSection />
+    </section>
+  );
+}
+```
+
+## API Reference
+
+### Props
+
+当前版本 `PricingSection` 不暴露组件 props，默认渲染演示套餐数据。
+
+如需接入真实定价体系，建议安装后在 `components/pricing-section.tsx` 中替换 `demoPlans` 数据与 CTA 行为。
+
+### 依赖组件
 
 - `card`
 - `badge`
 - `button`
 
-## Source Code
+## 响应式与可访问性
+
+- 定价卡片在移动端单列，`md` 及以上切换为三列展示。
+- 价格、计划名与按钮文案分层清晰，利于阅读与辅助技术识别。
+
+## 源码位置
 
 - `packages/blocks/src/pricing-section.tsx`
 - `registry/blocks/pricing-section.json`

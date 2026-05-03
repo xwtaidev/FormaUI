@@ -1,25 +1,94 @@
 ---
 title: FaqAccordion
-description: Block documentation for FaqAccordion.
+description: 常见问题区块，支持折叠展开与分步阅读。
 ---
+
+import { FaqAccordionBlockDemo } from "@/components/demos/growth-marketing-demos";
 
 # FaqAccordion
 
-## Overview
+`FaqAccordion` 用于承载营销页常见问题，帮助用户在不离开页面的情况下快速消除决策疑问。
 
-`faq-accordion` renders common product questions with progressive disclosure using FormaUI accordion primitives.
+它基于 `Accordion` 构建，支持单项展开和可折叠交互。
 
-## Install Command
+## 可视化展示
 
-```bash
-npx formaui block add faq-accordion
+<div className="not-prose my-4 overflow-hidden rounded-xl border border-fd-border">
+  <div className="flex min-h-[360px] items-center justify-center p-6">
+    <FaqAccordionBlockDemo />
+  </div>
+</div>
+
+## 安装方式
+
+### 通过 CLI 安装
+
+```bash title="CLI"
+npx formaui add faq-accordion
 ```
 
-## Dependencies
+### 通过包依赖使用
+
+```bash title="Package Manager"
+pnpm add @formaui/blocks
+```
+
+## 使用方式
+
+```tsx title="Basic Usage"
+import { FaqAccordion } from "@formaui/blocks";
+
+export function LandingFaq() {
+  return <FaqAccordion />;
+}
+```
+
+## 案例
+
+### 1. 自定义 FAQ 条目
+
+```tsx title="Custom FAQ"
+import { FaqAccordion } from "@formaui/blocks";
+
+const items = [
+  {
+    id: "license",
+    question: "Can I customize installed block source code?",
+    answer: "Yes. FormaUI is source-owned and designed for direct customization."
+  }
+];
+
+export function ProductFaq() {
+  return (
+    <FaqAccordion
+      title="Before you start"
+      description="Answers to the most common adoption questions."
+      items={items}
+    />
+  );
+}
+```
+
+## API Reference
+
+### Props
+
+| Prop | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- |
+| `title` | `string` | `"FAQ"` | 区块标题 |
+| `description` | `string` | 默认描述文案 | 区块描述 |
+| `items` | `ReadonlyArray<{ id: string; question: string; answer: string }>` | 内置 3 条 FAQ | 问答条目列表 |
+
+### 依赖组件
 
 - `accordion`
 
-## Source Code
+## 响应式与可访问性
+
+- 手风琴控件支持键盘操作与展开状态切换。
+- 问题与答案文本结构明确，适合长文案阅读。
+
+## 源码位置
 
 - `packages/blocks/src/faq-accordion.tsx`
 - `registry/blocks/faq-accordion.json`
