@@ -1,23 +1,47 @@
 import React from "react";
 import Link from "next/link";
 
-import { webLinks } from "./content";
+import { finalCta } from "./content";
+import { editorial } from "./editorial-utils";
 
 export default function LandingFinalCta() {
   return (
-    <section data-section="LandingFinalCta" className="landing-shell pt-8">
-      <div className="rounded-2xl bg-gradient-to-r from-slate-100 via-white to-emerald-50 p-6 shadow-sm ring-1 ring-slate-200">
-        <h2 className="text-3xl font-semibold tracking-tight text-slate-950">Ready to ship better, faster with FormaUI?</h2>
-        <p className="mt-2 max-w-2xl text-slate-600">
-          Join teams building modern products with source-owned UI components, blocks, and templates.
+    <section data-section="LandingFinalCta" className="landing-shell py-16 sm:py-20">
+      <div className="mb-8 flex items-center justify-between">
+        <span className="landing-roman">VIII.</span>
+        <span className="landing-page-marker">008</span>
+      </div>
+      <div className="rounded-3xl bg-[var(--landing-graphite)] px-6 py-14 text-center text-[var(--landing-graphite-text)] sm:px-12 sm:py-20">
+        <h2 className="landing-display text-4xl font-black leading-none sm:text-5xl lg:text-6xl">
+          {editorial(finalCta.titleHtml)}
+        </h2>
+        <p className="mx-auto mt-5 max-w-2xl text-base leading-7 on-g-60 sm:text-lg">
+          {finalCta.description}
         </p>
-        <div className="mt-5 flex flex-wrap gap-3">
-          <Link href={webLinks.docs} className="rounded-full bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-white">
-            Get Started
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <Link
+            href={finalCta.primary.href}
+            className="rounded-full bg-[var(--landing-mint)] px-6 py-3 text-sm font-bold text-black shadow-sm hover:brightness-110"
+          >
+            {finalCta.primary.label}
           </Link>
-          <Link href={webLinks.github} className="rounded-full border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700">
-            Star on GitHub
+          <Link
+            href={finalCta.secondary.href}
+            className="rounded-full border on-g-border-20 px-6 py-3 text-sm font-bold text-[var(--landing-graphite-text)] hover:on-g-border-40"
+          >
+            {finalCta.secondary.label}
           </Link>
+        </div>
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-sm on-g-40">
+          {finalCta.tertiary.map((link) => (
+            <Link
+              key={link.label}
+              href={link.href}
+              className="transition hover:on-g-80"
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
       </div>
     </section>

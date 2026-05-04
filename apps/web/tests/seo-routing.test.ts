@@ -10,11 +10,15 @@ import sitemap from "../app/sitemap";
 const expectedRoutes = ["/", "/marketing", "/product", "/scenarios", "/showcase", "/blog", "/changelog"];
 
 describe("web seo routing", () => {
-  it("defines web metadata baseline with canonical and social cards", () => {
+  it("defines v0.9 web metadata baseline with canonical and social cards", () => {
     expect(rootMetadata.alternates?.canonical).toBe("/");
     expect(rootMetadata.openGraph?.url).toBe("https://formaui.com");
-    const twitter = rootMetadata.twitter as { card?: string } | undefined;
+    expect(rootMetadata.description).toContain("source-owned React components");
+    expect(rootMetadata.openGraph?.title).toBe("FormaUI - Source-owned UI for SaaS and AI products");
+    const twitter = rootMetadata.twitter as { card?: string; title?: string; description?: string } | undefined;
     expect(twitter?.card).toBe("summary_large_image");
+    expect(twitter?.title).toBe("FormaUI - Source-owned UI for SaaS and AI products");
+    expect(twitter?.description).toContain("production blocks");
   });
 
   it("includes all required web routes in sitemap", async () => {
@@ -39,11 +43,12 @@ describe("web seo routing", () => {
     });
   });
 
-  it("links changelog page to release notes and migration guide in docs", () => {
+  it("links changelog page to current release notes without stale v0.5 migration links", () => {
     const html = renderToStaticMarkup(React.createElement(ChangelogPage));
 
     expect(html).toContain('href="https://github.com/xwtaidev/FormaUI/tree/main/docs/releases"');
-    expect(html).toContain('href="https://github.com/xwtaidev/FormaUI/blob/main/docs/releases/v0.5.md"');
-    expect(html).toContain('href="https://docs.formaui.com/migration-v0.4-to-v0.5"');
+    expect(html).toContain('href="https://github.com/xwtaidev/FormaUI/blob/main/docs/releases/v0.9.md"');
+    expect(html).not.toContain("migration-v0.4-to-v0.5");
+    expect(html).not.toContain("docs/releases/v0.5.md");
   });
 });

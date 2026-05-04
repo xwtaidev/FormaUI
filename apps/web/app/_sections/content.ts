@@ -1,141 +1,156 @@
 export const webLinks = {
   docs: "https://docs.formaui.com",
   github: "https://github.com/xwtaidev/FormaUI",
+  components: "https://docs.formaui.com/docs/components",
+  blocks: "https://docs.formaui.com/docs/blocks",
+  templates: "https://docs.formaui.com/docs/templates",
+  registry: "https://docs.formaui.com/docs/registry",
+  quickStart: "https://docs.formaui.com/docs/quick-start",
   releaseNotes: "https://github.com/xwtaidev/FormaUI/tree/main/docs/releases",
-  releaseV5: "https://github.com/xwtaidev/FormaUI/blob/main/docs/releases/v0.5.md",
-  migrationV4ToV5: "https://docs.formaui.com/migration-v0.4-to-v0.5"
+  releaseV9: "https://github.com/xwtaidev/FormaUI/blob/main/docs/releases/v0.9.md",
+  examples: "https://github.com/xwtaidev/FormaUI/tree/main/examples"
 } as const;
 
-export const globalNavItems = [
-  { href: "/", label: "Playground" },
-  { href: webLinks.docs, label: "Docs" },
+export const landingSectionSequence = [
+  "LandingHero",
+  "LandingProductSurfaces",
+  "LandingSourceOwnership",
+  "LandingBuildFlow",
+  "LandingScenarioGallery",
+  "LandingQualitySystem",
+  "LandingProof",
+  "LandingFinalCta",
+  "LandingFooter"
+] as const;
+
+export const editorialSections = [
+  { roman: "I", label: "Hero", page: "001" },
+  { roman: "II", label: "Product Surfaces", page: "002" },
+  { roman: "III", label: "Source Ownership", page: "003" },
+  { roman: "IV", label: "Developer Workflow", page: "004" },
+  { roman: "V", label: "Use Cases", page: "005" },
+  { roman: "VI", label: "Quality", page: "006" },
+  { roman: "VII", label: "Ecosystem", page: "007" },
+  { roman: "VIII", label: "Final", page: "008" },
+  { roman: "FIN", label: "Footer", page: "009" }
+] as const;
+
+export const primaryNavigationItems = [
   { href: "/product", label: "Product" },
+  { href: "#surfaces", label: "Surfaces" },
+  { href: webLinks.registry, label: "Registry" },
   { href: "/showcase", label: "Showcase" },
-  { href: "/blog", label: "Blog" },
+  { href: webLinks.docs, label: "Docs" },
+  { href: webLinks.github, label: "GitHub" }
+] as const;
+
+export const mobileNavigationItems = [
+  { href: webLinks.docs, label: "Docs" },
+  { href: webLinks.components, label: "Components" },
+  { href: webLinks.blocks, label: "Blocks" },
+  { href: webLinks.github, label: "GitHub" },
   { href: "/changelog", label: "Changelog" }
 ] as const;
 
 export const heroContent = {
-  badge: "Open Source",
-  title: "Source-owned UI for modern SaaS and AI products",
+  badge: "FormaUI v0.9",
+  eyebrow: "Source-owned UI for SaaS and AI products",
+  title: "Own the interface you ship.",
+  titleHtml: "Own the interface you _ship_.",
   description:
-    "FormaUI is an open-source React component library built with Tailwind CSS and shadcn/ui. Build SaaS dashboards, AI tools, and internal platforms with reusable primitives and production-ready blocks.",
-  primaryCta: { href: webLinks.docs, label: "Get Started" },
-  secondaryCta: { href: webLinks.github, label: "Star on GitHub" },
-  trustMarks: ["Open Source", "Used in 2k+ apps", "MIT License"]
+    "FormaUI gives SaaS and AI teams source-owned React components, production blocks, templates, and registry workflows they can copy, adapt, and ship with confidence.",
+  primaryCta: { href: webLinks.docs, label: "Start with Docs" },
+  secondaryCta: { href: webLinks.github, label: "View on GitHub" },
+  supportingCta: { href: "/showcase", label: "Explore Product Surfaces" },
+  trustMarks: ["MIT source", "React + Tailwind", "Components, blocks, templates", "Registry workflow"]
 } as const;
 
-export const stats = [
-  { value: "36+", label: "UI Components" },
-  { value: "17", label: "Blocks" },
-  { value: "5", label: "Themes" },
-  { value: "4", label: "Axes" },
-  { value: "2", label: "Formats" }
-] as const;
-
-export const featureCards = [
+export const productSurfaces = [
   {
-    title: "Source-Owned",
-    description: "Fully open-source under MIT. Copy and own every line of UI code in your product."
+    name: "SaaS Dashboard",
+    tagline: "Metrics, tables, filters, and command surfaces for operational products.",
+    assets: ["metric-card", "data-table", "filter-bar", "app-sidebar"],
+    accent: "mint"
   },
   {
-    title: "Styling System",
-    description: "Built with Tailwind CSS and tokenized themes for consistent brand expression."
+    name: "AI Console",
+    tagline: "Model selection, chat states, upload flows, and prompt workspace patterns.",
+    assets: ["model-selector", "search-command", "upload", "empty-state"],
+    accent: "graphite"
   },
   {
-    title: "Performance",
-    description: "Composable, tree-shakable components and blocks with low integration overhead."
+    name: "Admin Workflow",
+    tagline: "User management, roles, forms, dialogs, and lifecycle review surfaces.",
+    assets: ["form-field", "dialog", "descriptions", "timeline"],
+    accent: "amber"
   },
   {
-    title: "Production-Ready",
-    description: "Accessibility-first semantics and quality gates that match shipping workflows."
-  },
-  {
-    title: "Developer-First",
-    description: "Clean APIs, clear docs, and practical templates for real product teams."
+    name: "Marketing Launch",
+    tagline: "Pricing, launch pages, proof blocks, and conversion-ready product sections.",
+    assets: ["card", "badge", "accordion", "result"],
+    accent: "coral"
   }
 ] as const;
 
-export const scenarioTags = [
-  "SaaS Dashboards",
-  "AI Tools",
-  "Admin Panels",
-  "Analytics",
-  "Internal Tools"
-] as const;
-
-export const scenarioShowcase = [
+export const sourceOwnershipComparison = [
   {
-    name: "Analytics Dashboard",
-    description: "Track KPIs, growth, and operational trends with responsive widgets."
+    label: "Traditional UI library",
+    stance: "Fast start, constrained ownership",
+    details: "You import a package and inherit its abstraction, styling limits, and upgrade risks."
   },
   {
-    name: "AI Chat Interface",
-    description: "Ship chat experiences with file upload, model picker, and message states."
+    label: "Template marketplace",
+    stance: "Attractive snapshots, weak system fit",
+    details: "You buy a page, then spend time extracting patterns into your product system."
   },
   {
-    name: "User Management",
-    description: "Manage roles, invites, and lifecycle operations with reusable admin patterns."
-  },
-  {
-    name: "Billing Overview",
-    description: "Monitor invoices, subscriptions, and usage signals in one clear panel."
+    label: "FormaUI",
+    stance: "Source-owned product surfaces",
+    details: "You install components, blocks, templates, and metadata as code your team can adapt."
   }
 ] as const;
 
-export const quickStartSteps = [
-  {
-    title: "Install package",
-    command: "pnpm install formaui"
-  },
-  {
-    title: "Import components",
-    command: 'import { Button } from "formaui"'
-  },
-  {
-    title: "Use in products",
-    command: "Compose with components and production blocks"
-  },
-  {
-    title: "Customize with Tailwind CSS",
-    command: "Adapt tokens and themes to your brand"
-  },
-  {
-    title: "Ship faster",
-    command: "Deliver polished interfaces with confidence"
-  }
+export const buildFlowSteps = [
+  { title: "Initialize", command: "npx formaui init", note: "Prepare tokens and registry configuration." },
+  { title: "Discover", command: "npx formaui search dashboard", note: "Find product-ready components and blocks." },
+  { title: "Install a pack", command: "npx formaui pack add dashboard-foundation", note: "Copy a complete surface foundation into your repo." },
+  { title: "Add a component", command: "npx formaui add date-range-picker", note: "Extend the surface with focused primitives." }
 ] as const;
 
-export const reusableBlocks = [
-  "Navbars",
-  "Sidebars",
-  "Dashboards",
-  "Tables",
-  "Forms",
-  "Modals",
-  "Stats Cards",
-  "Pricing",
-  "Footers"
+export const scenarioGallery = [
+  { title: "AI tools", assets: "Console, upload, command menu", team: "Founders shipping AI workflows" },
+  { title: "Admin dashboards", assets: "Sidebar, tables, filters", team: "Teams replacing internal spreadsheets" },
+  { title: "Analytics", assets: "Metrics, timelines, status cards", team: "Products that need operational clarity" },
+  { title: "Billing", assets: "Cards, descriptions, dialogs", team: "SaaS teams packaging plan flows" },
+  { title: "User management", assets: "Forms, roles, menus, empty states", team: "B2B apps with workspace models" },
+  { title: "Launch pages", assets: "Proof, pricing, FAQ, CTA blocks", team: "Builders validating product demand" }
 ] as const;
 
-export const qualityGateScores = [
-  { label: "Lighthouse", score: 100 },
-  { label: "A11y", score: 96 },
-  { label: "Best Practices", score: 96 },
-  { label: "Performance", score: 100 }
+export const qualitySystem = [
+  { label: "A11y", value: "AA", detail: "Keyboard paths, visible focus, semantic structure." },
+  { label: "Responsive", value: "375+", detail: "Mobile-first layouts without horizontal overflow." },
+  { label: "Typed", value: "TS", detail: "React components with explicit APIs and source ownership." },
+  { label: "SEO", value: "95+", detail: "Metadata, sitemap, robots, and page structure checks." },
+  { label: "Tests", value: "Vitest", detail: "Route, content, CTA, and SEO smoke coverage." },
+  { label: "Registry", value: "v3", detail: "Category, scenario, complexity, and stability metadata." }
 ] as const;
 
-export const qualityChecks = [
-  "WCAG 2.1 AA Compliant",
-  "Fully Responsive",
-  "TypeScript First",
-  "Cross Browser Support"
+export const proofLinks = [
+  { href: webLinks.github, label: "GitHub", description: "Open-source source code and issue history." },
+  { href: webLinks.docs, label: "Docs", description: "Implementation guides, components, blocks, and registry reference." },
+  { href: webLinks.releaseNotes, label: "Release notes", description: "Version-by-version delivery history." },
+  { href: webLinks.examples, label: "Examples", description: "Next.js and Vite starter surfaces." }
 ] as const;
 
-export const faqItems = [
-  "Is FormaUI really open source?",
-  "Can I use FormaUI on commercial projects?",
-  "What technology does FormaUI use?",
-  "How do I customize FormaUI to match my brand?",
-  "Where can I get help or contribute?"
-] as const;
+export const finalCta = {
+  title: "Start by owning your UI.",
+  titleHtml: "Start by _owning_ your UI.",
+  description: "Install source-owned components and product surfaces, then adapt every line to fit the product you are actually shipping.",
+  primary: { href: webLinks.docs, label: "Start with Docs" },
+  secondary: { href: webLinks.github, label: "Star on GitHub" },
+  tertiary: [
+    { href: webLinks.components, label: "View Components" },
+    { href: webLinks.blocks, label: "Explore Blocks" },
+    { href: webLinks.releaseV9, label: "Read v0.9 notes" }
+  ]
+} as const;

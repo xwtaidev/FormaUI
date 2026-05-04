@@ -5,37 +5,45 @@ import { webLinks } from "./content";
 
 export default function LandingFooter() {
   return (
-    <section data-section="LandingFooter" className="landing-shell py-8">
-      <footer className="rounded-2xl bg-slate-950 px-6 py-8 text-slate-200">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    <section data-section="LandingFooter" className="landing-shell pb-8 pt-16">
+      <div className="mb-8 flex items-center justify-between">
+        <span className="landing-roman">FIN.</span>
+        <span className="landing-page-marker">009</span>
+      </div>
+      <footer className="border-t border-[var(--landing-line)] pt-10">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <p className="text-lg font-semibold text-white">FormaUI</p>
-            <p className="mt-2 text-sm text-slate-400">Open-source UI components built with React, Tailwind CSS, and shadcn/ui.</p>
+            <p className="landing-display text-lg font-black text-[var(--landing-foreground)]">FormaUI</p>
+            <p className="mt-2 text-sm leading-6 text-[var(--landing-muted)]">Source-owned UI for SaaS and AI products.</p>
           </div>
           <div>
-            <p className="text-sm font-semibold uppercase tracking-wide text-slate-400">Product</p>
-            <div className="mt-2 space-y-1 text-sm">
-              <Link href="/product">Product</Link>
-              <Link href="/showcase">Showcase</Link>
-              <Link href="/changelog">Changelog</Link>
+            <p className="landing-kicker">Product</p>
+            <div className="mt-3 space-y-2 text-sm">
+              <Link href="/product" className="block text-[var(--landing-muted)] hover:text-[var(--landing-foreground)]">Product</Link>
+              <Link href="/showcase" className="block text-[var(--landing-muted)] hover:text-[var(--landing-foreground)]">Showcase</Link>
+              <Link href="/scenarios" className="block text-[var(--landing-muted)] hover:text-[var(--landing-foreground)]">Scenarios</Link>
             </div>
           </div>
           <div>
-            <p className="text-sm font-semibold uppercase tracking-wide text-slate-400">Resources</p>
-            <div className="mt-2 space-y-1 text-sm">
-              <Link href={webLinks.docs}>Docs</Link>
-              <Link href={webLinks.github}>GitHub</Link>
-              <Link href={webLinks.releaseNotes}>Release Notes</Link>
+            <p className="landing-kicker">Build</p>
+            <div className="mt-3 space-y-2 text-sm">
+              <Link href={webLinks.components} className="block text-[var(--landing-muted)] hover:text-[var(--landing-foreground)]">Components</Link>
+              <Link href={webLinks.blocks} className="block text-[var(--landing-muted)] hover:text-[var(--landing-foreground)]">Blocks</Link>
+              <Link href={webLinks.templates} className="block text-[var(--landing-muted)] hover:text-[var(--landing-foreground)]">Templates</Link>
+              <Link href={webLinks.registry} className="block text-[var(--landing-muted)] hover:text-[var(--landing-foreground)]">Registry</Link>
             </div>
           </div>
           <div>
-            <p className="text-sm font-semibold uppercase tracking-wide text-slate-400">Company</p>
-            <div className="mt-2 space-y-1 text-sm">
-              <p>License (MIT)</p>
-              <p>Privacy</p>
-              <p>Terms</p>
+            <p className="landing-kicker">Resources</p>
+            <div className="mt-3 space-y-2 text-sm">
+              <Link href={webLinks.docs} className="block text-[var(--landing-muted)] hover:text-[var(--landing-foreground)]">Docs</Link>
+              <Link href={webLinks.github} className="block text-[var(--landing-muted)] hover:text-[var(--landing-foreground)]">GitHub</Link>
+              <Link href={webLinks.releaseNotes} className="block text-[var(--landing-muted)] hover:text-[var(--landing-foreground)]">Release notes</Link>
+              <Link href={webLinks.examples} className="block text-[var(--landing-muted)] hover:text-[var(--landing-foreground)]">Examples</Link>
             </div>
           </div>
+        </div>
+        <div className="mt-10 text-xs text-[var(--landing-muted)]">
         </div>
       </footer>
     </section>

@@ -32,19 +32,15 @@ describe("web homepage smoke", () => {
   it("renders homepage section sequence and docs entry", () => {
     const html = renderToStaticMarkup(<WebHomePage />);
     const expectedSequence = [
-      "LandingHeader",
       "LandingHero",
-      "LandingStats",
-      "LandingFeatures",
+      "LandingProductSurfaces",
+      "LandingSourceOwnership",
+      "LandingBuildFlow",
+      "LandingScenarioGallery",
+      "LandingQualitySystem",
       "LandingProof",
-      "LandingScenarios",
-      "LandingQuickStart",
-      "LandingBlocksFlow",
-      "LandingQualityGates",
-      "LandingFaq",
       "LandingFinalCta",
-      "LandingFooter",
-      "LandingAnalytics"
+      "LandingFooter"
     ];
 
     const positions = expectedSequence.map((sectionName) => html.indexOf(`data-section="${sectionName}"`));
@@ -53,13 +49,50 @@ describe("web homepage smoke", () => {
     });
     expect(positions).toEqual([...positions].sort((a, b) => a - b));
     expect(html).toContain('href="https://docs.formaui.com"');
+
+    expect(html).toContain("Not just components. Complete product <em>surfaces</em>.");
+    expect(html).toContain("SaaS Dashboard");
+    expect(html).toContain("AI Console");
+    expect(html).toContain("Copy, <em>adapt</em>, keep control.");
+    expect(html).toContain("Traditional UI library");
+    expect(html).toContain("Template marketplace");
+    expect(html).toContain("FormaUI");
+    expect(html).toContain("From <em>registry</em> to running UI.");
+    expect(html).toContain("npx formaui init");
+    expect(html).toContain("npx formaui search dashboard");
+    expect(html).toContain("Built for SaaS and AI <em>teams</em>.");
+    expect(html).toContain("AI tools");
+    expect(html).toContain("User management");
+    expect(html).toContain("Launch pages");
+    expect(html).toContain("Own the interface you <em>ship</em>.");
+    expect(html).toContain("Source-owned UI for SaaS and AI products");
+    expect(html).toContain('href="https://github.com/xwtaidev/FormaUI"');
+    expect(html).toContain('href="/showcase"');
+    expect(html).toContain("Polish with <em>guardrails</em>.");
+    expect(html).toContain("A11y");
+    expect(html).toContain("Responsive");
+    expect(html).toContain("Open source, <em>docs-first</em>, ready to extend.");
+    expect(html).toContain("Release notes");
+    expect(html).toContain("Start by <em>owning</em> your UI.");
+    expect(html).toContain("Read v0.9 notes");
   });
 
-  it("keeps web-to-docs cross-site links visible in global shell", () => {
+  it("renders a single v0.9 hero h1 with primary conversion links", () => {
+    const html = renderToStaticMarkup(<WebHomePage />);
+
+    expect((html.match(/<h1/g) ?? []).length).toBe(1);
+    expect(html).toContain("Own the interface you <em>ship</em>.");
+    expect(html).toContain("Start with Docs");
+    expect(html).toContain("View on GitHub");
+    expect(html).toContain("Explore Product Surfaces");
+    expect(html).toContain("npx formaui pack add dashboard-foundation");
+  });
+
+  it("keeps navigation with docs entry visible in global shell", () => {
     const layoutSource = readFileSync(resolve(testDir, "../app/layout.tsx"), "utf8");
 
-    expect(layoutSource).toContain("webLinks.docs");
-    expect(layoutSource).toContain(">Docs<");
+    expect(layoutSource).toContain("primaryNavigationItems");
+    expect(layoutSource).toContain("mobileNavigationItems");
   });
 });
 
@@ -84,10 +117,12 @@ describe("web required route coverage", () => {
     });
   });
 
-  it("keeps changelog-specific docs backlinks reachable", () => {
+  it("keeps changelog-specific release backlinks current", () => {
     const html = renderToStaticMarkup(<ChangelogPage />);
 
-    expect(html).toContain('href="https://docs.formaui.com/migration-v0.4-to-v0.5"');
-    expect(html).toContain('href="https://github.com/xwtaidev/FormaUI/blob/main/docs/releases/v0.5.md"');
+    expect(html).toContain('href="https://github.com/xwtaidev/FormaUI/tree/main/docs/releases"');
+    expect(html).toContain('href="https://github.com/xwtaidev/FormaUI/blob/main/docs/releases/v0.9.md"');
+    expect(html).not.toContain("migration-v0.4-to-v0.5");
+    expect(html).not.toContain("docs/releases/v0.5.md");
   });
 });

@@ -1,18 +1,36 @@
 import React from "react";
-import { scenarioTags } from "./content";
+import Link from "next/link";
+
+import { proofLinks } from "./content";
 
 export default function LandingProof() {
   return (
-    <section data-section="LandingProof" className="landing-shell pt-8">
-      <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-        <h2 className="text-3xl font-semibold tracking-tight text-slate-950">Built for real product scenarios</h2>
-        <div className="mt-5 flex flex-wrap gap-3">
-          {scenarioTags.map((tag) => (
-            <span key={tag} className="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm text-slate-700">
-              {tag}
-            </span>
-          ))}
-        </div>
+    <section data-section="LandingProof" className="landing-shell py-16 sm:py-20">
+      <div className="mb-8 flex items-center justify-between">
+        <span className="landing-roman">VII.</span>
+        <span className="landing-page-marker">007</span>
+      </div>
+      <div className="mb-10 max-w-2xl">
+        <p className="landing-editorial-label">Ecosystem &middot; N&ordm; 06</p>
+        <h2 className="landing-display mt-3 text-4xl font-black leading-none sm:text-5xl">
+          Open source, <em>docs-first</em>, ready to extend.
+        </h2>
+      </div>
+
+      <div className="grid gap-8 border-t border-[var(--landing-line)] pt-8 sm:grid-cols-2 lg:grid-cols-4">
+        {proofLinks.map((link) => (
+          <Link
+            key={link.label}
+            href={link.href}
+            className="group"
+          >
+            <h3 className="text-lg font-black text-[var(--landing-foreground)] transition group-hover:text-[var(--landing-graphite)]">
+              {link.label}
+              <span className="ml-2 inline-block text-[var(--landing-line)] transition-transform group-hover:translate-x-1">→</span>
+            </h3>
+            <p className="mt-2 text-sm leading-6 text-[var(--landing-muted)]">{link.description}</p>
+          </Link>
+        ))}
       </div>
     </section>
   );
