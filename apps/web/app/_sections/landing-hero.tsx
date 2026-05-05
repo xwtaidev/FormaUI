@@ -1,10 +1,13 @@
 import React from "react";
 import Link from "next/link";
 
-import { heroContent } from "./content";
+import { getLandingContent } from "./content";
 import { editorial } from "./editorial-utils";
+import type { Locale } from "./i18n";
 
-export default function LandingHero() {
+export default function LandingHero({ locale = "en" }: { locale?: Locale }) {
+  const { heroContent } = getLandingContent(locale);
+
   return (
     <section data-section="LandingHero" className="landing-shell pt-12 pb-16 sm:pt-20 sm:pb-24">
       <div className="mb-8 flex items-center justify-between">

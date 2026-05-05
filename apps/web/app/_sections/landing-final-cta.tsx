@@ -1,10 +1,13 @@
 import React from "react";
 import Link from "next/link";
 
-import { finalCta } from "./content";
+import { getLandingContent } from "./content";
 import { editorial } from "./editorial-utils";
+import type { Locale } from "./i18n";
 
-export default function LandingFinalCta() {
+export default function LandingFinalCta({ locale = "en" }: { locale?: Locale }) {
+  const { finalCta } = getLandingContent(locale);
+
   return (
     <section data-section="LandingFinalCta" className="landing-shell py-16 sm:py-20">
       <div className="mb-8 flex items-center justify-between">

@@ -12,6 +12,7 @@ const expectedRoutes = ["/", "/marketing", "/product", "/scenarios", "/showcase"
 describe("web seo routing", () => {
   it("defines v0.9 web metadata baseline with canonical and social cards", () => {
     expect(rootMetadata.alternates?.canonical).toBe("/");
+    expect(rootMetadata.alternates?.languages).toEqual({ en: "/", "zh-CN": "/zh-CN" });
     expect(rootMetadata.openGraph?.url).toBe("https://formaui.com");
     expect(rootMetadata.description).toContain("source-owned React components");
     expect(rootMetadata.openGraph?.title).toBe("FormaUI - Source-owned UI for SaaS and AI products");

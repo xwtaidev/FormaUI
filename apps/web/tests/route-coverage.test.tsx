@@ -93,6 +93,7 @@ describe("web homepage smoke", () => {
 
     expect(layoutSource).toContain("primaryNavigationItems");
     expect(layoutSource).toContain("mobileNavigationItems");
+    expect(layoutSource).toContain("LocaleSwitcher");
   });
 });
 

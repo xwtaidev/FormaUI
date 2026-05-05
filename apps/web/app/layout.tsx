@@ -5,6 +5,7 @@ import { ThemeProvider } from "next-themes";
 
 import "./globals.css";
 import { heroContent, mobileNavigationItems, primaryNavigationItems } from "./_sections/content";
+import LocaleSwitcher from "./_sections/locale-switcher";
 import ThemeToggle from "./_sections/theme-toggle";
 
 export const metadata: Metadata = {
@@ -16,7 +17,11 @@ export const metadata: Metadata = {
   description:
     "FormaUI gives SaaS and AI teams source-owned React components, production blocks, templates, and registry workflows they can copy, adapt, and ship with confidence.",
   alternates: {
-    canonical: "/"
+    canonical: "/",
+    languages: {
+      en: "/",
+      "zh-CN": "/zh-CN"
+    }
   },
   openGraph: {
     title: "FormaUI - Source-owned UI for SaaS and AI products",
@@ -54,6 +59,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     {item.label}
                   </Link>
                 ))}
+                <LocaleSwitcher />
                 <ThemeToggle />
                 <Link
                   href={heroContent.primaryCta.href}
@@ -74,6 +80,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     </Link>
                   ))}
                 </nav>
+                <LocaleSwitcher />
                 <ThemeToggle />
                 <Link
                   href={heroContent.primaryCta.href}

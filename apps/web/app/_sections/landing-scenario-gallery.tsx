@@ -1,8 +1,12 @@
 import React from "react";
 
-import { scenarioGallery } from "./content";
+import { getLandingContent } from "./content";
+import type { Locale } from "./i18n";
 
-export default function LandingScenarioGallery() {
+export default function LandingScenarioGallery({ locale = "en" }: { locale?: Locale }) {
+  const { scenarioGallery } = getLandingContent(locale);
+  const isZh = locale === "zh-CN";
+
   return (
     <section data-section="LandingScenarioGallery" className="landing-shell py-16 sm:py-20">
       <div className="mb-8 flex items-center justify-between">
@@ -10,9 +14,9 @@ export default function LandingScenarioGallery() {
         <span className="landing-page-marker">005</span>
       </div>
       <div className="mb-10 max-w-2xl">
-        <p className="landing-editorial-label">Use cases &middot; N&ordm; 04</p>
+        <p className="landing-editorial-label">{isZh ? "使用场景" : "Use cases"} &middot; N&ordm; 04</p>
         <h2 className="landing-display mt-3 text-4xl font-black leading-none sm:text-5xl">
-          Built for SaaS and AI <em>teams</em>.
+          {isZh ? <>为 SaaS 和 AI <em>团队</em>而构建。</> : <>Built for SaaS and AI <em>teams</em>.</>}
         </h2>
       </div>
 

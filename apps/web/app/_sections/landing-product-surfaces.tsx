@@ -1,7 +1,7 @@
 import React from "react";
 
-import { productSurfaces } from "./content";
-import { editorial } from "./editorial-utils";
+import { getLandingContent } from "./content";
+import type { Locale } from "./i18n";
 
 const accentMap: Record<string, string> = {
   mint: "border-l-[var(--landing-mint)]",
@@ -10,7 +10,10 @@ const accentMap: Record<string, string> = {
   coral: "border-l-[var(--landing-coral)]"
 };
 
-export default function LandingProductSurfaces() {
+export default function LandingProductSurfaces({ locale = "en" }: { locale?: Locale }) {
+  const { productSurfaces } = getLandingContent(locale);
+  const isZh = locale === "zh-CN";
+
   return (
     <section id="surfaces" data-section="LandingProductSurfaces" className="landing-shell py-16 sm:py-20">
       <div className="mb-8 flex items-center justify-between">
@@ -18,13 +21,14 @@ export default function LandingProductSurfaces() {
         <span className="landing-page-marker">002</span>
       </div>
       <div className="mb-10 max-w-2xl">
-        <p className="landing-editorial-label">Product surfaces &middot; N&ordm; 01</p>
+        <p className="landing-editorial-label">{isZh ? "产品界面" : "Product surfaces"} &middot; N&ordm; 01</p>
         <h2 className="landing-display mt-3 text-4xl font-black leading-none sm:text-5xl">
-          Not just components. Complete product <em>surfaces</em>.
+          {isZh ? <>不只是组件，而是完整的产品<em>界面</em>。</> : <>Not just components. Complete product <em>surfaces</em>.</>}
         </h2>
         <p className="mt-5 text-base leading-7 text-[var(--landing-muted)]">
-          FormaUI packages primitives, blocks, templates, and metadata around real product jobs: dashboards, AI
-          tools, admin workflows, and launch pages.
+          {isZh
+            ? "FormaUI 围绕真实产品任务组织基础组件、区块、模板和元数据：仪表盘、AI 工具、管理工作流和发布页。"
+            : "FormaUI packages primitives, blocks, templates, and metadata around real product jobs: dashboards, AI tools, admin workflows, and launch pages."}
         </p>
       </div>
 

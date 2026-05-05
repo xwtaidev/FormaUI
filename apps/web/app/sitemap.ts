@@ -1,12 +1,20 @@
 import type { MetadataRoute } from "next";
 
-const webRoutes = ["/", "/marketing", "/product", "/scenarios", "/showcase", "/blog", "/changelog"] as const;
+import { defaultLocale, getLocalizedPath, localizedRoutePaths, locales } from "./_sections/i18n";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return webRoutes.map((route) => ({
-    url: `https://formaui.com${route}`,
-    lastModified: new Date(),
-    changeFrequency: route === "/" ? "weekly" : "monthly",
-    priority: route === "/" ? 1 : 0.8
-  }));
+  return locales.flatMap((locale) =>
+    localizedRoutePaths.map((route) => {
+      const localizedPath = getLocalizedPath(locale, route);
+      return {
+        url: `https://formaui.com${localizedPath}`,
+        lastModified: new Date(),
+        changeFrequency: route === "/" ? "weekly" : "monthly",
+        priority: locale === defaultLocale && route === "/" ? 1 : route === "/" ? 0.9 : 0.8,
+        alternates: {
+          languages: Object.fromEntries(locales.map((item) => [item, `https://formaui.com${getLocalizedPath(item, route)}`]))
+        }
+      } satisfies MetadataRoute.Sitemap[number];
+    })
+  );
 }
